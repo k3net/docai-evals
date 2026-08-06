@@ -1,0 +1,117 @@
+id: moe-kernel-tuning-gb10
+version: "1.0"
+date: 2026-04-14
+title: "Two days of MoE kernel tuning, and nothing to show for it"
+question: >-
+  Does an autotuned mixture-of-experts kernel configuration improve real serving throughput on
+  DGX Spark GB10 — and what else changes along the way?
+
+task:
+  type: inference-performance
+  language: [en]
+
+dataset:
+  name: synthetic bench-serve workloads
+  size:
+    phases: 9
+    tests_per_phase: 4
+    runs_total: 32
+  access: public
+  ground_truth: "not applicable — serving measurement"
+  notes: >-
+    Random fixed-length prompts via the engine's own bench-serve harness. Each phase captured its
+    own engine config, library versions and image digest.
+
+systems:
+  - label: baseline
+    role: baseline
+    model: Qwen3.5-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM (nightly)
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "FlashInfer attention + Triton FP8 MoE"
+    flags: ["--max-model-len 131072", "--gpu-memory-utilization 0.5", "--max-num-batched-tokens 32768", "--max-num-seqs 32"]
+  - label: image-updated
+    role: candidate
+    model: Qwen3.5-35B-A3B-FP8
+    engine: "vLLM (newer nightly)"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--gpu-memory-utilization 0.45", "--max-num-batched-tokens 65536", "async scheduling enabled"]
+  - label: no-async
+    role: candidate
+    model: Qwen3.5-35B-A3B-FP8
+    engine: "vLLM (newer nightly)"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["async scheduling disabled"]
+  - label: tuned
+    role: candidate
+    model: Qwen3.5-35B-A3B-FP8
+    engine: "vLLM (newer nightly)"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "Triton FP8 MoE with an autotuned kernel configuration (6 hours of tuning, batch sizes 1-128)"
+  - label: eager
+    role: candidate
+    model: Qwen3.5-35B-A3B-FP8
+    engine: "vLLM (newer nightly)"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--enforce-eager (CUDA graphs off)"]
+  - label: prod
+    role: candidate
+    model: Qwen3.5-35B-A3B-FP8
+    engine: "vLLM (newer nightly)"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--max-num-batched-tokens 16384", "async scheduling disabled", "no tuned kernel config"]
+
+metrics:
+  - name: output_throughput
+    definition: "output tokens per second per test"
+    primary: true
+  - name: median_ttft_ms
+    primary: true
+  - name: median_tpot_ms
+
+decision_rule: >-
+  Adopt the tuned kernel configuration only if concurrent throughput improves materially over the
+  otherwise-identical phase.
+
+results:
+  phases:
+    baseline: { single: 48.92, prefill: 75.88, concurrent: 208.04, concurrent_median_ttft_ms: 5013 }
+    image-updated: { single: 49.76, prefill: 70.06, concurrent: 197.67, concurrent_median_ttft_ms: 7300 }
+    no-async: { single: 49.01, prefill: 71.73, concurrent: 204.39, concurrent_median_ttft_ms: 5838 }
+    no-async-no-mamba: { prefill: 72.08 }
+    tuned: { single: 48.94, prefill: 69.96, concurrent: 204.46, concurrent_median_ttft_ms: 6198, prefill_runs: 3 }
+    mem055: { single: 48.67, prefill: 69.54, concurrent: 204.01, concurrent_median_ttft_ms: 5884 }
+    eager: { single: 30.02, prefill: 55.55 }
+    final: { single: 49.31, prefill: 73.33, concurrent: 193.24, concurrent_median_ttft_ms: 5205 }
+    prod: { single: 49.15, prefill: 71.35, concurrent: 207.91, concurrent_median_ttft_ms: 4165 }
+  headline_isolated_effects:
+    tuned_kernel_vs_no_async: { concurrent_pct: 0.03, single_pct: -0.1, prefill_pct: -2.5 }
+    engine_update_regression: { concurrent_pct: -5.0, prefill_pct: -7.7, median_ttft_pct: 45.6 }
+    async_off_recovery: { concurrent: "197.67 -> 204.39", median_ttft_ms: "7300 -> 5838" }
+    eager_execution: { single_pct: -38.7, prefill_pct: -20.6 }
+
+verdict: >-
+  The autotuned MoE kernel configuration is not adopted: +0.03% concurrent throughput, -2.5% on
+  prefill-bound work. A serving workload is not MoE-GEMM bound, so a kernel-level gain does not
+  reach the request. Two incidental findings were worth more than the intended one: a routine
+  engine update cost 5% throughput and 46% TTFT (recovered by disabling async scheduling), and
+  eager execution costs 39% single-stream decode.
+
+reproducibility:
+  level: R2
+  code: published
+  data: public
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "Phases are cumulative, not factorial — only adjacent comparisons are clean. The baseline -> image-updated step bundles an engine update with two config changes, so -5% is the combined effect."
+  - "n=1 on most cells, n=2-3 where variance was suspected. The tuning result is the best-supported (three prefill seeds); the regression figure is single-run on each side."
+  - "One model, one GPU, one engine family. The tuner may well pay on a compute-bound deployment or a different architecture; the claim here is narrow."
+  - "Concurrency-16 is a stress test, not our operating point (production peaks at 3)."
+  - "Synthetic fixed-length workloads, not real documents."
+
+related:
+  article: "https://docai.hu/blog/vllm-gb10-tuning"
+  experiments: [qwen36-mtp-ab-gb10, qwen36-fp8-vllm-flag-sweep, vllm-prod-config-tuning-gb10, moe-backend-selection-gb10]

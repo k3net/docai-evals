@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docai.hu/schemas/docai-evals/eval-card.schema.json",
+  "title": "DocAI eval card",
+  "description": "Machine-readable summary of a single measurement in the DocAI Evals repository. One eval-card.yaml per experiment directory.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "date", "task", "dataset", "systems", "metrics", "results", "reproducibility", "limitations"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9.]+)*$",
+      "description": "Technical identifier, matching the experiment directory name without the date prefix."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of this card. Bump when results or interpretation change; never edit a published number silently."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the measurement was completed (ISO 8601)."
+    },
+    "title": { "type": "string" },
+    "question": {
+      "type": "string",
+      "description": "The decision this measurement was meant to inform, in one sentence."
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["kie", "business-gate", "chat-tool-use", "classification", "inference-performance"]
+        },
+        "document_types": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "e.g. invoice, payroll, contract, bank-statement"
+        },
+        "language": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "ISO 639-1 codes, e.g. [hu, en]"
+        },
+        "output_format": { "type": "string", "description": "e.g. strict-json" }
+      }
+    },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["size", "access"],
+      "properties": {
+        "name": { "type": "string" },
+        "size": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Sample sizes, e.g. {documents: 100, scored_units: 1117}"
+        },
+        "access": {
+          "type": "string",
+          "enum": ["public", "synthetic-only", "private"],
+          "description": "private = real customer documents, never published"
+        },
+        "ground_truth": {
+          "type": "string",
+          "description": "How ground truth was established, including any self-baseline risk."
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "systems": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every arm of the comparison, including the baseline.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label"],
+        "properties": {
+          "label": { "type": "string" },
+          "role": { "type": "string", "enum": ["baseline", "candidate", "reference", "judge"] },
+          "model": { "type": "string", "description": "Checkpoint identifier as served." },
+          "quantisation": { "type": "string" },
+          "weights_size": { "type": "string" },
+          "engine": { "type": "string", "description": "Inference engine and version/build." },
+          "hardware": { "type": "string" },
+          "backend": { "type": "string", "description": "Kernel backend(s) in use." },
+          "flags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Launch flags that differ from the stated baseline."
+          },
+          "sampling": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "e.g. {temperature: 0.0, max_tokens: 8192, thinking: false}"
+          }
+        }
+      }
+    },
+    "prompt_version": { "type": "string" },
+    "normaliser_version": { "type": "string", "description": "Scoring normaliser version, frozen before scoring." },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "definition": { "type": "string" },
+          "primary": { "type": "boolean", "default": false }
+        }
+      }
+    },
+    "decision_rule": {
+      "type": "string",
+      "description": "Accept/reject threshold, fixed before the run."
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Aggregated results only. No per-document data from private corpora."
+    },
+    "verdict": { "type": "string", "description": "The product decision that followed." },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "properties": {
+        "level": { "type": "string", "enum": ["R1", "R2", "R3"] },
+        "code": { "type": "string", "enum": ["published", "partial", "internal"] },
+        "data": { "type": "string", "enum": ["public", "synthetic-only", "private"] },
+        "results": { "type": "string", "enum": ["full", "aggregated"] },
+        "runs_per_variant": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Known limits. At minimum: sample size, run count, and hardware specificity."
+    },
+    "related": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "article": { "type": "string", "format": "uri", "description": "The DocAI blog article telling this story." },
+        "background_article": { "type": "string", "format": "uri", "description": "An article this measurement continues or re-measures, when no article covers it directly." },
+        "experiments": { "type": "array", "items": { "type": "string" } },
+        "evals": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

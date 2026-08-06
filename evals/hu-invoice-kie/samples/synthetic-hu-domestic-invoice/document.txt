@@ -1,0 +1,39 @@
+SZÁMLA
+
+Számla sorszáma: 2026/A-00184
+Számla kelte: 2026. március 14.
+Teljesítés időpontja: 2026. március 12.
+Fizetési határidő: 2026. március 28.
+Fizetés módja: átutalás
+
+Szállító:
+Példa Logisztika Kft.
+1113 Budapest, Minta utca 12.
+Adószám: 12345678-2-42
+Bankszámlaszám: 10700024-00000000-11111111
+Ügyintéző: Példa Anna
+
+Vevő:
+Demó Kereskedelmi Zrt.
+9024 Győr, Próba tér 3.
+Adószám: 87654321-2-08
+
+--------------------------------------------------------------------
+Megnevezés                    Mennyiség   Egységár      Nettó
+--------------------------------------------------------------------
+Szállítási díj Budapest /         2 db     25 000 Ft   50 000 Ft
+Győr útvonalon
+Raktározási díj 2026. március     1 hó     30 000 Ft   30 000 Ft
+--------------------------------------------------------------------
+
+Nettó összesen:        80 000 Ft
+ÁFA (27%):             21 600 Ft
+Bruttó összesen:      101 600 Ft
+
+A számla pénzneme: HUF
+Köszönjük, hogy minket választott!
+
+--------------------------------------------------------------------
+SYNTHETIC SAMPLE — fictional company names and tax numbers.
+Created for the DocAI Evals repository (https://docai.hu). Not a real invoice.
+--------------------------------------------------------------------

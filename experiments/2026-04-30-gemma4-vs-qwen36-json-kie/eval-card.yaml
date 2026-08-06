@@ -1,0 +1,97 @@
+id: gemma4-vs-qwen36-json-kie
+version: "1.0"
+date: 2026-04-30
+title: "Gemma 4 vs Qwen3.6 — strict-JSON KIE on Hungarian invoices"
+question: >-
+  Can an alternative open-weights model replace the incumbent extraction model on Hungarian
+  invoices without losing field-level accuracy?
+
+task:
+  type: kie
+  document_types: [invoice]
+  language: [hu, en]
+  output_format: strict-json
+
+dataset:
+  name: hu-invoice-kie
+  size:
+    scored_units: 34
+    headers: 25
+    item_arrays: 9
+  access: private
+  ground_truth: >-
+    Bootstrapped from the incumbent model's own production output and only partially hand-corrected
+    at this date. This causes severe self-baseline bias in favour of the incumbent — see the
+    limitations. A later run of the same model against the corrected ground truth scored 0.975.
+  notes: >-
+    Deterministic replay of stored production requests; both arms received byte-identical input.
+
+systems:
+  - label: qwen36-baseline
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, max_tokens: 8192, thinking: false }
+  - label: gemma4
+    role: candidate
+    model: Gemma 4
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, max_tokens: 8192, thinking: false }
+
+metrics:
+  - name: overall_f1
+    definition: "tp / (tp+fp+mismatch) and tp / (tp+fn+mismatch), harmonic mean"
+    primary: true
+  - name: json_validity_rate
+    definition: "share of responses that parse as valid JSON against the expected schema"
+  - name: sub_task_f1
+    definition: "F1 computed separately for invoice headers and line-item arrays"
+    primary: true
+  - name: latency_per_unit_ms
+
+results:
+  qwen36_baseline:
+    overall_f1: 1.000
+    precision: 1.000
+    recall: 1.000
+    json_validity_rate: 1.0
+    tp_fn_fp_mismatch: [214, 0, 0, 0]
+    avg_latency_ms: 6687
+    caveat: "artefact of self-baseline bias, not a model result"
+  gemma4:
+    overall_f1: 0.890
+    precision: 0.888
+    recall: 0.892
+    json_validity_rate: 1.0
+    tp_fn_fp_mismatch: [191, 3, 4, 20]
+    avg_latency_ms: 10396
+    item_arrays_f1: 0.000
+    item_arrays_failed: 9
+    field_level_differences: 27
+
+verdict: >-
+  Keep the incumbent. The candidate failed every line-item array (dominated by name padding), and
+  its header errors cluster in identifier formatting, invented enums and hallucinated dates — the
+  error classes that are most expensive downstream.
+
+reproducibility:
+  level: R3
+  code: published
+  data: synthetic-only
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "Severe self-baseline bias: ground truth was seeded from the incumbent's own output, so its 1.000 is an artefact and the 0.890-vs-1.000 gap is an upper bound, not an estimate."
+  - "Small corpus: 34 scored units, 25 of them headers."
+  - "Single prompt, tuned over months against the incumbent; the candidate was not given a re-tuned prompt."
+  - "n=1 per arm; latency figures are not comparable across dates or engine builds."
+  - "Qualitative finding (line-item collapse) is robust to ground-truth quality; the numeric gap is not."
+
+related:
+  article: "https://docai.hu/blog/gemma4-vs-qwen36"
+  evals: [hu-invoice-kie]
+  experiments: [qwen36-fp8-vs-nvfp4-quality]

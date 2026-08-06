@@ -1,0 +1,125 @@
+id: qwen36-fp8-vs-nvfp4-quality
+version: "1.1"
+date: 2026-07-16
+title: "FP8 vs NVFP4 — what 4-bit quantisation keeps, and what it costs"
+question: >-
+  Does 4-bit NVFP4 quantisation preserve extraction and chat quality well enough to trade for its
+  substantial speed and memory advantage on GB10?
+
+task:
+  type: kie
+  document_types: [invoice]
+  language: [hu, en]
+  output_format: strict-json
+
+dataset:
+  name: hu-invoice-kie (25 docs / 34 scored units) + chat-business-scenarios (16)
+  size:
+    documents: 25
+    scored_units: 34
+    input_tokens_per_unit: 6734
+    chat_scenarios: 16
+    chat_scenarios_answerable: 9
+  access: private
+  ground_truth: >-
+    Hand-corrected field-level ground truth. One field with disputed ground truth was excluded from
+    every arm and named in the report.
+  notes: >-
+    NOT REPRESENTATIVE — a generic test tenant, heavy on English SaaS invoices, without the
+    tenant's own-company context. This is the central limitation of the experiment and the reason
+    its conclusion was later reversed.
+
+systems:
+  - label: fp8-ref
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: "block-scaled FP8"
+    weights_size: "~35 GiB"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: triton
+    sampling: { temperature: 0.0, thinking: false }
+  - label: nvfp4-a
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (vendor toolkit)"
+    quantisation: "~70% 4-bit packed, 3.1 GiB left FP8"
+    weights_size: "21.8 GiB"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: marlin
+  - label: nvfp4-b
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (community, dynamic)"
+    quantisation: "least aggressive — 9.2 GiB (37%) left FP8"
+    weights_size: "24.7 GiB"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "marlin (auto-oracle mixes CUTLASS/Triton on the mixed checkpoint)"
+  - label: nvfp4-c
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (community, fast)"
+    quantisation: "most aggressive — 3.5 GiB (32%) left FP8"
+    weights_size: "22.0 GiB"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: marlin
+
+normaliser_version: "kie_normalizer v1.0 (frozen before scoring)"
+
+metrics:
+  - name: normalised_f1
+    definition: "field-level F1 after frozen cosmetic normalisation; mismatch charged to both sides"
+    primary: true
+  - name: real_content_errors
+    definition: "mismatches that survive normalisation"
+    primary: true
+  - name: json_validity_rate
+  - name: aggregate_throughput_c8
+  - name: single_stream_decode_tok_s
+  - name: speculative_acceptance
+
+results:
+  extraction:
+    fp8-ref: { raw_f1: 0.9790, normalised_f1: 0.9837, real_errors: 2, json_validity: 1.0 }
+    nvfp4-b: { raw_f1: 0.9649, normalised_f1: 0.9836, real_errors: 3, json_validity: 1.0 }
+    nvfp4-a: { raw_f1: 0.9537, normalised_f1: 0.9676, real_errors: 4, json_validity: 1.0 }
+    nvfp4-c: { raw_f1: 0.9488, normalised_f1: 0.9721, real_errors: 4, json_validity: 1.0 }
+  chat_pass_of_16:
+    fp8-ref: 7
+    nvfp4-b: 7
+    nvfp4-a: 6
+    nvfp4-c: 9
+    note: "7 of 16 failed for every arm due to test-corpus gaps, not model behaviour"
+  performance_best_vs_best:
+    single_json_kie_tok_s: { fp8_triton: 68.3, nvfp4_marlin: 115.7, delta_pct: 69 }
+    aggregate_c8_uniform: { fp8_triton: 256.1, nvfp4_marlin: 359.4, delta_pct: 40 }
+    aggregate_c8_mixed: { fp8_triton: 271.2, nvfp4_marlin: 342.3, delta_pct: 26, caveat: "CV 8.1% over n=3 — unstable" }
+    speculation_gain_single_json: { fp8: "53.6 -> 68.3 (+27%)", nvfp4: "78.2 -> 115.7 (+48%)" }
+    raw_quantisation_gain_no_speculation: { single_pct: 46, aggregate_pct: 18 }
+    memory_freed_gib: 10
+    speculative_acceptance: { fp8: "~71%", nvfp4: "73-75%" }
+
+verdict: >-
+  Provisional go at the time of this measurement — quality equivalent on this corpus, speed and
+  memory clearly better. REVERSED days later by the counterparty-role gate on 100 real invoices.
+  Final decision: stay on FP8.
+
+reproducibility:
+  level: R2
+  code: published
+  data: synthetic-only
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "The corpus was not representative: 25 documents from a generic test tenant, mostly English SaaS invoices, without own-company context. It could not exercise the capability that actually degraded."
+  - "Small sample: 34 scored units; only 9 of 16 chat scenarios were answerable on the test corpus."
+  - "n=1 per performance variant; the mixed concurrent mix has CV 8.1% and its column should be treated with suspicion."
+  - "Three different quantisation toolchains are compared as if NVFP4 were a single thing; their bit-level layouts differ substantially."
+  - "Chat pass rates are contaminated by corpus gaps affecting all arms equally."
+  - "The apparent ordering by quantisation aggressiveness did not survive the larger corpus — see invoice-counterparty-role."
+
+related:
+  article: "https://docai.hu/blog/nvfp4-kvantalas-miert-nem-valtottunk"
+  evals: [hu-invoice-kie, chat-business-scenarios]
+  experiments: [invoice-counterparty-role, moe-backend-selection-gb10, mtp-speculative-decoding-gb10]

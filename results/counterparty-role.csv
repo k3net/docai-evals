@@ -1,0 +1,8 @@
+experiment,date,model,quantisation,corpus_documents,heuristic_flagged,authoritative_subset,authoritative_wrong,authoritative_rate_pct,mcnemar_p_vs_baseline,significant,notes
+invoice-counterparty-role,2026-07-16,Qwen3.6-35B-A3B,FP8,100,7,82,7,9,,baseline,"production model — not error-free either"
+invoice-counterparty-role,2026-07-16,Qwen3.6-35B-A3B,NVFP4 least aggressive,100,18,82,16,20,0.01921,yes,"2.2x the baseline error rate on authoritative ground truth"
+invoice-counterparty-role,2026-07-23,Qwen3.6-35B-A3B,NVFP4 vendor toolkit,100,16,,,,0.04904,yes,
+invoice-counterparty-role,2026-07-23,Qwen3.6-35B-A3B,NVFP4 most aggressive,100,12,,,,0.26685,no,"not significantly worse than baseline at n=100"
+invoice-counterparty-role,2026-07-23,pairwise: least vs most aggressive,NVFP4,100,18 vs 12,,,,0.23788,no,"candidates not distinguishable from each other — the dose-response story does not hold"
+invoice-counterparty-role,2026-07-23,pairwise: vendor vs most aggressive,NVFP4,100,16 vs 12,,,,0.48068,no,
+invoice-counterparty-role,2026-07-23,pairwise: least aggressive vs vendor,NVFP4,100,18 vs 16,,,,0.83181,no,

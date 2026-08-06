@@ -1,0 +1,8 @@
+experiment,date,model,quantisation,corpus,scored_units,raw_f1,normalised_f1,precision,recall,json_validity,real_content_errors,notes
+gemma4-vs-qwen36-json-kie,2026-04-30,Qwen3.6-35B-A3B,FP8,hu-invoice-kie-v0,34,1.000,,1.000,1.000,1.00,0,"ground-truth artefact — seeded from this model's own output; not a model result"
+gemma4-vs-qwen36-json-kie,2026-04-30,Gemma 4,,hu-invoice-kie-v0,34,0.890,,0.888,0.892,1.00,,"all 9 line-item arrays scored 0.000; 27 field-level differences"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,FP8,hu-invoice-kie-v1,34,0.9790,0.9837,0.968,0.981,1.00,2,"same model as the 2026-04-30 row, scored against corrected ground truth"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 least aggressive,hu-invoice-kie-v1,34,0.9649,0.9836,0.963,0.967,1.00,3,"equivalent on this corpus — reversed by the counterparty gate"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 vendor toolkit,hu-invoice-kie-v1,34,0.9537,0.9676,0.936,0.963,1.00,4,"produced the round's worst single error: a hallucinated partner person-name"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 most aggressive,hu-invoice-kie-v1,34,0.9488,0.9721,0.936,0.953,1.00,4,
+35b-vs-122b-business-tasks,2026-07-24,Qwen3.5-122B-A10B,FP8 dense,hu-invoice-kie-v1,34,0.938,,0.923,0.953,1.00,,"2x the latency of the 35B and measurably worse — model size does not help this task"

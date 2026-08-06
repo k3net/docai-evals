@@ -1,0 +1,122 @@
+id: invoice-counterparty-role
+version: "1.1"
+date: 2026-07-16
+title: "Who is the counterparty? — the gate that reversed a model decision"
+question: >-
+  On representative Hungarian invoices, does 4-bit quantisation preserve the model's ability to
+  tell the tenant's own company apart from the invoice partner?
+
+task:
+  type: business-gate
+  document_types: [invoice]
+  language: [hu, en]
+  output_format: strict-json
+
+dataset:
+  name: production invoice corpus, single tenant
+  size:
+    documents: 100
+    field_comparisons: 1117
+    authoritative_subset: 82
+  access: private
+  ground_truth: >-
+    Two independent sources. (1) Heuristic gate matching extracted partner identity against the
+    tenant's own tax number and name hints, over all 100 documents. (2) Authoritative database link
+    to the partner company actually associated with each document, covering the 82 documents where
+    that partner is verifiably not the tenant itself.
+  notes: >-
+    Deterministic replay of identical stored requests at temperature 0 — differences are model
+    differences, not sampling.
+
+systems:
+  - label: fp8-ref
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: "block-scaled FP8"
+    weights_size: "~35 GiB"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0 }
+  - label: nvfp4-b
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (community, dynamic — least aggressive)"
+    weights_size: "24.7 GiB"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0 }
+  - label: nvfp4-a
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (vendor toolkit)"
+    weights_size: "21.8 GiB"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0 }
+  - label: nvfp4-c
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (community, fast — most aggressive)"
+    weights_size: "22.0 GiB"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0 }
+
+metrics:
+  - name: own_as_partner_rate
+    definition: "share of documents where the model names the tenant's own company as the invoice partner"
+    primary: true
+  - name: mcnemar_exact_p
+    definition: "paired two-sided exact test over the same documents"
+    primary: true
+  - name: field_disagreement_rate
+    definition: "share of field comparisons where the two models differ in content"
+
+results:
+  pairwise_disagreement:
+    field_comparisons: 1117
+    exact_agreement_pct: 82.5
+    cosmetic_pct: 0.0
+    real_difference_pct: 17.5
+    of_195_disagreements: { baseline_right: 161, candidate_right: 32, both_wrong: 2 }
+    share_in_counterparty_field_block_pct: 79
+    documents_with_at_least_one_error: 31
+  heuristic_gate_flagged_of_100:
+    fp8-ref: 7
+    nvfp4-b: 18
+    nvfp4-a: 16
+    nvfp4-c: 12
+  authoritative_subset_of_82:
+    fp8-ref: { wrong: 7, rate_pct: 9 }
+    nvfp4-b: { wrong: 16, rate_pct: 20 }
+    ratio: 2.2
+  mcnemar_vs_baseline:
+    nvfp4-b: { flagged: "7 vs 18", p: 0.01921, significant: true }
+    nvfp4-a: { flagged: "7 vs 16", p: 0.04904, significant: true }
+    nvfp4-c: { flagged: "7 vs 12", p: 0.26685, significant: false }
+  mcnemar_between_candidates:
+    nvfp4-b_vs_nvfp4-c: { flagged: "18 vs 12", p: 0.23788, distinguishable: false }
+    nvfp4-a_vs_nvfp4-c: { flagged: "16 vs 12", p: 0.48068, distinguishable: false }
+    nvfp4-b_vs_nvfp4-a: { flagged: "18 vs 16", p: 0.83181, distinguishable: false }
+
+verdict: >-
+  Validation gate failed. All three 4-bit checkpoints roughly double the counterparty error rate
+  relative to FP8 (12-18 vs 7 of 100); differences among them are not established at n=100. The
+  effect attaches to the quantisation format, not to a dose along aggressiveness. Production stays
+  on FP8; the canary phase was never started.
+
+reproducibility:
+  level: R2
+  code: published
+  data: private
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "n=100, single tenant. Sufficient to establish a 2x effect against the baseline; insufficient to rank the candidates against each other, as the pairwise tests show explicitly."
+  - "The heuristic gate over-counts on foreign partners (18 flagged vs 16 database-confirmed on the 82-document subset); both numbers are published."
+  - "Measures one direction only — putting the partner into the own-company slot is a different error and is not covered."
+  - "temperature=0 on identical inputs: a capability difference, but the behaviour under production sampling settings was not measured."
+  - "The authoritative database link is human-maintained and can itself be wrong, though it is independent of both models."
+
+related:
+  article: "https://docai.hu/blog/nvfp4-kvantalas-miert-nem-valtottunk"
+  evals: [counterparty-role, hu-invoice-kie]
+  experiments: [qwen36-fp8-vs-nvfp4-quality]

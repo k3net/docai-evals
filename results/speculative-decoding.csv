@@ -1,0 +1,19 @@
+experiment,date,model,quantisation,draft_head_precision,workload,draft_tokens,decode_gain_pct,acceptance,notes
+mtp-speculative-decoding-gb10,2026-07-16,Qwen3.6-35B-A3B,FP8,FP8,single json extraction,2,27,0.71,"draft experts quantised in this checkpoint — lower acceptance"
+mtp-speculative-decoding-gb10,2026-07-16,Qwen3.6-35B-A3B,FP8,FP8,aggregate c=8,2,9,0.71,
+mtp-speculative-decoding-gb10,2026-07-16,Qwen3.6-35B-A3B,NVFP4,BF16,single json extraction,2,48,0.75,"draft head left at full precision — higher acceptance despite 4-bit main model"
+mtp-speculative-decoding-gb10,2026-07-16,Qwen3.6-35B-A3B,NVFP4,BF16,aggregate c=8,2,30,0.75,
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,BF16,json extraction,2,78,1.00,"strict JSON is almost perfectly predictable"
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,BF16,long-rag 8k,2,61,0.825,
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,BF16,qa,2,46,0.712,
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,BF16,hungarian chat,2,34,0.608,"free-form Hungarian is the hardest to draft"
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,json extraction,3,19,0.983,"draft 2 -> 3: acceptance 0.995 -> 0.983"
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,long-rag 32k,3,17,,
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,code,3,13,,
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,qa,3,-9,0.438,"draft 2 -> 3: acceptance 0.646 -> 0.438"
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,hungarian chat,3,-3,0.432,"draft 2 -> 3: acceptance 0.582 -> 0.432"
+qwen36-fp8-vllm-flag-sweep,2026-07-01,Qwen3.6-35B-A3B,FP8,FP8,aggregate c=8,3,-3.6,0.612,"why draft length stays at 2 on a mixed workload"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,FP8,A single decode (512/512 c=1),2,8.7,0.7253,"production A/B; overall acceptance from engine counters"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,FP8,B prefill-bound (8192/256 c=4),2,-7.2,0.7253,"the one negative workload: TPOT +30.7%"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,FP8,C concurrent (2048/512 c=16),2,24.2,0.7253,"largest gain — TTFT -56.7%; accepted drafts free scheduler slots"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,FP8,D chat profile (c=2),2,5.0,0.7253,"draft position 0: 81.57%, position 1: 63.48%"

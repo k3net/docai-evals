@@ -1,0 +1,37 @@
+INVOICE
+
+Invoice no.: INV-2026-0042
+Invoice date: 02/04/2026
+Supply date: 31/03/2026
+
+Supplier:
+Muster Cloud Services GmbH
+Beispielstraße 7, 10115 Berlin, Germany
+VAT ID: DE812345678
+IBAN: DE00 1234 5678 9012 3456 00
+
+Customer:
+Demó Kereskedelmi Zrt.
+Próba tér 3, 9024 Győr, Hungary
+VAT ID: HU87654321
+
+--------------------------------------------------------------------
+Description                        Qty      Unit price        Amount
+--------------------------------------------------------------------
+Managed hosting, April 2026          1        320.00 EUR    320.00 EUR
+Object storage, 1.5 TB             1.5         40.00 EUR     60.00 EUR
+--------------------------------------------------------------------
+
+Net total:                380.00 EUR
+VAT (0%, reverse charge):   0.00 EUR
+Total due:                380.00 EUR
+
+Reverse charge — VAT to be accounted for by the recipient
+(Article 196, Council Directive 2006/112/EC).
+
+Payment: by bank transfer.
+
+--------------------------------------------------------------------
+SYNTHETIC SAMPLE — fictional company names, VAT IDs and IBAN.
+Created for the DocAI Evals repository (https://docai.hu). Not a real invoice.
+--------------------------------------------------------------------

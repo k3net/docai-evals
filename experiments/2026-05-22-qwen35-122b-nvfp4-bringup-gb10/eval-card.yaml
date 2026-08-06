@@ -1,0 +1,109 @@
+id: qwen35-122b-nvfp4-bringup-gb10
+version: "1.1"
+date: 2026-05-22
+title: "Bringing a 122B MoE up on a single DGX Spark — capacity, speed, and where it breaks"
+question: >-
+  What does it cost to serve a 122B mixture-of-experts model on one 128 GB GB10: how much KV cache
+  remains after the weights, how fast does it decode, and which parts of the serving stack refuse
+  to run on this architecture?
+
+task:
+  type: inference-performance
+  language: [hu, en]
+
+dataset:
+  name: performance workloads
+  size:
+    single_stream_workloads: 4
+    runs_per_workload: 3
+    long_context_probe_tokens: 240000
+  access: public
+  ground_truth: "not applicable — serving measurement"
+
+systems:
+  - label: qwen35-122b-nvfp4
+    role: candidate
+    model: Qwen3.5-122B-A10B-NVFP4
+    quantisation: "4-bit packed main path + BF16 draft head (shipped as separate weights)"
+    weights_size: "76 GB on disk"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a), 128 GB unified memory
+    backend: "engine auto-selection: CUTLASS for the 4-bit main path, Triton for the BF16 draft head"
+    flags:
+      - "--max-model-len 262144"
+      - "--gpu-memory-utilization 0.75"
+      - "--max-num-batched-tokens 16384"
+      - "--max-num-seqs 4"
+      - "--attention-backend FLASHINFER"
+      - "--kv-cache-dtype fp8_e4m3"
+      - "--enable-prefix-caching"
+      - "--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+  - label: qwen36-35b-fp8
+    role: reference
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+
+metrics:
+  - name: kv_cache_tokens
+    definition: "KV pool size read deterministically from the boot log"
+    primary: true
+  - name: decode_tok_s
+    definition: "single-stream steady-state output tokens per second"
+    primary: true
+  - name: speculative_acceptance
+    definition: "share of drafted tokens accepted, from the engine metrics endpoint"
+    primary: true
+  - name: ttft
+  - name: cold_start_minutes
+
+results:
+  capacity:
+    fp16_kv_65k: { seqs: 16, kv_tokens: 437000, concurrency: 6.68 }
+    fp8_kv_65k: { seqs: 16, kv_tokens: 849000, concurrency: 12.95 }
+    context_131k: { seqs: 8, kv_tokens: 973000, concurrency: 7.42 }
+    context_262k_final: { seqs: 4, kv_tokens: 1050000, concurrency: 4.00 }
+    kv_per_token_kib: 28
+    text_only_saving: "none — 4.06x to 4.00x, within noise; the vision tower loads from the main file regardless"
+  speculative_decoding:
+    average_decode_gain_pct: 55
+    per_workload:
+      qa: { without_mtp: 17.09, with_mtp: 25.02, acceptance: 0.712 }
+      json_extraction: { without_mtp: 16.98, with_mtp: 30.25, acceptance: 1.00 }
+      hungarian: { without_mtp: 16.93, with_mtp: 22.61, acceptance: 0.608 }
+      long_rag_8k: { without_mtp: 16.81, with_mtp: 27.03, acceptance: 0.825 }
+    ttft_cost_pct: [31, 156]
+  vs_35b_reference:
+    decode_ratio: "2.0-2.5x slower after speculative decoding (was ~3.3x before)"
+    reference_tok_s: { qa: 54, json: 69, hungarian: 52 }
+  earlier_kernel_experiments:
+    marlin_vs_default_decode_pct: 2.3
+    fp8_kv_ttft_regression_pct: 223
+  startup:
+    cold_start_min: 22
+    warm_restart_min: 5
+
+verdict: >-
+  The model is deployable on a single GB10 with this configuration: 1.05M KV tokens at full
+  context, ~55% average decode gain from speculative decoding, and roughly the same concurrency as
+  a model a quarter its size thanks to the hybrid architecture's low KV cost. Cold start of ~22
+  minutes is the main operational constraint.
+
+reproducibility:
+  level: R3
+  code: internal
+  data: public
+  results: aggregated
+  runs_per_variant: 3
+
+limitations:
+  - "n=3 per performance workload; capacity figures are deterministic boot-log reads."
+  - "One checkpoint, one engine build — every backend failure is a statement about that build."
+  - "Long context above 128k was probed via KV arithmetic, not stress-tested to completion under load."
+  - "Not compared against multi-GPU serving; the question was whether one Spark suffices, not whether it is optimal."
+  - "The +2.3% Marlin and +223% TTFT figures come from an earlier flag round on the same model and are not directly comparable to the final configuration."
+
+related:
+  article: "https://docai.hu/blog/qwen35-122b-spark"
+  experiments: [35b-vs-122b-business-tasks, mtp-speculative-decoding-gb10, moe-backend-selection-gb10]

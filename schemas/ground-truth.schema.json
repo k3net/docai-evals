@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docai.hu/schemas/docai-evals/ground-truth.schema.json",
+  "title": "KIE ground truth",
+  "description": "Human-validated expected extraction output for one document. The prediction format is identical, which is what makes field-level comparison possible.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["fields"],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Provenance of the sample. Real-corpus documents are never published; synthetic samples set synthetic: true.",
+      "properties": {
+        "id": { "type": "string" },
+        "doctype": { "type": "string" },
+        "language": { "type": "string" },
+        "synthetic": { "type": "boolean", "default": false },
+        "notes": { "type": "string" }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "description": "Field name to value object. A field that is genuinely absent from the document must be present here with value null — that is what makes a hallucinated value scoreable as a false positive.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["value"],
+        "properties": {
+          "value": {
+            "description": "Expected value. null means 'not present in the document'.",
+            "type": ["string", "number", "boolean", "array", "object", "null"]
+          },
+          "type": {
+            "type": "string",
+            "enum": ["string_strict", "string_loose", "number_strict", "date_iso", "score", "enum", "array_object"],
+            "description": "Comparison rule. See evals/hu-invoice-kie/field-types.md."
+          },
+          "required": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether this field is weighted into the required-only aggregate."
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Present in model output; in ground truth it is informational only and never scored."
+          },
+          "alternatives": {
+            "type": "array",
+            "items": { "type": ["string", "number"] },
+            "description": "Equally acceptable values, e.g. a Hungarian tax number in both national and EU VAT form."
+          },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

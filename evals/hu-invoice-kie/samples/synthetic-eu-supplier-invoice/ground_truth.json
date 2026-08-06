@@ -1,0 +1,79 @@
+{
+  "document": {
+    "id": "synthetic-eu-supplier-invoice",
+    "doctype": "incoming-invoice",
+    "language": "en",
+    "synthetic": true,
+    "notes": "EU supplier invoice with reverse charge and no stated payment deadline. Exercises: null as the correct answer, EU VAT number format, foreign currency, 0.0 VAT that is stated rather than absent, and a foreign partner whose name shares no tokens with our own."
+  },
+  "fields": {
+    "invoice_number": { "value": "INV-2026-0042", "type": "string_strict", "required": true },
+    "invoice_date": { "value": "2026-04-02", "type": "date_iso", "required": true, "note": "Written DD/MM/YYYY on the document; normalised to ISO before comparison." },
+    "delivery_date": { "value": "2026-03-31", "type": "date_iso" },
+    "payment_date": {
+      "value": null,
+      "type": "date_iso",
+      "note": "No deadline is stated. null is the correct answer — deriving one from the invoice date is a hallucination and scores as a false positive."
+    },
+    "payment_method": { "value": "TRANSFER", "type": "enum" },
+    "currency": { "value": "EUR", "type": "enum", "required": true },
+    "language": { "value": "en", "type": "enum" },
+
+    "partner_name": { "value": "Muster Cloud Services GmbH", "type": "string_loose", "required": true },
+    "partner_taxnumber": {
+      "value": "DE812345678",
+      "type": "string_strict",
+      "required": true,
+      "note": "EU VAT format. Not interchangeable with a Hungarian national tax number — different string, different downstream matcher."
+    },
+    "partner_address": { "value": "Beispielstraße 7, 10115 Berlin, Germany", "type": "string_loose" },
+    "partner_bank_account": { "value": "DE00123456789012345600", "type": "string_strict", "note": "IBAN, whitespace removed." },
+    "partner_person_name": { "value": null, "type": "string_strict" },
+
+    "own_name_score": { "value": 1.0, "type": "score" },
+    "own_taxnumber_score": {
+      "value": 1.0,
+      "type": "score",
+      "note": "Our own tax number appears in EU VAT form (HU87654321) rather than national form. Recognising it still counts."
+    },
+    "own_address_score": { "value": 1.0, "type": "score" },
+
+    "total_net_amount": { "value": 380.0, "type": "number_strict", "required": true },
+    "total_vat_amount": {
+      "value": 0.0,
+      "type": "number_strict",
+      "required": true,
+      "note": "Stated as 0.00 under reverse charge — 0.0, not null."
+    },
+    "total_gross_amount": { "value": 380.0, "type": "number_strict", "required": true },
+
+    "basenumber": { "value": null, "type": "string_strict" },
+
+    "invoice_items": {
+      "type": "array_object",
+      "required": true,
+      "value": [
+        {
+          "name": "Managed hosting",
+          "quantity": 1.0,
+          "unit": null,
+          "unit_price": 320.0,
+          "line_netto_total": 320.0,
+          "line_vat_total": 0.0,
+          "vat_percentage": 0.0,
+          "source_text": "Managed hosting, April 2026   1   320.00 EUR   320.00 EUR"
+        },
+        {
+          "name": "Object storage",
+          "quantity": 1.5,
+          "unit": "TB",
+          "unit_price": 40.0,
+          "line_netto_total": 60.0,
+          "line_vat_total": 0.0,
+          "vat_percentage": 0.0,
+          "source_text": "Object storage, 1.5 TB   1.5   40.00 EUR   60.00 EUR"
+        }
+      ]
+    }
+  }
+}

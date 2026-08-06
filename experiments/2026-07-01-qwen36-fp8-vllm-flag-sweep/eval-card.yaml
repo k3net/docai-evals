@@ -1,0 +1,104 @@
+id: qwen36-fp8-vllm-flag-sweep
+version: "1.0"
+date: 2026-07-01
+title: "Vendor agent-ready recipe flags on an FP8 MoE — a sweep that changed nothing"
+question: >-
+  Do the serving flags from a published vendor recipe improve our FP8 MoE production baseline on
+  DGX Spark GB10?
+
+task:
+  type: inference-performance
+  language: [hu, en]
+
+dataset:
+  name: performance workloads
+  size:
+    single_stream_workloads: 6
+    concurrent_mixes: 2
+    concurrency: 8
+    duration_s_per_mix: 60
+  access: public
+  ground_truth: "not applicable — serving measurement"
+  notes: "Workload definitions published in performance/workloads.md."
+
+systems:
+  - label: v0_baseline
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":2}"]
+  - label: v1_flashinfer
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--attention-backend flashinfer"]
+  - label: v2_async
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--attention-backend flashinfer", "--async-scheduling"]
+  - label: v3_spec3
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":3}"]
+
+metrics:
+  - name: aggregate_throughput_c8
+    definition: "total output tok/s across 8 concurrent streams over a 60s window"
+    primary: true
+  - name: single_stream_decode_tok_s
+    definition: "steady-state decode rate per workload"
+  - name: speculative_acceptance
+    definition: "share of drafted tokens accepted, from the engine metrics endpoint"
+
+decision_rule: >-
+  Adopt a flag only if aggregate throughput at c=8 improves materially AND the boot log shows no
+  kernel fallback warnings on sm_121a.
+
+results:
+  v1_flashinfer: { aggregate_throughput_delta_pct: -2.2, single_stream: "neutral", verdict: rejected }
+  v2_async: { aggregate_throughput_delta_pct: -2.4, single_stream: "neutral", verdict: rejected }
+  v3_spec3:
+    aggregate_throughput_delta_pct: -3.6
+    single_stream_avg_delta_pct: 8.9
+    acceptance_overall: { draft2: 0.706, draft3: 0.612 }
+    per_workload_delta_pct:
+      json_extraction: 19
+      long_rag_32k: 17
+      code: 13
+      qa_short_chat: -9
+      hungarian_short_chat: -3
+    per_workload_acceptance:
+      json_extraction: { draft2: 0.995, draft3: 0.983 }
+      qa_short_chat: { draft2: 0.646, draft3: 0.438 }
+      hungarian_short_chat: { draft2: 0.582, draft3: 0.432 }
+    verdict: "rejected — mixed profile; gains only on high-acceptance workloads"
+
+verdict: >-
+  Keep the production baseline. No flag from the recipe improved aggregate throughput; the draft
+  length increase is a genuine trade-off that only pays on high-acceptance workloads, and our
+  production model serves both chat and extraction.
+
+reproducibility:
+  level: R3
+  code: internal
+  data: public
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "n=1 per variant; each arm is a ~20-minute cold boot. Individual deltas of 2-4% sit near the noise floor — the robust finding is that no arm was positive."
+  - "Concurrency 8 was the primary metric and turned out to be the wrong operating point: production peaks at 3. The rejections stand, but the draft-length reasoning deserved a low-concurrency crossover sweep that was not run."
+  - "Single engine build; the async-scheduling result was re-measured later on a newer build where it had become the upstream default."
+  - "Says nothing about whether the recipe works on the hardware and quantisation it was written for."
+  - "Three flags were deliberately excluded (4-bit + Marlin, fastsafetensors, alternative tool-call parser) for reasons stated in the README."
+
+related:
+  background_article: "https://docai.hu/blog/vllm-gb10-tuning"
+  experiments: [vllm-prod-config-tuning-gb10, mtp-speculative-decoding-gb10, qwen36-fp8-vs-nvfp4-quality]

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docai.hu/schemas/docai-evals/chat-scenario.schema.json",
+  "title": "Chat eval scenario",
+  "description": "One chat evaluation scenario: a user question plus the expected agent behaviour and the rubric an LLM judge scores the answer against.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "category", "question", "expected"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Filesystem-friendly slug. Convention: <three-digit number>-<short description>."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["tool_calling", "reasoning", "summarization", "no_tool", "edge"],
+      "description": "edge covers adversarial cases: non-existent entities, future dates, unanswerable questions."
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The user's question, as they would type it into chat."
+    },
+    "validity_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Which state of the underlying corpus the scenario was validated against — used to detect drift."
+    },
+    "skip": { "type": "boolean", "default": false },
+    "context_override": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Overrides the runner's default context (current date, organisation, user role). Only for scenarios that assume a specific point in time or role."
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tools_must_call": {
+          "type": "array",
+          "description": "Tools the agent must call. Order is irrelevant; repetition is allowed.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "args_must_contain": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Key-value pairs that must all appear in the call arguments (loose sub-match)."
+              },
+              "args_must_not_contain": { "type": "object", "additionalProperties": true },
+              "min_call_count": { "type": "integer", "minimum": 1, "default": 1 }
+            }
+          }
+        },
+        "tools_must_not_call": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Calling any of these fails the scenario — the usual case is a tool that would leak scope or send something outward."
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Agent-loop iteration ceiling. Exceeding it is a failure, not a timeout."
+        },
+        "min_judge_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Minimum LLM-judge score (0-5) for a pass."
+        },
+        "must_state_no_data": {
+          "type": "boolean",
+          "description": "For edge scenarios: the correct answer is an explicit statement that the data is unavailable."
+        }
+      }
+    },
+    "judge_rubric": {
+      "type": "string",
+      "description": "What counts as correct, written out. Explicit FAIL conditions belong here — a rubric that only describes success scores generously."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Known failure modes, dependencies on product features, and anything a future reader needs in order not to misread a red result."
+    }
+  }
+}

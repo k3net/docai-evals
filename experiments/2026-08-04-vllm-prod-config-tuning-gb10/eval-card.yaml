@@ -1,0 +1,129 @@
+id: vllm-prod-config-tuning-gb10
+version: "1.0"
+date: 2026-08-04
+title: "Six proposed measurements, two worth running — production serving config on GB10"
+question: >-
+  Two nodes serving the same model had drifted to different configurations. Which of the six
+  differing parameters actually affect performance under our production load?
+
+task:
+  type: inference-performance
+  language: [hu, en]
+
+dataset:
+  name: performance workloads + 30 days of production telemetry
+  size:
+    single_stream_workloads: 6
+    concurrency: 4
+    telemetry_days: 30
+    telemetry_requests: 2520
+  access: public
+  ground_truth: "not applicable — serving measurement"
+  notes: >-
+    Production telemetry: max 3 concurrent requests, 0.000% of time above 8, prompt tokens p95
+    19359 / p99 37036, TTFT p50 0.99s / p95 4.95s, prefix-cache hit rate 1.6%.
+
+systems:
+  - label: A-chunk8192-async-on
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.19.2rc1.dev134"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--max-model-len 245760", "--gpu-memory-utilization 0.5", "--max-num-seqs 8", "--max-num-batched-tokens 8192", "mtp draft=2"]
+  - label: B-chunk16384
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.19.2rc1.dev134"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--max-num-batched-tokens 16384"]
+  - label: C-async-off
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.19.2rc1.dev134"
+    hardware: DGX Spark GB10 (sm_121a)
+    flags: ["--no-async-scheduling"]
+  - label: D-older-engine
+    role: reference
+    model: Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.19.1rc1.dev231 (the production build, rebuilt from its pinned base digest)"
+    hardware: DGX Spark GB10 (sm_121a)
+
+metrics:
+  - name: ttft
+    definition: "time to first token, per workload — the user-facing metric at this load profile"
+    primary: true
+  - name: aggregate_throughput_c4
+  - name: single_stream_decode_tok_s
+  - name: speculative_acceptance
+  - name: kv_cache_tokens
+    definition: "KV pool size read deterministically from the boot log"
+
+decision_rule: >-
+  If the TTFT gain is under 5%, keep the current value. Adopt only at 10% or more on p95.
+
+results:
+  eliminated_without_measurement:
+    speculative_method_name: "both names resolve to the same implementation in the engine log — nothing to A/B"
+    max_num_seqs_8_vs_32: "0.000% of time above 8 concurrent requests over 30 days"
+    gpu_memory_utilization: "capacity decision: KV pool 323k vs 504k tokens vs ~111k demand"
+    max_model_len: "functional, not performance: a 131072 ceiling rejects longer requests outright"
+  chunk_size_8192_vs_16384:
+    single_decode: { a: 62.16, b: 62.07, delta_pct: -0.1 }
+    extraction_decode: { a: 71.60, b: 71.35, delta_pct: -0.3 }
+    avg_ttft_s: { a: 0.803, b: 0.812, delta_pct: 1.1 }
+    aggregate_c4: { a: 149.51, b: 145.50, delta_pct: -2.7 }
+    ttft_by_workload_s:
+      qa: { a: 0.120, b: 0.122 }
+      json: { a: 0.189, b: 0.191 }
+      hungarian: { a: 0.136, b: 0.136 }
+      long_rag: { a: 0.527, b: 0.536 }
+      long_rag_32k: { a: 1.121, b: 1.150 }
+      long_rag_128k: { a: 2.728, b: 2.736 }
+    verdict: "keep 8192 — the larger chunk loses on all six workloads"
+  async_scheduling:
+    avg_ttft_s: { on: 0.803, off: 0.763, delta_pct: -5.0 }
+    aggregate_c4: { on: 149.51, off: 149.66, delta_pct: 0.1 }
+    single_decode: { on: 62.16, off: 61.25, delta_pct: -1.5 }
+    acceptance: { on: 0.723, off: 0.727 }
+    ttft_by_workload_delta_pct:
+      qa: -28
+      hungarian: -27
+      json: -18
+      long_rag: -6.8
+      long_rag_32k: -3.7
+      long_rag_128k: -2.2
+    verdict: "off — same direction on 6 of 6 workloads; must be set explicitly since it became the upstream default"
+  capacity:
+    chosen_profile: { max_model_len: 245760, gpu_util: 0.5, kv_tokens: 491568, concurrency_at_full_context: 7.24 }
+    boot_time_min: 8.5
+    note: "a real 158924-token request completes at 2.73s TTFT and would have been rejected by the old 131072 ceiling"
+  engine_rebuild_cost:
+    single_decode: { old: 60.86, new: 61.25, delta_pct: 0.6 }
+    extraction_decode: { old: 69.92, new: 70.62, delta_pct: 1.0 }
+    avg_ttft_s: { old: 0.764, new: 0.763, delta_pct: -0.1 }
+    aggregate_c4: { old: 148.65, new: 149.66, delta_pct: 0.7 }
+    acceptance: { old: 0.725, new: 0.727 }
+    verdict: "three months of engine development is performance-neutral here (within ±1%); the real risk is a moving base image tag, not the version"
+
+verdict: >-
+  One unified serving profile written into version control: 8192 prefill chunk, async scheduling
+  explicitly off, 0.5 memory utilisation, max-num-seqs 8, full-length context, speculative decoding
+  at draft 2. Applied by a planned restart rather than left to the next power cut.
+
+reproducibility:
+  level: R3
+  code: internal
+  data: public
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "n=1 per variant. The TTFT direction agrees on 6 of 6 workloads, which is why we trust it; the 1-4% decode differences are within noise and carry no conclusion."
+  - "One node, one model — specific to this checkpoint on GB10."
+  - "Telemetry is 30 days from one production tenant; several 'irrelevant' verdicts are conditional on that load profile."
+  - "Eliminated parameters were eliminated on evidence rather than measured — if the load changes, max-num-seqs and memory utilisation return."
+  - "The chunk-size result may be specific to this GPU's prefill saturation point; on hardware where 8192 does not saturate prefill, the larger chunk plausibly wins."
+
+related:
+  background_article: "https://docai.hu/blog/vllm-gb10-tuning"
+  experiments: [qwen36-fp8-vllm-flag-sweep, mtp-speculative-decoding-gb10]

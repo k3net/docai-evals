@@ -1,0 +1,17 @@
+{
+  "id": "603-customer-concentration-risk",
+  "category": "reasoning",
+  "question": "Mekkora a vevői koncentrációs kockázatunk? Mutasd meg, hogy az elmúlt 12 hónap árbevételéből mekkora részt adnak a legnagyobb vevők, és jelezd, ha egyetlen partner aránya olyan magas, hogy a kiesése érdemben veszélyeztetné a működést.",
+  "validity_date": "2026-05-22",
+  "expected": {
+    "tools_must_call": [
+      { "name": "invoice_summary", "args_must_contain": { "direction": "outgoing" } },
+      { "name": "partner_ranking", "min_call_count": 1 }
+    ],
+    "tools_must_not_call": ["send_email", "create_document"],
+    "max_iterations": 8,
+    "min_judge_score": 3.0
+  },
+  "judge_rubric": "Correct if: (1) revenue is aggregated per partner over a 12-month window from outgoing invoices; (2) each top partner's share is given as a percentage of total revenue; (3) the answer states a concentration threshold it is judging against and applies it consistently; (4) it names the specific partners driving the concentration; (5) it states whether the risk is material and why. FAIL: an unranked list of partners with amounts but no shares. FAIL: a percentage that does not follow from the retrieved figures. Bonus: notes a trend, i.e. whether concentration rose or fell versus the previous period.",
+  "notes": "This scenario separates aggregation-capable models from ones that retrieve and narrate. Common failure: correct amounts, arithmetic that does not add up to 100%. Larger models in our comparison reached the same conclusion with roughly a third of the tool calls — efficiency, not just accuracy, is worth recording here."
+}

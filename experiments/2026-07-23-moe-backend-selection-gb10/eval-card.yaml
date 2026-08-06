@@ -1,0 +1,111 @@
+id: moe-backend-selection-gb10
+version: "1.0"
+date: 2026-07-23
+title: "Which MoE kernel backend wins on GB10 — and why the vendor recommendation lost"
+question: >-
+  For mixture-of-experts serving on DGX Spark GB10, which kernel backend is fastest — the
+  checkpoint publisher's FlashInfer recommendation or the GPU vendor's Marlin path? And what is the
+  incumbent FP8 model's own optimum?
+
+task:
+  type: inference-performance
+  language: [hu, en]
+
+dataset:
+  name: performance workloads
+  size:
+    concurrency_levels: [1, 2, 4, 8, 16]
+    duration_s_per_mix: 60
+  access: public
+  ground_truth: "not applicable — serving measurement"
+
+systems:
+  - label: nvfp4-flashinfer
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (most aggressive checkpoint)"
+    quantisation: NVFP4
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "FlashInfer b12x MoE (publisher-recommended)"
+  - label: nvfp4-marlin
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4 (same checkpoints)"
+    quantisation: NVFP4
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: marlin
+  - label: fp8-backend-sweep
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: "block-scaled FP8"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "all five selectable MoE backends plus the default"
+    flags: ["--speculative-config draft=2 with moe_backend triton for the draft head", "VLLM_USE_DEEP_GEMM=0"]
+
+metrics:
+  - name: aggregate_throughput_c8
+    definition: "total output tok/s across 8 concurrent streams"
+    primary: true
+  - name: throughput_vs_concurrency
+    definition: "sustained aggregate throughput at c = 1, 2, 4, 8, 16"
+    primary: true
+  - name: run_to_run_variance
+    definition: "spread of the same measurement across clean repeat sweeps"
+
+results:
+  nvfp4_backend_comparison_c8:
+    flashinfer: 84.8
+    marlin: 282.4
+    ratio: 3.3
+    reproduced: "84.85 / 84.89 across two runs"
+  concurrency_sweep:
+    note: "max-num-seqs 16 — comparable only within this table"
+    c1: { flashinfer: 35.3, marlin: 70.6, ratio: 2.0 }
+    c2: { flashinfer: 53.3, marlin: 114.1, ratio: 2.1 }
+    c4: { flashinfer: 67.8, marlin: 178.8, ratio: 2.6 }
+    c8: { flashinfer: 86.2, marlin: 283.0, ratio: 3.3 }
+    c16: { flashinfer: 149.7, marlin: 383.9, ratio: 2.6 }
+    crossover_point: none
+  cliff_hypothesis:
+    tested: "grep for autotuner cliff / tactic fallback markers in both backends' logs"
+    hits: 0
+    conclusion: "no autotuner cliff — the kernel is simply slower on this architecture"
+  stability:
+    flashinfer: "~2x run-to-run variance (44 vs 86 tok/s at c=8 across two clean sweeps)"
+    marlin: "stable (276 vs 283)"
+  fp8_backend_sweep:
+    triton: { uniform: 256.1, mixed: 271.2, status: "best working" }
+    marlin: { uniform: 232.0, mixed: 232.6, status: "works, -9%" }
+    cutlass: { status: "fails — disabled for this configuration" }
+    flashinfer_cutlass: { status: "fails — block-FP8 scheme (GroupShape 128x128) unsupported" }
+    flashinfer_trtllm: { status: "fails — kernel does not support current device" }
+    deep_gemm: { status: "fails — assert-crash on sm_121a" }
+  best_vs_best:
+    fp8_optimum: "triton, 256.1 aggregate / 68.3 single JSON"
+    nvfp4_optimum: "marlin, 359.4 aggregate / 115.7 single JSON"
+    delta: "+40% aggregate, +69% single-stream extraction"
+
+verdict: >-
+  Marlin for 4-bit MoE on GB10, by 2.0-3.3x at every concurrency level, against the checkpoint
+  publisher's explicit recommendation. Triton remains the optimum for the block-scaled FP8
+  production model — only two of six backends load at all for that scheme. Kernel choice is
+  per-quantisation, not per-machine.
+
+reproducibility:
+  level: R3
+  code: internal
+  data: public
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "n=1 per configuration except where variance was explicitly investigated; the 3.3x gap is far outside plausible noise, the 9% FP8 Marlin-vs-Triton difference is closer to it."
+  - "The concurrency sweep used max-num-seqs 16 while the main matrix used 8 — those rows compare only with each other."
+  - "Single engine version: every failing backend is a statement about one build, not a permanent property. Kernel support on sm_121a is actively changing."
+  - "The mixed concurrent workload is unstable (CV 8.1%) and carries no conclusion here."
+  - "Nothing transfers to data-centre Blackwell parts — that is the finding, not a caveat."
+
+related:
+  article: "https://docai.hu/blog/backend-valasztas-gb10"
+  experiments: [qwen36-fp8-vs-nvfp4-quality, invoice-counterparty-role, mtp-speculative-decoding-gb10]

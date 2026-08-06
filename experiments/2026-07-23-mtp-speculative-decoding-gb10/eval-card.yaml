@@ -1,0 +1,113 @@
+id: mtp-speculative-decoding-gb10
+version: "1.0"
+date: 2026-07-23
+title: "Speculative decoding on GB10 — the cheapest real speed-up we found"
+question: >-
+  Does multi-token prediction pay on DGX Spark GB10, what draft length should we run, and how does
+  it interact with weight quantisation on a bandwidth-bound machine?
+
+task:
+  type: inference-performance
+  language: [hu, en]
+
+dataset:
+  name: performance workloads
+  size:
+    single_stream_workloads: 6
+    concurrency_levels: [8, 16]
+    rounds: 3
+  access: public
+  ground_truth: "not applicable — serving measurement"
+  notes: >-
+    Consolidates three measurement rounds between 2026-05 and 2026-08. Rounds differ in model,
+    engine build and date; each delta is valid within its round.
+
+systems:
+  - label: fp8-35b
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: "block-scaled FP8; draft head quantised to FP8 (775 tensors, 797 MiB)"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: triton
+    flags: ["--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":2}"]
+  - label: nvfp4-35b
+    role: candidate
+    model: "Qwen3.6-35B-A3B NVFP4"
+    quantisation: "NVFP4 main; draft head left BF16"
+    engine: "vLLM v0.24.0 container"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "marlin main + triton draft"
+  - label: nvfp4-122b
+    role: candidate
+    model: "Qwen3.5-122B-A10B-NVFP4"
+    quantisation: "NVFP4 main; BF16 draft head shipped in extra weights"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "auto-oracle: CUTLASS main + Triton draft"
+
+metrics:
+  - name: decode_tok_s
+    definition: "single-stream steady-state output tokens per second"
+    primary: true
+  - name: speculative_acceptance
+    definition: "share of drafted tokens accepted, read from the engine metrics endpoint"
+    primary: true
+  - name: aggregate_throughput
+    definition: "total tok/s across concurrent streams"
+  - name: ttft
+    definition: "time to first token — the cost side of speculative decoding"
+
+results:
+  gain_vs_off:
+    fp8_35b: { single_json: "53.6 -> 68.3 (+27%)", aggregate_c8: "235.2 -> 256.1 (+9%)", acceptance: "~71%" }
+    nvfp4_35b: { single_json: "78.2 -> 115.7 (+48%)", aggregate_c8: "277.5 -> 359.4 (+30%)", acceptance: "73-75%" }
+    nvfp4_122b: { average_decode_gain_pct: 55, ttft_cost_pct: [31, 156] }
+  acceptance_by_workload_122b:
+    json_extraction: { gain_pct: 78, acceptance: 1.00 }
+    long_rag_8k: { gain_pct: 61, acceptance: 0.825 }
+    qa: { gain_pct: 46, acceptance: 0.712 }
+    hungarian_chat: { gain_pct: 34, acceptance: 0.608 }
+  draft_length_2_vs_3:
+    json_extraction: { delta_pct: 19, acceptance: "0.995 -> 0.983" }
+    long_rag_32k: { delta_pct: 17 }
+    qa: { delta_pct: -9, acceptance: "0.646 -> 0.438" }
+    hungarian_chat: { delta_pct: -3, acceptance: "0.582 -> 0.432" }
+    aggregate_c8: { delta_pct: -3.6, acceptance: "0.706 -> 0.612" }
+  production_config_35b_fp8:
+    source_experiment: "qwen36-mtp-ab-gb10 (2026-04-18, R2)"
+    single_stream_pct: 8.7
+    chat_pct: 5.0
+    concurrent_16: { throughput_pct: 24.2, ttft_pct: -56.7 }
+    prefill_bound: { throughput_pct: -7.2, tpot_pct: 30.7 }
+    acceptance: { overall: 0.7253, draft_position_0: 0.8157, draft_position_1: 0.6348 }
+  mechanism:
+    finding: >-
+      The 4-bit models achieve HIGHER acceptance than the FP8 model because all three 4-bit
+      checkpoints leave the draft head at BF16 while the FP8 checkpoint quantises its draft experts.
+      A full-precision draft predicts better. This is a checkpoint-construction asymmetry, not an
+      effect of main-model precision.
+
+verdict: >-
+  Speculative decoding on, draft length 2, on every model. Gains on every configuration measured
+  (+9% to +55%), larger at 4 bits because the verify pass is cheaper on a bandwidth-bound machine.
+  Draft length 3 only pays on high-acceptance workloads and loses 3.6% aggregate on a mixed profile.
+
+reproducibility:
+  level: R3
+  code: internal
+  data: public
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "Three rounds with different models, engine builds and dates — deltas are valid within a round; only the like-for-like within-round comparison supports the 4-bit-vs-FP8 claim."
+  - "n=1 per variant in rounds A and B; n=3 for the 122B workloads."
+  - "The production-configuration figures come from a separate experiment (qwen36-mtp-ab-gb10, 2026-04-18) with n=1 on single-decode and n=2 elsewhere."
+  - "Acceptance is reported as an average; position-wise acceptance (81.6% at the first draft position vs 72.5% overall) shows a spread the single number hides."
+  - "The 16-concurrent scenario is a stress test, not our operating point (production peaks at 3)."
+  - "Speculative decoding is a decode-phase optimisation — on prefill-bound workloads it costs 7.2% throughput and 30.7% TPOT."
+
+related:
+  article: "https://docai.hu/blog/qwen36-mtp-gb10"
+  experiments: [qwen36-mtp-ab-gb10, qwen36-fp8-vllm-flag-sweep, moe-backend-selection-gb10, qwen35-122b-nvfp4-bringup-gb10, vllm-prod-config-tuning-gb10]

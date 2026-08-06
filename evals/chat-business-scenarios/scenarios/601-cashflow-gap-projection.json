@@ -1,0 +1,18 @@
+{
+  "id": "601-cashflow-gap-projection",
+  "category": "reasoning",
+  "question": "Az elkövetkező 60 napban várható-e likviditási gap? Vedd számba a jelenleg nyitott kintlévőségeket (esedékesség szerint, figyelembe véve a vevők késedelmi mintáját), a nyitott szállítói tartozásokat fizetési határidővel, és az ismétlődő fix költségek havi átlagát. Adj heti bontást, jelezd ha bármely héten negatív egyenleg várható, és javasold melyik tétel halasztható a gap elkerüléséhez.",
+  "validity_date": "2026-05-22",
+  "expected": {
+    "tools_must_call": [
+      { "name": "outstanding_receivables", "args_must_contain": { "direction": "outgoing" } },
+      { "name": "outstanding_receivables", "args_must_contain": { "direction": "incoming" } },
+      { "name": "invoice_summary", "min_call_count": 1 },
+      { "name": "cashflow_forecast", "min_call_count": 1 }
+    ],
+    "max_iterations": 12,
+    "min_judge_score": 3.0
+  },
+  "judge_rubric": "Correct if: (1) open receivables are retrieved for the outgoing direction; (2) open payables are retrieved for the incoming direction — as payables, not proxied through a generic invoice search; (3) recurring fixed costs are estimated from a monthly-interval summary; (4) the answer gives a WEEKLY breakdown, not monthly or aggregate; (5) expected balances are given as concrete amounts in HUF; (6) if a gap exists, the answer names which week and how large; (7) a specific, actionable item is proposed for deferral; (8) forecast figures are used for future periods AND are labelled as model estimates rather than mixed into actuals. FAIL: general prose about 'tight cash flow' without concrete amounts. FAIL: listing data without a conclusion. Point deduction: forecast presented as fact without an estimate label.",
+  "notes": "Multi-step temporal reasoning — the hardest category in this suite. Typical smaller-model failures: gives a monthly instead of weekly breakdown, forgets fixed costs entirely, or ends without an actionable recommendation. This scenario is only green once a forecasting tool exists in the catalogue; on an environment without one, the tool check fails by design and that is not a regression."
+}

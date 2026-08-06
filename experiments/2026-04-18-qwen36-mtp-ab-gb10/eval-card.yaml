@@ -1,0 +1,115 @@
+id: qwen36-mtp-ab-gb10
+version: "1.0"
+date: 2026-04-18
+title: "Speculative decoding A/B on the production model — where MTP wins and where it costs"
+question: >-
+  Should multi-token prediction be enabled on the production model, and what does it cost on
+  prefill-bound document extraction?
+
+task:
+  type: inference-performance
+  language: [en]
+
+dataset:
+  name: synthetic bench-serve workloads
+  size:
+    tests: 4
+    prompts_per_test: [20, 20, 64, 16]
+    seeds_per_test: [1, 2, 2, 2]
+    warmups: 3
+  access: public
+  ground_truth: "not applicable — serving measurement"
+  notes: >-
+    Random fixed-length prompts via the engine's own bench-serve harness; no customer data.
+    --ignore-eos forces exact output lengths so runs are comparable.
+
+systems:
+  - label: phase8
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM (nightly build, digest recorded per run)
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "FlashInfer attention + Triton FP8 MoE"
+    flags:
+      - "--max-model-len 131072"
+      - "--kv-cache-dtype fp8_e4m3"
+      - "--enable-prefix-caching"
+      - "no speculative decoding"
+  - label: phase8-mtp
+    role: candidate
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM (same build)
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "FlashInfer attention + Triton FP8 MoE"
+    flags:
+      - "--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":2}"
+
+metrics:
+  - name: output_throughput
+    definition: "output tokens per second, mean over seeds"
+    primary: true
+  - name: mean_ttft_ms
+    definition: "time to first token, mean over requests and seeds"
+    primary: true
+  - name: mean_tpot_ms
+    definition: "time per output token"
+  - name: speculative_acceptance
+    definition: "accepted draft tokens / drafted tokens, from the engine metrics endpoint"
+    primary: true
+
+results:
+  workloads:
+    A_single_decode:
+      config: { input: 512, output: 512, concurrency: 1, prompts: 20 }
+      off: { tok_s: 50.51, mean_ttft_ms: 199.67, mean_tpot_ms: 19.45 }
+      mtp2: { tok_s: 54.92, mean_ttft_ms: 216.26, mean_tpot_ms: 17.82 }
+      delta_pct: { throughput: 8.7, ttft: 8.3, tpot: -8.4 }
+    B_prefill_bound:
+      config: { input: 8192, output: 256, concurrency: 4, prompts: 20, seeds: 2 }
+      off: { tok_s: 73.98, mean_ttft_ms: 4742.17, mean_tpot_ms: 35.67 }
+      mtp2: { tok_s: 68.68, mean_ttft_ms: 2892.19, mean_tpot_ms: 46.63 }
+      delta_pct: { throughput: -7.2, ttft: -39.0, tpot: 30.7 }
+    C_concurrent_16:
+      config: { input: 2048, output: 512, concurrency: 16, prompts: 64, seeds: 2 }
+      off: { tok_s: 214.28, mean_ttft_ms: 3978.90, mean_tpot_ms: 67.03 }
+      mtp2: { tok_s: 266.24, mean_ttft_ms: 1721.19, mean_tpot_ms: 55.58 }
+      delta_pct: { throughput: 24.2, ttft: -56.7, tpot: -17.1 }
+    D_chat_profile:
+      config: { concurrency: 2, prompts: 16, seeds: 2 }
+      off: { tok_s: 73.88, mean_ttft_ms: 718.07, mean_tpot_ms: 24.36 }
+      mtp2: { tok_s: 77.60, mean_ttft_ms: 502.27, mean_tpot_ms: 23.53 }
+      delta_pct: { throughput: 5.0, ttft: -30.1, tpot: -3.4 }
+  acceptance:
+    drafts: 41568
+    draft_tokens: 83136
+    accepted_tokens: 60298
+    overall: 0.7253
+    position_0: 0.8157
+    position_1: 0.6348
+    accepted_per_draft: 1.451
+
+verdict: >-
+  Enable MTP at draft length 2. The gain is largest exactly where the textbook says it should be
+  smallest — under contention (+24.2% throughput, -56.7% TTFT), because accepted draft tokens do
+  not consume scheduler slots. The one real cost is prefill-bound extraction work: -7.2% throughput
+  and +30.7% TPOT.
+
+reproducibility:
+  level: R2
+  code: published
+  data: public
+  results: aggregated
+  runs_per_variant: 2
+
+limitations:
+  - "n=1 for test A, n=2 for the rest; individual percentages carry an unquantified run-to-run uncertainty, though all four tests agree with the proposed mechanism."
+  - "The concurrency-16 scenario is a stress test, not our operating point — production peaks at 3 concurrent requests. The decision-relevant rows are A (single) and D (chat)."
+  - "Synthetic fixed-length workloads, not real documents. Acceptance on real Hungarian invoice extraction is higher, so this figure is conservative for our mix."
+  - "One engine build, one day; speculative-decoding behaviour is engine-version sensitive."
+  - "--ignore-eos forces exact output lengths, which makes runs comparable but slightly unrealistic."
+
+related:
+  article: "https://docai.hu/blog/qwen36-mtp-gb10"
+  experiments: [mtp-speculative-decoding-gb10, qwen36-fp8-vllm-flag-sweep, moe-kernel-tuning-gb10]

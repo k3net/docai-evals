@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "DocAI Evals — reproducible evaluations for Hungarian document AI"
+message: "If you use these evaluations or results, please cite this repository."
+type: dataset
+authors:
+  - name: "K3Net Kft."
+    website: "https://k3.hu"
+    alias: "DocAI"
+abstract: >-
+  Evaluation methodology, scoring code, configurations and aggregated results behind the
+  DocAI engineering write-ups: Hungarian invoice key information extraction, business-critical
+  counterparty-role detection, model and quantisation comparisons, and vLLM inference
+  performance on NVIDIA DGX Spark (GB10, sm_121a).
+keywords:
+  - document-ai
+  - key-information-extraction
+  - hungarian
+  - invoice-processing
+  - llm-evaluation
+  - vllm
+  - dgx-spark
+  - gb10
+  - quantisation
+  - speculative-decoding
+url: "https://docai.hu"
+license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"

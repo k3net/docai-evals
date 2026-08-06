@@ -1,0 +1,61 @@
+{
+  "document": {
+    "id": "synthetic-hu-domestic-invoice",
+    "doctype": "incoming-invoice",
+    "language": "hu",
+    "synthetic": true,
+    "notes": "Domestic Hungarian invoice, 27% VAT, two line items. Our own company (Demó Kereskedelmi Zrt., 87654321-2-08) is the buyer; the partner is the supplier."
+  },
+  "fields": {
+    "invoice_number": { "value": "2026/A-00184", "type": "string_strict", "required": true },
+    "invoice_date": { "value": "2026-03-14", "type": "date_iso", "required": true },
+    "delivery_date": { "value": "2026-03-12", "type": "date_iso" },
+    "payment_date": { "value": "2026-03-28", "type": "date_iso" },
+    "payment_method": { "value": "TRANSFER", "type": "enum" },
+    "currency": { "value": "HUF", "type": "enum", "required": true },
+    "language": { "value": "hu", "type": "enum" },
+
+    "partner_name": { "value": "Példa Logisztika Kft.", "type": "string_loose", "required": true },
+    "partner_taxnumber": { "value": "12345678-2-42", "type": "string_strict", "required": true },
+    "partner_address": { "value": "1113 Budapest, Minta utca 12.", "type": "string_loose" },
+    "partner_bank_account": { "value": "10700024-00000000-11111111", "type": "string_strict" },
+    "partner_person_name": { "value": "Példa Anna", "type": "string_strict" },
+
+    "own_name_score": { "value": 1.0, "type": "score", "note": "The buyer block matches our own registered name." },
+    "own_taxnumber_score": { "value": 1.0, "type": "score" },
+    "own_address_score": { "value": 1.0, "type": "score" },
+
+    "total_net_amount": { "value": 80000.0, "type": "number_strict", "required": true },
+    "total_vat_amount": { "value": 21600.0, "type": "number_strict", "required": true },
+    "total_gross_amount": { "value": 101600.0, "type": "number_strict", "required": true },
+
+    "basenumber": { "value": null, "type": "string_strict", "note": "No corrected-invoice reference on this document." },
+
+    "invoice_items": {
+      "type": "array_object",
+      "required": true,
+      "value": [
+        {
+          "name": "Szállítási díj Budapest / Győr útvonalon",
+          "quantity": 2.0,
+          "unit": "db",
+          "unit_price": 25000.0,
+          "line_netto_total": 50000.0,
+          "line_vat_total": 13500.0,
+          "vat_percentage": 27.0,
+          "source_text": "Szállítási díj Budapest / Győr útvonalon   2 db   25 000 Ft   50 000 Ft"
+        },
+        {
+          "name": "Raktározási díj",
+          "quantity": 1.0,
+          "unit": "hó",
+          "unit_price": 30000.0,
+          "line_netto_total": 30000.0,
+          "line_vat_total": 8100.0,
+          "vat_percentage": 27.0,
+          "source_text": "Raktározási díj 2026. március   1 hó   30 000 Ft   30 000 Ft"
+        }
+      ]
+    }
+  }
+}

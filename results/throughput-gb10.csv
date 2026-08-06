@@ -1,0 +1,24 @@
+experiment,date,model,quantisation,backend,speculative_draft,single_qa_tok_s,single_json_kie_tok_s,aggregate_c8_uniform,aggregate_c8_mixed,notes
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,FP8,triton,0,53.2,53.6,235.2,209.5,
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,FP8,triton,2,56.6,68.3,256.1,271.2,"mixed column unstable — CV 8.1% over n=3"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 vendor toolkit,marlin,0,78.5,78.2,277.5,273.7,
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 vendor toolkit,marlin,2,90.5,115.7,359.4,342.3,"fastest configuration measured — quality gate failed separately"
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 most aggressive,marlin,2,76.8,103.9,338.0,324.8,
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 least aggressive,marlin,2,75.4,99.1,326.1,319.3,
+qwen36-fp8-vs-nvfp4-quality,2026-07-16,Qwen3.6-35B-A3B,NVFP4 least aggressive,auto,2,75.6,101.0,307.8,308.0,"auto-oracle mixes backends on this mixed-precision checkpoint"
+moe-backend-selection-gb10,2026-07-23,Qwen3.6-35B-A3B,NVFP4 most aggressive,flashinfer b12x,0,73.7,73.7,84.8,137.9,"publisher-recommended backend — 3.3x slower under concurrency, reproduced twice"
+moe-backend-selection-gb10,2026-07-23,Qwen3.6-35B-A3B,NVFP4 most aggressive,marlin,0,72.8,72.5,282.4,264.1,
+moe-backend-selection-gb10,2026-07-23,Qwen3.6-35B-A3B,FP8,marlin,2,,,232.0,232.6,"-9% vs triton — kernel choice is per-quantisation, not per-machine"
+moe-backend-selection-gb10,2026-07-23,Qwen3.6-35B-A3B,FP8,cutlass / flashinfer_cutlass / flashinfer_trtllm / deep_gemm,2,,,,,"all four fail to load on sm_121a — see experiment README"
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,auto (cutlass + triton draft),0,17.09,16.98,,,"KV cache FP8; 4.00x concurrency at 262k context"
+qwen35-122b-nvfp4-bringup-gb10,2026-05-22,Qwen3.5-122B-A10B,NVFP4,auto (cutlass + triton draft),2,25.02,30.25,,,"+55% average decode across four workloads"
+vllm-prod-config-tuning-gb10,2026-08-04,Qwen3.6-35B-A3B,FP8,triton,2,62.16,71.60,,,"c=4 aggregate 149.51; chunk 8192, async on"
+vllm-prod-config-tuning-gb10,2026-08-04,Qwen3.6-35B-A3B,FP8,triton,2,61.25,70.62,,,"c=4 aggregate 149.66; chunk 8192, async OFF — avg TTFT 0.763s vs 0.803s"
+moe-kernel-tuning-gb10,2026-04-13,Qwen3.5-35B-A3B,FP8,triton,2,48.92,,208.04,,"phase: baseline — production config, batched-tokens 32768, memory 0.50"
+moe-kernel-tuning-gb10,2026-04-14,Qwen3.5-35B-A3B,FP8,triton,2,49.76,,197.67,,"phase: image-updated — newer nightly + async ON: -5.0% concurrent, TTFT +45.6%"
+moe-kernel-tuning-gb10,2026-04-14,Qwen3.5-35B-A3B,FP8,triton,2,49.01,,204.39,,"phase: no-async — async scheduling off recovers most of the regression"
+moe-kernel-tuning-gb10,2026-04-14,Qwen3.5-35B-A3B,FP8,triton (autotuned),2,48.94,,204.46,,"phase: tuned — 6h of MoE kernel autotuning: +0.03% concurrent, -2.5% prefill"
+moe-kernel-tuning-gb10,2026-04-14,Qwen3.5-35B-A3B,FP8,triton,2,30.02,,,,"phase: eager — CUDA graphs off: -38.7% single decode"
+moe-kernel-tuning-gb10,2026-04-14,Qwen3.5-35B-A3B,FP8,triton,2,49.15,,207.91,,"phase: prod — batched-tokens 16384, async off, no tuned kernel; best TTFT of the series"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,triton,0,50.51,,214.28,,"c=16; prefill-bound 73.98 tok/s; chat 73.88 tok/s"
+qwen36-mtp-ab-gb10,2026-04-18,Qwen3.6-35B-A3B,FP8,triton,2,54.92,,266.24,,"c=16 (+24.2%, TTFT -56.7%); prefill-bound 68.68 (-7.2%); chat 77.60 (+5.0%)"

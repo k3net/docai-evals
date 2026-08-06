@@ -1,0 +1,100 @@
+id: 35b-vs-122b-business-tasks
+version: "1.0"
+date: 2026-05-22
+title: "When is a bigger model worth it? — 35B vs 122B on real business tasks"
+question: >-
+  A model four times larger and 2.5x slower is available. On which tasks is it actually better, and
+  can we afford it there?
+
+task:
+  type: chat-tool-use
+  document_types: [invoice, contract, bank-statement]
+  language: [hu, en]
+  output_format: strict-json
+
+dataset:
+  name: hu-invoice-kie + single-call tool scenarios + business reasoning scenarios
+  size:
+    kie_scored_units: 34
+    single_call_tool_scenarios: 10
+    reasoning_scenarios: 6
+    reasoning_scenarios_answerable: 3
+  access: private
+  ground_truth: >-
+    KIE: hand-corrected field-level ground truth. Tool scenarios: authored expectations with
+    per-scenario rubrics. Reasoning quality: single non-blinded human reviewer — objective
+    tool-call counts, subjective answer-quality verdict.
+
+systems:
+  - label: qwen36-35b-fp8
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, max_tokens: 8192, thinking: false }
+  - label: qwen35-122b-nvfp4
+    role: candidate
+    model: Qwen3.5-122B-A10B-NVFP4
+    quantisation: "4-bit packed main path + BF16 draft head"
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+  - label: qwen35-122b-fp8-dense
+    role: reference
+    model: "Qwen3.5-122B-A10B (dense FP8 variant)"
+    quantisation: FP8
+    engine: vLLM
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, max_tokens: 8192, thinking: false }
+
+metrics:
+  - name: tool_calls_per_pass
+    definition: "total tool calls divided by passing scenarios — how efficiently the agent plans retrieval"
+    primary: true
+  - name: overall_f1
+    definition: "field-level KIE F1, mismatch charged to both precision and recall"
+    primary: true
+  - name: scenario_pass_rate
+  - name: end_to_end_latency_s
+
+results:
+  extraction:
+    baseline_35b: { f1: 0.975, precision: 0.968, recall: 0.981, avg_latency_ms: 9158 }
+    candidate_122b_dense_fp8: { f1: 0.938, precision: 0.923, recall: 0.953, avg_latency_ms: 17879 }
+    reading: "no extraction argument for the larger model — worse and 2x slower"
+  single_call_tool_use:
+    baseline_35b: { pass: "9/10", total_latency_s: 41 }
+    candidate_122b: { pass: "9/10", total_latency_s: 246, latency_ratio: 6.0 }
+    reading: "indistinguishable on results; 6x the wall-clock"
+  multi_step_reasoning:
+    scenarios: 6
+    baseline_35b: { total_tool_calls: 108, tool_calls_per_pass: 8.0, total_latency_s: 360 }
+    candidate_122b: { total_tool_calls: 21, tool_calls_per_pass: 4.7, total_latency_s: 951, latency_ratio: 2.64 }
+    reviewer_verdict: "122B better or equal on 5 of 6"
+    concrete_quality_difference: "on a monthly spending-trend question the 35B computed the wrong growth rate"
+    worst_case_flailing: "one scenario consumed 67 tool calls on the 35B without converging"
+
+verdict: >-
+  Split by use case. The 35B keeps interactive chat, extraction and per-document work — it is
+  better at extraction and six times faster on simple tool use. The 122B takes scheduled multi-step
+  business analysis, where it reaches equal or better answers with ~5x fewer tool calls, and where
+  its 2.6x latency is affordable.
+
+reproducibility:
+  level: R3
+  code: partial
+  data: private
+  results: aggregated
+  runs_per_variant: 1
+
+limitations:
+  - "The reasoning quality verdict is a single non-blinded human review over 6 scenarios; only tool-call counts and latency are objective. Had the two signals disagreed, nothing could have adjudicated — a design flaw in the evaluation."
+  - "3 of the 6 reasoning scenarios failed for both models because the test corpus could not support them; the comparison effectively rests on 3 scenarios plus efficiency statistics."
+  - "The extraction arm used a dense FP8 variant of the large model, not the 4-bit MoE used for reasoning — read it as 'a much larger model is not better at this task', not as a per-checkpoint result."
+  - "n=1 per scenario; compound agent runs are not deterministic in tool count. 108 vs 21 survives that, a 5-vs-7 difference on a single scenario does not."
+  - "Identical prompts for both models; prompts developed against the smaller model may under-serve the larger one."
+
+related:
+  article: "https://docai.hu/blog/122b-vs-35b-mikor-jobb-a-nagyobb-modell"
+  evals: [hu-invoice-kie, chat-business-scenarios]
+  experiments: [qwen35-122b-nvfp4-bringup-gb10]
