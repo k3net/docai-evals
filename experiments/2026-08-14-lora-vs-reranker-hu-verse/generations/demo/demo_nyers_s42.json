@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "best_of": 8,
+  "seed": 42,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 35.1,
+  "winner_index": 1,
+  "candidates": [
+    {
+      "text": "A papíron csillan a tinta varázsa,\nDe a digitális áram gyorsabb máris.\nA fájl és a könyv, a régi és az új,\nMind az emlékek őrzője, mind az új.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        12,
+        11,
+        11
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "varázsa,",
+          "b": "máris.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "máris.",
+          "b": "új,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "új,",
+          "b": "új.",
+          "score": 0.5,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Kávé illata száll a papír tetején,\nCsendes irodában, ahol gondolatok születnek.\nSüt az esztétikus boríték, a toll csendesen cseng,\nMinden sor egy álom, minden sor egy remény.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        15,
+        15,
+        12
+      ],
+      "rhyme_scheme": "ABBA",
+      "rhyme_pairs": [
+        {
+          "a": "tetején,",
+          "b": "születnek.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "születnek.",
+          "b": "cseng,",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "cseng,",
+          "b": "remény.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Sok papír hever szanaszét a asztalon,\nkár, hogy a fontosat elfelejtjük találni.\nSzámítógépbe véve rendet teremtünk,\naz adatok így már biztonságban vannak.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        13,
+        12,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "asztalon,",
+          "b": "találni.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "találni.",
+          "b": "teremtünk,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "teremtünk,",
+          "b": "vannak.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papírokat sorban rendben tartani kell,\nhogy ne vesszen el semmi, ami fontos vala.\nDigitális tárolás most a legszebb mód,\nde a régi iratoknak is helyük van.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        13,
+        12,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "kell,",
+          "b": "vala.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "vala.",
+          "b": "mód,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "mód,",
+          "b": "van.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapra, tinta és gondolat,\nKönyvben őrzik a tudás aranyát.\nKlikkkel, nyomtatva, archiválva így,\nA jövőnek is maradjon nyoma.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCA",
+      "rhyme_pairs": [
+        {
+          "a": "gondolat,",
+          "b": "aranyát.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "aranyát.",
+          "b": "így,",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "így,",
+          "b": "nyoma.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Nyomtatvány, papír, mappák sorában,\nIde-oda úszik a gondolat fázában.\nMentsd el a PDF-t, szerkeszd a szöveget,\nHogy ne vesszen el semmi a nagy forgatagban.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        13,
+        9,
+        13
+      ],
+      "rhyme_scheme": "AABA",
+      "rhyme_pairs": [
+        {
+          "a": "sorában,",
+          "b": "fázában.",
+          "score": 1.0,
+          "inflectional": "ában"
+        },
+        {
+          "a": "fázában.",
+          "b": "szöveget,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "szöveget,",
+          "b": "forgatagban.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Lapozom az archívum sárgult oldalát,\nA régi események nyoma itt marad.\nÍrjuk fel a tényeket, ne feledjünk semmit,\nHogy a múlt örökévé tegyük ezeket a sorokat.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        12,
+        13,
+        16
+      ],
+      "rhyme_scheme": "ABCB",
+      "rhyme_pairs": [
+        {
+          "a": "oldalát,",
+          "b": "marad.",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "marad.",
+          "b": "semmit,",
+          "score": 0.3,
+          "inflectional": null
+        },
+        {
+          "a": "semmit,",
+          "b": "sorokat.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papíron futó szöveg, sorok és mondatok,\nEgymás után, a gondolatok tüzében.\nNyomtatott vagy digitális, így vagy úgy,\nA tudás őrzője, a csendes, nagy könyv.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        13,
+        12,
+        11,
+        11
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "mondatok,",
+          "b": "tüzében.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tüzében.",
+          "b": "úgy,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "úgy,",
+          "b": "könyv.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

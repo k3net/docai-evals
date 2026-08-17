@@ -1,0 +1,22 @@
+{
+  "condition": "B0",
+  "mode": "style",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "author": "arany",
+  "items": 50,
+  "records": 150,
+  "samples": 3,
+  "best_of": 1,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "seed": 1,
+  "prompt_batch": 8,
+  "parallel_seqs": 24,
+  "elapsed_s": 364,
+  "host": "03cf42538391"
+}

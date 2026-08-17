@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "best_of": 8,
+  "seed": 101,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 42.0,
+  "winner_index": 5,
+  "candidates": [
+    {
+      "text": "Zöld lapra írja a gondolatot,\nmég mielőtt elfelejtené.\nPapír vagy digitális ív,\nminden nyomot őrizzen meg.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        9,
+        8,
+        8
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "gondolatot,",
+          "b": "elfelejtené.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "elfelejtené.",
+          "b": "ív,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ív,",
+          "b": "meg.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papírok hevernek a szomorú asztalon,\nZöld szalagok fűzik a fontos iratokat.\nLakoma kéz keresi a régi nyilat,\nAmi sosem lesz újra, mint előtte volt.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        13,
+        13,
+        12,
+        12
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "asztalon,",
+          "b": "iratokat.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "iratokat.",
+          "b": "nyilat,",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "nyilat,",
+          "b": "volt.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír suttogása a toll alatt,\nÚjraalakul az eszme, ami itt volt.\nVédjék a szavakat a kezek hőjével,\nMert az írás örök, a gondolat lelke.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        12,
+        12,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "alatt,",
+          "b": "volt.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "volt.",
+          "b": "hőjével,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hőjével,",
+          "b": "lelke.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír lapja csendben hever most,\nDe a gép gyorsabban dolgozik most.\nA dokumentumok repülnek a levegőn,\nA tudás szemeivel nézünk a jövőre.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        10,
+        13,
+        13
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "most,",
+          "b": "most.",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "most.",
+          "b": "levegőn,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "levegőn,",
+          "b": "jövőre.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír lapok csendben hevernek most,\nA tinta szaga békét áraszt a hely.\nEgy kéz ível, a gondolatot hozza,\nMelyet a régi felületek megőriznek.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        11,
+        13
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "most,",
+          "b": "hely.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hely.",
+          "b": "hozza,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hozza,",
+          "b": "megőriznek.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír és tinta íze évek óta,\nmelyet a kézbe venni most már ritka.\nKijelzők fénye váltja fel a tollat,\na digitális évszázad új utat.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        11,
+        11
+      ],
+      "rhyme_scheme": "AAAA",
+      "rhyme_pairs": [
+        {
+          "a": "óta,",
+          "b": "ritka.",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "ritka.",
+          "b": "tollat,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "tollat,",
+          "b": "utat.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Lapra száll a gondolat, szavak válnak sorokká,\nMelyek később évekig őrzik a múlt örökét.\nNyomtatás vagy szkennelés, bármelyik út vezet,\nA papír, az adat a csendes bizalom, a védelem.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        14,
+        14,
+        13,
+        16
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "sorokká,",
+          "b": "örökét.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "örökét.",
+          "b": "vezet,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "vezet,",
+          "b": "védelem.",
+          "score": 0.6,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Nyílt lapra szedem a gondolatokat,\nbetűbe verve, hogy ne vesszen el.\nPapírra ragadva maradnak a szavak,\namelyek örökké élni fognak majd.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        12,
+        11
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "gondolatokat,",
+          "b": "el.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "szavak,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "szavak,",
+          "b": "majd.",
+          "score": 0.6,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

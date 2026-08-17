@@ -46,6 +46,16 @@ kernel-backend sweep for the *incumbent* FP8 model before claiming a 4-bit candi
 specifically so the headline could not be "we beat a badly configured baseline". In that case the
 incumbent's default backend really was its optimum, and the headline survived.
 
+The same rule applies to *training* proposals, and there it bites harder: the baseline is not the
+raw model, it is **the best result obtainable without training**. Any fine-tuning proposal has to
+name that opponent before the GPU is booked. When we did this on
+[verse style transfer](../experiments/2026-08-14-lora-vs-reranker-hu-verse/), a deterministic
+best-of-8 selector beat the fine-tuned adapter on every form metric — which is also what made the
+one axis where training *did* win interpretable. Against the raw model alone, the adapter would
+have "won convincingly" and we would have learned nothing.
+
+A weak baseline does not give you a weaker result. It gives you an uninterpretable one.
+
 ### Statistical significance on small samples
 
 Point estimates on 100 documents look precise and usually are not. For paired model comparisons on

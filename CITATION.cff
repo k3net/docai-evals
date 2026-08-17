@@ -9,8 +9,9 @@ authors:
 abstract: >-
   Evaluation methodology, scoring code, configurations and aggregated results behind the
   DocAI engineering write-ups: Hungarian invoice key information extraction, business-critical
-  counterparty-role detection, model and quantisation comparisons, and vLLM inference
-  performance on NVIDIA DGX Spark (GB10, sm_121a).
+  counterparty-role detection, model and quantisation comparisons, vLLM inference
+  performance on NVIDIA DGX Spark (GB10, sm_121a), and a fully reproducible LoRA
+  fine-tuning versus deterministic-selector comparison on public-domain Hungarian verse.
 keywords:
   - document-ai
   - key-information-extraction
@@ -22,6 +23,10 @@ keywords:
   - gb10
   - quantisation
   - speculative-decoding
+  - lora
+  - fine-tuning
+  - style-transfer
+  - prosody
 url: "https://docai.hu"
 license: CC-BY-4.0
 license-url: "https://creativecommons.org/licenses/by/4.0/"

@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "best_of": 8,
+  "seed": 23,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 38.9,
+  "winner_index": 2,
+  "candidates": [
+    {
+      "text": "Képernyőn villog a sorok rendje,\negy kattintás és már a helyére kerül a gondolat.\nDokumentum, ami soha nem hiányzik,\ncsak a megfelelő mappába kell betenni a gondolatot.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        16,
+        12,
+        18
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "rendje,",
+          "b": "gondolat.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "gondolat.",
+          "b": "hiányzik,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hiányzik,",
+          "b": "gondolatot.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Szerviz, törés, újlap, javítás,\nMinden adatnak van helye, nyoma.\nHa a fájl elveszik, hiány,\nDe a rendszer soha nem áll.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        10,
+        8,
+        8
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "javítás,",
+          "b": "nyoma.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "nyoma.",
+          "b": "hiány,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hiány,",
+          "b": "áll.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papíron suttogva az adatok élik át,\ndigitális térbe pedig az idő lép át.\nA régi iratok poros sarkában állva,\na jövő felé már most új utat találva.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        13,
+        13,
+        13,
+        13
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "át,",
+          "b": "át.",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "át.",
+          "b": "állva,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "állva,",
+          "b": "találva.",
+          "score": 1.0,
+          "inflectional": "va"
+        }
+      ]
+    },
+    {
+      "text": "A papír lapja csendben hever asztalon,\nA tinta foltja mesél a múltan.\nDe most a digitális árnyék tér,\nÉs minden írás új élettől gyűr.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        10,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "asztalon,",
+          "b": "múltan.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "múltan.",
+          "b": "tér,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tér,",
+          "b": "gyűr.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapjai, tintával tele,\nMelyek elbeszélnek a múltról és jövőről.\nKézben tartva, gondosan őrizve,\nÉlnek a szavak, soha nem véget érnek.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        13,
+        10,
+        12
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "tele,",
+          "b": "jövőről.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "jövőről.",
+          "b": "őrizve,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "őrizve,",
+          "b": "érnek.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír és tinta, régi ősi út,\nEgy másolat, ami sosem tűnik el.\nA digitális világ új hídja,\nDe a szöveg örökké él, ha végre eljut.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        11,
+        10,
+        13
+      ],
+      "rhyme_scheme": "ABCA",
+      "rhyme_pairs": [
+        {
+          "a": "út,",
+          "b": "el.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "hídja,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "hídja,",
+          "b": "eljut.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír, tinta és régi iratok sor,\nAmiket őriz a biztonságos széf.\nMost digitális felhőbe menekítünk,\nMelyet soha nem fog el a csalfa sör.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        12,
+        11
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "sor,",
+          "b": "széf.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "széf.",
+          "b": "menekítünk,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "menekítünk,",
+          "b": "sör.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papírok táncolnak a szélben,\nKódok futnak a képernyőn.\nEgyetlen adat, mindent visz,\nHa helyes a kezeltet.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        8,
+        8,
+        7
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "szélben,",
+          "b": "képernyőn.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "képernyőn.",
+          "b": "visz,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "visz,",
+          "b": "kezeltet.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

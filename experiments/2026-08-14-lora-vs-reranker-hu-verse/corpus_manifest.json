@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-08-14T10:37:07+00:00",
+  "legal_basis": "Minden forrás közkincs: a szerzők 1955 előtt hunytak el, így a Szjt. 31. § szerinti 70 éves védelmi idő lejárt. Védett mű (pl. Romhányi József, †1983) nem került be — ld. runbook D0.",
+  "sources": [
+    {
+      "key": "arany",
+      "author": "Arany János",
+      "author_died": 1882,
+      "title": "Arany János összes költeményei",
+      "mek_id": "MEK-00597",
+      "landing_url": "https://mek.oszk.hu/00500/00597/",
+      "zip_url": "https://mek.oszk.hu/00500/00597/00597html.zip",
+      "downloaded_at": "2026-08-14T10:37:06+00:00",
+      "sha256": "b4846453c5e19bcffab0b77f268ff298a231af92c50b7764444995c6b2c64f7a",
+      "bytes": 1140007,
+      "files_in_archive": 98,
+      "html_files": 92,
+      "encoding": "iso-8859-2",
+      "layout": "mek_frontpage",
+      "note": "Elbeszélő költemények, balladák, Toldi-trilógia, zsengék. A legnagyobb magyar rímregiszter; a humoros vonulat is benne (A fülemile, Jóka ördöge, A nagyidai cigányok).",
+      "cedula": {
+        "record": "MEK-00597 Arany János összes költeményei / Arany János",
+        "original_edition": "Verstár'98 [elektronikus dok.] Budapest : Arcanum, 1998 ISBN 963 85923 1 1 OSZK: http://nektar.oszk.hu/hu/manifestation/338960",
+        "added_to_mek": "1997-11-12"
+      },
+      "public_domain": {
+        "rule": "Szjt. 31. § — a védelem a szerző halálát követő 70. év végéig tart",
+        "expired_end_of": 1952,
+        "is_public_domain": true
+      }
+    },
+    {
+      "key": "petofi",
+      "author": "Petőfi Sándor",
+      "author_died": 1849,
+      "title": "Petőfi Sándor összes költeményei",
+      "mek_id": "MEK-01006",
+      "landing_url": "https://mek.oszk.hu/01000/01006/",
+      "zip_url": "https://mek.oszk.hu/01000/01006/01006html.zip",
+      "downloaded_at": "2026-08-14T10:37:07+00:00",
+      "sha256": "99389a1e74a1a85844e7ef2b7acd9a953977bc5bdcc0f85402cb0782e9fb5ccb",
+      "bytes": 648450,
+      "files_in_archive": 92,
+      "html_files": 85,
+      "encoding": "iso-8859-2",
+      "layout": "mek_frontpage",
+      "note": "Népies-dalos és komikus eposzi regiszter (A helység kalapácsa, János vitéz). A MEK-cédula kifejezetten kiírja: „Nem jogvédett”.",
+      "cedula": {
+        "record": "MEK-01006 Petőfi Sándor összes költeményei / Petőfi Sándor",
+        "original_edition": "Petőfi Sándor összes költeményei Budapest : Szépirod. Kvk., 1974 ISBN 963 15 0043 8 OSZK: http://nektar.oszk.hu/hu/manifestation/1268145",
+        "added_to_mek": "1996-10-31",
+        "legal_note": "Nem jogvédett"
+      },
+      "public_domain": {
+        "rule": "Szjt. 31. § — a védelem a szerző halálát követő 70. év végéig tart",
+        "expired_end_of": 1919,
+        "is_public_domain": true
+      }
+    }
+  ]
+}

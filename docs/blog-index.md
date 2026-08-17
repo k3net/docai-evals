@@ -14,6 +14,7 @@ The articles are in Hungarian; the experiment documentation is in English.
 | [Mikor érdemes nagyobb AI-modellt használni — és mikor nem?](https://docai.hu/blog/122b-vs-35b-mikor-jobb-a-nagyobb-modell) | The four-times-larger model lost on the core task and won on multi-step analysis — so it got routed, not adopted | [35b-vs-122b-business-tasks](../experiments/2026-05-22-35b-vs-122b-business-tasks/) |
 | [A Qwen3.6 ott hozott, ahol nem kellett volna](https://docai.hu/blog/qwen36-mtp-gb10) | Multi-token prediction measured four ways — it wins where nobody expected and loses where everyone did | [qwen36-mtp-ab-gb10](../experiments/2026-04-18-qwen36-mtp-ab-gb10/) · synthesis: [mtp-speculative-decoding-gb10](../experiments/2026-07-23-mtp-speculative-decoding-gb10/) |
 | [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) | A pure-kernel benchmark is not a serving gain — and a routine engine update was a 5 % regression | [moe-kernel-tuning-gb10](../experiments/2026-04-14-moe-kernel-tuning-gb10/) |
+| [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) | Fine-tuning lost to a deterministic best-of-8 selector on every form metric — and was the only thing that moved the voice, by 36 points | [lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) |
 
 ## Two experiments without an article yet
 

@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "best_of": 8,
+  "seed": 7,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 41.2,
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "Papírok sorakoznak a polcok között,\nSötét irodákban csendes áldozatok.\nA digitális hullám most uralja a fejet,\nNem kell többé író, csak a billentyűzet.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        12,
+        14,
+        12
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "között,",
+          "b": "áldozatok.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "áldozatok.",
+          "b": "fejet,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "fejet,",
+          "b": "billentyűzet.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír lapja, a tiszta gondolat,\nAmint ráírom, már nem hagyhatott el.\nA digitális áram, gyors és nyugalom,\nHol minden adat, soha nem érhet el véget.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        12,
+        13
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "gondolat,",
+          "b": "el.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "nyugalom,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "nyugalom,",
+          "b": "véget.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapjain a gondolatok élnek,\nBöngészőn a szavak gyorsan szaladnak.\nEgymást váltva a régi és az új,\nÍgy halad tovább a csendes magyarázat.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        11,
+        10,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "élnek,",
+          "b": "szaladnak.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "szaladnak.",
+          "b": "új,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "új,",
+          "b": "magyarázat.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír és tinta, régi hűség,\namit kézbe veszek, nem hagyok el.\nSzerkesztve, rendezve, tiszta szellemmel,\na dokumentum soha nem lesz elhagyatott.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        10,
+        11,
+        13
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "hűség,",
+          "b": "el.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "szellemmel,",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "szellemmel,",
+          "b": "elhagyatott.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapja már rég elavult,\nKözben a digitális hullám fut.\nEgy kattintás és a fájl készen áll,\nA régi írást most már elbúcsúztassál.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        10,
+        10,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "elavult,",
+          "b": "fut.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "fut.",
+          "b": "áll,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "áll,",
+          "b": "elbúcsúztassál.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír lapok között élve a szó,\nKikötve a gondolatot a szőr.\nNincs itt zaj, csak a csendes írás,\nAhol a papír örökíti az utolsó hős.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        9,
+        14
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "szó,",
+          "b": "szőr.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "szőr.",
+          "b": "írás,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "írás,",
+          "b": "hős.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapjain őrzik a régi emlékeket,\nKésőbb digitális úton futnak a levelek.\nÍgy váltak a papírok mindennapi tárgyakká,\nDe a szavak ereje még mindig ugyanaz maradt.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        14,
+        14,
+        14,
+        15
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "emlékeket,",
+          "b": "levelek.",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "levelek.",
+          "b": "tárgyakká,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tárgyakká,",
+          "b": "maradt.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír a szó tárolója, a tinta gondolatja,\nÍgy maradjon meg a szó, a dokumentum örököse.\nNe feledje, hogy a szöveg, a mondat, a sor,\nÉltetik a történetet, ami most itt van.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        16,
+        16,
+        13,
+        13
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "gondolatja,",
+          "b": "örököse.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "örököse.",
+          "b": "sor,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "sor,",
+          "b": "van.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

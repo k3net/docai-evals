@@ -33,7 +33,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["kie", "business-gate", "chat-tool-use", "classification", "inference-performance"]
+          "enum": ["kie", "business-gate", "chat-tool-use", "classification", "inference-performance", "style-transfer"]
         },
         "document_types": {
           "type": "array",
@@ -97,6 +97,10 @@
             "type": "object",
             "additionalProperties": true,
             "description": "e.g. {temperature: 0.0, max_tokens: 8192, thinking: false}"
+          },
+          "notes": {
+            "type": "string",
+            "description": "What distinguishes this arm from the others, in one or two sentences."
           }
         }
       }

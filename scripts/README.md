@@ -9,6 +9,7 @@ card validator, which wants PyYAML (and optionally `jsonschema`).
 | [score_kie.py](score_kie.py) | Raw and normalised field-level F1 for one or more runs, scored by identical code. |
 | [counterparty_guard.py](counterparty_guard.py) | The deterministic business gate: did the model put our own company in the partner slot? |
 | [mcnemar.py](mcnemar.py) | McNemar's exact test on the gate above, for two runs over the same documents. |
+| [hu_prosody.py](hu_prosody.py) | Deterministic Hungarian verse prosody: syllable count, rhyme key, rhyme scheme, inflectional-rhyme detection. Library + self-test. |
 | [validate_eval_cards.py](validate_eval_cards.py) | Validates every `experiments/*/eval-card.yaml` against the schema. |
 
 ## The one rule
@@ -21,6 +22,7 @@ company name into a script that lives in this repository — see [../docs/data-p
 
 ```bash
 python3 scripts/kie_normalizer.py           # self-test
+python3 scripts/hu_prosody.py               # self-test, against Toldi's alexandrines
 
 python3 scripts/score_kie.py runs/baseline runs/candidate
 

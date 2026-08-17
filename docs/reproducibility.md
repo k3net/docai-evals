@@ -9,6 +9,28 @@ experiment declares how far a third party can get with what is published here.
 | **R2** | code + synthetic data + aggregated results from a private corpus | Re-run the scoring logic on your own data; verify the method, not our numbers |
 | **R3** | methodology + configuration + aggregated results | Reproduce the *setup* (launch flags, engine version, workloads) on your own hardware and compare shapes |
 
+## The one R1 experiment
+
+[lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) is the only
+measurement here you can re-run end to end and check against our numbers, because its corpus is
+public domain: the complete poems of Arany János and Petőfi Sándor from the Hungarian Electronic
+Library. The fetch script records the sha256 of each source archive, so you can verify you have the
+same bytes — we re-ran it from a clean directory on 2026-08-17 and both hashes matched.
+
+Everything except the training step runs on CPU, and the generated poems are published, so the
+scoring can be repeated without a GPU or a model:
+
+```bash
+python3 code/evaluate.py --generations generations
+python3 code/author_clf.py --score --generations generations
+```
+
+Those two commands reproduced every published table bit-for-bit, including the corpus hash
+(`bd86fcf8520d4ca8`) and the 91.0 % author-classifier accuracy.
+
+That is what R1 costs: a corpus you are allowed to publish. The rest of this repository does not
+have one.
+
 ## Why most experiments here are R2 or R3
 
 The quality evaluations run on Hungarian business documents belonging to our customers. Invoices

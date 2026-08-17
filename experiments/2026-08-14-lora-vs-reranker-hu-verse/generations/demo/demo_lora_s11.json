@@ -1,0 +1,299 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": "/work/runs/arany_9b_mixer_r32_e3_s1/final",
+  "best_of": 8,
+  "seed": 11,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 43.1,
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "Irányítom a szellemet,\nKöltöm, ha akar, szöveget;\nHa nem akar, nem is csinál,\nMert én írok, ő csak rajzál.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "rhyme_scheme": "AABB",
+      "rhyme_pairs": [
+        {
+          "a": "szellemet,",
+          "b": "szöveget;",
+          "score": 1.0,
+          "inflectional": null
+        },
+        {
+          "a": "szöveget;",
+          "b": "csinál,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "csinál,",
+          "b": "rajzál.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Kedves Kolléga!\n\nKérjük, ne feledje, hogy a papíralapú dokumentumokat a megadott határidőben el kell juttatni a Családi Pénzkezelő Hivatalba.\n\nKöszönettel:",
+      "form_score": 0.0,
+      "n_lines": 3,
+      "syllables": [
+        5,
+        45,
+        4
+      ],
+      "rhyme_scheme": "AAB",
+      "rhyme_pairs": [
+        {
+          "a": "Kolléga!",
+          "b": "Hivatalba.",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "Hivatalba.",
+          "b": "Köszönettel:",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Készítettem egy dokumentumot,\nEgy ilyet nem láttam soha:\nEgy kis szöveg, aminek hossza\nEgy betű.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        8,
+        9,
+        3
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "dokumentumot,",
+          "b": "soha:",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "soha:",
+          "b": "hossza",
+          "score": 1.0,
+          "inflectional": null
+        },
+        {
+          "a": "hossza",
+          "b": "betű.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Első napra írtam egy gondolatot:\nHogy \"délután\" szót használjak reggel,\nÉs egy kis dal, mely így lett \"Hét eleje\":\n\"Hallgatni nem szeretek én senkit.\"",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        11,
+        10
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "gondolatot:",
+          "b": "reggel,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "reggel,",
+          "b": "eleje\":",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "eleje\":",
+          "b": "senkit.\"",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Nem is olyan régen még\nHátba vert a hivatal,\nSzép volt a dolog, csak nem\nSzép volt a számla: -\n\nMost, hogy be van vezetve\nA \"dokumentáció\",\nEgyik lábunk sem áll meg\nSzámolni, vékonyítói.",
+      "form_score": 1.0,
+      "n_lines": 8,
+      "syllables": [
+        7,
+        7,
+        7,
+        5,
+        7,
+        7,
+        7,
+        8
+      ],
+      "rhyme_scheme": "ABCDEFGH",
+      "rhyme_pairs": [
+        {
+          "a": "még",
+          "b": "hivatal,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hivatal,",
+          "b": "nem",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "nem",
+          "b": "-",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "-",
+          "b": "vezetve",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "vezetve",
+          "b": "\"dokumentáció\",",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "\"dokumentáció\",",
+          "b": "meg",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "meg",
+          "b": "vékonyítói.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Azt akarom, hogy a dokumentumot\nKiszínják, díszítsék,\nDe nem a szép, rendes magyar betűvel,\nHanem a \"gót\" némettel.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        6,
+        11,
+        7
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "dokumentumot",
+          "b": "díszítsék,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "díszítsék,",
+          "b": "betűvel,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "betűvel,",
+          "b": "némettel.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Én csak a szót szeretném, a szót, szavakat,\nAmit a kézírás helyett nyomtatnak.\nNem vagyok híve a papírnak, mert\nElromol a toll, a papír beázik.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        11,
+        10,
+        11
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "szavakat,",
+          "b": "nyomtatnak.",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "nyomtatnak.",
+          "b": "mert",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "mert",
+          "b": "beázik.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Fájl, mappa - káosz a térben,\nNem tudod, hol van egy dolog,\nDe ha nem keresed rendben,\nKeresd meg, hol van a ködön!",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "térben,",
+          "b": "dolog,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "dolog,",
+          "b": "rendben,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "rendben,",
+          "b": "ködön!",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

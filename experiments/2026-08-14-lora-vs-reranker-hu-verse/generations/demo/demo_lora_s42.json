@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": "/work/runs/arany_9b_mixer_r32_e3_s1/final",
+  "best_of": 8,
+  "seed": 42,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 39.7,
+  "winner_index": 1,
+  "candidates": [
+    {
+      "text": "Az én dokumentumom nem a papír,\nHanem a költő, vagyis én magam:\nEzt kell ápolnod, ez a jó barát,\nMert nélkülem nem vagy semmi nálad.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "papír,",
+          "b": "magam:",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "magam:",
+          "b": "barát,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "barát,",
+          "b": "nálad.",
+          "score": 0.3,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Dokumentumot kezelni:\nEzt a munkát ha nem veszi\nKözbesúgnak és megnevetik:\nElvesztette a tekintélyt.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        9,
+        8
+      ],
+      "rhyme_scheme": "AAAB",
+      "rhyme_pairs": [
+        {
+          "a": "kezelni:",
+          "b": "veszi",
+          "score": 1.0,
+          "inflectional": null
+        },
+        {
+          "a": "veszi",
+          "b": "megnevetik:",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "megnevetik:",
+          "b": "tekintélyt.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Sírva, könyörgve, jajgatva,\nNem esett be szándoktatva;\nEzer-két száz pénz megfizetve\nVagy csak kiűlve, egy sem kivetve.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        9,
+        10
+      ],
+      "rhyme_scheme": "AABB",
+      "rhyme_pairs": [
+        {
+          "a": "jajgatva,",
+          "b": "szándoktatva;",
+          "score": 1.0,
+          "inflectional": "va"
+        },
+        {
+          "a": "szándoktatva;",
+          "b": "megfizetve",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "megfizetve",
+          "b": "kivetve.",
+          "score": 1.0,
+          "inflectional": "ve"
+        }
+      ]
+    },
+    {
+      "text": "Dokumentum kezelés, a mai napig\nEgy nagy felhatalom volt a kollégiumig;\nEgy kis felhatalom most az egyén kezeben,\nMert a kollégium csak a rendeletben.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        13,
+        13,
+        12
+      ],
+      "rhyme_scheme": "AABB",
+      "rhyme_pairs": [
+        {
+          "a": "napig",
+          "b": "kollégiumig;",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "kollégiumig;",
+          "b": "kezeben,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kezeben,",
+          "b": "rendeletben.",
+          "score": 1.0,
+          "inflectional": "ben"
+        }
+      ]
+    },
+    {
+      "text": "Költő, ne kövesd a többiek sorsát,\nNe legyen áldozat a világért;\nMégse, mégse válj ártalmatlanná,\nHadd zúzzanak: te daldogál tovább.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCA",
+      "rhyme_pairs": [
+        {
+          "a": "sorsát,",
+          "b": "világért;",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "világért;",
+          "b": "ártalmatlanná,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ártalmatlanná,",
+          "b": "tovább.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Ha dokumentumot kezelsz,\nElőször gondolj erre:\nMég a halál után is\nÉljen a nevem. -",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        7,
+        7,
+        5
+      ],
+      "rhyme_scheme": "AABA",
+      "rhyme_pairs": [
+        {
+          "a": "kezelsz,",
+          "b": "erre:",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "erre:",
+          "b": "is",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "is",
+          "b": "-",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Dokumentumot kezelj jól,\nHa nem akarsz hibát érni:\nKézzel, lábbal, szájgal, szellemel\nMindenfajta gondot érni.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        9,
+        8
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "jól,",
+          "b": "érni:",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "érni:",
+          "b": "szellemel",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "szellemel",
+          "b": "érni.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Nem szeretném, hogy örökre\nPárbeszédünk elromoljon:\nMegszólítalak a köntös\nÉrzelmek egy szelíd sötétje.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        9
+      ],
+      "rhyme_scheme": "ABCA",
+      "rhyme_pairs": [
+        {
+          "a": "örökre",
+          "b": "elromoljon:",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "elromoljon:",
+          "b": "köntös",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "köntös",
+          "b": "sötétje.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+id: lora-vs-reranker-hu-verse
+version: "1.0"
+date: 2026-08-14
+title: "Fine-tuning vs. a deterministic selector — what a LoRA actually buys"
+question: >-
+  A LoRA adapter and a best-of-8 reranker both make a model's output more regular. Which one earns
+  its cost — and are they buying the same thing at all?
+
+task:
+  type: style-transfer
+  document_types: [poem]
+  language: [hu]
+  output_format: free-text
+
+dataset:
+  name: "Hungarian public-domain verse (MEK) — Arany János, with Petőfi Sándor as the contrast author"
+  size:
+    poems_arany: 485
+    poems_petofi: 852
+    lines_total: 80193
+    sft_train_examples: 1332
+    sft_val_examples: 139
+    generation_tasks: 50
+    scored_generations: 800
+    extraction_probes: 87
+  access: public
+  ground_truth: >-
+    No human annotation. Every metric is deterministic and computed by the same code
+    (scripts/hu_prosody.py) on both the human corpus and the model output. The measuring
+    instrument itself was validated against external truth before any model was trained —
+    see evals/hu-verse-prosody.
+  notes: >-
+    Public-domain corpus (Hungarian copyright expires 70 years after the author's death:
+    Arany 1952, Petőfi 1919). Downloaded by the published fetch script with recorded sha256,
+    so a third party gets a bit-identical corpus. The originally intended author (Romhányi
+    József, d. 1983) is under copyright until 2053 and was excluded.
+
+systems:
+  - label: B0
+    role: baseline
+    model: Qwen3.5-9B
+    engine: "vLLM OpenAI-compatible server"
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.8, top_p: 0.95, thinking: false }
+    notes: "Plain instruction, no examples, no adapter."
+  - label: B1
+    role: baseline
+    model: Qwen3.5-9B
+    notes: "Four Arany poems in the prompt as few-shot examples. Prompt is 15.7x longer than B0."
+  - label: B2
+    role: baseline
+    model: Qwen3.5-9B
+    notes: >-
+      B1 plus a deterministic best-of-8 reranker: eight samples, the one with the highest
+      form_score() wins. No training. This is the arm that has to be beaten.
+  - label: C
+    role: candidate
+    model: "Qwen3.5-9B + LoRA (r=32, alpha=64, dropout 0.05)"
+    notes: >-
+      36,225,024 trainable parameters of 8.99B (0.40%). Target set 'mixer': 152 modules across
+      all 32 layers, both the classic attention and the linear-attention (GatedDeltaNet) mixers.
+      3 epochs, 501 steps, 63.8 minutes.
+  - label: C2
+    role: candidate
+    model: "Qwen3.5-9B + LoRA"
+    notes: "C plus the same best-of-8 reranker as B2. Identical prompts, identical seed."
+  - label: C_ep1
+    role: candidate
+    model: "Qwen3.5-9B + LoRA, 1-epoch checkpoint"
+    notes: >-
+      The checkpoint the validation loss says to pick (step 166, loss 2.835 vs 2.968 at 3 epochs).
+      Measured to test whether the loss optimum is the task optimum. It is not.
+  - label: GOLD
+    role: reference
+    model: "Arany János (human)"
+    notes: >-
+      The original poems measured by the same ruler. This is the practical ceiling of the task,
+      and it is nowhere near 1.0.
+
+metrics:
+  - name: rhyme_quality
+    definition: >-
+      Share of line pairs that rhyme (score >= 0.6) AND are not mere inflectional rhyme. This is
+      the metric a model cannot win with a grammatical trick.
+    primary: true
+  - name: author_clf_acc
+    definition: >-
+      Share of generations that an independent TF-IDF + logistic-regression author classifier
+      (91.0% holdout accuracy, 59.0% majority baseline) attributes to the target author.
+    primary: true
+  - name: invented_word_rate
+    definition: >-
+      Share of word forms absent both from the Hungarian spellchecker and from the 73k word forms
+      of the two authors. Two-stage on purpose: Arany's own out-of-dictionary rate is 7.9%, so a
+      one-stage measure would have read as "learned the archaic vocabulary".
+    primary: true
+  - name: rhyme_rate
+    definition: "Share of line pairs that rhyme at threshold 0.6, inflectional rhyme included."
+  - name: syllable_exact
+    definition: "Share of lines matching the requested syllable count exactly."
+  - name: stanza_size_ok
+    definition: "Share of stanzas matching the requested line count."
+  - name: repeated_line_rate
+    definition: "Share of repeated lines. A repeated stanza rhymes perfectly with itself."
+  - name: extraction_gap
+    definition: >-
+      Train-minus-holdout n-gram overlap when the model is fed the first two lines of a poem.
+      The holdout arm is the control: those poems were never in our training set but are almost
+      certainly in the base model's pretraining. Only the gap is attributable to the LoRA.
+    primary: true
+
+decision_rule: >-
+  Fixed before the run: the LoRA is worth its cost only if it beats B2 — few-shot prompting plus
+  the deterministic reranker — on the primary metrics. Comparing it to B0 alone would be a rigged
+  comparison.
+
+results:
+  form_metrics_arany:
+    B0: { stanza_size_ok: 0.805, syllable_exact: 0.153, rhyme_rate: 0.134, rhyme_quality: 0.111, invented_word_rate: 0.015, n: 150 }
+    B1: { stanza_size_ok: 0.802, syllable_exact: 0.206, rhyme_rate: 0.114, rhyme_quality: 0.093, invented_word_rate: 0.019, n: 150 }
+    B2: { stanza_size_ok: 0.938, syllable_exact: 0.409, rhyme_rate: 0.236, rhyme_quality: 0.203, invented_word_rate: 0.013, n: 50 }
+    C: { stanza_size_ok: 0.735, syllable_exact: 0.203, rhyme_rate: 0.177, rhyme_quality: 0.139, invented_word_rate: 0.044, n: 150 }
+    C2: { stanza_size_ok: 0.941, syllable_exact: 0.471, rhyme_rate: 0.255, rhyme_quality: 0.206, invented_word_rate: 0.041, n: 50 }
+    C_ep1: { stanza_size_ok: 0.739, syllable_exact: 0.180, rhyme_rate: 0.119, rhyme_quality: 0.092, invented_word_rate: 0.023, n: 150 }
+    GOLD: { stanza_size_ok: 0.982, syllable_exact: 0.800, rhyme_rate: 0.577, rhyme_quality: 0.400, invented_word_rate: 0.000, n: 50 }
+  lora_minus_reranker_baseline:
+    note: "C minus B2 on the form axis — the LoRA loses on every single one."
+    stanza_count_ok: -0.127
+    stanza_size_ok: -0.203
+    syllable_exact: -0.207
+    rhyme_scheme_ok: -0.054
+    rhyme_rate: -0.059
+    rhyme_quality: -0.064
+    invented_word_rate: +0.031
+  style_author_clf_acc:
+    B0: 0.387
+    B1: 0.564
+    B2: 0.560
+    C: 0.773
+    C2: 0.920
+    C_ep1: 0.680
+    clean_isolation:
+      pair: "B2 vs C2"
+      note: >-
+        Same reranker, same 50 prompts, same best_of=8, same seed. The only difference is the
+        adapter. 56.0% -> 92.0%, i.e. +36 points attributable to training alone.
+    selector_does_not_create_style:
+      note: >-
+        B1 -> B2 moves style by -0.4 points while improving every form metric. A selector scoring
+        syllables and line endings cannot select for a voice it cannot measure.
+  memorisation_extraction_gap:
+    B0: { train: 1.48, holdout: 1.38, gap: +0.10 }
+    C: { train: 1.24, holdout: 1.19, gap: +0.05 }
+    C_ep1: { train: 1.24, holdout: 1.22, gap: +0.02 }
+    verbatim_8word_spans: 0
+    note: >-
+      The fine-tuned model's gap is SMALLER than the base model's. Overfitting by validation loss
+      is not the same thing as memorisation, and only a control arm can separate them.
+  validation_loss_vs_task:
+    epochs: [0.498, 0.997, 1.492, 1.991, 2.486, 2.985]
+    eval_loss: [2.880, 2.835, 2.874, 2.870, 2.967, 2.969]
+    note: >-
+      The loss minimum is at 1 epoch, but the 3-epoch checkpoint wins on every measured axis:
+      rhyme_rate 0.119 -> 0.177, author recognition 68.0% -> 77.3%, repeated lines 0.181 -> 0.118.
+  cost:
+    training_minutes: 63.8
+    seconds_per_poem: { B0: 2.4, B1: 3.6, C: 2.6, C2: 18.5, B2: 26.8 }
+    note: >-
+      The few-shot prompt is 15.7x longer than the plain one but only 1.5x slower end to end —
+      decoding dominates, not prefill. The best arm (C2) is also faster than the best
+      training-free arm (B2), because it needs no examples in the prompt.
+
+verdict: >-
+  Both, and for different reasons. Form is cheaper to buy with a deterministic selector than with
+  training: the reranker beats the LoRA on every form metric with a third of the invented words.
+  Style is the opposite — the selector moves author recognition by -0.4 points, the adapter by
+  +36. A selector amplifies what is already in the candidates; it cannot create it. Anyone who
+  only wants well-formed output should write a scoring function, not fine-tune.
+
+reproducibility:
+  level: R1
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 1
+
+limitations:
+  - "One author. Every result is for Arany János. The corpus, the ruler and the pipeline are ready for Petőfi (and his GOLD row is measured), but the training run did not happen."
+  - "One model. Qwen3.5-9B only. A smaller model would probably shift more and break more, but that is an expectation, not a measurement."
+  - "One seed. On a corpus this small the random initialisation matters; what is published is a single run."
+  - "The reranker arms have fewer samples: B2 and C2 score 50 generations, the others 150, because best-of-8 costs eight times as much. Order-of-magnitude differences survive this; point estimates are noisier."
+  - "Even the best arm is not good. C2 reaches 0.471 syllable accuracy against Arany's 0.800 — the ceiling is human, and it is not 1.0."
+  - "The reranker optimises exactly the form metrics being reported. That is the point of including it as the baseline, but it means the form column is a selector benchmark, not an independent judgement."
+  - "The inflectional-rhyme detector (SUFFIXES in hu_prosody.py) is a deterministic list, not a morphological analyser. Accusative plurals (-okat/-eket/-akat) are missing, so pairs like 'virágokat / dolgokat' are counted as rich rhyme when they are not. The list was frozen when the measurement closed; extending it would change every published rhyme_quality figure. Direction of the bias: rhyme_quality is overstated for every arm, including GOLD."
+  - "The author classifier is a style proxy, not a judgement of quality. 91.0% holdout accuracy means it separates two 19th-century Hungarian poets, not that it recognises good verse."
+  - "Sampling temperature 0.8 for all generation arms. The comparison is fair across arms but says nothing about greedy decoding."
+  - "Memorisation was measured on a public-domain corpus with a 0.4% adapter. It does NOT license the conclusion that fine-tuning on copyrighted text would be safe."
+
+related:
+  article: "https://docai.hu/blog/versel-nekunk-az-ai"
+  evals: [hu-verse-prosody]

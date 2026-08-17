@@ -1,0 +1,292 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": "/work/runs/arany_9b_mixer_r32_e3_s1/final",
+  "best_of": 8,
+  "seed": 7,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 43.8,
+  "winner_index": 2,
+  "candidates": [
+    {
+      "text": "Azt mondja a magyar: \"Csak egy darab papírt\nAdj, megköszönöm, azt már el is olvastam.\"\nDe ha a papír 50 fillér, vagy 50 forint,\nCsak a 50 fillért veszi ő az elől.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        12,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "papírt",
+          "b": "olvastam.\"",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "olvastam.\"",
+          "b": "forint,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "forint,",
+          "b": "elől.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A dokumentumot kezelni kell,\nBárha nem is tudjuk, mit jelent;\nMert ha nem kezeljük, akkor is\nKezelni kell, a papírtól.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        9,
+        9,
+        8
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "kell,",
+          "b": "jelent;",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "jelent;",
+          "b": "is",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "is",
+          "b": "papírtól.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Cifra szép borotvám,\nBirtokomat elvágod;\nEzt, ha a színt látod,\nMégsem bánom, ne sírj!",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        6,
+        7,
+        6,
+        6
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "borotvám,",
+          "b": "elvágod;",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "elvágod;",
+          "b": "látod,",
+          "score": 1.0,
+          "inflectional": null
+        },
+        {
+          "a": "látod,",
+          "b": "sírj!",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Dolgozni jó! Kőmühelyben\nKovácsolt fém van: jó, rendben;\nKönyvelő, író van: jól ír;\nMajd szilajabb kutyát sem látok\nHogy jobban rágja, mint az ír,\nA szegény ember szivét, nyelét.",
+      "form_score": 1.2,
+      "n_lines": 6,
+      "syllables": [
+        8,
+        8,
+        8,
+        9,
+        8,
+        9
+      ],
+      "rhyme_scheme": "AABCDE",
+      "rhyme_pairs": [
+        {
+          "a": "Kőmühelyben",
+          "b": "rendben;",
+          "score": 1.0,
+          "inflectional": "ben"
+        },
+        {
+          "a": "rendben;",
+          "b": "ír;",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ír;",
+          "b": "látok",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "látok",
+          "b": "ír,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ír,",
+          "b": "nyelét.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Az interneten a dokumentumok kezelését,\nKopírozását, vágását, törlését,\nA dokumentumok szövegének módosítását\nAz alábbi menüpontokon keresztül végezzük:",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        15,
+        11,
+        15,
+        15
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "kezelését,",
+          "b": "törlését,",
+          "score": 1.0,
+          "inflectional": null
+        },
+        {
+          "a": "törlését,",
+          "b": "módosítását",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "módosítását",
+          "b": "végezzük:",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Kézzel írt levél: szép tárgy ez,\nHosszú évekig tart, ha fenn van;\nMáris megérint, azonnal érzelmi\nKapcsolatban van az olvasóval.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        11,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "ez,",
+          "b": "van;",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "van;",
+          "b": "érzelmi",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "érzelmi",
+          "b": "olvasóval.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Minden dokumentumot\nÉs nyilatkozatot\nTartósítani kell:\nKőre, papírra.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        7,
+        6,
+        6,
+        5
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "dokumentumot",
+          "b": "nyilatkozatot",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "nyilatkozatot",
+          "b": "kell:",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kell:",
+          "b": "papírra.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Akkor is jó volt, amikor még nem volt,\nMikor nagy sötétben csak szikra volt,\nSokszor a szikrához el sem gyulladt,\nNagykorát érezte, mikor még halott.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        10,
+        10,
+        11
+      ],
+      "rhyme_scheme": "ABCB",
+      "rhyme_pairs": [
+        {
+          "a": "volt,",
+          "b": "volt,",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "volt,",
+          "b": "gyulladt,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "gyulladt,",
+          "b": "halott.",
+          "score": 0.3,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

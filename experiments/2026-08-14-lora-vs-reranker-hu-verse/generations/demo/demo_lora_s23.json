@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": "/work/runs/arany_9b_mixer_r32_e3_s1/final",
+  "best_of": 8,
+  "seed": 23,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 38.6,
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "Nézd a papírt, amit kérek,\nNézd meg, jó volt-e aláírva,\nSzemélyre igaz-e, nem hamis-e,\nNem volt-e hamisítva.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        10,
+        7
+      ],
+      "rhyme_scheme": "ABBB",
+      "rhyme_pairs": [
+        {
+          "a": "kérek,",
+          "b": "aláírva,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "aláírva,",
+          "b": "hamis-e,",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "hamis-e,",
+          "b": "hamisítva.",
+          "score": 0.6,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Én nem akarok új dokumentumot,\nCsak egy kis szót, egy szerelmes szót,\nMelyben a szív minden titkát fogan,\nÉs ami van, megvan a halottig.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        9,
+        10,
+        10
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "dokumentumot,",
+          "b": "szót,",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "szót,",
+          "b": "fogan,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "fogan,",
+          "b": "halottig.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Én magam is dolgozom,\nHáborúban, békeidőben;\nAzt is írok, amit gondolok;\nSőt néha, ha kell, meg is ölöm.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        7,
+        9,
+        9,
+        9
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "dolgozom,",
+          "b": "békeidőben;",
+          "score": 0.3,
+          "inflectional": null
+        },
+        {
+          "a": "békeidőben;",
+          "b": "gondolok;",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "gondolok;",
+          "b": "ölöm.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A dokumentumot kezdeményeztem,\nAzért van még ma a világ tizenkét,\nKivéve, hogy 10 és 12 között\nA 11-est nem csináljuk meg sem.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        7,
+        8
+      ],
+      "rhyme_scheme": "ABCA",
+      "rhyme_pairs": [
+        {
+          "a": "kezdeményeztem,",
+          "b": "tizenkét,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "tizenkét,",
+          "b": "között",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "között",
+          "b": "sem.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Birtokában az ember\nHozza s veszni el,\nÉs a tudományban\nEgészen elvész.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        7,
+        5,
+        6,
+        5
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "ember",
+          "b": "el,",
+          "score": 0.7,
+          "inflectional": null
+        },
+        {
+          "a": "el,",
+          "b": "tudományban",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tudományban",
+          "b": "elvész.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Egyszer egy papírt a lúdba vetett,\nMert az volt már nem használható:\nMásikat vett a boltból, de azt\nMár a csőbe is beletörté.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        9,
+        9,
+        9
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "vetett,",
+          "b": "használható:",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "használható:",
+          "b": "azt",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "azt",
+          "b": "beletörté.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Ezt a dokumentumot a számlázásról\nSzerződéssel ellentétesen\nA számlázó cég kizárólagos\nJogát biztosítja önmagának.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        12,
+        9,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "számlázásról",
+          "b": "ellentétesen",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ellentétesen",
+          "b": "kizárólagos",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kizárólagos",
+          "b": "önmagának.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Függ a szöveg, függ a szándok,\nMíg érvényes a jog:\nHa a szándok ésszel ellentmond,\nAz érvényes jog fennakad.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        6,
+        9,
+        8
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "szándok,",
+          "b": "jog:",
+          "score": 0.7,
+          "inflectional": null
+        },
+        {
+          "a": "jog:",
+          "b": "ellentmond,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "ellentmond,",
+          "b": "fennakad.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

@@ -28,6 +28,13 @@ közül több **negatív**: egy kvantálási formátum, amire nem váltottunk; e
 kernel-backend, ami a mi vasunkon 3×-osan lassabbnak bizonyult; egy nagyobb modell, ami veszített
 a kisebbel szemben azon a feladaton, ami számít. Ezek a leghasznosabbak.
 
+Egy mérés szándékosan kilép az üzleti dokumentumok köréből: a
+[lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) a finomhangolást
+méri egy tanulás nélküli baseline ellen, magyar közkincs verseken. A kérdés — megéri-e egy LoRA,
+vagy egy determinisztikus pontozó ugyanazt hozná — pontosan az, amivel éles, nem publikálható
+szövegeken is szembesülünk. A közkincs korpusszal **R1** szinten megválaszolható: végig
+reprodukálható, pontos számokkal, visszatartás nélkül.
+
 ## Mi kerül ki és mi nem?
 
 | Publikált | Nem publikált |
@@ -55,6 +62,7 @@ A teljes szabályrendszer: **[docs/data-policy.md](docs/data-policy.md)**.
 | [moe-backend-selection-gb10](experiments/2026-07-23-moe-backend-selection-gb10/) | Melyik vLLM MoE kernel-backend nyer GB10-en? | A marlin, akár 3,3×-osan — a modell kiadójának saját ajánlása ellenében |
 | [mtp-speculative-decoding-gb10](experiments/2026-07-23-mtp-speculative-decoding-gb10/) | Megéri-e a multi-token prediction GB10-en? | Igen, minden mért konfiguráción — és 4 biten még inkább |
 | [vllm-prod-config-tuning-gb10](experiments/2026-08-04-vllm-prod-config-tuning-gb10/) | Melyik serving-flag számít valójában élesben? | A hat javasolt mérésből kettőt volt érdemes lefuttatni; az async scheduling kikapcsolva marad |
+| [lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) | Ver-e a finomhangolás egy determinisztikus best-of-8 válogatót? | Formában nem — a tanulás nélküli válogató minden metrikán nyer. A hangon viszont csak a tanulás segít: +36 pont |
 
 ## Mérési szettek
 
@@ -63,6 +71,7 @@ A teljes szabályrendszer: **[docs/data-policy.md](docs/data-policy.md)**.
 | [hu-invoice-kie](evals/hu-invoice-kie/) | Mezőszintű precision / recall / F1 szigorú JSON-kinyerésre, magyar számlákon |
 | [counterparty-role](evals/counterparty-role/) | A modell a *másik* céget teszi-e a partner-mezőbe — determinisztikus, üzletileg kritikus kapu |
 | [chat-business-scenarios](evals/chat-business-scenarios/) | Tool-választás és több lépéses pénzügyi reasoning dokumentumkorpusz felett |
+| [hu-verse-prosody](evals/hu-verse-prosody/) | Determinisztikus vonalzó a magyar versformához — szótagszám, rím, rímséma —, külső igazsághoz és kontrollcsoporthoz validálva |
 | [performance](performance/) | Decode throughput, TTFT, aggregált throughput párhuzamosság alatt, spekulatív dekódolás acceptance |
 
 ## Kapcsolódó cikkek a docai.hu-n
@@ -74,6 +83,7 @@ A teljes szabályrendszer: **[docs/data-policy.md](docs/data-policy.md)**.
 - [Mikor érdemes nagyobb AI-modellt használni — és mikor nem?](https://docai.hu/blog/122b-vs-35b-mikor-jobb-a-nagyobb-modell) — 35B vs 122B valós üzleti feladatokon
 - [A Qwen3.6 ott hozott, ahol nem kellett volna](https://docai.hu/blog/qwen36-mtp-gb10) — multi-token prediction négyféle terhelésen
 - [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) — miért nem serving-nyereség a kernel-benchmark
+- [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) — egy finomhangolás, ami veszített néhány tucat sor pontozókóddal szemben, és nyert azon az egy tengelyen, amit a pontozó nem lát
 - Minden cikk: **[docai.hu/blog](https://docai.hu/blog)**
 
 ## Hogyan olvasd az eredményeket?

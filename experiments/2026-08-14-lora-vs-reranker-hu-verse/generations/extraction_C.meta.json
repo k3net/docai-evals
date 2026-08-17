@@ -1,0 +1,20 @@
+{
+  "condition": "C",
+  "mode": "extraction",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": "/work/runs/arany_9b_mixer_r32_e3_s1/final",
+  "author": "arany",
+  "items": 87,
+  "records": 87,
+  "samples": 1,
+  "best_of": 1,
+  "decode": {
+    "do_sample": false,
+    "max_new_tokens": 160
+  },
+  "seed": 1,
+  "prompt_batch": 24,
+  "parallel_seqs": 24,
+  "elapsed_s": 101,
+  "host": "5e96ca8c1063"
+}

@@ -1,0 +1,278 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "Qwen/Qwen3.5-9B",
+  "adapter": null,
+  "best_of": 8,
+  "seed": 11,
+  "decode": {
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 31.5,
+  "winner_index": 2,
+  "candidates": [
+    {
+      "text": "Lapokat fordítok, sorokat olvasok át,\nA dokumentumok sora sosem marad el.\nÍrtam, töröltem, javítottam a hibát,\nHogy a végső verzió tökéletesen álljon.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        13,
+        13,
+        12,
+        14
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "át,",
+          "b": "el.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "hibát,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "hibát,",
+          "b": "álljon.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papíron szövegek élnek, betűtől betűig,\nkikopó tollal írjuk a napok, évek ritmusát.\nDigitális tárolókban halad most a gondolat,\nde a nyomtatott oldalon maradjon meg a hit.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        14,
+        15,
+        15,
+        14
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "betűig,",
+          "b": "ritmusát.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "ritmusát.",
+          "b": "gondolat,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "gondolat,",
+          "b": "hit.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Zöld papíron, a toll csapong,\nS szavak táncolnak a szélben.\nEgy gondolat, egy új remény,\nÉletünk íze, ez a tény.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "csapong,",
+          "b": "szélben.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "szélben.",
+          "b": "remény,",
+          "score": 0.3,
+          "inflectional": null
+        },
+        {
+          "a": "remény,",
+          "b": "tény.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papíron, kézen, vagy digitális képernyőn,\nminden írásunk maradványa és örökség.\nA levelek, mappák, a feljegyzések sorában,\na gondolatok így találnak végül nyelvet.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        13,
+        13,
+        14,
+        13
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "képernyőn,",
+          "b": "örökség.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "örökség.",
+          "b": "sorában,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "sorában,",
+          "b": "nyelvet.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Papír lapokon úszik a gond,\nKépernyőn pihen a remény.\nMinden adat, minden mondandó,\nÚjra születik a képben.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        8,
+        9,
+        8
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "gond,",
+          "b": "remény.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "remény.",
+          "b": "mondandó,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "mondandó,",
+          "b": "képben.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "A papír lapján csendben él a szó,\nnem törölhető, meg nem felejtett szó.\nKötéssel tartja össze a múltat,\nígy maradjon meg a lényeg, mint határ.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        11,
+        10,
+        11
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "szó,",
+          "b": "szó.",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "szó.",
+          "b": "múltat,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "múltat,",
+          "b": "határ.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Zöld boríték, vagy epergép,\nÍgy születik a gondolat.\nA szavak repülnek végig,\nS eljutnak a célhoz majd.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        7
+      ],
+      "rhyme_scheme": "ABCB",
+      "rhyme_pairs": [
+        {
+          "a": "epergép,",
+          "b": "gondolat.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "gondolat.",
+          "b": "végig,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "végig,",
+          "b": "majd.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    },
+    {
+      "text": "Zsúfolva a papírok hegye között,\nkeresem a bizonytalan megoldást.\nDe ha digitális út vezet most,\ncsendes a papírok zümmögő mocsora.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        11,
+        11,
+        10,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "között,",
+          "b": "megoldást.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "megoldást.",
+          "b": "most,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "most,",
+          "b": "mocsora.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ]
+    }
+  ]
+}

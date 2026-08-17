@@ -1,0 +1,65 @@
+{
+  "run_id": "arany_9b_mixer_r32_e3_s1",
+  "model": "Qwen/Qwen3.5-9B",
+  "author": "arany",
+  "lora": {
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.05,
+    "targets": "mixer",
+    "n_target_modules": 152,
+    "n_layers_touched": 32,
+    "n_layers_total": 32,
+    "n_vision_modules_skipped": 0,
+    "trainable_params": 36225024,
+    "total_params": 8990028288
+  },
+  "training": {
+    "epochs": 3.0,
+    "lr": 0.0002,
+    "batch": 2,
+    "accum": 4,
+    "max_length": 1024,
+    "seed": 1,
+    "grad_checkpointing": true,
+    "packing": false,
+    "steps_per_epoch": 166,
+    "save_steps": 83,
+    "train_examples": 1332,
+    "val_examples": 139
+  },
+  "corpus": {
+    "author": "Arany János",
+    "poems_total": 454,
+    "poems_train": 375,
+    "poems_holdout": 40,
+    "split_units": 392,
+    "train": 1332,
+    "val": 139,
+    "test": 125,
+    "tasks_train": {
+      "continue": 561,
+      "couplet": 507,
+      "write": 264
+    },
+    "corpus_hash": "bd86fcf8520d4ca8",
+    "seed": 20260814
+  },
+  "timing": {
+    "load_s": 60,
+    "train_s": 3827
+  },
+  "metrics": {
+    "train_runtime": 3826.9752,
+    "train_samples_per_second": 1.043,
+    "train_steps_per_second": 0.131,
+    "total_flos": 9.892360438603469e+16,
+    "train_loss": 2.5487814411193788,
+    "epoch": 3.0
+  },
+  "env": {
+    "torch": "2.11.0+cu130",
+    "gpu": "NVIDIA GB10",
+    "hostname": "c8c9eb2a11ec"
+  }
+}

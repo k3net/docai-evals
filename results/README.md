@@ -10,6 +10,7 @@ several of these numbers are meaningless without them.
 | [counterparty-role.csv](counterparty-role.csv) | Business-gate error rates and McNemar p-values |
 | [throughput-gb10.csv](throughput-gb10.csv) | Decode and aggregate throughput by model, backend and speculative setting |
 | [speculative-decoding.csv](speculative-decoding.csv) | Acceptance rates and gains by workload |
+| [verse-style-transfer.csv](verse-style-transfer.csv) | Form and style metrics per arm for the fine-tuning vs. selector comparison, human reference included |
 
 ## Three warnings before you use these
 
@@ -32,6 +33,9 @@ several of these numbers are meaningless without them.
 | A 4× larger model on multi-step analysis | same answers, **5× fewer tool calls** — and worse at extraction | [35b-vs-122b-business-tasks](../experiments/2026-05-22-35b-vs-122b-business-tasks/) |
 | Async scheduling off, short-prompt TTFT | **−28 %** | [vllm-prod-config-tuning-gb10](../experiments/2026-08-04-vllm-prod-config-tuning-gb10/) |
 | Three months of engine development | ±1 %, neutral | [vllm-prod-config-tuning-gb10](../experiments/2026-08-04-vllm-prod-config-tuning-gb10/) |
+| 64 minutes of fine-tuning vs. a deterministic best-of-8 selector, on form | the **selector wins all six metrics** — and with a third of the invented words | [lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) |
+| …the same selector's effect on style | **−0.4 points** (56.4 % → 56.0 %); only the adapter moved it, 56.0 % → **92.0 %** | [lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) |
+| The checkpoint the validation loss recommended | worse on **every** measured axis than the "overfitted" one | [lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) |
 
 ---
 

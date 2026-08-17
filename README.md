@@ -28,6 +28,13 @@ Every conclusion we publish has to survive that setting. Several of the results 
 turned out to be 3× slower on our hardware, a bigger model that lost to a smaller one on the task
 that mattered. Those are the most useful ones.
 
+One experiment deliberately steps outside business documents:
+[lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) measures fine-tuning
+against a training-free baseline on Hungarian public-domain poetry. The question — does a LoRA earn
+its cost, or would a deterministic scorer do the same job — is one we face on production text we
+cannot publish. Public-domain verse lets us answer it at **R1**: fully reproducible, exact numbers,
+nothing withheld.
+
 ## What is here — and what is not
 
 | Published | Not published |
@@ -68,8 +75,11 @@ docai-evals/
 | [moe-backend-selection-gb10](experiments/2026-07-23-moe-backend-selection-gb10/) | Which vLLM MoE kernel backend wins on GB10? | Marlin, by up to 3.3× — against the model publisher's own recommendation | R3 |
 | [mtp-speculative-decoding-gb10](experiments/2026-07-23-mtp-speculative-decoding-gb10/) | Is multi-token prediction worth it on GB10? | Yes, on every configuration measured — and more so at 4-bit | R3 |
 | [vllm-prod-config-tuning-gb10](experiments/2026-08-04-vllm-prod-config-tuning-gb10/) | Which serving flags actually matter in production? | Two of six proposed measurements were worth running; async scheduling stays off | R3 |
+| [lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) | Does fine-tuning beat a deterministic best-of-8 selector? | On form, no — the untrained selector wins every metric. On voice, only training works: +36 points | **R1** |
 
 `R1/R2/R3` are reproducibility levels — see **[docs/reproducibility.md](docs/reproducibility.md)**.
+The verse experiment is the only **R1** entry: it runs on a public-domain corpus, so you can re-run
+it end to end and land on our exact numbers.
 
 ## Evaluation suites
 
@@ -78,6 +88,7 @@ docai-evals/
 | [hu-invoice-kie](evals/hu-invoice-kie/) | Field-level precision / recall / F1 for strict-JSON extraction from Hungarian invoices |
 | [counterparty-role](evals/counterparty-role/) | Whether the model puts the *other* company in the partner slot — a deterministic, business-critical gate |
 | [chat-business-scenarios](evals/chat-business-scenarios/) | Tool selection and multi-step financial reasoning over a document corpus |
+| [hu-verse-prosody](evals/hu-verse-prosody/) | A deterministic ruler for Hungarian verse form — syllable count, rhyme, scheme — validated against external truth and a control group |
 | [performance](performance/) | Decode throughput, TTFT, aggregate throughput under concurrency, speculative-decoding acceptance |
 
 ## Related write-ups on docai.hu
@@ -91,6 +102,7 @@ Each experiment links back to the article that tells its story. The articles are
 - [Mikor érdemes nagyobb AI-modellt használni — és mikor nem?](https://docai.hu/blog/122b-vs-35b-mikor-jobb-a-nagyobb-modell) — 35B vs 122B on real business tasks
 - [A Qwen3.6 ott hozott, ahol nem kellett volna](https://docai.hu/blog/qwen36-mtp-gb10) — multi-token prediction, measured four ways
 - [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) — why a kernel benchmark is not a serving gain
+- [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) — a fine-tune that lost to a few dozen lines of scoring code, and won on the one axis the scorer cannot see
 - All articles: **[docai.hu/blog](https://docai.hu/blog)**
 
 ## Reading a result honestly
