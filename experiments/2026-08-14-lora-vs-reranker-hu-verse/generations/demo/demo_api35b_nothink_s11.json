@@ -1,0 +1,301 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "qwen36",
+  "served_via": "openai-compatible endpoint",
+  "adapter": null,
+  "thinking": false,
+  "best_of": 8,
+  "seed": 11,
+  "decode": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 2.5,
+  "usage": {
+    "prompt_tokens": 69,
+    "total_tokens": 438,
+    "completion_tokens": 369,
+    "prompt_tokens_details": null
+  },
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "Papírok halma, sötétben rejt,\nRendszerezésben lelhetünk menedék.\nHa sorba állítod a lapokat,\nNyugalmad lesz a káoszban, a sokat.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        11,
+        10,
+        11
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "rejt,",
+          "b": "menedék.",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "menedék.",
+          "b": "lapokat,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "lapokat,",
+          "b": "sokat.",
+          "score": 1.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "A fájl a tárcsán őrzött emlék,\nMentés után nem tűnik el.\nKattints rá bátran, bármikor,\nHa újra szükség van rájára.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        8,
+        8,
+        9
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "emlék,",
+          "b": "el.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "bármikor,",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "bármikor,",
+          "b": "rájára.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlok sorrendben, rendben tartva,\nNincs több zavar, nincs több csatva.\nKeresés gyorsan, könnyen megy,\nA munka csendben, jól megy.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        8,
+        8,
+        7
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "tartva,",
+          "b": "csatva.",
+          "score": 1.0,
+          "inflectional": "va"
+        },
+        {
+          "a": "csatva.",
+          "b": "megy,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "megy,",
+          "b": "megy.",
+          "score": 0.5,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Minden lapot sorsra bízol,\nEgységesen, jól átláthatóan,\nA rend az élet fő szabálya,\nA káosz helyett a rend vára.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        10,
+        9,
+        9
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "bízol,",
+          "b": "átláthatóan,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "átláthatóan,",
+          "b": "szabálya,",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "szabálya,",
+          "b": "vára.",
+          "score": 1.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "A fájlban őrzött gondolat,\nSzavakban bújik meg rejtett.\nHa rendben tartod a sorozat,\nA tudásod örökké él.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        9,
+        8
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "gondolat,",
+          "b": "rejtett.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "rejtett.",
+          "b": "sorozat,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "sorozat,",
+          "b": "él.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlt tárolj, rendben őrizd,\nhogy ne vesszen el a hír.\nBiztonságos helyre tedd,\nígy nem lóg le a szélnek szél.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        7,
+        7,
+        7,
+        8
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "őrizd,",
+          "b": "hír.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "hír.",
+          "b": "tedd,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tedd,",
+          "b": "szél.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlt mentek el időben,\nhogy ne vesszen el a nyom.\nRendszerezés a célja,\nmunka legyen könnyű pálya.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        7,
+        7,
+        7,
+        8
+      ],
+      "rhyme_scheme": "ABCC",
+      "rhyme_pairs": [
+        {
+          "a": "időben,",
+          "b": "nyom.",
+          "score": 0.3,
+          "inflectional": null
+        },
+        {
+          "a": "nyom.",
+          "b": "célja,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "célja,",
+          "b": "pálya.",
+          "score": 0.8,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "A fájlban őrzött gondolat,\nRendezett sorrendben áll.\nMentés után csend honol,\nBiztonságban a tudás.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        7,
+        7,
+        7
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "gondolat,",
+          "b": "áll.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "áll.",
+          "b": "honol,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "honol,",
+          "b": "tudás.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    }
+  ]
+}

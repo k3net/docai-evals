@@ -14,7 +14,7 @@ Vizuális elvek (a projekt data-viz konvenciója szerint):
   * Minden oszlop direkt értékcímkét kap: a világos hue-k kontrasztja a
     felülethez alacsony, ezt a felirat oldja fel.
 
-    python3 src/plots.py
+    python3 code/plots.py
 """
 
 from __future__ import annotations

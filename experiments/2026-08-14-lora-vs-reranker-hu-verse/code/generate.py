@@ -21,7 +21,7 @@ Két generálási mód:
 A dekódolási paraméterek módonként fixek és nem keverednek — greedy a
 memorizációhoz, mintavételes a stílushoz.
 
-    python3 src/generate.py --condition B0 --model Qwen/Qwen3.5-9B
+    python3 code/generate.py --condition B0 --model Qwen/Qwen3.5-9B
 """
 
 from __future__ import annotations

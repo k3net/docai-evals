@@ -1,0 +1,301 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "qwen36",
+  "served_via": "openai-compatible endpoint",
+  "adapter": null,
+  "thinking": false,
+  "best_of": 8,
+  "seed": 7,
+  "decode": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 2.5,
+  "usage": {
+    "prompt_tokens": 69,
+    "total_tokens": 464,
+    "completion_tokens": 395,
+    "prompt_tokens_details": null
+  },
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "Fájlok, mappák, sorban állnak,\nRendszert adnak, rendet ápolnak.\nKeresés, tárolás, ügyes kéz,\nA papír helye a digitális égbolt kézen.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        9,
+        14
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "állnak,",
+          "b": "ápolnak.",
+          "score": 0.8,
+          "inflectional": "nak"
+        },
+        {
+          "a": "ápolnak.",
+          "b": "kéz,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kéz,",
+          "b": "kézen.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Mappa mélyén a fájlok élnek,\nKeresés közben csendben élnek.\nEgyszerre nyílnak, s egyszerre zár,\nA dokumentum sorsa állandó harc.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        9,
+        9,
+        11
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "élnek,",
+          "b": "élnek.",
+          "score": 0.5,
+          "inflectional": null
+        },
+        {
+          "a": "élnek.",
+          "b": "zár,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "zár,",
+          "b": "harc.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlok rendben, könyvtárakban,\nMinden adat ott, hol kelljen.\nBiztonságos, gyors és tiszta,\nA munka vége, a szellem tiszta.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "könyvtárakban,",
+          "b": "kelljen.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "kelljen.",
+          "b": "tiszta,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tiszta,",
+          "b": "tiszta.",
+          "score": 0.5,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Papír, fájl, digitális árny,\nRendezz sorba, őrizd meg tartalmát.\nMinden jegy, ami lényeges,\nNe veszenjen el a feledés sötétje.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        10,
+        8,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "árny,",
+          "b": "tartalmát.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "tartalmát.",
+          "b": "lényeges,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "lényeges,",
+          "b": "sötétje.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Papírok halma, sötétben rejt,\nRendszert keres a kéz és a fej.\nKattintás hangja, digitális világ,\nA dokumentum most már igaz.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        9,
+        11,
+        9
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "rejt,",
+          "b": "fej.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "fej.",
+          "b": "világ,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "világ,",
+          "b": "igaz.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "A papír hegye lassan lecsökken,\nA fájl neve, mint a jó szerencse.\nKattints rá, és a mentés örök,\nAz adatok a felhőben keringenek.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        10,
+        9,
+        12
+      ],
+      "rhyme_scheme": "ABCB",
+      "rhyme_pairs": [
+        {
+          "a": "lecsökken,",
+          "b": "szerencse.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "szerencse.",
+          "b": "örök,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "örök,",
+          "b": "keringenek.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlok tömörülnek a tárhelyen,\nrendet tesz bennük a gépen.\nMentés, archiválás, őrzés,\nbiztonságos a tárolás.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        8,
+        8,
+        8
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "tárhelyen,",
+          "b": "gépen.",
+          "score": 0.8,
+          "inflectional": "en"
+        },
+        {
+          "a": "gépen.",
+          "b": "őrzés,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "őrzés,",
+          "b": "tárolás.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Minden lapot sorsra bízol,\nEmlékét megőrzi a sor.\nHa véget ér a történet,\nRendben van a dokumentum.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "bízol,",
+          "b": "sor.",
+          "score": 0.7,
+          "inflectional": null
+        },
+        {
+          "a": "sor.",
+          "b": "történet,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "történet,",
+          "b": "dokumentum.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    }
+  ]
+}

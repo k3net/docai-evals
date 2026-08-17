@@ -7,7 +7,7 @@ bizonyíthatóan.
 
 Idempotens: ha a csomag már megvan és a hash egyezik, nem tölt újra.
 
-    python3 src/fetch_corpus.py
+    python3 code/fetch_corpus.py
 """
 
 from __future__ import annotations

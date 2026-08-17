@@ -186,7 +186,7 @@ reproducibility:
 
 limitations:
   - "One author. Every result is for Arany János. The corpus, the ruler and the pipeline are ready for Petőfi (and his GOLD row is measured), but the training run did not happen."
-  - "One model. Qwen3.5-9B only. A smaller model would probably shift more and break more, but that is an expectation, not a measurement."
+  - "One model. Every measured arm (B0-C2, GOLD) is Qwen3.5-9B. A smaller model would probably shift more and break more, but that is an expectation, not a measurement. The free-prompt demonstration does reach a 35B model and two pasted-in outputs from larger ones, but that is a demonstration, not an arm of this measurement — see the limitation below."
   - "One seed. On a corpus this small the random initialisation matters; what is published is a single run."
   - "The reranker arms have fewer samples: B2 and C2 score 50 generations, the others 150, because best-of-8 costs eight times as much. Order-of-magnitude differences survive this; point estimates are noisier."
   - "Even the best arm is not good. C2 reaches 0.471 syllable accuracy against Arany's 0.800 — the ceiling is human, and it is not 1.0."
@@ -195,6 +195,7 @@ limitations:
   - "The author classifier is a style proxy, not a judgement of quality. 91.0% holdout accuracy means it separates two 19th-century Hungarian poets, not that it recognises good verse."
   - "Sampling temperature 0.8 for all generation arms. The comparison is fair across arms but says nothing about greedy decoding."
   - "Memorisation was measured on a public-domain corpus with a 0.4% adapter. It does NOT license the conclusion that fine-tuning on copyrighted text would be safe."
+  - "The free-prompt demonstration is not a measurement. One prompt, one selected poem per seed (5-6 seeds per arm), a form spec inferred from the prompt wording, and no author-classifier score (the classifier is out of its validated length range on four lines). Its cross-model numbers - 9B raw 2.400, 35B 2.444, 9B LoRA 2.556 mean form score - sit inside each other's spread and rank nothing. The two external poems are single first-shot outputs pasted from web interfaces: no reranker, unknown decode parameters, not reproducible from this repo. They are reference points, not arms."
 
 related:
   article: "https://docai.hu/blog/versel-nekunk-az-ai"

@@ -1,0 +1,157 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "qwen36",
+  "served_via": "openai-compatible endpoint",
+  "adapter": null,
+  "thinking": true,
+  "best_of": 8,
+  "seed": 101,
+  "decode": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 8000
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 263.7,
+  "usage": {
+    "prompt_tokens": 67,
+    "total_tokens": 58105,
+    "completion_tokens": 58038,
+    "prompt_tokens_details": null
+  },
+  "winner_index": 0,
+  "candidates": [
+    {
+      "text": "A dokumentum, tiszta adat,\nMegőrzi a múltat, s a jövendő hat.\nA jól kezelt fájl nem fáj,\nNap mint nap könnyen megtalál.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        11,
+        7,
+        8
+      ],
+      "rhyme_scheme": "AABB",
+      "rhyme_pairs": [
+        {
+          "a": "adat,",
+          "b": "hat.",
+          "score": 0.8,
+          "inflectional": null
+        },
+        {
+          "a": "hat.",
+          "b": "fáj,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "fáj,",
+          "b": "megtalál.",
+          "score": 0.7,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 18335
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 22889
+    },
+    {
+      "text": "A papírok rendben állnak,\nA fájlok mind helyet találnak.\nA könnyen kereshető tárhelyem,\nA biztonságos megőrzésem.",
+      "form_score": 2.6667,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        10,
+        9
+      ],
+      "rhyme_scheme": "AABB",
+      "rhyme_pairs": [
+        {
+          "a": "állnak,",
+          "b": "találnak.",
+          "score": 1.0,
+          "inflectional": "nak"
+        },
+        {
+          "a": "találnak.",
+          "b": "tárhelyem,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tárhelyem,",
+          "b": "megőrzésem.",
+          "score": 0.8,
+          "inflectional": "em"
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 10200
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 22003
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 21862
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 22473
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 22647
+    },
+    {
+      "text": "",
+      "form_score": 0.0,
+      "n_lines": 0,
+      "syllables": [],
+      "rhyme_scheme": "",
+      "rhyme_pairs": [],
+      "finish_reason": "length",
+      "reasoning_chars": 22226
+    }
+  ]
+}

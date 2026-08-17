@@ -1,0 +1,301 @@
+{
+  "prompt": "Írj egy rövid, 4 soros, szépen rímelő verset a dokumentum kezelésről.",
+  "system_prompt": "Magyar költő vagy. A válaszod kizárólag a kért vers legyen, magyarázat nélkül.",
+  "model": "qwen36",
+  "served_via": "openai-compatible endpoint",
+  "adapter": null,
+  "thinking": false,
+  "best_of": 8,
+  "seed": 42,
+  "decode": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 420
+  },
+  "spec": {
+    "n_stanzas": 1,
+    "stanza_size": 4
+  },
+  "elapsed_seconds": 2.7,
+  "usage": {
+    "prompt_tokens": 69,
+    "total_tokens": 480,
+    "completion_tokens": 411,
+    "prompt_tokens_details": null
+  },
+  "winner_index": 2,
+  "candidates": [
+    {
+      "text": "Papírt, fájlt gondosan őrizd,\nHogy ne vesztesd el, ne feledd el.\nRendszerezd sorba, kedd-hétig,\nA múltat így könnyen megidézed.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        8,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "őrizd,",
+          "b": "el.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "el.",
+          "b": "kedd-hétig,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kedd-hétig,",
+          "b": "megidézed.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Papírt rendezz, sorba állítsd,\nHogy ne vesszen el a gondolat.\nMinden lapot őrizd meg tisztán,\nA múltat így megőrizheted.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        9,
+        9,
+        9
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "állítsd,",
+          "b": "gondolat.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "gondolat.",
+          "b": "tisztán,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tisztán,",
+          "b": "megőrizheted.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlok tárolása, sorsuk döntő,\nRendszerezésben rejlik a tét,\nHogy el ne vesszen az adat,\nMert a káosz végzetes út.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        9,
+        8,
+        8
+      ],
+      "rhyme_scheme": "ABBC",
+      "rhyme_pairs": [
+        {
+          "a": "döntő,",
+          "b": "tét,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "tét,",
+          "b": "adat,",
+          "score": 0.6,
+          "inflectional": null
+        },
+        {
+          "a": "adat,",
+          "b": "út.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Papírt papírra, sorra sorba,\nőrzöm a múltat, őrzöm a jót.\nRendben tartom a régi írásba,\nhogy ne vesszen el a szó, a költő.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        9,
+        10,
+        10
+      ],
+      "rhyme_scheme": "ABAC",
+      "rhyme_pairs": [
+        {
+          "a": "sorba,",
+          "b": "jót.",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "jót.",
+          "b": "írásba,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "írásba,",
+          "b": "költő.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlok sorakoznak csendes sorban,\nRendszert ad nekik a jó kezed,\nMinden lap, minden szöveg a helyén,\nNyugalommal telik a napod.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        10,
+        9,
+        10,
+        9
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "sorban,",
+          "b": "kezed,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kezed,",
+          "b": "helyén,",
+          "score": 0.2,
+          "inflectional": null
+        },
+        {
+          "a": "helyén,",
+          "b": "napod.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlt mentek, a helyet tisztelem,\nHogy ne vészessen el a kincs, mit őrzöm.\nRendszerezem, s a rend uralkodik,\nA dokumentum így örökre birtokol.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        11,
+        10,
+        12
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "tisztelem,",
+          "b": "őrzöm.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "őrzöm.",
+          "b": "uralkodik,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "uralkodik,",
+          "b": "birtokol.",
+          "score": 0.2,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Papírt sorba, mappába zárod,\nHogy a rendben maradjon az időd.\nKeresésnél ne ess kétségbe,\nA fájlod azonnal látható lesz.",
+      "form_score": 2.0,
+      "n_lines": 4,
+      "syllables": [
+        9,
+        10,
+        9,
+        10
+      ],
+      "rhyme_scheme": "ABCD",
+      "rhyme_pairs": [
+        {
+          "a": "zárod,",
+          "b": "időd.",
+          "score": 0.4,
+          "inflectional": null
+        },
+        {
+          "a": "időd.",
+          "b": "kétségbe,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "kétségbe,",
+          "b": "lesz.",
+          "score": 0.4,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    },
+    {
+      "text": "Fájlban őrzött gondolatok,\nRendszertelen, káoszok.\nKözösségi tárhelyre vigyél,\nHogy biztonságban éljenek.",
+      "form_score": 2.3333,
+      "n_lines": 4,
+      "syllables": [
+        8,
+        7,
+        9,
+        8
+      ],
+      "rhyme_scheme": "AABC",
+      "rhyme_pairs": [
+        {
+          "a": "gondolatok,",
+          "b": "káoszok.",
+          "score": 0.8,
+          "inflectional": "ok"
+        },
+        {
+          "a": "káoszok.",
+          "b": "vigyél,",
+          "score": 0.0,
+          "inflectional": null
+        },
+        {
+          "a": "vigyél,",
+          "b": "éljenek.",
+          "score": 0.0,
+          "inflectional": null
+        }
+      ],
+      "finish_reason": "stop",
+      "reasoning_chars": 0
+    }
+  ]
+}

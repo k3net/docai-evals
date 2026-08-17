@@ -1,0 +1,14 @@
+[
+  {
+    "label": "kulso_35B_thinking",
+    "arm": "külső · first-shot (nincs reranker) · thinking",
+    "note": "Qwen3.6-35B-A3B-FP8, saját szolgáltatás, egyetlen kimenet — a felhasználó másolta be",
+    "text": "Papír hegyeinek vége szakadt,\na digitális világ váltotta fel őket.\nGyorsan, biztonságosan, bárhol elérhető,\na modern tárolás új utat mutat."
+  },
+  {
+    "label": "kulso_2400B_max",
+    "arm": "külső · first-shot (nincs reranker)",
+    "note": "Qwen3.8-Max (2,4 T paraméter / A95B aktív), a szolgáltató webes felülete — a felhasználó másolta be",
+    "text": "Rendben tartod a fájlokat, nem lesz káosz soha,\nMinden irat helyére kerül, gyorsan megtalálva,\nDigitális rend őrzése a munka alapja,\nDokumentum kezelés így válik valódi csodává."
+  }
+]

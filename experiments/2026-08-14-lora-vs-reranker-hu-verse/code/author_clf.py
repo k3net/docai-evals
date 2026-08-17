@@ -19,8 +19,8 @@ Fontos részletek, amelyek nélkül a szám nem érne semmit:
   * a mérés csak akkor értelmezhető, ha a holdout-pontosság érdemben jobb a
     véletlennél — ezt a riport kiírja.
 
-    python3 src/author_clf.py            # tanítás + validálás
-    python3 src/author_clf.py --score    # a generálások osztályozása is
+    python3 code/author_clf.py            # tanítás + validálás
+    python3 code/author_clf.py --score    # a generálások osztályozása is
 """
 
 from __future__ import annotations

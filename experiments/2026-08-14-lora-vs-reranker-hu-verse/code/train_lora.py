@@ -19,7 +19,7 @@ a képfeldolgozóra is: elpazarolt paraméter, lassabb tréning, és a mérés i
 zavarossá válna. Ezért a célrétegeket regexszel, a nyelvi névtérre szűkítve
 adjuk meg — és a szkript kiírja, hány modult talált.
 
-    python3 src/train_lora.py --author arany --model Qwen/Qwen3.5-9B
+    python3 code/train_lora.py --author arany --model Qwen/Qwen3.5-9B
 """
 
 from __future__ import annotations

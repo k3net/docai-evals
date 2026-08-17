@@ -16,7 +16,7 @@ Három kimenet:
   * `fewshot.json` — a B1/B2 baseline példái, kizárólag a TRAIN szeletből.
     Holdout-példa itt szivárgás lenne.
 
-    python3 src/build_evalset.py
+    python3 code/build_evalset.py
 """
 
 from __future__ import annotations

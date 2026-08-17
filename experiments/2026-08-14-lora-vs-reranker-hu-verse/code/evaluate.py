@@ -18,7 +18,7 @@ Tengely C — az ár:
                    `extraction_gap`: a holdout ág a pretraining-memorizációt
                    fogja, tehát csak a RÉS írható a LoRA számlájára.
 
-    python3 src/evaluate.py                    # minden generations/*.jsonl
+    python3 code/evaluate.py                    # minden generations/*.jsonl
 """
 
 from __future__ import annotations

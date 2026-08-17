@@ -18,7 +18,7 @@ elválasztás onnan jön, hol a legnagyobb a valódi és a véletlen közti rés
 
 Kimenet: `reports/02_prozodia.md`.
 
-    python3 src/validate_prosody.py
+    python3 code/validate_prosody.py
 """
 
 from __future__ import annotations

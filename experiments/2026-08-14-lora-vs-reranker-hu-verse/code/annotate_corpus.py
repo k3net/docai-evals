@@ -9,7 +9,7 @@ Vagyis a tanítópár **utasítás-oldala is mérésből származik**, nem kézi
 címkézésből — így az F4-ben ugyanazzal az eszközzel ellenőrizhető, hogy a
 modell betartotta-e.
 
-    python3 src/annotate_corpus.py
+    python3 code/annotate_corpus.py
 """
 
 from __future__ import annotations

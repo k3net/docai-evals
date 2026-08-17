@@ -26,7 +26,7 @@ Amit a parse csinál, sorrendben:
 
 Kimenet: `data/corpus/<author>/<poem_id>.json` + `reports/01_korpusz.md`.
 
-    python3 src/build_corpus.py
+    python3 code/build_corpus.py
 """
 
 from __future__ import annotations

@@ -8,8 +8,8 @@ egyetlen dologra vezethető vissza: van-e LoRA-adapter vagy nincs.
 Few-shot példát SZÁNDÉKOSAN nem adunk egyik ágnak sem — a demó lényege, hogy
 ugyanaz a prompt megy be mindkétszer, ahogy egy valódi felhasználó írná.
 
-    python3 src/demo_prompt.py --prompt "..." --best-of 8 --seed 7
-    python3 src/demo_prompt.py --prompt "..." --best-of 8 --seed 7 \
+    python3 code/demo_prompt.py --prompt "..." --best-of 8 --seed 7
+    python3 code/demo_prompt.py --prompt "..." --best-of 8 --seed 7 \
         --adapter /work/runs/arany_9b_mixer_r32_e3_s1/final
 """
 

@@ -21,7 +21,7 @@ külön rekord, de egyetlen mű: ha a 4. ének tanításban van, a 7. pedig
 holdoutban, akkor a memorizáció-mérés halott — ugyanaz a történet, ugyanazok
 a szereplők, ugyanaz a rímkészlet. Ezért a split kulcsa a `work`, ha van.
 
-    python3 src/build_dataset.py
+    python3 code/build_dataset.py
 """
 
 from __future__ import annotations
