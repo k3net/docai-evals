@@ -24,7 +24,7 @@ reported as absence of evidence, not as proof of absence.
 
 | Question | Outcome |
 |---|---|
-| Does English prompting help when the knowledge is not English-sourced? | No. Chinese-only knowledge: 63% in Chinese, 53% in English, 42% in Hungarian. Hungarian-only: 7% in Hungarian, 13% in English, 20% in Chinese. English is nowhere the best language. |
+| Does English prompting help when the knowledge is not English-sourced? | No reliable advantage was detectable. Chinese-only knowledge: 63% in Chinese, 53% in English, 42% in Hungarian. Hungarian-only: 7% in Hungarian, 13% in English, 20% in Chinese. English is not the best language in either main round — but it *is* in the raw-prompt control round (ZH 68% English vs 58% Chinese; HU 20% vs 13%), so this is "no detectable average gain", not "English never wins". |
 | Does the model reach the concept through an English word? | No positive evidence. The concept pulls towards its own English approximation (+0.020, p = 0.021), but equally towards the same approximation in a third language; the English-specific part is +0.001 [−0.006; +0.009]. |
 | Is there a shared representation at all? | Yes, and it is thin: all 9 cross-language comparisons significant at layer 16, the hump shape confirmed in 6 of 9 cells, but the absolute overlap is 0.19 against a 0.13 random baseline. |
 | Does the model signal what it does not know? | No, and post-training makes it worse. On Hungarian-only items the number of confident fabrications is flat (23 → 26 → 25); what disappears is evasion (14 → 10 → 3). |
@@ -36,8 +36,10 @@ pipelines. The measurement gives no reason to expect a gain, and a translation s
 and adds a second place for meaning to be lost.
 
 **2. Weak Hungarian knowledge is a retrieval problem.** The 7% cell is the strongest argument for
-the product: the model does not hold Hungarian-specific facts, and the instruct variant answers
-confidently anyway. Every Hungarian factual claim in a customer-facing answer needs a document
+the product: the model does not reliably *produce* Hungarian-specific facts, and the instruct
+variant answers confidently anyway. Whether those facts are absent from the weights is a question
+this measurement cannot settle — a failure to generate is not a demonstration of absence, and the
+product decision does not depend on which of the two it is. Every Hungarian factual claim in a customer-facing answer needs a document
 behind it and a citation in front of it.
 
 **3. Fluency is not a confidence signal.** The chat template does not create more fabrication, it

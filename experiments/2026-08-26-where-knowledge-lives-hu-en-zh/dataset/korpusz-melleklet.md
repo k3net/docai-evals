@@ -2,7 +2,45 @@
 
 Csoportok: ZH-only 19, HU-only 15, UNI 20, UNT 16 — összesen 70 item, 3 nyelven = 210 prompt (+ 16 kontrollszó × 3 nyelv = 48).
 
-Kiválasztási kritérium: ZH-only = zh.wikipedia vagy Baidu Baike szócikk, nincs en/hu Wikipédia-cikk (Wikidata sitelink alapján); HU-only = hu.wikipedia cikk, nincs en/zh; UNI = mindhárom wikin van cikk. A Baike-forrású itemeknél a Wikidata-entitás hiánya bizonyítja az en/hu hiányt.
+Kiválasztási kritérium: ZH-only = zh.wikipedia vagy Baidu Baike szócikk, nincs en/hu Wikipédia-cikk (Wikidata sitelink alapján); HU-only = hu.wikipedia cikk, nincs en/zh; UNI = mindhárom wikin van cikk.
+
+## ⛔ Forrás-audit — nyitott hiányosság a 9 Baike-itemnél
+
+**Korábban itt ez állt: „A Baike-forrású itemeknél a Wikidata-entitás hiánya bizonyítja az en/hu hiányt."** Ez az állítás **logikailag hamis**, és visszavontuk. A Wikidata-entitás hiánya azt jelenti, hogy az adott témához nem találtunk Wikidata-elemet — abból nem következik, hogy angol vagy magyar Wikipédia-tartalom se létezik róla. Egy téma szerepelhet egy tágabb cikk szakaszaként, más néven, vagy Wikidata-elem nélkül is.
+
+A kilenc Baike-forrású itemnél (**ZH11–ZH19**) ezért a besorolás és a helyes válasz jelenleg **nem auditálható kívülről**. Ami hiányzik itemenként:
+
+| hiányzó mező | státusz |
+|---|---|
+| pontos forrás-URL (vagy archivált URL) | nincs rögzítve |
+| hozzáférési dátum / lapverzió | nincs rögzítve |
+| az elvárt választ igazoló mondat vagy szakasz | nincs rögzítve |
+| az en/hu megfelelő keresésének dokumentált eljárása | nincs rögzítve |
+
+A korpusz 2026-08-22-én fagyott be, és a kiválasztás menetét akkor nem naplóztuk; ezt utólag nem lehet rekonstruálni, csak új, dátumozott ellenőrzéssel pótolni. Amíg ez nem történik meg, a **19 elemű ZH-csoportból kilencnél** a „csak kínai" besorolást „nem találtunk en/hu cikket" erősségű állításként kell olvasni, nem bizonyítottként.
+
+⚠️ Ez a mérési eredményeket nem érvényteleníti, de gyengíti: ha egy ZH-itemhez mégis van angol vagy magyar forrás, az adott item nem tiszta „ZH-only", és a csoportátlagot felfelé húzhatja a magyar/angol prompton. A tíz `zhwiki`-forrású item (ZH01–ZH10) QID-del auditálható, ott ez a kifogás nem áll fenn.
+
+## Kérdéstípus — eredményfüggetlen annotáció
+
+A ZH-csoport kérdéseinek nagy része „melyik tartományban / melyik városhoz…" alakú, vagyis egy helyhez tartozó közigazgatási egységet kér. A HU- és a UNI-csoportban **egyetlen ilyen kérdés sincs**:
+
+| csoport | hely→közigazgatási egység | itemek |
+|---|---|---|
+| ZH-only | **11 / 19** | ZH01, ZH02, ZH05, ZH06, ZH09, ZH11, ZH12, ZH13, ZH15, ZH16, ZH19 |
+| HU-only | 0 / 15 | — |
+| UNI | 0 / 20 | — |
+
+A besorolás szabálya **eredményfüggetlen**: kizárólag a magyar kérdés kezdetére illeszt (`^Melyik (tartomány|város|nagyváros)`), a válaszok és a pontszámok ismerete nélkül, és minden azonos alakú itemre vonatkozik. Újraszámolható: `python3 code/item_types.py`.
+
+⚠️ **Ez a fő aszimmetria-állítás zavaró tényezője.** A base körben a ZH-csoport magyar promptra 42 %-ot ad, a HU-csoport kínaira 20 %-ot — de a ZH-találatok többsége az általános földrajzi kérdésekből jön. Típus szerint bontva (utólagos, feltáró elemzés, `code/item_types.py`):
+
+| kör | nyelv | hely→közig. | egyéb |
+|---|---|---|---|
+| base | hu | 6/11 = 55 % | 2/8 = 25 % |
+| base | zh | 8/11 = 73 % | 4/8 = 50 % |
+
+A típusban összemérhető részhalmazon tehát a ZH→magyar átmenet 25 %, ami közel van a HU→kínai 20 %-hoz: **az aszimmetria nagyrészt eltűnik, ha a kérdéstípust kiegyenlítjük.** A részcsoportok kicsik (n = 8 és n = 11), így ez irányt mutat, nem dönt el — de a 42 % vs. 20 % összevetést önmagában nem szabad forrásnyelv-hatásként olvasni.
 
 ## ZH-only
 

@@ -154,9 +154,29 @@ results:
       HU_only: { hu: 0.07, en: 0.20, zh: 0.13, n: 15 }
       universal: { hu: 0.85, en: 1.00, zh: 1.00, n: 20 }
     note: >-
-      English is never the best language when the knowledge is not English-sourced. Hungarian-only
-      knowledge asked in Hungarian is the weakest cell in every variant; on the untruncated subset
-      it is 0.00 (n = 6). n = 15-19 per cell, so the intervals are wide and overlapping.
+      English is not the best language in the two main rounds when the knowledge is not
+      English-sourced, but it IS in the instruct_raw control round (ZH_only en 0.68 vs zh 0.58;
+      HU_only en 0.20 vs zh 0.13) - see the table directly above. So the defensible claim is
+      "no reliable average advantage from asking in English", not "English never wins".
+      Hungarian-only knowledge asked in Hungarian is the lowest cell in every variant; on the
+      untruncated subset it is 0.00 (n = 6). n = 15-19 per cell, so the intervals are wide and
+      overlapping and the within-variant ordering is a sample ordering, not a population ranking.
+  question_type_confound:
+    rule: "Hungarian question matches ^Melyik (tartomany|varos|nagyvaros) - result-independent"
+    reproduce: "python3 code/item_types.py"
+    place_to_admin_unit: { ZH_only: "11/19", HU_only: "0/15", universal: "0/20" }
+    base_raw_ZH_split:
+      hu: { place: "6/11", other: "2/8" }
+      zh: { place: "8/11", other: "4/8" }
+    preregistered: false
+    note: >-
+      EXPLORATORY, post-hoc. The ZH_only group is dominated by generic "which province is X in"
+      questions; the HU_only and universal groups contain none. Most of the ZH-to-Hungarian
+      transfer comes from that question type: on the remaining 8 ZH items the Hungarian prompt
+      scores 0.25, close to the HU_only-in-Chinese 0.20. The headline asymmetry
+      (ZH_only->hu 0.42 vs HU_only->zh 0.20) therefore largely dissolves once question type is
+      matched, and must not be read as a pure source-language effect. Subgroups are small
+      (n = 8 and n = 11): directional, not decisive.
   post_training_decomposition:
     base_to_instruct_chat: { improved: 16, degraded: 4, mcnemar_p: 0.012, item_clustered_p: 0.030 }
     weights_only: { improved: 9, degraded: 7, mcnemar_p: 0.804, item_clustered_p: 0.809 }
@@ -200,8 +220,11 @@ results:
     approximation_pull_base: { mean: 0.020, ci95: [0.011, 0.028], sign: "13/3", p: 0.021, wilcoxon_p: 0.001 }
     approximation_pull_instruct: { mean: 0.024, sign: "14/2", p: 0.004 }
     control_word_variant: { mean: 0.007, sign: "10/6", p: 0.454 }
-    english_specificity_diff_in_diff: { mean: 0.001, ci95: [-0.006, 0.009], sign: "8/8", p: 0.804, preregistered: false }
-    third_language_pull: { mean: 0.015, ci95: [0.008, 0.022], sign: "14/2", p: 0.004, preregistered: false }
+    # BASE MODEL ONLY. The third-language control (results_d3b_x) was never run on the instruct
+    # variant, so neither of these two has an instruct counterpart. The English-approximation pull
+    # above does: +0.020 base, +0.024 instruct.
+    english_specificity_diff_in_diff: { mean: 0.001, ci95: [-0.006, 0.009], sign: "8/8", p: 0.804, preregistered: false, variants: [base] }
+    third_language_pull: { mean: 0.015, ci95: [0.008, 0.022], sign: "14/2", p: 0.004, preregistered: false, variants: [base] }
     note: >-
       The concept pulls towards its own approximation, but just as strongly towards that
       approximation in a third language. After subtracting the language/length baseline the
@@ -229,11 +252,16 @@ verdict: >-
   semantic proximity: the untranslatable concept pulls towards its own approximation in English,
   Chinese and Hungarian alike, and the English-specific excess is +0.001 [-0.006; 0.009]. There is
   a shared middle layer, but it is thin — most of the representation stays language-specific. The
-  languages are not equal: the Hungarian target token decodes two orders of magnitude later, the
-  base model's Hungarian intermediate reading is English-adjacent (the Chinese one is not), and
-  Hungarian-only knowledge is weakest in Hungarian. English is nowhere the best language when the
-  knowledge is not English-sourced, so translating the prompt buys nothing; what is missing is the
-  source, not the language.
+  languages are not equal: at layer 24 the Hungarian target token sits about two orders of magnitude
+  lower in the ranking than the English one (median rank 35042 vs 362) and reaches the top 100 six
+  layers later (31 vs 25); the base model's Hungarian intermediate reading is English-adjacent (the
+  Chinese one is not); and Hungarian-only knowledge scored lowest in Hungarian in this sample
+  (7% vs 13% English and 20% Chinese, n = 15, wide overlapping intervals) — a sample ordering, not
+  an established population ranking. English was not the best language in either main round when
+  the knowledge was not English-sourced, but it WAS the best in the raw-prompt control round
+  (ZH group 68% English vs 58% Chinese; HU group 20% English vs 13% Chinese), so the honest
+  statement is that no reliable average advantage from translating the prompt was detectable —
+  not that translation buys nothing. What is missing looks like the source, not the language.
 
 reproducibility:
   level: R1
