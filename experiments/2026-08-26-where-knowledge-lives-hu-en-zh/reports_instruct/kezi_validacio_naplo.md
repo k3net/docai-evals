@@ -22,9 +22,26 @@ Az ellenőrzés a `00_KEZI_KOR_UTMUTATO.md` mércéje szerint készült. A csonk
 - A csonkolt HU03/en és ZH08/en válaszban a keresett információ nem jelent meg; ezek helytelenek, nem hallucinációk.
 - D1-ben csak ténylegesen megjelenő tartalmi magot számoltam. Emiatt például az utazó előadócsoportként leírt `kaláka` nem kapott közösségi-munka komponenst, a `面子`–`脸` különbséget pedig nem tekintettem teljesítettnek puszta implicit utalásból.
 
-## Kimeneti fájlok
+## Hol vannak az ítéletek
 
-- `scores_manual.csv`: a 102 kötelező Mérés A-sor `manual` és `final` oszlopa kitöltve
-- `d1_scores_manual.csv`: a 48 UNT-sor `manual_native` és `manual_distortion` oszlopa kitöltve
+Nincs külön „manual” fájl: az ellenőrző kör ítéletei ugyanabban a két CSV-ben élnek, saját
+oszlopokban, a gépi bíráló ítélete mellett. Így egy soron mindig látszik mindkét vélemény.
 
-Az eredeti csatolmányok változatlanok maradtak; a kitöltött eredmények külön fájlokba kerültek.
+| Fájl | Az ellenőrző kör oszlopai | Gépi bíráló |
+|---|---|---|
+| `results_instruct/scores.csv` | `manual` (102 sor kitöltve) | `judge` |
+| `results_instruct/d1_scores.csv` | `manual_native`, `manual_distortion` (48 UNT-sor) | `native_hit`, `distortion_hit` |
+
+A `scores.csv` `final` oszlopa **származtatott**, nem önálló adat: `manual`, ha nem üres,
+különben `judge`. A szabály egyetlen helyen él (`code/check_scores.py` → `derive()`), és
+ugyanaz a szkript ellenőrzi is:
+
+```bash
+python3 code/check_scores.py          # invariáns-ellenőrzés, hiba esetén 1-es kilépőkód
+python3 code/check_scores.py --fix    # a származtatott oszlop újraszámolása
+```
+
+⛔ 2026-08-26-ig a lemezre írt `final` oszlop 45 soron elavult volt (ott, ahol az ellenőrző kör
+eltért a bírálótól, a `final` a bíráló ítéletén maradt). Az elemzők menet közben újraszámolták,
+ezért **egyetlen riport-szám sem volt téves**, de aki a CSV-t közvetlenül olvasta, mást kapott:
+a HU-csoport magabiztos kitalálás-aránya 62 % helyett 3 %-ot. Az oszlop javítva, az őr beépítve.

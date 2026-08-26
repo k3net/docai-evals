@@ -2,10 +2,15 @@
 """07 — Bírálati kiegészítés: három, a bírálati jelentés által hiányolt számítás (laptop, GPU nélkül).
 
     python3 src/analyze_extra.py
+    python3 src/analyze_extra.py --allow-missing-sae   # csak ha tudod, mit írsz felül
 
 Kimenet:
     reports/07_biralat_kiegeszites.md           — (1) a BASE kör SAE-adatán + (2) + (3)
     reports_instruct/07_biralat_kiegeszites.md  — (1) az INSTRUCT kör SAE-adatán + (2) + (3)
+
+⚠️ Ez a szkript EGY futásban KÉT kör riportját írja, ezért a kimeneti könyvtárak fixek: a
+`SCOPE_REPORTS` környezeti változó itt nem érvényesül (egyetlen érték nem tudná a két kört
+szétválasztani). Ezért van őre: ld. `guard_overwrite()`.
 
 A három számítás (a bírálati jelentés P1/P2 tételei):
 
@@ -21,7 +26,7 @@ A három számítás (a bírálati jelentés P1/P2 tételei):
     binomiális) és Wilcoxon (scipy).
 
 (2) Item-klaszteres párosított próba a post-training pontosság-változásra (8. fejezet, bírálat
-    9. pont). Ítélet = `manual`, ha nem üres, különben `final`; helyes = 'helyes'. Előbb a
+    9. pont). Ítélet = `manual`, ha nem üres, különben `judge`; helyes = 'helyes'. Előbb a
     dolgozat (item_id, lang)-szintű McNemar-számai reprodukálódnak, majd item-blokkos
     permutáció (az item 3 nyelvi címkéje EGYÜTT cserél kört = item-szintű előjelflip, 10 000×,
     seed 0; statisztika = javult − romlott) és item-szintű bootstrap 95 % CI a nettó javulásra.
@@ -34,6 +39,7 @@ A három számítás (a bírálati jelentés P1/P2 tételei):
 ⛔ Minden szám a kódból jön; a dolgozatbeli célértékek CSAK reprodukciós ellenőrzésként
 szerepelnek (ha nem jönnek ki, a szkript jelzi, és nem igazít).
 """
+import argparse
 import csv
 import datetime
 import itertools
@@ -42,6 +48,8 @@ import math
 import pathlib
 
 import numpy as np
+
+from check_scores import derive
 
 try:
     import scipy
@@ -295,7 +303,8 @@ def load_scores(res):
 
 
 def verdict(r):
-    return r["manual"].strip() or r["final"].strip()
+    # A `final` származtatott oszlop; a forrás a `manual` és a `judge` (ld. check_scores.py).
+    return derive(r)
 
 
 def acc_matrix(S):
@@ -356,7 +365,7 @@ def part2():
 
 def part2_md(acc, acc_lines, res, mc_ok, p_ok):
     md = ["## (2) Item-klaszteres párosított próba a post-training pontosság-változásra", "",
-          "**Képlet.** Ítélet = `manual`, ha nem üres, különben `final`; helyes = `helyes`. "
+          "**Képlet.** Ítélet = `manual`, ha nem üres, különben `judge`; helyes = `helyes`. "
           "Klaszterezetlen: McNemar a diszkordáns (item_id, lang) párokon, pontos kétoldali binomiális p "
           "(azonos a `compare_rounds.py`-vel). Klaszteres: itemenként nettó = javult − romlott a 3 nyelven "
           f"együtt; (a) item-blokkos permutáció — az item nettójának előjelét flippeljük ({N_PERM}×, seed "
@@ -486,7 +495,7 @@ def matrix_md(M, cats, title):
 def part3_md(keys, cats, counts, got, hu_ok, out, trunc):
     md = ["## (3) Hallucinációs átmeneti mátrix — HU-csoport (8.2)", "",
           "**Képlet.** A 45 HU-válasz (15 item × 3 nyelv) kategóriája körönként (ítélet = `manual`, "
-          "különben `final`). A dolgozat szótára: „magabiztos kitaláció” = `hallucinacio`; „kitérés / "
+          "különben `judge`). A dolgozat szótára: „magabiztos kitaláció” = `hallucinacio`; „kitérés / "
           "nem-válasz” = `helytelen`; „helyes vagy részben” = `helyes` + `reszben`. Átmeneti mátrix: "
           "ugyanazon válasz kategóriája a két körben. Csonkolatlan érzékenység: csak azok a válaszok, ahol "
           "`truncated == 0` MINDKÉT körben. Item-blokkos permutáció: dᵢ = #kategória(1. kör) − "
@@ -543,7 +552,49 @@ def part3_md(keys, cats, counts, got, hu_ok, out, trunc):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
+STUB_MARK = "Nem értelmezhető: ehhez a körhöz nincs SAE-futás"
+
+
+def guard_overwrite(path, has_sae, allow):
+    """⛔⛔ Néma riport-rombolás elleni őr.
+
+    Az (1) szakaszhoz a kör SAE-kimenete kell (`sae/*.npz` + `prompt_q_span.json`). Ez a
+    publikált másolatban SZÁNDÉKOSAN nincs benne (78 MB, a promptokból regenerálható), a
+    szkript viszont ilyenkor is lefutott, és a teljes (1) szakasz helyére egyetlen
+    „Nem értelmezhető” sort írt — a meglévő, ÉRVÉNYES riportot felülírva. 2026-08-26-án
+    élesben megtörtént: két riport 58 sora veszett el egy ártatlan futásból.
+
+    Az őr csak akkor enged, ha az adat megvan, vagy ha nincs mit elveszíteni (a fájl nem
+    létezik, vagy a meglévő is stub). A `--allow-missing-sae` a szándékos kivétel.
+    """
+    if has_sae or allow or not path.exists():
+        return
+    if STUB_MARK in path.read_text(encoding="utf-8"):
+        return                      # a meglévő is stub → a felülírás nem veszít semmit
+    raise SystemExit(
+        f"⛔ {path} — a meglévő riport TELJES (1) szakaszt tartalmaz, ez a futás viszont csak\n"
+        f"   stubot tudna írni: hiányzik a kör SAE-kimenete (`sae/` + `prompt_q_span.json`).\n"
+        f"   A futás megszakadt, a fájl érintetlen.\n\n"
+        f"   Vagy futtasd ott, ahol az SAE-adat megvan (a mérési munkapéldány), vagy ha tényleg\n"
+        f"   stubra akarod cserélni: python3 src/analyze_extra.py --allow-missing-sae")
+
+
 def main():
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--allow-missing-sae", action="store_true",
+                    help="engedi, hogy SAE-adat híján a teljes (1) szakasz stubra cserélődjön")
+    args = ap.parse_args()
+
+    # ⛔ FAIL-FAST: az őr MINDEN érintett kimenetre lefut, mielőtt bármit számolnánk —
+    # így egy elutasított futás nem hagy félig frissített riport-párt sem.
+    targets = []
+    for rk, rep_dir in (("base", HERE / "reports"), ("chat", HERE / "reports_instruct")):
+        res_dir = ROUNDS[rk][0]
+        has_sae = (res_dir / "sae").exists() and (res_dir / "prompt_q_span.json").exists()
+        guard_overwrite(rep_dir / "07_biralat_kiegeszites.md", has_sae, args.allow_missing_sae)
+        targets.append((rk, rep_dir, ROUNDS[rk][2], has_sae))
+
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     S, keys, acc, acc_lines, res2, mc_ok, p_ok = part2()
     hu_keys, cats, counts, got, hu_ok, out3, trunc = part3(S)
@@ -551,8 +602,7 @@ def main():
     md3 = part3_md(hu_keys, cats, counts, got, hu_ok, out3, trunc)
 
     summary = {}
-    for rk, rep_dir, label in (("base", HERE / "reports", ROUNDS["base"][2]),
-                               ("chat", HERE / "reports_instruct", ROUNDS["chat"][2])):
+    for rk, rep_dir, label, has_sae in targets:
         res_dir = ROUNDS[rk][0]
         head = ["# 07 — Bírálati kiegészítés: púp-kontraszt · item-klaszteres próbák · HU átmeneti mátrix", "",
                 f"Futás: **{now}** (rendszeridő) · `src/analyze_extra.py` · numpy {np.__version__}"
@@ -561,7 +611,7 @@ def main():
                 "értékei csak reprodukciós ellenőrzésként szerepelnek.", "",
                 f"Ez a fájl: az (1) mérés **ezen kör** SAE-adatán ({label}); a (2)–(3) mérés a három kört "
                 "együtt veti össze, ezért mindkét riportban azonos.", "", "---", ""]
-        if (res_dir / "sae").exists() and (res_dir / "prompt_q_span.json").exists():
+        if has_sae:
             cells, repro = hump_contrast(res_dir, rep_dir)
             md1 = hump_md(label, cells, repro)
             summary[rk] = cells

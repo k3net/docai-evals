@@ -4,7 +4,8 @@
     python3 src/analyze_a.py            # a scores.csv-ből, LLM nélkül; a ellenőrző kör után újrafuttatható
 
 A `final` oszlop az igazságforrás: a bíráló ítélete, felülírva a `manual` oszloppal ott,
-ahol kézzel értékeltem (runbook §2: a ZH és HU csoportnál ez KÖTELEZŐ).
+ahol az ellenőrző kör újraítélte (runbook §2: a ZH és HU csoportnál ez KÖTELEZŐ). A `final`
+SZÁRMAZTATOTT oszlop, a szabálya egy helyen él: `check_scores.derive()`.
 Kimenet: reports/02_meres_a.md + reports/02_meres_a.json.
 """
 import csv
@@ -19,6 +20,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import scope_paths
+from check_scores import derive
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 FIG = scope_paths.figures(HERE)
@@ -43,7 +45,16 @@ def wilson(k, n, z=1.96):
 def main():
     rows = list(csv.DictReader(SC.open(encoding="utf-8")))
     for r in rows:
-        r["final"] = (r["manual"].strip() or r["judge"].strip())
+        # ⛔ Korábban itt NÉMÁN újraszámoltuk a `final`-t. Emiatt a riportok akkor is helyesek
+        # maradtak, amikor a lemezre írt oszlop elavult volt — aki viszont a publikált CSV-t
+        # olvasta, más számokat kapott (a HU-csoport kitalálás-aránya 62% helyett 3%-ot).
+        # Most hangosan elhasal; a javítás: python3 code/check_scores.py --fix
+        want = derive(r)
+        if r["final"].strip() != want:
+            raise SystemExit(
+                f"{SC}: {r['item_id']}/{r['lang']} final={r['final']!r}, pedig {want!r} — "
+                f"a `final` származtatott oszlop elavult. Javítás: python3 code/check_scores.py --fix")
+        r["final"] = want
         r["truncated"], r["degenerate"] = int(r["truncated"]), int(r["degenerate"])
     n_manual = sum(1 for r in rows if r["manual"].strip())
 

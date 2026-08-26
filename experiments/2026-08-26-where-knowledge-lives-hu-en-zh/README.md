@@ -104,9 +104,12 @@ limitations.
   *question tokens* between two language variants of the same item, minus the same quantity for
   randomly paired items. Tested by item-level permutation at a pre-registered layer 16, Holm
   corrected over the 9 group × language-pair cells.
-- **Pull towards the English approximation** (D3): whether the source-language concept sits closer
-  to *its own* English approximation than to the other concepts' approximations — and whether that
-  pull is English-specific, tested against the same approximation in a third language.
+- **Pull towards the English approximation** (D3, pre-registered): whether the source-language
+  concept sits closer to *its own* English approximation than to the other concepts'
+  approximations. The follow-up question — whether that pull is English-specific, tested against
+  the same approximation in a third language — is **exploratory**: it was added after the primary
+  result was seen, and is what turns a positive primary result into "no positive evidence for a
+  lexical pivot" rather than a confirmed negative.
 - **Decoding pathologies**: truncation, repetition loops, self-evaluating suffixes — all flagged
   and reported per language, because all three are language-dependent and would otherwise be read
   as "Hungarian is worse".
@@ -205,6 +208,16 @@ reports_instruct_raw/    the same for the control variant
 figures/, figures_*/     figures per variant (the reports link to them relatively)
 results*/                per-item judgements (scores.csv, d1_scores.csv), judge outputs, generated answers (gen.jsonl)
 environment.md           measured environment: hardware, versions, SAE and model checkpoints
+```
+
+In `scores.csv` two columns are sources and one is derived: `judge` is the Qwen3.6-35B verdict,
+`manual` is the GPT-5.6 Sol verification verdict (empty where that answer was not re-judged), and
+`final` is `manual` if non-empty, else `judge`. Group on `final`, not on `judge` — the reports do.
+The rule lives in one place and is enforced:
+
+```bash
+python3 code/check_scores.py          # exits non-zero if any final != (manual or judge)
+python3 code/check_scores.py --fix    # recompute the derived column
 ```
 
 Not published here: the residual dumps (~1.4 GB per variant) and the SAE activation `.npz` files

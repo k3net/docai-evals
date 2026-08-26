@@ -17,7 +17,8 @@ Ezért minden állítás a BASELINE-hoz mért TÖBBLETRŐL szól:
   A-baseline: azonos nyelv, KÜLÖNBÖZŐ item (a runbook „véletlen átfedés"-e)
   B-baseline: különböző nyelv, KÜLÖNBÖZŐ item (a párosítás permutációs nullhipotézise)
 
-Statisztika: bootstrap 95 % CI itemekre; permutációs teszt (1000×) a B-baseline ellen;
+Statisztika: bootstrap 95 % CI itemekre; permutációs teszt (10 000× derangement) a B-baseline
+ellen;
 Holm-korrekció a 9 összehasonlításra. Az ELSŐDLEGES réteg előre rögzítve a 16. (a H1
 „középső réteg" állítása); a maximális többlet rétegét külön, feltáró jelleggel közöljük.
 """
@@ -39,12 +40,31 @@ LANGS = ("hu", "en", "zh")
 PAIRS = (("zh", "en"), ("zh", "hu"), ("en", "hu"))
 PCOL = {("zh", "en"): "#2c3e50", ("zh", "hu"): "#c0392b", ("en", "hu"): "#d68910"}
 PRIMARY_LAYER = 16
+N_PERM = 10_000
 RNG = np.random.default_rng(0)
 
 
 def jac(a, b):
     u = len(a | b)
     return len(a & b) / u if u else 0.0
+
+
+def derangement(n, rng):
+    """Fixpont NÉLKÜLI véletlen permutáció, egyenletesen a derangementek felett.
+
+    ⛔ Miért nem sima `rng.permutation(n)`, a fixpontokat utólag kidobva? Mert a kidobás
+    változó elemszámú null-mintát ad (keverésenként nulla vagy több fixpont), és pont a HELYES
+    párosításokat veti ki: a nullhipotézis átlaga így más elemszámon áll, mint a megfigyelt
+    statisztika. A derangement-mintavétel n-t rögzíti, tehát `obs` és `null` ugyanannyi páron
+    nyugszik.
+
+    Elutasításos mintavétel: n ≥ 4-nél a derangementek aránya ~1/e, tehát átlagosan ~2,7
+    húzás kell egy elfogadotthoz.
+    """
+    while True:
+        perm = rng.permutation(n)
+        if not np.any(perm == np.arange(n)):
+            return perm
 
 
 def load_sets(span_mode="question"):
@@ -171,31 +191,26 @@ def main():
     for g in GROUPS:
         items = [i for i in fact if groups[i] == g]
         for a, b in PAIRS:
+            # A páronkénti Jaccard az elsődleges rétegen FIX, tehát egyszer kiszámoljuk
+            # [n × n] mátrixba, és a 10 000 keverés már csak indexelés. Enélkül a
+            # nagyobb keverésszám percekbe kerülne.
+            def null_dist(variant, obs_):
+                M = np.array([[jac(data[x][a][variant][PRIMARY_LAYER],
+                                   data[y][b][variant][PRIMARY_LAYER])
+                               for y in items] for x in items])
+                idx = np.arange(len(items))
+                draws = np.array([M[idx, derangement(len(items), RNG)].mean()
+                                  for _ in range(N_PERM)])
+                return draws, (np.sum(draws >= obs_) + 1) / (N_PERM + 1)
+
             key = f"union/{g}/{a}-{b}"
             obs = res[key]["matched"][:, PRIMARY_LAYER].mean()
-            null = []
-            for _ in range(1000):
-                perm = RNG.permutation(len(items))
-                # kizárjuk a véletlenül helyes párosításokat
-                vals = [jac(data[items[i]][a]["union"][PRIMARY_LAYER],
-                            data[items[perm[i]]][b]["union"][PRIMARY_LAYER])
-                        for i in range(len(items)) if perm[i] != i]
-                null.append(np.mean(vals))
-            null = np.array(null)
-            p = (np.sum(null >= obs) + 1) / (len(null) + 1)
+            null, p = null_dist("union", obs)
             # ugyanez a LAST halmazon — az utolsó prompt-token minden itemnél UGYANAZ a
             # karakter (`:` / `：`), tehát ott nincs szó szerinti token-egyezés, csak a
             # figyelemmel odajutott kontextus
             obs_l = res[f"last/{g}/{a}-{b}"]["matched"][:, PRIMARY_LAYER].mean()
-            null_l = []
-            for _ in range(1000):
-                perm = RNG.permutation(len(items))
-                vals = [jac(data[items[i]][a]["last"][PRIMARY_LAYER],
-                            data[items[perm[i]]][b]["last"][PRIMARY_LAYER])
-                        for i in range(len(items)) if perm[i] != i]
-                null_l.append(np.mean(vals))
-            null_l = np.array(null_l)
-            p_l = (np.sum(null_l >= obs_l) + 1) / (len(null_l) + 1)
+            null_l, p_l = null_dist("last", obs_l)
             tests.append({"group": g, "pair": f"{a}-{b}", "obs": float(obs),
                           "null_mean": float(null.mean()), "p_raw": float(p),
                           "obs_last": float(obs_l), "null_last": float(null_l.mean()),

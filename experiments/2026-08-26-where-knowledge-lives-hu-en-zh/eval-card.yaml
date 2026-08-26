@@ -107,10 +107,13 @@ metrics:
     primary: true
   - name: english_specificity
     definition: >-
-      The same pull measured against the approximation expressed in a third language, minus the
-      language/length baseline measured on the control words (difference in differences). This is
-      what separates a lexical English pivot from language-independent semantic proximity.
-    primary: true
+      EXPLORATORY, post-hoc (dataset/d3b-protokoll.md, "Kiegészítés", added 2026-08-26 after the
+      primary result was seen; not part of the pre-registered decision rule). The same pull
+      measured against the approximation expressed in a third language, minus the language/length
+      baseline measured on the control words (difference in differences). This is what separates
+      a lexical English pivot from language-independent semantic proximity, and it is why the
+      verdict is stated as absence of positive evidence rather than as a confirmed negative.
+    primary: false
   - name: intermediate_language_share
     definition: >-
       Share of strictly English (resp. Chinese) words in the top-20 tuned-lens reading per layer.
@@ -180,8 +183,8 @@ results:
     approximation_pull_base: { mean: 0.020, ci95: [0.011, 0.028], sign: "13/3", p: 0.021, wilcoxon_p: 0.001 }
     approximation_pull_instruct: { mean: 0.024, sign: "14/2", p: 0.004 }
     control_word_variant: { mean: 0.007, sign: "10/6", p: 0.454 }
-    english_specificity_diff_in_diff: { mean: 0.001, ci95: [-0.006, 0.009], sign: "8/8", p: 0.804 }
-    third_language_pull: { mean: 0.015, ci95: [0.008, 0.022], sign: "14/2", p: 0.004 }
+    english_specificity_diff_in_diff: { mean: 0.001, ci95: [-0.006, 0.009], sign: "8/8", p: 0.804, preregistered: false }
+    third_language_pull: { mean: 0.015, ci95: [0.008, 0.022], sign: "14/2", p: 0.004, preregistered: false }
     note: >-
       The concept pulls towards its own approximation, but just as strongly towards that
       approximation in a third language. After subtracting the language/length baseline the
