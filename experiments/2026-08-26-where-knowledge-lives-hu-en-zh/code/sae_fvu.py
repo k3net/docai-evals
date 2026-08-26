@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """SAE-kapu: mennyire illik a BASE-en tanult SAE a mért residualokra.
 
-    bash src/run_spark.sh src/sae_fvu.py                                   # base kör
-    SCOPE_RES=results_instruct bash src/run_spark.sh src/sae_fvu.py        # instruct kör
+    bash code/run_spark.sh code/sae_fvu.py                                   # base kör
+    SCOPE_RES=results_instruct bash code/run_spark.sh code/sae_fvu.py        # instruct kör
 
 ⛔ MIÉRT KELL: a `SAE-Res-Qwen3.5-9B-Base-W64K-L0_50` a BASE modell residualjain tanult.
 A 2. körben (`Qwen/Qwen3.5-9B`, post-trainelt) ugyanezt az SAE-t használnánk — a

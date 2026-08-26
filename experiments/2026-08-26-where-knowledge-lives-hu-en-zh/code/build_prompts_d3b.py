@@ -13,16 +13,18 @@ Rögzített szabály a közelítőszó kiválasztására (a d3b-protokoll.md-ben
   * egyszavas → "the word '…'", többszavas → "the expression '…'".
 
 Futtatás (spark-dev, KÜLÖN eredmény-könyvtárba, hogy a fő kört ne szennyezze):
-    SCOPE_RES=results_d3b SCOPE_PROMPTS=prompts_d3b.jsonl bash src/run_spark.sh src/run.py
-    SCOPE_RES=results_d3b bash src/run_spark.sh src/run_sae.py
+    SCOPE_RES=results_d3b SCOPE_PROMPTS=prompts_d3b.jsonl bash code/run_spark.sh code/run.py
+    SCOPE_RES=results_d3b bash code/run_spark.sh code/run_sae.py
 """
 import json
 import pathlib
+
+import scope_paths
 import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-ITEMS = HERE / "items.jsonl"
-OUT = HERE / "prompts_d3b.jsonl"
+ITEMS = scope_paths.data(HERE, "items.jsonl")
+OUT = scope_paths.data(HERE, "prompts_d3b.jsonl")
 TEMPLATE = "Question: {q}\nAnswer:"
 Q_WORD = "What does the word '{w}' mean?"
 Q_EXPR = "What does the expression '{w}' mean?"

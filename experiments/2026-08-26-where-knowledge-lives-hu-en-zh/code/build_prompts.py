@@ -14,9 +14,11 @@ ASCII kettőspontot adnánk, az önmagában nyelvi jel lenne a promptban).
 import json
 import pathlib
 
+import scope_paths
+
 HERE = pathlib.Path(__file__).resolve().parent.parent
-ITEMS = HERE / "items.jsonl"
-OUT = HERE / "prompts.jsonl"
+ITEMS = scope_paths.data(HERE, "items.jsonl")
+OUT = scope_paths.data(HERE, "prompts.jsonl")
 
 LANGS = ("hu", "en", "zh")
 

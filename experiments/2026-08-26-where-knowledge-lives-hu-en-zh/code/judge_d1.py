@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés D1 — komponens-lefedettség a lefordíthatatlan fogalmakra (laptop → prod 35B).
 
-    python3 src/judge_d1.py
+    python3 code/judge_d1.py
 
 48 UNT-válasz (16 fogalom × 3 nyelv) + 48 kontrollszó-válasz. A bíráló minden
 `native` és `distortion` komponensre KÜLÖN mond igent/nemet — nem összbenyomást ad,
@@ -93,7 +93,7 @@ def main():
     gen = {(r["item_id"], r["lang"]): r for r in
            (json.loads(l) for l in (RES / "gen.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
     prompts = {(p["item_id"], p["lang"]): p for p in
-               (json.loads(l) for l in (HERE / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
+               (json.loads(l) for l in (scope_paths.data(HERE, "prompts.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip())}
     todo_all = [p for p in prompts.values() if p["kind"] in ("unt", "ctrl")]
 
     out_path = RES / "d1_judge.jsonl"

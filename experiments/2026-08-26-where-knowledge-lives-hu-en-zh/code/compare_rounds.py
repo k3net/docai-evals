@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """1. kör (base) ↔ 2. kör (instruct) összevetés — a 2. kör tényleges terméke.
 
-    python3 src/compare_rounds.py
+    python3 code/compare_rounds.py
 
 A két kör MINDENBEN azonos, egyetlen dolgot kivéve: a modellt. Ugyanaz a 70 item, ugyanaz
 a 258 prompt, ugyanaz a bíráló (Qwen3.6-35B), ugyanaz a rubrika, és a ellenőrző kört ugyanaz a

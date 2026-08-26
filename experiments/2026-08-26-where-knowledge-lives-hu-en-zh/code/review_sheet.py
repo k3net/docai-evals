@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Kézi ellenőrző ív a Mérés A kötelező köréhez (ZH + HU csoport, 102 válasz).
 
-    python3 src/review_sheet.py
+    python3 code/review_sheet.py
 
 A runbook §2 szerint a ZH és HU csoport MINDEN válaszát kézzel is értékelni kell — a bíráló
 ugyanabból a modellcsaládból való, mint a vizsgált modell. Ez az ív úgy készül, hogy csak az
@@ -11,7 +11,7 @@ Menete:
   1. olvasd végig a `reports/02_kezi_ellenorzes.md`-t
   2. ahol MÁS ítéletet adnál, írd be a `results/scores.csv` `manual` oszlopába
      (helyes / reszben / helytelen / hallucinacio)
-  3. futtasd újra: `python3 src/analyze_a.py` — a `final` oszlop a kézit veszi elsőnek
+  3. futtasd újra: `python3 code/analyze_a.py` — a `final` oszlop a kézit veszi elsőnek
 """
 import argparse
 import csv
@@ -45,9 +45,9 @@ def main():
     gen = {(r["item_id"], r["lang"]): r for r in
            (json.loads(l) for l in (scope_paths.res(HERE) / "gen.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
     prompts = {(p["item_id"], p["lang"]): p for p in
-               (json.loads(l) for l in (HERE / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
+               (json.loads(l) for l in (scope_paths.data(HERE, "prompts.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip())}
     items = {json.loads(l)["id"]: json.loads(l) for l in
-             (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+             (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
 
     rows = [r for r in scores.values() if r["group"] in ("ZH", "HU")]
     if args.remaining:
@@ -58,8 +58,8 @@ def main():
              else "# Kézi ellenőrző ív — Mérés A (ZH + HU csoport)")
     md = [title, "",
           f"**{len(rows)} válasz.** Ahol egyetértesz a bíráló ítéletével, nincs teendő. Ahol nem, add meg a",
-          "`src/set_manual.py`-nak: `python3 src/set_manual.py a <item> <nyelv> <ítélet>`",
-          "(`helyes` / `reszben` / `helytelen` / `hallucinacio`), majd `python3 src/analyze_a.py`.", "",
+          "`code/set_manual.py`-nak: `python3 code/set_manual.py a <item> <nyelv> <ítélet>`",
+          "(`helyes` / `reszben` / `helytelen` / `hallucinacio`), majd `python3 code/analyze_a.py`.", "",
           "⚠️ Két dolgot érdemes külön figyelni, mert a bíráló ezekben gyenge volt:",
           "1. **hallucináció vs. helytelen** — a bíráló 162 válaszból csak 2-t nevezett hallucinációnak, pedig",
           "   a magabiztosan kitalált konkrétumok (pl. *„A nagy ho-ho-ho-horgászt József Attila írta”*) ide tartoznak;",
@@ -73,7 +73,7 @@ def main():
            "futtasd a maradékot egyben. ⛔ A `scores.csv`-t **ne szerkeszd kézzel** — a 08-24-i kör",
            "így veszett el.", "", "```bash"]
     for r in rows:
-        md.append(f"python3 src/set_manual.py a {r['item_id']:6s} {r['lang']}  {r['judge']}")
+        md.append(f"python3 code/set_manual.py a {r['item_id']:6s} {r['lang']}  {r['judge']}")
     md += ["```", ""]
 
     # ── vitás tételek előre: itt a leggyorsabb a megtérülés ─────────────────

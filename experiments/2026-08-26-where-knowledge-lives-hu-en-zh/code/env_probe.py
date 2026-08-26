@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fázis 0 — környezet-felmérés a spark-deven, konténerből futtatva.
 
-    bash ~/lang-study/src/run_spark.sh src/env_probe.py --sae-layers 0,15,31
+    bash ~/lang-study/code/run_spark.sh code/env_probe.py --sae-layers 0,15,31
 
 Amit lemér (a runbook §0 kötelező kimenete):
   1. rétegszám, hidden dim, vocab, modellosztály, a dekóder-verem elérési útja
@@ -20,6 +20,8 @@ import argparse
 import csv
 import json
 import pathlib
+
+import scope_paths
 import statistics
 import sys
 import time
@@ -60,7 +62,7 @@ def probe_config(env):
 
 # ── 2. tokenhossz-tábla ──────────────────────────────────────────────────────
 def probe_tokens(env, tok):
-    prompts = [json.loads(l) for l in (ROOT / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    prompts = [json.loads(l) for l in scope_paths.data(ROOT, "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     rows = []
     for p in prompts:
         n = len(tok(p["prompt"])["input_ids"])

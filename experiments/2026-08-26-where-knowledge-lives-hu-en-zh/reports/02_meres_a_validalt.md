@@ -1,7 +1,7 @@
 # Mérés A — ellenőrző validáció ✅ LEZÁRVA (2026-08-25)
 
 A kötelező ellenőrző kör (ZH + HU, **102/102 válasz**) elkészült, és **be van építve a pipeline-ba**:
-a `results/scores.csv` `manual` oszlopa hordozza, az `src/analyze_a.py` pedig alkalmazza.
+a `results/scores.csv` `manual` oszlopa hordozza, az `code/analyze_a.py` pedig alkalmazza.
 
 **→ A számok helye: [`02_meres_a.md`](02_meres_a.md)** (generált). Külön „validált" változat
 NINCS és nem is lesz — a dolgozatba kizárólag generált riport száma kerülhet.

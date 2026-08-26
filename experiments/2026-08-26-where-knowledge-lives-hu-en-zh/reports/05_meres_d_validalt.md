@@ -2,7 +2,7 @@
 
 A D1 kötelező köre (**48/48 UNT-válasz**, komponensenként) elkészült, és be van építve a
 pipeline-ba: a `results/d1_scores.csv` `manual_native` / `manual_distortion` oszlopa hordozza,
-az `src/analyze_d.py` alkalmazza.
+az `code/analyze_d.py` alkalmazza.
 
 **→ A számok helye: [`05_meres_d.md`](05_meres_d.md)** (generált).
 **→ Az értelmezési elv és a tételes eltérések: [`kezi_validacio_naplo.md`](kezi_validacio_naplo.md).**

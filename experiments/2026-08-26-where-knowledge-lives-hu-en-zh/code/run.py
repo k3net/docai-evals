@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Fázis 1 — a 258 prompt egyetlen végigfuttatása, minden későbbi mérés alapja.
 
-    bash ~/lang-study/src/run_spark.sh src/run.py                 # teljes futás (folytatható)
-    bash ~/lang-study/src/run_spark.sh src/run.py --limit 6       # próbakör
-    bash ~/lang-study/src/run_spark.sh src/run.py --only ZH01,HU01
+    bash ~/lang-study/code/run_spark.sh code/run.py                 # teljes futás (folytatható)
+    bash ~/lang-study/code/run_spark.sh code/run.py --limit 6       # próbakör
+    bash ~/lang-study/code/run_spark.sh code/run.py --only ZH01,HU01
 
 Promptonként két menet ugyanazon a modellen:
   1. GENERÁLÁS — greedy, seed 0, `<think>` tiltva, stop-szekvenciával

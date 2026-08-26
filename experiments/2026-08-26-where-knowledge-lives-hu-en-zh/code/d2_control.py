@@ -12,13 +12,14 @@ A dolgozat adverszáriális átolvasása (2026-08-25) három lyukat talált a D2
      egyezhetnek. Tisztított matcherrel az eredmény változhat.
 
 Ez a szkript mindhármat megméri MINDKÉT lencsére, és riportot ír:
-    python3 src/d2_control.py          → reports/05_d2_kontroll.md
+    python3 code/d2_control.py          → reports/05_d2_kontroll.md
 (Körváltás a szokásos SCOPE_RES/SCOPE_REPORTS változókkal — ld. scope_paths.py.)
 
 ⛔ A tanulság a dolgozat 7. fejezetében: a 0/32 GYENGE evidencia — a pozitív
 kontroll szerint a műszer az angol prompton is csak 3/16 (naiv) ill. 1/16 (tuned)
 fogalomnál látja a szót a középső síkokon.
 """
+import argparse
 import json
 import pathlib
 import re
@@ -52,9 +53,54 @@ def cand_clean(it):
     return out
 
 
+STUB_MARK = "nincs lens-kimenet ebben a körben"
+VARIANTS = (("", "naiv"), ("_tuned", "tuned"))
+
+
+def lens_inputs(sfx):
+    """A D2 bemenetei egy lens-változathoz. Hiányuknál a riport csak stub lenne."""
+    return (RES / f"lens_vocab{sfx}.json", RES / f"lens_top{sfx}.npz",
+            RES / f"lens_index{sfx}.json")
+
+
+def guard_overwrite(out, missing, allow):
+    """⛔⛔ Ugyanaz a hibaosztály, mint az `analyze_extra.py`-ban: ha a kör lens-kimenete
+    hiányzik, a szkript NÉMÁN stubra cserélte a meglévő riportot. Itt ez különösen drága:
+    a D2 riport hordozza a dolgozat egyik fő leletét (a „0/32" null-eredményt és az angol
+    pozitív kontroll 3/16-ját), és egy tiszta klónban — ahol a lens-kimenet nincs commitolva
+    — egyetlen ártatlan futtatás törölte volna.
+
+    Csak azt védjük, ami MOST veszne el: ha a szakasz a meglévő fájlban is stub, a
+    felülírás nem visz el semmit."""
+    if not missing or allow or not out.exists():
+        return
+    old = out.read_text(encoding="utf-8")
+    losing = [nev for _, nev in missing if f"## {nev} lens — ⏭️ {STUB_MARK}" not in old]
+    if not losing:
+        return
+    hiany = ", ".join(f"`{p.name}`" for sfx, _ in missing for p in lens_inputs(sfx)
+                      if not p.exists())
+    raise SystemExit(
+        f"⛔ {out} — a meglévő riport TELJES ({', '.join(losing)} lens), ez a futás viszont\n"
+        f"   csak stubot tudna írni: hiányzik {hiany}.\n"
+        f"   A futás megszakadt, a fájl érintetlen.\n\n"
+        f"   Vagy futtasd ott, ahol a lens-kimenet megvan, vagy ha tényleg stubra akarod\n"
+        f"   cserélni: python3 code/d2_control.py --allow-missing-lens")
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--allow-missing-lens", action="store_true",
+                    help="a hiányzó lens-kimenet ellenére is írja felül a riportot stubbal")
+    args = ap.parse_args()
+
+    out = OUT / "05_d2_kontroll.md"
+    missing = [(sfx, nev) for sfx, nev in VARIANTS
+               if not all(p.exists() for p in lens_inputs(sfx))]
+    guard_overwrite(out, missing, args.allow_missing_lens)
+
     unt = {}
-    for line in open(ROOT / "items.jsonl", encoding="utf-8"):
+    for line in open(scope_paths.data(ROOT, "items.jsonl"), encoding="utf-8"):
         it = json.loads(line)
         if it.get("group") == "UNT":
             unt[it["id"]] = it
@@ -63,10 +109,9 @@ def main():
           f"Kör: `{RES.name}` · középső tartomány: 0–{MID - 1}. sík · "
           "matcher: az `analyze_d.py` eredetije + írásjel-tisztított változat.", ""]
 
-    for sfx, nev in (("", "naiv"), ("_tuned", "tuned")):
-        vp, tp, ip = (RES / f"lens_vocab{sfx}.json", RES / f"lens_top{sfx}.npz",
-                      RES / f"lens_index{sfx}.json")
-        if not (vp.exists() and tp.exists() and ip.exists()):
+    for sfx, nev in VARIANTS:
+        vp, tp, ip = lens_inputs(sfx)
+        if (sfx, nev) in missing:
             md += [f"## {nev} lens — ⏭️ nincs lens-kimenet ebben a körben", ""]
             continue
         vocab = json.load(open(vp, encoding="utf-8"))
@@ -125,7 +170,6 @@ def main():
            "is csak kevés fogalomnál jelenik meg a közelítőszó a középső síkokon. "
            "A nem-angol promptok nullája ezért **gyenge evidencia** a fordítási útvonal "
            "ellen — a dolgozat 7. fejezete ennek megfelelően fogalmaz.", ""]
-    out = OUT / "05_d2_kontroll.md"
     out.write_text("\n".join(md), encoding="utf-8")
     print(f"→ {out}")
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Füstteszt a 2. körhöz (instruct): chat-sablon + kérdés-token-tartomány.
 
-    SCOPE_MODEL=Qwen/Qwen3.5-9B SCOPE_CHAT=1 bash src/run_spark.sh src/smoke_chat.py
+    SCOPE_MODEL=Qwen/Qwen3.5-9B SCOPE_CHAT=1 bash code/run_spark.sh code/smoke_chat.py
 
 Csak a tokenizert tölti be (nincs GPU-igény). Azt ellenőrzi, hogy
   * a chat-sablon `enable_thinking=False`-szal NEM nyit `<think>`-et,
@@ -22,7 +22,7 @@ ROOT = pathlib.Path("/work")
 
 def main():
     tok = AutoTokenizer.from_pretrained(scope_paths.MODEL)
-    rows = [json.loads(l) for l in (ROOT / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [json.loads(l) for l in scope_paths.data(ROOT, "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     print(f"modell: {scope_paths.MODEL} · chat-sablon: {scope_paths.CHAT}\n")
     for lang in ("hu", "en", "zh"):
         p = next(r for r in rows if r["lang"] == lang and r["kind"] == "fact")

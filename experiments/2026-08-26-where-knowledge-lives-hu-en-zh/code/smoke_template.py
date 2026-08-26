@@ -11,7 +11,7 @@ Két sablon, ugyanazokon az itemeken, három nyelven:
   zero  — a runbook eredeti sablonja
   few2  — két semleges Q/A minta ELŐTTE, a prompt nyelvén
 
-    bash ~/lang-study/src/run_spark.sh src/smoke_template.py
+    bash ~/lang-study/code/run_spark.sh code/smoke_template.py
 """
 import json, pathlib, time
 import torch
@@ -40,7 +40,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to("cuda").eval()
     torch.manual_seed(0)
 
-    prompts = [json.loads(l) for l in (ROOT / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    prompts = [json.loads(l) for l in scope_paths.data(ROOT, "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     pick = []
     for grp, kind in (("ZH", "fact"), ("HU", "fact"), ("UNI", "fact"), ("UNT", "unt")):
         ids = sorted({p["item_id"] for p in prompts if p["group"] == grp and p["kind"] == kind})[:2]

@@ -19,7 +19,7 @@
 - **D1 native:** gépi 100/138 (72.5%) → kézi **69/138 (50.0%)**.
 - **D1 distortion:** gépi 24/96 (25.0%) → kézi **18/96 (18.8%)**.
 
-> **Módszertani korlát:** a korábbi két kör kézi precedensnaplója, valamint a `src/set_manual.py`, `src/analyze_a.py` és `src/analyze_d.py` projektfájl nem volt a csatolmányok között. Az ítéleteket ezért a 3. kör útmutatójában teljes terjedelemben idézett rubrika alapján hoztam meg. Az eredeti CSV-ket nem szerkesztettem; a dokumentum végén szereplő 150 parancs a projektkörnyezetben biztonságosan visszaírja a döntéseket. A korábbi körökkel páros összehasonlítás és új p-érték a hiányzó korábbi egyedi ítéletek nélkül nem számolható.
+> **Módszertani korlát:** a korábbi két kör kézi precedensnaplója, valamint a `code/set_manual.py`, `code/analyze_a.py` és `code/analyze_d.py` projektfájl nem volt a csatolmányok között. Az ítéleteket ezért a 3. kör útmutatójában teljes terjedelemben idézett rubrika alapján hoztam meg. Az eredeti CSV-ket nem szerkesztettem; a dokumentum végén szereplő 150 parancs a projektkörnyezetben biztonságosan visszaírja a döntéseket. A korábbi körökkel páros összehasonlítás és új p-érték a hiányzó korábbi egyedi ítéletek nélkül nem számolható.
 
 ## Mérés A — javított pontossági mátrix
 
@@ -265,163 +265,163 @@ export SCOPE_RES=results_instruct_raw
 export SCOPE_REPORTS=reports_instruct_raw
 
 # Mérés A — 102/102 kötelező HU + ZH döntés
-python3 src/set_manual.py a HU01 hu helytelen
-python3 src/set_manual.py a HU01 en hallucinacio
-python3 src/set_manual.py a HU01 zh helytelen
-python3 src/set_manual.py a HU02 hu reszben
-python3 src/set_manual.py a HU02 en hallucinacio
-python3 src/set_manual.py a HU02 zh hallucinacio
-python3 src/set_manual.py a HU03 hu hallucinacio
-python3 src/set_manual.py a HU03 en hallucinacio
-python3 src/set_manual.py a HU03 zh hallucinacio
-python3 src/set_manual.py a HU04 hu helytelen
-python3 src/set_manual.py a HU04 en helytelen
-python3 src/set_manual.py a HU04 zh helytelen
-python3 src/set_manual.py a HU05 hu hallucinacio
-python3 src/set_manual.py a HU05 en hallucinacio
-python3 src/set_manual.py a HU05 zh helytelen
-python3 src/set_manual.py a HU06 hu hallucinacio
-python3 src/set_manual.py a HU06 en hallucinacio
-python3 src/set_manual.py a HU06 zh hallucinacio
-python3 src/set_manual.py a HU07 hu helytelen
-python3 src/set_manual.py a HU07 en helyes
-python3 src/set_manual.py a HU07 zh helyes
-python3 src/set_manual.py a HU08 hu hallucinacio
-python3 src/set_manual.py a HU08 en reszben
-python3 src/set_manual.py a HU08 zh hallucinacio
-python3 src/set_manual.py a HU09 hu hallucinacio
-python3 src/set_manual.py a HU09 en hallucinacio
-python3 src/set_manual.py a HU09 zh hallucinacio
-python3 src/set_manual.py a HU10 hu helytelen
-python3 src/set_manual.py a HU10 en helytelen
-python3 src/set_manual.py a HU10 zh hallucinacio
-python3 src/set_manual.py a HU11 hu helyes
-python3 src/set_manual.py a HU11 en helyes
-python3 src/set_manual.py a HU11 zh hallucinacio
-python3 src/set_manual.py a HU12 hu hallucinacio
-python3 src/set_manual.py a HU12 en hallucinacio
-python3 src/set_manual.py a HU12 zh hallucinacio
-python3 src/set_manual.py a HU13 hu helytelen
-python3 src/set_manual.py a HU13 en hallucinacio
-python3 src/set_manual.py a HU13 zh reszben
-python3 src/set_manual.py a HU14 hu hallucinacio
-python3 src/set_manual.py a HU14 en hallucinacio
-python3 src/set_manual.py a HU14 zh hallucinacio
-python3 src/set_manual.py a HU15 hu hallucinacio
-python3 src/set_manual.py a HU15 en helyes
-python3 src/set_manual.py a HU15 zh helyes
-python3 src/set_manual.py a ZH01 hu helyes
-python3 src/set_manual.py a ZH01 en helyes
-python3 src/set_manual.py a ZH01 zh helyes
-python3 src/set_manual.py a ZH02 hu hallucinacio
-python3 src/set_manual.py a ZH02 en hallucinacio
-python3 src/set_manual.py a ZH02 zh hallucinacio
-python3 src/set_manual.py a ZH03 hu helytelen
-python3 src/set_manual.py a ZH03 en helytelen
-python3 src/set_manual.py a ZH03 zh helytelen
-python3 src/set_manual.py a ZH04 hu helytelen
-python3 src/set_manual.py a ZH04 en helytelen
-python3 src/set_manual.py a ZH04 zh helytelen
-python3 src/set_manual.py a ZH05 hu helyes
-python3 src/set_manual.py a ZH05 en helyes
-python3 src/set_manual.py a ZH05 zh helyes
-python3 src/set_manual.py a ZH06 hu hallucinacio
-python3 src/set_manual.py a ZH06 en helyes
-python3 src/set_manual.py a ZH06 zh hallucinacio
-python3 src/set_manual.py a ZH07 hu hallucinacio
-python3 src/set_manual.py a ZH07 en hallucinacio
-python3 src/set_manual.py a ZH07 zh hallucinacio
-python3 src/set_manual.py a ZH08 hu reszben
-python3 src/set_manual.py a ZH08 en reszben
-python3 src/set_manual.py a ZH08 zh helyes
-python3 src/set_manual.py a ZH09 hu helyes
-python3 src/set_manual.py a ZH09 en helyes
-python3 src/set_manual.py a ZH09 zh helyes
-python3 src/set_manual.py a ZH10 hu helytelen
-python3 src/set_manual.py a ZH10 en helytelen
-python3 src/set_manual.py a ZH10 zh helytelen
-python3 src/set_manual.py a ZH11 hu hallucinacio
-python3 src/set_manual.py a ZH11 en helyes
-python3 src/set_manual.py a ZH11 zh hallucinacio
-python3 src/set_manual.py a ZH12 hu hallucinacio
-python3 src/set_manual.py a ZH12 en helyes
-python3 src/set_manual.py a ZH12 zh helyes
-python3 src/set_manual.py a ZH13 hu helyes
-python3 src/set_manual.py a ZH13 en helyes
-python3 src/set_manual.py a ZH13 zh helyes
-python3 src/set_manual.py a ZH14 hu helyes
-python3 src/set_manual.py a ZH14 en helyes
-python3 src/set_manual.py a ZH14 zh helyes
-python3 src/set_manual.py a ZH15 hu helyes
-python3 src/set_manual.py a ZH15 en helyes
-python3 src/set_manual.py a ZH15 zh helyes
-python3 src/set_manual.py a ZH16 hu helyes
-python3 src/set_manual.py a ZH16 en helyes
-python3 src/set_manual.py a ZH16 zh helyes
-python3 src/set_manual.py a ZH17 hu helytelen
-python3 src/set_manual.py a ZH17 en helyes
-python3 src/set_manual.py a ZH17 zh helytelen
-python3 src/set_manual.py a ZH18 hu helyes
-python3 src/set_manual.py a ZH18 en helyes
-python3 src/set_manual.py a ZH18 zh helyes
-python3 src/set_manual.py a ZH19 hu helyes
-python3 src/set_manual.py a ZH19 en helyes
-python3 src/set_manual.py a ZH19 zh helyes
+python3 code/set_manual.py a HU01 hu helytelen
+python3 code/set_manual.py a HU01 en hallucinacio
+python3 code/set_manual.py a HU01 zh helytelen
+python3 code/set_manual.py a HU02 hu reszben
+python3 code/set_manual.py a HU02 en hallucinacio
+python3 code/set_manual.py a HU02 zh hallucinacio
+python3 code/set_manual.py a HU03 hu hallucinacio
+python3 code/set_manual.py a HU03 en hallucinacio
+python3 code/set_manual.py a HU03 zh hallucinacio
+python3 code/set_manual.py a HU04 hu helytelen
+python3 code/set_manual.py a HU04 en helytelen
+python3 code/set_manual.py a HU04 zh helytelen
+python3 code/set_manual.py a HU05 hu hallucinacio
+python3 code/set_manual.py a HU05 en hallucinacio
+python3 code/set_manual.py a HU05 zh helytelen
+python3 code/set_manual.py a HU06 hu hallucinacio
+python3 code/set_manual.py a HU06 en hallucinacio
+python3 code/set_manual.py a HU06 zh hallucinacio
+python3 code/set_manual.py a HU07 hu helytelen
+python3 code/set_manual.py a HU07 en helyes
+python3 code/set_manual.py a HU07 zh helyes
+python3 code/set_manual.py a HU08 hu hallucinacio
+python3 code/set_manual.py a HU08 en reszben
+python3 code/set_manual.py a HU08 zh hallucinacio
+python3 code/set_manual.py a HU09 hu hallucinacio
+python3 code/set_manual.py a HU09 en hallucinacio
+python3 code/set_manual.py a HU09 zh hallucinacio
+python3 code/set_manual.py a HU10 hu helytelen
+python3 code/set_manual.py a HU10 en helytelen
+python3 code/set_manual.py a HU10 zh hallucinacio
+python3 code/set_manual.py a HU11 hu helyes
+python3 code/set_manual.py a HU11 en helyes
+python3 code/set_manual.py a HU11 zh hallucinacio
+python3 code/set_manual.py a HU12 hu hallucinacio
+python3 code/set_manual.py a HU12 en hallucinacio
+python3 code/set_manual.py a HU12 zh hallucinacio
+python3 code/set_manual.py a HU13 hu helytelen
+python3 code/set_manual.py a HU13 en hallucinacio
+python3 code/set_manual.py a HU13 zh reszben
+python3 code/set_manual.py a HU14 hu hallucinacio
+python3 code/set_manual.py a HU14 en hallucinacio
+python3 code/set_manual.py a HU14 zh hallucinacio
+python3 code/set_manual.py a HU15 hu hallucinacio
+python3 code/set_manual.py a HU15 en helyes
+python3 code/set_manual.py a HU15 zh helyes
+python3 code/set_manual.py a ZH01 hu helyes
+python3 code/set_manual.py a ZH01 en helyes
+python3 code/set_manual.py a ZH01 zh helyes
+python3 code/set_manual.py a ZH02 hu hallucinacio
+python3 code/set_manual.py a ZH02 en hallucinacio
+python3 code/set_manual.py a ZH02 zh hallucinacio
+python3 code/set_manual.py a ZH03 hu helytelen
+python3 code/set_manual.py a ZH03 en helytelen
+python3 code/set_manual.py a ZH03 zh helytelen
+python3 code/set_manual.py a ZH04 hu helytelen
+python3 code/set_manual.py a ZH04 en helytelen
+python3 code/set_manual.py a ZH04 zh helytelen
+python3 code/set_manual.py a ZH05 hu helyes
+python3 code/set_manual.py a ZH05 en helyes
+python3 code/set_manual.py a ZH05 zh helyes
+python3 code/set_manual.py a ZH06 hu hallucinacio
+python3 code/set_manual.py a ZH06 en helyes
+python3 code/set_manual.py a ZH06 zh hallucinacio
+python3 code/set_manual.py a ZH07 hu hallucinacio
+python3 code/set_manual.py a ZH07 en hallucinacio
+python3 code/set_manual.py a ZH07 zh hallucinacio
+python3 code/set_manual.py a ZH08 hu reszben
+python3 code/set_manual.py a ZH08 en reszben
+python3 code/set_manual.py a ZH08 zh helyes
+python3 code/set_manual.py a ZH09 hu helyes
+python3 code/set_manual.py a ZH09 en helyes
+python3 code/set_manual.py a ZH09 zh helyes
+python3 code/set_manual.py a ZH10 hu helytelen
+python3 code/set_manual.py a ZH10 en helytelen
+python3 code/set_manual.py a ZH10 zh helytelen
+python3 code/set_manual.py a ZH11 hu hallucinacio
+python3 code/set_manual.py a ZH11 en helyes
+python3 code/set_manual.py a ZH11 zh hallucinacio
+python3 code/set_manual.py a ZH12 hu hallucinacio
+python3 code/set_manual.py a ZH12 en helyes
+python3 code/set_manual.py a ZH12 zh helyes
+python3 code/set_manual.py a ZH13 hu helyes
+python3 code/set_manual.py a ZH13 en helyes
+python3 code/set_manual.py a ZH13 zh helyes
+python3 code/set_manual.py a ZH14 hu helyes
+python3 code/set_manual.py a ZH14 en helyes
+python3 code/set_manual.py a ZH14 zh helyes
+python3 code/set_manual.py a ZH15 hu helyes
+python3 code/set_manual.py a ZH15 en helyes
+python3 code/set_manual.py a ZH15 zh helyes
+python3 code/set_manual.py a ZH16 hu helyes
+python3 code/set_manual.py a ZH16 en helyes
+python3 code/set_manual.py a ZH16 zh helyes
+python3 code/set_manual.py a ZH17 hu helytelen
+python3 code/set_manual.py a ZH17 en helyes
+python3 code/set_manual.py a ZH17 zh helytelen
+python3 code/set_manual.py a ZH18 hu helyes
+python3 code/set_manual.py a ZH18 en helyes
+python3 code/set_manual.py a ZH18 zh helyes
+python3 code/set_manual.py a ZH19 hu helyes
+python3 code/set_manual.py a ZH19 en helyes
+python3 code/set_manual.py a ZH19 zh helyes
 
 # D1 — 48/48 UNT-válasz
-python3 src/set_manual.py d UNT-HU01 hu --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU01 en --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU01 zh --native 1 --distortion 1
-python3 src/set_manual.py d UNT-HU02 hu --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU02 en --native 0 --distortion 0
-python3 src/set_manual.py d UNT-HU02 zh --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU03 hu --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU03 en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU03 zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU04 hu --native 1 --distortion 1
-python3 src/set_manual.py d UNT-HU04 en --native 1 --distortion 1
-python3 src/set_manual.py d UNT-HU04 zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05 hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05 en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05 zh --native 2 --distortion 1
-python3 src/set_manual.py d UNT-HU06 hu --native 0 --distortion 1
-python3 src/set_manual.py d UNT-HU06 en --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU06 zh --native 0 --distortion 1
-python3 src/set_manual.py d UNT-HU07 hu --native 1 --distortion 1
-python3 src/set_manual.py d UNT-HU07 en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU07 zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU08 hu --native 0 --distortion 1
-python3 src/set_manual.py d UNT-HU08 en --native 1 --distortion 2
-python3 src/set_manual.py d UNT-HU08 zh --native 0 --distortion 1
-python3 src/set_manual.py d UNT-ZH01 hu --native 0 --distortion 0
-python3 src/set_manual.py d UNT-ZH01 en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH01 zh --native 0 --distortion 0
-python3 src/set_manual.py d UNT-ZH02 hu --native 1 --distortion 0
-python3 src/set_manual.py d UNT-ZH02 en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH02 zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH03 hu --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH03 en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH03 zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH04 hu --native 0 --distortion 1
-python3 src/set_manual.py d UNT-ZH04 en --native 1 --distortion 0
-python3 src/set_manual.py d UNT-ZH04 zh --native 1 --distortion 0
-python3 src/set_manual.py d UNT-ZH05 hu --native 0 --distortion 0
-python3 src/set_manual.py d UNT-ZH05 en --native 1 --distortion 1
-python3 src/set_manual.py d UNT-ZH05 zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH06 hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH06 en --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH06 zh --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH07 hu --native 0 --distortion 1
-python3 src/set_manual.py d UNT-ZH07 en --native 1 --distortion 0
-python3 src/set_manual.py d UNT-ZH07 zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH08 hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH08 en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH08 zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU01 hu --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU01 en --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU01 zh --native 1 --distortion 1
+python3 code/set_manual.py d UNT-HU02 hu --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU02 en --native 0 --distortion 0
+python3 code/set_manual.py d UNT-HU02 zh --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU03 hu --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU03 en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU03 zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU04 hu --native 1 --distortion 1
+python3 code/set_manual.py d UNT-HU04 en --native 1 --distortion 1
+python3 code/set_manual.py d UNT-HU04 zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05 hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05 en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05 zh --native 2 --distortion 1
+python3 code/set_manual.py d UNT-HU06 hu --native 0 --distortion 1
+python3 code/set_manual.py d UNT-HU06 en --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU06 zh --native 0 --distortion 1
+python3 code/set_manual.py d UNT-HU07 hu --native 1 --distortion 1
+python3 code/set_manual.py d UNT-HU07 en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU07 zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU08 hu --native 0 --distortion 1
+python3 code/set_manual.py d UNT-HU08 en --native 1 --distortion 2
+python3 code/set_manual.py d UNT-HU08 zh --native 0 --distortion 1
+python3 code/set_manual.py d UNT-ZH01 hu --native 0 --distortion 0
+python3 code/set_manual.py d UNT-ZH01 en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH01 zh --native 0 --distortion 0
+python3 code/set_manual.py d UNT-ZH02 hu --native 1 --distortion 0
+python3 code/set_manual.py d UNT-ZH02 en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH02 zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH03 hu --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH03 en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH03 zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH04 hu --native 0 --distortion 1
+python3 code/set_manual.py d UNT-ZH04 en --native 1 --distortion 0
+python3 code/set_manual.py d UNT-ZH04 zh --native 1 --distortion 0
+python3 code/set_manual.py d UNT-ZH05 hu --native 0 --distortion 0
+python3 code/set_manual.py d UNT-ZH05 en --native 1 --distortion 1
+python3 code/set_manual.py d UNT-ZH05 zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH06 hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH06 en --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH06 zh --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH07 hu --native 0 --distortion 1
+python3 code/set_manual.py d UNT-ZH07 en --native 1 --distortion 0
+python3 code/set_manual.py d UNT-ZH07 zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH08 hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH08 en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH08 zh --native 3 --distortion 0
 
 # Kötelező státuszellenőrzés és riport-újragenerálás
-python3 src/set_manual.py status
-python3 src/analyze_a.py
-python3 src/analyze_d.py
+python3 code/set_manual.py status
+python3 code/analyze_a.py
+python3 code/analyze_d.py
 ```
 
 ## Ellenőrző lista

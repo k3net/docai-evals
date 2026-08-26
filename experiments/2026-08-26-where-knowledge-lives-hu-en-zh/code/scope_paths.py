@@ -16,7 +16,7 @@ környezeti változó dönti el, hogy egyetlen szkriptet se kelljen forkolni:
 Példa a 2. körre (spark-dev, konténer):
 
     SCOPE_MODEL=Qwen/Qwen3.5-9B SCOPE_RES=results_instruct SCOPE_CHAT=1 \
-        bash src/run_spark.sh src/run.py
+        bash code/run_spark.sh code/run.py
 
 ⚠️ A `run_spark.sh` ezeket a változókat továbbadja a konténernek — ha új változót veszel
 fel ide, oda is fel kell venni, különben némán az alapértelmezés fut le.
@@ -29,6 +29,29 @@ MODEL = os.environ.get("SCOPE_MODEL") or "Qwen/Qwen3.5-9B-Base"
 CHAT = os.environ.get("SCOPE_CHAT", "") in ("1", "true", "yes")
 
 
+DATASET = "dataset"
+
+
+def data(root, name):
+    """Befagyasztott bemeneti adatfájl (`items.jsonl`, `prompts*.jsonl`) feloldása.
+
+    ⛔ A kísérletnek KÉT példánya van, eltérő szerkezettel:
+      · a publikus repó `dataset/` alkönyvtárba teszi az adatot (ez a kanonikus hely),
+      · a mérési munkapéldány lapos: minden a kísérlet gyökerében ül.
+    Ezért ELŐSZÖR a `dataset/`-et nézzük, és csak akkor esünk vissza a gyökérre, ha ott
+    nincs. Enélkül a repóba átemelt szkriptek `FileNotFoundError`-ral halnak — pontosan
+    ez törte el a tiszta klónból való reprodukálást.
+
+    Nemlétező fájlnál a `dataset/`-es utat adjuk vissza: az új fájl oda íródjon, és a
+    hibaüzenet is a kanonikus helyet nevezze meg.
+    """
+    canonical = root / DATASET / name
+    if canonical.exists():
+        return canonical
+    legacy = root / name
+    return legacy if legacy.exists() else canonical
+
+
 def res(root):
     """A futáskör eredmény-könyvtára a megadott gyökér alatt."""
     return root / (os.environ.get("SCOPE_RES") or "results")
@@ -37,7 +60,7 @@ def res(root):
 def prompts(root):
     """A futtatandó prompt-fájl. ⛔ Ha nem az alapértelmezett, a SCOPE_RES-t is állítsd át,
     különben a mellék-promptok a fő kör gen.jsonl-jébe keverednek."""
-    return root / (os.environ.get("SCOPE_PROMPTS") or "prompts.jsonl")
+    return data(root, os.environ.get("SCOPE_PROMPTS") or "prompts.jsonl")
 
 
 def reports(root):

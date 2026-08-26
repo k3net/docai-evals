@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A generált válaszok tisztítása az ÖNÉRTÉKELŐ toldaléktól.
 
-    python3 src/clean_answers.py
+    python3 code/clean_answers.py
 
 ⛔⛔ MÉRT PROBLÉMA: a base modell a válasz után gyakran SAJÁT feladat-promptot ír
 (*„请判断回答是否正确…正确"*, *„A single-select problem: Is the question answered…"*),

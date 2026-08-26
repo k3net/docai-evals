@@ -9,7 +9,7 @@
 | **azonos** | a 70 item és a 258 prompt (08-22 óta fagyasztva) · a bíráló (Qwen3.6-35B) · a rubrika · a ellenőrző kört ugyanaz a személy végezte, ugyanazzal a mércével · a token-keret hatásában (fact 200 · UNT/kontroll 800; a base kör magától megállt válaszai kisebb történeti kereten futottak, ami greedy dekódolásnál bitre azonos prefixet ad) |
 | **eltér** | a modellsúlyok (base → instruct) · a promptozás (nyers folytatás → chat-sablon) |
 
-⛔ **A promptozás nem választható el a modelltől.** Az instruct modellt chat-sablon nélkül használni nem az ő rendeltetésszerű használata; a különbség tehát a *post-trainelt modell + a hozzá való promptozás* együttes hatása. Ezt a dolgozatban ki kell mondani — a kettőt a kontroll-kör (nyers prompt az instruct modellen) választja szét — az eredménye lentebb, és átértelmezi ezt a különbséget.
+⛔ **A promptozás nem választható el a modelltől.** Az instruct modellt chat-sablon nélkül használni nem az ő rendeltetésszerű használata; a különbség tehát a *post-trainelt modell + a hozzá való promptozás* együttes hatása. Ezt a dolgozatban ki kell mondani — a kettőt a kontroll-kör (nyers prompt az instruct modellen) választja szét: az eredménye lentebb, és átértelmezi ezt a különbséget.
 
 ## Terepviszonyok — amit a számok olvasásakor tudni kell
 

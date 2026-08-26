@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A keretezési érzékenységvizsgálat válaszainak bírálata — UGYANAZZAL a rubrikával, mint a D1.
 
-    python3 src/judge_d1_sens.py
+    python3 code/judge_d1_sens.py
 
 Fontos, hogy a rubrika és a modell azonos legyen a D1-gyel, különben nem a keretezést
 mérnénk, hanem a bírálót. Ezért a `judge_d1`-ből importáljuk a rubrikát és a hívást.
@@ -19,7 +19,7 @@ RES = scope_paths.res(HERE)
 
 def main():
     items = {json.loads(l)["id"]: json.loads(l) for l in
-             (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+             (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
     files = sorted((RES / "gen_sens").glob("*.json"))
     out = []
     for f in files:

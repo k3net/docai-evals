@@ -36,7 +36,7 @@ A base modell a válasz után gyakran **saját feladat-promptot** ír (*„请�
 
 A jelenség **nyelvfüggő**: hu 0/86 = 0% · en 0/86 = 0% · zh 0/86 = 0% — tehát pont azokat a cellákat rontja, ahol a D1 meglepő eredménye született.
 
-A `src/clean_answers.py` utólag levágja (generálni nem kell újra, a toldalék nem része a válasznak), és a bírálók a `text_clean` mezőt kapják. **A javítás hatása mérve:** a kínai-forrású fogalmak kínai nyelvű komponens-lefedettsége **58 % → 71 %**, a Mérés A `HU/en` cellája pedig 27 % → 20 % (ott a toldalék *fel*felé torzított). Ezt a lépést a módszertanban le kell írni.
+A `code/clean_answers.py` utólag levágja (generálni nem kell újra, a toldalék nem része a válasznak), és a bírálók a `text_clean` mezőt kapják. **A javítás hatása mérve:** a kínai-forrású fogalmak kínai nyelvű komponens-lefedettsége **58 % → 71 %**, a Mérés A `HU/en` cellája pedig 27 % → 20 % (ott a toldalék *fel*felé torzított). Ezt a lépést a módszertanban le kell írni.
 
 ## D3 — SAE: a fogalom vagy az angol közelítőszó felé húz?
 
@@ -127,7 +127,7 @@ A forrásnyelvi fogalom 16 esetben a SAJÁT angol kérdéséhez áll közelebb, 
 
 ⚠️ Ellenpróba-korlát: a tuned lens top-20-a **koncentráltabb** (4097 vs. 7081 különböző token az egész korpuszon), tehát kevesebb szót lát — a 0 találat részben ebből is jöhet. A naiv lens 0-ja viszont nem ilyen: az ő top-20-a tágabb, csak épp olvashatatlan.
 
-⛔⛔ **A null-eredmény bizonyító ereje korlátos** — ld. a kör kontroll-riportját ([05_d2_kontroll.md](05_d2_kontroll.md), `src/d2_control.py`): az ANGOL prompton futó pozitív kontroll szerint a műszer érzékenysége alacsony, több fogalom jelöltszava a korpusz egyetlen top-20-jában sem fordul elő, és a szóillesztés írásjel-érzékeny (tisztított matcherrel a nulla törhet). A D2 tehát gyenge evidencia a fordítási útvonal ellen, nem perdöntő.
+⛔⛔ **A null-eredmény bizonyító ereje korlátos** — ld. a kör kontroll-riportját ([05_d2_kontroll.md](05_d2_kontroll.md), `code/d2_control.py`): az ANGOL prompton futó pozitív kontroll szerint a műszer érzékenysége alacsony, több fogalom jelöltszava a korpusz egyetlen top-20-jában sem fordul elő, és a szóillesztés írásjel-érzékeny (tisztított matcherrel a nulla törhet). A D2 tehát gyenge evidencia a fordítási útvonal ellen, nem perdöntő.
 
 
 ![D2](../figures_instruct/05_D2_angol_kozelites_savok.png)

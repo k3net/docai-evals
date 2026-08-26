@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés A elemzése — a 3×3 pontossági mátrix a runbook szerint.
 
-    python3 src/analyze_a.py            # a scores.csv-ből, LLM nélkül; a ellenőrző kör után újrafuttatható
+    python3 code/analyze_a.py            # a scores.csv-ből, LLM nélkül; a ellenőrző kör után újrafuttatható
 
 A `final` oszlop az igazságforrás: a bíráló ítélete, felülírva a `manual` oszloppal ott,
 ahol az ellenőrző kör újraítélte (runbook §2: a ZH és HU csoportnál ez KÖTELEZŐ). A `final`

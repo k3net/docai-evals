@@ -11,7 +11,7 @@ Tisztább beavatkozás: a `<think>` token tiltása (`bad_words_ids`) — a sablo
 marad a runbook szerinti, nyelvek között szimmetrikus, és a beavatkozás egy
 sorban dokumentálható a módszertanban.
 
-    bash ~/lang-study/src/run_spark.sh src/smoke_think.py
+    bash ~/lang-study/code/run_spark.sh code/smoke_think.py
 """
 import json, pathlib, time
 import torch
@@ -34,7 +34,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to("cuda").eval()
     torch.manual_seed(0)
 
-    prompts = [json.loads(l) for l in (ROOT / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    prompts = [json.loads(l) for l in scope_paths.data(ROOT, "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     pick = [p for p in prompts if p["item_id"] in ("UNT-HU01", "UNT-HU02", "UNT-ZH01", "UNT-HU01-ctrl")]
     pick += [p for p in prompts if p["item_id"] in ("ZH01", "HU01")]
 

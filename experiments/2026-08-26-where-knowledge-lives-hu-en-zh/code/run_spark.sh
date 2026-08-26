@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Konténer-futtató a spark-devre — minden GPU-s lépés ezen megy keresztül.
 #
-#   ssh spark-dev 'bash ~/lang-study/src/run_spark.sh src/env_probe.py'
+#   ssh spark-dev 'bash ~/lang-study/code/run_spark.sh code/env_probe.py'
 #
 # ⛔ A GB10-en (aarch64, sm_121a) NINCS pip-ből telepíthető működő torch: a
 # házon belüli megoldás a `lora-train:3` image (torch 2.11+cu130, transformers

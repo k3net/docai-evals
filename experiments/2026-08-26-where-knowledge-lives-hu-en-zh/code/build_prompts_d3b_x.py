@@ -2,14 +2,16 @@
 """D3b kiegészítés — a közelítő kifejezés HARMADIK nyelvű változata (d3b-protokoll.md, kiegészítés).
 
 hu-forrású fogalomhoz kínai, zh-forrásúhoz magyar fordítás; a fordítás a szerzőé, itt rögzítve.
-    SCOPE_RES=results_d3b_x SCOPE_PROMPTS=prompts_d3b_x.jsonl bash src/run_spark.sh src/run.py
-    SCOPE_RES=results_d3b_x bash src/run_spark.sh src/run_sae.py
+    SCOPE_RES=results_d3b_x SCOPE_PROMPTS=prompts_d3b_x.jsonl bash code/run_spark.sh code/run.py
+    SCOPE_RES=results_d3b_x bash code/run_spark.sh code/run_sae.py
 """
 import json
 import pathlib
 
+import scope_paths
+
 HERE = pathlib.Path(__file__).resolve().parent.parent
-OUT = HERE / "prompts_d3b_x.jsonl"
+OUT = scope_paths.data(HERE, "prompts_d3b_x.jsonl")
 TEMPLATE = {"hu": "Kérdés: {q}\nVálasz:", "zh": "问题：{q}\n回答："}
 # ⛔ magánhangzó előtt „az” — a kontrollszó-sablon „a” névelője itt hibás lenne (az „arc”)
 Q = {"hu": ("Mit jelent {a} „{w}” szó?", "Mit jelent {a} „{w}” kifejezés?"),
@@ -36,7 +38,7 @@ THIRD = {
 
 
 def main():
-    items = {json.loads(l)["id"]: json.loads(l) for l in (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+    items = {json.loads(l)["id"]: json.loads(l) for l in (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
     rows = []
     for iid, (lang, w) in THIRD.items():
         it = items[iid]

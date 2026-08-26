@@ -1,6 +1,6 @@
 # 07 — Bírálati kiegészítés: púp-kontraszt · item-klaszteres próbák · HU átmeneti mátrix
 
-Futás: **2026-08-26 08:53** (rendszeridő) · `src/analyze_extra.py` · numpy 2.4.4 · scipy 1.17.1. Kizárólag a meglévő mérési adatból (GPU nélkül); minden szám a kódból jön, a dolgozat értékei csak reprodukciós ellenőrzésként szerepelnek.
+Futás: **2026-08-26 08:53** (rendszeridő) · `code/analyze_extra.py` · numpy 2.4.4 · scipy 1.17.1. Kizárólag a meglévő mérési adatból (GPU nélkül); minden szám a kódból jön, a dolgozat értékei csak reprodukciós ellenőrzésként szerepelnek.
 
 Ez a fájl: az (1) mérés **ezen kör** SAE-adatán (1. kör — Qwen3.5-9B-Base, nyers prompt); a (2)–(3) mérés a három kört együtt veti össze, ezért mindkét riportban azonos.
 

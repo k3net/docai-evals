@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Függelék-ábra: prompt-tokenhossz csoport × nyelv (runbook §5, 7. ábra).
 
-    python3 src/analyze_tokens.py
+    python3 code/analyze_tokens.py
 
 ⛔ Miért kell ez az ábra a dolgozatba? Mert a 3×3 mátrix magyar oszlopa NEM csak tudást
 mér: ugyanaz a kérdés magyarul több tokenre bomlik, tehát fix token-keret mellett a magyar

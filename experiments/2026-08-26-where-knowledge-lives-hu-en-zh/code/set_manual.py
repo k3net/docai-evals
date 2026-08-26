@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Kézi ítélet beírása a pontozó CSV-kbe — a ellenőrző kör segédeszköze.
 
-    python3 src/set_manual.py a  HU04 en helytelen           # Mérés A (162 faktuális válasz)
-    python3 src/set_manual.py d  UNT-HU01 hu --native 2 --distortion 1   # D1 UNT-komponensek
-    python3 src/set_manual.py c  UNT-HU01 hu rossz           # D1 kontrollszó ítélete
-    python3 src/set_manual.py status                          # hol tartok?
-    python3 src/set_manual.py a  HU04 en --clear              # ellenőrző ítélet visszavonása
+    python3 code/set_manual.py a  HU04 en helytelen           # Mérés A (162 faktuális válasz)
+    python3 code/set_manual.py d  UNT-HU01 hu --native 2 --distortion 1   # D1 UNT-komponensek
+    python3 code/set_manual.py c  UNT-HU01 hu rossz           # D1 kontrollszó ítélete
+    python3 code/set_manual.py status                          # hol tartok?
+    python3 code/set_manual.py a  HU04 en --clear              # ellenőrző ítélet visszavonása
 
 Miért nem közvetlenül a CSV-t szerkesztjük? Mert a válasz-oszlop idézőjeleket, vesszőket és
 sortöréseket tartalmaz — egy szövegszerkesztőben könnyű elrontani a sort, és a hiba némán
@@ -114,7 +114,7 @@ def main():
                     r["manual"] = r["judge"]; r["final"] = r["judge"]; n += 1
             save(A_CSV, rows, fields)
             print(f"{n} sorra beírva a bíráló ítélete MEGERŐSÍTÉSKÉNT (ZH+HU csoport).")
-            print("Most írd be az eltéréseket — azok felülírják. Utána: python3 src/analyze_a.py")
+            print("Most írd be az eltéréseket — azok felülírják. Utána: python3 code/analyze_a.py")
             return
         if not args.item or not args.lang:
             sys.exit("kell item és nyelv (vagy --confirm-all)")
@@ -128,7 +128,7 @@ def main():
         r["final"] = r["manual"].strip() or r["judge"].strip()
         save(A_CSV, rows, fields)
         print(f"{args.item}/{args.lang}: bíráló={r['judge']} → ellenőrző={r['manual'] or '(törölve)'}")
-        print("futtasd: python3 src/analyze_a.py")
+        print("futtasd: python3 code/analyze_a.py")
         return
 
     rows, fields = load(D_CSV)
@@ -142,7 +142,7 @@ def main():
                 n += 1
         save(D_CSV, rows, fields)
         print(f"{n} UNT-sorra beírva a bíráló darabszáma MEGERŐSÍTÉSKÉNT.")
-        print("Az eltéréseket utána írd be. Futtasd: python3 src/analyze_d.py")
+        print("Az eltéréseket utána írd be. Futtasd: python3 code/analyze_d.py")
         return
     if not args.item or not args.lang:
         sys.exit("kell item és nyelv (vagy --confirm-all)")
@@ -171,7 +171,7 @@ def main():
               f"distortion={r['distortion_hit']}/{r['distortion_n']} → ellenőrző "
               f"native={r['manual_native'] or '–'} distortion={r['manual_distortion'] or '–'}")
     save(D_CSV, rows, fields)
-    print("futtasd: python3 src/analyze_d.py")
+    print("futtasd: python3 code/analyze_d.py")
 
 
 if __name__ == "__main__":

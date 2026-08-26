@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Miért hal meg a forward pass? Lépésenként, faulthandlerrel.
 
-    bash ~/lang-study/src/run_spark.sh -X faulthandler src/debug_forward.py --conv-off
+    bash ~/lang-study/code/run_spark.sh -X faulthandler code/debug_forward.py --conv-off
 """
 import argparse, faulthandler, time
 faulthandler.enable()

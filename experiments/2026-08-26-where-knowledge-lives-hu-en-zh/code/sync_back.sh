@@ -6,7 +6,7 @@ REMOTE="${1:-spark-dev}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Több mérési kör él egymás mellett (base → instruct → …), mindegyik saját
-# results*/reports* könyvtárban — ld. src/scope_paths.py. Mindet visszahozzuk.
+# results*/reports* könyvtárban — ld. code/scope_paths.py. Mindet visszahozzuk.
 for d in $(ssh "$REMOTE" 'cd ~/lang-study && ls -d results* reports* 2>/dev/null'); do
   mkdir -p "$HERE/$d"
   # ⛔ A nagy köztes fájlok NEM jönnek át: a `hidden/` több GB, a `lens_cache.npy` a

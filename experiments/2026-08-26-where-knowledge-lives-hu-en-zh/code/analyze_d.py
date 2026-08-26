@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés D — lefordíthatatlan fogalmak: a direkt teszt a fordítási hipotézisre (laptop).
 
-    python3 src/analyze_d.py
+    python3 code/analyze_d.py
 
 D1  komponens-lefedettség (viselkedés) + kontrollszavak + keretezési érzékenységvizsgálat
 D2  logit lens: megjelenik-e az angol közelítés a késői rétegekben (⛔ a középső rétegeket
@@ -75,7 +75,7 @@ def main():
     unt = [r for r in rows if r["kind"] == "unt"]
     ctrl = [r for r in rows if r["kind"] == "ctrl"]
     items = {json.loads(l)["id"]: json.loads(l) for l in
-             (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+             (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
 
     md = ["# Mérés D — lefordíthatatlan fogalmak (a fordítási hipotézis direkt tesztje)", "",
           "16 fogalom × 3 nyelv + 16 kontrollszó × 3 nyelv. A `native` és `distortion` komponenseket a "
@@ -151,7 +151,7 @@ def main():
             md += ["", f"Átlagos változás: **{np.mean(diffs):+.2f} komponens** (javult {pos}, romlott {neg}, "
                    f"előjelteszt p = {p:.3f}).", ""]
         else:
-            md += [f"*(A {len(sens)} generálás megvan, a bírálat még hátra: `src/judge_d1_sens.py`.)*", ""]
+            md += [f"*(A {len(sens)} generálás megvan, a bírálat még hátra: `code/judge_d1_sens.py`.)*", ""]
 
     # ── az önértékelő toldalék hatása ───────────────────────────────────────
     gen = [json.loads(l) for l in (RES / "gen.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -166,7 +166,7 @@ def main():
            "A jelenség **nyelvfüggő**: " + " · ".join(
                f"{lg} {c}/{n} = {c/n:.0%}" for lg, (c, n) in cut_by_lang.items()) +
            " — tehát pont azokat a cellákat rontja, ahol a D1 meglepő eredménye született.", "",
-           "A `src/clean_answers.py` utólag levágja (generálni nem kell újra, a toldalék nem része a "
+           "A `code/clean_answers.py` utólag levágja (generálni nem kell újra, a toldalék nem része a "
            "válasznak), és a bírálók a `text_clean` mezőt kapják. **A javítás hatása mérve:** a kínai-forrású "
            "fogalmak kínai nyelvű komponens-lefedettsége **58 % → 71 %**, a Mérés A `HU/en` cellája pedig "
            "27 % → 20 % (ott a toldalék *fel*felé torzított). Ezt a lépést a módszertanban le kell írni.", ""]
@@ -311,10 +311,10 @@ def main():
     if not have[""]:
         md += ["## D2 — logit lens: megjelenik-e az angol közelítés?", "",
                f"⏳ **Kihagyva:** ebben a körben (`{RES.name}`) még nem futott a logit lens "
-               "(`src/logit_lens.py`). A D1, D3 és D3b eredményei ettől függetlenek és fentebb "
+               "(`code/logit_lens.py`). A D1, D3 és D3b eredményei ettől függetlenek és fentebb "
                "olvashatók. A D2 pótlásához:", "", "```bash",
-               f"SCOPE_RES={RES.name} SCOPE_MODEL=… bash src/run_spark.sh src/logit_lens.py",
-               f"SCOPE_RES={RES.name} SCOPE_REPORTS={OUT.name} python3 src/analyze_d.py", "```", ""]
+               f"SCOPE_RES={RES.name} SCOPE_MODEL=… bash code/run_spark.sh code/logit_lens.py",
+               f"SCOPE_RES={RES.name} SCOPE_REPORTS={OUT.name} python3 code/analyze_d.py", "```", ""]
         d2_hits = d2_tuned_hits = mid_naive = mid_tuned = None
     else:
         naive_hits, n_planes = d2_scan("")
@@ -369,13 +369,13 @@ def main():
                "csak épp olvashatatlan.", ""]
         if (OUT / "05_d2_kontroll.md").exists():
             md += ["⛔⛔ **A null-eredmény bizonyító ereje korlátos** — ld. a kör kontroll-riportját "
-                   "([05_d2_kontroll.md](05_d2_kontroll.md), `src/d2_control.py`): az ANGOL prompton futó "
+                   "([05_d2_kontroll.md](05_d2_kontroll.md), `code/d2_control.py`): az ANGOL prompton futó "
                    "pozitív kontroll szerint a műszer érzékenysége alacsony, több fogalom jelöltszava a "
                    "korpusz egyetlen top-20-jában sem fordul elő, és a szóillesztés írásjel-érzékeny "
                    "(tisztított matcherrel a nulla törhet). A D2 tehát gyenge evidencia a fordítási "
                    "útvonal ellen, nem perdöntő.", ""]
         else:
-            md += ["⚠️ A null-eredmény erejét a `src/d2_control.py` kontrolljai (pozitív kontroll az angol "
+            md += ["⚠️ A null-eredmény erejét a `code/d2_control.py` kontrolljai (pozitív kontroll az angol "
                    "prompton, elérhetőségi nevező, matcher-érzékenység) mérik ki — ebben a körben még nem "
                    "futott le.", ""]
         md += ["",

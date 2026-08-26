@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Kézi ellenőrző ív a D1 kötelező köréhez (48 UNT-válasz).
 
-    python3 src/review_sheet_d1.py
+    python3 code/review_sheet_d1.py
 
 A runbook §4b szerint mind a 48 UNT-választ kézzel is pontozni kell — ez a csoport kicsi
 és fontos. Az ív komponensenként hozza a bíráló döntését; csak az ELTÉRÉST kell beírni a
@@ -31,7 +31,7 @@ def main():
     args = ap.parse_args()
     judge = [json.loads(l) for l in (RES / "d1_judge.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     items = {json.loads(l)["id"]: json.loads(l) for l in
-             (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+             (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
     gen = {(r["item_id"], r["lang"]): r for r in
            (json.loads(l) for l in (RES / "gen.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
 
@@ -47,14 +47,14 @@ def main():
     md = [("# Kézi ellenőrző ív — D1, A HÁTRALÉVŐ SOROK" if args.remaining
            else "# Kézi ellenőrző ív — D1 (48 UNT-válasz)"), "",
           "Komponensenként látod a bíráló döntését. Ahol egyetértesz, nincs teendő; ahol nem, add meg a",
-          "`src/set_manual.py`-nak a HELYES darabszámot:",
-          "`python3 src/set_manual.py d <item> <nyelv> --native N --distortion M`,",
-          "majd `python3 src/analyze_d.py`.", "",
+          "`code/set_manual.py`-nak a HELYES darabszámot:",
+          "`python3 code/set_manual.py d <item> <nyelv> --native N --distortion M`,",
+          "majd `python3 code/analyze_d.py`.", "",
           "⛔ A `d1_scores.csv`-t **ne szerkeszd kézzel** — a 08-24-i körben így csúszott el az",
           "UNT-ZH08 `native_n` nevezője. A felvitel a `set_manual.py`-n megy; a parancsok alább,",
           "a bíráló darabszámaival előkitöltve.", "", "```bash"]
     for r in unt:
-        md.append(f"python3 src/set_manual.py d {r['item_id']:9s} {r['lang']} "
+        md.append(f"python3 code/set_manual.py d {r['item_id']:9s} {r['lang']} "
                   f"--native {sum(r['native'])} --distortion {sum(r['distortion'])}")
     md += ["```", ""]
     last = None

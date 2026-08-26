@@ -79,8 +79,15 @@ docai-evals/
 | [where-knowledge-lives-hu-en-zh](experiments/2026-08-26-where-knowledge-lives-hu-en-zh/) | Does a multilingual model reach Hungarian facts through English? | No — the pull is semantic, not English; but Hungarian-only knowledge is weakest in Hungarian (7%) | **R1** |
 
 `R1/R2/R3` are reproducibility levels — see **[docs/reproducibility.md](docs/reproducibility.md)**.
-The verse experiment is the only **R1** entry: it runs on a public-domain corpus, so you can re-run
-it end to end and land on our exact numbers.
+Two entries are **R1**, both because their corpus is one we are allowed to publish: the verse
+experiment runs on public-domain poetry, and where-knowledge-lives on a purpose-built set of
+factual questions that ships in the repository. Everything else here measures customer documents.
+
+For where-knowledge-lives, CI re-runs the reproduction on every push
+([`.github/workflows/reproduce.yml`](.github/workflows/reproduce.yml)): it rebuilds the prompts from
+the corpus and re-runs the CPU analyses from a clean checkout, then compares the result against the
+committed reports byte for byte. The steps that need a GPU — the generation itself and the SAE
+forward passes — are listed as skipped rather than quietly dropped.
 
 ## Evaluation suites
 

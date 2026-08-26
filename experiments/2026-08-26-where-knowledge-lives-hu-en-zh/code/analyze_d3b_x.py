@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """D3b kiegészítés — ANGOL-specifikus-e a közelítő felé húzó jel? (d3b-protokoll.md, kiegészítés)
 
-    python3 src/analyze_d3b_x.py                    # base: results/ + results_d3b/ + results_d3b_x/
+    python3 code/analyze_d3b_x.py                    # base: results/ + results_d3b/ + results_d3b_x/
 
 Páros összevetés fogalmanként: J(forrás, ANGOL közelítő) − J(forrás, HARMADIK nyelvű közelítő).
   H_R2 (angol pivot):     a különbség pozitív.
@@ -35,7 +35,7 @@ SESOI = 0.02
 
 def main():
     items = {}
-    for l in (ROOT / "items.jsonl").read_text(encoding="utf-8").splitlines():
+    for l in (scope_paths.data(ROOT, "items.jsonl")).read_text(encoding="utf-8").splitlines():
         if l.strip():
             it = json.loads(l)
             if it["group"] == "UNT":

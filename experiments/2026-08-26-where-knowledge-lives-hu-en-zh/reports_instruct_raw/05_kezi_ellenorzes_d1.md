@@ -1,63 +1,63 @@
 # Kézi ellenőrző ív — D1 (48 UNT-válasz)
 
 Komponensenként látod a bíráló döntését. Ahol egyetértesz, nincs teendő; ahol nem, add meg a
-`src/set_manual.py`-nak a HELYES darabszámot:
-`python3 src/set_manual.py d <item> <nyelv> --native N --distortion M`,
-majd `python3 src/analyze_d.py`.
+`code/set_manual.py`-nak a HELYES darabszámot:
+`python3 code/set_manual.py d <item> <nyelv> --native N --distortion M`,
+majd `python3 code/analyze_d.py`.
 
 ⛔ A `d1_scores.csv`-t **ne szerkeszd kézzel** — a 08-24-i körben így csúszott el az
 UNT-ZH08 `native_n` nevezője. A felvitel a `set_manual.py`-n megy; a parancsok alább,
 a bíráló darabszámaival előkitöltve.
 
 ```bash
-python3 src/set_manual.py d UNT-HU01  hu --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU01  en --native 1 --distortion 1
-python3 src/set_manual.py d UNT-HU01  zh --native 1 --distortion 2
-python3 src/set_manual.py d UNT-HU02  hu --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU02  en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU02  zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU03  hu --native 1 --distortion 0
-python3 src/set_manual.py d UNT-HU03  en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU03  zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU04  hu --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU04  en --native 3 --distortion 1
-python3 src/set_manual.py d UNT-HU04  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05  hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU05  zh --native 2 --distortion 1
-python3 src/set_manual.py d UNT-HU06  hu --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU06  en --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU06  zh --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU07  hu --native 3 --distortion 1
-python3 src/set_manual.py d UNT-HU07  en --native 2 --distortion 0
-python3 src/set_manual.py d UNT-HU07  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-HU08  hu --native 0 --distortion 2
-python3 src/set_manual.py d UNT-HU08  en --native 2 --distortion 1
-python3 src/set_manual.py d UNT-HU08  zh --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH01  hu --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH01  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH01  zh --native 0 --distortion 0
-python3 src/set_manual.py d UNT-ZH02  hu --native 1 --distortion 1
-python3 src/set_manual.py d UNT-ZH02  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH02  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH03  hu --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH03  en --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH03  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH04  hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH04  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH04  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH05  hu --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH05  en --native 3 --distortion 1
-python3 src/set_manual.py d UNT-ZH05  zh --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH06  hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH06  en --native 3 --distortion 1
-python3 src/set_manual.py d UNT-ZH06  zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH07  hu --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH07  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH07  zh --native 2 --distortion 0
-python3 src/set_manual.py d UNT-ZH08  hu --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH08  en --native 3 --distortion 0
-python3 src/set_manual.py d UNT-ZH08  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU01  hu --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU01  en --native 1 --distortion 1
+python3 code/set_manual.py d UNT-HU01  zh --native 1 --distortion 2
+python3 code/set_manual.py d UNT-HU02  hu --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU02  en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU02  zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU03  hu --native 1 --distortion 0
+python3 code/set_manual.py d UNT-HU03  en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU03  zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU04  hu --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU04  en --native 3 --distortion 1
+python3 code/set_manual.py d UNT-HU04  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05  hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU05  zh --native 2 --distortion 1
+python3 code/set_manual.py d UNT-HU06  hu --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU06  en --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU06  zh --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU07  hu --native 3 --distortion 1
+python3 code/set_manual.py d UNT-HU07  en --native 2 --distortion 0
+python3 code/set_manual.py d UNT-HU07  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-HU08  hu --native 0 --distortion 2
+python3 code/set_manual.py d UNT-HU08  en --native 2 --distortion 1
+python3 code/set_manual.py d UNT-HU08  zh --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH01  hu --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH01  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH01  zh --native 0 --distortion 0
+python3 code/set_manual.py d UNT-ZH02  hu --native 1 --distortion 1
+python3 code/set_manual.py d UNT-ZH02  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH02  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH03  hu --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH03  en --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH03  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH04  hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH04  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH04  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH05  hu --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH05  en --native 3 --distortion 1
+python3 code/set_manual.py d UNT-ZH05  zh --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH06  hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH06  en --native 3 --distortion 1
+python3 code/set_manual.py d UNT-ZH06  zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH07  hu --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH07  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH07  zh --native 2 --distortion 0
+python3 code/set_manual.py d UNT-ZH08  hu --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH08  en --native 3 --distortion 0
+python3 code/set_manual.py d UNT-ZH08  zh --native 3 --distortion 0
 ```
 
 

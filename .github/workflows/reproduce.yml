@@ -1,0 +1,40 @@
+# Tiszta klón reprodukálhatóság — ez a workflow azt méri, amit az eval-cardok ígérnek.
+#
+# Előzmény: a where-knowledge-lives kísérlet R1-et deklarált, de tiszta klónból
+# `FileNotFoundError`-ral halt, mert a szkriptek a repó előtti (lapos) szerkezet
+# útjait hordozták. Kézzel ezt senki nem vette észre — a klónozást csak CI végzi el
+# minden alkalommal.
+name: reproduce
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  eval-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: eval-card séma
+        run: python3 scripts/validate_eval_cards.py
+
+  where-knowledge-lives:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/2026-08-26-where-knowledge-lives-hu-en-zh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: függőségek
+        run: pip install -r requirements.txt
+      - name: füstteszt — adat, promptok, pontozás, CPU-elemzések
+        # A szkript ideiglenes könyvtárba másolja a kísérletet és ott futtat, tehát a
+        # checkoutot nem módosítja; nem nulla kilépőkóddal bukik, ha bármi elcsúszott.
+        run: python3 code/smoke_repro.py

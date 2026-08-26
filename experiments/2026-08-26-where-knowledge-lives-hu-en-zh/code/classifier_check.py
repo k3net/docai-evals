@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """A nyelvosztályozó pontossága 100 véletlen tokenen (runbook §3 előírása).
 
-    python3 src/classifier_check.py            # a NAIV lens top-20-jának mintája
-    python3 src/classifier_check.py --tuned    # a TUNED lens top-20-jának mintája (2026-08-26)
+    python3 code/classifier_check.py            # a NAIV lens top-20-jának mintája
+    python3 code/classifier_check.py --tuned    # a TUNED lens top-20-jának mintája (2026-08-26)
 
 A minta a `reports/03_classifier_minta{,_tuned}.md`-ben áll (seed 0). Az alábbi listák a
 második értékelő (Claude, gépi másodvélemény — nem emberi) eltérései — ami nincs benne,

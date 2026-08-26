@@ -1,0 +1,9 @@
+# A CPU-n futtatható elemzésekhez és a `code/smoke_repro.py` füstteszthez elég ennyi.
+# A mért verziók (Python 3.12.3) — a füstteszt bitre hasonlít riportokat, ezért a
+# számformázást befolyásoló csomagok rögzítve vannak.
+numpy==2.4.4
+matplotlib==3.10.9
+
+# ⛔ A GPU-s lépések (code/run.py, code/run_sae.py, code/logit_lens.py,
+# code/train_tuned_lens.py) NEM innen telepednek: a GB10-en (aarch64, sm_121a) nincs
+# pip-ből működő torch — ld. environment.md és code/run_spark.sh.

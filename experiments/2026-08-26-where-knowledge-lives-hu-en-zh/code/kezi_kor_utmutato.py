@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """A ellenőrző kör útmutatójának GENERÁLÁSA az aktuális futáskörre.
 
-    python3 src/kezi_kor_utmutato.py                                   # base kör
+    python3 code/kezi_kor_utmutato.py                                   # base kör
     SCOPE_RES=results_instruct SCOPE_REPORTS=reports_instruct \
-        python3 src/kezi_kor_utmutato.py                               # instruct kör
+        python3 code/kezi_kor_utmutato.py                               # instruct kör
 
 ⛔ Miért generált és nem kézzel írt? Mert a 2026-08-24-i kör pontosan azon bukott el, hogy
 kézzel írt riportba kézzel másolt számok kerültek, és a forrásadat közben megváltozott.
@@ -59,7 +59,7 @@ def gen_stats(res):
     }
 
 
-MARKER = "Generált fájl (`src/kezi_kor_utmutato.py`)"
+MARKER = "Generált fájl (`code/kezi_kor_utmutato.py`)"
 
 
 def main():
@@ -95,7 +95,7 @@ def main():
     kor = f"{kor_nev} — **{round_label(RES)}**"
 
     m = [f"# Ellenőrző kör — {kor}", "",
-         f"> Generált fájl (`src/kezi_kor_utmutato.py`) — a benne lévő számok az aktuális",
+         f"> Generált fájl (`code/kezi_kor_utmutato.py`) — a benne lévő számok az aktuális",
          f"> `{RES.name}/` tartalmából jönnek. Ha újrafutott a bírálat, generáld újra.", ""]
 
     if not is_base:
@@ -139,7 +139,7 @@ def main():
 
     m += ["## Hol tartok?", "", "```bash",
           "cd <experiment-dir>",
-          f"{env}python3 src/set_manual.py status", "```", "",
+          f"{env}python3 code/set_manual.py status", "```", "",
           f"Jelenleg: **Mérés A {done}/{len(scope)}** kötelező válasz · **D1 UNT {d1_done}/{len(unt)}**.", "",
           "✅ A ellenőrző oszlopok túlélik a `judge.py` újrafuttatását — `(item_id, nyelv)` kulcson",
           "átmentődnek. Nyugodtan félbehagyhatod.", "",
@@ -254,14 +254,14 @@ def main():
           "magabiztosan megnevez EGY MÁSIK konkrét helyet/nevet → `hallucinacio`. Ha csak körülír",
           "vagy felsorol → `helytelen`. Kétes esetben jelöld meg és kérdezz rá.", "",
           "## Beírás", "", "```bash",
-          f"{env}python3 src/set_manual.py a HU04 en helytelen",
-          f"{env}python3 src/set_manual.py a ZH10 hu hallucinacio", "",
+          f"{env}python3 code/set_manual.py a HU04 en helytelen",
+          f"{env}python3 code/set_manual.py a ZH10 hu hallucinacio", "",
           "# a bíráló ítéletének tömeges megerősítése (a ZH+HU csoportra):",
-          f"{env}python3 src/set_manual.py a --confirm-all", "```", "",
+          f"{env}python3 code/set_manual.py a --confirm-all", "```", "",
           "⚠️ A `--confirm-all` **minden** még üres sorra beírja a bíráló ítéletét. Csak akkor",
           "használd, ha már végigolvastad az ívet, és a maradékkal tényleg egyetértesz.", "",
           "## Kiértékelés", "", "```bash",
-          f"{env}python3 src/analyze_a.py", "```", "",
+          f"{env}python3 code/analyze_a.py", "```", "",
           f"→ `{OUT.name}/02_meres_a.md` (3×3 mátrix, hallucinációs tábla, megbízhatósági szakasz)", "",
           "---", "", f"# Mérés D1 — {len(unt)} UNT-válasz (kötelező)", "",
           "## Mit kell eldöntened", "",
@@ -275,11 +275,11 @@ def main():
           "> hibás keretezés a válaszban ténylegesen megjelent, puszta hiányból nem következtettem",
           "> rá — kivéve ahol maga a torzítás definíciója kifejezetten egy jelentésárnyalat hiánya volt.", "",
           "## Beírás", "", "```bash",
-          f"{env}python3 src/set_manual.py d UNT-HU01 hu --native 2 --distortion 1", "```", "",
+          f"{env}python3 code/set_manual.py d UNT-HU01 hu --native 2 --distortion 1", "```", "",
           "A `set_manual.py` ellenőrzi, hogy a szám belefér-e a fogalom komponenslistájába —",
           "a nevezőt (`native_n`) a **befagyasztott** `items.jsonl` adja, azt nem lehet felülírni.", "",
           "## Kiértékelés", "", "```bash",
-          f"{env}python3 src/analyze_d.py", "```", "",
+          f"{env}python3 code/analyze_d.py", "```", "",
           "---", "", "# Ellenőrző lista", "",
           f"- [ ] Mérés A: mind a {len(scope)} kötelező válasz kapott ellenőrző ítéletet (`set_manual.py status`)",
           f"- [ ] D1: mind a {len(unt)} UNT-válasz kapott `--native` és `--distortion` számot",

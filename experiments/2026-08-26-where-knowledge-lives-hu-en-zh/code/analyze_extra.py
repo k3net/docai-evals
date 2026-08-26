@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """07 — Bírálati kiegészítés: három, a bírálati jelentés által hiányolt számítás (laptop, GPU nélkül).
 
-    python3 src/analyze_extra.py
-    python3 src/analyze_extra.py --allow-missing-sae   # csak ha tudod, mit írsz felül
+    python3 code/analyze_extra.py
+    python3 code/analyze_extra.py --allow-missing-sae   # csak ha tudod, mit írsz felül
 
 Kimenet:
     reports/07_biralat_kiegeszites.md           — (1) a BASE kör SAE-adatán + (2) + (3)
@@ -14,7 +14,7 @@ szétválasztani). Ezért van őre: ld. `guard_overwrite()`.
 
 A három számítás (a bírálati jelentés P1/P2 tételei):
 
-(1) SAE „púp-alak" kontraszt (Mérés C, bírálat 8. pont). A `src/analyze_c.py` a 16. réteg
+(1) SAE „púp-alak" kontraszt (Mérés C, bírálat 8. pont). A `code/analyze_c.py` a 16. réteg
     ponttesztjét adja; itt az ELŐRE RÖGZÍTETT rétegsávok kontrasztját számoljuk itemenként:
         KORAI = 0–3. réteg átlaga · KÖZÉP = 8–12. · KÉSŐI = 28–31.
         kontraszt₁ = KÖZÉP − KORAI · kontraszt₂ = KÖZÉP − KÉSŐI   (a TÖBBLETEN)
@@ -576,7 +576,7 @@ def guard_overwrite(path, has_sae, allow):
         f"   stubot tudna írni: hiányzik a kör SAE-kimenete (`sae/` + `prompt_q_span.json`).\n"
         f"   A futás megszakadt, a fájl érintetlen.\n\n"
         f"   Vagy futtasd ott, ahol az SAE-adat megvan (a mérési munkapéldány), vagy ha tényleg\n"
-        f"   stubra akarod cserélni: python3 src/analyze_extra.py --allow-missing-sae")
+        f"   stubra akarod cserélni: python3 code/analyze_extra.py --allow-missing-sae")
 
 
 def main():
@@ -605,7 +605,7 @@ def main():
     for rk, rep_dir, label, has_sae in targets:
         res_dir = ROUNDS[rk][0]
         head = ["# 07 — Bírálati kiegészítés: púp-kontraszt · item-klaszteres próbák · HU átmeneti mátrix", "",
-                f"Futás: **{now}** (rendszeridő) · `src/analyze_extra.py` · numpy {np.__version__}"
+                f"Futás: **{now}** (rendszeridő) · `code/analyze_extra.py` · numpy {np.__version__}"
                 f"{' · scipy ' + SCIPY if SCIPY else ' · scipy NINCS (előjelteszt kézzel, Wilcoxon n/a)'}. "
                 "Kizárólag a meglévő mérési adatból (GPU nélkül); minden szám a kódból jön, a dolgozat "
                 "értékei csak reprodukciós ellenőrzésként szerepelnek.", "",

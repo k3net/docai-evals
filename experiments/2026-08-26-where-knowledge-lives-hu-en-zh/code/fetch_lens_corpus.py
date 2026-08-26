@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Tanítókorpusz a tuned lenshez — háromnyelvű Wikipédia-kivonatok.
 
-    python3 src/fetch_lens_corpus.py                              # teljes korpusz, ~2 perc
-    python3 src/fetch_lens_corpus.py --append --lang en --batches 60   # utántöltés egy nyelvre
+    python3 code/fetch_lens_corpus.py                              # teljes korpusz, ~2 perc
+    python3 code/fetch_lens_corpus.py --append --lang en --batches 60   # utántöltés egy nyelvre
 
 Miért Wikipédia? Mert a tuned lens fordítóit olyan szövegen kell tanítani, ami a
 vizsgált promptok DOMÉNJÉHEZ közel van (enciklopédikus tényszöveg), és mind a három
@@ -15,6 +15,8 @@ mérőkorpusz ne fedjen át, különben a tuned lens a mi itemjeinkre lenne ráh
 import argparse
 import json
 import pathlib
+
+import scope_paths
 import time
 import urllib.parse
 import urllib.request
@@ -58,7 +60,7 @@ def main():
 
     # a mérőkorpusz címei — ezeket kihagyjuk, hogy ne legyen átfedés
     titles = {json.loads(l).get("title", "") for l in
-              (HERE / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()}
+              (scope_paths.data(HERE, "items.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip()}
     rows = []
     if args.append and OUT.exists():
         rows = [json.loads(l) for l in OUT.read_text(encoding="utf-8").splitlines() if l.strip()]

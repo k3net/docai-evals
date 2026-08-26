@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Fázis 1/b — SAE-kódolás a mentett residualokból, RÉTEGENKÉNT STREAMELVE.
 
-    bash ~/lang-study/src/run_spark.sh src/run_sae.py              # mind a 32 réteg
-    bash ~/lang-study/src/run_spark.sh src/run_sae.py --layers 0,15,31
+    bash ~/lang-study/code/run_spark.sh code/run_sae.py              # mind a 32 réteg
+    bash ~/lang-study/code/run_spark.sh code/run_sae.py --layers 0,15,31
 
 Miért külön script és miért rétegenként? Mert az SAE **mind a 32 rétegre** létezik
 (fázis 0 lelete), és egy checkpoint 2,15 GB fp32 — a 32 együtt 68,7 GB, ami se GPU-ra,

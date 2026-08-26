@@ -221,5 +221,40 @@ python3 code/check_scores.py --fix    # recompute the derived column
 ```
 
 Not published here: the residual dumps (~1.4 GB per variant) and the SAE activation `.npz` files
-(78 MB) — both regenerate from the prompts with `code/run.py` and `code/run_sae.py`. Every number
-in the reports is derived from what is in this directory.
+(80 MB across the five result directories) — both regenerate from the prompts with `code/run.py`
+and `code/run_sae.py`. Every number in the reports is derived from what is in this directory.
+
+The logit-lens *outputs* are published (`lens_rank*.json`, `lens_index*.json`, `lens_vocab*.json`,
+`lens_top*.npz` — 3.2 MB for the two main variants), which is what lets Measurement B and the D2
+control be re-checked without a GPU.
+
+---
+
+## Reproducing this from a clean clone
+
+Every path in `code/` is relative to this directory, and the two entry points below are all a
+reader needs. Analyses need `numpy` and `matplotlib`; nothing else.
+
+```bash
+cd experiments/2026-08-26-where-knowledge-lives-hu-en-zh
+pip install -r requirements.txt
+python3 code/smoke_repro.py
+```
+
+The smoke test copies the experiment into a temporary directory and works there, so it never writes
+into your checkout. It rebuilds all 290 prompts from `dataset/items.jsonl` and checks them against
+the committed files byte for byte, verifies the derived `final` column, then re-runs Measurement A
+(all three variants), Measurement B (base + instruct), the D2 control, the token-length table and
+the base-vs-instruct comparison — comparing every regenerated report against the committed one.
+It exits non-zero on any mismatch, and CI runs it on every push.
+
+What it cannot cover is printed as skipped rather than passed over: `analyze_c.py`, `analyze_d.py`,
+`analyze_d3b.py` and `analyze_d3b_x.py` read `results*/sae/`, which is not committed. Those need a
+GPU re-run of `code/run_sae.py` — see [environment.md](environment.md) for the machine and the
+container, and `code/run_spark.sh` for the invocation.
+
+⛔ Two report generators refuse to write a stub over a full report when their inputs are missing
+(`code/analyze_extra.py --allow-missing-sae`, `code/d2_control.py --allow-missing-lens` override it
+deliberately). Without that guard, running the analyses in a clone that lacks the SAE or lens
+outputs silently replaced published findings — including the D2 null result — with a one-line
+placeholder.

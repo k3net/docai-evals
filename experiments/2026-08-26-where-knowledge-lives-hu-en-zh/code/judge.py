@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Mérés A / 1. kör — LLM-as-judge a 162 faktuális válaszra.
 
-    python3 src/judge.py                 # a LAPTOPRÓL fut, HTTP-n hívja a prod vLLM-et
-    python3 src/judge.py --limit 6       # próbakör
+    python3 code/judge.py                 # a LAPTOPRÓL fut, HTTP-n hívja a prod vLLM-et
+    python3 code/judge.py --limit 6       # próbakör
 
 ⚠️ A bíráló kiszolgáló (`JUDGE_URL`) **éles** kiszolgáló: csak olvasó completion-hívásokat
 küldünk, kis párhuzamossággal — semmilyen tenant-adatot nem érintünk
@@ -185,7 +185,7 @@ def main():
 
     # a kérdés szövege a prompts.jsonl-ből (a gen.jsonl csak a választ tárolja)
     prompts = {(p["item_id"], p["lang"]): p for p in
-               (json.loads(l) for l in (HERE / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
+               (json.loads(l) for l in (scope_paths.data(HERE, "prompts.jsonl")).read_text(encoding="utf-8").splitlines() if l.strip())}
     for r in todo:
         r["q"] = strip_label(prompts[(r["item_id"], r["lang"])]["prompt"])
 
@@ -222,7 +222,7 @@ def main():
 
     # ── scores.csv — a ellenőrző oszlopot én töltöm ki ─────────────────────
     # ⛔ Az újrafuttatás NEM veszítheti el a ellenőrző kört: a meglévő `manual` értékeket
-    # (item_id, lang) kulcson átmentjük. Enélkül egy ártatlan `python3 src/judge.py`
+    # (item_id, lang) kulcson átmentjük. Enélkül egy ártatlan `python3 code/judge.py`
     # némán kinullázná a több órás ellenőrző bírálatt.
     sc_path = RES / "scores.csv"
     keep = {}

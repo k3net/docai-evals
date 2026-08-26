@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés B / 2. rész — a logit lens tokenjeinek nyelvi osztályozása (LAPTOP).
 
-    python3 src/classify_lens.py
+    python3 code/classify_lens.py
 
 Miért a laptopon? Mert itt van rendes szótár: a hunspell **hu_HU.dic** (magyar) és a
 `/usr/share/dict/american-english` (angol). A runbook 2000 szavas gyakorisági listát írt

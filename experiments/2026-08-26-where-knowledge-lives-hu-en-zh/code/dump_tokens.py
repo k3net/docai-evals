@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """A promptok token-szintű szövege — a Mérés C kvalitatív részéhez (spark-dev, konténer).
 
-    bash ~/lang-study/src/run_spark.sh src/dump_tokens.py
+    bash ~/lang-study/code/run_spark.sh code/dump_tokens.py
     SCOPE_MODEL=Qwen/Qwen3.5-9B SCOPE_RES=results_instruct SCOPE_CHAT=1 \
-        bash ~/lang-study/src/run_spark.sh src/dump_tokens.py
+        bash ~/lang-study/code/run_spark.sh code/dump_tokens.py
 
 A `results/sae/*.npz` tokenenként tárolja az aktív feature-öket, de a tokenek SZÖVEGE
 csak a tokenizerből jön — az meg a konténerben van. Ezt egyszer kiírjuk, utána a
@@ -38,7 +38,7 @@ tok = AutoTokenizer.from_pretrained(scope_paths.MODEL)
 gen = {(r["item_id"], r["lang"]): r for r in
        (json.loads(l) for l in (RES / "gen.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
 raw = {(p["item_id"], p["lang"]): p["prompt"] for p in
-       (json.loads(l) for l in (ROOT / "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
+       (json.loads(l) for l in scope_paths.data(ROOT, "prompts.jsonl").read_text(encoding="utf-8").splitlines() if l.strip())}
 
 # ⛔ A base kör `gen.jsonl`-je 08-24-i, abban még NINCS `q_tok_span`. Ha csak az instruct
 # körre írnánk ki, a Mérés C a két körben MÁS token-halmazon futna (base: teljes prompt,

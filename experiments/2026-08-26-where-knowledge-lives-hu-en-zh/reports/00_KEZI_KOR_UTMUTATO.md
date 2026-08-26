@@ -38,7 +38,7 @@ Két független mérés is azt mutatja, hogy **van mit javítani**:
 | `reports/05_kezi_ellenorzes_d1.md` | **2. kör olvasnivalója** — 48 UNT-válasz, komponensenkénti pipákkal | csak olvasod |
 | `results/d1_scores.csv` → `manual_native`, `manual_distortion`, `manual_ctrl` | **2. kör beírnivalója** | te |
 | `reports/03_classifier_minta.md` → `osztály` oszlop | **3. (opcionális) kör** — 100 token nyelvi besorolása | te |
-| `src/set_manual.py` | segédeszköz a beíráshoz (ajánlott a kézi CSV-szerkesztés helyett) | — |
+| `code/set_manual.py` | segédeszköz a beíráshoz (ajánlott a kézi CSV-szerkesztés helyett) | — |
 | `reports/02_meres_a.md`, `reports/05_meres_d.md` | a **kimenet**, amit a körök után újragenerálsz | generált |
 
 ⛔ **Ne szerkeszd kézzel a CSV-t szövegszerkesztőben.** A `scores.csv` `answer` oszlopa
@@ -50,7 +50,7 @@ cellát a mátrixban. Használd a `set_manual.py`-t, vagy nyisd meg táblázatke
 
 ```bash
 cd <experiment-dir>
-python3 src/set_manual.py status
+python3 code/set_manual.py status
 ```
 
 ```
@@ -151,9 +151,9 @@ bíráló eltért. Ebből **négy változtatja meg a pontossági mátrixot** —
 ## Beírás
 
 ```bash
-python3 src/set_manual.py a HU04 en helytelen      # item, nyelv (hu|en|zh), ítélet
-python3 src/set_manual.py a HU07 zh reszben
-python3 src/set_manual.py a ZH10 hu --clear        # visszavonás
+python3 code/set_manual.py a HU04 en helytelen      # item, nyelv (hu|en|zh), ítélet
+python3 code/set_manual.py a HU07 zh reszben
+python3 code/set_manual.py a ZH10 hu --clear        # visszavonás
 ```
 
 Vagy táblázatkezelőben: `results/scores.csv`, **`manual`** oszlop, a
@@ -167,7 +167,7 @@ Vagy táblázatkezelőben: `results/scores.csv`, **`manual`** oszlop, a
 ## Kiértékelés
 
 ```bash
-python3 src/analyze_a.py
+python3 code/analyze_a.py
 ```
 
 Frissül: `reports/02_meres_a.md`, `reports/02_meres_a.json` és a hozzá tartozó ábrák.
@@ -222,9 +222,9 @@ A te dolgod **komponensenként** eldönteni, majd a **darabszámot** beírni.
 
 ```bash
 # UNT-válasz: hány native és hány distortion komponens van meg
-python3 src/set_manual.py d UNT-HU01 hu --native 2 --distortion 1
-python3 src/set_manual.py d UNT-ZH05 en --native 0            # csak az egyiket is lehet
-python3 src/set_manual.py d UNT-HU01 hu --clear
+python3 code/set_manual.py d UNT-HU01 hu --native 2 --distortion 1
+python3 code/set_manual.py d UNT-ZH05 en --native 0            # csak az egyiket is lehet
+python3 code/set_manual.py d UNT-HU01 hu --clear
 ```
 
 A szkript ellenőrzi, hogy a szám az adott fogalomnál értelmes-e (`native` legfeljebb 2
@@ -241,13 +241,13 @@ teljesítményéből. A bíráló itt megbízhatóbb (egyszerűbb feladat), ezé
 **nem kötelező** — de ha egy fogalomnál gyanús a kontroll, felülírhatod:
 
 ```bash
-python3 src/set_manual.py c UNT-HU01 zh rossz     # jo | reszben | rossz
+python3 code/set_manual.py c UNT-HU01 zh rossz     # jo | reszben | rossz
 ```
 
 ## Kiértékelés
 
 ```bash
-python3 src/analyze_d.py
+python3 code/analyze_d.py
 ```
 
 Frissül: `reports/05_meres_d.md`, `reports/05_meres_d.json` + ábrák. A fejléc kiírja,
@@ -273,7 +273,7 @@ benne van valamelyik szótárban) — az eredmény a
 [`reports/03_classifier_ellenorzes.md`](03_classifier_ellenorzes.md)-ben áll.
 
 Ha harmadik szemként átnézed: írd át az `osztály` oszlopot a
-`03_classifier_minta.md`-ben, majd a `src/classifier_check.py`-ban vezetett
+`03_classifier_minta.md`-ben, majd a `code/classifier_check.py`-ban vezetett
 `ELTERES` szótárt kell hozzáigazítani. Ez a szám a Mérés B módszertani lábjegyzete —
 a fő állításokat nem mozdítja.
 
@@ -281,11 +281,11 @@ a fő állításokat nem mozdítja.
 
 # Ellenőrző lista — mikor kész a ellenőrző kör
 
-- [ ] `python3 src/set_manual.py status` → **Mérés A: 102/162 (KÉSZ)**
-- [ ] `python3 src/set_manual.py status` → **D1 UNT: 48/48 (KÉSZ)**
-- [ ] `python3 src/analyze_a.py` lefutott, a `02_meres_a.md` fejlécéből eltűnt a
+- [ ] `python3 code/set_manual.py status` → **Mérés A: 102/162 (KÉSZ)**
+- [ ] `python3 code/set_manual.py status` → **D1 UNT: 48/48 (KÉSZ)**
+- [ ] `python3 code/analyze_a.py` lefutott, a `02_meres_a.md` fejlécéből eltűnt a
       „⛔ a kötelező ellenőrző kör … még hátravan” mondat
-- [ ] `python3 src/analyze_d.py` lefutott, a fejléc nem 0 ellenőrző felülírást jelez
+- [ ] `python3 code/analyze_d.py` lefutott, a fejléc nem 0 ellenőrző felülírást jelez
 - [ ] Adtál legalább néhány `reszben` és `hallucinacio` ítéletet (ha egyet sem, az
       valószínűleg azt jelenti, hogy átvetted a bíráló kategória-vakságát)
 - [ ] A `02_meres_a.md` „Megengedő pontosság” táblája már **nem** azonos a szigorúval

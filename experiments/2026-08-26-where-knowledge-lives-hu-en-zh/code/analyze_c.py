@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés C — SAE feature-átfedés a három nyelv között, RÉTEGENKÉNT (laptop).
 
-    python3 src/analyze_c.py
+    python3 code/analyze_c.py
 
 Ez a mérés hordozza a dolgozat központi kérdését, mert a Mérés B kiderítette, hogy a naiv
 logit lens a középső rétegeken olvashatatlan. Az SAE nem az unembeddingre vetít, hanem a
@@ -87,7 +87,7 @@ def load_sets(span_mode="question"):
     sp = RES / "prompt_q_span.json"
     if span_mode == "question":
         if not sp.exists():
-            raise SystemExit(f"nincs {sp} — előbb fusson a src/dump_tokens.py erre a körre "
+            raise SystemExit(f"nincs {sp} — előbb fusson a code/dump_tokens.py erre a körre "
                              "(vagy használd a --span full kapcsolót)")
         spans = json.load(open(sp, encoding="utf-8"))
     data, groups, kinds = {}, {}, {}

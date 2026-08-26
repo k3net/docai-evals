@@ -5,7 +5,7 @@
 > gépi bíráló ítélete mellé); emberi vak értékelés nem történt. A dolgozat ezt végig „ellenőrző kör”
 > néven hozza.
 
-> Generált fájl (`src/kezi_kor_utmutato.py`) — a benne lévő számok az aktuális
+> Generált fájl (`code/kezi_kor_utmutato.py`) — a benne lévő számok az aktuális
 > `results_instruct_raw/` tartalmából jönnek. Ha újrafutott a bírálat, generáld újra.
 
 ## ⛔⛔ A LEGFONTOSABB szabály ebben a körben: azonos mérce
@@ -26,7 +26,7 @@ Ebből következik, hogy amit mérünk, **csak akkor a vizsgált hatás, ha a te
 
 ```bash
 cd <experiment-dir>
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/set_manual.py status
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/set_manual.py status
 ```
 
 Jelenleg: **Mérés A 0/102** kötelező válasz · **D1 UNT 0/48**.
@@ -134,11 +134,11 @@ vagy felsorol → `helytelen`. Kétes esetben jelöld meg és kérdezz rá.
 ## Beírás
 
 ```bash
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/set_manual.py a HU04 en helytelen
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/set_manual.py a ZH10 hu hallucinacio
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/set_manual.py a HU04 en helytelen
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/set_manual.py a ZH10 hu hallucinacio
 
 # a bíráló ítéletének tömeges megerősítése (a ZH+HU csoportra):
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/set_manual.py a --confirm-all
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/set_manual.py a --confirm-all
 ```
 
 ⚠️ A `--confirm-all` **minden** még üres sorra beírja a bíráló ítéletét. Csak akkor
@@ -147,7 +147,7 @@ használd, ha már végigolvastad az ívet, és a maradékkal tényleg egyetért
 ## Kiértékelés
 
 ```bash
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/analyze_a.py
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/analyze_a.py
 ```
 
 → `reports_instruct_raw/02_meres_a.md` (3×3 mátrix, hallucinációs tábla, megbízhatósági szakasz)
@@ -173,7 +173,7 @@ Az 1. körben alkalmazott elved (`kezi_validacio_naplo.md`):
 ## Beírás
 
 ```bash
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/set_manual.py d UNT-HU01 hu --native 2 --distortion 1
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/set_manual.py d UNT-HU01 hu --native 2 --distortion 1
 ```
 
 A `set_manual.py` ellenőrzi, hogy a szám belefér-e a fogalom komponenslistájába —
@@ -182,7 +182,7 @@ a nevezőt (`native_n`) a **befagyasztott** `items.jsonl` adja, azt nem lehet fe
 ## Kiértékelés
 
 ```bash
-SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 src/analyze_d.py
+SCOPE_RES=results_instruct_raw SCOPE_REPORTS=reports_instruct_raw python3 code/analyze_d.py
 ```
 
 ---

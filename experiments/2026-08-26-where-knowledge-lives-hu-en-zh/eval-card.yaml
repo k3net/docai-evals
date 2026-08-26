@@ -225,8 +225,16 @@ reproducibility:
   results: full
   runs_per_variant: 1
   not_published: >-
-    Residual dumps (~1.4 GB per variant) and SAE activation .npz files (78 MB). Both regenerate
-    from the published prompts with code/run.py and code/run_sae.py on a GPU.
+    Residual dumps (~1.4 GB per variant) and SAE activation .npz files (80 MB across the five
+    result directories). Both regenerate from the published prompts with code/run.py and
+    code/run_sae.py on a GPU. The logit-lens outputs ARE published (lens_rank*.json,
+    lens_index*.json, lens_vocab*.json, lens_top*.npz), so Measurement B and the D2 control are
+    re-checkable without one.
+  verified_by: >-
+    code/smoke_repro.py — rebuilds all 290 prompts from dataset/items.jsonl, verifies the derived
+    scoring column, and re-runs every CPU-only analysis from a temporary clean copy, comparing each
+    regenerated report against the committed one byte for byte. Run by CI on every push
+    (.github/workflows/reproduce.yml). The SAE-dependent analyses are reported as skipped.
 
 limitations:
   - "One model family, one size: everything here is Qwen3.5-9B. The direction agrees with the Llama literature, but generalisation is an expectation, not a measurement."

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tuned lens tanítása (spark-dev, konténer) — a Mérés B fő ábrájának rehabilitálása.
 
-    bash ~/lang-study/src/run_spark.sh src/train_tuned_lens.py
+    bash ~/lang-study/code/run_spark.sh code/train_tuned_lens.py
 
 ⛔ MIÉRT: a Mérés B kimutatta, hogy a NAIV logit lens ezen a modellen a 0–23. rétegen
 olvashatatlan (a top-20 84 %-a nem szó). Ez ismert jelenség: a köztes residual nem esik
@@ -127,7 +127,7 @@ def build_cache(args, tok):
     share = {lg: b / max(1, sum(budget.values())) for lg, b in budget.items()}
     if max(share.values()) - min(share.values()) > 0.05:
         log(f"⚠️  A nyelvi arányok NEM kiegyensúlyozottak ({share}) — valamelyik nyelv kifogyott. "
-            f"Tölts utána: python3 src/fetch_lens_corpus.py --append --lang <nyelv> --batches 60")
+            f"Tölts utána: python3 code/fetch_lens_corpus.py --append --lang <nyelv> --batches 60")
     N = min(N, sum(len(s) for s in seqs))
     arr = np.lib.format.open_memmap(cache_f, mode="w+", dtype=np.float16, shape=(n_layers + 1, N, d))
     captured = {}

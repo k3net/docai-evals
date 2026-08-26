@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Modell előtöltése a HF gyorsítótárba (spark-dev, konténer).
 
-    bash ~/lang-study/src/run_spark.sh src/fetch_model.py Qwen/Qwen3.5-9B
+    bash ~/lang-study/code/run_spark.sh code/fetch_model.py Qwen/Qwen3.5-9B
 
 Külön szkript, hogy a letöltés a méréstől FÜGGETLENÜL, előre elvégezhető legyen —
 a `from_pretrained` első hívása különben a mérés óráján töltene 19 GB-ot.

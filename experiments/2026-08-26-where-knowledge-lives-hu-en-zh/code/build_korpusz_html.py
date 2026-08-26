@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A tesztkorpusz böngészhető aloldala: items.jsonl → korpusz.html.
 
-    python3 src/build_korpusz_html.py
+    python3 code/build_korpusz_html.py
 
 Az oldal a dolgozat aloldala: ugyanaz a stíluslap (a `dolgozat.html` `<style>` blokkját
 emeli át, hogy a kettő ne csúszhasson szét), és a dolgozatból link mutat rá. Minden
@@ -13,6 +13,8 @@ melléklet és a tényleges futtatás sablonja bitre ugyanaz legyen.
 import html
 import json
 import pathlib
+
+import scope_paths
 import sys
 import urllib.parse
 
@@ -20,7 +22,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import build_prompts
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-ITEMS = ROOT / "items.jsonl"
+ITEMS = scope_paths.data(ROOT, "items.jsonl")
 OUT = ROOT / "korpusz.html"
 SZERZO = "Kiss Dániel"
 
@@ -206,7 +208,7 @@ def main():
     o += ["", "  <hr>", "  <footer>",
           f"    A korpusz gépi olvasható formája: <code>items.jsonl</code> (rögzítve {frozen[0]}), "
           "a belőle generált promptok: <code>prompts.jsonl</code>. Ez az oldal az "
-          "<code>items.jsonl</code>-ből épül (<code>src/build_korpusz_html.py</code>), a kérdések "
+          "<code>items.jsonl</code>-ből épül (<code>code/build_korpusz_html.py</code>), a kérdések "
           "szövege tehát bitre az, amit a modell kapott.",
           f'    <br><a href="{HREF}">← Vissza a dolgozathoz</a>',
           "  </footer>", "", "</div>", ""]

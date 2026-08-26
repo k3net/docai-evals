@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """D1 érzékenységvizsgálat — a kérdés KERETEZÉSE okozza-e a forrásnyelvi lemaradást?
 
-    bash ~/lang-study/src/run_spark.sh src/d1_sensitivity.py
+    bash ~/lang-study/code/run_spark.sh code/d1_sensitivity.py
 
 ⛔⛔ MÉRT PROBLÉMA: a fagyasztott korpuszban a kínai-forrású fogalmak kérdése nyelvenként
 MÁS keretet ad:
@@ -42,7 +42,7 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to("cuda").eval()
     (RES / "gen_sens").mkdir(exist_ok=True)
 
-    items = [json.loads(l) for l in (ROOT / "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
+    items = [json.loads(l) for l in scope_paths.data(ROOT, "items.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     targets = [it for it in items if it.get("group") == "UNT" and it["src_lang"] == "zh"]
     print(f"{len(targets)} kínai-forrású fogalom, szimmetrizált kínai kérdéssel", flush=True)
 

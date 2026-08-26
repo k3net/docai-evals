@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Második, FÜGGETLEN gépi bírálat a ZH + HU csoportra (Claude, más modellcsalád).
 
-    python3 src/review_claude.py
+    python3 code/review_claude.py
 
 ⚠️ Ez NEM a runbook §2 ellenőrző köre — az az én dolgom, és a `manual` oszlop az enyém marad.
 Ez egy második vélemény attól a modelltől, amelyik nem rokona sem a vizsgált modellnek

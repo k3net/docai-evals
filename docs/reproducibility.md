@@ -9,11 +9,15 @@ experiment declares how far a third party can get with what is published here.
 | **R2** | code + synthetic data + aggregated results from a private corpus | Re-run the scoring logic on your own data; verify the method, not our numbers |
 | **R3** | methodology + configuration + aggregated results | Reproduce the *setup* (launch flags, engine version, workloads) on your own hardware and compare shapes |
 
-## The one R1 experiment
+## The two R1 experiments
 
-[lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) is the only
-measurement here you can re-run end to end and check against our numbers, because its corpus is
-public domain: the complete poems of Arany János and Petőfi Sándor from the Hungarian Electronic
+Two measurements here can be re-run end to end and checked against our numbers, and in both cases
+for the same reason: the corpus is one we are allowed to publish.
+
+### lora-vs-reranker-hu-verse
+
+[lora-vs-reranker-hu-verse](../experiments/2026-08-14-lora-vs-reranker-hu-verse/) uses a public-domain
+corpus: the complete poems of Arany János and Petőfi Sándor from the Hungarian Electronic
 Library. The fetch script records the sha256 of each source archive, so you can verify you have the
 same bytes — we re-ran it from a clean directory on 2026-08-17 and both hashes matched.
 
@@ -28,8 +32,39 @@ python3 code/author_clf.py --score --generations generations
 Those two commands reproduced every published table bit-for-bit, including the corpus hash
 (`bd86fcf8520d4ca8`) and the 91.0 % author-classifier accuracy.
 
-That is what R1 costs: a corpus you are allowed to publish. The rest of this repository does not
-have one.
+### where-knowledge-lives-hu-en-zh
+
+[where-knowledge-lives-hu-en-zh](../experiments/2026-08-26-where-knowledge-lives-hu-en-zh/) asks
+whether a multilingual model reaches Hungarian facts through English. Its corpus is not borrowed but
+built for the purpose — 54 factual questions (15 Hungarian-only, 20 universal, 19 Chinese-only) and
+16 untranslatable-concept probes, each asked in Hungarian, English and Chinese — so it ships in the
+repository ([dataset/](../experiments/2026-08-26-where-knowledge-lives-hu-en-zh/dataset/)), together
+with every prompt actually sent and every per-item judgement.
+
+The model is public (`Qwen/Qwen3.5-9B-Base` and its instruct sibling), so the measurement is
+repeatable end to end — but the generation and the SAE forward passes need a GPU. What a reader can
+check without one is bounded and stated, not implied:
+
+```bash
+cd experiments/2026-08-26-where-knowledge-lives-hu-en-zh
+pip install -r requirements.txt
+python3 code/smoke_repro.py
+```
+
+That rebuilds all 290 prompts from the corpus, verifies the derived scoring column, and re-runs
+Measurement A, Measurement B and the D2 control from a clean checkout — comparing each regenerated
+report against the committed one byte for byte. The four analyses that need `results*/sae/`
+(33–42 MB per round, not committed) are printed as skipped. CI runs this on every push
+([`.github/workflows/reproduce.yml`](../.github/workflows/reproduce.yml)).
+
+⛔ This is a check the repository failed for a while without anyone noticing: the scripts were moved
+into `code/` and the corpus into `dataset/`, but their paths were not, so a clean clone died with
+`FileNotFoundError` while the eval card still advertised R1. A reproducibility claim that nothing
+exercises decays silently — hence the CI job.
+
+## What R1 costs
+
+A corpus you are allowed to publish. The rest of this repository does not have one.
 
 ## Why most experiments here are R2 or R3
 

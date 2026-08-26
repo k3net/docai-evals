@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés B / 1. rész — logit lens a mentett residualokból (spark-dev, konténer).
 
-    bash ~/lang-study/src/run_spark.sh src/logit_lens.py
+    bash ~/lang-study/code/run_spark.sh code/logit_lens.py
 
 A teljes modellt NEM töltjük be: a logit lenshez két tenzor kell, azokat a
 safetensorsból olvassuk ki közvetlenül (18 GB helyett 2 GB):

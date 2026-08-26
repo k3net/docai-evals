@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mérés B elemzése + ábrák (LAPTOP, matplotlib).
 
-    python3 src/analyze_b.py
+    python3 code/analyze_b.py
 
 Három kimenet:
   B1  „szemét-arány" rétegenként — MEDDIG nem értelmezhető a naiv logit lens ezen a modellen
@@ -220,10 +220,14 @@ def main():
                "a Mérés A 7–20 %-os pontossága a reprezentációban is látszik: a modell nem „tudja, de nem mondja”, "
                "hanem tényleg nem tudja.",
                ""]
+        # Az osztályozó-ellenőrzés EGYSZER készült, a base kör riportkönyvtárában. A többi kör
+        # riportjából ezért visszafelé kell hivatkozni rá, különben törött linket írunk.
+        clf = "03_classifier_ellenorzes.md"
+        clf_link = clf if (OUT / clf).exists() else f"../reports/{clf}"
         md += [
            f"## Az osztályozó megbízhatósága", "",
            "100 véletlen token kétszeres értékelése: **92 % egyetértés** "
-           "([03_classifier_ellenorzes.md](03_classifier_ellenorzes.md)). Mind a 8 hiba rövid latin töredék "
+           f"([{clf}]({clf_link})). Mind a 8 hiba rövid latin töredék "
            "vagy tulajdonnév (pl. a magyar „Mirr-Murr” `Mir` töredéke angolnak számítana). A CJK-felismerés "
            "hibátlan. Ezért a B2 görbét csak a bizonytalansági sávval együtt szabad olvasni.", ""]
     if args.tuned:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A generált válaszok degeneráltság-jelölése — a `truncated` flag KÉT jelenséget takar.
 
-    python3 src/flag_degenerate.py            # a results/gen.jsonl-t bővíti (stdlib, GPU nélkül)
+    python3 code/flag_degenerate.py            # a results/gen.jsonl-t bővíti (stdlib, GPU nélkül)
 
 MÉRT PROBLÉMA: a 200/500-as kerettel is csonkolt válaszok egy része nem azért ért véget a
 keretnél, mert sok mondanivalója volt, hanem mert a greedy dekódolás **ismétlési hurokba**
