@@ -102,8 +102,12 @@ limitations.
   Wikipedia sample (validation KL 2.85 → 1.03, non-words 76% → 31%).
 - **Cross-language feature overlap** (SAE): Jaccard overlap of the feature union over the
   *question tokens* between two language variants of the same item, minus the same quantity for
-  randomly paired items. Tested by item-level permutation at a pre-registered layer 16, Holm
-  corrected over the 9 group × language-pair cells.
+  randomly paired items. Tested by item-level permutation (10 000 derangements) at a
+  pre-registered layer 16, Holm corrected over the 9 group × language-pair cells. Two deviations
+  from the pre-registration are declared in the report: the runbook registered the *last*-token
+  set as primary and 1 000 shuffles — the headline uses the token *union* (the last question token
+  is the closing `?`, which carries almost no content) and 10 000 shuffles. The pre-registered
+  `last` set is reported in full alongside it, and all 9 cells are significant on both.
 - **Pull towards the English approximation** (D3, pre-registered): whether the source-language
   concept sits closer to *its own* English approximation than to the other concepts'
   approximations. The follow-up question — whether that pull is English-specific, tested against
@@ -130,7 +134,9 @@ this sample and repeats on the instruct variant (20 / 27 / 33%), but it is not a
 ranking.
 
 **There is a shared middle layer, and it is thin.** All 9 group × language-pair comparisons are
-significant at layer 16 (permutation test, raw p = 0.001, Holm ≤ 0.009). The shape matters more
+significant at layer 16 (permutation test, raw p = 0.0001, Holm ≤ 0.0009 — all 9 cells sit at the
+resolution floor of 1/10001: not one of the 10 000 shuffles reached the observed overlap, so these
+p values are upper bounds, not measurements). The shape matters more
 than the point test: the excess is small at the embedding, peaks around layers 9–11 (UNI:
 +0.095…+0.137) and shrinks again towards the output. Both pre-registered contrasts (middle minus
 early, middle minus late) have intervals above zero in 6 of 9 cells. The absolute overlap stays

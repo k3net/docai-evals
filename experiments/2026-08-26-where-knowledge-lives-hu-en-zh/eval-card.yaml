@@ -86,9 +86,17 @@ metrics:
     definition: >-
       Jaccard overlap of the SAE feature union over the question tokens between two language
       variants of the same item, minus the same quantity for randomly paired items of the same
-      group. Item-level permutation test at the pre-registered layer 16, Holm corrected over the
-      9 group x language-pair cells.
+      group. Item-level permutation test (10 000 derangements) at the pre-registered layer 16,
+      Holm corrected over the 9 group x language-pair cells.
+      DEVIATIONS from the runbook (S4, declared in reports/04_meres_c.md): the registered primary
+      feature set was the LAST question token, the union was registered as secondary — the
+      headline reports the union, because after restricting to the question span the last token is
+      the closing '?' and carries almost no content. The registered `last` set is reported in full
+      alongside it and all 9 cells are significant on it too. Shuffle count raised from the
+      registered 1 000 to 10 000, because 1/1001 is a resolution floor rather than a measurement.
+      The question-span restriction itself is a post-hoc correction (2026-08-25).
     primary: true
+    preregistered: partial
   - name: hump_contrasts
     definition: >-
       Pre-registered layer-band contrasts on the excess: middle (8-12) minus early (0-3) and
@@ -168,7 +176,16 @@ results:
       On the untruncated subset (12 answers, 8 items) 4 of 5 evasions turn into correct answers
       rather than fabrications, so the direction is not settled by this sample.
   shared_representation:
-    layer16_permutation: { cells: 9, significant: 9, raw_p: 0.001, holm_max: 0.009 }
+    layer16_permutation:
+      cells: 9
+      significant: 9
+      n_perm: 10000
+      perm_kind: derangement
+      raw_p: 0.0001
+      holm_max: 0.0009
+      at_resolution_floor: 9        # 1/10001 — upper bounds, not measured values
+      feature_set: union            # registered primary was `last`; see deviations above
+      last_set_significant: 9
     hump_contrasts: { cells_with_both_intervals_above_zero: 6, of: 9 }
     universal_peak_layers: [9, 11]
     excess_at_peak_universal: [0.095, 0.137]

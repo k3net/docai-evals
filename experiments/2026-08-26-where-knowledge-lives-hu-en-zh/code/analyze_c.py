@@ -7,9 +7,15 @@ Ez a mérés hordozza a dolgozat központi kérdését, mert a Mérés B kiderí
 logit lens a középső rétegeken olvashatatlan. Az SAE nem az unembeddingre vetít, hanem a
 reprezentáció tanult szótárára bontja a residualt — a középső rétegeken is értelmezhető.
 
-Két feature-halmaz promptonként és rétegenként (runbook §4):
-  last   — az UTOLSÓ prompt-token 50 aktív feature-je (elsődleges)
-  union  — az ÖSSZES prompt-token feature-jeinek uniója (másodlagos, tartalmasabb)
+Két feature-halmaz promptonként és rétegenként (runbook §4.1):
+  last   — a kérdés UTOLSÓ tokenének 50 aktív feature-je   → ELŐRE REGISZTRÁLVA elsődlegesként
+  union  — a kérdés ÖSSZES tokenének feature-uniója        → előre regisztrálva másodlagosként
+
+⛔⛔ A dolgozat a `union`-t hozza főeredményként, tehát a két szerep UTÓLAG cserélt. Ez nem
+elírás és nem is takarható el átcímkézéssel: a riport külön szakaszban mondja ki eltérésként,
+és MINDKÉT halmazt közli. Az ok a kérdésre szűkítés mellékhatása — a `last` így a kérdés záró
+írásjegye (`?` / `？`), ami tartalmat alig hordoz. A regisztrált `last` ettől még ellenőrizhető:
+mind a 9 cellát rajta is teszteljük.
 
 ⛔ Miért nem elég a nyers Jaccard? Mert a magyar és az angol sablon UGYANAZZAL a tokennel
 zárul (`:`), a kínai mással (`：`) — a 0. rétegen tehát J(en,hu) = 1,0 pusztán a sablon miatt.
@@ -18,9 +24,12 @@ Ezért minden állítás a BASELINE-hoz mért TÖBBLETRŐL szól:
   B-baseline: különböző nyelv, KÜLÖNBÖZŐ item (a párosítás permutációs nullhipotézise)
 
 Statisztika: bootstrap 95 % CI itemekre; permutációs teszt (10 000× derangement) a B-baseline
-ellen;
-Holm-korrekció a 9 összehasonlításra. Az ELSŐDLEGES réteg előre rögzítve a 16. (a H1
+ellen; Holm-korrekció a 9 összehasonlításra. Az ELSŐDLEGES réteg előre rögzítve a 16. (a H1
 „középső réteg" állítása); a maximális többlet rétegét külön, feltáró jelleggel közöljük.
+
+⛔ A runbook §4.4 ezer keverést regisztrált. Ezen a szkript szándékosan túlmegy: ezer keverésnél
+a legkisebb elérhető p 1/1001 ≈ 0,001, ami FELBONTÁSI HATÁR, nem mérési eredmény — a riportban
+kilenc cella állt ugyanazon a padlóértéken. Tízezer keverés ezt 1/10001-re viszi le.
 """
 import itertools
 import argparse
@@ -42,6 +51,10 @@ PCOL = {("zh", "en"): "#2c3e50", ("zh", "hu"): "#c0392b", ("en", "hu"): "#d68910
 PRIMARY_LAYER = 16
 N_PERM = 10_000
 RNG = np.random.default_rng(0)
+# ⛔ A bootstrapnak SAJÁT folyama van. Közös RNG-vel a CI-sáv attól függött, hány permutáció
+# futott előtte — a keverésszám 1000→10 000 emelése így elmozdította a C2 ábra sávjait, pedig
+# a mért görbékhez semmi köze. Külön folyammal a sáv csak az adattól függ.
+BOOT_RNG = np.random.default_rng(1)
 
 
 def jac(a, b):
@@ -110,7 +123,7 @@ def boot_ci(vals, n=1000):
     vals = np.asarray(vals, dtype=float)
     if len(vals) < 2:
         return (float("nan"), float("nan"))
-    means = [RNG.choice(vals, len(vals), replace=True).mean() for _ in range(n)]
+    means = [BOOT_RNG.choice(vals, len(vals), replace=True).mean() for _ in range(n)]
     return tuple(np.percentile(means, [2.5, 97.5]))
 
 
@@ -332,13 +345,42 @@ def main():
            "`--span question` futásból valók."), "",
           "Két halmaz: `last` (a kérdés utolsó tokene) és `union` (a kérdés minden tokenének uniója). "
           "Minden állítás a baseline-hoz mért **többletről** szól.", "",
-          f"## Permutációs teszt az előre rögzített {PRIMARY_LAYER}. rétegen (`union`)", "",
+          "## Eltérések az előregisztrációtól", "",
+          "A runbook §4 három pontján tér el ez a futás. Mindhárom **utólagos**, tehát nem "
+          "megerősítő erejű — a dolgozat sehol nem hivatkozhat rájuk előre rögzített döntésként.", "",
+          "**E1 — a főeredmény a `union`, nem a `last`.** A §4.1 a `last` halmazt regisztrálta "
+          "elsődlegesnek, a `union`-t másodlagosnak; ez a riport fordítva közli őket. Az ok az E3 "
+          "mellékhatása: a kérdésre szűkítés után a `last` a kérdés záró írásjegye (`?` / `？`), "
+          "ami önmagában alig hordoz tartalmat. A regisztrált `last` ettől nem tűnt el — lentebb "
+          "mind a 9 cellára közöljük, és a következtetés akkor áll, ha mindkét halmazon áll.", "",
+          f"**E2 — {N_PERM:,}".replace(",", " ") + " keverés a regisztrált 1000 helyett**, és "
+          "derangement (fixpont nélküli permutáció) a sima keverés helyett. Ezer keverésnél a "
+          "legkisebb elérhető p 1/1001 ≈ 0,001 — ez felbontási határ, nem mérési eredmény, és a "
+          "korábbi riportban mind a 9 cella ezen a padlóértéken állt. A sima keverés ráadásul "
+          "fixpontokon át a HELYES párosításokat hagyta volna bent a nullhipotézisben.", "",
+          "**E3 — csak a kérdés tokenjei** (`--span question`), a prompt kerete nélkül. Ez "
+          "2026-08-25-i **korrekció**, a teljes promptos futás után: a keret mérési műtermék "
+          "(ld. a fenti bekezdést), nem elméleti finomítás. Utólagos mivoltát az sem oldja fel, "
+          "hogy az eredményt élesíti, nem gyengíti.", "",
+          f"## Permutációs teszt az előre rögzített {PRIMARY_LAYER}. rétegen (`union` — ld. E1)", "",
           "| csoport | nyelvpár | ugyanaz az item | véletlen párosítás | p (nyers) | p (Holm) |",
           "|---|---|---|---|---|---|"]
     for t in tests:
         sig = " ✅" if t["p_holm"] < 0.05 else ""
         md.append(f"| {t['group']} | {t['pair']} | **{t['obs']:.3f}** | {t['null_mean']:.3f} | "
                   f"{t['p_raw']:.4f} | {t['p_holm']:.4f}{sig} |")
+
+    # ⛔ A p SOSEM lehet kisebb 1/(N_PERM+1)-nél. Ha minden cella ezen áll, akkor a szám
+    # felső korlát, nem mért érték — ezt ki kell írni, különben a riport a felbontási határt
+    # eredményként mutatja. A számot SZÁMOLJUK, nem beírjuk.
+    floor = 1.0 / (N_PERM + 1)
+    at_floor = sum(t["p_raw"] <= floor * 1.001 for t in tests)
+    if at_floor:
+        md += ["", f"⛔ **{at_floor}/9 cella a felbontási határon áll** (p = 1/{N_PERM + 1} = "
+                   f"{floor:.4f}): {N_PERM:,}".replace(",", " ") + " keverésből egyetlen sem érte el a "
+                   "megfigyelt átfedést. Ezekben a cellákban a p **felső korlát**, nem mért érték — a "
+                   "valódi p ennél kisebb, a mérés csak ennyit tud felbontani. Több keverés a határt "
+                   "lejjebb viszi, a következtetést nem változtatja.", ""]
 
     md += ["", "## Rétegenkénti átfedés és többlet (`union`)", "",
            "| csoport | nyelvpár | 8. | 16. | 24. | 31. | max. többlet (réteg) |", "|---|---|---|---|---|---|---|"]
@@ -373,10 +415,12 @@ def main():
             c = control[f"{g}/{a}-{b}"]
             md.append(f"| {g} | {a}–{b} | {c['tokjac_mean']:.3f} | {c['spearman_tokjac_vs_excess']:+.2f} | "
                       f"+{c['excess_all']:.3f} | +{c['excess_low_overlap']:.3f} (n={c['n_low']}) |")
-    md += ["", "Továbbá a `last` halmaz — a kérdés-tartomány UTOLSÓ tokene, vagyis a kérdés záró "
-           "`?` / `？` írásjegye —: ezen a pozíción szó szerinti tartalmi egyezés nincs, csak a "
-           "figyelemmel odajutott kontextus (ami a teljes kérdést összegzi, tehát a literális átfedést "
-           "nem zárja ki teljesen):", "",
+    md += ["", "## Az előre regisztrált `last` halmaz (E1)", "",
+           "Ez a runbook §4.1 szerinti **elsődleges** halmaz — a kérdés-tartomány UTOLSÓ tokene, "
+           "vagyis a kérdés záró `?` / `？` írásjegye. Ezen a pozíción szó szerinti tartalmi egyezés "
+           "nincs, csak a figyelemmel odajutott kontextus (ami a teljes kérdést összegzi, tehát a "
+           "literális átfedést nem zárja ki teljesen). A `union`-nal együtt olvasandó: a következtetés "
+           "akkor áll, ha MINDKÉT halmazon áll.", "",
            "| csoport | nyelvpár | ugyanaz az item (`last`) | véletlen párosítás | p (nyers) |",
            "|---|---|---|---|---|"]
     for t in tests:
@@ -422,7 +466,17 @@ def main():
 
     (OUT / "04_meres_c.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     (OUT / "04_meres_c.json").write_text(json.dumps({
-        "primary_layer": PRIMARY_LAYER, "tests": tests, "control_token_overlap": control,
+        "primary_layer": PRIMARY_LAYER, "n_perm": N_PERM, "perm_kind": "derangement",
+        "span_mode": args.span,
+        "preregistration": {
+            "runbook": "§4.1 / §4.4",
+            "registered_primary_set": "last", "reported_primary_set": "union",
+            "registered_n_perm": 1000,
+            "deviations": [
+                "E1: a főeredmény a `union`, a regisztrált elsődleges a `last` volt (utólagos csere)",
+                f"E2: {N_PERM} keverés a regisztrált 1000 helyett, derangement-tel",
+                "E3: csak a kérdés tokenjei (2026-08-25-i korrekció, utólagos)"]},
+        "tests": tests, "control_token_overlap": control,
         "peaks": peaks, "qualitative": examples, "qual_layer": QUAL_LAYER, "n_qual_pairs": len(qual),
         "curves": {k: {"matched": v["matched_mean"].round(4).tolist(),
                        "base_cross": v["base_cross"].round(4).tolist(),

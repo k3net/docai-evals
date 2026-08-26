@@ -7,19 +7,32 @@ Válasz:` címke (a prompt-tokenek 31 %-a), az instruct körben a chat-sablon bu
 
 Két halmaz: `last` (a kérdés utolsó tokene) és `union` (a kérdés minden tokenének uniója). Minden állítás a baseline-hoz mért **többletről** szól.
 
-## Permutációs teszt az előre rögzített 16. rétegen (`union`)
+## Eltérések az előregisztrációtól
+
+A runbook §4 három pontján tér el ez a futás. Mindhárom **utólagos**, tehát nem megerősítő erejű — a dolgozat sehol nem hivatkozhat rájuk előre rögzített döntésként.
+
+**E1 — a főeredmény a `union`, nem a `last`.** A §4.1 a `last` halmazt regisztrálta elsődlegesnek, a `union`-t másodlagosnak; ez a riport fordítva közli őket. Az ok az E3 mellékhatása: a kérdésre szűkítés után a `last` a kérdés záró írásjegye (`?` / `？`), ami önmagában alig hordoz tartalmat. A regisztrált `last` ettől nem tűnt el — lentebb mind a 9 cellára közöljük, és a következtetés akkor áll, ha mindkét halmazon áll.
+
+**E2 — 10 000 keverés a regisztrált 1000 helyett**, és derangement (fixpont nélküli permutáció) a sima keverés helyett. Ezer keverésnél a legkisebb elérhető p 1/1001 ≈ 0,001 — ez felbontási határ, nem mérési eredmény, és a korábbi riportban mind a 9 cella ezen a padlóértéken állt. A sima keverés ráadásul fixpontokon át a HELYES párosításokat hagyta volna bent a nullhipotézisben.
+
+**E3 — csak a kérdés tokenjei** (`--span question`), a prompt kerete nélkül. Ez 2026-08-25-i **korrekció**, a teljes promptos futás után: a keret mérési műtermék (ld. a fenti bekezdést), nem elméleti finomítás. Utólagos mivoltát az sem oldja fel, hogy az eredményt élesíti, nem gyengíti.
+
+## Permutációs teszt az előre rögzített 16. rétegen (`union` — ld. E1)
 
 | csoport | nyelvpár | ugyanaz az item | véletlen párosítás | p (nyers) | p (Holm) |
 |---|---|---|---|---|---|
-| ZH | zh-en | **0.176** | 0.108 | 0.0010 | 0.0090 ✅ |
-| ZH | zh-hu | **0.160** | 0.103 | 0.0010 | 0.0090 ✅ |
-| ZH | en-hu | **0.296** | 0.179 | 0.0010 | 0.0090 ✅ |
-| HU | zh-en | **0.259** | 0.124 | 0.0010 | 0.0090 ✅ |
-| HU | zh-hu | **0.192** | 0.113 | 0.0010 | 0.0090 ✅ |
-| HU | en-hu | **0.229** | 0.128 | 0.0010 | 0.0090 ✅ |
-| UNI | zh-en | **0.186** | 0.087 | 0.0010 | 0.0090 ✅ |
-| UNI | zh-hu | **0.152** | 0.079 | 0.0010 | 0.0090 ✅ |
-| UNI | en-hu | **0.223** | 0.105 | 0.0010 | 0.0090 ✅ |
+| ZH | zh-en | **0.176** | 0.107 | 0.0001 | 0.0009 ✅ |
+| ZH | zh-hu | **0.160** | 0.103 | 0.0001 | 0.0009 ✅ |
+| ZH | en-hu | **0.296** | 0.179 | 0.0001 | 0.0009 ✅ |
+| HU | zh-en | **0.259** | 0.124 | 0.0001 | 0.0009 ✅ |
+| HU | zh-hu | **0.192** | 0.112 | 0.0001 | 0.0009 ✅ |
+| HU | en-hu | **0.229** | 0.128 | 0.0001 | 0.0009 ✅ |
+| UNI | zh-en | **0.186** | 0.087 | 0.0001 | 0.0009 ✅ |
+| UNI | zh-hu | **0.152** | 0.079 | 0.0001 | 0.0009 ✅ |
+| UNI | en-hu | **0.223** | 0.105 | 0.0001 | 0.0009 ✅ |
+
+⛔ **9/9 cella a felbontási határon áll** (p = 1/10001 = 0.0001): 10 000 keverésből egyetlen sem érte el a megfigyelt átfedést. Ezekben a cellákban a p **felső korlát**, nem mért érték — a valódi p ennél kisebb, a mérés csak ennyit tud felbontani. Több keverés a határt lejjebb viszi, a következtetést nem változtatja.
+
 
 ## Rétegenkénti átfedés és többlet (`union`)
 
@@ -71,19 +84,21 @@ A korpusz kérdései átírást ÉS eredeti írásjegyet is tartalmaznak (*„Me
 | UNI | zh–hu | 0.029 | -0.15 | +0.073 | +0.071 (n=11) |
 | UNI | en–hu | 0.102 | +0.08 | +0.118 | +0.123 (n=10) |
 
-Továbbá a `last` halmaz — a kérdés-tartomány UTOLSÓ tokene, vagyis a kérdés záró `?` / `？` írásjegye —: ezen a pozíción szó szerinti tartalmi egyezés nincs, csak a figyelemmel odajutott kontextus (ami a teljes kérdést összegzi, tehát a literális átfedést nem zárja ki teljesen):
+## Az előre regisztrált `last` halmaz (E1)
+
+Ez a runbook §4.1 szerinti **elsődleges** halmaz — a kérdés-tartomány UTOLSÓ tokene, vagyis a kérdés záró `?` / `？` írásjegye. Ezen a pozíción szó szerinti tartalmi egyezés nincs, csak a figyelemmel odajutott kontextus (ami a teljes kérdést összegzi, tehát a literális átfedést nem zárja ki teljesen). A `union`-nal együtt olvasandó: a következtetés akkor áll, ha MINDKÉT halmazon áll.
 
 | csoport | nyelvpár | ugyanaz az item (`last`) | véletlen párosítás | p (nyers) |
 |---|---|---|---|---|
-| ZH | zh-en | **0.212** | 0.177 | 0.0010 |
-| ZH | zh-hu | **0.251** | 0.202 | 0.0010 |
-| ZH | en-hu | **0.231** | 0.185 | 0.0010 |
-| HU | zh-en | **0.201** | 0.152 | 0.0010 |
-| HU | zh-hu | **0.217** | 0.172 | 0.0010 |
-| HU | en-hu | **0.242** | 0.166 | 0.0010 |
-| UNI | zh-en | **0.257** | 0.187 | 0.0010 |
-| UNI | zh-hu | **0.245** | 0.178 | 0.0010 |
-| UNI | en-hu | **0.376** | 0.203 | 0.0010 |
+| ZH | zh-en | **0.212** | 0.177 | 0.0001 |
+| ZH | zh-hu | **0.251** | 0.202 | 0.0001 |
+| ZH | en-hu | **0.231** | 0.185 | 0.0001 |
+| HU | zh-en | **0.201** | 0.152 | 0.0001 |
+| HU | zh-hu | **0.217** | 0.172 | 0.0001 |
+| HU | en-hu | **0.242** | 0.166 | 0.0001 |
+| UNI | zh-en | **0.257** | 0.187 | 0.0001 |
+| UNI | zh-hu | **0.245** | 0.178 | 0.0001 |
+| UNI | en-hu | **0.376** | 0.203 | 0.0001 |
 
 ## Kvalitatív — háromnyelvű, ritka feature-ök
 
