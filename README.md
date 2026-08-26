@@ -76,6 +76,7 @@ docai-evals/
 | [mtp-speculative-decoding-gb10](experiments/2026-07-23-mtp-speculative-decoding-gb10/) | Is multi-token prediction worth it on GB10? | Yes, on every configuration measured — and more so at 4-bit | R3 |
 | [vllm-prod-config-tuning-gb10](experiments/2026-08-04-vllm-prod-config-tuning-gb10/) | Which serving flags actually matter in production? | Two of six proposed measurements were worth running; async scheduling stays off | R3 |
 | [lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) | Does fine-tuning beat a deterministic best-of-8 selector? | On form, no — the untrained selector wins every metric. On voice, only training works: +36 points | **R1** |
+| [where-knowledge-lives-hu-en-zh](experiments/2026-08-26-where-knowledge-lives-hu-en-zh/) | Does a multilingual model reach Hungarian facts through English? | No — the pull is semantic, not English; but Hungarian-only knowledge is weakest in Hungarian (7%) | **R1** |
 
 `R1/R2/R3` are reproducibility levels — see **[docs/reproducibility.md](docs/reproducibility.md)**.
 The verse experiment is the only **R1** entry: it runs on a public-domain corpus, so you can re-run

@@ -1,0 +1,63 @@
+{
+ "n": 100,
+ "hibak": 10,
+ "pontossag": 0.9,
+ "en_jelolt": 32,
+ "en_teves": 8,
+ "en_precizio": 0.75,
+ "hu_jelolt": 2,
+ "hu_teves": 1,
+ "hu_elmaradt": 1,
+ "eltoresek": {
+  "-ra": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "⚠️ magyar RAG (-ra), az angol szótár miatt angolnak számolva"
+  },
+  " Er": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "kétbetűs töredék"
+  },
+  "nev": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "⚠️ a magyar „név” ékezet nélküli töredéke, angolnak számolva"
+  },
+  "v": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "egybetűs token, nem nyelvi jel"
+  },
+  "pus": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "töredék (pl. „campus”, „puszi”), nem angol szó"
+  },
+  " Min": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "töredék vagy kínai átírás (Min-folyó, Fujian), nem angol szó"
+  },
+  "Fe": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "töredék / vegyjel"
+  },
+  " Shanghai": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "kínai tulajdonnév latin átírásban — a naiv mintában a „Wei” ugyanígy"
+  },
+  " Hab": {
+   "gepi": "hu",
+   "helyes": "ismeretlen",
+   "miert": "a „hab” szótári szó, itt tulajdonnév-töredék (Habsburg)"
+  },
+  " Vér": {
+   "gepi": "ékezetes?",
+   "helyes": "hu",
+   "miert": "valódi magyar szó (vér), a nagy kezdőbetű miatt nem találta a szótárban"
+  }
+ }
+}

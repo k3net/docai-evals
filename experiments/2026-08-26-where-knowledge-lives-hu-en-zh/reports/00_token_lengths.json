@@ -1,0 +1,68 @@
+{
+  "HU/hu": {
+    "n": 15,
+    "median": 27,
+    "mean": 29.7
+  },
+  "HU/en": {
+    "n": 15,
+    "median": 23,
+    "mean": 23.5
+  },
+  "HU/zh": {
+    "n": 15,
+    "median": 21,
+    "mean": 20.5
+  },
+  "UNI/hu": {
+    "n": 20,
+    "median": 26.5,
+    "mean": 26.1
+  },
+  "UNI/en": {
+    "n": 20,
+    "median": 15.0,
+    "mean": 15.3
+  },
+  "UNI/zh": {
+    "n": 20,
+    "median": 13.0,
+    "mean": 13.2
+  },
+  "UNT/hu": {
+    "n": 32,
+    "median": 21.0,
+    "mean": 23.0
+  },
+  "UNT/en": {
+    "n": 32,
+    "median": 16.5,
+    "mean": 17.4
+  },
+  "UNT/zh": {
+    "n": 32,
+    "median": 12.0,
+    "mean": 12.8
+  },
+  "ZH/hu": {
+    "n": 19,
+    "median": 37,
+    "mean": 37.9
+  },
+  "ZH/en": {
+    "n": 19,
+    "median": 26,
+    "mean": 26
+  },
+  "ZH/zh": {
+    "n": 19,
+    "median": 16,
+    "mean": 16.4
+  },
+  "ratio_vs_en": {
+    "hu": 1.435,
+    "en": 1.0,
+    "zh": 0.768
+  },
+  "ratio_hu_zh": 1.869
+}

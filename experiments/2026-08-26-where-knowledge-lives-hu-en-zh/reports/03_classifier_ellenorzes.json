@@ -1,0 +1,53 @@
+{
+ "n": 100,
+ "hibak": 8,
+ "pontossag": 0.92,
+ "en_jelolt": 17,
+ "en_teves": 4,
+ "en_precizio": 0.765,
+ "hu_jelolt": 2,
+ "hu_teves": 2,
+ "hu_elmaradt": 0,
+ "eltoresek": {
+  " Eb": {
+   "gepi": "hu",
+   "helyes": "ismeretlen",
+   "miert": "az „eb” benne van a magyar szótárban, de itt latin betűs TÖREDÉK, nem magyar szó"
+  },
+  " telem": {
+   "gepi": "hu",
+   "helyes": "ismeretlen",
+   "miert": "ragozott alakként a szótárban van, tokenként viszont töredék"
+  },
+  " Ir": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "kétbetűs töredék; angol szóként is kétes"
+  },
+  " Mir": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "⚠️ épp a magyar „Mirr-Murr” töredéke — a HU11 itemnél ANGOLNAK számolná"
+  },
+  " Wei": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "kínai átírás latin betűkkel, nem angol szó"
+  },
+  " Jana": {
+   "gepi": "en",
+   "helyes": "ismeretlen",
+   "miert": "tulajdonnév, nem nyelvi jel"
+  },
+  "*pi": {
+   "gepi": "közös",
+   "helyes": "egyéb",
+   "miert": "kódtöredék, nem szó"
+  },
+  "\tTokenName": {
+   "gepi": "ismeretlen",
+   "helyes": "egyéb",
+   "miert": "kódazonosító, nem természetes nyelv"
+  }
+ }
+}

@@ -1,0 +1,311 @@
+{
+ "d1": {
+  "hu/hu": {
+   "native": 17,
+   "native_n": 22,
+   "native_rate": 0.7727272727272727,
+   "ci": [
+    0.5655964393704065,
+    0.8987710920517965
+   ],
+   "distortion": 3,
+   "distortion_n": 16,
+   "degenerate": 0
+  },
+  "hu/en": {
+   "native": 16,
+   "native_n": 22,
+   "native_rate": 0.7272727272727273,
+   "ci": [
+    0.5184787630099803,
+    0.8684941798418556
+   ],
+   "distortion": 2,
+   "distortion_n": 16,
+   "degenerate": 1
+  },
+  "hu/zh": {
+   "native": 13,
+   "native_n": 22,
+   "native_rate": 0.5909090909090909,
+   "ci": [
+    0.3873447738289381,
+    0.7674444033117963
+   ],
+   "distortion": 5,
+   "distortion_n": 16,
+   "degenerate": 7
+  },
+  "zh/hu": {
+   "native": 24,
+   "native_n": 24,
+   "native_rate": 1.0,
+   "ci": [
+    0.8620194241710247,
+    1.0000000000000002
+   ],
+   "distortion": 1,
+   "distortion_n": 16,
+   "degenerate": 0
+  },
+  "zh/en": {
+   "native": 23,
+   "native_n": 24,
+   "native_rate": 0.9583333333333334,
+   "ci": [
+    0.7975777375115778,
+    0.9926067346451949
+   ],
+   "distortion": 1,
+   "distortion_n": 16,
+   "degenerate": 0
+  },
+  "zh/zh": {
+   "native": 22,
+   "native_n": 24,
+   "native_rate": 0.9166666666666666,
+   "ci": [
+    0.741507847985494,
+    0.9768416721570264
+   ],
+   "distortion": 0,
+   "distortion_n": 16,
+   "degenerate": 3
+  }
+ },
+ "ctrl_rate": {
+  "hu": 0.5625,
+  "en": 1.0,
+  "zh": 0.875
+ },
+ "d3": [
+  {
+   "concept": "kaláka",
+   "src": "hu",
+   "own_en": 0.5280641466208477,
+   "ctrl_en": 0.36655592469545956,
+   "third": 0.5208816705336426
+  },
+  {
+   "concept": "szeretet / szerelem",
+   "src": "hu",
+   "own_en": 0.49094202898550726,
+   "ctrl_en": 0.31978319783197834,
+   "third": 0.4908424908424908
+  },
+  {
+   "concept": "magázás / tegezés",
+   "src": "hu",
+   "own_en": 0.4865125240847784,
+   "ctrl_en": 0.3431372549019608,
+   "third": 0.5190380761523046
+  },
+  {
+   "concept": "puszi / csók",
+   "src": "hu",
+   "own_en": 0.5291214215202369,
+   "ctrl_en": 0.3380414312617702,
+   "third": 0.5068762278978389
+  },
+  {
+   "concept": "honfoglalás",
+   "src": "hu",
+   "own_en": 0.508994708994709,
+   "ctrl_en": 0.359192348565356,
+   "third": 0.5227765726681128
+  },
+  {
+   "concept": "sógor",
+   "src": "hu",
+   "own_en": 0.4188034188034188,
+   "ctrl_en": 0.3292558613659531,
+   "third": 0.38509316770186336
+  },
+  {
+   "concept": "névnap",
+   "src": "hu",
+   "own_en": 0.40646853146853146,
+   "ctrl_en": 0.2866127583108715,
+   "third": 0.3785834738617201
+  },
+  {
+   "concept": "ráér",
+   "src": "hu",
+   "own_en": 0.4789272030651341,
+   "ctrl_en": 0.3485436893203884,
+   "third": 0.45235707121364094
+  },
+  {
+   "concept": "关系 (guanxi)",
+   "src": "zh",
+   "own_en": 0.4640449438202247,
+   "ctrl_en": 0.43409915356711004,
+   "third": 0.39184952978056425
+  },
+  {
+   "concept": "面子 (mianzi)",
+   "src": "zh",
+   "own_en": 0.48240635641316687,
+   "ctrl_en": 0.41156462585034015,
+   "third": 0.40310880829015544
+  },
+  {
+   "concept": "缘分 (yuanfen)",
+   "src": "zh",
+   "own_en": 0.4750277469478357,
+   "ctrl_en": 0.4004711425206125,
+   "third": 0.40102564102564103
+  },
+  {
+   "concept": "热闹 (renao)",
+   "src": "zh",
+   "own_en": 0.48758465011286684,
+   "ctrl_en": 0.42840095465393796,
+   "third": 0.4229934924078091
+  },
+  {
+   "concept": "江湖 (jianghu)",
+   "src": "zh",
+   "own_en": 0.4901098901098901,
+   "ctrl_en": 0.40804597701149425,
+   "third": 0.4186284544524053
+  },
+  {
+   "concept": "撒娇 (sajiao)",
+   "src": "zh",
+   "own_en": 0.4709051724137931,
+   "ctrl_en": 0.39349775784753366,
+   "third": 0.41700819672131145
+  },
+  {
+   "concept": "上火 (shanghuo)",
+   "src": "zh",
+   "own_en": 0.4594017094017094,
+   "ctrl_en": 0.36287799791449427,
+   "third": 0.39603960396039606
+  },
+  {
+   "concept": "加油 (jiayou)",
+   "src": "zh",
+   "own_en": 0.47327502429543244,
+   "ctrl_en": 0.39278131634819535,
+   "third": 0.4091332712022367
+  }
+ ],
+ "d3b": [
+  {
+   "concept": "kaláka",
+   "src": "hu",
+   "own_ctrl": 0.36655592469545956,
+   "other_ctrl_mean": 0.3701235933416515,
+   "excess": -0.003567668646191957
+  },
+  {
+   "concept": "szeretet / szerelem",
+   "src": "hu",
+   "own_ctrl": 0.31978319783197834,
+   "other_ctrl_mean": 0.31476161708277384,
+   "excess": 0.005021580749204502
+  },
+  {
+   "concept": "magázás / tegezés",
+   "src": "hu",
+   "own_ctrl": 0.3431372549019608,
+   "other_ctrl_mean": 0.3255741711072969,
+   "excess": 0.01756308379466387
+  },
+  {
+   "concept": "puszi / csók",
+   "src": "hu",
+   "own_ctrl": 0.3380414312617702,
+   "other_ctrl_mean": 0.31427111372444466,
+   "excess": 0.023770317537325558
+  },
+  {
+   "concept": "honfoglalás",
+   "src": "hu",
+   "own_ctrl": 0.359192348565356,
+   "other_ctrl_mean": 0.35341252918097804,
+   "excess": 0.005779819384377938
+  },
+  {
+   "concept": "sógor",
+   "src": "hu",
+   "own_ctrl": 0.3292558613659531,
+   "other_ctrl_mean": 0.30236609406850745,
+   "excess": 0.026889767297445633
+  },
+  {
+   "concept": "névnap",
+   "src": "hu",
+   "own_ctrl": 0.2866127583108715,
+   "other_ctrl_mean": 0.27310833723113853,
+   "excess": 0.013504421079732987
+  },
+  {
+   "concept": "ráér",
+   "src": "hu",
+   "own_ctrl": 0.3485436893203884,
+   "other_ctrl_mean": 0.326942559392456,
+   "excess": 0.021601129927932394
+  },
+  {
+   "concept": "关系 (guanxi)",
+   "src": "zh",
+   "own_ctrl": 0.43409915356711004,
+   "other_ctrl_mean": 0.40633338259981516,
+   "excess": 0.027765770967294878
+  },
+  {
+   "concept": "面子 (mianzi)",
+   "src": "zh",
+   "own_ctrl": 0.41156462585034015,
+   "other_ctrl_mean": 0.4010121691291901,
+   "excess": 0.010552456721150072
+  },
+  {
+   "concept": "缘分 (yuanfen)",
+   "src": "zh",
+   "own_ctrl": 0.4004711425206125,
+   "other_ctrl_mean": 0.39817706458049806,
+   "excess": 0.0022940779401144362
+  },
+  {
+   "concept": "热闹 (renao)",
+   "src": "zh",
+   "own_ctrl": 0.42840095465393796,
+   "other_ctrl_mean": 0.39983999541638726,
+   "excess": 0.028560959237550698
+  },
+  {
+   "concept": "江湖 (jianghu)",
+   "src": "zh",
+   "own_ctrl": 0.40804597701149425,
+   "other_ctrl_mean": 0.38827990808988755,
+   "excess": 0.019766068921606705
+  },
+  {
+   "concept": "撒娇 (sajiao)",
+   "src": "zh",
+   "own_ctrl": 0.39349775784753366,
+   "other_ctrl_mean": 0.39401131509258064,
+   "excess": -0.0005135572450469805
+  },
+  {
+   "concept": "上火 (shanghuo)",
+   "src": "zh",
+   "own_ctrl": 0.36287799791449427,
+   "other_ctrl_mean": 0.3810825694786706,
+   "excess": -0.01820457156417632
+  },
+  {
+   "concept": "加油 (jiayou)",
+   "src": "zh",
+   "own_ctrl": 0.39278131634819535,
+   "other_ctrl_mean": 0.3696331773596126,
+   "excess": 0.023148138988582756
+  }
+ ],
+ "d2_hits": 0,
+ "layer": 10
+}

@@ -23,6 +23,7 @@ headline stays on [docai.hu/blog](https://docai.hu/blog).
 | 2026-07-23 | [moe-backend-selection-gb10](2026-07-23-moe-backend-selection-gb10/) | Performance | Marlin everywhere on GB10 | R3 |
 | 2026-07-23 | [mtp-speculative-decoding-gb10](2026-07-23-mtp-speculative-decoding-gb10/) | Performance | Keep speculative decoding on, at draft length 2 | R3 |
 | 2026-08-04 | [vllm-prod-config-tuning-gb10](2026-08-04-vllm-prod-config-tuning-gb10/) | Performance | One unified serving profile; async scheduling off | R3 |
+| 2026-08-26 | [where-knowledge-lives-hu-en-zh](2026-08-26-where-knowledge-lives-hu-en-zh/) | Multilingual + interpretability | No lexical English pivot; the shared middle layer is real but thin; English is never the best prompt language | **R1** |
 
 Reproducibility levels: [../docs/reproducibility.md](../docs/reproducibility.md).
 

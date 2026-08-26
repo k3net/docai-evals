@@ -1,0 +1,217 @@
+{
+ "cells": {
+  "ZH/hu": {
+   "n": 19,
+   "helyes": 8,
+   "reszben": 1,
+   "helytelen": 3,
+   "hallucinacio": 7,
+   "acc_strict": 0.421,
+   "ci_strict": [
+    0.231,
+    0.637
+   ],
+   "acc_lenient": 0.474,
+   "truncated": 8,
+   "degenerate": 4
+  },
+  "ZH/en": {
+   "n": 19,
+   "helyes": 10,
+   "reszben": 2,
+   "helytelen": 1,
+   "hallucinacio": 6,
+   "acc_strict": 0.526,
+   "ci_strict": [
+    0.317,
+    0.727
+   ],
+   "acc_lenient": 0.632,
+   "truncated": 2,
+   "degenerate": 0
+  },
+  "ZH/zh": {
+   "n": 19,
+   "helyes": 12,
+   "reszben": 0,
+   "helytelen": 1,
+   "hallucinacio": 6,
+   "acc_strict": 0.632,
+   "ci_strict": [
+    0.41,
+    0.809
+   ],
+   "acc_lenient": 0.632,
+   "truncated": 3,
+   "degenerate": 0
+  },
+  "HU/hu": {
+   "n": 15,
+   "helyes": 1,
+   "reszben": 1,
+   "helytelen": 5,
+   "hallucinacio": 8,
+   "acc_strict": 0.067,
+   "ci_strict": [
+    0.012,
+    0.298
+   ],
+   "acc_lenient": 0.133,
+   "truncated": 9,
+   "degenerate": 1
+  },
+  "HU/en": {
+   "n": 15,
+   "helyes": 2,
+   "reszben": 1,
+   "helytelen": 3,
+   "hallucinacio": 9,
+   "acc_strict": 0.133,
+   "ci_strict": [
+    0.037,
+    0.379
+   ],
+   "acc_lenient": 0.2,
+   "truncated": 0,
+   "degenerate": 0
+  },
+  "HU/zh": {
+   "n": 15,
+   "helyes": 3,
+   "reszben": 0,
+   "helytelen": 6,
+   "hallucinacio": 6,
+   "acc_strict": 0.2,
+   "ci_strict": [
+    0.07,
+    0.452
+   ],
+   "acc_lenient": 0.2,
+   "truncated": 3,
+   "degenerate": 1
+  },
+  "UNI/hu": {
+   "n": 20,
+   "helyes": 18,
+   "reszben": 0,
+   "helytelen": 2,
+   "hallucinacio": 0,
+   "acc_strict": 0.9,
+   "ci_strict": [
+    0.699,
+    0.972
+   ],
+   "acc_lenient": 0.9,
+   "truncated": 5,
+   "degenerate": 1
+  },
+  "UNI/en": {
+   "n": 20,
+   "helyes": 20,
+   "reszben": 0,
+   "helytelen": 0,
+   "hallucinacio": 0,
+   "acc_strict": 1.0,
+   "ci_strict": [
+    0.839,
+    1.0
+   ],
+   "acc_lenient": 1.0,
+   "truncated": 0,
+   "degenerate": 0
+  },
+  "UNI/zh": {
+   "n": 20,
+   "helyes": 20,
+   "reszben": 0,
+   "helytelen": 0,
+   "hallucinacio": 0,
+   "acc_strict": 1.0,
+   "ci_strict": [
+    0.839,
+    1.0
+   ],
+   "acc_lenient": 1.0,
+   "truncated": 0,
+   "degenerate": 0
+  }
+ },
+ "clean": {
+  "ZH/hu": {
+   "n": 11,
+   "helyes": 6,
+   "acc": 0.545
+  },
+  "ZH/en": {
+   "n": 17,
+   "helyes": 10,
+   "acc": 0.588
+  },
+  "ZH/zh": {
+   "n": 16,
+   "helyes": 11,
+   "acc": 0.688
+  },
+  "HU/hu": {
+   "n": 6,
+   "helyes": 0,
+   "acc": 0.0
+  },
+  "HU/en": {
+   "n": 15,
+   "helyes": 2,
+   "acc": 0.133
+  },
+  "HU/zh": {
+   "n": 12,
+   "helyes": 2,
+   "acc": 0.167
+  },
+  "UNI/hu": {
+   "n": 15,
+   "helyes": 13,
+   "acc": 0.867
+  },
+  "UNI/en": {
+   "n": 20,
+   "helyes": 20,
+   "acc": 1.0
+  },
+  "UNI/zh": {
+   "n": 20,
+   "helyes": 20,
+   "acc": 1.0
+  }
+ },
+ "n_manual": 102,
+ "sensitivity_second_rater": {
+  "judge_vs_manual": [
+   57,
+   102
+  ],
+  "claude_vs_manual": [
+   70,
+   102
+  ],
+  "judge_only_cells": {
+   "ZH/hu": 0.421,
+   "ZH/en": 0.579,
+   "ZH/zh": 0.632,
+   "HU/hu": 0.067,
+   "HU/en": 0.2,
+   "HU/zh": 0.2,
+   "UNI/hu": 0.9,
+   "UNI/en": 1.0,
+   "UNI/zh": 1.0
+  },
+  "n_flip": 2,
+  "n_flip_lenient": 2,
+  "n_recat": 43
+ },
+ "verdict_counts": {
+  "hallucinacio": 42,
+  "helytelen": 21,
+  "helyes": 94,
+  "reszben": 5
+ }
+}

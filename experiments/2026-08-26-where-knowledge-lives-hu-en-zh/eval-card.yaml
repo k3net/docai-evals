@@ -1,0 +1,252 @@
+id: where-knowledge-lives-hu-en-zh
+version: "1.0"
+date: 2026-08-26
+title: "Where does the knowledge live — does a multilingual model reach Hungarian facts through English?"
+question: >-
+  "Prompt in English, the AI thinks in English anyway" is common advice. Does a multilingual model
+  reach language-bound knowledge through an English pivot, or from a shared representation — and
+  does the prompt language change what a Hungarian user gets?
+
+task:
+  type: interpretability          # factual QA behaviourally + representation-level probes
+  document_types: [encyclopaedic-question]
+  language: [hu, en, zh]
+  output_format: free-text
+
+dataset:
+  name: "where-knowledge-lives-hu-en-zh (authored for this measurement, frozen 2026-08-22)"
+  size:
+    items: 70
+    items_zh_only: 19
+    items_hu_only: 15
+    items_universal: 20
+    items_untranslatable: 16
+    prompts: 258
+    prompts_factual: 162
+    prompts_concept: 48
+    prompts_control_word: 48
+    approximation_prompts_d3: 48        # 16 English x 2 checkpoints + 16 third-language
+    scored_answers: 774                 # 258 x 3 variants
+    verification_judgements: 450        # 150 x 3 variants, second judge
+  access: public
+  ground_truth: >-
+    Short reference answers in all three languages for the factual groups. For the untranslatable
+    concepts there is no single correct answer: each concept carries pre-registered native meaning
+    components, distortion markers, an English approximation and a well-translatable control word,
+    and scoring counts how many components survive.
+  notes: >-
+    Group membership comes from Wikidata sitelinks (which language has an article), which is a
+    proxy for training-corpus presence, not a substitute. Four items carry a mention-level trace
+    in another language and are flagged. Corpus and every prompt are published in dataset/;
+    sha256 in corpus_manifest.json.
+
+systems:
+  - label: base + raw
+    role: baseline
+    model: Qwen3.5-9B-Base
+    engine: "transformers 5.6.0, container image on DGX Spark GB10 (sm_121a)"
+    sampling: { greedy: true, seed: 0, thinking: false }
+    notes: "Raw continuation prompt. The base checkpoint does not follow instructions."
+  - label: instruct + chat
+    role: candidate
+    model: Qwen3.5-9B
+    notes: "Same corpus through the model's own chat template (12 tokens of role wrapper)."
+  - label: instruct + raw
+    role: control
+    model: Qwen3.5-9B
+    notes: >-
+      The same instruct weights with the raw continuation prompt. Exists only to separate the
+      effect of post-training from the effect of the prompt format. Behavioural measurements
+      only: no SAE and no lens, because its question is behavioural.
+  - label: SAE
+    role: instrument
+    model: "Qwen/SAE-Res-Qwen3.5-9B-Base-W64K-L0_50"
+    notes: "All 32 layers, 65,536 features, TopK-50. Trained on the base model."
+  - label: judge
+    role: instrument
+    model: Qwen3.6-35B
+    notes: "Rubric judging of every answer: correct / partial / incorrect / hallucination."
+  - label: verification judge
+    role: instrument
+    model: GPT-5.6 Sol
+    notes: >-
+      Second, item-by-item pass over the ZH, HU and UNT answers of all three variants
+      (450 judgements). Machine judging, not human annotation.
+
+metrics:
+  - name: strict_accuracy
+    definition: "Share of answers judged correct, per group x question language, Wilson 95% intervals."
+    primary: true
+  - name: confident_fabrication_rate
+    definition: >-
+      Share of hallucination labels among non-correct answers. Always reported next to absolute
+      counts, because the denominator moves between variants.
+    primary: true
+  - name: cross_language_feature_excess
+    definition: >-
+      Jaccard overlap of the SAE feature union over the question tokens between two language
+      variants of the same item, minus the same quantity for randomly paired items of the same
+      group. Item-level permutation test at the pre-registered layer 16, Holm corrected over the
+      9 group x language-pair cells.
+    primary: true
+  - name: hump_contrasts
+    definition: >-
+      Pre-registered layer-band contrasts on the excess: middle (8-12) minus early (0-3) and
+      middle minus late (28-31), with item bootstrap intervals. Tests the shape, which the
+      single-layer test does not.
+  - name: english_approximation_surfacing
+    definition: >-
+      Whether the English approximation of an untranslatable concept appears in the top-20 lens
+      reading of the non-English prompt, per layer. Reported with three sensitivity controls:
+      reachability, an English-prompt positive control, and matcher punctuation sensitivity.
+  - name: approximation_pull
+    definition: >-
+      J(source concept, its own approximation) minus the mean J against the other concepts'
+      approximations, at layer 10 over question tokens. Primary statistic: exact two-sided sign
+      test. Secondary: Wilcoxon, concept bootstrap, and a length-matched variant.
+    primary: true
+  - name: english_specificity
+    definition: >-
+      The same pull measured against the approximation expressed in a third language, minus the
+      language/length baseline measured on the control words (difference in differences). This is
+      what separates a lexical English pivot from language-independent semantic proximity.
+    primary: true
+  - name: intermediate_language_share
+    definition: >-
+      Share of strictly English (resp. Chinese) words in the top-20 tuned-lens reading per layer.
+      The classifier was validated separately on the tuned-lens output (90/100 agreement, English
+      precision 75%), so the figures are reported as upper bounds with a corrected lower bound.
+  - name: sae_reconstruction_fvu
+    definition: >-
+      Fraction of variance unexplained when the base-trained SAE encodes each variant's residuals
+      over the question tokens. Gate fixed in advance: a drift above 0.05 would make the instruct
+      comparison qualitative only.
+
+decision_rule: >-
+  Fixed before the D3 run (dataset/d3b-protokoll.md): layer 10, question-token feature union,
+  Jaccard, exact two-sided sign test as the primary statistic, smallest effect size of interest
+  +0.02. Positive evidence for a lexical English pivot requires p < 0.05 AND an effect at or above
+  the SESOI. Absence of positive evidence is not evidence of absence, and is reported as such.
+
+results:
+  strict_accuracy:
+    base_raw:
+      ZH_only: { hu: 0.42, en: 0.53, zh: 0.63, n: 19 }
+      HU_only: { hu: 0.07, en: 0.13, zh: 0.20, n: 15 }
+      universal: { hu: 0.90, en: 1.00, zh: 1.00, n: 20 }
+    instruct_chat:
+      ZH_only: { hu: 0.58, en: 0.58, zh: 0.63, n: 19 }
+      HU_only: { hu: 0.20, en: 0.27, zh: 0.33, n: 15 }
+      universal: { hu: 1.00, en: 1.00, zh: 1.00, n: 20 }
+    instruct_raw:
+      ZH_only: { hu: 0.47, en: 0.68, zh: 0.58, n: 19 }
+      HU_only: { hu: 0.07, en: 0.20, zh: 0.13, n: 15 }
+      universal: { hu: 0.85, en: 1.00, zh: 1.00, n: 20 }
+    note: >-
+      English is never the best language when the knowledge is not English-sourced. Hungarian-only
+      knowledge asked in Hungarian is the weakest cell in every variant; on the untruncated subset
+      it is 0.00 (n = 6). n = 15-19 per cell, so the intervals are wide and overlapping.
+  post_training_decomposition:
+    base_to_instruct_chat: { improved: 16, degraded: 4, mcnemar_p: 0.012, item_clustered_p: 0.030 }
+    weights_only: { improved: 9, degraded: 7, mcnemar_p: 0.804, item_clustered_p: 0.809 }
+    prompt_format_only: { improved: 13, degraded: 3, mcnemar_p: 0.021, item_clustered_p: 0.020 }
+    note: >-
+      Measuring the base model with a raw prompt and the instruct model with a chat template is not
+      one ruler. Most of the apparent gain is the template, not the weights. No base + chat cell
+      exists (the base model was not trained on the template), so the interaction is not identified.
+  hallucination_shape:
+    hu_only_45_answers:
+      confident_fabrication: [23, 26, 25]     # base+raw, instruct+raw, instruct+chat
+      evasion_or_non_answer: [14, 10, 3]
+      correct_or_partial: [8, 9, 17]
+      fabrication_rate_among_wrong: [0.62, 0.72, 0.89]
+    note: >-
+      The number of fabrications is flat; what disappears is evasion, which is why the rate climbs.
+      On the untruncated subset (12 answers, 8 items) 4 of 5 evasions turn into correct answers
+      rather than fabrications, so the direction is not settled by this sample.
+  shared_representation:
+    layer16_permutation: { cells: 9, significant: 9, raw_p: 0.001, holm_max: 0.009 }
+    hump_contrasts: { cells_with_both_intervals_above_zero: 6, of: 9 }
+    universal_peak_layers: [9, 11]
+    excess_at_peak_universal: [0.095, 0.137]
+    absolute_jaccard: { same_item: 0.19, random_pair: 0.13 }
+    note: >-
+      The three ZH cells show only middle > late: their early overlap is already high because the
+      questions carry transliterations and original characters. The argument therefore rests on the
+      universal group, where the three surface forms genuinely differ.
+  english_pivot:
+    approximation_surfacing_middle_planes: { hits: 0, of: 32, lenses: [naive, tuned] }
+    positive_control_english_prompt: { naive: "3/16", tuned: "1/16" }
+    approximation_pull_base: { mean: 0.020, ci95: [0.011, 0.028], sign: "13/3", p: 0.021, wilcoxon_p: 0.001 }
+    approximation_pull_instruct: { mean: 0.024, sign: "14/2", p: 0.004 }
+    control_word_variant: { mean: 0.007, sign: "10/6", p: 0.454 }
+    english_specificity_diff_in_diff: { mean: 0.001, ci95: [-0.006, 0.009], sign: "8/8", p: 0.804 }
+    third_language_pull: { mean: 0.015, ci95: [0.008, 0.022], sign: "14/2", p: 0.004 }
+    note: >-
+      The concept pulls towards its own approximation, but just as strongly towards that
+      approximation in a third language. After subtracting the language/length baseline the
+      English-specific part is indistinguishable from zero and excludes the SESOI.
+  intermediate_reading:
+    hungarian_prompt_english_share_base: { mean: 0.58, range: [0.39, 0.71], corrected_lower_bound: 0.44 }
+    hungarian_prompt_english_share_instruct: 0.26
+    chinese_prompt_chinese_share: [0.60, 0.98]
+    chinese_prompt_english_share_max: 0.18
+    note: "Upper bounds: the language classifier's precision on the English class is 75% (fragments and transliterations)."
+  instrument_gates:
+    naive_lens_non_word_share_planes_0_23: 0.76
+    tuned_lens_non_word_share: 0.31
+    tuned_lens_val_kl: { before: 2.85, after: 1.03 }
+    sae_fvu_question_tokens: { base: 0.349, instruct: 0.367, worst_layer_drift: 0.047, gate: 0.05 }
+    language_classifier: { agreement: 0.90, english_precision: 0.75 }
+  decoding_pathologies:
+    truncated_of_258: [43, 64, 86]
+    repetition_loops: [25, 29, 13]
+    self_evaluating_suffix: [16, 23, 0]
+    note: "Per variant: base+raw, instruct+raw, instruct+chat. All three are language-dependent and flagged per item."
+
+verdict: >-
+  No positive evidence for a lexical English pivot, and clear evidence for language-independent
+  semantic proximity: the untranslatable concept pulls towards its own approximation in English,
+  Chinese and Hungarian alike, and the English-specific excess is +0.001 [-0.006; 0.009]. There is
+  a shared middle layer, but it is thin — most of the representation stays language-specific. The
+  languages are not equal: the Hungarian target token decodes two orders of magnitude later, the
+  base model's Hungarian intermediate reading is English-adjacent (the Chinese one is not), and
+  Hungarian-only knowledge is weakest in Hungarian. English is nowhere the best language when the
+  knowledge is not English-sourced, so translating the prompt buys nothing; what is missing is the
+  source, not the language.
+
+reproducibility:
+  level: R1
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 1
+  not_published: >-
+    Residual dumps (~1.4 GB per variant) and SAE activation .npz files (78 MB). Both regenerate
+    from the published prompts with code/run.py and code/run_sae.py on a GPU.
+
+limitations:
+  - "One model family, one size: everything here is Qwen3.5-9B. The direction agrees with the Llama literature, but generalisation is an expectation, not a measurement."
+  - "Small n: 19/15/20 items per group. The per-cell Wilson intervals are wide and overlapping; the strong claims rest on paired tests and on the joint behaviour of the 9 language pairs."
+  - "Wiki presence is a proxy for training-corpus presence. Four items carry a mention-level trace in another language. A stronger design would inject knowledge in one language under control."
+  - "The second judging pass is machine judging (GPT-5.6 Sol) with the author's rubric on a corpus the author assembled. There was no blind human evaluation, and the author is not an independent evaluator."
+  - "The D2 probe is weakly sensitive: on English prompts the approximation surfaces for only 3/16 (naive) and 1/16 (tuned) concepts in the middle planes, and 6-7 candidate words never appear in any top-20 reading of the corpus. Its zero is weak evidence."
+  - "D3 is a lexical test. The approximation is one phrasing per language, and the third-language translations were authored by the same person. A distributed, non-lexical English pivot would be invisible to all three probes."
+  - "The SAE was trained on the base model and leaves ~35% of residual variance unexplained on these short prompts. Dead-latent rate and feature frequency were not measured, and no causal intervention (steering, ablation) was run — so 'shared feature' means shared activation, not proven shared concept."
+  - "The tuned lens leaks: it is trained to predict the final distribution, so answer depth may only be read off the naive lens. Its train/validation split is token-level, so the KL improvement is likely optimistic."
+  - "Answer depth on the naive lens is a direct unembedding target-token rank, which depends on token frequency, segmentation and script. It does not license claims about how many internal steps a language needs."
+  - "Truncation grows 43 -> 64 -> 86 out of 258 across the variants; the cut-off part could have contained the answer, so measured improvement is a lower bound and the fabrication rate an upper one."
+  - "Several analysis decisions were made after seeing the data (answer cleaning, the stepped token budget, the tuned lens, restricting the SAE analysis to question tokens, the D2 controls, the third-language D3 variant). The corpus, layer 16 and the D3 protocol were fixed in advance; the rest is exploratory or corrective, not confirmatory."
+  - "The practical prompt-language conclusion holds for short encyclopaedic questions. Long Hungarian business documents, KIE and RAG were not measured; that needs a paired experiment of its own."
+
+related:
+  article: "https://docai.hu/blog/magyarul-vagy-angolul-promptoljak"
+  study: "https://docai.hu/kutatas/hol-lakik-a-tudas"
+  references:
+    - "Wendler, C. et al. (2024): Do Llamas Work in English? On the Latent Language of Multilingual Transformers. ACL 2024."
+    - "Dumas, C. et al. (2025): Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers. ACL 2025."
+    - "Schut, L., Gal, Y., Farquhar, S. (2025): Do Multilingual LLMs Think In English?"
+    - "nostalgebraist (2020): interpreting GPT: the logit lens."
+    - "Belrose, N. et al. (2023): Eliciting Latent Predictions from Transformers with the Tuned Lens."
+    - "Bricken, T. et al. (2023): Towards Monosemanticity. Anthropic."
+    - "Gao, L. et al. (2024): Scaling and Evaluating Sparse Autoencoders."

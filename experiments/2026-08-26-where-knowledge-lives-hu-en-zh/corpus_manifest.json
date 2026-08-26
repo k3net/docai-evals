@@ -1,0 +1,54 @@
+{
+  "name": "where-knowledge-lives-hu-en-zh",
+  "description": "70 factual/concept items in Hungarian, English and Chinese, built for measuring whether a multilingual LLM reaches language-bound knowledge directly or through English.",
+  "frozen": "2026-08-22",
+  "license": "CC BY 4.0 (items authored for this measurement; the selection criterion uses Wikidata sitelinks)",
+  "selection": {
+    "ZH": "article on zh.wikipedia or Baidu Baike, none on en/hu Wikipedia (Wikidata sitelinks)",
+    "HU": "article on hu.wikipedia, none on en/zh",
+    "UNI": "article on all three wikis",
+    "UNT": "untranslatable concepts (8 Hungarian, 8 Chinese) with pre-registered native meaning components, distortion markers, an English approximation and a well-translatable control word"
+  },
+  "counts": {
+    "items": 70,
+    "by_group": {
+      "HU": 15,
+      "UNI": 20,
+      "UNT": 16,
+      "ZH": 19
+    },
+    "prompts": 258,
+    "by_kind": {
+      "ctrl": 48,
+      "fact": 162,
+      "unt": 48
+    },
+    "languages": [
+      "hu",
+      "en",
+      "zh"
+    ]
+  },
+  "files": {
+    "dataset/items.jsonl": {
+      "sha256": "621564518f761cf1479246c81dd5ff53d8b01ec5d111bf4ee14dc2ca6cb11440",
+      "bytes": 35170,
+      "lines": 70
+    },
+    "dataset/prompts.jsonl": {
+      "sha256": "ff7a296b0e0394496de9b51bb5252e69d74c527dd6a01e3e0d3ffcd9a8ade24c",
+      "bytes": 95145,
+      "lines": 258
+    },
+    "dataset/prompts_d3b.jsonl": {
+      "sha256": "cbfeba748fd5ac35fc3b9a73e6598950136236c40700c13bcdd1c93f116ba7df",
+      "bytes": 6138,
+      "lines": 16
+    },
+    "dataset/prompts_d3b_x.jsonl": {
+      "sha256": "e58917793ecfffb7629d292ea8e6490f8155baa0bc69523736112e06298a7968",
+      "bytes": 5123,
+      "lines": 16
+    }
+  }
+}

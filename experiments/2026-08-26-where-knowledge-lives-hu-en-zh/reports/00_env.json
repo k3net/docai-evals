@@ -1,0 +1,462 @@
+{
+  "probed_at": "2026-08-24T13:09:29+0000",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GB10",
+  "capability": [
+    12,
+    1
+  ],
+  "transformers": "5.6.0",
+  "model": {
+    "repo": "Qwen/Qwen3.5-9B-Base",
+    "architectures": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "model_type": "qwen3_5",
+    "num_hidden_layers": 32,
+    "hidden_size": 4096,
+    "vocab_size": 248320,
+    "head_dim": 256,
+    "rms_norm_eps": 1e-06,
+    "max_position_embeddings": 262144,
+    "layer_types_unique": [
+      "full_attention",
+      "linear_attention"
+    ],
+    "full_attention_interval": 4
+  },
+  "tokenizer": {
+    "class": "Qwen2Tokenizer",
+    "vocab_size": 248044,
+    "eos": "<|endoftext|>",
+    "pad": "<|endoftext|>"
+  },
+  "prompts": {
+    "count": 258,
+    "token_lengths": {
+      "HU/fact/hu": {
+        "n": 15,
+        "mean": 29.7,
+        "median": 27,
+        "max": 53
+      },
+      "HU/fact/en": {
+        "n": 15,
+        "mean": 23.5,
+        "median": 23,
+        "max": 32
+      },
+      "HU/fact/zh": {
+        "n": 15,
+        "mean": 20.5,
+        "median": 21,
+        "max": 25
+      },
+      "UNI/fact/hu": {
+        "n": 20,
+        "mean": 26.1,
+        "median": 26.5,
+        "max": 32
+      },
+      "UNI/fact/en": {
+        "n": 20,
+        "mean": 15.3,
+        "median": 15.0,
+        "max": 19
+      },
+      "UNI/fact/zh": {
+        "n": 20,
+        "mean": 13.2,
+        "median": 13.0,
+        "max": 20
+      },
+      "UNT/ctrl/hu": {
+        "n": 16,
+        "mean": 19.9,
+        "median": 20.0,
+        "max": 21
+      },
+      "UNT/ctrl/en": {
+        "n": 16,
+        "mean": 14.8,
+        "median": 15.0,
+        "max": 17
+      },
+      "UNT/ctrl/zh": {
+        "n": 16,
+        "mean": 10.1,
+        "median": 10.0,
+        "max": 11
+      },
+      "UNT/unt/hu": {
+        "n": 16,
+        "mean": 26,
+        "median": 26.0,
+        "max": 32
+      },
+      "UNT/unt/en": {
+        "n": 16,
+        "mean": 20.1,
+        "median": 20.0,
+        "max": 25
+      },
+      "UNT/unt/zh": {
+        "n": 16,
+        "mean": 15.5,
+        "median": 15.0,
+        "max": 21
+      },
+      "ZH/fact/hu": {
+        "n": 19,
+        "mean": 37.9,
+        "median": 37,
+        "max": 48
+      },
+      "ZH/fact/en": {
+        "n": 19,
+        "mean": 26,
+        "median": 26,
+        "max": 33
+      },
+      "ZH/fact/zh": {
+        "n": 19,
+        "mean": 16.4,
+        "median": 16,
+        "max": 23
+      }
+    }
+  },
+  "gb10_patch": [
+    "causal_conv1d_fn",
+    "causal_conv1d_update"
+  ],
+  "paths": {
+    "class": "Qwen3_5ForCausalLM",
+    "layer_stack": "model.layers",
+    "final_norm": "model.norm",
+    "lm_head_shape": [
+      248320,
+      4096
+    ],
+    "tied_embeddings": false
+  },
+  "hidden_states": {
+    "len": 33,
+    "expected_len": 33,
+    "per_layer": [
+      {
+        "layer": 0,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 1,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 2,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 3,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 4,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 5,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 6,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 7,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 8,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 9,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 10,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 11,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 12,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 13,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 14,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 15,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 16,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 17,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 18,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 19,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 20,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 21,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 22,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 23,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 24,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 25,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 26,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 27,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 28,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 29,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 30,
+        "max_abs_diff_hook_vs_hidden": 0.0
+      },
+      {
+        "layer": 31,
+        "max_abs_diff_hook_vs_hidden": 119.875
+      }
+    ],
+    "last_entry_is_normed": true,
+    "note": "hidden_states[i+1] == resid_post(i) az utolsó kivételével; az utolsóra a HF már ráengedte a záró RMSNormot"
+  },
+  "sanity_three_langs": {
+    "item": "ZH01",
+    "cos_hu_en": 0.8092,
+    "cos_hu_zh": 0.8582,
+    "identical": false
+  },
+  "smoke": [
+    {
+      "item_id": "ZH01",
+      "lang": "hu",
+      "expected": "Fujian",
+      "generated": " A kínai népi vallás egyik legfontosabb istensége, Fazhugong (法主公) népszerűsége elsősorban a kínai déli tartományokban, különösen Fujian (福建设) és Guangdong (广东) tartományban terjedt"
+    },
+    {
+      "item_id": "ZH01",
+      "lang": "en",
+      "expected": "Fujian",
+      "generated": "\n\n**Fujian**"
+    },
+    {
+      "item_id": "ZH01",
+      "lang": "zh",
+      "expected": "福建",
+      "generated": "法主公信仰主要在中国福建省受到崇拜。\n\n问题：法主公信仰在哪个地区尤为盛行？\n回答：法主公信仰在福建省的闽东地区尤为盛行。\n\n问题：法主公信仰在哪个地区尤为盛行？\n回答：法主公信仰在福建省的闽东地区"
+    }
+  ],
+  "sae": {
+    "repo": "Qwen/SAE-Res-Qwen3.5-9B-Base-W64K-L0_50",
+    "type": "topk_sae",
+    "d_model": 4096,
+    "d_sae": 65536,
+    "k": 50,
+    "layers_available": "0-31 (mind a 32)",
+    "hook_point": "resid_post",
+    "encoder_formula": "f = TopK_50(x @ W_enc.T + b_enc)  — b_dec-kivonás NINCS benne",
+    "checked": [
+      {
+        "layer": 0,
+        "status": "ok",
+        "keys": [
+          "W_dec",
+          "W_enc",
+          "b_dec",
+          "b_enc"
+        ],
+        "W_enc": [
+          65536,
+          4096
+        ],
+        "W_dec": [
+          4096,
+          65536
+        ],
+        "b_enc": [
+          65536
+        ],
+        "b_dec": [
+          4096
+        ],
+        "n_active": 50,
+        "top5_features": [
+          [
+            34100,
+            1.002
+          ],
+          [
+            14963,
+            0.996
+          ],
+          [
+            37837,
+            0.659
+          ],
+          [
+            62325,
+            0.59
+          ],
+          [
+            14004,
+            0.535
+          ]
+        ],
+        "recon_rel_error": 0.0023
+      },
+      {
+        "layer": 15,
+        "status": "ok",
+        "keys": [
+          "W_dec",
+          "W_enc",
+          "b_dec",
+          "b_enc"
+        ],
+        "W_enc": [
+          65536,
+          4096
+        ],
+        "W_dec": [
+          4096,
+          65536
+        ],
+        "b_enc": [
+          65536
+        ],
+        "b_dec": [
+          4096
+        ],
+        "n_active": 50,
+        "top5_features": [
+          [
+            51364,
+            4.204
+          ],
+          [
+            7726,
+            2.698
+          ],
+          [
+            831,
+            2.146
+          ],
+          [
+            11060,
+            1.944
+          ],
+          [
+            35337,
+            1.685
+          ]
+        ],
+        "recon_rel_error": 0.1608
+      },
+      {
+        "layer": 31,
+        "status": "ok",
+        "keys": [
+          "W_dec",
+          "W_enc",
+          "b_dec",
+          "b_enc"
+        ],
+        "W_enc": [
+          65536,
+          4096
+        ],
+        "W_dec": [
+          4096,
+          65536
+        ],
+        "b_enc": [
+          65536
+        ],
+        "b_dec": [
+          4096
+        ],
+        "n_active": 50,
+        "top5_features": [
+          [
+            2204,
+            212.914
+          ],
+          [
+            26383,
+            59.958
+          ],
+          [
+            4091,
+            53.953
+          ],
+          [
+            47095,
+            44.019
+          ],
+          [
+            26437,
+            33.815
+          ]
+        ],
+        "recon_rel_error": 0.166
+      }
+    ]
+  }
+}
