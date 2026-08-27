@@ -1,6 +1,6 @@
 id: qwen36-fp8-vllm-flag-sweep
 version: "1.0"
-date: 2026-07-01
+date: "2026-07-01"
 title: "Vendor agent-ready recipe flags on an FP8 MoE — a sweep that changed nothing"
 question: >-
   Do the serving flags from a published vendor recipe improve our FP8 MoE production baseline on

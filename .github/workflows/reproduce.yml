@@ -19,8 +19,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: függőségek
+        # A validátornak van jsonschema nélküli tartalék-ága; ha nem telepítjük explicit
+        # módon, a job azon fut, és a `--strict` elhasal — szándékosan.
+        run: pip install -r scripts/requirements.txt
       - name: eval-card séma
-        run: python3 scripts/validate_eval_cards.py
+        run: python3 scripts/validate_eval_cards.py --strict
 
   where-knowledge-lives:
     runs-on: ubuntu-latest

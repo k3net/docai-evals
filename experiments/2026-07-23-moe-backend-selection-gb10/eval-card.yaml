@@ -1,6 +1,6 @@
 id: moe-backend-selection-gb10
 version: "1.0"
-date: 2026-07-23
+date: "2026-07-23"
 title: "Which MoE kernel backend wins on GB10 — and why the vendor recommendation lost"
 question: >-
   For mixture-of-experts serving on DGX Spark GB10, which kernel backend is fastest — the

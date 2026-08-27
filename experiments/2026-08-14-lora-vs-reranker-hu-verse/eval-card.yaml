@@ -1,6 +1,6 @@
 id: lora-vs-reranker-hu-verse
 version: "1.0"
-date: 2026-08-14
+date: "2026-08-14"
 title: "Fine-tuning vs. a deterministic selector — what a LoRA actually buys"
 question: >-
   A LoRA adapter and a best-of-8 reranker both make a model's output more regular. Which one earns

@@ -1,6 +1,6 @@
 id: mtp-speculative-decoding-gb10
 version: "1.0"
-date: 2026-07-23
+date: "2026-07-23"
 title: "Speculative decoding on GB10 — the cheapest real speed-up we found"
 question: >-
   Does multi-token prediction pay on DGX Spark GB10, what draft length should we run, and how does

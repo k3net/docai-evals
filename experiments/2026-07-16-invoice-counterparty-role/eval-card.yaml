@@ -1,6 +1,6 @@
 id: invoice-counterparty-role
 version: "1.1"
-date: 2026-07-16
+date: "2026-07-16"
 title: "Who is the counterparty? — the gate that reversed a model decision"
 question: >-
   On representative Hungarian invoices, does 4-bit quantisation preserve the model's ability to

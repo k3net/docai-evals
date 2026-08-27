@@ -1,6 +1,6 @@
 id: vllm-prod-config-tuning-gb10
 version: "1.0"
-date: 2026-08-04
+date: "2026-08-04"
 title: "Six proposed measurements, two worth running — production serving config on GB10"
 question: >-
   Two nodes serving the same model had drifted to different configurations. Which of the six

@@ -1,7 +1,7 @@
 # Scoring and analysis tools
 
 Small, dependency-light tools. Everything here is standard-library Python 3.10+ except the eval
-card validator, which wants PyYAML (and optionally `jsonschema`).
+card validator, which needs PyYAML and `jsonschema` (`pip install -r requirements.txt`).
 
 | Script | What it does |
 |---|---|
@@ -10,7 +10,7 @@ card validator, which wants PyYAML (and optionally `jsonschema`).
 | [counterparty_guard.py](counterparty_guard.py) | The deterministic business gate: did the model put our own company in the partner slot? |
 | [mcnemar.py](mcnemar.py) | McNemar's exact test on the gate above, for two runs over the same documents. |
 | [hu_prosody.py](hu_prosody.py) | Deterministic Hungarian verse prosody: syllable count, rhyme key, rhyme scheme, inflectional-rhyme detection. Library + self-test. |
-| [validate_eval_cards.py](validate_eval_cards.py) | Validates every `experiments/*/eval-card.yaml` against the schema. |
+| [validate_eval_cards.py](validate_eval_cards.py) | Validates every `experiments/*/eval-card.yaml` against the schema. Run it with `--strict`, as CI does. |
 
 ## The one rule
 
@@ -35,7 +35,8 @@ python3 scripts/mcnemar.py \
     --own-tax 87654321-2-08 --own-name-hint "demó kereskedelmi" \
     runs/baseline runs/candidate
 
-python3 scripts/validate_eval_cards.py
+pip install -r scripts/requirements.txt
+python3 scripts/validate_eval_cards.py --strict
 ```
 
 ## Input format

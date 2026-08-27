@@ -1,6 +1,6 @@
 id: gemma4-vs-qwen36-json-kie
 version: "1.0"
-date: 2026-04-30
+date: "2026-04-30"
 title: "Gemma 4 vs Qwen3.6 — strict-JSON KIE on Hungarian invoices"
 question: >-
   Can an alternative open-weights model replace the incumbent extraction model on Hungarian

@@ -1,6 +1,6 @@
 id: moe-kernel-tuning-gb10
 version: "1.0"
-date: 2026-04-14
+date: "2026-04-14"
 title: "Two days of MoE kernel tuning, and nothing to show for it"
 question: >-
   Does an autotuned mixture-of-experts kernel configuration improve real serving throughput on

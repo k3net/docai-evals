@@ -1,6 +1,6 @@
 id: qwen36-mtp-ab-gb10
 version: "1.0"
-date: 2026-04-18
+date: "2026-04-18"
 title: "Speculative decoding A/B on the production model — where MTP wins and where it costs"
 question: >-
   Should multi-token prediction be enabled on the production model, and what does it cost on

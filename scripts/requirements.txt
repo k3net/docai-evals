@@ -1,0 +1,9 @@
+# Az eval-card sémaellenőrzéshez (`scripts/validate_eval_cards.py --strict`).
+# A mért verziók (Python 3.12.3).
+#
+# ⛔ Ezt a CI-nak EXPLICIT módon telepítenie kell. A validátornak van egy gyengébb,
+# jsonschema nélküli tartalék-ága; amikor a runner képében véletlenül volt jsonschema,
+# a lokális futás a tartalékkal zöldet mondott, a CI a teljes sémával pirosat. Ezért
+# fut a CI `--strict`-tel: az ág inkább hasaljon el, mint hogy hamis zöldet adjon.
+PyYAML==6.0.3
+jsonschema==4.26.0

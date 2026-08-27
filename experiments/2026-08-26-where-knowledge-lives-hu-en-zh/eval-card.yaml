@@ -1,6 +1,6 @@
 id: where-knowledge-lives-hu-en-zh
 version: "1.0"
-date: 2026-08-26
+date: "2026-08-26"
 title: "Where does the knowledge live — does a multilingual model reach Hungarian facts through English?"
 question: >-
   "Prompt in English, the AI thinks in English anyway" is common advice. Does a multilingual model
@@ -96,7 +96,7 @@ metrics:
       registered 1 000 to 10 000, because 1/1001 is a resolution floor rather than a measurement.
       The question-span restriction itself is a post-hoc correction (2026-08-25).
     primary: true
-    preregistered: partial
+    preregistered: "partial"
   - name: hump_contrasts
     definition: >-
       Pre-registered layer-band contrasts on the excess: middle (8-12) minus early (0-3) and

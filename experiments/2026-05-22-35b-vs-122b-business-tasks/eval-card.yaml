@@ -1,6 +1,6 @@
 id: 35b-vs-122b-business-tasks
 version: "1.0"
-date: 2026-05-22
+date: "2026-05-22"
 title: "When is a bigger model worth it? — 35B vs 122B on real business tasks"
 question: >-
   A model four times larger and 2.5x slower is available. On which tasks is it actually better, and

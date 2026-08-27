@@ -1,6 +1,6 @@
 id: qwen35-122b-nvfp4-bringup-gb10
 version: "1.1"
-date: 2026-05-22
+date: "2026-05-22"
 title: "Bringing a 122B MoE up on a single DGX Spark — capacity, speed, and where it breaks"
 question: >-
   What does it cost to serve a 122B mixture-of-experts model on one 128 GB GB10: how much KV cache

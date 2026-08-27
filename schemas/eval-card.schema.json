@@ -30,7 +30,8 @@
     "date": {
       "type": "string",
       "format": "date",
-      "description": "Date the measurement was completed (ISO 8601)."
+      "description": "Date the measurement was completed (ISO 8601, YYYY-MM-DD). Quote it in YAML: unquoted, it loads as a date object and the card is no longer convertible to JSON.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "title": {
       "type": "string"
@@ -132,8 +133,11 @@
               "baseline",
               "candidate",
               "reference",
-              "judge"
-            ]
+              "control",
+              "judge",
+              "instrument"
+            ],
+            "description": "baseline/candidate/reference = arms being compared; control = an arm that exists to isolate one factor, not to win; judge = scores the others; instrument = part of the measuring apparatus (SAE, probe, verifier)."
           },
           "model": {
             "type": "string",
@@ -201,6 +205,15 @@
           "primary": {
             "type": "boolean",
             "default": false
+          },
+          "preregistered": {
+            "type": "string",
+            "enum": [
+              "full",
+              "partial",
+              "post-hoc"
+            ],
+            "description": "full = measured as registered; partial = registered but deviated from, with the deviations stated in the definition; post-hoc = added after the primary result was seen. Quote the value in YAML."
           }
         }
       }
@@ -259,6 +272,14 @@
         "runs_per_variant": {
           "type": "integer",
           "minimum": 1
+        },
+        "not_published": {
+          "type": "string",
+          "description": "Artefacts deliberately left out (size, why), and how a reader regenerates them."
+        },
+        "verified_by": {
+          "type": "string",
+          "description": "What actually exercises the reproducibility claim — a script, a CI job. A claim nothing exercises decays silently."
         }
       }
     },
@@ -295,6 +316,18 @@
           "items": {
             "type": "string"
           }
+        },
+        "study": {
+          "type": "string",
+          "format": "uri",
+          "description": "The long-form study page, when the article is only a summary of it."
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Prior work this measurement builds on or re-tests, as citation strings."
         }
       }
     }

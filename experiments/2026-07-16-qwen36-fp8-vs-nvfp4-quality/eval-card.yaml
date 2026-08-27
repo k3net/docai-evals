@@ -1,6 +1,6 @@
 id: qwen36-fp8-vs-nvfp4-quality
 version: "1.1"
-date: 2026-07-16
+date: "2026-07-16"
 title: "FP8 vs NVFP4 — what 4-bit quantisation keeps, and what it costs"
 question: >-
   Does 4-bit NVFP4 quantisation preserve extraction and chat quality well enough to trade for its

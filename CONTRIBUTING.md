@@ -35,11 +35,17 @@ experiments/<YYYY-MM-DD>-<technical-name>/
 └── decision-record.md   # what product decision followed, and what would reopen it
 ```
 
-Validate the card before opening a PR:
+Validate the card before opening a PR — with `--strict`, which is what CI runs. Without the
+dependencies the validator falls back to a weaker structural check that will report `ok` on a card
+CI then rejects:
 
 ```bash
-python3 scripts/validate_eval_cards.py
+pip install -r scripts/requirements.txt
+python3 scripts/validate_eval_cards.py --strict
 ```
+
+Quote dates and other ambiguous scalars in the YAML. Unquoted, `2026-08-26` loads as a date object
+and `no` as a boolean, and the card stops being convertible to JSON.
 
 Directory names are technical and searchable (`qwen36-fp8-vs-nvfp4-quality`), not editorial. The
 headline stays on the blog.
