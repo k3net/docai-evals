@@ -1,0 +1,4201 @@
+{
+ "cimke": "qwen36-bo-keret",
+ "args": {
+  "url": "http://DEV_SPARK:8355",
+  "model": "qwen36",
+  "cimke": "qwen36-bo-keret",
+  "futasok": 3,
+  "max_tokens": 16384,
+  "timeout": 300,
+  "csak": null,
+  "items": "gt/items.jsonl",
+  "out": "reports/meres-qwen36-16k.json",
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T1-01",
+   "teszt": "T1",
+   "pont": {
+    "pont": 9.0,
+    "max": 10,
+    "reszletek": {
+     "index_tipusa": {
+      "gt": "KSH éves fogyasztóiár-index",
+      "pred": "KSH éves fogyasztóiár-index",
+      "arany": 1.0
+     },
+     "bazis_idoszak": {
+      "gt": "előző naptári év",
+      "pred": "előző naptári év",
+      "arany": 1.0
+     },
+     "elso_indexalas": {
+      "gt": "2027-01-01",
+      "pred": "2027-01-01",
+      "arany": 1.0
+     },
+     "plafon_szazalek": {
+      "gt": 6,
+      "pred": 6,
+      "arany": 1.0
+     },
+     "negativ_index_kezelese": {
+      "gt": "a díj nem csökken",
+      "pred": "a díj nem csökken",
+      "arany": 1.0
+     },
+     "kerekites": {
+      "gt": "ezer forintra",
+      "pred": "ezer forintra",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [
+     "ertelmezes"
+    ],
+    "biro_suly": 1.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"index_tipusa\": \"KSH éves fogyasztóiár-index\",\n  \"bazis_idoszak\": \"előző naptári év\",\n  \"elso_indexalas\": \"2027-01-01\",\n  \"plafon_szazalek\": 6,\n  \"negativ_index_kezelese\": \"a díj nem csökken\",\n  \"kerekites\": \"ezer forintra\",\n  \"ertelmezes\": \"Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén.\"\n}",
+     "pred": {
+      "index_tipusa": "KSH éves fogyasztóiár-index",
+      "bazis_idoszak": "előző naptári év",
+      "elso_indexalas": "2027-01-01",
+      "plafon_szazalek": 6,
+      "negativ_index_kezelese": "a díj nem csökken",
+      "kerekites": "ezer forintra",
+      "ertelmezes": "Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6266,
+      "total_tokens": 9150,
+      "completion_tokens": 2884,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45827.7,
+     "sha": "08aa43db3743"
+    },
+    {
+     "nyers": "\n\n{\n  \"index_tipusa\": \"KSH éves fogyasztóiár-index\",\n  \"bazis_idoszak\": \"előző naptári év\",\n  \"elso_indexalas\": \"2027-01-01\",\n  \"plafon_szazalek\": 6,\n  \"negativ_index_kezelese\": \"a díj nem csökken\",\n  \"kerekites\": \"ezer forintra\",\n  \"ertelmezes\": \"Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén.\"\n}",
+     "pred": {
+      "index_tipusa": "KSH éves fogyasztóiár-index",
+      "bazis_idoszak": "előző naptári év",
+      "elso_indexalas": "2027-01-01",
+      "plafon_szazalek": 6,
+      "negativ_index_kezelese": "a díj nem csökken",
+      "kerekites": "ezer forintra",
+      "ertelmezes": "Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6266,
+      "total_tokens": 9150,
+      "completion_tokens": 2884,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45878.1,
+     "sha": "08aa43db3743"
+    },
+    {
+     "nyers": "\n\n{\n  \"index_tipusa\": \"KSH éves fogyasztóiár-index\",\n  \"bazis_idoszak\": \"előző naptári év\",\n  \"elso_indexalas\": \"2027-01-01\",\n  \"plafon_szazalek\": 6,\n  \"negativ_index_kezelese\": \"a díj nem csökken\",\n  \"kerekites\": \"ezer forintra\",\n  \"ertelmezes\": \"Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén.\"\n}",
+     "pred": {
+      "index_tipusa": "KSH éves fogyasztóiár-index",
+      "bazis_idoszak": "előző naptári év",
+      "elso_indexalas": "2027-01-01",
+      "plafon_szazalek": 6,
+      "negativ_index_kezelese": "a díj nem csökken",
+      "kerekites": "ezer forintra",
+      "ertelmezes": "Ha a 2027-es éves fogyasztóiár-index −0,4 %, akkor a szerződés indexálási záradéka alapján a bérleti díj nem csökken, hanem változatlan marad 2028. január 1-jén."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6266,
+      "total_tokens": 9150,
+      "completion_tokens": 2884,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45915.1,
+     "sha": "08aa43db3743"
+    }
+   ]
+  },
+  {
+   "id": "T2-01",
+   "teszt": "T2",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kotber_szazalek": {
+      "gt": 4,
+      "pred": 4,
+      "arany": 1.0
+     },
+     "kotber_osszeg_ft": {
+      "gt": 496000,
+      "pred": 496000,
+      "arany": 1.0
+     },
+     "alkalmazott_plafon": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 4,\n  \"kotber_osszeg_ft\": 496000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 4,
+      "kotber_osszeg_ft": 496000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3225,
+      "total_tokens": 5191,
+      "completion_tokens": 1966,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 31868.3,
+     "sha": "933f6bfb74ff"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 4,\n  \"kotber_osszeg_ft\": 496000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 4,
+      "kotber_osszeg_ft": 496000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3225,
+      "total_tokens": 5191,
+      "completion_tokens": 1966,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32085.4,
+     "sha": "933f6bfb74ff"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 4,\n  \"kotber_osszeg_ft\": 496000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 4,
+      "kotber_osszeg_ft": 496000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3225,
+      "total_tokens": 5191,
+      "completion_tokens": 1966,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32000.9,
+     "sha": "933f6bfb74ff"
+    }
+   ]
+  },
+  {
+   "id": "T2-02",
+   "teszt": "T2",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kotber_szazalek": {
+      "gt": 6,
+      "pred": 6,
+      "arany": 1.0
+     },
+     "kotber_osszeg_ft": {
+      "gt": 744000,
+      "pred": 744000,
+      "arany": 1.0
+     },
+     "alkalmazott_plafon": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 6,\n  \"kotber_osszeg_ft\": 744000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 6,
+      "kotber_osszeg_ft": 744000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5352,
+      "completion_tokens": 2126,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 34004.0,
+     "sha": "ff78d81f28be"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 6,\n  \"kotber_osszeg_ft\": 744000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 6,
+      "kotber_osszeg_ft": 744000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5352,
+      "completion_tokens": 2126,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 33902.2,
+     "sha": "ff78d81f28be"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 6,\n  \"kotber_osszeg_ft\": 744000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 6,
+      "kotber_osszeg_ft": 744000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5352,
+      "completion_tokens": 2126,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 34169.0,
+     "sha": "ff78d81f28be"
+    }
+   ]
+  },
+  {
+   "id": "T2-03",
+   "teszt": "T2",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kotber_szazalek": {
+      "gt": 15,
+      "pred": 15,
+      "arany": 1.0
+     },
+     "kotber_osszeg_ft": {
+      "gt": 1860000,
+      "pred": 1860000,
+      "arany": 1.0
+     },
+     "alkalmazott_plafon": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5277,
+      "completion_tokens": 2051,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 33606.1,
+     "sha": "c73bfa7c1b91"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5277,
+      "completion_tokens": 2051,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 33550.3,
+     "sha": "c73bfa7c1b91"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": false\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5277,
+      "completion_tokens": 2051,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 33801.3,
+     "sha": "c73bfa7c1b91"
+    }
+   ]
+  },
+  {
+   "id": "T2-04",
+   "teszt": "T2",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kotber_szazalek": {
+      "gt": 15,
+      "pred": 15,
+      "arany": 1.0
+     },
+     "kotber_osszeg_ft": {
+      "gt": 1860000,
+      "pred": 1860000,
+      "arany": 1.0
+     },
+     "alkalmazott_plafon": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5103,
+      "completion_tokens": 1877,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30287.0,
+     "sha": "c25b617ccd03"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5103,
+      "completion_tokens": 1877,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30243.4,
+     "sha": "c25b617ccd03"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5103,
+      "completion_tokens": 1877,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30008.0,
+     "sha": "c25b617ccd03"
+    }
+   ]
+  },
+  {
+   "id": "T2-05",
+   "teszt": "T2",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kotber_szazalek": {
+      "gt": 15,
+      "pred": 15,
+      "arany": 1.0
+     },
+     "kotber_osszeg_ft": {
+      "gt": 1860000,
+      "pred": 1860000,
+      "arany": 1.0
+     },
+     "alkalmazott_plafon": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5025,
+      "completion_tokens": 1799,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28830.3,
+     "sha": "c25b617ccd03"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5025,
+      "completion_tokens": 1799,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29335.1,
+     "sha": "c25b617ccd03"
+    },
+    {
+     "nyers": "\n\n{\n  \"kotber_szazalek\": 15,\n  \"kotber_osszeg_ft\": 1860000,\n  \"alkalmazott_plafon\": true\n}",
+     "pred": {
+      "kotber_szazalek": 15,
+      "kotber_osszeg_ft": 1860000,
+      "alkalmazott_plafon": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3226,
+      "total_tokens": 5025,
+      "completion_tokens": 1799,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29388.8,
+     "sha": "c25b617ccd03"
+    }
+   ]
+  },
+  {
+   "id": "T3-01",
+   "teszt": "T3",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2026-11-10",
+      "pred": "2026-11-10",
+      "arany": 1.0
+     },
+     "szamitas_alapja": {
+      "gt": "munkanap",
+      "pred": "munkanap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-10\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-10",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3167,
+      "total_tokens": 5910,
+      "completion_tokens": 2743,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 44328.5,
+     "sha": "3b6d1caed6af"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-10\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-10",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3167,
+      "total_tokens": 5910,
+      "completion_tokens": 2743,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 44346.1,
+     "sha": "3b6d1caed6af"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-10\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-10",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3167,
+      "total_tokens": 5910,
+      "completion_tokens": 2743,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 44134.2,
+     "sha": "3b6d1caed6af"
+    }
+   ]
+  },
+  {
+   "id": "T3-02",
+   "teszt": "T3",
+   "pont": {
+    "pont": 1.0,
+    "max": 2,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2026-08-24",
+      "pred": "2026-08-21",
+      "arany": 0.0
+     },
+     "szamitas_alapja": {
+      "gt": "munkanap",
+      "pred": "munkanap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-08-21\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-08-21",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3182,
+      "total_tokens": 6018,
+      "completion_tokens": 2836,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45973.7,
+     "sha": "a98d0b72703d"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-08-21\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-08-21",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3182,
+      "total_tokens": 6018,
+      "completion_tokens": 2836,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45875.2,
+     "sha": "a98d0b72703d"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-08-21\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-08-21",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3182,
+      "total_tokens": 6018,
+      "completion_tokens": 2836,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 45874.7,
+     "sha": "a98d0b72703d"
+    }
+   ]
+  },
+  {
+   "id": "T3-03",
+   "teszt": "T3",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2026-10-27",
+      "pred": "2026-10-27",
+      "arany": 1.0
+     },
+     "szamitas_alapja": {
+      "gt": "naptári nap",
+      "pred": "naptári nap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-10-27\",\n  \"szamitas_alapja\": \"naptári nap\"\n}",
+     "pred": {
+      "hatarido": "2026-10-27",
+      "szamitas_alapja": "naptári nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3169,
+      "total_tokens": 6130,
+      "completion_tokens": 2961,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 49947.5,
+     "sha": "e300855ebe70"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-10-27\",\n  \"szamitas_alapja\": \"naptári nap\"\n}",
+     "pred": {
+      "hatarido": "2026-10-27",
+      "szamitas_alapja": "naptári nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3169,
+      "total_tokens": 6130,
+      "completion_tokens": 2961,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 49888.2,
+     "sha": "e300855ebe70"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-10-27\",\n  \"szamitas_alapja\": \"naptári nap\"\n}",
+     "pred": {
+      "hatarido": "2026-10-27",
+      "szamitas_alapja": "naptári nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3169,
+      "total_tokens": 6130,
+      "completion_tokens": 2961,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 49867.7,
+     "sha": "e300855ebe70"
+    }
+   ]
+  },
+  {
+   "id": "T3-04",
+   "teszt": "T3",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2027-01-05",
+      "pred": "2027-01-05",
+      "arany": 1.0
+     },
+     "szamitas_alapja": {
+      "gt": "munkanap",
+      "pred": "munkanap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-05\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-05",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3166,
+      "total_tokens": 6778,
+      "completion_tokens": 3612,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58959.6,
+     "sha": "d7922daa589f"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-05\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-05",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3166,
+      "total_tokens": 6778,
+      "completion_tokens": 3612,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58900.9,
+     "sha": "d7922daa589f"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-05\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-05",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3166,
+      "total_tokens": 6778,
+      "completion_tokens": 3612,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58771.6,
+     "sha": "d7922daa589f"
+    }
+   ]
+  },
+  {
+   "id": "T3-05",
+   "teszt": "T3",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2026-11-23",
+      "pred": "2026-11-23",
+      "arany": 1.0
+     },
+     "szamitas_alapja": {
+      "gt": "munkanap",
+      "pred": "munkanap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-23\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-23",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3183,
+      "total_tokens": 10228,
+      "completion_tokens": 7045,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 113957.4,
+     "sha": "32c154a9a3c8"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-23\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-23",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3183,
+      "total_tokens": 10228,
+      "completion_tokens": 7045,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 114375.4,
+     "sha": "32c154a9a3c8"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2026-11-23\",\n  \"szamitas_alapja\": \"munkanap\"\n}",
+     "pred": {
+      "hatarido": "2026-11-23",
+      "szamitas_alapja": "munkanap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3183,
+      "total_tokens": 10228,
+      "completion_tokens": 7045,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 114064.5,
+     "sha": "32c154a9a3c8"
+    }
+   ]
+  },
+  {
+   "id": "T4-01",
+   "teszt": "T4",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "szemelyek": {
+      "gt": [
+       "Kovácsné Tóth Ilona",
+       "Szabó Márton",
+       "Hegyi Ambrus",
+       "dr. Szalay Bertalan"
+      ],
+      "pred": [
+       "Kovácsné Tóth Ilona",
+       "Szabó Márton",
+       "Hegyi Ambrus",
+       "dr. Szalay Bertalan"
+      ],
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"szemelyek\": [\n    \"Kovácsné Tóth Ilona\",\n    \"Szabó Márton\",\n    \"Hegyi Ambrus\",\n    \"dr. Szalay Bertalan\"\n  ]\n}",
+     "pred": {
+      "szemelyek": [
+       "Kovácsné Tóth Ilona",
+       "Szabó Márton",
+       "Hegyi Ambrus",
+       "dr. Szalay Bertalan"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1857,
+      "total_tokens": 3646,
+      "completion_tokens": 1789,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30231.2,
+     "sha": "8b93528619e7"
+    },
+    {
+     "nyers": "\n\n{\n  \"szemelyek\": [\n    \"Kovácsné Tóth Ilona\",\n    \"Szabó Márton\",\n    \"Hegyi Ambrus\",\n    \"dr. Szalay Bertalan\"\n  ]\n}",
+     "pred": {
+      "szemelyek": [
+       "Kovácsné Tóth Ilona",
+       "Szabó Márton",
+       "Hegyi Ambrus",
+       "dr. Szalay Bertalan"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1857,
+      "total_tokens": 3646,
+      "completion_tokens": 1789,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30412.5,
+     "sha": "8b93528619e7"
+    },
+    {
+     "nyers": "\n\n{\n  \"szemelyek\": [\n    \"Kovácsné Tóth Ilona\",\n    \"Szabó Márton\",\n    \"Hegyi Ambrus\",\n    \"dr. Szalay Bertalan\"\n  ]\n}",
+     "pred": {
+      "szemelyek": [
+       "Kovácsné Tóth Ilona",
+       "Szabó Márton",
+       "Hegyi Ambrus",
+       "dr. Szalay Bertalan"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1857,
+      "total_tokens": 3646,
+      "completion_tokens": 1789,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 30298.3,
+     "sha": "8b93528619e7"
+    }
+   ]
+  },
+  {
+   "id": "T4-02",
+   "teszt": "T4",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "cegek": {
+      "gt": [
+       "Delta-Ipari Szolgáltató Zrt.",
+       "Hegyi és Társa Építőipari Bt."
+      ],
+      "pred": [
+       "Delta-Ipari Szolgáltató Zrt.",
+       "Hegyi és Társa Építőipari Bt."
+      ],
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"cegek\": [\n    \"Delta-Ipari Szolgáltató Zrt.\",\n    \"Hegyi és Társa Építőipari Bt.\"\n  ]\n}",
+     "pred": {
+      "cegek": [
+       "Delta-Ipari Szolgáltató Zrt.",
+       "Hegyi és Társa Építőipari Bt."
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1818,
+      "total_tokens": 2984,
+      "completion_tokens": 1166,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 19769.8,
+     "sha": "228f86b02d7f"
+    },
+    {
+     "nyers": "\n\n{\n  \"cegek\": [\n    \"Delta-Ipari Szolgáltató Zrt.\",\n    \"Hegyi és Társa Építőipari Bt.\"\n  ]\n}",
+     "pred": {
+      "cegek": [
+       "Delta-Ipari Szolgáltató Zrt.",
+       "Hegyi és Társa Építőipari Bt."
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1818,
+      "total_tokens": 2984,
+      "completion_tokens": 1166,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 20059.6,
+     "sha": "228f86b02d7f"
+    },
+    {
+     "nyers": "\n\n{\n  \"cegek\": [\n    \"Delta-Ipari Szolgáltató Zrt.\",\n    \"Hegyi és Társa Építőipari Bt.\"\n  ]\n}",
+     "pred": {
+      "cegek": [
+       "Delta-Ipari Szolgáltató Zrt.",
+       "Hegyi és Társa Építőipari Bt."
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1818,
+      "total_tokens": 2984,
+      "completion_tokens": 1166,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 19738.3,
+     "sha": "228f86b02d7f"
+    }
+   ]
+  },
+  {
+   "id": "T4-03",
+   "teszt": "T4",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "atado": {
+      "gt": "Hegyi Ambrus",
+      "pred": "Hegyi Ambrus",
+      "arany": 1.0
+     },
+     "atvevo": {
+      "gt": "Kovácsné Tóth Ilona",
+      "pred": "Kovácsné Tóth Ilona",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"atado\": \"Hegyi Ambrus\",\n  \"atvevo\": \"Kovácsné Tóth Ilona\"\n}",
+     "pred": {
+      "atado": "Hegyi Ambrus",
+      "atvevo": "Kovácsné Tóth Ilona"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1833,
+      "total_tokens": 2687,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 15082.2,
+     "sha": "b28ed75b8061"
+    },
+    {
+     "nyers": "\n\n{\n  \"atado\": \"Hegyi Ambrus\",\n  \"atvevo\": \"Kovácsné Tóth Ilona\"\n}",
+     "pred": {
+      "atado": "Hegyi Ambrus",
+      "atvevo": "Kovácsné Tóth Ilona"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1833,
+      "total_tokens": 2687,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 14438.5,
+     "sha": "b28ed75b8061"
+    },
+    {
+     "nyers": "\n\n{\n  \"atado\": \"Hegyi Ambrus\",\n  \"atvevo\": \"Kovácsné Tóth Ilona\"\n}",
+     "pred": {
+      "atado": "Hegyi Ambrus",
+      "atvevo": "Kovácsné Tóth Ilona"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1833,
+      "total_tokens": 2687,
+      "completion_tokens": 854,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 14224.4,
+     "sha": "b28ed75b8061"
+    }
+   ]
+  },
+  {
+   "id": "T4-04",
+   "teszt": "T4",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "szerepel": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"szerepel\": false,\n  \"indok\": \"A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre.\"\n}",
+     "pred": {
+      "szerepel": false,
+      "indok": "A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1820,
+      "total_tokens": 7535,
+      "completion_tokens": 5715,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 91771.3,
+     "sha": "d370c215f0a0"
+    },
+    {
+     "nyers": "\n\n{\n  \"szerepel\": false,\n  \"indok\": \"A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre.\"\n}",
+     "pred": {
+      "szerepel": false,
+      "indok": "A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1820,
+      "total_tokens": 7535,
+      "completion_tokens": 5715,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 92547.1,
+     "sha": "d370c215f0a0"
+    },
+    {
+     "nyers": "\n\n{\n  \"szerepel\": false,\n  \"indok\": \"A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre.\"\n}",
+     "pred": {
+      "szerepel": false,
+      "indok": "A dokumentumban csak az „Arany János utcai telephely” megnevezés szerepel, ami egy helyszínre utal, nem pedig egy személyre."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1820,
+      "total_tokens": 7535,
+      "completion_tokens": 5715,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 92365.7,
+     "sha": "d370c215f0a0"
+    }
+   ]
+  },
+  {
+   "id": "T4-05",
+   "teszt": "T4",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "vezeteknev_teljes_alak": {
+      "gt": "Szabó Márton",
+      "pred": "Szabó Márton",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"vezeteknev_teljes_alak\": \"Szabó Márton\",\n  \"koznevi_elofordulas_kontextusa\": \"szabó műhelye\"\n}",
+     "pred": {
+      "vezeteknev_teljes_alak": "Szabó Márton",
+      "koznevi_elofordulas_kontextusa": "szabó műhelye"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1859,
+      "total_tokens": 3506,
+      "completion_tokens": 1647,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27285.3,
+     "sha": "ba4ce4f53819"
+    },
+    {
+     "nyers": "\n\n{\n  \"vezeteknev_teljes_alak\": \"Szabó Márton\",\n  \"koznevi_elofordulas_kontextusa\": \"szabó műhelye\"\n}",
+     "pred": {
+      "vezeteknev_teljes_alak": "Szabó Márton",
+      "koznevi_elofordulas_kontextusa": "szabó műhelye"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1859,
+      "total_tokens": 3506,
+      "completion_tokens": 1647,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26990.4,
+     "sha": "ba4ce4f53819"
+    },
+    {
+     "nyers": "\n\n{\n  \"vezeteknev_teljes_alak\": \"Szabó Márton\",\n  \"koznevi_elofordulas_kontextusa\": \"szabó műhelye\"\n}",
+     "pred": {
+      "vezeteknev_teljes_alak": "Szabó Márton",
+      "koznevi_elofordulas_kontextusa": "szabó műhelye"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 1859,
+      "total_tokens": 3506,
+      "completion_tokens": 1647,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27138.4,
+     "sha": "ba4ce4f53819"
+    }
+   ]
+  },
+  {
+   "id": "T5-01",
+   "teszt": "T5",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "vegosszeg_egyezik": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     },
+     "elteres_ft": {
+      "gt": 27000,
+      "pred": 27000,
+      "arany": 1.0
+     },
+     "iranya": {
+      "gt": "több van feltüntetve",
+      "pred": "több van feltüntetve",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"vegosszeg_egyezik\": false,\n  \"elteres_ft\": 27000,\n  \"iranya\": \"több van feltüntetve\"\n}",
+     "pred": {
+      "vegosszeg_egyezik": false,
+      "elteres_ft": 27000,
+      "iranya": "több van feltüntetve"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2153,
+      "total_tokens": 4174,
+      "completion_tokens": 2021,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32732.2,
+     "sha": "6eedc5af2f8a"
+    },
+    {
+     "nyers": "\n\n{\n  \"vegosszeg_egyezik\": false,\n  \"elteres_ft\": 27000,\n  \"iranya\": \"több van feltüntetve\"\n}",
+     "pred": {
+      "vegosszeg_egyezik": false,
+      "elteres_ft": 27000,
+      "iranya": "több van feltüntetve"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2153,
+      "total_tokens": 4174,
+      "completion_tokens": 2021,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32796.6,
+     "sha": "6eedc5af2f8a"
+    },
+    {
+     "nyers": "\n\n{\n  \"vegosszeg_egyezik\": false,\n  \"elteres_ft\": 27000,\n  \"iranya\": \"több van feltüntetve\"\n}",
+     "pred": {
+      "vegosszeg_egyezik": false,
+      "elteres_ft": 27000,
+      "iranya": "több van feltüntetve"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2153,
+      "total_tokens": 4174,
+      "completion_tokens": 2021,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32768.5,
+     "sha": "6eedc5af2f8a"
+    }
+   ]
+  },
+  {
+   "id": "T5-02",
+   "teszt": "T5",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "jogcim": {
+      "gt": "fordított adózás",
+      "pred": "fordított adózás",
+      "arany": 1.0
+     },
+     "alanyi_adomentes": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"jogcim\": \"fordított adózás\",\n  \"alanyi_adomentes\": false\n}",
+     "pred": {
+      "jogcim": "fordított adózás",
+      "alanyi_adomentes": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2180,
+      "total_tokens": 3481,
+      "completion_tokens": 1301,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 21089.3,
+     "sha": "81ba0c76c880"
+    },
+    {
+     "nyers": "\n\n{\n  \"jogcim\": \"fordított adózás\",\n  \"alanyi_adomentes\": false\n}",
+     "pred": {
+      "jogcim": "fordított adózás",
+      "alanyi_adomentes": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2180,
+      "total_tokens": 3481,
+      "completion_tokens": 1301,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22118.2,
+     "sha": "81ba0c76c880"
+    },
+    {
+     "nyers": "\n\n{\n  \"jogcim\": \"fordított adózás\",\n  \"alanyi_adomentes\": false\n}",
+     "pred": {
+      "jogcim": "fordított adózás",
+      "alanyi_adomentes": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2180,
+      "total_tokens": 3481,
+      "completion_tokens": 1301,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 20994.2,
+     "sha": "81ba0c76c880"
+    }
+   ]
+  },
+  {
+   "id": "T5-03",
+   "teszt": "T5",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "tetelek": {
+      "gt": [
+       {
+        "netto_ft": 3100000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "netto_ft": 1200000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "netto_ft": 100000,
+        "afakulcs_vagy_jogcim": "5%"
+       },
+       {
+        "netto_ft": 250000,
+        "afakulcs_vagy_jogcim": "AAM"
+       }
+      ],
+      "pred": [
+       {
+        "megnevezes": "Gépészeti szerelés I. ütem",
+        "netto_ft": 3100000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Anyagköltség — csővezeték és idomok",
+        "netto_ft": 1200000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Műszaki dokumentáció (nyomtatott kiadvány)",
+        "netto_ft": 100000,
+        "afakulcs_vagy_jogcim": "5%"
+       },
+       {
+        "megnevezes": "Szakértői vizsgálat",
+        "netto_ft": 250000,
+        "afakulcs_vagy_jogcim": "AAM"
+       }
+      ],
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"tetelek\": [\n    {\n      \"megnevezes\": \"Gépészeti szerelés I. ütem\",\n      \"netto_ft\": 3100000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Anyagköltség — csővezeték és idomok\",\n      \"netto_ft\": 1200000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Műszaki dokumentáció (nyomtatott kiadvány)\",\n      \"netto_ft\": 100000,\n      \"afakulcs_vagy_jogcim\": \"5%\"\n    },\n    {\n      \"megnevezes\": \"Szakértői vizsgálat\",\n      \"netto_ft\": 250000,\n      \"afakulcs_vagy_jogcim\": \"AAM\"\n    }\n  ]\n}",
+     "pred": {
+      "tetelek": [
+       {
+        "megnevezes": "Gépészeti szerelés I. ütem",
+        "netto_ft": 3100000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Anyagköltség — csővezeték és idomok",
+        "netto_ft": 1200000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Műszaki dokumentáció (nyomtatott kiadvány)",
+        "netto_ft": 100000,
+        "afakulcs_vagy_jogcim": "5%"
+       },
+       {
+        "megnevezes": "Szakértői vizsgálat",
+        "netto_ft": 250000,
+        "afakulcs_vagy_jogcim": "AAM"
+       }
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2110,
+      "total_tokens": 4644,
+      "completion_tokens": 2534,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 40338.0,
+     "sha": "f6bc3c1d6dd3"
+    },
+    {
+     "nyers": "\n\n{\n  \"tetelek\": [\n    {\n      \"megnevezes\": \"Gépészeti szerelés I. ütem\",\n      \"netto_ft\": 3100000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Anyagköltség — csővezeték és idomok\",\n      \"netto_ft\": 1200000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Műszaki dokumentáció (nyomtatott kiadvány)\",\n      \"netto_ft\": 100000,\n      \"afakulcs_vagy_jogcim\": \"5%\"\n    },\n    {\n      \"megnevezes\": \"Szakértői vizsgálat\",\n      \"netto_ft\": 250000,\n      \"afakulcs_vagy_jogcim\": \"AAM\"\n    }\n  ]\n}",
+     "pred": {
+      "tetelek": [
+       {
+        "megnevezes": "Gépészeti szerelés I. ütem",
+        "netto_ft": 3100000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Anyagköltség — csővezeték és idomok",
+        "netto_ft": 1200000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Műszaki dokumentáció (nyomtatott kiadvány)",
+        "netto_ft": 100000,
+        "afakulcs_vagy_jogcim": "5%"
+       },
+       {
+        "megnevezes": "Szakértői vizsgálat",
+        "netto_ft": 250000,
+        "afakulcs_vagy_jogcim": "AAM"
+       }
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2110,
+      "total_tokens": 4644,
+      "completion_tokens": 2534,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 40270.8,
+     "sha": "f6bc3c1d6dd3"
+    },
+    {
+     "nyers": "\n\n{\n  \"tetelek\": [\n    {\n      \"megnevezes\": \"Gépészeti szerelés I. ütem\",\n      \"netto_ft\": 3100000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Anyagköltség — csővezeték és idomok\",\n      \"netto_ft\": 1200000,\n      \"afakulcs_vagy_jogcim\": \"27%\"\n    },\n    {\n      \"megnevezes\": \"Műszaki dokumentáció (nyomtatott kiadvány)\",\n      \"netto_ft\": 100000,\n      \"afakulcs_vagy_jogcim\": \"5%\"\n    },\n    {\n      \"megnevezes\": \"Szakértői vizsgálat\",\n      \"netto_ft\": 250000,\n      \"afakulcs_vagy_jogcim\": \"AAM\"\n    }\n  ]\n}",
+     "pred": {
+      "tetelek": [
+       {
+        "megnevezes": "Gépészeti szerelés I. ütem",
+        "netto_ft": 3100000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Anyagköltség — csővezeték és idomok",
+        "netto_ft": 1200000,
+        "afakulcs_vagy_jogcim": "27%"
+       },
+       {
+        "megnevezes": "Műszaki dokumentáció (nyomtatott kiadvány)",
+        "netto_ft": 100000,
+        "afakulcs_vagy_jogcim": "5%"
+       },
+       {
+        "megnevezes": "Szakértői vizsgálat",
+        "netto_ft": 250000,
+        "afakulcs_vagy_jogcim": "AAM"
+       }
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2110,
+      "total_tokens": 4644,
+      "completion_tokens": 2534,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 40307.2,
+     "sha": "f6bc3c1d6dd3"
+    }
+   ]
+  },
+  {
+   "id": "T5-04",
+   "teszt": "T5",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "egysegar": {
+      "gt": 1234567.5,
+      "pred": 1234567.5,
+      "arany": 1.0
+     },
+     "mennyiseg": {
+      "gt": 2,
+      "pred": 2,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n```json\n{\n  \"egysegar\": 1234567.5,\n  \"mennyiseg\": 2\n}\n```",
+     "pred": {
+      "egysegar": 1234567.5,
+      "mennyiseg": 2
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2097,
+      "total_tokens": 2972,
+      "completion_tokens": 875,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 14603.0,
+     "sha": "101d7629333d"
+    },
+    {
+     "nyers": "\n\n```json\n{\n  \"egysegar\": 1234567.5,\n  \"mennyiseg\": 2\n}\n```",
+     "pred": {
+      "egysegar": 1234567.5,
+      "mennyiseg": 2
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2097,
+      "total_tokens": 2972,
+      "completion_tokens": 875,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 14732.4,
+     "sha": "101d7629333d"
+    },
+    {
+     "nyers": "\n\n```json\n{\n  \"egysegar\": 1234567.5,\n  \"mennyiseg\": 2\n}\n```",
+     "pred": {
+      "egysegar": 1234567.5,
+      "mennyiseg": 2
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2097,
+      "total_tokens": 2972,
+      "completion_tokens": 875,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 14665.3,
+     "sha": "101d7629333d"
+    }
+   ]
+  },
+  {
+   "id": "T5-05",
+   "teszt": "T5",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "eloleg_brutto_ft": {
+      "gt": 3937000,
+      "pred": 3937000,
+      "arany": 1.0
+     },
+     "eloleg_szazalek": {
+      "gt": 25,
+      "pred": 25,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"eloleg_brutto_ft\": 3937000,\n  \"eloleg_szazalek\": 25\n}",
+     "pred": {
+      "eloleg_brutto_ft": 3937000,
+      "eloleg_szazalek": 25
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2124,
+      "total_tokens": 3560,
+      "completion_tokens": 1436,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 23475.3,
+     "sha": "fe5cc3a5a7df"
+    },
+    {
+     "nyers": "\n\n{\n  \"eloleg_brutto_ft\": 3937000,\n  \"eloleg_szazalek\": 25\n}",
+     "pred": {
+      "eloleg_brutto_ft": 3937000,
+      "eloleg_szazalek": 25
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2124,
+      "total_tokens": 3560,
+      "completion_tokens": 1436,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 23357.7,
+     "sha": "fe5cc3a5a7df"
+    },
+    {
+     "nyers": "\n\n{\n  \"eloleg_brutto_ft\": 3937000,\n  \"eloleg_szazalek\": 25\n}",
+     "pred": {
+      "eloleg_brutto_ft": 3937000,
+      "eloleg_szazalek": 25
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 2124,
+      "total_tokens": 3560,
+      "completion_tokens": 1436,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 23477.4,
+     "sha": "fe5cc3a5a7df"
+    }
+   ]
+  },
+  {
+   "id": "T6-01",
+   "teszt": "T6",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 900000,
+      "pred": 900000,
+      "arany": 1.0
+     },
+     "hivatkozasi_lanc": {
+      "gt": [
+       "9.4",
+       "4.5",
+       "1. sz. melléklet 2. pont"
+      ],
+      "pred": [
+       "9.4",
+       "4.5",
+       "1. sz. melléklet 2. pont"
+      ],
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 900000,\n  \"hivatkozasi_lanc\": [\"9.4\", \"4.5\", \"1. sz. melléklet 2. pont\"]\n}",
+     "pred": {
+      "ertek_ft": 900000,
+      "hivatkozasi_lanc": [
+       "9.4",
+       "4.5",
+       "1. sz. melléklet 2. pont"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 8087,
+      "completion_tokens": 2087,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 34926.0,
+     "sha": "cecfd8bde9f4"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 900000,\n  \"hivatkozasi_lanc\": [\"9.4\", \"4.5\", \"1. sz. melléklet 2. pont\"]\n}",
+     "pred": {
+      "ertek_ft": 900000,
+      "hivatkozasi_lanc": [
+       "9.4",
+       "4.5",
+       "1. sz. melléklet 2. pont"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 8087,
+      "completion_tokens": 2087,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 35071.6,
+     "sha": "cecfd8bde9f4"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 900000,\n  \"hivatkozasi_lanc\": [\"9.4\", \"4.5\", \"1. sz. melléklet 2. pont\"]\n}",
+     "pred": {
+      "ertek_ft": 900000,
+      "hivatkozasi_lanc": [
+       "9.4",
+       "4.5",
+       "1. sz. melléklet 2. pont"
+      ]
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 8087,
+      "completion_tokens": 2087,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 34561.6,
+     "sha": "cecfd8bde9f4"
+    }
+   ]
+  },
+  {
+   "id": "T6-02",
+   "teszt": "T6",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 6300000,
+      "pred": 6300000,
+      "arany": 1.0
+     },
+     "szamitas_alapja": {
+      "gt": "a 4.1. pont szerinti Díj háromszorosa",
+      "pred": "a 4.1. pont szerinti Díj háromszorosa",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 6300000,\n  \"szamitas_alapja\": \"a 4.1. pont szerinti Díj háromszorosa\"\n}",
+     "pred": {
+      "ertek_ft": 6300000,
+      "szamitas_alapja": "a 4.1. pont szerinti Díj háromszorosa"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6080,
+      "total_tokens": 8006,
+      "completion_tokens": 1926,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 31850.3,
+     "sha": "b577477840dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 6300000,\n  \"szamitas_alapja\": \"a 4.1. pont szerinti Díj háromszorosa\"\n}",
+     "pred": {
+      "ertek_ft": 6300000,
+      "szamitas_alapja": "a 4.1. pont szerinti Díj háromszorosa"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6080,
+      "total_tokens": 8006,
+      "completion_tokens": 1926,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 31772.9,
+     "sha": "b577477840dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 6300000,\n  \"szamitas_alapja\": \"a 4.1. pont szerinti Díj háromszorosa\"\n}",
+     "pred": {
+      "ertek_ft": 6300000,
+      "szamitas_alapja": "a 4.1. pont szerinti Díj háromszorosa"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6080,
+      "total_tokens": 8006,
+      "completion_tokens": 1926,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 31782.9,
+     "sha": "b577477840dc"
+    }
+   ]
+  },
+  {
+   "id": "T6-03",
+   "teszt": "T6",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "kamat_alapja": {
+      "gt": "nettó",
+      "pred": "nettó",
+      "arany": 1.0
+     },
+     "tovabb_hivatkozott_pont": {
+      "gt": "4.2",
+      "pred": "4.2",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kamat_alapja\": \"nettó\",\n  \"tovabb_hivatkozott_pont\": \"4.2\"\n}",
+     "pred": {
+      "kamat_alapja": "nettó",
+      "tovabb_hivatkozott_pont": "4.2"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6043,
+      "total_tokens": 6670,
+      "completion_tokens": 627,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11138.3,
+     "sha": "bdbeeeb1c7f8"
+    },
+    {
+     "nyers": "\n\n{\n  \"kamat_alapja\": \"nettó\",\n  \"tovabb_hivatkozott_pont\": \"4.2\"\n}",
+     "pred": {
+      "kamat_alapja": "nettó",
+      "tovabb_hivatkozott_pont": "4.2"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6043,
+      "total_tokens": 6670,
+      "completion_tokens": 627,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11131.7,
+     "sha": "bdbeeeb1c7f8"
+    },
+    {
+     "nyers": "\n\n{\n  \"kamat_alapja\": \"nettó\",\n  \"tovabb_hivatkozott_pont\": \"4.2\"\n}",
+     "pred": {
+      "kamat_alapja": "nettó",
+      "tovabb_hivatkozott_pont": "4.2"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6043,
+      "total_tokens": 6670,
+      "completion_tokens": 627,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11161.9,
+     "sha": "bdbeeeb1c7f8"
+    }
+   ]
+  },
+  {
+   "id": "T6-04",
+   "teszt": "T6",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "hivatkozott_pont": {
+      "gt": "11.4",
+      "pred": "11.4. pont",
+      "arany": 1.0
+     },
+     "letezik": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hivatkozott_pont\": \"11.4. pont\",\n  \"letezik\": false,\n  \"eszrevetel\": \"A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban.\"\n}",
+     "pred": {
+      "hivatkozott_pont": "11.4. pont",
+      "letezik": false,
+      "eszrevetel": "A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 7639,
+      "completion_tokens": 1639,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27633.9,
+     "sha": "daac272aa8dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"hivatkozott_pont\": \"11.4. pont\",\n  \"letezik\": false,\n  \"eszrevetel\": \"A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban.\"\n}",
+     "pred": {
+      "hivatkozott_pont": "11.4. pont",
+      "letezik": false,
+      "eszrevetel": "A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 7639,
+      "completion_tokens": 1639,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27054.4,
+     "sha": "daac272aa8dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"hivatkozott_pont\": \"11.4. pont\",\n  \"letezik\": false,\n  \"eszrevetel\": \"A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban.\"\n}",
+     "pred": {
+      "hivatkozott_pont": "11.4. pont",
+      "letezik": false,
+      "eszrevetel": "A hivatkozott 11.4. pont nem szerepel a szerződésben vagy módosításaiban."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6000,
+      "total_tokens": 7639,
+      "completion_tokens": 1639,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27088.3,
+     "sha": "daac272aa8dc"
+    }
+   ]
+  },
+  {
+   "id": "T6-05",
+   "teszt": "T6",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 1200000,
+      "pred": 1200000,
+      "arany": 1.0
+     },
+     "forras": {
+      "gt": "1. sz. melléklet 4. pont",
+      "pred": "1. sz. melléklet 4. pontja",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1200000,\n  \"forras\": \"1. sz. melléklet 4. pontja\"\n}",
+     "pred": {
+      "ertek_ft": 1200000,
+      "forras": "1. sz. melléklet 4. pontja"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 5979,
+      "total_tokens": 7254,
+      "completion_tokens": 1275,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 20929.9,
+     "sha": "2ed578f2c3f5"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1200000,\n  \"forras\": \"1. sz. melléklet 4. pontja\"\n}",
+     "pred": {
+      "ertek_ft": 1200000,
+      "forras": "1. sz. melléklet 4. pontja"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 5979,
+      "total_tokens": 7254,
+      "completion_tokens": 1275,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 20934.5,
+     "sha": "2ed578f2c3f5"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1200000,\n  \"forras\": \"1. sz. melléklet 4. pontja\"\n}",
+     "pred": {
+      "ertek_ft": 1200000,
+      "forras": "1. sz. melléklet 4. pontja"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 5979,
+      "total_tokens": 7254,
+      "completion_tokens": 1275,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 20879.8,
+     "sha": "2ed578f2c3f5"
+    }
+   ]
+  },
+  {
+   "id": "T7-01",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "HAMIS",
+      "pred": "HAMIS",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6046,
+      "total_tokens": 7519,
+      "completion_tokens": 1473,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24314.4,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6046,
+      "total_tokens": 7519,
+      "completion_tokens": 1473,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24302.9,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6046,
+      "total_tokens": 7519,
+      "completion_tokens": 1473,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24350.6,
+     "sha": "b77a16a4b6e9"
+    }
+   ]
+  },
+  {
+   "id": "T7-02",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "IGAZ",
+      "pred": "IGAZ",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7647,
+      "completion_tokens": 1602,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26252.6,
+     "sha": "75d2fbd364c1"
+    },
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7647,
+      "completion_tokens": 1602,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26280.7,
+     "sha": "75d2fbd364c1"
+    },
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7647,
+      "completion_tokens": 1602,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26343.5,
+     "sha": "75d2fbd364c1"
+    }
+   ]
+  },
+  {
+   "id": "T7-03",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "HAMIS",
+      "pred": "HAMIS",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6039,
+      "total_tokens": 6952,
+      "completion_tokens": 913,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 15523.2,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6039,
+      "total_tokens": 6952,
+      "completion_tokens": 913,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 15295.6,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6039,
+      "total_tokens": 6952,
+      "completion_tokens": 913,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 15359.2,
+     "sha": "b77a16a4b6e9"
+    }
+   ]
+  },
+  {
+   "id": "T7-04",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "IGAZ",
+      "pred": "IGAZ",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7335,
+      "completion_tokens": 1290,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 21253.0,
+     "sha": "75d2fbd364c1"
+    },
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7335,
+      "completion_tokens": 1290,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 21300.7,
+     "sha": "75d2fbd364c1"
+    },
+    {
+     "nyers": "\n\n{\"itelet\": \"IGAZ\"}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6045,
+      "total_tokens": 7335,
+      "completion_tokens": 1290,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 21054.2,
+     "sha": "75d2fbd364c1"
+    }
+   ]
+  },
+  {
+   "id": "T7-05",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "HAMIS",
+      "pred": "HAMIS",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6026,
+      "total_tokens": 6343,
+      "completion_tokens": 317,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 6152.7,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6026,
+      "total_tokens": 6343,
+      "completion_tokens": 317,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 6129.2,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6026,
+      "total_tokens": 6343,
+      "completion_tokens": 317,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 6176.5,
+     "sha": "b77a16a4b6e9"
+    }
+   ]
+  },
+  {
+   "id": "T7-06",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "HAMIS",
+      "pred": "HAMIS",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6027,
+      "total_tokens": 6987,
+      "completion_tokens": 960,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16060.5,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6027,
+      "total_tokens": 6987,
+      "completion_tokens": 960,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16096.4,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6027,
+      "total_tokens": 6987,
+      "completion_tokens": 960,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16154.6,
+     "sha": "b77a16a4b6e9"
+    }
+   ]
+  },
+  {
+   "id": "T7-07",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "IGAZ",
+      "pred": "IGAZ",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"IGAZ\"\n}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6034,
+      "total_tokens": 6456,
+      "completion_tokens": 422,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7555.8,
+     "sha": "2606593e0733"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"IGAZ\"\n}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6034,
+      "total_tokens": 6456,
+      "completion_tokens": 422,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7538.6,
+     "sha": "2606593e0733"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"IGAZ\"\n}",
+     "pred": {
+      "itelet": "IGAZ"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6034,
+      "total_tokens": 6456,
+      "completion_tokens": 422,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7538.7,
+     "sha": "2606593e0733"
+    }
+   ]
+  },
+  {
+   "id": "T7-08",
+   "teszt": "T7",
+   "pont": {
+    "pont": 0.0,
+    "max": 1,
+    "reszletek": {
+     "itelet": {
+      "gt": "NEM DÖNTHETŐ EL",
+      "pred": "HAMIS",
+      "arany": 0.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6030,
+      "total_tokens": 8919,
+      "completion_tokens": 2889,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 48517.8,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6030,
+      "total_tokens": 8919,
+      "completion_tokens": 2889,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 48853.5,
+     "sha": "b77a16a4b6e9"
+    },
+    {
+     "nyers": "\n\n{\n  \"itelet\": \"HAMIS\"\n}",
+     "pred": {
+      "itelet": "HAMIS"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6030,
+      "total_tokens": 8919,
+      "completion_tokens": 2889,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 48860.4,
+     "sha": "b77a16a4b6e9"
+    }
+   ]
+  },
+  {
+   "id": "T7-09",
+   "teszt": "T7",
+   "pont": {
+    "pont": 1.0,
+    "max": 2,
+    "reszletek": {
+     "hivatkozott_pont": {
+      "gt": "10.5",
+      "pred": "10.5.",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [
+     "indoklas"
+    ],
+    "biro_suly": 1.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"indoklas\": \"A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.\",\n  \"hivatkozott_pont\": \"10.5.\"\n}",
+     "pred": {
+      "indoklas": "A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.",
+      "hivatkozott_pont": "10.5."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6007,
+      "total_tokens": 6963,
+      "completion_tokens": 956,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16463.2,
+     "sha": "a5a359292a34"
+    },
+    {
+     "nyers": "\n\n{\n  \"indoklas\": \"A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.\",\n  \"hivatkozott_pont\": \"10.5.\"\n}",
+     "pred": {
+      "indoklas": "A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.",
+      "hivatkozott_pont": "10.5."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6007,
+      "total_tokens": 6963,
+      "completion_tokens": 956,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16308.3,
+     "sha": "a5a359292a34"
+    },
+    {
+     "nyers": "\n\n{\n  \"indoklas\": \"A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.\",\n  \"hivatkozott_pont\": \"10.5.\"\n}",
+     "pred": {
+      "indoklas": "A bérbeadó a szerződés 10.5. pontja szerint semmilyen esetben nem felel a bérlő elmaradt üzleti hasznáért, elmaradt megrendeléséért vagy közvetett káráért, így ebből a rendelkezésből nincs kivétel.",
+      "hivatkozott_pont": "10.5."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6007,
+      "total_tokens": 6963,
+      "completion_tokens": 956,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 16308.2,
+     "sha": "a5a359292a34"
+    }
+   ]
+  },
+  {
+   "id": "T8-01",
+   "teszt": "T8",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 1850000,
+      "pred": 1850000,
+      "arany": 1.0
+     },
+     "hatalyos_forras": {
+      "gt": "alapszerződés 4.1. pont",
+      "pred": "alapszerződés 4.1. pont",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6088,
+      "total_tokens": 7786,
+      "completion_tokens": 1698,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 27994.8,
+     "sha": "f11b9f273b6a"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6088,
+      "total_tokens": 7786,
+      "completion_tokens": 1698,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28200.7,
+     "sha": "f11b9f273b6a"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6088,
+      "total_tokens": 7786,
+      "completion_tokens": 1698,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28021.3,
+     "sha": "f11b9f273b6a"
+    }
+   ]
+  },
+  {
+   "id": "T8-02",
+   "teszt": "T8",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 1850000,
+      "pred": 1850000,
+      "arany": 1.0
+     },
+     "hatalyos_forras": {
+      "gt": "alapszerződés 4.1. pont",
+      "pred": "alapszerződés 4.1. pont",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 8098,
+      "completion_tokens": 2008,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32546.4,
+     "sha": "f11b9f273b6a"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 8098,
+      "completion_tokens": 2008,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32460.1,
+     "sha": "f11b9f273b6a"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1850000,\n  \"hatalyos_forras\": \"alapszerződés 4.1. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1850000,
+      "hatalyos_forras": "alapszerződés 4.1. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 8098,
+      "completion_tokens": 2008,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 32461.7,
+     "sha": "f11b9f273b6a"
+    }
+   ]
+  },
+  {
+   "id": "T8-03",
+   "teszt": "T8",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 1980000,
+      "pred": 1980000,
+      "arany": 1.0
+     },
+     "hatalyos_forras": {
+      "gt": "1. sz. módosítás 2. pont",
+      "pred": "1. sz. módosítás 2. pont",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6089,
+      "total_tokens": 7873,
+      "completion_tokens": 1784,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29521.7,
+     "sha": "a2cef77fb50e"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6089,
+      "total_tokens": 7873,
+      "completion_tokens": 1784,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29449.8,
+     "sha": "a2cef77fb50e"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6089,
+      "total_tokens": 7873,
+      "completion_tokens": 1784,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29490.5,
+     "sha": "a2cef77fb50e"
+    }
+   ]
+  },
+  {
+   "id": "T8-04",
+   "teszt": "T8",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 1980000,
+      "pred": 1980000,
+      "arany": 1.0
+     },
+     "hatalyos_forras": {
+      "gt": "1. sz. módosítás 2. pont",
+      "pred": "1. sz. módosítás 2. pont",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6091,
+      "total_tokens": 7706,
+      "completion_tokens": 1615,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26720.0,
+     "sha": "a2cef77fb50e"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6091,
+      "total_tokens": 7706,
+      "completion_tokens": 1615,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26726.0,
+     "sha": "a2cef77fb50e"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 1980000,\n  \"hatalyos_forras\": \"1. sz. módosítás 2. pont\"\n}",
+     "pred": {
+      "ertek_ft": 1980000,
+      "hatalyos_forras": "1. sz. módosítás 2. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6091,
+      "total_tokens": 7706,
+      "completion_tokens": 1615,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 26726.6,
+     "sha": "a2cef77fb50e"
+    }
+   ]
+  },
+  {
+   "id": "T8-05",
+   "teszt": "T8",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "ertek_ft": {
+      "gt": 2100000,
+      "pred": 2100000,
+      "arany": 1.0
+     },
+     "hatalyos_forras": {
+      "gt": "2. sz. módosítás 3. pont",
+      "pred": "2. sz. módosítás 3. pont",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 2100000,\n  \"hatalyos_forras\": \"2. sz. módosítás 3. pont\"\n}",
+     "pred": {
+      "ertek_ft": 2100000,
+      "hatalyos_forras": "2. sz. módosítás 3. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 7856,
+      "completion_tokens": 1766,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28781.5,
+     "sha": "2fb3d18c2618"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 2100000,\n  \"hatalyos_forras\": \"2. sz. módosítás 3. pont\"\n}",
+     "pred": {
+      "ertek_ft": 2100000,
+      "hatalyos_forras": "2. sz. módosítás 3. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 7856,
+      "completion_tokens": 1766,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28858.1,
+     "sha": "2fb3d18c2618"
+    },
+    {
+     "nyers": "\n\n{\n  \"ertek_ft\": 2100000,\n  \"hatalyos_forras\": \"2. sz. módosítás 3. pont\"\n}",
+     "pred": {
+      "ertek_ft": 2100000,
+      "hatalyos_forras": "2. sz. módosítás 3. pont"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6090,
+      "total_tokens": 7856,
+      "completion_tokens": 1766,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 28917.7,
+     "sha": "2fb3d18c2618"
+    }
+   ]
+  },
+  {
+   "id": "T9-01",
+   "teszt": "T9",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "valasz": {
+      "gt": "nincs az iratban",
+      "pred": "nincs az iratban",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24382,
+      "total_tokens": 25947,
+      "completion_tokens": 1565,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 29951.4,
+     "sha": "584e9d50f7f0"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24382,
+      "total_tokens": 25947,
+      "completion_tokens": 1565,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 25909.6,
+     "sha": "584e9d50f7f0"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24382,
+      "total_tokens": 25947,
+      "completion_tokens": 1565,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 25826.5,
+     "sha": "584e9d50f7f0"
+    }
+   ]
+  },
+  {
+   "id": "T9-02",
+   "teszt": "T9",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "valasz_ft": {
+      "gt": 1500000,
+      "pred": 1500000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"valasz_ft\": 1500000\n}",
+     "pred": {
+      "valasz_ft": 1500000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24385,
+      "total_tokens": 24779,
+      "completion_tokens": 394,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7540.1,
+     "sha": "5fee473c12a7"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz_ft\": 1500000\n}",
+     "pred": {
+      "valasz_ft": 1500000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24385,
+      "total_tokens": 24779,
+      "completion_tokens": 394,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7473.6,
+     "sha": "5fee473c12a7"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz_ft\": 1500000\n}",
+     "pred": {
+      "valasz_ft": 1500000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24385,
+      "total_tokens": 24779,
+      "completion_tokens": 394,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7576.3,
+     "sha": "5fee473c12a7"
+    }
+   ]
+  },
+  {
+   "id": "T9-03",
+   "teszt": "T9",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "valasz_ft": {
+      "gt": 900000,
+      "pred": 900000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n```json\n{\n  \"valasz_ft\": 900000\n}\n```",
+     "pred": {
+      "valasz_ft": 900000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24378,
+      "total_tokens": 24750,
+      "completion_tokens": 372,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7467.7,
+     "sha": "2d7198bcbf83"
+    },
+    {
+     "nyers": "\n\n```json\n{\n  \"valasz_ft\": 900000\n}\n```",
+     "pred": {
+      "valasz_ft": 900000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24378,
+      "total_tokens": 24750,
+      "completion_tokens": 372,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7426.1,
+     "sha": "2d7198bcbf83"
+    },
+    {
+     "nyers": "\n\n```json\n{\n  \"valasz_ft\": 900000\n}\n```",
+     "pred": {
+      "valasz_ft": 900000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24378,
+      "total_tokens": 24750,
+      "completion_tokens": 372,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 7369.4,
+     "sha": "2d7198bcbf83"
+    }
+   ]
+  },
+  {
+   "id": "T9-04",
+   "teszt": "T9",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "valasz": {
+      "gt": "nincs az iratban",
+      "pred": "nincs az iratban",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24379,
+      "total_tokens": 25087,
+      "completion_tokens": 708,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 13045.6,
+     "sha": "584e9d50f7f0"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24379,
+      "total_tokens": 25087,
+      "completion_tokens": 708,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 13003.7,
+     "sha": "584e9d50f7f0"
+    },
+    {
+     "nyers": "\n\n{\n  \"valasz\": \"nincs az iratban\"\n}",
+     "pred": {
+      "valasz": "nincs az iratban"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24379,
+      "total_tokens": 25087,
+      "completion_tokens": 708,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 12900.3,
+     "sha": "584e9d50f7f0"
+    }
+   ]
+  },
+  {
+   "id": "T9-05",
+   "teszt": "T9",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "plafon_szazalek": {
+      "gt": 6,
+      "pred": 6,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"plafon_szazalek\": 6\n}",
+     "pred": {
+      "plafon_szazalek": 6
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24389,
+      "total_tokens": 25037,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11666.9,
+     "sha": "0a73da5cbc90"
+    },
+    {
+     "nyers": "\n\n{\n  \"plafon_szazalek\": 6\n}",
+     "pred": {
+      "plafon_szazalek": 6
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24389,
+      "total_tokens": 25037,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11773.9,
+     "sha": "0a73da5cbc90"
+    },
+    {
+     "nyers": "\n\n{\n  \"plafon_szazalek\": 6\n}",
+     "pred": {
+      "plafon_szazalek": 6
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24389,
+      "total_tokens": 25037,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11673.6,
+     "sha": "0a73da5cbc90"
+    }
+   ]
+  },
+  {
+   "id": "T10-01",
+   "teszt": "T10",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "emeles_szazalek": {
+      "gt": 4,
+      "pred": 4,
+      "arany": 1.0
+     },
+     "idopont": {
+      "gt": "március 1.",
+      "pred": "március 1.",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"emeles_szazalek\": 4,\n  \"idopont\": \"március 1.\"\n}",
+     "pred": {
+      "emeles_szazalek": 4,
+      "idopont": "március 1."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24402,
+      "total_tokens": 24902,
+      "completion_tokens": 500,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9303.8,
+     "sha": "d0a39554c8dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"emeles_szazalek\": 4,\n  \"idopont\": \"március 1.\"\n}",
+     "pred": {
+      "emeles_szazalek": 4,
+      "idopont": "március 1."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24402,
+      "total_tokens": 24902,
+      "completion_tokens": 500,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9316.8,
+     "sha": "d0a39554c8dc"
+    },
+    {
+     "nyers": "\n\n{\n  \"emeles_szazalek\": 4,\n  \"idopont\": \"március 1.\"\n}",
+     "pred": {
+      "emeles_szazalek": 4,
+      "idopont": "március 1."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24402,
+      "total_tokens": 24902,
+      "completion_tokens": 500,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9225.6,
+     "sha": "d0a39554c8dc"
+    }
+   ]
+  },
+  {
+   "id": "T10-02",
+   "teszt": "T10",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "idopont": {
+      "gt": "szeptember 15.",
+      "pred": "szeptember 15.",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"idopont\": \"szeptember 15.\"\n}",
+     "pred": {
+      "idopont": "szeptember 15."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24381,
+      "total_tokens": 25163,
+      "completion_tokens": 782,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 13803.5,
+     "sha": "6ec8b0a5fa92"
+    },
+    {
+     "nyers": "\n\n{\n  \"idopont\": \"szeptember 15.\"\n}",
+     "pred": {
+      "idopont": "szeptember 15."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24381,
+      "total_tokens": 25163,
+      "completion_tokens": 782,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 13836.2,
+     "sha": "6ec8b0a5fa92"
+    },
+    {
+     "nyers": "\n\n{\n  \"idopont\": \"szeptember 15.\"\n}",
+     "pred": {
+      "idopont": "szeptember 15."
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24381,
+      "total_tokens": 25163,
+      "completion_tokens": 782,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 13759.9,
+     "sha": "6ec8b0a5fa92"
+    }
+   ]
+  },
+  {
+   "id": "T10-03",
+   "teszt": "T10",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "osszeg_ft": {
+      "gt": 46000,
+      "pred": 46000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 46000\n}",
+     "pred": {
+      "osszeg_ft": 46000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24374,
+      "total_tokens": 25022,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11700.5,
+     "sha": "b1120db0ce8e"
+    },
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 46000\n}",
+     "pred": {
+      "osszeg_ft": 46000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24374,
+      "total_tokens": 25022,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11713.1,
+     "sha": "b1120db0ce8e"
+    },
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 46000\n}",
+     "pred": {
+      "osszeg_ft": 46000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24374,
+      "total_tokens": 25022,
+      "completion_tokens": 648,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 11836.1,
+     "sha": "b1120db0ce8e"
+    }
+   ]
+  },
+  {
+   "id": "T10-04",
+   "teszt": "T10",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "osszeg_ft": {
+      "gt": 900000,
+      "pred": 900000,
+      "arany": 1.0
+     },
+     "megnevezes": {
+      "gt": "Óvadék",
+      "pred": "Óvadék",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 900000,\n  \"megnevezes\": \"Óvadék\"\n}",
+     "pred": {
+      "osszeg_ft": 900000,
+      "megnevezes": "Óvadék"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24412,
+      "total_tokens": 24967,
+      "completion_tokens": 555,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9772.1,
+     "sha": "87b962495384"
+    },
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 900000,\n  \"megnevezes\": \"Óvadék\"\n}",
+     "pred": {
+      "osszeg_ft": 900000,
+      "megnevezes": "Óvadék"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24412,
+      "total_tokens": 24967,
+      "completion_tokens": 555,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9682.8,
+     "sha": "87b962495384"
+    },
+    {
+     "nyers": "\n\n{\n  \"osszeg_ft\": 900000,\n  \"megnevezes\": \"Óvadék\"\n}",
+     "pred": {
+      "osszeg_ft": 900000,
+      "megnevezes": "Óvadék"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24412,
+      "total_tokens": 24967,
+      "completion_tokens": 555,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 9752.8,
+     "sha": "87b962495384"
+    }
+   ]
+  },
+  {
+   "id": "T10-05",
+   "teszt": "T10",
+   "pont": {
+    "pont": 2.0,
+    "max": 2,
+    "reszletek": {
+     "forras_szakasz": {
+      "gt": "M1",
+      "pred": "M1",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"forras_szakasz\": \"M1\"\n}",
+     "pred": {
+      "forras_szakasz": "M1"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24414,
+      "total_tokens": 25548,
+      "completion_tokens": 1134,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 19511.8,
+     "sha": "f89e0a7954b4"
+    },
+    {
+     "nyers": "\n\n{\n  \"forras_szakasz\": \"M1\"\n}",
+     "pred": {
+      "forras_szakasz": "M1"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24414,
+      "total_tokens": 25548,
+      "completion_tokens": 1134,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 19490.0,
+     "sha": "f89e0a7954b4"
+    },
+    {
+     "nyers": "\n\n{\n  \"forras_szakasz\": \"M1\"\n}",
+     "pred": {
+      "forras_szakasz": "M1"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 24414,
+      "total_tokens": 25548,
+      "completion_tokens": 1134,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 19422.6,
+     "sha": "f89e0a7954b4"
+    }
+   ]
+  }
+ ]
+}

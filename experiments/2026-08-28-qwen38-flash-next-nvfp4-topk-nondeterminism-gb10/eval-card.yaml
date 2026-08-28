@@ -1,0 +1,146 @@
+id: qwen38-flash-next-nvfp4-topk-nondeterminism-gb10
+version: "1.0"
+date: "2026-08-28"
+title: "Qwen3.8-Flash-Next NVFP4 on vLLM: greedy decoding was non-deterministic — root cause in the QSA top-k kernel"
+question: >-
+  Why does the NVFP4 / vLLM / mmap-PLE recipe for Qwen3.8-Flash-Next return different answers to
+  identical temperature-0 requests on a GB10, and can it be fixed without giving up MTP?
+
+task:
+  type: kie
+  document_types: [contract, invoice, synthetic-business-documents]
+  language: [hu]
+  output_format: strict-json
+
+dataset:
+  name: magyar-kie-eval (synthetic Hungarian corpus D1–D7, 65 items / 300 points)
+  size:
+    items: 65
+    points: 300
+    points_reachable: 298
+    main_items: 50
+    hard_items: 10
+    long_context_items: 5
+    long_context_tokens: 217081
+    runs_per_item: 3
+    isolation_items: 13
+    isolation_runs_per_item: 5
+    probe_items: 6
+    probe_repetitions: 10
+  access: public
+  ground_truth: >-
+    Deterministic ground truth generated together with the documents (the T22 aggregation is
+    parsed back from the generated document by the checker). Scoring rules and normalisation were
+    frozen before the second model was scored.
+  notes: >-
+    Synthetic, written for this evaluation; ships in dataset/. Small: only four of 65 items
+    discriminate between the four systems.
+
+systems:
+  - label: flash-nvfp4
+    role: candidate
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, PLE table mmap-ed from NVMe)
+    quantisation: "NVFP4 body, FP8 PLE shards"
+    engine: "vLLM 0.1.dev20073+g8e685d198 (blazux/qwen3.8-Flash-DGX 82ed48d image on vllm/vllm-openai:qwen38-flash-next@sha256:fc120ece…)"
+    hardware: DGX Spark GB10 (sm_121a), driver 580.173.02
+    backend: "QSA indexer top-k = persistent_topk (capability family 12x); NvFp4 MoE FLASHINFER_CUTLASS"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 16384, thinking: true, mtp: 2, cudagraph: PIECEWISE }
+  - label: flash-nvfp4-topk3
+    role: candidate
+    model: same checkpoint, same image + one-file overlay (patch/)
+    engine: "same, VLLM_QSA_EXACT_TOPK=3 (torch.topk radix-select + canonical tie ordering)"
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 16384, thinking: true, mtp: 2, cudagraph: PIECEWISE }
+  - label: flash-next
+    role: baseline
+    model: Qwen3.8-Flash-Next (Unsloth UD-IQ4_XS GGUF, 4.25 bpw)
+    engine: "llama.cpp, -c 262144 -fa on -np 1"
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 16384, thinking: true }
+  - label: qwen36
+    role: baseline
+    model: Qwen3.6-35B-A3B-FP8 (production)
+    engine: "vLLM production image (different build), MTP=2, reasoning-parser qwen3"
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 16384, thinking: true, mtp: 2 }
+  - label: qwen35-122b
+    role: baseline
+    model: Qwen3.5-122B-NVFP4
+    engine: "vLLM (night node)"
+    hardware: DGX Spark GB10 (sm_121a)
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 16384, thinking: true }
+
+normaliser_version: "pontozo.py 2026-08-27 (reference normalisation + enumerated values, frozen before scoring the second model)"
+
+metrics:
+  - name: unstable_items
+    definition: "items whose repeated greedy runs did not produce byte-identical content"
+    primary: true
+  - name: score_changing_unstable_items
+    definition: "unstable items where scoring each run separately gives different points (szoras.py)"
+    primary: true
+  - name: probe_identical_items
+    definition: "items whose 10 repeated max_tokens=1 requests returned byte-identical top-20 logprob vectors"
+    primary: true
+  - name: prefill_tok_s
+    definition: "prompt tokens / wall time of a max_tokens=1 request"
+  - name: decode_tok_s
+    definition: "completion tokens / wall time (includes TTFT; identical formula for both engines)"
+  - name: suite_points
+    definition: "points on the majority output of 3 runs; 298 reachable of 300"
+
+results:
+  symptom_main_suite_unstable_of_50:
+    flash-next: 0
+    qwen36: 0
+    qwen35-122b: 0
+    flash-nvfp4: 13
+    flash-nvfp4_score_changing: 5
+  isolation_13_items_x5:
+    mtp0: { unstable: 11, score_changing: 4, decode_tok_s: 16.1, empty_16k_runaways: 0 }
+    cgnone: { unstable: 13, score_changing: 5, decode_tok_s: 27.4 }
+    topk_exact: { unstable: 0, score_changing: 0, decode_tok_s: 27.3 }
+  prefill_probe_6_items_x10:
+    persistent_topk: { identical_items: 0, first_token_flips: 3, prefill_tok_s_6k: 2360 }
+    mode1_full_sort: { identical_items: 6, prefill_tok_s_6k: 820, slowdown: 2.9 }
+    mode2_reorder_only: { identical_items: 3 }
+    mode3_torch_topk: { identical_items: 6, prefill_tok_s_6k: 1760, slowdown: 1.35 }
+  validation_mode3_full_suites:
+    main_50x3: { points: 98.00, unstable: 0, truncated: 0, stock_points: 97.00, stock_unstable: 13 }
+    hard_10x3: { points: 90.00, unstable: 0, empty_runaway_items: 1, note: "T14-01: 3/3 identical 16384-token reasoning loops (22x the same paragraph); not a top-k effect" }
+    challenge_10x1: { empty_runaway_items: 1 }
+    long_5x1: { points: 100.00, unstable: 0 }
+    total_of_300: { mode3: 288.00, stock: 297.00, note: "the 9-point gap is the single deterministic loop item T14-01" }
+  four_way_points_of_300_side_line:
+    flash-next: 289.33
+    flash-nvfp4: 297.00
+    qwen36: 294.00
+    qwen35-122b: 275.00
+    note: "flash-nvfp4 measured with the non-deterministic kernel; full-suite re-run with mode 3 in progress"
+
+verdict: >-
+  The recipe's non-determinism is in the QSA indexer's persistent_topk kernel (atomicAdd slot
+  assignment; selected set varies), not in MTP, CUDA graphs or the mmap-PLE gather. A canonical
+  torch.topk replacement makes the prefill byte-deterministic at 74 % of the prefill throughput
+  with MTP unchanged. Not adopted for production until the full suite passes with the fix.
+
+reproducibility:
+  level: R2
+  code: published
+  data: synthetic-only
+  results: full
+  runs_per_variant: 3
+  not_published: "the HU-CH language challenge (author's own material, awaiting manual scoring); the pre-fix calibration run (76/100, scored before the normaliser was frozen)"
+
+limitations:
+  - "The 35B control runs on a different vLLM build; the within-build attribution rests on the isolation arms and the probe."
+  - "The single-variable FP8 Flash-Next control does not fit on one Spark (113.7 GiB non-PLE weights vs 112.2 GiB budget); the claim is about this kernel on this hardware, not about NVFP4 in general."
+  - "Probe: 6 items × 10; isolation: 13 items × 5; one server session per arm; no cross-session CV."
+  - "Server-reported logprobs are quantised to 0.125 nat; distinct-vector counts are conservative."
+  - "Synthetic corpus; only four of 65 items discriminate between the four systems — the ordering is not a ranking."
+  - "The MTP-off post-test of the repetition loop was still running when this card was written."
+  - "The empty-reasoning run-away is a separate greedy+thinking repetition loop; the fix makes it deterministic (3/3 on T14-01) rather than removing it — a loop guard is required before production use."
+
+related:
+  article: "(in preparation)"
+  experiments: [qwen35-122b-nvfp4-bringup-gb10, mtp-speculative-decoding-gb10, qwen36-fp8-vs-nvfp4-quality]

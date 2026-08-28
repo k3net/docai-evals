@@ -1,0 +1,315 @@
+{
+ "cimke": "hosszu-flash-nvfp4-topk3",
+ "args": {
+  "url": "http://localhost:18380",
+  "model": "qwen3.8-flash-next",
+  "cimke": "hosszu-flash-nvfp4-topk3",
+  "futasok": 1,
+  "max_tokens": 16384,
+  "timeout": 5400.0,
+  "csak": null,
+  "items": "gt/items-hosszu.jsonl",
+  "out": "reports/hosszu-flash-nvfp4-topk3.json",
+  "folytat": false,
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T21-01",
+   "teszt": "T21",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "oradij_2024_ft": {
+      "gt": 10000,
+      "pred": 10000,
+      "arany": 1.0
+     },
+     "oradij_2025_ft": {
+      "gt": 10750,
+      "pred": 10750,
+      "arany": 1.0
+     },
+     "oradij_2026_ft": {
+      "gt": 11180,
+      "pred": 11180,
+      "arany": 1.0
+     },
+     "munkadij_2026_ft": {
+      "gt": 4606160,
+      "pred": 4606160,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"oradij_2024_ft\": 10000,\n  \"oradij_2025_ft\": 10750,\n  \"oradij_2026_ft\": 11180,\n  \"munkadij_2026_ft\": 4606160\n}",
+     "pred": {
+      "oradij_2024_ft": 10000,
+      "oradij_2025_ft": 10750,
+      "oradij_2026_ft": 11180,
+      "munkadij_2026_ft": 4606160
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "We need answer user's request. Need parse Hungarian document. Need output JSON only. Need compute hourly rates 2024, 2025, 2026 and 2026 extraordinary work hours total fee.\n\nDocument:\n- 2.1: 2024 rezsióradíj: 10 000 Ft/óra.\n- 2.2 changes annually Jan 1; rate in relevant section.\n- \"Az elszámolás felülvizsgálata\": Felek rögzítik, hogy a 2025. évi rezsióradíj a 2024. évihez képest 7.5 %-kal emelkedett. A 2025. évi rendkívüli beavatkozások elszámolása ezen az óradíjon történt.\n- Z.5: A 2026. évi rezsióradíj a 2025. évihez képest 4.0 %-kal magasabb.\n- Z.6: A 2026. évi elszámolásban 412 rendkívüli munkaóra szerepel.\n\nCompute:\n2024 = 10000.\n2025 = 10000 * 1.075 = 10750.\n2026 = 10750 * 1.04 = 11180.\n2026 fee = 412 * 11180 = ? 11180*400=4,472,000; *12=134,160; total 4,606,160.\n\nNeed ensure integer. JSON keys exactly. No other text.\n\nDouble-check if any hidden conflicting? There are many weekly reports with extraordinary interventions costs, but task asks based on rates and hours. 2026 hours in Z.6. Need maybe 2026 rate from 2025 +4.0%. Yes.\n\nPotential issue: 2025 rate 7.5% increase from 2024: 10750. 2026 4.0% higher than 2025: 11180. If rounding? integer exact.\n\nNeed final JSON only. Ensure Hungarian? JSON keys as specified. Values integer not strings? Schema says integer. Output:\n{\n  \"oradij_2024_ft\": 10000,\n  \"oradij_2025_ft\": 10750,\n  \"oradij_2026_ft\": 11180,\n  \"munkadij_2026_ft\": 4606160\n}\n\nNeed no markdown.\n",
+     "gondolkodas_sha": "88b2e3de99a1",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217438,
+      "total_tokens": 218173,
+      "completion_tokens": 735,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 647
+      }
+     },
+     "timings": {},
+     "wall_ms": 163489.4,
+     "sha": "3a28103a11e3"
+    }
+   ]
+  },
+  {
+   "id": "T22-01",
+   "teszt": "T22",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "esemenyek_szama": {
+      "gt": 43,
+      "pred": 43,
+      "arany": 1.0
+     },
+     "osszkoltseg_ft": {
+      "gt": 7141000,
+      "pred": 7141000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"esemenyek_szama\": 43,\n  \"osszkoltseg_ft\": 7141000\n}",
+     "pred": {
+      "esemenyek_szama": 43,
+      "osszkoltseg_ft": 7141000
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "We need answer user's question in Hungarian? They ask: \"Hány RENDKÍVÜLI BEAVATKOZÁS történt az archívum teljes időszakában, és mennyi ezek együttes elszámolt költsége forintban? A fogalommeghatározás pontosan megmondja, mi számít ide és mi nem.\" Need output JSON only with esemenyek_szama integer, osszkoltseg_ft integer. Need count only entries marked **RENDKÍVÜLI BEAVATKOZÁS** with elszámolt költség, not *Rendkívüli karbantartási igény bejelentése* (not extraordinary intervention, no cost). Need scan entire document. Need be careful: There are many weekly reports, some duplicated? The document seems contains weekly reports 1-156 then repeats weeks 1-66? It says archívum 2024-2026, but after week 156 there are again 1. heti ... 66. heti? Need count all RENDKÍVÜLI BEAVATKOZÁS occurrences in entire provided document. Need sum costs. Need ensure not count \"Rendkívüli karbantartási igény bejelentése\". Need maybe count only bold RENDKÍVÜLI BEAVATKOZÁS lines. Need parse manually. This is huge. Need count all occurrences. Let's systematically extract from text.\n\nWe need count and sum. Let's scan document. I'll copy relevant lines.\n\nDefinition: extraordinary intervention: not in annual plan, necessary for continuous operation. Recorded in weekly report with **RENDKÍVÜLI BEAVATKOZÁS** and accounted cost. The *Rendkívüli karbantartási igény bejelentése* under investigation no cost not extraordinary intervention.\n\nNeed count all bold RENDKÍVÜLI BEAVATKOZÁS entries. Let's enumerate.\n\nI'll search mentally through document. Use line markers.\n\nFirst section:\n### 1. heti ...\n> **RENDKÍVÜLI BEAVATKOZÁS** — a hulladékkezelés területén, elszámolt költség: **225 000 Ft**.\nCount1 225000.\n\n2. heti: *Rendkívüli karbantartási igény bejelentése* not count.\n\n3. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a gépészet területén, elszámolt költség: **144 000 Ft**.\nCount2 144000.\n\n4. no.\n5. no.\n6. no.\n7. no.\n8. no.\n9. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a informatika területén, elszámolt költség: **172 000 Ft**.\nCount3 172000.\n\n10. heti: *Rendkívüli karbantartási igény* not.\n11. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a tűzvédelem területén, elszámolt költség: **215 000 Ft**.\nCount4 215000.\n\n12. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a informatika területén, elszámolt költség: **249 000 Ft**.\nCount5 249000.\n\n13. no.\n14. no.\n15. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **225 000 Ft**.\nCount6 225000.\n\n16. no.\n17. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **148 000 Ft**.\nCount7 148000.\n\n18. no.\n19. no.\n20. heti: *Rendkívüli karbantartási igény* not.\n21. no.\n22. no.\n23. no.\n24. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **191 000 Ft**.\nCount8 191000.\n\n25. no.\n26. no.\n27. heti: *Rendkívüli karbantartási igény* not.\n28. no.\n29. no.\n30. no.\n31. no.\n32. no.\n33. heti: *Rendkívüli karbantartási igény* not.\n34. no.\n35. no.\n36. no.\n37. no.\n38. heti: *Rendkívüli karbantartási igény* not.\n39. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a beléptetőrendszer területén, elszámolt költség: **191 000 Ft**.\nCount9 191000.\n\n40. heti: *Rendkívüli karbantartási igény* not.\n41. no.\n42. no.\n43. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a kertészet területén, elszámolt költség: **239 000 Ft**.\nCount10 239000.\n\n44. heti: *Rendkívüli karbantartási igény* not.\n45. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a elektromos hálózat területén, elszámolt költség: **209 000 Ft**.\nCount11 209000.\n\n46. no.\n47. no.\n48. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a beléptetőrendszer területén, elszámolt költség: **169 000 Ft**.\nCount12 169000.\n\n49. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a elektromos hálózat területén, elszámolt költség: **125 000 Ft**.\nCount13 125000.\n\n50. no.\n51. no.\n52. no.\n53. heti: *Rendkívüli karbantartási igény* not.\n54. no.\n55. no.\n56. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a épületszerkezet területén, elszámolt költség: **214 000 Ft**.\nCount14 214000.\n\n57. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a parkolóüzem területén, elszámolt költség: **184 000 Ft**.\nCount15 184000.\n\n58. no.\n59. no.\n60. heti: *Rendkívüli karbantartási igény* not.\n61. no.\n62. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **126 000 Ft**.\nCount16 126000.\n\n63. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a hulladékkezelés területén, elszámolt költség: **225 000 Ft**.\nCount17 225000.\n\n64. no.\n65. no.\n66. no.\n67. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a beléptetőrendszer területén, elszámolt költség: **54 000 Ft**.\nCount18 54000.\n\n68. heti: *Rendkívüli karbantartási igény* not.\n69. heti: *Rendkívüli karbantartási igény* not.\n70. no.\n71. no.\n72. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a liftüzem területén, elszámolt költség: **90 000 Ft**.\nCount19 90000.\n\n73. heti: *Rendkívüli karbantartási igény* not.\n74. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a épületszerkezet területén, elszámolt költség: **111 000 Ft**.\nCount20 111000.\n\n75. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **230 000 Ft**.\nCount21 230000.\n\n76. heti: *Rendkívüli karbantartási igény* not.\n77. no.\n78. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a biztonsági szolgálat területén, elszámolt költség: **203 000 Ft**.\nCount22 203000.\n\n79. no.\n80. heti: *Rendkívüli karbantartási igény* not.\n81. no.\n82. heti: *Rendkívüli karbantartási igény* not.\n83. no.\n84. heti: *Rendkívüli karbantartási igény* not.\n85. heti: *Rendkívüli karbantartási igény* not.\n86. no.\n87. heti: *Rendkívüli karbantartási igény* not.\n88. no.\n89. no.\n90. no.\n91. no.\n92. no.\n93. no.\n94. no.\n95. heti: *Rendkívüli karbantartási igény* not.\n96. no.\n97. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a kertészet területén, elszámolt költség: **154 000 Ft**.\nCount23 154000.\n\n98. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a informatika területén, elszámolt költség: **157 000 Ft**.\nCount24 157000.\n\n99. heti: *Rendkívüli karbantartási igény* not.\n100. no.\n101. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a kertészet területén, elszámolt költség: **220 000 Ft**.\nCount25 220000.\n\n102. heti: *Rendkívüli karbantartási igény* not.\n103. no.\n104. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a beléptetőrendszer területén, elszámolt költség: **62 000 Ft**.\nCount26 62000.\n\n105. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a liftüzem területén, elszámolt költség: **255 000 Ft**.\nCount27 255000.\n\n106. no.\n107. no.\n108. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a hulladékkezelés területén, elszámolt költség: **152 000 Ft**.\nCount28 152000.\n\n109. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a gépészet területén, elszámolt költség: **98 000 Ft**.\nCount29 98000.\n\n110. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **134 000 Ft**.\nCount30 134000.\n\nThen \"Az elszámolás felülvizsgálata\" no.\n111. no.\n112. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a elektromos hálózat területén, elszámolt költség: **233 000 Ft**.\nCount31 233000.\n\n113. no.\n114. no.\n115. no.\n116. no.\n117. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a tűzvédelem területén, elszámolt költség: **240 000 Ft**.\nCount32 240000.\n\n118. heti: *Rendkívüli karbantartási igény* not.\n119. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a parkolóüzem területén, elszámolt költség: **175 000 Ft**.\nCount33 175000.\n\n120. no.\n121. no.\n122. no.\n123. heti: *Rendkívüli karbantartási igény* not.\n124. heti: *Rendkívüli karbantartási igény* not.\n125. heti: *Rendkívüli karbantartási igény* not.\n126. no.\n127. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a informatika területén, elszámolt költség: **112 000 Ft**.\nCount34 112000.\n\n128. no.\n129. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a gépészet területén, elszámolt költség: **63 000 Ft**.\nCount35 63000.\n\n130. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a kertészet területén, elszámolt költség: **143 000 Ft**.\nCount36 143000.\n\n131. no.\n132. heti: *Rendkívüli karbantartási igény* not.\n133. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a biztonsági szolgálat területén, elszámolt költség: **52 000 Ft**.\nCount37 52000.\n\n134. no.\n135. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a vízellátás területén, elszámolt költség: **105 000 Ft**.\nCount38 105000.\n\n136. no.\n137. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a elektromos hálózat területén, elszámolt költség: **214 000 Ft**.\nCount39 214000.\n\n138. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a épületszerkezet területén, elszámolt költség: **81 000 Ft**.\nCount40 81000.\n\n139. no.\n140. no.\n141. no.\n142. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a gépészet területén, elszámolt költség: **197 000 Ft**.\nCount41 197000.\n\n143. no.\n144. no.\n145. no.\n146. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a liftüzem területén, elszámolt költség: **200 000 Ft**.\nCount42 200000.\n\n147. no.\n148. no.\n149. heti:\n> **RENDKÍVÜLI BEAVATKOZÁS** — a takarítás területén, elszámolt költség: **155 000 Ft**.\nCount43 155000.\n\n150. heti: *Rendkívüli karbantartási igény* not.\n151. no.\n152. no.\n153. heti: *Rendkívüli karbantartási igény* not.\n154. heti: *Rendkívüli karbantartási igény* not.\n155. no.\n156. heti: *Rendkívüli karbantartási igény* not.\n\nThen after 156, there is repeated \"### 1. heti üzemeltetési jelentés — 2024-01-01 … 2024-01-07\" again. Need count all in entire document, including duplicates? The question: \"az archívum teljes időszakában\" and document includes all. It may be a trick: there are duplicate weekly reports? Need count all RENDKÍVÜLI BEAVATKOZÁS in the provided document. If duplicates are present, should count them? The document says archívum contains weekly reports; but after week 156 it repeats weeks 1-66 with different data? It might be intentionally duplicated to test counting all occurrences. Need count all bold entries in entire text, including second set. Need scan second set from repeated 1. heti to 66. heti.\n\nLet's continue after first 156.\n\nSecond set:\n### 1. heti ... (2024-01-01)\nNo RENDKÍVÜLI? It has no blockquote? Let's check: after maintenance log, Észrevételek, no RENDKÍVÜLI. So 0.\n\n### 2. heti ... no.\n### 3. heti ... no.\n### 4. heti ... no.\n### 5. heti ... no.\n### 6. heti ... no.\n### 7. heti ... no.\n### 8. heti ... no.\n### 9. heti ... no.\n### 10. heti ... no.\n### 11. heti ... no.\n### 12. heti ... no.\n### 13. heti ... no.\n### 14. heti ... no.\n### 15. heti ... no.\n### 16. heti ... no.\n### 17. heti ... no.\n### 18. heti ... no.\n### 19. heti ... no.\n### 20. heti ... no.\n### 21. heti ... no.\n### 22. heti ... no.\n### 23. heti ... no.\n### 24. heti ... no.\n### 25. heti ... no.\n### 26. heti ... no.\n### 27. heti ... no.\n### 28. heti ... no.\n### 29. heti ... no.\n### 30. heti ... no.\n### 31. heti ... no.\n### 32. heti ... no.\n### 33. heti ... no.\n### 34. heti ... no.\n### 35. heti ... no.\n### 36. heti ... no.\n### 37. heti ... no.\n### 38. heti ... no.\n### 39. heti ... no.\n### 40. heti ... no.\n### 41. heti ... no.\n### 42. heti ... no.\n### 43. heti ... no.\n### 44. heti ... no.\n### 45. heti ... no.\n### 46. heti ... no.\n### 47. heti ... no.\n### 48. heti ... no.\n### 49. heti ... no.\n### 50. heti ... no.\n### 51. heti ... no.\n### 52. heti ... no.\n### 53. heti ... no.\n### 54. heti ... no.\n### 55. heti ... no.\n### 56. heti ... no.\n### 57. heti ... no.\n### 58. heti ... no.\n### 59. heti ... no.\n### 60. heti ... no.\n### 61. heti ... no.\n### 62. heti ... no.\n### 63. heti ... no.\n### 64. heti ... no.\n### 65. heti ... no.\n### 66. heti ... no.\n\nWait second set seems no RENDKÍVÜLI BEAVATKOZÁS? Need verify. The repeated weeks may have no extraordinary intervention lines. I saw no blockquotes with bold. But need be careful: maybe some have? Let's scan second set text: after 1. heti no blockquote. 2. no. 3. no. 4. no. 5. no. 6. no. 7. no. 8. no. 9. no. 10. no. 11. no. 12. no. 13. no. 14. no. 15. no. 16. no. 17. no. 18. no. 19. no. 20. no. 21. no. 22. no. 23. no. 24. no. 25. no. 26. no. 27. no. 28. no. 29. no. 30. no. 31. no. 32. no. 33. no. 34. no. 35. no. 36. no. 37. no. 38. no. 39. no. 40. no. 41. no. 42. no. 43. no. 44. no. 45. no. 46. no. 47. no. 48. no. 49. no. 50. no. 51. no. 52. no. 53. no. 54. no. 55. no. 56. no. 57. no. 58. no. 59. no. 60. no. 61. no. 62. no. 63. no. 64. no. 65. no. 66. no. Then ZÁRÓ. So only first 156 weeks have counts. But need ensure no missed in first set.\n\nNeed sum all costs. Let's sum carefully.\n\nList counts and costs:\n1 225000\n2 144000\n3 172000\n4 215000\n5 249000\n6 225000\n7 148000\n8 191000\n9 191000\n10 239000\n11 209000\n12 169000\n13 125000\n14 214000\n15 184000\n16 126000\n17 225000\n18 54000\n19 90000\n20 111000\n21 230000\n22 203000\n23 154000\n24 157000\n25 220000\n26 62000\n27 255000\n28 152000\n29 98000\n30 134000\n31 233000\n32 240000\n33 175000\n34 112000\n35 63000\n36 143000\n37 52000\n38 105000\n39 214000\n40 81000\n41 197000\n42 200000\n43 155000\n\nCount = 43. Need sum. Let's sum carefully.\n\nI'll sum in groups.\n\n1-10:\n225+144=369\n+172=541\n+215=756\n+249=1005\n+225=1230\n+148=1378\n+191=1569\n+191=1760\n+239=1999 (thousands) => 1,999,000.\n\n11-20:\n209+169=378\n+125=503\n+214=717\n+184=901\n+126=1027\n+225=1252\n+54=1306\n+90=1396\n+111=1507 => 1,507,000. Cumulative 3,506,000.\n\n21-30:\n230+203=433\n+154=587\n+157=744\n+220=964\n+62=1026\n+255=1281\n+152=1433\n+98=1531\n+134=1665 => 1,665,000. Cumulative 5,171,000.\n\n31-40:\n233+240=473\n+175=648\n+112=760\n+63=823\n+143=966\n+52=1018\n+105=1123\n+214=1337\n+81=1418 => 1,418,000. Cumulative 6,589,000.\n\n41-43:\n197+200=397\n+155=552 => 552,000. Total 7,141,000.\n\nCheck sum: 6,589,000 + 552,000 = 7,141,000.\n\nNeed verify no missing RENDKÍVÜLI entries. Let's do a more systematic scan of first set by week numbers and blockquotes.\n\nI'll re-scan entire first set from top to week 156, noting all bold RENDKÍVÜLI.\n\nWeek 1: 225k yes.\n2: italic no.\n3: 144k.\n4: none.\n5: none.\n6: none.\n7: none.\n8: none.\n9: 172k.\n10: italic no.\n11: 215k.\n12: 249k.\n13: none.\n14: none.\n15: 225k.\n16: none.\n17: 148k.\n18: none.\n19: none.\n20: italic no.\n21: none.\n22: none.\n23: none.\n24: 191k.\n25: none.\n26: none.\n27: italic no.\n28: none.\n29: none.\n30: none.\n31: none.\n32: none.\n33: italic no.\n34: none.\n35: none.\n36: none.\n37: none.\n38: italic no.\n39: 191k.\n40: italic no.\n41: none.\n42: none.\n43: 239k.\n44: italic no.\n45: 209k.\n46: none.\n47: none.\n48: 169k.\n49: 125k.\n50: none.\n51: none.\n52: none.\n53: italic no.\n54: none.\n55: none.\n56: 214k.\n57: 184k.\n58: none.\n59: none.\n60: italic no.\n61: none.\n62: 126k.\n63: 225k.\n64: none.\n65: none.\n66: none.\n67: 54k.\n68: italic no.\n69: italic no.\n70: none.\n71: none.\n72: 90k.\n73: italic no.\n74: 111k.\n75: 230k.\n76: italic no.\n77: none.\n78: 203k.\n79: none.\n80: italic no.\n81: none.\n82: italic no.\n83: none.\n84: italic no.\n85: italic no.\n86: none.\n87: italic no.\n88: none.\n89: none.\n90: none.\n91: none.\n92: none.\n93: none.\n94: none.\n95: italic no.\n96: none.\n97: 154k.\n98: 157k.\n99: italic no.\n100: none.\n101: 220k.\n102: italic no.\n103: none.\n104: 62k.\n105: 255k.\n106: none.\n107: none.\n108: 152k.\n109: 98k.\n110: 134k.\n111: none.\n112: 233k.\n113: none.\n114: none.\n115: none.\n116: none.\n117: 240k.\n118: italic no.\n119: 175k.\n120: none.\n121: none.\n122: none.\n123: italic no.\n124: italic no.\n125: italic no.\n126: none.\n127: 112k.\n128: none.\n129: 63k.\n130: 143k.\n131: none.\n132: italic no.\n133: 52k.\n134: none.\n135: 105k.\n136: none.\n137: 214k.\n138: 81k.\n139: none.\n140: none.\n141: none.\n142: 197k.\n143: none.\n144: none.\n145: none.\n146: 200k.\n147: none.\n148: none.\n149: 155k.\n150: italic no.\n151: none.\n152: none.\n153: italic no.\n154: italic no.\n155: none.\n156: italic no.\n\nCount 43. Need ensure no bold RENDKÍVÜLI in second set. Let's scan second set more carefully because maybe some blockquotes omitted? The second set after 156:\n\n### 1. heti ... no blockquote? It has only Észrevételek. no.\n### 2. ... no.\n### 3. ... no.\n### 4. ... no.\n### 5. ... no.\n### 6. ... no.\n### 7. ... no.\n### 8. ... no.\n### 9. ... no.\n### 10. ... no.\n### 11. ... no.\n### 12. ... no.\n### 13. ... no.\n### 14. ... no.\n### 15. ... no.\n### 16. ... no.\n### 17. ... no.\n### 18. ... no.\n### 19. ... no.\n### 20. ... no.\n### 21. ... no.\n### 22. ... no.\n### 23. ... no.\n### 24. ... no.\n### 25. ... no.\n### 26. ... no.\n### 27. ... no.\n### 28. ... no.\n### 29. ... no.\n### 30. ... no.\n### 31. ... no.\n### 32. ... no.\n### 33. ... no.\n### 34. ... no.\n### 35. ... no.\n### 36. ... no.\n### 37. ... no.\n### 38. ... no.\n### 39. ... no.\n### 40. ... no.\n### 41. ... no.\n### 42. ... no.\n### 43. ... no.\n### 44. ... no.\n### 45. ... no.\n### 46. ... no.\n### 47. ... no.\n### 48. ... no.\n### 49. ... no.\n### 50. ... no.\n### 51. ... no.\n### 52. ... no.\n### 53. ... no.\n### 54. ... no.\n### 55. ... no.\n### 56. ... no.\n### 57. ... no.\n### 58. ... no.\n### 59. ... no.\n### 60. ... no.\n### 61. ... no.\n### 62. ... no.\n### 63. ... no.\n### 64. ... no.\n### 65. ... no.\n### 66. ... no.\n\nYes no bold. But wait there is a line after second 8. heti: \"> A liftkarbantartási szerződés száma: **LK-2025/117**.\" not intervention. After second 54: \"> A tűzjelző központ utolsó felülvizsgálata **2026. október 8-án** történt.\" not.\n\nNeed consider \"RENDKÍVÜLI BEAVATKOZÁS\" in definition? Not an event. Not count.\n\nNeed consider \"Rendkívüli karbantartási igény bejelentése\" not count. Good.\n\nNeed maybe count \"rendkívüli nyitások száma\"? No, not extraordinary intervention.\n\nNeed maybe count in \"Az elszámolás felülvizsgálata\" mentions 2025 extraordinary interventions but no count. Z.6 says 2026 settlement has 412 extraordinary work hours, not count/cost. Not relevant.\n\nNeed output JSON only. Ensure integer no formatting. {\"esemenyek_szama\":43,\"osszkoltseg_ft\":7141000}\n\nDouble-check sum with alternative grouping.\n\nLet's list costs in thousands:\n225,144,172,215,249,225,148,191,191,239,209,169,125,214,184,126,225,54,90,111,230,203,154,157,220,62,255,152,98,134,233,240,175,112,63,143,52,105,214,81,197,200,155.\n\nSum using calculator mental:\nGroup 10:\n1:225\n2:369\n3:541\n4:756\n5:1005\n6:1230\n7:1378\n8:1569\n9:1760\n10:1999.\n\n11:2208? Wait 1999+209=2208.\n12:2377\n13:2502\n14:2716\n15:2900\n16:3026\n17:3251\n18:3305\n19:3395\n20:3506. Yes cumulative 3506.\n21:3736\n22:3939\n23:4093\n24:4250\n25:4470\n26:4532\n27:4787\n28:4939\n29:5037\n30:5171.\n31:5404\n32:5644\n33:5819\n34:5931\n35:5994\n36:6137\n37:6189\n38:6294\n39:6508\n40:6589\n41:6786\n42:6986\n43:7141. Yes.\n\nNeed ensure count of events maybe 43. Could there be a hidden RENDKÍVÜLI in second set? Let's search text for \"RENDKÍVÜLI BEAVATKOZÁS\" occurrences. In first set, I counted 43. In second set maybe none. But let's count occurrences in entire document by scanning all blockquotes starting with > **RENDKÍVÜLI BEAVATKOZÁS**. I can count from my list. Need maybe there are entries in first set after week 156? No.\n\nLet's verify first set count by week numbers with bold:\n1,3,9,11,12,15,17,24,39,43,45,48,49,56,57,62,63,67,72,74,75,78,97,98,101,104,105,108,109,110,112,117,119,127,129,130,133,135,137,138,142,146,149. That's 43. Let's count list: 1(1),3(2),9(3),11(4),12(5),15(6),17(7),24(8),39(9),43(10),45(11),48(12),49(13),56(14),57(15),62(16),63(17),67(18),72(19),74(20),75(21),78(22),97(23),98(24),101(25),104(26),105(27),108(28),109(29),110(30),112(31),117(32),119(33),127(34),129(35),130(36),133(37),135(38),137(39),138(40),142(41),146(42),149(43). Good.\n\nNeed maybe week 10 has a blockquote about tetőszigetelés garancia, not intervention. Week 54 has blockquote about tartalék dízelaggregát, not. Week 10 second? no.\n\nPotential issue: The document includes \"RENDKÍVÜLI BEAVATKOZÁS\" in definition and maybe in question? Not count. We only count actual entries.\n\nPotential issue: Some entries have area \"a informatika\" grammar, but count.\n\nPotential issue: The \"Rendkívüli karbantartási igény bejelentése\" might be considered extraordinary intervention? Definition explicitly says not. So exclude.\n\nPotential issue: The question asks \"Hány RENDKÍVÜLI BEAVATKOZÁS történt az archívum teljes időszakában, és mennyi ezek együttes elszámolt költsége forintban?\" Could they expect count of all bold entries, including duplicates? Yes.\n\nBut maybe the duplicate second set is not part of \"teljes időszak\" because it's a repeated archive? It is in document. If duplicates are erroneous, maybe should count unique events? The document says archívum contains weekly reports; duplicate weeks with same dates but different data could be separate records? The question says based on document. We should count all occurrences in document. If duplicates are present, they are additional entries. But second set has no bold entries, so no effect. Good.\n\nNeed final JSON only. Ensure no markdown. final only JSON.\n",
+     "gondolkodas_sha": "dd43721fe3f9",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217344,
+      "total_tokens": 227473,
+      "completion_tokens": 10129,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 10093
+      }
+     },
+     "timings": {},
+     "wall_ms": 448556.1,
+     "sha": "d1aca6540921"
+    }
+   ]
+  },
+  {
+   "id": "T23-01",
+   "teszt": "T23",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "hatalyos_munkanap": {
+      "gt": 3,
+      "pred": 3,
+      "arany": 1.0
+     },
+     "eredeti_munkanap": {
+      "gt": 5,
+      "pred": 5,
+      "arany": 1.0
+     },
+     "feluliro_pont": {
+      "gt": "Z.7",
+      "pred": "Z.7",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatalyos_munkanap\": 3,\n  \"eredeti_munkanap\": 5,\n  \"feluliro_pont\": \"Z.7\"\n}",
+     "pred": {
+      "hatalyos_munkanap": 3,
+      "eredeti_munkanap": 5,
+      "feluliro_pont": "Z.7"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "We need answer user's question in Hungarian, only JSON. Need analyze document. User asks: \"Hány munkanapon belül kell kivizsgálni a bejelentett meghibásodást az irat szerint jelenleg hatályosan? Add meg az eredetileg megállapított határidőt is, továbbá azt a pontot, amely a változást megállapítja.\"\n\nNeed output JSON schema:\n{\n  \"hatalyos_munkanap\": \"integer\",\n  \"eredeti_munkanap\": \"integer\",\n  \"feluliro_pont\": \"pontszám\"\n}\n\nNeed find in document: Section 3.4 says bejelentett meghibásodást bejelentéstől számított 5 munkanapon belül ki kell vizsgálni. Záró rendelkezések Z.7 says Felek rögzítik, hogy archívum 3.4 pontja szerinti 5 munkanapos kivizsgálási határidő helyébe 3 munkanap lép, 2026. december 1-jei hatállyal. A 3.4 pont a továbbiakban ezzel az eltéréssel alkalmazandó.\n\nThus currently valid: 3 munkanap. Original: 5. Overriding point: Z.7. Need JSON values: integer for numbers? Schema says \"integer\" but likely values as numbers not strings? It says \"integer\" in quotes as type. Need output valid JSON. feluliro_pont: \"pontszám\" likely string \"Z.7\". Ensure no extra text.\n\nNeed consider if \"jelenleg hatályosan\" maybe after Z.7 effective 2026-12-01. Archive closed 2026-12-31. So yes 3. Original 5. Overriding point Z.7.\n\nNeed final only JSON. Ensure Hungarian? JSON keys as given. Values: 3, 5, \"Z.7\". Could \"feluliro_pont\" be \"Z.7.\"? Document says Z.7. Use \"Z.7\".\n",
+     "gondolkodas_sha": "c9ff64f36e07",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217363,
+      "total_tokens": 217868,
+      "completion_tokens": 505,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 457
+      }
+     },
+     "timings": {},
+     "wall_ms": 152159.2,
+     "sha": "877db608f6e1"
+    }
+   ]
+  },
+  {
+   "id": "T24-01",
+   "teszt": "T24",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "azonosito": {
+      "gt": "HJ-2026-0028",
+      "pred": "HJ-2026-0028",
+      "arany": 1.0
+     },
+     "terulet": {
+      "gt": "elektromos hálózat",
+      "pred": "elektromos hálózat",
+      "arany": 1.0
+     },
+     "bejelentve": {
+      "gt": "2026-03-03",
+      "pred": "2026-03-03",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"azonosito\": \"HJ-2026-0028\",\n  \"terulet\": \"elektromos hálózat\",\n  \"bejelentve\": \"2026-03-03\"\n}",
+     "pred": {
+      "azonosito": "HJ-2026-0028",
+      "terulet": "elektromos hálózat",
+      "bejelentve": "2026-03-03"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A feladat: megkeresni a hibajegy-nyilvántartásban azt az egyetlen bejegyzést, amely kiemelt prioritású ÉS lezáratlan állapotú.\n\nNézzük végig a HIBAJEGY-NYILVÁNTARTÁS — 2026 táblázatot:\n\n| Azonosító | Bejelentve | Terület | Prioritás | Állapot |\n| HJ-2026-0001 | 2026-12-02 | épületszerkezet | kiemelt | lezárt |\n| HJ-2026-0002 | 2026-02-02 | informatika | kiemelt | lezárt |\n| HJ-2026-0003 | 2026-10-27 | épületszerkezet | normál | lezáratlan |\n| HJ-2026-0004 | 2026-11-05 | hűtés-fűtés | emelt | lezárt |\n| HJ-2026-0005 | 2026-10-21 | beléptetés | kiemelt | lezárt |\n| HJ-2026-0006 | 2026-11-25 | beléptetés | normál | lezárt |\n| HJ-2026-0007 | 2026-10-26 | hűtés-fűtés | emelt | lezárt |\n| HJ-2026-0008 | 2026-09-03 | vízellátás | kiemelt | lezárt |\n| HJ-2026-0009 | 2026-05-24 | vízellátás | normál | lezáratlan |\n| HJ-2026-0010 | 2026-11-04 | elektromos hálózat | emelt | lezáratlan |\n| HJ-2026-0011 | 2026-12-17 | hűtés-fűtés | emelt | lezárt |\n| HJ-2026-0012 | 2026-04-10 | vízellátás | emelt | lezárt |\n| HJ-2026-0013 | 2026-11-16 | beléptetés | kiemelt | lezárt |\n| HJ-2026-0014 | 2026-05-04 | tűzvédelem | normál | lezáratlan |\n| HJ-2026-0015 | 2026-01-02 | elektromos hálózat | normál | lezáratlan |\n| HJ-2026-0016 | 2026-12-23 | épületszerkezet | emelt | lezárt |\n| HJ-2026-0017 | 2026-05-15 | tűzvédelem | emelt | lezáratlan |\n| HJ-2026-0018 | 2026-04-06 | tűzvédelem | kiemelt | lezárt |\n| HJ-2026-0019 | 2026-01-17 | tűzvédelem | kiemelt | lezárt |\n| HJ-2026-0020 | 2026-08-15 | gépészet | emelt | lezárt |\n| HJ-2026-0021 | 2026-05-22 | hűtés-fűtés | normál | lezáratlan |\n| HJ-2026-0022 | 2026-05-04 | beléptetés | kiemelt | lezárt |\n| HJ-2026-0023 | 2026-04-04 | vízellátás | normál | lezárt |\n| HJ-2026-0024 | 2026-05-12 | beléptetés | kiemelt | lezárt |\n| HJ-2026-0025 | 2026-12-25 | elektromos hálózat | normál | lezáratlan |\n| HJ-2026-0026 | 2026-09-05 | gépészet | emelt | lezárt |\n| HJ-2026-0027 | 2026-05-11 | elektromos hálózat | normál | lezárt |\n| HJ-2026-0028 | 2026-03-03 | elektromos hálózat | kiemelt | lezáratlan |\n| HJ-2026-0029 | 2026-08-04 | informatika | normál | lezáratlan |\n| HJ-2026-0030 | 2026-02-07 | beléptetés | kiemelt | lezárt |\n| HJ-2026-0031 | 2026-06-25 | tűzvédelem | kiemelt | lezárt |\n| HJ-2026-0032 | 2026-09-23 | hűtés-fűtés | emelt | lezárt |\n| HJ-2026-0033 | 2026-04-17 | hűtés-fűtés | kiemelt | lezárt |\n| HJ-2026-0034 | 2026-12-06 | hűtés-fűtés | emelt | lezárt |\n| HJ-2026-0035 | 2026-06-26 | elektromos hálózat | normál | lezárt |\n| HJ-2026-0036 | 2026-11-23 | épületszerkezet | emelt | lezárt |\n| HJ-2026-0037 | 2026-10-27 | épületszerkezet | normál | lezáratlan |\n| HJ-2026-0038 | 2026-01-13 | épületszerkezet | normál | lezárt |\n| HJ-2026-0039 | 2026-12-05 | informatika | normál | lezárt |\n| HJ-2026-0040 | 2026-10-07 | gépészet | emelt | lezárt |\n\nMost keressük a kiemelt + lezáratlan kombinációt:\n- HJ-2026-0028: kiemelt, lezáratlan ✓\n\nEllenőrizzük, hogy van-e más:\n- HJ-2026-0001: kiemelt, lezárt\n- HJ-2026-0002: kiemelt, lezárt\n- HJ-2026-0005: kiemelt, lezárt\n- HJ-2026-0008: kiemelt, lezárt\n- HJ-2026-0013: kiemelt, lezárt\n- HJ-2026-0018: kiemelt, lezárt\n- HJ-2026-0019: kiemelt, lezárt\n- HJ-2026-0022: kiemelt, lezárt\n- HJ-2026-0024: kiemelt, lezárt\n- HJ-2026-0028: kiemelt, lezáratlan ✓\n- HJ-2026-0030: kiemelt, lezárt\n- HJ-2026-0031: kiemelt, lezárt\n- HJ-2026-0033: kiemelt, lezárt\n\nTehát valóban csak egy van: HJ-2026-0028, terület: elektromos hálózat, bejelentve: 2026-03-03.\n\nA válasz JSON-sémája:\n{\n  \"azonosito\": \"HJ-2026-0028\",\n  \"terulet\": \"elektromos hálózat\",\n  \"bejelentve\": \"2026-03-03\"\n}\n",
+     "gondolkodas_sha": "1fd6c699e4f6",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217355,
+      "total_tokens": 219587,
+      "completion_tokens": 2232,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 2171
+      }
+     },
+     "timings": {},
+     "wall_ms": 200506.5,
+     "sha": "4fb5f1cddb37"
+    }
+   ]
+  },
+  {
+   "id": "T25-01",
+   "teszt": "T25",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "tetoszigeteles_garancia_lejar": {
+      "gt": "2029-04-30",
+      "pred": "2029-04-30",
+      "arany": 1.0
+     },
+     "aggregat_tipusjel": {
+      "gt": "GX-7420/B",
+      "pred": "GX-7420/B",
+      "arany": 1.0
+     },
+     "vizora_gyari_szam": {
+      "gt": "HU-3391-882",
+      "pred": "HU-3391-882",
+      "arany": 1.0
+     },
+     "liftkarbantarto_szerzodesszam": {
+      "gt": "LK-2025/117",
+      "pred": "LK-2025/117",
+      "arany": 1.0
+     },
+     "tuzjelzo_felulvizsgalat": {
+      "gt": "2026-10-08",
+      "pred": "2026-10-08",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"tetoszigeteles_garancia_lejar\": \"2029-04-30\",\n  \"aggregat_tipusjel\": \"GX-7420/B\",\n  \"vizora_gyari_szam\": \"HU-3391-882\",\n  \"liftkarbantarto_szerzodesszam\": \"LK-2025/117\",\n  \"tuzjelzo_felulvizsgalat\": \"2026-10-08\"\n}",
+     "pred": {
+      "tetoszigeteles_garancia_lejar": "2029-04-30",
+      "aggregat_tipusjel": "GX-7420/B",
+      "vizora_gyari_szam": "HU-3391-882",
+      "liftkarbantarto_szerzodesszam": "LK-2025/117",
+      "tuzjelzo_felulvizsgalat": "2026-10-08"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "The user wants me to extract five specific data points from the document. Let me search for each one carefully:\n\n1. **tetoszigeteles_garancia_lejar** - \"tetőszigetelés kivitelezői garanciája\" - I need to find the roof insulation warranty expiration date.\n   Found: \"A tetőszigetelés kivitelezői garanciája **2029. április 30-án** jár le.\" (in week 10)\n   So: 2029-04-30\n\n2. **aggregat_tipusjel** - \"tartalék dízelaggregát típusjele\" - I need to find the backup diesel generator type code.\n   Found: \"A tartalék dízelaggregát típusjele: **GX-7420/B**.\" (in week 54)\n   So: GX-7420/B\n\n3. **vizora_gyari_szam** - \"főmérő vízóra gyári száma\" - I need to find the main water meter serial number.\n   Found: \"A főmérő vízóra gyári száma: **HU-3391-882**.\" (after the settlement review section)\n   So: HU-3391-882\n\n4. **liftkarbantarto_szerzodesszam** - \"liftkarbantartási szerződés száma\" - I need to find the lift maintenance contract number.\n   Found: \"A liftkarbantartási szerződés száma: **LK-2025/117**.\" (after week 8)\n   So: LK-2025/117\n\n5. **tuzjelzo_felulvizsgalat** - \"tűzjelző központ utolsó felülvizsgálata\" - I need to find the fire alarm center last inspection date.\n   Found: \"A tűzjelző központ utolsó felülvizsgálata **2026. október 8-án** történt.\" (after week 54)\n   So: 2026-10-08\n\nLet me verify these are unique and not confused with similar data:\n- There are many \"almérő gyári száma\" entries (HU-8973-490, HU-6755-787, HU-6551-372, etc.) but the \"főmérő vízóra gyári száma\" is specifically HU-3391-882.\n- There are many \"tartalék szivattyú típusjele\" entries but the \"tartalék dízelaggregát típusjele\" is specifically GX-7420/B.\n- There are many contract numbers but the \"liftkarbantartási szerződés száma\" is specifically LK-2025/117.\n- There are many \"kivitelezői garanciája\" entries but the \"tetőszigetelés kivitelezői garanciája\" is specifically 2029. április 30.\n- There are many \"felülvizsgálat\" dates but the \"tűzjelző központ utolsó felülvizsgálata\" is specifically 2026. október 8.\n\nAll confirmed.\n",
+     "gondolkodas_sha": "121f3f4ff740",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217395,
+      "total_tokens": 218277,
+      "completion_tokens": 882,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 756
+      }
+     },
+     "timings": {},
+     "wall_ms": 162028.9,
+     "sha": "155e49f4d3fd"
+    }
+   ]
+  }
+ ]
+}

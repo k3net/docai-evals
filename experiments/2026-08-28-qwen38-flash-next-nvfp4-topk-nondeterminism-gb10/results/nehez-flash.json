@@ -1,0 +1,1293 @@
+{
+ "cimke": "nehez-flash",
+ "args": {
+  "url": "http://DEV_SPARK:8380",
+  "model": "local",
+  "cimke": "nehez-flash",
+  "futasok": 3,
+  "max_tokens": 16384,
+  "timeout": 300,
+  "csak": null,
+  "items": "gt/items-nehez.jsonl",
+  "out": "reports/nehez-flash.json",
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T11-01",
+   "teszt": "T11",
+   "pont": {
+    "pont": 8.0,
+    "max": 10,
+    "reszletek": {
+     "dij_2027_01_01_ft": {
+      "gt": 2230000,
+      "pred": 2226000,
+      "arany": 0.0
+     },
+     "dij_2028_01_01_ft": {
+      "gt": 2320000,
+      "pred": 2320000,
+      "arany": 1.0
+     },
+     "dij_2029_01_01_ft": {
+      "gt": 2440000,
+      "pred": 2440000,
+      "arany": 1.0
+     },
+     "plafonozott_ev": {
+      "gt": 2026,
+      "pred": 2026,
+      "arany": 1.0
+     },
+     "kerekites_modja": {
+      "gt": "minden lépésben, és a kerekített összeg a következő évi alap",
+      "pred": "minden lépésben, és a kerekített összeg a következő évi alap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1322,
+      "prompt_tokens": 9182,
+      "total_tokens": 10504,
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "timings": {
+      "cache_n": 0,
+      "prompt_n": 9182,
+      "prompt_ms": 15250.644,
+      "prompt_per_token_ms": 1.6609283380527118,
+      "prompt_per_second": 602.0729354117767,
+      "predicted_n": 1322,
+      "predicted_ms": 54479.165,
+      "predicted_per_token_ms": 41.24085162755488,
+      "predicted_per_second": 24.24780188903409
+     },
+     "wall_ms": 70069.3,
+     "sha": "741c1301be04"
+    },
+    {
+     "nyers": "{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1322,
+      "prompt_tokens": 9182,
+      "total_tokens": 10504,
+      "prompt_tokens_details": {
+       "cached_tokens": 9178
+      }
+     },
+     "timings": {
+      "cache_n": 9178,
+      "prompt_n": 4,
+      "prompt_ms": 121.337,
+      "prompt_per_token_ms": 30.33425,
+      "prompt_per_second": 32.966036740647944,
+      "predicted_n": 1322,
+      "predicted_ms": 54525.536,
+      "predicted_per_token_ms": 41.275954579863736,
+      "predicted_per_second": 24.227180453576835
+     },
+     "wall_ms": 55125.6,
+     "sha": "741c1301be04"
+    },
+    {
+     "nyers": "{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1322,
+      "prompt_tokens": 9182,
+      "total_tokens": 10504,
+      "prompt_tokens_details": {
+       "cached_tokens": 9178
+      }
+     },
+     "timings": {
+      "cache_n": 9178,
+      "prompt_n": 4,
+      "prompt_ms": 106.815,
+      "prompt_per_token_ms": 26.70375,
+      "prompt_per_second": 37.44792398071432,
+      "predicted_n": 1322,
+      "predicted_ms": 54469.086,
+      "predicted_per_token_ms": 41.23322180166541,
+      "predicted_per_second": 24.252288720247662
+     },
+     "wall_ms": 54679.2,
+     "sha": "741c1301be04"
+    }
+   ]
+  },
+  {
+   "id": "T12-01",
+   "teszt": "T12",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "felmondasi_ido_nap": {
+      "gt": 120,
+      "pred": 120,
+      "arany": 1.0
+     },
+     "donto_irat": {
+      "gt": "a Megállapodás 1. sz. melléklete",
+      "pred": "a Megállapodás 1. sz. melléklete",
+      "arany": 1.0
+     },
+     "alapszerzodes_megallapit_e": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}\n```",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 639,
+      "prompt_tokens": 9165,
+      "total_tokens": 9804,
+      "prompt_tokens_details": {
+       "cached_tokens": 8666
+      }
+     },
+     "timings": {
+      "cache_n": 8666,
+      "prompt_n": 499,
+      "prompt_ms": 1037.467,
+      "prompt_per_token_ms": 2.0790921843687378,
+      "prompt_per_second": 480.9791540357428,
+      "predicted_n": 639,
+      "predicted_ms": 26146.261,
+      "predicted_per_token_ms": 40.981600313479625,
+      "predicted_per_second": 24.40119449584015
+     },
+     "wall_ms": 27294.8,
+     "sha": "e5e75a96ec8d"
+    },
+    {
+     "nyers": "```json\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}\n```",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 639,
+      "prompt_tokens": 9165,
+      "total_tokens": 9804,
+      "prompt_tokens_details": {
+       "cached_tokens": 9161
+      }
+     },
+     "timings": {
+      "cache_n": 9161,
+      "prompt_n": 4,
+      "prompt_ms": 129.965,
+      "prompt_per_token_ms": 32.49125,
+      "prompt_per_second": 30.777517023814102,
+      "predicted_n": 639,
+      "predicted_ms": 26208.619,
+      "predicted_per_token_ms": 41.079340125391845,
+      "predicted_per_second": 24.343136889433204
+     },
+     "wall_ms": 26531.8,
+     "sha": "e5e75a96ec8d"
+    },
+    {
+     "nyers": "```json\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}\n```",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 639,
+      "prompt_tokens": 9165,
+      "total_tokens": 9804,
+      "prompt_tokens_details": {
+       "cached_tokens": 9161
+      }
+     },
+     "timings": {
+      "cache_n": 9161,
+      "prompt_n": 4,
+      "prompt_ms": 118.009,
+      "prompt_per_token_ms": 29.50225,
+      "prompt_per_second": 33.89571981797999,
+      "predicted_n": 639,
+      "predicted_ms": 26228.589,
+      "predicted_per_token_ms": 41.11064106583072,
+      "predicted_per_second": 24.324602440489652
+     },
+     "wall_ms": 26454.8,
+     "sha": "e5e75a96ec8d"
+    }
+   ]
+  },
+  {
+   "id": "T13-01",
+   "teszt": "T13",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "fizetendo_ft": {
+      "gt": 2840000,
+      "pred": 2840000,
+      "arany": 1.0
+     },
+     "szammal_kiirt_ft": {
+      "gt": 2480000,
+      "pred": 2480000,
+      "arany": 1.0
+     },
+     "elter_e": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     },
+     "iranyado": {
+      "gt": "a betűvel kiírt összeg",
+      "pred": "a betűvel kiírt összeg",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}\n```",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 490,
+      "prompt_tokens": 3347,
+      "total_tokens": 3837,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3239,
+      "prompt_ms": 5303.721,
+      "prompt_per_token_ms": 1.6374563136770608,
+      "prompt_per_second": 610.7033156532932,
+      "predicted_n": 490,
+      "predicted_ms": 18950.209,
+      "predicted_per_token_ms": 38.752983640081794,
+      "predicted_per_second": 25.804464742314984
+     },
+     "wall_ms": 24637.9,
+     "sha": "ec6a5039530f"
+    },
+    {
+     "nyers": "```json\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}\n```",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 490,
+      "prompt_tokens": 3347,
+      "total_tokens": 3837,
+      "prompt_tokens_details": {
+       "cached_tokens": 3343
+      }
+     },
+     "timings": {
+      "cache_n": 3343,
+      "prompt_n": 4,
+      "prompt_ms": 147.157,
+      "prompt_per_token_ms": 36.78925,
+      "prompt_per_second": 27.181853394673713,
+      "predicted_n": 490,
+      "predicted_ms": 18884.192,
+      "predicted_per_token_ms": 38.61797955010225,
+      "predicted_per_second": 25.89467423334819
+     },
+     "wall_ms": 19251.2,
+     "sha": "ec6a5039530f"
+    },
+    {
+     "nyers": "```json\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}\n```",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 490,
+      "prompt_tokens": 3347,
+      "total_tokens": 3837,
+      "prompt_tokens_details": {
+       "cached_tokens": 3343
+      }
+     },
+     "timings": {
+      "cache_n": 3343,
+      "prompt_n": 4,
+      "prompt_ms": 108.027,
+      "prompt_per_token_ms": 27.00675,
+      "prompt_per_second": 37.027780092014034,
+      "predicted_n": 490,
+      "predicted_ms": 18930.68,
+      "predicted_per_token_ms": 38.71304703476483,
+      "predicted_per_second": 25.83108477878238
+     },
+     "wall_ms": 19153.9,
+     "sha": "ec6a5039530f"
+    }
+   ]
+  },
+  {
+   "id": "T14-01",
+   "teszt": "T14",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "koltseget_viseli": {
+      "gt": "Bérbeadó",
+      "pred": "Bérbeadó",
+      "arany": 1.0
+     },
+     "donto_pont": {
+      "gt": "5.4",
+      "pred": "5.4",
+      "arany": 1.0
+     },
+     "engedely_datuma": {
+      "gt": "2026-05-04",
+      "pred": "2026-05-04",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}\n```",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 776,
+      "prompt_tokens": 3331,
+      "total_tokens": 4107,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3223,
+      "prompt_ms": 5258.643,
+      "prompt_per_token_ms": 1.6315988209742476,
+      "prompt_per_second": 612.8957603701183,
+      "predicted_n": 776,
+      "predicted_ms": 29813.264,
+      "predicted_per_token_ms": 38.46872774193548,
+      "predicted_per_second": 25.995140954710628
+     },
+     "wall_ms": 35167.4,
+     "sha": "f373816244ac"
+    },
+    {
+     "nyers": "```json\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}\n```",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 776,
+      "prompt_tokens": 3331,
+      "total_tokens": 4107,
+      "prompt_tokens_details": {
+       "cached_tokens": 3327
+      }
+     },
+     "timings": {
+      "cache_n": 3327,
+      "prompt_n": 4,
+      "prompt_ms": 134.874,
+      "prompt_per_token_ms": 33.7185,
+      "prompt_per_second": 29.657309785429366,
+      "predicted_n": 776,
+      "predicted_ms": 29853.348,
+      "predicted_per_token_ms": 38.520449032258064,
+      "predicted_per_second": 25.960237357632383
+     },
+     "wall_ms": 30076.5,
+     "sha": "f373816244ac"
+    },
+    {
+     "nyers": "```json\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}\n```",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 776,
+      "prompt_tokens": 3331,
+      "total_tokens": 4107,
+      "prompt_tokens_details": {
+       "cached_tokens": 3327
+      }
+     },
+     "timings": {
+      "cache_n": 3327,
+      "prompt_n": 4,
+      "prompt_ms": 106.566,
+      "prompt_per_token_ms": 26.6415,
+      "prompt_per_second": 37.53542405645328,
+      "predicted_n": 776,
+      "predicted_ms": 29747.38,
+      "predicted_per_token_ms": 38.38371612903226,
+      "predicted_per_second": 26.05271455839136
+     },
+     "wall_ms": 29944.4,
+     "sha": "f373816244ac"
+    }
+   ]
+  },
+  {
+   "id": "T15-01",
+   "teszt": "T15",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "eves_osszeg_ft": {
+      "gt": 22965600,
+      "pred": 22965600,
+      "arany": 1.0
+     },
+     "alkalmazott_arfolyam": {
+      "gt": 412.5,
+      "pred": 412.5,
+      "arany": 1.0
+     },
+     "uzemeltetesi_alapdij_ft_ho": {
+      "gt": 1636800,
+      "pred": 1636800,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}\n```",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 629,
+      "prompt_tokens": 3263,
+      "total_tokens": 3892,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3155,
+      "prompt_ms": 5143.637,
+      "prompt_per_token_ms": 1.6303128367670363,
+      "prompt_per_second": 613.3792100803381,
+      "predicted_n": 629,
+      "predicted_ms": 24079.694,
+      "predicted_per_token_ms": 38.34346178343949,
+      "predicted_per_second": 26.08006563538557
+     },
+     "wall_ms": 29420.0,
+     "sha": "20ced930f4f6"
+    },
+    {
+     "nyers": "```json\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}\n```",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 629,
+      "prompt_tokens": 3263,
+      "total_tokens": 3892,
+      "prompt_tokens_details": {
+       "cached_tokens": 3259
+      }
+     },
+     "timings": {
+      "cache_n": 3259,
+      "prompt_n": 4,
+      "prompt_ms": 140.373,
+      "prompt_per_token_ms": 35.09325,
+      "prompt_per_second": 28.495508395489164,
+      "predicted_n": 629,
+      "predicted_ms": 23960.482,
+      "predicted_per_token_ms": 38.153633757961785,
+      "predicted_per_second": 26.209823324923097
+     },
+     "wall_ms": 24269.8,
+     "sha": "20ced930f4f6"
+    },
+    {
+     "nyers": "```json\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}\n```",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 629,
+      "prompt_tokens": 3263,
+      "total_tokens": 3892,
+      "prompt_tokens_details": {
+       "cached_tokens": 3259
+      }
+     },
+     "timings": {
+      "cache_n": 3259,
+      "prompt_n": 4,
+      "prompt_ms": 114.201,
+      "prompt_per_token_ms": 28.55025,
+      "prompt_per_second": 35.025962995070095,
+      "predicted_n": 629,
+      "predicted_ms": 23935.678,
+      "predicted_per_token_ms": 38.11413694267516,
+      "predicted_per_second": 26.236983970121926
+     },
+     "wall_ms": 24168.2,
+     "sha": "20ced930f4f6"
+    }
+   ]
+  },
+  {
+   "id": "T16-01",
+   "teszt": "T16",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2027-01-04",
+      "pred": "2027-01-04",
+      "arany": 1.0
+     },
+     "munkanapban_szamolva": {
+      "gt": "2026-12-31",
+      "pred": "2026-12-31",
+      "arany": 1.0
+     },
+     "elteres_oka": {
+      "gt": "a naptári év utolsó munkanapja nem banki nap",
+      "pred": "a naptári év utolsó munkanapja nem banki nap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}\n```",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1935,
+      "prompt_tokens": 6303,
+      "total_tokens": 8238,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 6195,
+      "prompt_ms": 9994.011,
+      "prompt_per_token_ms": 1.6132382566585957,
+      "prompt_per_second": 619.8712408861668,
+      "predicted_n": 1935,
+      "predicted_ms": 77194.806,
+      "predicted_per_token_ms": 39.914584281282316,
+      "predicted_per_second": 25.0534990657273
+     },
+     "wall_ms": 87431.3,
+     "sha": "86f94e4015e6"
+    },
+    {
+     "nyers": "```json\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}\n```",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1935,
+      "prompt_tokens": 6303,
+      "total_tokens": 8238,
+      "prompt_tokens_details": {
+       "cached_tokens": 6299
+      }
+     },
+     "timings": {
+      "cache_n": 6299,
+      "prompt_n": 4,
+      "prompt_ms": 160.214,
+      "prompt_per_token_ms": 40.0535,
+      "prompt_per_second": 24.966607162919594,
+      "predicted_n": 1935,
+      "predicted_ms": 77345.316,
+      "predicted_per_token_ms": 39.99240744570838,
+      "predicted_per_second": 25.004746247335778
+     },
+     "wall_ms": 77601.5,
+     "sha": "86f94e4015e6"
+    },
+    {
+     "nyers": "```json\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}\n```",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 1935,
+      "prompt_tokens": 6303,
+      "total_tokens": 8238,
+      "prompt_tokens_details": {
+       "cached_tokens": 6299
+      }
+     },
+     "timings": {
+      "cache_n": 6299,
+      "prompt_n": 4,
+      "prompt_ms": 122.503,
+      "prompt_per_token_ms": 30.62575,
+      "prompt_per_second": 32.652261577267495,
+      "predicted_n": 1935,
+      "predicted_ms": 77078.407,
+      "predicted_per_token_ms": 39.85439865563599,
+      "predicted_per_second": 25.091333296496384
+     },
+     "wall_ms": 77442.5,
+     "sha": "86f94e4015e6"
+    }
+   ]
+  },
+  {
+   "id": "T17-01",
+   "teszt": "T17",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "fel_neve": {
+      "gt": "Delta-Ipari Szolgáltató Zrt.",
+      "pred": "Delta-Ipari Szolgáltató Zrt.",
+      "arany": 1.0
+     },
+     "szerepe": {
+      "gt": "Bérlő",
+      "pred": "Bérlő",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 498,
+      "prompt_tokens": 3287,
+      "total_tokens": 3785,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3179,
+      "prompt_ms": 5204.937,
+      "prompt_per_token_ms": 1.6372875117961623,
+      "prompt_per_second": 610.7662782469797,
+      "predicted_n": 498,
+      "predicted_ms": 19016.159,
+      "predicted_per_token_ms": 38.2618893360161,
+      "predicted_per_second": 26.135667039805462
+     },
+     "wall_ms": 24674.2,
+     "sha": "dff78b88a765"
+    },
+    {
+     "nyers": "{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 498,
+      "prompt_tokens": 3287,
+      "total_tokens": 3785,
+      "prompt_tokens_details": {
+       "cached_tokens": 3283
+      }
+     },
+     "timings": {
+      "cache_n": 3283,
+      "prompt_n": 4,
+      "prompt_ms": 138.375,
+      "prompt_per_token_ms": 34.59375,
+      "prompt_per_second": 28.906955736224027,
+      "predicted_n": 498,
+      "predicted_ms": 18945.456,
+      "predicted_per_token_ms": 38.11962977867203,
+      "predicted_per_second": 26.233203360214716
+     },
+     "wall_ms": 19170.5,
+     "sha": "dff78b88a765"
+    },
+    {
+     "nyers": "{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 498,
+      "prompt_tokens": 3287,
+      "total_tokens": 3785,
+      "prompt_tokens_details": {
+       "cached_tokens": 3283
+      }
+     },
+     "timings": {
+      "cache_n": 3283,
+      "prompt_n": 4,
+      "prompt_ms": 122.426,
+      "prompt_per_token_ms": 30.6065,
+      "prompt_per_second": 32.67279826180713,
+      "predicted_n": 498,
+      "predicted_ms": 18935.045,
+      "predicted_per_token_ms": 38.09868209255533,
+      "predicted_per_second": 26.2476270851218
+     },
+     "wall_ms": 19262.0,
+     "sha": "dff78b88a765"
+    }
+   ]
+  },
+  {
+   "id": "T18-01",
+   "teszt": "T18",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "kiallitja": {
+      "gt": "Üzemeltető",
+      "pred": "Üzemeltető",
+      "arany": 1.0
+     },
+     "cimzettje": {
+      "gt": "Bérlő",
+      "pred": "Bérlő",
+      "arany": 1.0
+     },
+     "berbeado_eszrevetel_cimzettje": {
+      "gt": "Üzemeltető",
+      "pred": "Üzemeltető",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 186,
+      "prompt_tokens": 3325,
+      "total_tokens": 3511,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3217,
+      "prompt_ms": 5241.575,
+      "prompt_per_token_ms": 1.629336338203295,
+      "prompt_per_second": 613.7468222814707,
+      "predicted_n": 186,
+      "predicted_ms": 7058.17,
+      "predicted_per_token_ms": 38.15227027027027,
+      "predicted_per_second": 26.210760012864522
+     },
+     "wall_ms": 12460.0,
+     "sha": "b87cff6b64e6"
+    },
+    {
+     "nyers": "{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 186,
+      "prompt_tokens": 3325,
+      "total_tokens": 3511,
+      "prompt_tokens_details": {
+       "cached_tokens": 3321
+      }
+     },
+     "timings": {
+      "cache_n": 3321,
+      "prompt_n": 4,
+      "prompt_ms": 131.365,
+      "prompt_per_token_ms": 32.84125,
+      "prompt_per_second": 30.449510904731092,
+      "predicted_n": 186,
+      "predicted_ms": 7096.196,
+      "predicted_per_token_ms": 38.357816216216214,
+      "predicted_per_second": 26.070305837099202
+     },
+     "wall_ms": 7367.5,
+     "sha": "b87cff6b64e6"
+    },
+    {
+     "nyers": "{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 186,
+      "prompt_tokens": 3325,
+      "total_tokens": 3511,
+      "prompt_tokens_details": {
+       "cached_tokens": 3321
+      }
+     },
+     "timings": {
+      "cache_n": 3321,
+      "prompt_n": 4,
+      "prompt_ms": 107.32,
+      "prompt_per_token_ms": 26.83,
+      "prompt_per_second": 37.27171077152442,
+      "predicted_n": 186,
+      "predicted_ms": 7141.513,
+      "predicted_per_token_ms": 38.60277297297297,
+      "predicted_per_second": 25.904874779335977
+     },
+     "wall_ms": 7372.6,
+     "sha": "b87cff6b64e6"
+    }
+   ]
+  },
+  {
+   "id": "T19-01",
+   "teszt": "T19",
+   "pont": {
+    "pont": 3.3333,
+    "max": 10,
+    "reszletek": {
+     "dij_2026_08_31_ft": {
+      "gt": 1850000,
+      "pred": 1850000,
+      "arany": 1.0
+     },
+     "dij_2026_09_15_ft": {
+      "gt": 2100000,
+      "pred": 1850000,
+      "arany": 0.0
+     },
+     "m2_hatalyat_erinti_e": {
+      "gt": false,
+      "pred": true,
+      "arany": 0.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 1850000,\n  \"m2_hatalyat_erinti_e\": true\n}\n```",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 1850000,
+      "m2_hatalyat_erinti_e": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 2352,
+      "prompt_tokens": 6119,
+      "total_tokens": 8471,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 6011,
+      "prompt_ms": 9741.204,
+      "prompt_per_token_ms": 1.6205629678921976,
+      "prompt_per_second": 617.0695121465478,
+      "predicted_n": 2352,
+      "predicted_ms": 94059.713,
+      "predicted_per_token_ms": 40.00838494257763,
+      "predicted_per_second": 24.99476050920972
+     },
+     "wall_ms": 104144.5,
+     "sha": "2251d492ae65"
+    },
+    {
+     "nyers": "```json\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 1850000,\n  \"m2_hatalyat_erinti_e\": true\n}\n```",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 1850000,
+      "m2_hatalyat_erinti_e": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 2352,
+      "prompt_tokens": 6119,
+      "total_tokens": 8471,
+      "prompt_tokens_details": {
+       "cached_tokens": 6115
+      }
+     },
+     "timings": {
+      "cache_n": 6115,
+      "prompt_n": 4,
+      "prompt_ms": 161.546,
+      "prompt_per_token_ms": 40.3865,
+      "prompt_per_second": 24.76074926027262,
+      "predicted_n": 2352,
+      "predicted_ms": 93431.023,
+      "predicted_per_token_ms": 39.74097107613781,
+      "predicted_per_second": 25.162948285389106
+     },
+     "wall_ms": 93788.5,
+     "sha": "2251d492ae65"
+    },
+    {
+     "nyers": "```json\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 1850000,\n  \"m2_hatalyat_erinti_e\": true\n}\n```",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 1850000,
+      "m2_hatalyat_erinti_e": true
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 2352,
+      "prompt_tokens": 6119,
+      "total_tokens": 8471,
+      "prompt_tokens_details": {
+       "cached_tokens": 6115
+      }
+     },
+     "timings": {
+      "cache_n": 6115,
+      "prompt_n": 4,
+      "prompt_ms": 119.593,
+      "prompt_per_token_ms": 29.89825,
+      "prompt_per_second": 33.44677364059769,
+      "predicted_n": 2352,
+      "predicted_ms": 93149.684,
+      "predicted_per_token_ms": 39.62130327520204,
+      "predicted_per_second": 25.238947670504178
+     },
+     "wall_ms": 93487.5,
+     "sha": "2251d492ae65"
+    }
+   ]
+  },
+  {
+   "id": "T20-01",
+   "teszt": "T20",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "szemelyi_serules_plafon": {
+      "gt": "nincs az iratban",
+      "pred": "nincs az iratban",
+      "arany": 1.0
+     },
+     "vagyoni_karra_van_plafon": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     },
+     "vagyoni_plafon_ft": {
+      "gt": 5000000,
+      "pred": 5000000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "```json\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}\n```",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 332,
+      "prompt_tokens": 3311,
+      "total_tokens": 3643,
+      "prompt_tokens_details": {
+       "cached_tokens": 108
+      }
+     },
+     "timings": {
+      "cache_n": 108,
+      "prompt_n": 3203,
+      "prompt_ms": 5248.792,
+      "prompt_per_token_ms": 1.638711208242273,
+      "prompt_per_second": 610.2356504125139,
+      "predicted_n": 332,
+      "predicted_ms": 12802.454,
+      "predicted_per_token_ms": 38.678108761329305,
+      "predicted_per_second": 25.85441822325626
+     },
+     "wall_ms": 18528.4,
+     "sha": "ab4eab823b8f"
+    },
+    {
+     "nyers": "```json\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}\n```",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 332,
+      "prompt_tokens": 3311,
+      "total_tokens": 3643,
+      "prompt_tokens_details": {
+       "cached_tokens": 3307
+      }
+     },
+     "timings": {
+      "cache_n": 3307,
+      "prompt_n": 4,
+      "prompt_ms": 150.605,
+      "prompt_per_token_ms": 37.65125,
+      "prompt_per_second": 26.559543175857378,
+      "predicted_n": 332,
+      "predicted_ms": 12790.858,
+      "predicted_per_token_ms": 38.643075528700905,
+      "predicted_per_second": 25.877857451001333
+     },
+     "wall_ms": 13106.4,
+     "sha": "ab4eab823b8f"
+    },
+    {
+     "nyers": "```json\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}\n```",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "completion_tokens": 332,
+      "prompt_tokens": 3311,
+      "total_tokens": 3643,
+      "prompt_tokens_details": {
+       "cached_tokens": 3307
+      }
+     },
+     "timings": {
+      "cache_n": 3307,
+      "prompt_n": 4,
+      "prompt_ms": 110.44,
+      "prompt_per_token_ms": 27.61,
+      "prompt_per_second": 36.218761318362915,
+      "predicted_n": 332,
+      "predicted_ms": 12794.647,
+      "predicted_per_token_ms": 38.654522658610276,
+      "predicted_per_second": 25.87019399597347
+     },
+     "wall_ms": 13106.8,
+     "sha": "ab4eab823b8f"
+    }
+   ]
+  }
+ ]
+}

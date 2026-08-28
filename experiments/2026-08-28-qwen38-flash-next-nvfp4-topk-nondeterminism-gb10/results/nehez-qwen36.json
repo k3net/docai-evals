@@ -1,0 +1,933 @@
+{
+ "cimke": "nehez-qwen36",
+ "args": {
+  "url": "http://DEV_SPARK:8355",
+  "model": "qwen36",
+  "cimke": "nehez-qwen36",
+  "futasok": 3,
+  "max_tokens": 16384,
+  "timeout": 300,
+  "csak": null,
+  "items": "gt/items-nehez.jsonl",
+  "out": "reports/nehez-qwen36.json",
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T11-01",
+   "teszt": "T11",
+   "pont": {
+    "pont": 8.0,
+    "max": 10,
+    "reszletek": {
+     "dij_2027_01_01_ft": {
+      "gt": 2230000,
+      "pred": 2226000,
+      "arany": 0.0
+     },
+     "dij_2028_01_01_ft": {
+      "gt": 2320000,
+      "pred": 2320000,
+      "arany": 1.0
+     },
+     "dij_2029_01_01_ft": {
+      "gt": 2440000,
+      "pred": 2440000,
+      "arany": 1.0
+     },
+     "plafonozott_ev": {
+      "gt": 2026,
+      "pred": 2026,
+      "arany": 1.0
+     },
+     "kerekites_modja": {
+      "gt": "minden lépésben, és a kerekített összeg a következő évi alap",
+      "pred": "minden lépésben, és a kerekített összeg a következő évi alap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9156,
+      "total_tokens": 13362,
+      "completion_tokens": 4206,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 67448.2,
+     "sha": "04b294dad5a3"
+    },
+    {
+     "nyers": "\n\n{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9156,
+      "total_tokens": 13362,
+      "completion_tokens": 4206,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 66457.5,
+     "sha": "04b294dad5a3"
+    },
+    {
+     "nyers": "\n\n{\n  \"dij_2027_01_01_ft\": 2226000,\n  \"dij_2028_01_01_ft\": 2320000,\n  \"dij_2029_01_01_ft\": 2440000,\n  \"plafonozott_ev\": 2026,\n  \"kerekites_modja\": \"minden lépésben, és a kerekített összeg a következő évi alap\"\n}",
+     "pred": {
+      "dij_2027_01_01_ft": 2226000,
+      "dij_2028_01_01_ft": 2320000,
+      "dij_2029_01_01_ft": 2440000,
+      "plafonozott_ev": 2026,
+      "kerekites_modja": "minden lépésben, és a kerekített összeg a következő évi alap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9156,
+      "total_tokens": 13362,
+      "completion_tokens": 4206,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 66120.7,
+     "sha": "04b294dad5a3"
+    }
+   ]
+  },
+  {
+   "id": "T12-01",
+   "teszt": "T12",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "felmondasi_ido_nap": {
+      "gt": 120,
+      "pred": 120,
+      "arany": 1.0
+     },
+     "donto_irat": {
+      "gt": "a Megállapodás 1. sz. melléklete",
+      "pred": "a Megállapodás 1. sz. melléklete",
+      "arany": 1.0
+     },
+     "alapszerzodes_megallapit_e": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9139,
+      "total_tokens": 11405,
+      "completion_tokens": 2266,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 35602.3,
+     "sha": "32968773c140"
+    },
+    {
+     "nyers": "\n\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9139,
+      "total_tokens": 11405,
+      "completion_tokens": 2266,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 35591.8,
+     "sha": "32968773c140"
+    },
+    {
+     "nyers": "\n\n{\n  \"felmondasi_ido_nap\": 120,\n  \"donto_irat\": \"a Megállapodás 1. sz. melléklete\",\n  \"alapszerzodes_megallapit_e\": false\n}",
+     "pred": {
+      "felmondasi_ido_nap": 120,
+      "donto_irat": "a Megállapodás 1. sz. melléklete",
+      "alapszerzodes_megallapit_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 9139,
+      "total_tokens": 11405,
+      "completion_tokens": 2266,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 35633.0,
+     "sha": "32968773c140"
+    }
+   ]
+  },
+  {
+   "id": "T13-01",
+   "teszt": "T13",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "fizetendo_ft": {
+      "gt": 2840000,
+      "pred": 2840000,
+      "arany": 1.0
+     },
+     "szammal_kiirt_ft": {
+      "gt": 2480000,
+      "pred": 2480000,
+      "arany": 1.0
+     },
+     "elter_e": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     },
+     "iranyado": {
+      "gt": "a betűvel kiírt összeg",
+      "pred": "a betűvel kiírt összeg",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3321,
+      "total_tokens": 5720,
+      "completion_tokens": 2399,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38296.3,
+     "sha": "8fceb6defa23"
+    },
+    {
+     "nyers": "\n\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3321,
+      "total_tokens": 5720,
+      "completion_tokens": 2399,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38039.2,
+     "sha": "8fceb6defa23"
+    },
+    {
+     "nyers": "\n\n{\n  \"fizetendo_ft\": 2840000,\n  \"szammal_kiirt_ft\": 2480000,\n  \"elter_e\": true,\n  \"iranyado\": \"a betűvel kiírt összeg\"\n}",
+     "pred": {
+      "fizetendo_ft": 2840000,
+      "szammal_kiirt_ft": 2480000,
+      "elter_e": true,
+      "iranyado": "a betűvel kiírt összeg"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3321,
+      "total_tokens": 5720,
+      "completion_tokens": 2399,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38145.3,
+     "sha": "8fceb6defa23"
+    }
+   ]
+  },
+  {
+   "id": "T14-01",
+   "teszt": "T14",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "koltseget_viseli": {
+      "gt": "Bérbeadó",
+      "pred": "Bérbeadó",
+      "arany": 1.0
+     },
+     "donto_pont": {
+      "gt": "5.4",
+      "pred": "5.4",
+      "arany": 1.0
+     },
+     "engedely_datuma": {
+      "gt": "2026-05-04",
+      "pred": "2026-05-04",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3305,
+      "total_tokens": 5671,
+      "completion_tokens": 2366,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38192.7,
+     "sha": "95df6fb28f1c"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3305,
+      "total_tokens": 5671,
+      "completion_tokens": 2366,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38300.3,
+     "sha": "95df6fb28f1c"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3305,
+      "total_tokens": 5671,
+      "completion_tokens": 2366,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 38294.3,
+     "sha": "95df6fb28f1c"
+    }
+   ]
+  },
+  {
+   "id": "T15-01",
+   "teszt": "T15",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "eves_osszeg_ft": {
+      "gt": 22965600,
+      "pred": 22965600,
+      "arany": 1.0
+     },
+     "alkalmazott_arfolyam": {
+      "gt": 412.5,
+      "pred": 412.5,
+      "arany": 1.0
+     },
+     "uzemeltetesi_alapdij_ft_ho": {
+      "gt": 1636800,
+      "pred": 1636800,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3237,
+      "total_tokens": 5867,
+      "completion_tokens": 2630,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 41981.7,
+     "sha": "795a2bee2793"
+    },
+    {
+     "nyers": "\n\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3237,
+      "total_tokens": 5867,
+      "completion_tokens": 2630,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 41881.6,
+     "sha": "795a2bee2793"
+    },
+    {
+     "nyers": "\n\n{\n  \"eves_osszeg_ft\": 22965600,\n  \"alkalmazott_arfolyam\": 412.50,\n  \"uzemeltetesi_alapdij_ft_ho\": 1636800\n}",
+     "pred": {
+      "eves_osszeg_ft": 22965600,
+      "alkalmazott_arfolyam": 412.5,
+      "uzemeltetesi_alapdij_ft_ho": 1636800
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3237,
+      "total_tokens": 5867,
+      "completion_tokens": 2630,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 41984.5,
+     "sha": "795a2bee2793"
+    }
+   ]
+  },
+  {
+   "id": "T16-01",
+   "teszt": "T16",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "hatarido": {
+      "gt": "2027-01-04",
+      "pred": "2027-01-04",
+      "arany": 1.0
+     },
+     "munkanapban_szamolva": {
+      "gt": "2026-12-31",
+      "pred": "2026-12-31",
+      "arany": 1.0
+     },
+     "elteres_oka": {
+      "gt": "a naptári év utolsó munkanapja nem banki nap",
+      "pred": "a naptári év utolsó munkanapja nem banki nap",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6277,
+      "total_tokens": 10773,
+      "completion_tokens": 4496,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 72054.4,
+     "sha": "ee78e6e94b6c"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6277,
+      "total_tokens": 10773,
+      "completion_tokens": 4496,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 71636.2,
+     "sha": "ee78e6e94b6c"
+    },
+    {
+     "nyers": "\n\n{\n  \"hatarido\": \"2027-01-04\",\n  \"munkanapban_szamolva\": \"2026-12-31\",\n  \"elteres_oka\": \"a naptári év utolsó munkanapja nem banki nap\"\n}",
+     "pred": {
+      "hatarido": "2027-01-04",
+      "munkanapban_szamolva": "2026-12-31",
+      "elteres_oka": "a naptári év utolsó munkanapja nem banki nap"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6277,
+      "total_tokens": 10773,
+      "completion_tokens": 4496,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 71822.8,
+     "sha": "ee78e6e94b6c"
+    }
+   ]
+  },
+  {
+   "id": "T17-01",
+   "teszt": "T17",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "fel_neve": {
+      "gt": "Delta-Ipari Szolgáltató Zrt.",
+      "pred": "Delta-Ipari Szolgáltató Zrt.",
+      "arany": 1.0
+     },
+     "szerepe": {
+      "gt": "Bérlő",
+      "pred": "Bérlő",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3261,
+      "total_tokens": 4652,
+      "completion_tokens": 1391,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22353.9,
+     "sha": "3c38bce705de"
+    },
+    {
+     "nyers": "\n\n{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3261,
+      "total_tokens": 4652,
+      "completion_tokens": 1391,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22358.1,
+     "sha": "3c38bce705de"
+    },
+    {
+     "nyers": "\n\n{\n  \"fel_neve\": \"Delta-Ipari Szolgáltató Zrt.\",\n  \"szerepe\": \"Bérlő\"\n}",
+     "pred": {
+      "fel_neve": "Delta-Ipari Szolgáltató Zrt.",
+      "szerepe": "Bérlő"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3261,
+      "total_tokens": 4652,
+      "completion_tokens": 1391,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22389.6,
+     "sha": "3c38bce705de"
+    }
+   ]
+  },
+  {
+   "id": "T18-01",
+   "teszt": "T18",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "kiallitja": {
+      "gt": "Üzemeltető",
+      "pred": "Üzemeltető",
+      "arany": 1.0
+     },
+     "cimzettje": {
+      "gt": "Bérlő",
+      "pred": "Bérlő",
+      "arany": 1.0
+     },
+     "berbeado_eszrevetel_cimzettje": {
+      "gt": "Üzemeltető",
+      "pred": "Üzemeltető",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3299,
+      "total_tokens": 4657,
+      "completion_tokens": 1358,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22385.6,
+     "sha": "0cb537740882"
+    },
+    {
+     "nyers": "\n\n{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3299,
+      "total_tokens": 4657,
+      "completion_tokens": 1358,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22445.6,
+     "sha": "0cb537740882"
+    },
+    {
+     "nyers": "\n\n{\n  \"kiallitja\": \"Üzemeltető\",\n  \"cimzettje\": \"Bérlő\",\n  \"berbeado_eszrevetel_cimzettje\": \"Üzemeltető\"\n}",
+     "pred": {
+      "kiallitja": "Üzemeltető",
+      "cimzettje": "Bérlő",
+      "berbeado_eszrevetel_cimzettje": "Üzemeltető"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3299,
+      "total_tokens": 4657,
+      "completion_tokens": 1358,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 22340.2,
+     "sha": "0cb537740882"
+    }
+   ]
+  },
+  {
+   "id": "T19-01",
+   "teszt": "T19",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "dij_2026_08_31_ft": {
+      "gt": 1850000,
+      "pred": 1850000,
+      "arany": 1.0
+     },
+     "dij_2026_09_15_ft": {
+      "gt": 2100000,
+      "pred": 2100000,
+      "arany": 1.0
+     },
+     "m2_hatalyat_erinti_e": {
+      "gt": false,
+      "pred": false,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 2100000,\n  \"m2_hatalyat_erinti_e\": false\n}",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 2100000,
+      "m2_hatalyat_erinti_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6093,
+      "total_tokens": 9710,
+      "completion_tokens": 3617,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58365.4,
+     "sha": "69c65291bf62"
+    },
+    {
+     "nyers": "\n\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 2100000,\n  \"m2_hatalyat_erinti_e\": false\n}",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 2100000,
+      "m2_hatalyat_erinti_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6093,
+      "total_tokens": 9710,
+      "completion_tokens": 3617,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58264.2,
+     "sha": "69c65291bf62"
+    },
+    {
+     "nyers": "\n\n{\n  \"dij_2026_08_31_ft\": 1850000,\n  \"dij_2026_09_15_ft\": 2100000,\n  \"m2_hatalyat_erinti_e\": false\n}",
+     "pred": {
+      "dij_2026_08_31_ft": 1850000,
+      "dij_2026_09_15_ft": 2100000,
+      "m2_hatalyat_erinti_e": false
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 6093,
+      "total_tokens": 9710,
+      "completion_tokens": 3617,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 58369.6,
+     "sha": "69c65291bf62"
+    }
+   ]
+  },
+  {
+   "id": "T20-01",
+   "teszt": "T20",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "szemelyi_serules_plafon": {
+      "gt": "nincs az iratban",
+      "pred": "nincs az iratban",
+      "arany": 1.0
+     },
+     "vagyoni_karra_van_plafon": {
+      "gt": true,
+      "pred": true,
+      "arany": 1.0
+     },
+     "vagyoni_plafon_ft": {
+      "gt": 5000000,
+      "pred": 5000000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3285,
+      "total_tokens": 4789,
+      "completion_tokens": 1504,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24671.5,
+     "sha": "69e47a91a9ca"
+    },
+    {
+     "nyers": "\n\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3285,
+      "total_tokens": 4789,
+      "completion_tokens": 1504,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24576.6,
+     "sha": "69e47a91a9ca"
+    },
+    {
+     "nyers": "\n\n{\n  \"szemelyi_serules_plafon\": \"nincs az iratban\",\n  \"vagyoni_karra_van_plafon\": true,\n  \"vagyoni_plafon_ft\": 5000000\n}",
+     "pred": {
+      "szemelyi_serules_plafon": "nincs az iratban",
+      "vagyoni_karra_van_plafon": true,
+      "vagyoni_plafon_ft": 5000000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3285,
+      "total_tokens": 4789,
+      "completion_tokens": 1504,
+      "prompt_tokens_details": null
+     },
+     "timings": {},
+     "wall_ms": 24548.4,
+     "sha": "69e47a91a9ca"
+    }
+   ]
+  }
+ ]
+}

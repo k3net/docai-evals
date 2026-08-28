@@ -1,0 +1,305 @@
+{
+ "cimke": "hosszu-flash-nvfp4",
+ "args": {
+  "url": "http://localhost:18380",
+  "model": "qwen3.8-flash-next",
+  "cimke": "hosszu-flash-nvfp4",
+  "futasok": 1,
+  "max_tokens": 16384,
+  "timeout": 5400.0,
+  "csak": null,
+  "items": "gt/items-hosszu.jsonl",
+  "out": "reports/hosszu-flash-nvfp4.json",
+  "folytat": true,
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T21-01",
+   "teszt": "T21",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "oradij_2024_ft": {
+      "gt": 10000,
+      "pred": 10000,
+      "arany": 1.0
+     },
+     "oradij_2025_ft": {
+      "gt": 10750,
+      "pred": 10750,
+      "arany": 1.0
+     },
+     "oradij_2026_ft": {
+      "gt": 11180,
+      "pred": 11180,
+      "arany": 1.0
+     },
+     "munkadij_2026_ft": {
+      "gt": 4606160,
+      "pred": 4606160,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"oradij_2024_ft\": 10000,\n  \"oradij_2025_ft\": 10750,\n  \"oradij_2026_ft\": 11180,\n  \"munkadij_2026_ft\": 4606160\n}",
+     "pred": {
+      "oradij_2024_ft": 10000,
+      "oradij_2025_ft": 10750,
+      "oradij_2026_ft": 11180,
+      "munkadij_2026_ft": 4606160
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217438,
+      "total_tokens": 217935,
+      "completion_tokens": 497,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 409
+      }
+     },
+     "timings": {},
+     "wall_ms": 124080.4,
+     "sha": "3a28103a11e3"
+    }
+   ]
+  },
+  {
+   "id": "T22-01",
+   "teszt": "T22",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "esemenyek_szama": {
+      "gt": 43,
+      "pred": 43,
+      "arany": 1.0
+     },
+     "osszkoltseg_ft": {
+      "gt": 7141000,
+      "pred": 7141000,
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"esemenyek_szama\": 43,\n  \"osszkoltseg_ft\": 7141000\n}",
+     "pred": {
+      "esemenyek_szama": 43,
+      "osszkoltseg_ft": 7141000
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217344,
+      "total_tokens": 226961,
+      "completion_tokens": 9617,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 9581
+      }
+     },
+     "timings": {},
+     "wall_ms": 392613.1,
+     "sha": "d1aca6540921"
+    }
+   ]
+  },
+  {
+   "id": "T23-01",
+   "teszt": "T23",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "hatalyos_munkanap": {
+      "gt": 3,
+      "pred": 3,
+      "arany": 1.0
+     },
+     "eredeti_munkanap": {
+      "gt": 5,
+      "pred": 5,
+      "arany": 1.0
+     },
+     "feluliro_pont": {
+      "gt": "Z.7",
+      "pred": "Z.7",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"hatalyos_munkanap\": 3,\n  \"eredeti_munkanap\": 5,\n  \"feluliro_pont\": \"Z.7\"\n}",
+     "pred": {
+      "hatalyos_munkanap": 3,
+      "eredeti_munkanap": 5,
+      "feluliro_pont": "Z.7"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217363,
+      "total_tokens": 219194,
+      "completion_tokens": 1831,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 1783
+      }
+     },
+     "timings": {},
+     "wall_ms": 167593.5,
+     "sha": "877db608f6e1"
+    }
+   ]
+  },
+  {
+   "id": "T24-01",
+   "teszt": "T24",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "azonosito": {
+      "gt": "HJ-2026-0028",
+      "pred": "HJ-2026-0028",
+      "arany": 1.0
+     },
+     "terulet": {
+      "gt": "elektromos hálózat",
+      "pred": "elektromos hálózat",
+      "arany": 1.0
+     },
+     "bejelentve": {
+      "gt": "2026-03-03",
+      "pred": "2026-03-03",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"azonosito\": \"HJ-2026-0028\",\n  \"terulet\": \"elektromos hálózat\",\n  \"bejelentve\": \"2026-03-03\"\n}",
+     "pred": {
+      "azonosito": "HJ-2026-0028",
+      "terulet": "elektromos hálózat",
+      "bejelentve": "2026-03-03"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217355,
+      "total_tokens": 219214,
+      "completion_tokens": 1859,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 1798
+      }
+     },
+     "timings": {},
+     "wall_ms": 157295.2,
+     "sha": "4fb5f1cddb37"
+    }
+   ]
+  },
+  {
+   "id": "T25-01",
+   "teszt": "T25",
+   "pont": {
+    "pont": 20.0,
+    "max": 20,
+    "reszletek": {
+     "tetoszigeteles_garancia_lejar": {
+      "gt": "2029-04-30",
+      "pred": "2029-04-30",
+      "arany": 1.0
+     },
+     "aggregat_tipusjel": {
+      "gt": "GX-7420/B",
+      "pred": "GX-7420/B",
+      "arany": 1.0
+     },
+     "vizora_gyari_szam": {
+      "gt": "HU-3391-882",
+      "pred": "HU-3391-882",
+      "arany": 1.0
+     },
+     "liftkarbantarto_szerzodesszam": {
+      "gt": "LK-2025/117",
+      "pred": "LK-2025/117",
+      "arany": 1.0
+     },
+     "tuzjelzo_felulvizsgalat": {
+      "gt": "2026-10-08",
+      "pred": "2026-10-08",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"tetoszigeteles_garancia_lejar\": \"2029-04-30\",\n  \"aggregat_tipusjel\": \"GX-7420/B\",\n  \"vizora_gyari_szam\": \"HU-3391-882\",\n  \"liftkarbantarto_szerzodesszam\": \"LK-2025/117\",\n  \"tuzjelzo_felulvizsgalat\": \"2026-10-08\"\n}",
+     "pred": {
+      "tetoszigeteles_garancia_lejar": "2029-04-30",
+      "aggregat_tipusjel": "GX-7420/B",
+      "vizora_gyari_szam": "HU-3391-882",
+      "liftkarbantarto_szerzodesszam": "LK-2025/117",
+      "tuzjelzo_felulvizsgalat": "2026-10-08"
+     },
+     "formatum_hiba": null,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 217395,
+      "total_tokens": 217979,
+      "completion_tokens": 584,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 458
+      }
+     },
+     "timings": {},
+     "wall_ms": 122603.5,
+     "sha": "155e49f4d3fd"
+    }
+   ]
+  }
+ ]
+}
