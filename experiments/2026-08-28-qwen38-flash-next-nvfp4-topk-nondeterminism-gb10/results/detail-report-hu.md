@@ -379,6 +379,156 @@
 | `megnevezes` | 1/1 (100 %) | — |
 | `forras_szakasz` | 1/1 (100 %) | — |
 
+### `⭐ Flash NVFP4 · vLLM · 3. módú top-k (VLLM_QSA_EXACT_TOPK=3) · MTP=2 · VALIDÁCIÓ` — meres-flash-nvfp4-topk3.json
+
+- **futtatott esetek:** 50 item, 150 sikeres futás, 0 hibás
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Prompt tokenek | **6 064** | 1 856 | 24 452 |
+| Kimeneti tokenek | **356** | 122 | 4 317 |
+| Kimeneti tok/s (válaszidőre, TTFT-vel — mindkét motoron azonos képlet) | **24,9** | 6,9 | 30,3 |
+| Teljes válaszidő (ms) | **19 890** | 7 326 | 161 041 |
+
+- **JSON-validitás:** 150/150 (100 %)
+- **Csonkolt (finish_reason=length):** 0/150
+- **Instabil item (eltérő kimenet azonos greedy kérésre):** 0/50
+- **Pontszám (többségi kimenet):** **98,00 / 100** (LLM-bírói 2 pont elérhetetlen, elérhető max 98)
+
+| Teszt | Pont | Max | Instabil item |
+|---|---|---|---|
+| **T1** | 9,00 | 10 | — |
+| **T2** | 10,00 | 10 | — |
+| **T3** | 10,00 | 10 | — |
+| **T4** | 10,00 | 10 | — |
+| **T5** | 10,00 | 10 | — |
+| **T6** | 10,00 | 10 | — |
+| **T7** | 9,00 | 10 | — |
+| **T8** | 10,00 | 10 | — |
+| **T9** | 10,00 | 10 | — |
+| **T10** | 10,00 | 10 | — |
+
+| Mező | Egyezés | Eltérések (első 2) |
+|---|---|---|
+| `index_tipusa` | 1/1 (100 %) | — |
+| `bazis_idoszak` | 1/1 (100 %) | — |
+| `elso_indexalas` | 1/1 (100 %) | — |
+| `plafon_szazalek` | 2/2 (100 %) | — |
+| `negativ_index_kezelese` | 1/1 (100 %) | — |
+| `kerekites` | 1/1 (100 %) | — |
+| `kotber_szazalek` | 5/5 (100 %) | — |
+| `kotber_osszeg_ft` | 5/5 (100 %) | — |
+| `alkalmazott_plafon` | 5/5 (100 %) | — |
+| `hatarido` | 5/5 (100 %) | — |
+| `szamitas_alapja` | 6/6 (100 %) | — |
+| `szemelyek` | 1/1 (100 %) | — |
+| `cegek` | 1/1 (100 %) | — |
+| `atado` | 1/1 (100 %) | — |
+| `atvevo` | 1/1 (100 %) | — |
+| `szerepel` | 1/1 (100 %) | — |
+| `vezeteknev_teljes_alak` | 1/1 (100 %) | — |
+| `vegosszeg_egyezik` | 1/1 (100 %) | — |
+| `elteres_ft` | 1/1 (100 %) | — |
+| `iranya` | 1/1 (100 %) | — |
+| `jogcim` | 1/1 (100 %) | — |
+| `alanyi_adomentes` | 1/1 (100 %) | — |
+| `tetelek` | 1/1 (100 %) | — |
+| `egysegar` | 1/1 (100 %) | — |
+| `mennyiseg` | 1/1 (100 %) | — |
+| `eloleg_brutto_ft` | 1/1 (100 %) | — |
+| `eloleg_szazalek` | 1/1 (100 %) | — |
+| `ertek_ft` | 8/8 (100 %) | — |
+| `hivatkozasi_lanc` | 1/1 (100 %) | — |
+| `kamat_alapja` | 1/1 (100 %) | — |
+| `tovabb_hivatkozott_pont` | 1/1 (100 %) | — |
+| `hivatkozott_pont` | 2/2 (100 %) | — |
+| `letezik` | 1/1 (100 %) | — |
+| `forras` | 1/1 (100 %) | — |
+| `itelet` | 8/8 (100 %) | — |
+| `hatalyos_forras` | 5/5 (100 %) | — |
+| `valasz` | 2/2 (100 %) | — |
+| `valasz_ft` | 2/2 (100 %) | — |
+| `emeles_szazalek` | 1/1 (100 %) | — |
+| `idopont` | 2/2 (100 %) | — |
+| `osszeg_ft` | 2/2 (100 %) | — |
+| `megnevezes` | 1/1 (100 %) | — |
+| `forras_szakasz` | 1/1 (100 %) | — |
+
+### `Flash NVFP4 · 3. módú top-k · MTP=0 (MTP-ekvivalencia)` — meres-flash-nvfp4-topk3-mtp0.json
+
+- **futtatott esetek:** 50 item, 150 sikeres futás, 0 hibás
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Prompt tokenek | **6 064** | 1 856 | 24 452 |
+| Kimeneti tokenek | **389** | 117 | 6 447 |
+| Kimeneti tok/s (válaszidőre, TTFT-vel — mindkét motoron azonos képlet) | **14,8** | 5,8 | 16,4 |
+| Teljes válaszidő (ms) | **30 697** | 8 247 | 404 928 |
+
+- **JSON-validitás:** 150/150 (100 %)
+- **Csonkolt (finish_reason=length):** 0/150
+- **Instabil item (eltérő kimenet azonos greedy kérésre):** 0/50
+- **Pontszám (többségi kimenet):** **97,00 / 100** (LLM-bírói 2 pont elérhetetlen, elérhető max 98)
+
+| Teszt | Pont | Max | Instabil item |
+|---|---|---|---|
+| **T1** | 9,00 | 10 | — |
+| **T2** | 10,00 | 10 | — |
+| **T3** | 9,00 | 10 | — |
+| **T4** | 10,00 | 10 | — |
+| **T5** | 10,00 | 10 | — |
+| **T6** | 10,00 | 10 | — |
+| **T7** | 9,00 | 10 | — |
+| **T8** | 10,00 | 10 | — |
+| **T9** | 10,00 | 10 | — |
+| **T10** | 10,00 | 10 | — |
+
+| Mező | Egyezés | Eltérések (első 2) |
+|---|---|---|
+| `hatarido` | 4/5 (80 %) | `T3-01`: GT `"2026-11-10"` → `"2026-11-09"` |
+| `index_tipusa` | 1/1 (100 %) | — |
+| `bazis_idoszak` | 1/1 (100 %) | — |
+| `elso_indexalas` | 1/1 (100 %) | — |
+| `plafon_szazalek` | 2/2 (100 %) | — |
+| `negativ_index_kezelese` | 1/1 (100 %) | — |
+| `kerekites` | 1/1 (100 %) | — |
+| `kotber_szazalek` | 5/5 (100 %) | — |
+| `kotber_osszeg_ft` | 5/5 (100 %) | — |
+| `alkalmazott_plafon` | 5/5 (100 %) | — |
+| `szamitas_alapja` | 6/6 (100 %) | — |
+| `szemelyek` | 1/1 (100 %) | — |
+| `cegek` | 1/1 (100 %) | — |
+| `atado` | 1/1 (100 %) | — |
+| `atvevo` | 1/1 (100 %) | — |
+| `szerepel` | 1/1 (100 %) | — |
+| `vezeteknev_teljes_alak` | 1/1 (100 %) | — |
+| `vegosszeg_egyezik` | 1/1 (100 %) | — |
+| `elteres_ft` | 1/1 (100 %) | — |
+| `iranya` | 1/1 (100 %) | — |
+| `jogcim` | 1/1 (100 %) | — |
+| `alanyi_adomentes` | 1/1 (100 %) | — |
+| `tetelek` | 1/1 (100 %) | — |
+| `egysegar` | 1/1 (100 %) | — |
+| `mennyiseg` | 1/1 (100 %) | — |
+| `eloleg_brutto_ft` | 1/1 (100 %) | — |
+| `eloleg_szazalek` | 1/1 (100 %) | — |
+| `ertek_ft` | 8/8 (100 %) | — |
+| `hivatkozasi_lanc` | 1/1 (100 %) | — |
+| `kamat_alapja` | 1/1 (100 %) | — |
+| `tovabb_hivatkozott_pont` | 1/1 (100 %) | — |
+| `hivatkozott_pont` | 2/2 (100 %) | — |
+| `letezik` | 1/1 (100 %) | — |
+| `forras` | 1/1 (100 %) | — |
+| `itelet` | 8/8 (100 %) | — |
+| `hatalyos_forras` | 5/5 (100 %) | — |
+| `valasz` | 2/2 (100 %) | — |
+| `valasz_ft` | 2/2 (100 %) | — |
+| `emeles_szazalek` | 1/1 (100 %) | — |
+| `idopont` | 2/2 (100 %) | — |
+| `osszeg_ft` | 2/2 (100 %) | — |
+| `megnevezes` | 1/1 (100 %) | — |
+| `forras_szakasz` | 1/1 (100 %) | — |
+
 ## Nehéz suite (T11–T20, 10 item × 3 futás, 100 pont)
 
 ### `Flash IQ4_XS · llama.cpp` — nehez-flash.json
@@ -638,6 +788,131 @@
 | `vagyoni_karra_van_plafon` | 1/1 (100 %) | — |
 | `vagyoni_plafon_ft` | 1/1 (100 %) | — |
 
+### `⭐ Flash NVFP4 · 3. módú top-k · VALIDÁCIÓ` — nehez-flash-nvfp4-topk3.json
+
+- **futtatott esetek:** 10 item, 30 sikeres futás, 0 hibás
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Prompt tokenek | **3 351** | 3 275 | 9 194 |
+| Kimeneti tokenek | **814** | 256 | 16 384 |
+| Kimeneti tok/s (válaszidőre, TTFT-vel — mindkét motoron azonos képlet) | **27,7** | 23,9 | 34,9 |
+| Teljes válaszidő (ms) | **28 651** | 10 257 | 471 708 |
+
+- **JSON-validitás:** 27/30 (90 %)
+- **Csonkolt (finish_reason=length):** 3/30 — ebből ÜRES tartalom: 3
+- **Instabil item (eltérő kimenet azonos greedy kérésre):** 0/10
+- **Pontszám (többségi kimenet):** **90,00 / 100**
+
+| Teszt | Pont | Max | Instabil item |
+|---|---|---|---|
+| **T11** | 10,00 | 10 | — |
+| **T12** | 10,00 | 10 | — |
+| **T13** | 10,00 | 10 | — |
+| **T14** | 0,00 | 10 | — |
+| **T15** | 10,00 | 10 | — |
+| **T16** | 10,00 | 10 | — |
+| **T17** | 10,00 | 10 | — |
+| **T18** | 10,00 | 10 | — |
+| **T19** | 10,00 | 10 | — |
+| **T20** | 10,00 | 10 | — |
+
+| Mező | Egyezés | Eltérések (első 2) |
+|---|---|---|
+| `dij_2027_01_01_ft` | 1/1 (100 %) | — |
+| `dij_2028_01_01_ft` | 1/1 (100 %) | — |
+| `dij_2029_01_01_ft` | 1/1 (100 %) | — |
+| `plafonozott_ev` | 1/1 (100 %) | — |
+| `kerekites_modja` | 1/1 (100 %) | — |
+| `felmondasi_ido_nap` | 1/1 (100 %) | — |
+| `donto_irat` | 1/1 (100 %) | — |
+| `alapszerzodes_megallapit_e` | 1/1 (100 %) | — |
+| `fizetendo_ft` | 1/1 (100 %) | — |
+| `szammal_kiirt_ft` | 1/1 (100 %) | — |
+| `elter_e` | 1/1 (100 %) | — |
+| `iranyado` | 1/1 (100 %) | — |
+| `eves_osszeg_ft` | 1/1 (100 %) | — |
+| `alkalmazott_arfolyam` | 1/1 (100 %) | — |
+| `uzemeltetesi_alapdij_ft_ho` | 1/1 (100 %) | — |
+| `hatarido` | 1/1 (100 %) | — |
+| `munkanapban_szamolva` | 1/1 (100 %) | — |
+| `elteres_oka` | 1/1 (100 %) | — |
+| `fel_neve` | 1/1 (100 %) | — |
+| `szerepe` | 1/1 (100 %) | — |
+| `kiallitja` | 1/1 (100 %) | — |
+| `cimzettje` | 1/1 (100 %) | — |
+| `berbeado_eszrevetel_cimzettje` | 1/1 (100 %) | — |
+| `dij_2026_08_31_ft` | 1/1 (100 %) | — |
+| `dij_2026_09_15_ft` | 1/1 (100 %) | — |
+| `m2_hatalyat_erinti_e` | 1/1 (100 %) | — |
+| `szemelyi_serules_plafon` | 1/1 (100 %) | — |
+| `vagyoni_karra_van_plafon` | 1/1 (100 %) | — |
+| `vagyoni_plafon_ft` | 1/1 (100 %) | — |
+
+### `Flash NVFP4 · 3. módú top-k · MTP=0 (MTP-ekvivalencia)` — nehez-flash-nvfp4-topk3-mtp0.json
+
+- **futtatott esetek:** 10 item, 30 sikeres futás, 0 hibás
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Prompt tokenek | **3 351** | 3 275 | 9 194 |
+| Kimeneti tokenek | **664** | 335 | 6 540 |
+| Kimeneti tok/s (válaszidőre, TTFT-vel — mindkét motoron azonos képlet) | **15,5** | 14,3 | 16,4 |
+| Teljes válaszidő (ms) | **44 155** | 22 200 | 411 291 |
+
+- **JSON-validitás:** 30/30 (100 %)
+- **Csonkolt (finish_reason=length):** 0/30
+- **Instabil item (eltérő kimenet azonos greedy kérésre):** 0/10
+- **Pontszám (többségi kimenet):** **100,00 / 100**
+
+| Teszt | Pont | Max | Instabil item |
+|---|---|---|---|
+| **T11** | 10,00 | 10 | — |
+| **T12** | 10,00 | 10 | — |
+| **T13** | 10,00 | 10 | — |
+| **T14** | 10,00 | 10 | — |
+| **T15** | 10,00 | 10 | — |
+| **T16** | 10,00 | 10 | — |
+| **T17** | 10,00 | 10 | — |
+| **T18** | 10,00 | 10 | — |
+| **T19** | 10,00 | 10 | — |
+| **T20** | 10,00 | 10 | — |
+
+| Mező | Egyezés | Eltérések (első 2) |
+|---|---|---|
+| `dij_2027_01_01_ft` | 1/1 (100 %) | — |
+| `dij_2028_01_01_ft` | 1/1 (100 %) | — |
+| `dij_2029_01_01_ft` | 1/1 (100 %) | — |
+| `plafonozott_ev` | 1/1 (100 %) | — |
+| `kerekites_modja` | 1/1 (100 %) | — |
+| `felmondasi_ido_nap` | 1/1 (100 %) | — |
+| `donto_irat` | 1/1 (100 %) | — |
+| `alapszerzodes_megallapit_e` | 1/1 (100 %) | — |
+| `fizetendo_ft` | 1/1 (100 %) | — |
+| `szammal_kiirt_ft` | 1/1 (100 %) | — |
+| `elter_e` | 1/1 (100 %) | — |
+| `iranyado` | 1/1 (100 %) | — |
+| `koltseget_viseli` | 1/1 (100 %) | — |
+| `donto_pont` | 1/1 (100 %) | — |
+| `engedely_datuma` | 1/1 (100 %) | — |
+| `eves_osszeg_ft` | 1/1 (100 %) | — |
+| `alkalmazott_arfolyam` | 1/1 (100 %) | — |
+| `uzemeltetesi_alapdij_ft_ho` | 1/1 (100 %) | — |
+| `hatarido` | 1/1 (100 %) | — |
+| `munkanapban_szamolva` | 1/1 (100 %) | — |
+| `elteres_oka` | 1/1 (100 %) | — |
+| `fel_neve` | 1/1 (100 %) | — |
+| `szerepe` | 1/1 (100 %) | — |
+| `kiallitja` | 1/1 (100 %) | — |
+| `cimzettje` | 1/1 (100 %) | — |
+| `berbeado_eszrevetel_cimzettje` | 1/1 (100 %) | — |
+| `dij_2026_08_31_ft` | 1/1 (100 %) | — |
+| `dij_2026_09_15_ft` | 1/1 (100 %) | — |
+| `m2_hatalyat_erinti_e` | 1/1 (100 %) | — |
+| `szemelyi_serules_plafon` | 1/1 (100 %) | — |
+| `vagyoni_karra_van_plafon` | 1/1 (100 %) | — |
+| `vagyoni_plafon_ft` | 1/1 (100 %) | — |
+
 ## Hosszú kontextus suite (T21–T25, 5 item × 1 futás, 217k token, 100 pont)
 
 ### `Flash IQ4_XS · llama.cpp · cache_prompt=false` — hosszu-flash.json
@@ -850,6 +1125,50 @@
 | `oradij_2025_ft` | 1/1 (100 %) | — |
 | `oradij_2026_ft` | 1/1 (100 %) | — |
 | `munkadij_2026_ft` | 1/1 (100 %) | — |
+| `hatalyos_munkanap` | 1/1 (100 %) | — |
+| `eredeti_munkanap` | 1/1 (100 %) | — |
+| `feluliro_pont` | 1/1 (100 %) | — |
+| `azonosito` | 1/1 (100 %) | — |
+| `terulet` | 1/1 (100 %) | — |
+| `bejelentve` | 1/1 (100 %) | — |
+| `tetoszigeteles_garancia_lejar` | 1/1 (100 %) | — |
+| `aggregat_tipusjel` | 1/1 (100 %) | — |
+| `vizora_gyari_szam` | 1/1 (100 %) | — |
+| `liftkarbantarto_szerzodesszam` | 1/1 (100 %) | — |
+| `tuzjelzo_felulvizsgalat` | 1/1 (100 %) | — |
+
+### `⭐ Flash NVFP4 · 3. módú top-k · VALIDÁCIÓ` — hosszu-flash-nvfp4-topk3.json
+
+- **futtatott esetek:** 5 item, 5 sikeres futás, 0 hibás
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Prompt tokenek | **217 363** | 217 344 | 217 438 |
+| Kimeneti tokenek | **882** | 505 | 10 129 |
+| Kimeneti tok/s (válaszidőre, TTFT-vel — mindkét motoron azonos képlet) | **5,4** | 3,3 | 22,6 |
+| Teljes válaszidő (ms) | **163 489** | 152 159 | 448 556 |
+
+- **JSON-validitás:** 5/5 (100 %)
+- **Csonkolt (finish_reason=length):** 0/5
+- **Instabil item (eltérő kimenet azonos greedy kérésre):** 0/5
+- **Pontszám (többségi kimenet):** **100,00 / 100**
+
+| Teszt | Pont | Max | Instabil item |
+|---|---|---|---|
+| **T21** | 20,00 | 20 | — |
+| **T22** | 20,00 | 20 | — |
+| **T23** | 20,00 | 20 | — |
+| **T24** | 20,00 | 20 | — |
+| **T25** | 20,00 | 20 | — |
+
+| Mező | Egyezés | Eltérések (első 2) |
+|---|---|---|
+| `oradij_2024_ft` | 1/1 (100 %) | — |
+| `oradij_2025_ft` | 1/1 (100 %) | — |
+| `oradij_2026_ft` | 1/1 (100 %) | — |
+| `munkadij_2026_ft` | 1/1 (100 %) | — |
+| `esemenyek_szama` | 1/1 (100 %) | — |
+| `osszkoltseg_ft` | 1/1 (100 %) | — |
 | `hatalyos_munkanap` | 1/1 (100 %) | — |
 | `eredeti_munkanap` | 1/1 (100 %) | — |
 | `feluliro_pont` | 1/1 (100 %) | — |
@@ -1104,4 +1423,50 @@
 | HU-CH-08 | stop | 2 834 | 1–c, 2–a, 3–b, 4–d |
 | HU-CH-09 | stop | 4 573 | **A) „Anna jobban szereti Bélát, mint Csaba."** *   **Teljes |
 | HU-CH-10 | stop | 6 131 | **Különbség:** Az A mondat egyszerű múltban áll (a szükséges |
+
+### `⭐ Flash NVFP4 · 3. módú top-k · VALIDÁCIÓ` — challenge__flash-nvfp4-topk3.json
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Kimeneti tokenek | **1 742** | 390 | 16 384 |
+| Válasz hossza (karakter) | **164** | 0 | 716 |
+| Teljes válaszidő (ms) | **65 966** | 14 178 | 500 100 |
+
+- **Csonkolt:** 1/10 · **Üres válasz:** 1/10 ⛔
+
+| Tétel | finish | ki-token | válasz (első 60 kar.) |
+|---|---|---|---|
+| HU-CH-01 | stop | 1 256 | „Mari Jánost Péternek nézte.” |
+| HU-CH-02 | stop | 11 076 | (a) Az igazgató. (Ha a „titkárral” az alanyhoz tartozó társa |
+| HU-CH-03 | stop | 6 029 | A várakozás végét a beszélő visszatérése jelöli ki: a mondat |
+| HU-CH-04 | stop | 390 | (1) Következik: ha Anna nem hagyja jóvá, nem küldik el.   (2 |
+| HU-CH-05 | stop | 1 451 | A mondat a **semiképpen se írd alá** értelmű.   A **csak az  |
+| HU-CH-06 | stop | 1 307 | Nem következik biztosan.  Két lehetséges értelmezés: 1. Anna |
+| HU-CH-07 | stop | 2 033 | Két értelmezés:  1. **A megszólított alanya a cselekvésnek** |
+| HU-CH-08 | stop | 791 | 1–c, 2–a, 3–b, 4–d |
+| HU-CH-09 | length | 16 384 | ⛔ ÜRES |
+| HU-CH-10 | stop | 7 910 | **A) „Nem kellett elmenned.”**   - A múltban nem volt szüksé |
+
+### `Flash NVFP4 · 3. módú top-k · MTP=0` — challenge__runaway-topk3mtp0.json
+
+| Metrika | Medián | Min | Max |
+|---|---|---|---|
+| Kimeneti tokenek | **5 974** | 742 | 16 384 |
+| Válasz hossza (karakter) | **296** | 0 | 841 |
+| Teljes válaszidő (ms) | **373 447** | 46 628 | 993 541 |
+
+- **Csonkolt:** 1/10 · **Üres válasz:** 1/10 ⛔
+
+| Tétel | finish | ki-token | válasz (első 60 kar.) |
+|---|---|---|---|
+| HU-CH-01 | stop | 6 811 | Mari Jánost Péternek nézte. |
+| HU-CH-02 | stop | 8 373 | A mondat két nyelvtanilag lehetséges értelmezést enged meg:  |
+| HU-CH-03 | stop | 2 397 | A várakozás végét **a beszélő visszatérése** jelöli ki.  A * |
+| HU-CH-04 | stop | 1 683 | (1) **Következik.** A mondatból az következik, hogy ha Anna  |
+| HU-CH-05 | stop | 5 138 | A mondat tagadó felszólítás: azt kéri, hogy **ne írd alá** a |
+| HU-CH-06 | stop | 742 | Nem, nem következik biztosan.  Két lehetséges értelmezés: 1. |
+| HU-CH-07 | length | 16 384 | ⛔ ÜRES |
+| HU-CH-08 | stop | 780 | 1–c, 2–a, 3–b, 4–d |
+| HU-CH-09 | stop | 11 503 | **A)** „Anna jobban szereti Bélát, mint Csaba.”  - Teljes ki |
+| HU-CH-10 | stop | 7 450 | **A) „Nem kellett elmenned.”**   - A „kellett” múlt idejű, k |
 

@@ -3,7 +3,7 @@
 **Date:** 2026-08-28 · **Type:** correctness / serving · **Hardware:** one DGX Spark (GB10, `sm_121a`, 121 GiB unified) ·
 **Reproducibility:** R2 (code + synthetic corpus + every run artefact; the engine build is a third-party image)
 
-> Status: **root cause confirmed; fix validated on the probe and on the main suite (98/100, 0/50 unstable); the hard suite exposed a separate, now-reproducible repetition-loop failure (§5.5)** —
+> Status: **closed 2026-08-28 21:20** — root cause confirmed and fixed (mode-3 top-k), validated on all three suites; a separate greedy-thinking repetition loop identified and shown to be independent of speculative decoding (§5.5) —
 > see [decision-record.md](decision-record.md) for what is provisional.
 
 ## 1. What was the measurement for?
@@ -149,6 +149,20 @@ answers and the T14-01 reasoning stream were byte-identical to the validation ru
 Total with mode 3: **288 / 300** (98 + 90 + 100) against 297 with the stock kernel — the whole difference is the
 one deterministic loop item.
 
+**Post-test: is speculative decoding greedy-equivalent on this model?** Mode 3 with MTP off, same suites:
+
+| | MTP=2 | MTP=0 | outputs differ | scores differ |
+|---|---:|---:|---:|---|
+| main (50 × 3) | **98.00** | 97.00 | **9 / 50** | 1 (T3-01: 2 → 1, MTP=0 worse) |
+| hard (10 × 3) | 90.00 | **100.00** | 1 / 10 | 1 (T14-01: the loop does not occur without MTP) |
+| language challenge (10 × 1) | 1 loop (item 9) | 1 loop (**item 7**) | 9 / 10 | — |
+| decode tok/s | **24.9** | 14.8 | | |
+
+So MTP is **not** greedy-equivalent here (the trajectory diverges on ~18 % of items — on T14-01 at the 5th
+reasoning token), but the effect on quality is noise-level and non-directional, and the repetition loop simply moves
+to a different input when MTP is off (~1 in 10 hard inputs either way). The loop is a property of greedy thinking on
+this model, not of speculation. Both runs were byte-deterministic (0 unstable, 0 truncated).
+
 ### 5.6 Context: the four-way comparison (side line)
 
 Same 65 items, same scorer, same sampling for all four:
@@ -172,8 +186,9 @@ See [decision-record.md](decision-record.md). Short version: the NVFP4/vLLM path
 extraction engine with `persistent_topk` (one document in ten returns a different amount or date
 on re-run, and majority voting can lock in the wrong one); with the mode-3 top-k it is
 deterministic, keeps MTP, and loses 26 % of prefill throughput. The production model stays the
-35B FP8 until the fix has passed the full suite and the remaining prefill cost has been addressed
-upstream.
+35B FP8; the recipe becomes a candidate as mode 3 + MTP=2 + PIECEWISE **plus a reasoning-loop guard**
+(repetition ratio on the reasoning stream → retry above temperature 0), because the loop exists with and without
+speculation. Turning MTP off is not a mitigation: it costs 40 % of decode and moves the loop to another input.
 
 ## 7. What are the limits of the measurement?
 

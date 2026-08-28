@@ -1,6 +1,6 @@
 # Decision record — Flash-Next NVFP4 on vLLM: not until the top-k is deterministic
 
-**Date:** 2026-08-28 · **Status:** provisional (full-suite validation of the fix in progress) ·
+**Date:** 2026-08-28 · **Status:** in force (validated on all three suites, 21:20) ·
 **Experiment:** [README](README.md)
 
 ## Decision
@@ -10,21 +10,25 @@
    majority of three runs picked the wrong answer on one item. A KIE engine that returns a different
    amount on re-run is not a KIE engine, whatever its score.
 2. **The fix is the mode-3 top-k** (`VLLM_QSA_EXACT_TOPK=3`: `torch.topk` + canonical tie ordering) —
-   0/13 unstable, 6/6 probe items byte-identical over 10 repetitions, MTP and CUDA graphs unchanged,
-   decode unchanged (27 tok/s), prefill at 74 % of the original.
+   0/50 unstable on the main suite (98/100, the reachable maximum), 100/100 on the 217 k-token suite, 6/6 probe
+   items byte-identical over 10 repetitions, MTP and CUDA graphs unchanged, decode 25 tok/s, prefill at 74 %.
+   **MTP=2 stays on**: it is not greedy-equivalent on this model (9/50 items take a different path) but the
+   quality effect is noise-level and non-directional, and switching it off costs 40 % of decode without removing
+   the repetition loop (which moves to a different input).
 3. **Production stays on the 35B FP8** (0/50 unstable, 294/300 on the same suite, already deployed)
    until the fix has passed the full 65-item suite and the Hungarian language challenge.
 4. The 122B replacement question is not decided by this experiment; the four-way comparison rests
    on four discriminating items.
 
-## What the validation added (2026-08-28, 16:10)
+## What the validation added (2026-08-28, 16:10 → 21:20)
 
 Main suite with mode 3: **98/100, 0/50 unstable, 0 truncated** — the reachable maximum, one point above the stock
 kernel. Hard suite: **90/100** because one item (T14-01) now falls into a **deterministic repetition loop** in its
 reasoning on every run. That loop is not caused by the top-k kernel; the kernel's noise used to break it by accident.
 Decision 2 stands (the fix is the right fix); decision 3 gains a condition: **a reasoning-loop guard** (repetition
 ratio on the reasoning stream, retry with temperature > 0 or a presence penalty) has to be part of the serving
-profile before the recipe is a candidate. A guard is possible precisely because the failure is now deterministic.
+profile before the recipe is a candidate. A guard is possible precisely because the failure is now deterministic. The MTP-off post-test showed the loop is
+not a speculation artefact: without MTP it disappears on T14-01 and appears on language-challenge item 7 instead.
 
 ## Why the majority vote is not a mitigation
 

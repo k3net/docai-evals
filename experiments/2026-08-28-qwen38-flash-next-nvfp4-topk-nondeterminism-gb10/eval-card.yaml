@@ -111,6 +111,11 @@ results:
     challenge_10x1: { empty_runaway_items: 1 }
     long_5x1: { points: 100.00, unstable: 0 }
     total_of_300: { mode3: 288.00, stock: 297.00, note: "the 9-point gap is the single deterministic loop item T14-01" }
+  mtp_equivalence_mode3:
+    main_50x3: { mtp2_points: 98.00, mtp0_points: 97.00, outputs_differ: 9, scores_differ: 1, note: "T3-01 2->1, MTP=0 worse" }
+    hard_10x3: { mtp2_points: 90.00, mtp0_points: 100.00, outputs_differ: 1, note: "the T14-01 loop does not occur without MTP; challenge item 7 loops instead" }
+    challenge_10x1: { outputs_differ: 9, loops_mtp2: 1, loops_mtp0: 1 }
+    decode_tok_s: { mtp2: 24.9, mtp0: 14.8 }
   four_way_points_of_300_side_line:
     flash-next: 289.33
     flash-nvfp4: 297.00
@@ -121,8 +126,11 @@ results:
 verdict: >-
   The recipe's non-determinism is in the QSA indexer's persistent_topk kernel (atomicAdd slot
   assignment; selected set varies), not in MTP, CUDA graphs or the mmap-PLE gather. A canonical
-  torch.topk replacement makes the prefill byte-deterministic at 74 % of the prefill throughput
-  with MTP unchanged. Not adopted for production until the full suite passes with the fix.
+  torch.topk replacement makes the output byte-deterministic (0/50 unstable, 98/100 main, 100/100
+  long) at 74 % of the prefill throughput with MTP unchanged. A separate greedy-thinking repetition
+  loop (~1 in 10 hard inputs, present with and without speculation) needs a loop guard before
+  production use. Candidate for the night-time slot as mode 3 + MTP=2 + loop guard; production stays
+  on the 35B FP8 for now.
 
 reproducibility:
   level: R2

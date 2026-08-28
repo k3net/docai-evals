@@ -1,0 +1,123 @@
+{
+ "cimke": "runaway-topk3mtp0",
+ "args": {
+  "url": "http://localhost:18380",
+  "model": "qwen3.8-flash-next",
+  "cimke": "runaway-topk3mtp0",
+  "futasok": 3,
+  "max_tokens": 16384,
+  "timeout": 3600.0,
+  "csak": null,
+  "items": "gt/items-runaway.jsonl",
+  "out": "reports/runaway-topk3mtp0.json",
+  "folytat": false,
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T14-01",
+   "teszt": "T14",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "koltseget_viseli": {
+      "gt": "Bérbeadó",
+      "pred": "Bérbeadó",
+      "arany": 1.0
+     },
+     "donto_pont": {
+      "gt": "5.4",
+      "pred": "5.4",
+      "arany": 1.0
+     },
+     "engedely_datuma": {
+      "gt": "2026-05-04",
+      "pred": "2026-05-04",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A felhasználó egy JSON-sémát kért, és kizárólag a megadott dokumentum alapján kell válaszolni. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nA dokumentum 5.4 pontja: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezet költsége Bérbeadót terheli, kivéve ha szerkezeti hibát Bérlő technológiai tevékenysége okozta — ekkor költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte, ezért nem terheli a Bérlőt. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így Bérbeadó viseli. Döntő pont: 5.4 (vagy 5.4 és 5.5? A séma \"donto_pont\": \"pontszám\". A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A 5.4 pont tartalmazza a szabályt és a kivételt, de az engedély ténye 5.5-ben van. A \"donto_pont\" lehet \"5.4\" vagy \"5.5\"? A kérdés: kit terhel a javítás költsége? Az irat alapján. A döntő pont valószínűleg 5.4, mert az határozza meg a költségviselést és az engedély kivételt. De az engedély keltét külön kérik. Ha csak egy pontszám mező van, talán \"5.4\". Vagy \"5.4–5.5\"? A séma pontszám, nem szöveg. A feladat: \"Add meg azt a pontot is, amely a kérdést eldönti, és az előzetes írásbeli engedély keltét.\" A döntő pont lehet 5.4, mert az tartalmazza a \"Nem terheli a Bérlőt ... ha ... írásban engedélyezte\" kitételt. Az engedély dátuma 5.5-ből jön. JSON: koltseget_viseli: \"Bérbeadó\", donto_pont: \"5.4\", engedely_datuma: \"2026-05-04\".\n\nEllenőrizni kell a felsorolt értékkészletű mezőket: koltseget_viseli pontosan: \"Bérbeadó | Bérlő | a Felek megosztva\" közül. donto_pont: \"pontszám\" — valószínűleg csak pontszám szöveg. engedely_datuma YYYY-MM-DD.\n\nVégső válasz csak JSON.\n",
+     "gondolkodas_sha": "d6bde822d0cc",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4207,
+      "completion_tokens": 864,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 808
+      }
+     },
+     "timings": {},
+     "wall_ms": 58148.3,
+     "sha": "95df6fb28f1c"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A felhasználó egy JSON-sémát kért, és kizárólag a megadott dokumentum alapján kell válaszolni. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nA dokumentum 5.4 pontja: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezet költsége Bérbeadót terheli, kivéve ha szerkezeti hibát Bérlő technológiai tevékenysége okozta — ekkor költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte, ezért nem terheli a Bérlőt. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így Bérbeadó viseli. Döntő pont: 5.4 (vagy 5.4 és 5.5? A séma \"donto_pont\": \"pontszám\". A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A 5.4 pont tartalmazza a szabályt és a kivételt, de az engedély ténye 5.5-ben van. A \"donto_pont\" lehet \"5.4\" vagy \"5.5\"? A kérdés: kit terhel a javítás költsége? Az irat alapján. A döntő pont valószínűleg 5.4, mert az határozza meg a költségviselést és az engedély kivételt. De az engedély keltét külön kérik. Ha csak egy pontszám mező van, talán \"5.4\". Vagy \"5.4–5.5\"? A séma pontszám, nem szöveg. A feladat: \"Add meg azt a pontot is, amely a kérdést eldönti, és az előzetes írásbeli engedély keltét.\" A döntő pont lehet 5.4, mert az tartalmazza a \"Nem terheli a Bérlőt ... ha ... írásban engedélyezte\" kitételt. Az engedély dátuma 5.5-ből jön. JSON: koltseget_viseli: \"Bérbeadó\", donto_pont: \"5.4\", engedely_datuma: \"2026-05-04\".\n\nEllenőrizni kell a felsorolt értékkészletű mezőket: koltseget_viseli pontosan: \"Bérbeadó | Bérlő | a Felek megosztva\" közül. donto_pont: \"pontszám\" — valószínűleg csak pontszám szöveg. engedely_datuma YYYY-MM-DD.\n\nVégső válasz csak JSON.\n",
+     "gondolkodas_sha": "d6bde822d0cc",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4207,
+      "completion_tokens": 864,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 808
+      }
+     },
+     "timings": {},
+     "wall_ms": 54760.1,
+     "sha": "95df6fb28f1c"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A felhasználó egy JSON-sémát kért, és kizárólag a megadott dokumentum alapján kell válaszolni. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nA dokumentum 5.4 pontja: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezet költsége Bérbeadót terheli, kivéve ha szerkezeti hibát Bérlő technológiai tevékenysége okozta — ekkor költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte, ezért nem terheli a Bérlőt. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így Bérbeadó viseli. Döntő pont: 5.4 (vagy 5.4 és 5.5? A séma \"donto_pont\": \"pontszám\". A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A 5.4 pont tartalmazza a szabályt és a kivételt, de az engedély ténye 5.5-ben van. A \"donto_pont\" lehet \"5.4\" vagy \"5.5\"? A kérdés: kit terhel a javítás költsége? Az irat alapján. A döntő pont valószínűleg 5.4, mert az határozza meg a költségviselést és az engedély kivételt. De az engedély keltét külön kérik. Ha csak egy pontszám mező van, talán \"5.4\". Vagy \"5.4–5.5\"? A séma pontszám, nem szöveg. A feladat: \"Add meg azt a pontot is, amely a kérdést eldönti, és az előzetes írásbeli engedély keltét.\" A döntő pont lehet 5.4, mert az tartalmazza a \"Nem terheli a Bérlőt ... ha ... írásban engedélyezte\" kitételt. Az engedély dátuma 5.5-ből jön. JSON: koltseget_viseli: \"Bérbeadó\", donto_pont: \"5.4\", engedely_datuma: \"2026-05-04\".\n\nEllenőrizni kell a felsorolt értékkészletű mezőket: koltseget_viseli pontosan: \"Bérbeadó | Bérlő | a Felek megosztva\" közül. donto_pont: \"pontszám\" — valószínűleg csak pontszám szöveg. engedely_datuma YYYY-MM-DD.\n\nVégső válasz csak JSON.\n",
+     "gondolkodas_sha": "d6bde822d0cc",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4207,
+      "completion_tokens": 864,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 808
+      }
+     },
+     "timings": {},
+     "wall_ms": 54190.9,
+     "sha": "95df6fb28f1c"
+    }
+   ]
+  }
+ ]
+}

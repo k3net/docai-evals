@@ -4,7 +4,7 @@
 > (`src/szoras.py`, `src/reszletek.py`); a futásonkénti pontok a harness pontozójával, futásonként külön.
 > Kapcsolódó: `osszevetes-negyes.md`, `04-F4-nvfp4-indulas.md`, `eredmenyek/02-magyar-eval-reszletek.md`.
 
-## 0. Összefoglaló (2026-08-28, 14:00)
+## 0. Összefoglaló (2026-08-28, 21:20) — LEZÁRVA
 
 | lépés | eredmény |
 |---|---|
@@ -17,8 +17,14 @@
 | ára | prefill **2,9× lassabb** (2 370 → 820 tok/s) ⛔ |
 | `topk2` (2. mód: `persistent_topk` + utólagos kanonikus rendezés) | **NEM elég**: 3/6 itemen 2–10 változat → a kernel a kiválasztott **HALMAZT** is változtatja, nem csak a sorrendet (§3.1d) |
 | **`topk3` (3. mód: `torch.topk` radix-select + kanonikus rendezés)** | ⭐⭐ **6/6 itemen 10/10 bitre azonos**, a logitok = 1. mód; prefill **1 650–1 770 tok/s = a persistent 74 %-a** (1,35× a 2,9× helyett) → **EZ A JAVÍTÁS** (§3.1e) |
-| fut | **teljes validáció a 3. móddal** (`tmux valid` @ the dev DGX Spark, `./valid-topk3.log`): fő 50×3 frissen, nehéz, HU-CH, hosszú — a 297/300 és az MTP-s üres elszállás eltűnésének igazolása |
-| hátra | `lfs.sha256` a 419 blobra; upstream issue (vLLM `persistent_topk`, #51782 mellé, szonda-adatokkal); blazux recept-megjegyzés |
+| **validáció a 3. móddal — fő suite** | ⭐⭐⭐ **98,00/100 (= elérhető max), 0/50 instabil, 0 formátumhiba, 0 csonkolás**; a stock 97-nél is jobb (T3-05 helyre állt); decode 24,9 tok/s (§3.5) |
+| validáció — nehéz suite | **90,00/100**, 0/10 instabil — de a **T14-01 3/3 futáson EGYFORMÁN elszáll** (16 384 token, üres tartalom, azonos SHA) → §3.6 |
+| validáció — HU-CH | 9/10 válasz; **HU-CH-09 üres elszállás** (a stock kernellel a CH-02 volt) |
+| validáció — hosszú | **100,00/100** (5/5 item 20/20; a 217k-s T22 449 s) |
+| ⛔⛔ **átértelmezés** | **az „üres elszállás" NEM a top-k tünete**: greedy+thinking **ismétlési hurok** (§3.6). A stock kernel zaja néha kimenekített belőle (1/150, véletlen); a determinisztikus prefill **reprodukálhatóvá** tette. Utóteszt (3. mód + MTP=0): **T14-01 hurok ELTŰNIK (10/10, 3/3 azonos)**; az MTP=2 a ~5. tokennél tér le a greedy pályáról → **az MTP nem greedy-ekvivalens ezen a modellen**. Mellékeredmény: azonos szerveren a HU-CH 10/10 + a T14-01 hurok bitre azonos két ülésben. Suite-szintű MTP=0 mérés fut (`tmux mtp0suite`) |
+| **MTP-ekvivalencia (3. mód, MTP=0 vs MTP=2)** | fő: 97,00 vs 98,00, **9/50 itemen eltérő kimenet, 1 pont (T3-01, az MTP=0 a rosszabb)**; nehéz: 100,00 vs 90,00 (1/10 eltér: a T14-01 hurok); challenge: 9/10 eltér, a hurok ÁTVÁNDOROL (CH-09 → CH-07). Decode 14,8 vs 24,9. → **az MTP nem greedy-ekvivalens, de minőség-semleges; a hurok nem MTP-műtermék** (§3.7) |
+| ⭐⭐⭐ **PROD-JAVASLAT** | `qwen38-flash-dgx-topk` image + `VLLM_QSA_EXACT_TOPK=3` + **MTP=2 marad** + PIECEWISE + **hurok-őr a reasoning-streamen** (ismétlés-arány → újrapróba T>0 / presence_penalty). Determinisztikus, 98/100 a fő suite-on, 74 % prefill, 25 tok/s decode |
+| hátra | hurok-őr implementálás + mérés (protokoll-változás) (hurok-detektor + újrapróba T>0-val / `presence_penalty` / prompt-egyértelműsítés — mind protokoll-kérdés); `lfs.sha256` a 419 blobra; upstream issue (vLLM `persistent_topk`, #51782 mellé); a docai-evals `results/` + decision-record véglegesítése; cikk |
 
 ## 1. A tünet
 
@@ -162,6 +168,62 @@ rendezéssel kanonizálja (index növekvő → érték csökkenő). Egységteszt
 A maradék 26 % prefill-költség a QSA-indexer top-k-jának ára; egy natív determinisztikus kernel (FlashInfer #2661 mintájára,
 §bővített 6.3) ezt is visszahozná — ez az upstream kérés tárgya.
 
+### 3.5 Validáció a 3. móddal — teljes suite-ok (2026-08-28 13:43–, `flash-nvfp4-topk3`)
+
+| suite | stock `persistent_topk` | **3. mód** | megjegyzés |
+|---|---:|---:|---|
+| fő (50×3) | 97,00 · 13/50 instabil · 1 csonkolt | **98,00 · 0/50 · 0** | egyetlen pont változott: T3-05 1→2 (a stock többsége a rossz dátum volt); mind a 13 korábban instabil item 3/3 azonos |
+| nehéz (10×3) | 100,00 · 0/10 | **90,00 · 0/10 · 1 formátumhiba** | T14-01: 3/3 futás 16 384 token, üres tartalom, azonos SHA (§3.6) |
+| HU-CH (10×1) | 1 üres (CH-02) | 1 üres (**CH-09**) | ugyanaz a hibamód, más tételen |
+| hosszú (5×1) | 100,00 | **100,00** | T22 449 s, 10 129 kimeneti token |
+| **fő (50×3), 3. mód + MTP=0** | — | 97,00 · 0/50 · 0 | 9/50 item más kimenet, mint MTP=2-vel; 1 pont (T3-01) az MTP=2 javára; decode 14,8 |
+| **nehéz (10×3), 3. mód + MTP=0** | — | 100,00 · 0/10 · 0 | 1/10 eltér (a T14-01 hurok MTP=0-val nem jön elő — de a challenge-en a CH-07 igen) |
+| decode tok/s (fő, MTP=2) | 26,4 | 24,9 | a prefill-többlet a válaszidő-alapú képletben |
+
+### 3.6 ⛔⛔ Az „üres elszállás" egy MÁSIK hibamód: determinisztikus ismétlési hurok
+
+A T14-01 3. módú gondolkodása 41 835 karakter; a vége ugyanaz a ~180 karakteres bekezdés **22×** ismételve
+(„A "pontszám" lehet "5.4." vagy "5.4. pont". A feladat szövege: … A séma: "donto_pont": "pontszám". Ez valószínűleg…"),
+az utolsó 4 000 karakter **7 %-a egyedi**; mindhárom futás gondolkodás-SHA-ja azonos. A modell a `donto_pont` mező
+formátumán pörög és sosem zárja a gondolkodást → 16 384 token, üres `content`, `finish=length`.
+
+Következtetések:
+- Ez **nem a `persistent_topk` tünete**, hanem a greedy + thinking ismert Qwen-gyengesége (a Qwen saját ajánlása:
+  thinking-módban ne greedy-vel). A stock kernel zaja néha kimenekítette a modellt a hurokból — ezért volt véletlen
+  (1/150 a fő suite-ban, HU-CH-02); a determinisztikus prefill **reprodukálhatóvá** tette (3/3).
+- A korábbi §3.1 mondat („az MTP saját hibamódot ad hozzá: az elszállás csak MTP alatt") **gyenge evidencián állt**
+  (0/65 a `mtp0` karban, de más itemeken) — az utóteszt dönti el (`tmux utoteszt`: T14-01 + HU-CH-09, 3. mód + MTP=0, 3×).
+- ⭐⭐ **Utóteszt (17:29): 3. mód + MTP=0 → T14-01 10/10, 3/3 azonos, NINCS hurok** (864 kimeneti token, helyes JSON).
+  Az MTP=2 és az MTP=0 gondolkodása a **~5. tokennél** ágazik el („A felhasználó ” után: „magyar nyelvű kérést tett…”
+  vs „egy JSON-sémát kért…”). Az MTP=0 a tiszta autoregresszív greedy, tehát **a spekulatív dekódolás ezen a
+  modellen/buildben NEM kimenet-ekvivalens a greedy-vel** — a letérés vitte a modellt a hurokba. A hurok tehát két
+  tényező együttese: MTP-műtermék (letérés) + a greedy-thinking hurokhajlam (nem zár). Suite-szintű mérés fut
+  (`futtat-topk3mtp0.sh`: fő 50×3 + nehéz 10×3, 3. mód + MTP=0): hány itemen tér el a kimenet MTP-vel vs anélkül.
+- ⛔⛔ **Challenge MTP=2 vs MTP=0 (3. mód, mindkettő determinisztikus): 9/10 tételen MÁS a kimenet** (csak HU-CH-08
+  azonos) → az MTP pálya-eltérése általános. **A hurok nem tűnt el, átvándorolt**: HU-CH-09 MTP=0-val kizár (11 503 tok),
+  viszont **HU-CH-07 MTP=0-val hurokba fut** (16 384 tok, üres; MTP=2-vel 2 033 tok, 626 kar). Hurok-arány mindkét
+  módban ~1/10 → **a hurok a greedy+thinking sajátja, nem MTP-műtermék; az MTP csak azt dönti el, melyik bemenet esik
+  bele.** A T14-01 „MTP=0-val eltűnik” egyedi eset volt. Következmény: MTP kikapcsolása NEM kezelés; hurok-őr kell.
+- Mérnökileg a determinisztikus hiba a jobb: detektálható (ismétlés-arány a gondolkodásban) és kezelhető
+  (újrapróba T>0-val vagy `presence_penalty`, vagy a prompt egyértelműsítése). A véletlen nem volt az.
+- ⛔ A cikkben a „javítás után 0 elszállás" állítás NEM mondható; a helyes állítás: „a nemdeterminizmus megszűnt, és
+  ezzel egy MÁSIK, eddig véletlennek látszó hiba reprodukálhatóvá vált".
+
+### 3.7 Az MTP nem greedy-ekvivalens ezen a modellen — de minőség-semleges (suite-szintű mérés, 3. mód)
+
+| | MTP=2 | MTP=0 | eltérő kimenet | eltérő pont |
+|---|---:|---:|---:|---|
+| fő (50×3) | **98,00** | 97,00 | **9/50** | 1: T3-01 (2 → 1, az MTP=0 a rosszabb) |
+| nehéz (10×3) | 90,00 | **100,00** | 1/10 | 1: T14-01 (hurok csak MTP=2-vel) |
+| HU-CH (10×1) | 1 hurok (CH-09) | 1 hurok (**CH-07**) | 9/10 | — |
+| decode tok/s | **24,9** | 14,8 | | |
+| instabil / csonkolt | 0 / 0 | 0 / 0 | | |
+
+A spekulatív dekódolás elfogadás-logikája ezen a builden nem egzakt greedy (a T14-01-en a ~5. tokennél tér le), az
+itemek ~18 %-án más a pálya — de a pontszámra ez zajszintű és irány nélküli (+1 / −10 / 0), a hurok pedig mindkét
+módban ~1/10 a challenge-en. Következtetés: **MTP=2 marad** (40 % decode-előny), a hurkot **hurok-őr** kezeli, nem az
+MTP kikapcsolása. Ez egyben upstream-jelentendő: az MTP greedy-ekvivalenciája a hibrid GDN+QSA modellen nem áll.
+
 ### 3.2 ⭐⭐ Az elágazás a gondolkodás **0. tokenjénél** van
 
 13-ból 12 itemnél az első eltérés a **0. vagy ~6. tokennél** történik — nem felhalmozódó drift:
@@ -221,7 +283,7 @@ itemeken tette láthatóvá; a szonda 10 kérése és a top-20 hash sokkal érz�
 
 ## 4. Mit jelent ez a DocAI-ra
 
-- A Flash NVFP4 pontszáma a négy közül a legjobb (297/300); a `persistent_topk`-kal **nem KIE-motor** (tízből egy dokumentumon futásonként más összeg/dátum), az egzakt top-k-val **determinisztikus, MTP-vel együtt** — a prefill-költség csökkentése után prod-jelölt.
+- A Flash NVFP4 a `persistent_topk`-kal **nem KIE-motor** (tízből egy dokumentumon futásonként más összeg/dátum); a 3. módú top-k-val **determinisztikus, MTP-vel együtt**: fő 98/100 (= max), hosszú 100, nehéz 90 (egy hurok-item), 74 % prefill, 25 tok/s decode. **Prod-jelölt a hurok-őrrel** — a greedy+thinking hurok (~1/10 nehéz bemeneten) MTP nélkül is megvan, tehát detektálni és újrapróbálni kell (T>0 / presence_penalty), nem az MTP-t kikapcsolni.
 - Az IQ4_XS/llama.cpp determinisztikus (0/50), de a T19-en kvantálási kárt szenved (3,33/10) és a 217k-s prompt 1 121 s.
 - Ha az ok a 4. (QSA-kernel), a javítás upstream vLLM-oldali (determinisztikus/batch-invariáns kernelek), nem a miénk.
 - A 35B FP8 (prod) 294/300, 0/50 instabil, már üzemel — a döntéshez ezt a viszonyítási alapot kell nézni.
