@@ -3,8 +3,8 @@
 **Date:** 2026-09-03 · **Type:** correctness / serving · **Hardware:** one DGX Spark (GB10, `sm_121a`, 121 GiB unified) ·
 **Reproducibility:** R2 (code + the round-1 synthetic corpus + every run artefact; the engine build is a third-party image)
 
-> Status: **measurement closed 2026-09-03; the full-suite score with the new kernel is being added
-> as it lands** (see §5.6). The follow-up to
+> Status: **closed 2026-09-03 18:30** — probes, batch-invariance test, kernel A/B/C and the 50 × 3
+> suite with the new kernel (95.00/100, 0/50 unstable; §5.6) are all in. The follow-up to
 > [2026-08-28-qwen38-flash-next-nvfp4-topk-nondeterminism-gb10](../2026-08-28-qwen38-flash-next-nvfp4-topk-nondeterminism-gb10/).
 
 ## 1. What was the measurement for?
@@ -189,11 +189,35 @@ on C; T10-05's 376 vs 501. Two different exact block selections choose different
 hence different logits. The switch is therefore not quality-neutral by construction, and the suite
 score does not carry over.
 
-### 5.6 Full-suite score with the deterministic kernel (in progress)
+### 5.6 Full-suite score with the deterministic kernel: 95.00/100, 0/50 unstable
 
-Main suite 50 × 3 with arm C, same harness as round 1. References on this corpus: stock kernel
-97.00/100 (13/50 unstable), round-1 mode-3 image 98.00/100 (0/50), the production upstream image
-96.00/100 (1 run). *Result to be added to this section and to the eval card when the run completes.*
+Main suite 50 × 3 with arm C, same harness and scorer as round 1
+([results/meres-flash-nvfp4-detkernel.json](results/meres-flash-nvfp4-detkernel.json)):
+
+| system | points | unstable | format errors | runs |
+|---|---:|---:|---:|---:|
+| stock `persistent_topk` (round 1) | 97.00 | 13/50 | 0 | 3 |
+| round-1 mode-3 image (`torch.topk` + canonical order) | 98.00 | 0/50 | 0 | 3 |
+| production image `e655b7d`, `VLLM_QSA_EXACT_TOPK=1` (arm A) | 96.00 | 0/50 | 0 | **1** |
+| **arm C, deterministic kernel** | **95.00** | **0/50** | 0 | 3 |
+
+Every one of the 150 requests finished with `stop`; all 50 items gave three identical outputs. The
+score differs from the references on exactly two items:
+
+- **T5-03 (0/2):** the answer is *correct in content* (all four line items, amounts and VAT keys),
+  but the `tetelek` array is returned as a JSON-encoded **string** and the strict scorer rejects it.
+  **The production image does the same** (arm A: 0/2, identical double-serialisation); the round-1
+  mode-3 image emitted a proper list. This is a property of the `e655b7d` image, shared by A and C —
+  not of the kernel.
+- **T3-04 (1/2):** a genuine value error. The working-day deadline is computed as `2026-12-30`
+  instead of `2027-01-05`; the reasoning forks at a near-tie and lands on the wrong day count. Arms A
+  and the mode-3 image both get 2/2.
+
+So against the production configuration the deterministic kernel is **−1 point on one reasoning
+item** (95 vs 96), with the production reference itself resting on a single run. One item in one
+run-set is not evidence of a systematically worse kernel — the two exact selections differ under
+ties and this is what a tie looks like on a 50-item suite — but it is also not the "no worse than
+98/100" the adoption criterion asked for. The candidate stays a candidate (§6).
 
 ## 6. What product decision followed?
 
@@ -217,7 +241,9 @@ any more; the claim is "deterministic for sequential requests in the same cache 
   established. Same-arm warm-run spread was 1–3 %.
 - The "MoE does not trigger" statement rests on 0 divergences in 80 warm runs on four prompts; it is
   a bound on our shapes, not a general statement about the kernel.
-- The suite score for arm C (§5.6) was not available when this README was written.
+- The suite comparison in §5.6 is one 50 × 3 run-set against a production reference of **one** run;
+  the −1 point is a single reasoning item. Distinguishing "different tie" from "worse kernel" needs
+  the round-1 hard suite, the language challenge and repeated run-sets, none of which is here.
 
 ## 8. Which DocAI article belongs to it?
 

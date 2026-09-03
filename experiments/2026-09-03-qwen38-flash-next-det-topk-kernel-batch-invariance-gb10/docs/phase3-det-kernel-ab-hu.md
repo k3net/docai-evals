@@ -117,15 +117,40 @@ halmazt/sorrendet választ, tehát más logitokat ad —, de azt jelenti, hogy *
 minőség-semleges: a magyar KIE-suite pontszámát (round1: 98/100) újra kell mérni a C-vel**,
 mielőtt élesbe kerül.
 
+### 3.6 F4 — magyar KIE fő suite 50×3 a det-kernellel: **95,00/100, 0/50 instabil, 0 formátumhiba**
+
+`eredmenyek/meres-flash-nvfp4-detkernel.json` (a deven: `~/eval/magyar-kie-eval/reports/`), a
+round1 harness és pontozó, mind a 150 kérés `finish=stop`, mind az 50 item 3/3 azonos kimenet.
+
+| rendszer | pont | instabil | futás |
+|---|---:|---:|---:|
+| stock `persistent_topk` (round1) | 97,00 | 13/50 | 3 |
+| round1 topk3-image (`torch.topk` + kanonikus rendezés) | 98,00 | 0/50 | 3 |
+| **prod-image `e655b7d`, `EXACT_TOPK=1` (A)** | 96,00 | 0/50 | **1** |
+| **C det-kernel** | **95,00** | **0/50** | 3 |
+
+Pontosan két itemen tér el:
+- **T5-03 (0/2):** a `tetelek` tömb JSON-kódolt **stringként** jön vissza (dupla szerializálás), a
+  szigorú pontozó elutasítja — a tartalom (4 tétel, összegek, áfakulcsok) HELYES. ⛔ **A prod-image
+  (A) ugyanezt csinálja (0/2)**; a round1 topk3-image listát adott. Image-tulajdonság, nem a kernelé.
+- **T3-04 (1/2):** valódi értékhiba — a munkanapos határidő `2026-12-30` a helyes `2027-01-05`
+  helyett; a gondolkodás egy near-tie-nál másfelé ágazik. A és a topk3-image is 2/2.
+
+→ **A mostani éleshez képest −1 pont, egyetlen reasoning-itemen**, miközben a prod-referencia maga
+1 futásos. Egy item egy futássorozatban nem „rosszabb kernel"-bizonyíték (két különböző egzakt
+kiválasztás a holtversenyeknél máshova esik — ez így néz ki 50 itemen), de nem is a `docai-0061`
+AC#1-ben kért „nem romlik 98 alá". A nehéz suite + challenge + ismételt futássorozat dönt.
+
 ## 4. Ítélet és a hátralévő lépések
 
-**A C változat jelölt az `EXACT_TOPK=1` leváltására**: azonos determinizmus, a stock sebesség
-96–100 %-a, és a kernel a mi image-ünkben lefordul, tesztje 0 FAIL. A váltás azonban **nem
-minőség-semleges** (§3.5), és a patch **nyitott upstream PR** — production-váltás előtt:
+**A C változat marad a jelölt az `EXACT_TOPK=1` leváltására**: azonos determinizmus, a stock
+sebesség 96–100 %-a, a kernel a mi image-ünkben lefordul (0 FAIL), a fő suite-on 0/50 instabil és
+95/100 a prod 96-jával szemben (egy near-tie item). A váltás **nem minőség-semleges** (§3.5, §3.6),
+a patch **nyitott upstream PR** — production-váltás előtt:
 
 | # | teendő | miért |
 |---|---|---|
-| F4 | magyar KIE fő suite 50×3 a C-vel (a round1 A-ága: 98/100) + nehéz + challenge | §3.5: más kimenet → a pontszám nem öröklődik |
+| ~~F4~~ | ~~fő suite 50×3~~ | **KÉSZ (§3.6): 95/100, 0/50** — hátra: nehéz 10×3 + challenge + egy ismételt fő futássorozat, hogy a T3-04 tie-e vagy szisztematikus |
 | F5 | 3 külön szerverindítás, azonos szonda (a „no call from three runs" szabály) | most 1 indítás van ágakként |
 | F6 | a hurok-őr viselkedése a C-vel (round1 §3.6: greedy+thinking ismétlési hurok) | a hurok a determinisztikus prefill mellékhatása volt |
 | F7 | vendorozás a `spark/servers/vllm-qwen38-flash/` receptbe (Dockerfile-lépés + `.so` build), commit-pin | ⛔ a mostani C-image `docker commit`-tel készült a deven — **így nem élesíthető** |

@@ -15,9 +15,14 @@
    invalid; value-level comparison over repeated runs is the tool (round-1 `szoras.py`).
 3. **The deterministic `persistent_topk` kernel (vllm#55122) is the candidate to replace the
    Python-level fix**: same determinism, 96–100 % of the stock prefill throughput against 76–90 % today.
+   The main suite 50 × 3 with the kernel: **95.00/100, 0/50 unstable**, against 96.00 (one run) for
+   the production fix on the same image — one reasoning item lands on the other side of a tie
+   (T3-04); the other differing item scores 0 on both arms for an image-level serialisation reason.
    It goes to production **only** when all of the following hold:
-   - the main suite 50 × 3 with the kernel scores no worse than the current fix (round-1 reference
-     98.00/100; the kernel produces different text, so the score is not inherited);
+   - the hard suite (10 × 3), the language challenge and a repeated main run-set show the T3-04 gap
+     is a tie, not a direction — i.e. the kernel scores no worse than the current fix on the same
+     image across suites (the adoption criterion was "no worse than 98/100"; that number belongs to
+     the round-1 image and is not the right reference on `e655b7d`, where the fix itself scores 96);
    - the logprob probe passes on three independent server starts;
    - the recipe is vendored into the serving repository as a Dockerfile step with the kernel
      source at a pinned commit and the `.so` built into the image — the measurement image here was a

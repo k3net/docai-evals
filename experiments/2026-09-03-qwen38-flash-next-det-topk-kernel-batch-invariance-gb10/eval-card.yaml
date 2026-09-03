@@ -117,8 +117,15 @@ results:
   decode_512tok_thinking:
     T3-01_ms: { A: "16805-17125", C: 17074 }
   suite_main_50x3_arm_C:
-    points: null
-    note: "run in progress when the card was written; references on this corpus: stock 97.00 (13/50 unstable), round-1 mode-3 image 98.00 (0/50), production upstream image 96.00 (1 run)"
+    points: 95.00
+    unstable: 0
+    format_errors: 0
+    finish_stop_all_150: true
+    references: { stock_persistent_topk: 97.00, round1_mode3_image: 98.00, production_e655b7d_exact_topk_1run: 96.00 }
+    differing_items:
+      T5-03: { C: 0, production: 0, mode3: 2, cause: "tetelek array returned as a JSON-encoded string on the e655b7d image (arm A identical); content correct; image property, not kernel" }
+      T3-04: { C: 1, production: 2, mode3: 2, cause: "working-day deadline 2026-12-30 instead of 2027-01-05; reasoning forks at a near-tie" }
+    vs_production: "-1 point on one reasoning item; production reference is a single run"
 
 verdict: >-
   The production configuration is reproducible token-by-token for sequential requests in the same
@@ -129,8 +136,10 @@ verdict: >-
   FlashInfer NVFP4 MoE fused-finalize defect (vllm#54945) does not surface on our shapes (0
   divergences in 80 warm runs). The deterministic persistent_topk kernel (vllm#55122) builds and
   passes its test in our image, matches the exact torch.topk in determinism, and runs at 96-100 %
-  of the stock prefill throughput where the production fix runs at 76-90 % - but produces
-  different text than the current fix, so the suite score must be re-measured before adoption.
+  of the stock prefill throughput where the production fix runs at 76-90 %. On the 50-item suite it
+  scores 95.00/100 with 0/50 unstable against 96.00 for the production fix (one run): the two exact
+  selections differ under ties and one reasoning item flips. It remains the candidate; adoption
+  waits for the hard suite, repeated run-sets and a vendored recipe.
 
 reproducibility:
   level: R2
@@ -147,7 +156,8 @@ limitations:
   - "The cold path's own reproducibility was not measured (would need a restart or prefix caching off between two cold runs)."
   - "Prefill throughput is cold minus warm on one cold request per item; same-arm warm spread 1-3 %; no cross-session CV."
   - "The MoE statement is a bound (0 divergences in 80 warm runs on four prompts on our shapes), not a general claim about the kernel."
-  - "The arm-C full-suite score was not available when this card was written; it is added when the run lands."
+  - "The suite comparison is one 50 x 3 run-set against a single-run production reference; the -1 point is one reasoning item (T3-04) and cannot separate a different tie from a worse kernel without the hard suite and repeated run-sets."
+  - "T5-03 scores 0 on both the production image and arm C because the e655b7d image double-serialises the array; the content is correct. The scorer is strict by design and the item is reported as scored."
   - "Arm C produces different text than arm A by construction (different exact selections under ties); quality is not inherited."
 
 related:
