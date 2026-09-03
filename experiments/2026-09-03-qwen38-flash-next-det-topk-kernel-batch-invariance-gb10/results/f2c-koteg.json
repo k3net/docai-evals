@@ -1,0 +1,191 @@
+{
+  "cimke": "F2c-koteg-invariancia",
+  "args": {
+    "url": "http://10.10.0.5:18380",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "/tmp/claude-1000/-var-www-docit/e3996b09-fce5-4199-9de6-1b5f6d7dd3f2/scratchpad/kie",
+    "cel": "T3-01",
+    "zaj": "T6-02,T10-05,T1-01",
+    "korok": 3,
+    "max_tokens": 128,
+    "top": 20,
+    "thinking": false,
+    "timeout": 1800,
+    "cimke": "F2c-koteg-invariancia",
+    "out": "eredmenyek/f2c-koteg.json"
+  },
+  "kezdet": "2026-09-03T14:15:29",
+  "ref": {
+    "hash": "18e3ac430706ab74",
+    "stabil": true,
+    "futasok": [
+      {
+        "hash": "18e3ac430706ab74",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 3003.2
+      },
+      {
+        "hash": "18e3ac430706ab74",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 2997.9
+      },
+      {
+        "hash": "18e3ac430706ab74",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 3027.7
+      }
+    ]
+  },
+  "azonos": {
+    "k2": {
+      "egyezik_reffel": 0,
+      "osszes": 6,
+      "valtozatok": 2,
+      "futasok": [
+        {
+          "hash": "a84b19503f0458b5",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 5975.7
+        },
+        {
+          "hash": "2a693653270105c2",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 5885.9
+        },
+        {
+          "hash": "2a693653270105c2",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 4888.0
+        },
+        {
+          "hash": "a84b19503f0458b5",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 4972.8
+        },
+        {
+          "hash": "a84b19503f0458b5",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 4968.7
+        },
+        {
+          "hash": "2a693653270105c2",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 4875.4
+        }
+      ]
+    },
+    "k4": {
+      "egyezik_reffel": 0,
+      "osszes": 12,
+      "valtozatok": 3,
+      "futasok": [
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8659.5
+        },
+        {
+          "hash": "3ac082149bced65f",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8447.1
+        },
+        {
+          "hash": "95e61d839ffcb661",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8662.0
+        },
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8652.5
+        },
+        {
+          "hash": "3ac082149bced65f",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8364.9
+        },
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8486.2
+        },
+        {
+          "hash": "95e61d839ffcb661",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8564.8
+        },
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8466.1
+        },
+        {
+          "hash": "3ac082149bced65f",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8357.9
+        },
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8408.4
+        },
+        {
+          "hash": "34bcd2a37f53197e",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8412.3
+        },
+        {
+          "hash": "95e61d839ffcb661",
+          "token_db": 39,
+          "tartalom_sha": "badeab3f01ca",
+          "ms": 8497.3
+        }
+      ]
+    }
+  },
+  "vegyes": {
+    "egyezik_reffel": 0,
+    "osszes": 3,
+    "valtozatok": 1,
+    "futasok": [
+      {
+        "hash": "9fbc641e342bcc24",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 7835.8
+      },
+      {
+        "hash": "9fbc641e342bcc24",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 7700.2
+      },
+      {
+        "hash": "9fbc641e342bcc24",
+        "token_db": 39,
+        "tartalom_sha": "badeab3f01ca",
+        "ms": 7559.0
+      }
+    ]
+  }
+}

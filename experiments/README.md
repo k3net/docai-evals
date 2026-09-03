@@ -25,6 +25,7 @@ headline stays on [docai.hu/blog](https://docai.hu/blog).
 | 2026-08-04 | [vllm-prod-config-tuning-gb10](2026-08-04-vllm-prod-config-tuning-gb10/) | Performance | One unified serving profile; async scheduling off | R3 |
 | 2026-08-26 | [where-knowledge-lives-hu-en-zh](2026-08-26-where-knowledge-lives-hu-en-zh/) | Multilingual + interpretability | No lexical English pivot; the shared middle layer is real but thin; English is never the best prompt language | **R1** |
 | 2026-08-28 | [qwen38-flash-next-nvfp4-topk-nondeterminism-gb10](2026-08-28-qwen38-flash-next-nvfp4-topk-nondeterminism-gb10/) | Correctness / serving | Greedy output was non-deterministic; root cause the QSA `persistent_topk` kernel, fixed by a canonical `torch.topk` at 74 % prefill; not adopted until the full suite passes | R2 |
+| 2026-09-03 | [qwen38-flash-next-det-topk-kernel-batch-invariance-gb10](2026-09-03-qwen38-flash-next-det-topk-kernel-batch-invariance-gb10/) | Correctness / serving | The fix is deterministic only for sequential requests in the same cache state (no batch invariance; partial ≠ full prefix hit); the vllm#55122 kernel gives the same determinism at 96–100 % of stock prefill — candidate, pending the suite score | R2 |
 
 Reproducibility levels: [../docs/reproducibility.md](../docs/reproducibility.md).
 

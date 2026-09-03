@@ -1,0 +1,123 @@
+{
+ "cimke": "runaway-beta-mtp0",
+ "args": {
+  "url": "http://localhost:18380",
+  "model": "qwen3.8-flash-next",
+  "cimke": "runaway-beta-mtp0",
+  "futasok": 3,
+  "max_tokens": 16384,
+  "timeout": 3600.0,
+  "csak": null,
+  "items": "gt/items-runaway.jsonl",
+  "out": "reports/runaway-beta-mtp0.json",
+  "folytat": false,
+  "nincs_cache": false
+ },
+ "eredmenyek": [
+  {
+   "id": "T14-01",
+   "teszt": "T14",
+   "pont": {
+    "pont": 10.0,
+    "max": 10,
+    "reszletek": {
+     "koltseget_viseli": {
+      "gt": "Bérbeadó",
+      "pred": "Bérbeadó",
+      "arany": 1.0
+     },
+     "donto_pont": {
+      "gt": "5.4",
+      "pred": "5.4.",
+      "arany": 1.0
+     },
+     "engedely_datuma": {
+      "gt": "2026-05-04",
+      "pred": "2026-05-04",
+      "arany": 1.0
+     }
+    },
+    "json_hiba": false,
+    "biro_mezok": [],
+    "biro_suly": 0.0
+   },
+   "instabil": false,
+   "kulonbozo_kimenetek": 1,
+   "formatum_hiba": null,
+   "futasok": [
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4.\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4.",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A feladat egy JSON-sémát kér, kizárólag a megadott dokumentum alapján. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nDokumentum: 5.4. pont: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezetet érintő munka költsége Bérbeadót terheli, kivéve ha szerkezeti hibát a Bérlő technológiai tevékenysége okozta — ilyenkor a költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5. pont: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte a Bérbeadó, ezért nem terheli a Bérlőt a költség. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így a költségviselő: Bérbeadó.\n\nDöntő pont: 5.4. vagy 5.5? A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A konkrét eldöntő szabály az 5.4. pont, mert az tartalmazza a tartószerkezet, technológiai tevékenység és írásbeli engedély kivételét. Az 5.5. csak tényállás rögzítése. De lehet, hogy a döntő pont az 5.4. A séma \"pontszám\" mező, valószínűleg \"5.4.\" vagy \"5.4. pont\"? A megadott lehetőségek: \"Bérbeadó | Bérlő | a Felek megosztva\" csak koltseget_viseli-re. donto_pont: \"pontszám\" nincs felsorolt értékkészlet, de valószínűleg pontszám szöveg. A feladat: \"A felsorolt értékkészletű mezőknél PONTOSAN a megadott lehetőségek egyikét add vissza\". A donto_pont nem felsorolt értékkészletű? Lehet, hogy pontszám formátum. Használjam \"5.4.\" vagy \"5.4. pont\"? A dokumentumban pontok számozása: **5.4.** A kérdés: \"azt a pontot is, amely a kérdést eldönti\". Válasz: \"5.4.\" vagy \"5.4. pont\". A JSON-ban \"pontszám\" mező, talán csak \"5.4.\" a legbiztonságosabb. Engedély dátuma: 2026-05-04.\n\nKizárólag JSON.\n",
+     "gondolkodas_sha": "9ecdc175fed6",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4181,
+      "completion_tokens": 838,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 782
+      }
+     },
+     "timings": {},
+     "wall_ms": 56664.4,
+     "sha": "28239c55fd6e"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4.\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4.",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A feladat egy JSON-sémát kér, kizárólag a megadott dokumentum alapján. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nDokumentum: 5.4. pont: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezetet érintő munka költsége Bérbeadót terheli, kivéve ha szerkezeti hibát a Bérlő technológiai tevékenysége okozta — ilyenkor a költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5. pont: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte a Bérbeadó, ezért nem terheli a Bérlőt a költség. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így a költségviselő: Bérbeadó.\n\nDöntő pont: 5.4. vagy 5.5? A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A konkrét eldöntő szabály az 5.4. pont, mert az tartalmazza a tartószerkezet, technológiai tevékenység és írásbeli engedély kivételét. Az 5.5. csak tényállás rögzítése. De lehet, hogy a döntő pont az 5.4. A séma \"pontszám\" mező, valószínűleg \"5.4.\" vagy \"5.4. pont\"? A megadott lehetőségek: \"Bérbeadó | Bérlő | a Felek megosztva\" csak koltseget_viseli-re. donto_pont: \"pontszám\" nincs felsorolt értékkészlet, de valószínűleg pontszám szöveg. A feladat: \"A felsorolt értékkészletű mezőknél PONTOSAN a megadott lehetőségek egyikét add vissza\". A donto_pont nem felsorolt értékkészletű? Lehet, hogy pontszám formátum. Használjam \"5.4.\" vagy \"5.4. pont\"? A dokumentumban pontok számozása: **5.4.** A kérdés: \"azt a pontot is, amely a kérdést eldönti\". Válasz: \"5.4.\" vagy \"5.4. pont\". A JSON-ban \"pontszám\" mező, talán csak \"5.4.\" a legbiztonságosabb. Engedély dátuma: 2026-05-04.\n\nKizárólag JSON.\n",
+     "gondolkodas_sha": "9ecdc175fed6",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4181,
+      "completion_tokens": 838,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 782
+      }
+     },
+     "timings": {},
+     "wall_ms": 53726.4,
+     "sha": "28239c55fd6e"
+    },
+    {
+     "nyers": "\n\n{\n  \"koltseget_viseli\": \"Bérbeadó\",\n  \"donto_pont\": \"5.4.\",\n  \"engedely_datuma\": \"2026-05-04\"\n}",
+     "pred": {
+      "koltseget_viseli": "Bérbeadó",
+      "donto_pont": "5.4.",
+      "engedely_datuma": "2026-05-04"
+     },
+     "formatum_hiba": null,
+     "gondolkodas": "A feladat egy JSON-sémát kér, kizárólag a megadott dokumentum alapján. A kérdés: a bérlemény tartószerkezete megrepedt a Bérlő présgépének rezgésétől. Kit terhel a javítás költsége? Pontot is meg kell adni, amely eldönti, és az előzetes írásbeli engedély keltét.\n\nDokumentum: 5.4. pont: Bérlő köteles állagmegóvási munkákat saját költségén elvégezni, kivéve ha tartószerkezetet érint; tartószerkezetet érintő munka költsége Bérbeadót terheli, kivéve ha szerkezeti hibát a Bérlő technológiai tevékenysége okozta — ilyenkor a költség, Bérbeadó megelőlegezése mellett, végső soron Bérlőt terheli. Nem terheli a Bérlőt a költség akkor sem, ha a kárt okozó technológiai tevékenységet a Bérbeadó előzetesen, írásban engedélyezte.\n\n5.5. pont: Bérbeadó a Bérlő présgépének üzembe helyezését 2026. május 4-én írásban engedélyezte.\n\nTehát a présgép rezgése technológiai tevékenység, de írásban engedélyezte a Bérbeadó, ezért nem terheli a Bérlőt a költség. A tartószerkezetet érintő munka költsége alapból Bérbeadót terheli, és a kivétel (Bérlő technológiai tevékenysége) sem él, mert engedélyezte. Így a költségviselő: Bérbeadó.\n\nDöntő pont: 5.4. vagy 5.5? A kérdés: \"Add meg azt a pontot is, amely a kérdést eldönti\". A konkrét eldöntő szabály az 5.4. pont, mert az tartalmazza a tartószerkezet, technológiai tevékenység és írásbeli engedély kivételét. Az 5.5. csak tényállás rögzítése. De lehet, hogy a döntő pont az 5.4. A séma \"pontszám\" mező, valószínűleg \"5.4.\" vagy \"5.4. pont\"? A megadott lehetőségek: \"Bérbeadó | Bérlő | a Felek megosztva\" csak koltseget_viseli-re. donto_pont: \"pontszám\" nincs felsorolt értékkészlet, de valószínűleg pontszám szöveg. A feladat: \"A felsorolt értékkészletű mezőknél PONTOSAN a megadott lehetőségek egyikét add vissza\". A donto_pont nem felsorolt értékkészletű? Lehet, hogy pontszám formátum. Használjam \"5.4.\" vagy \"5.4. pont\"? A dokumentumban pontok számozása: **5.4.** A kérdés: \"azt a pontot is, amely a kérdést eldönti\". Válasz: \"5.4.\" vagy \"5.4. pont\". A JSON-ban \"pontszám\" mező, talán csak \"5.4.\" a legbiztonságosabb. Engedély dátuma: 2026-05-04.\n\nKizárólag JSON.\n",
+     "gondolkodas_sha": "9ecdc175fed6",
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 3343,
+      "total_tokens": 4181,
+      "completion_tokens": 838,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+       "reasoning_tokens": 782
+      }
+     },
+     "timings": {},
+     "wall_ms": 52653.4,
+     "sha": "28239c55fd6e"
+    }
+   ]
+  }
+ ]
+}

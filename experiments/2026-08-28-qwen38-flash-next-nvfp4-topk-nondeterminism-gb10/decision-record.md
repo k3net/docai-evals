@@ -30,6 +30,26 @@ ratio on the reasoning stream, retry with temperature > 0 or a presence penalty)
 profile before the recipe is a candidate. A guard is possible precisely because the failure is now deterministic. The MTP-off post-test showed the loop is
 not a speculation artefact: without MTP it disappears on T14-01 and appears on language-challenge item 7 instead.
 
+## Tested and rejected (2026-08-29): upstream GDN FP32-beta fix (vLLM #53877)
+
+Applied as a one-file overlay on the `topk` image. Under MTP=2 the patched kernel is not executed (reasoning SHA
+byte-identical); under MTP=0 the loop migrates (CH-07 recovers, CH-09 and main-suite T5-01 start looping) and the main
+suite drops 97 → 96. It does not address the loop's cause and is inactive in the production recipe, so the decision
+above is unchanged: exact top-k (mode 3) + MTP=2 + a reasoning-loop guard. Details: README §5.7.
+
+## Reasoning-loop guard implemented (2026-08-30)
+
+The guard required by decision 3 exists as a client-side repetition detector on the streamed
+reasoning (last 120 characters seen ≥3× in the last 720) and on content (200 / ≥4×), with one
+perturbed-sampling retry. Replayed over the 622 reasoning runs recorded in this experiment it
+trips on 10/11 loop runs at 2 294–3 256 characters (≈900–1 300 tokens of the 16 384 budget) and
+on 0/611 clean runs; the untripped 11th is not periodic (a genuine 60 k-character rumination). A
+second measurement showed that T14-01 does not loop under the chat profile's sampling
+(T 0.6, presence 1.5: 10/10 clean) — the loop is a greedy-path property, so the guard matters
+most on the greedy extraction path. Upstream: the maintainer confirmed the top-k report on a
+GX10 and shipped an exact-top-k default (`VLLM_QSA_EXACT_TOPK=1`, `8347e7c`); that image still
+has to pass the prefill probe here before it replaces the local overlay.
+
 ## Why the majority vote is not a mitigation
 
 The harness scores the majority of three runs. In production there is one request. Scoring each

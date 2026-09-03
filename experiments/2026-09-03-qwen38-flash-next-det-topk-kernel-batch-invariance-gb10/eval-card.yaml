@@ -1,0 +1,155 @@
+id: qwen38-flash-next-det-topk-kernel-batch-invariance-gb10
+version: "1.0"
+date: "2026-09-03"
+title: "Qwen3.8-Flash-Next NVFP4 on vLLM, round 2: serial-only determinism, and the deterministic top-k kernel (vllm#55122) at 96-100 % of stock prefill"
+question: >-
+  Is the production night-slot configuration (exact torch.topk, prefix cache on, MTP=2) reproducible
+  token-by-token once decode and the prefix cache are included; does the FlashInfer NVFP4 MoE fused
+  finalize (vllm#54945) affect it; and does the deterministic persistent_topk kernel (vllm#55122)
+  give the same determinism without the 26 % prefill cost of the Python-level fix?
+
+task:
+  type: kie
+  document_types: [contract, invoice, synthetic-business-documents]
+  language: [hu]
+  output_format: strict-json
+
+dataset:
+  name: magyar-kie-eval round-1 corpus (synthetic Hungarian D1-D7), probe subset
+  size:
+    items: 6
+    probe_items_per_round: 4
+    probe_repetitions: 10
+    probe_rounds: 3
+    batch_probe_rounds: 3
+    batch_sizes: [2, 4]
+    main_suite_items: 50
+    main_suite_runs: 3
+  access: public
+  ground_truth: >-
+    Not used by the probes (they compare the engine with itself). The full-suite score uses the
+    round-1 deterministic ground truth and frozen scorer.
+  notes: >-
+    The corpus ships in the round-1 experiment directory and is not duplicated. Probe items were
+    chosen by prompt length (3 169 to 24 416 tokens) and by their round-1 behaviour.
+
+systems:
+  - label: A-exact-torch-topk
+    role: baseline
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, snapshot 7b71922, PLE table mmap-ed)
+    quantisation: "NVFP4 body, FP8 PLE shards"
+    engine: "vLLM 0.1.dev20073+g8e685d198 (blazux e655b7d image on vllm/vllm-openai:qwen38-flash-next@sha256:fc120ece...), FlashInfer 0.6.17"
+    hardware: DGX Spark GB10 (sm_121a), driver 580.173.02
+    backend: "QSA block-select = Python torch.topk (VLLM_QSA_EXACT_TOPK=1); NvFp4 MoE FLASHINFER_CUTLASS (fused finalize); mamba cache mode align"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: "48/256/512", thinking: "off and on", mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4 }
+  - label: B-stock-persistent-topk
+    role: control
+    model: same checkpoint
+    engine: "same image with qsadet_patch.py applied (inert); no top-k override"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "QSA block-select = stock persistent_topk"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 48, thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4 }
+  - label: C-det-kernel
+    role: candidate
+    model: same checkpoint
+    engine: "same image; _C_det.persistent_topk built in-image from jschmied/qwen38-flash-next-gb10 @ 0c5598782b33bbfc9acb46acd57b495ca0eb01b7 (vllm#55122), VLLM_QSA_DET_TOPK=1"
+    hardware: DGX Spark GB10 (sm_121a)
+    backend: "QSA block-select = deterministic radix-select kernel (index-ordered ties)"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: "48/512", thinking: "off and on", mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4 }
+
+normaliser_version: "not applicable to the probes; suite score uses pontozo.py 2026-08-27 (round 1)"
+
+metrics:
+  - name: probe_pass_items
+    definition: "items whose N sequential identical requests returned identical per-token top-20 logprob signature sequences (sha256 over (token, logprob %.12g) lists)"
+    primary: true
+  - name: warm_run_differences
+    definition: "differences among requests 2..N of an item (prefix-cache hits), summed over rounds"
+    primary: true
+  - name: batch_matches_serial
+    definition: "concurrent requests whose full hash equals the sequential reference hash of the same prompt"
+    primary: true
+  - name: prefill_tok_s
+    definition: "prompt_tokens / (cold-run wall time - median warm-run wall time), 48-token round, identical generated token count across arms"
+    primary: true
+  - name: kernel_test_fails
+    definition: "FAILS reported by the PR author's test_det.py against the .so built in our image"
+  - name: suite_points
+    definition: "main suite 50 x 3, majority output scored by the round-1 scorer"
+
+results:
+  arm_A_production_probe:
+    thinking_off_48tok_4x10: { pass_items: 3, fail_items: 1, fail_cause: "partial vs full prefix-cache hit (T2-01 shares 2 182 prompt tokens with T3-01)", warm_differences: 0 }
+    thinking_off_256tok_4x8: { pass_items: 4, warm_differences: 0 }
+    thinking_on_512tok_4x5: { pass_items: 4, warm_differences: 0, longest_prompt_tokens: 24416 }
+    warm_runs_total: 80
+    moe_fused_finalize_pattern_observed: false
+  partial_vs_full_cache_hit:
+    item: T2-01
+    tokens_with_different_top20: 46
+    tokens_generated: 46
+    visible_text_identical: true
+    shared_prefix_chars_with_T3_01: 6982
+    reproduced_on_arm_C: true
+  batch_invariance_T3_01_128tok:
+    serial_reference_stable: true
+    identical_x2_3_rounds: { matches_serial: 0, of: 6, distinct_hashes: 2 }
+    identical_x4_3_rounds: { matches_serial: 0, of: 12, distinct_hashes: 3 }
+    mixed_batch_of_4_3_rounds: { matches_serial: 0, of: 3, distinct_hashes: 1 }
+    visible_text_identical_all_21: true
+  arm_B_stock_control_48tok_4x10:
+    pass_items: 0
+    distinct_hashes_per_item: 10
+    first_divergent_token: 0
+    visible_text_identical: true
+  arm_C_det_kernel:
+    kernel_test_fails: 0
+    stock_kernel_self_identical_in_test: false
+    thinking_off_48tok_4x10: { pass_items: 3, fail_items: 1, fail_cause: "same T2-01 partial-hit pattern as arm A" }
+    thinking_on_512tok_4x5: { pass_items: 4 }
+    activation_line_in_log: "QSADET active"
+    text_differs_from_arm_A: true
+  prefill_tok_s:
+    T6-02_6082tok: { B_stock: 2246, A_exact: 1952, C_det: 2253, A_over_B: 0.87, C_over_B: 1.00 }
+    T10-05_24416tok: { B_stock: 1943, A_exact: 1756, C_det: 1932, A_over_B: 0.90, C_over_B: 0.99 }
+    T2-01_3227tok: { B_stock: 3163, A_exact: 2417, C_det: 3049, A_over_B: 0.76, C_over_B: 0.96, note: "partially cached on every arm; inflated equally" }
+    T3-01_excluded: "smoke request had warmed it; cold - warm = 153 ms"
+  decode_512tok_thinking:
+    T3-01_ms: { A: "16805-17125", C: 17074 }
+  suite_main_50x3_arm_C:
+    points: null
+    note: "run in progress when the card was written; references on this corpus: stock 97.00 (13/50 unstable), round-1 mode-3 image 98.00 (0/50), production upstream image 96.00 (1 run)"
+
+verdict: >-
+  The production configuration is reproducible token-by-token for sequential requests in the same
+  prefix-cache state (91 of 92 requests; the one failure is a partial-vs-full cache hit, an
+  align-resume effect independent of the top-k kernel). It is not batch-invariant: identical
+  concurrent requests differ from the serial reference and from each other (0/18 matches), so
+  bit-level reproducibility does not exist in production, only value-level stability. The
+  FlashInfer NVFP4 MoE fused-finalize defect (vllm#54945) does not surface on our shapes (0
+  divergences in 80 warm runs). The deterministic persistent_topk kernel (vllm#55122) builds and
+  passes its test in our image, matches the exact torch.topk in determinism, and runs at 96-100 %
+  of the stock prefill throughput where the production fix runs at 76-90 % - but produces
+  different text than the current fix, so the suite score must be re-measured before adoption.
+
+reproducibility:
+  level: R2
+  code: published
+  data: synthetic-only
+  results: full
+  runs_per_variant: 1
+  not_published: "the arm-C image (docker commit of a patched container; the recipe is upstream and the pinned commit is stated)"
+
+limitations:
+  - "One server start per arm; the three-start rule of the upstream post-mortem is not met, so start-to-start variation (JIT, autotune, allocator) is unmeasured."
+  - "Top-20 served logprobs only, quantised by the server; distinct-vector counts are conservative."
+  - "Probes generate at most 512 tokens; production KIE uses a 16 384-token budget."
+  - "The cold path's own reproducibility was not measured (would need a restart or prefix caching off between two cold runs)."
+  - "Prefill throughput is cold minus warm on one cold request per item; same-arm warm spread 1-3 %; no cross-session CV."
+  - "The MoE statement is a bound (0 divergences in 80 warm runs on four prompts on our shapes), not a general claim about the kernel."
+  - "The arm-C full-suite score was not available when this card was written; it is added when the run lands."
+  - "Arm C produces different text than arm A by construction (different exact selections under ties); quality is not inherited."
+
+related:
+  article: "(none yet; a short follow-up to the round-1 article is planned after the suite score and the three-start rule)"
+  experiments: [qwen38-flash-next-nvfp4-topk-nondeterminism-gb10, moe-backend-selection-gb10, mtp-speculative-decoding-gb10]

@@ -180,6 +180,28 @@ identically; and the 217 k-token prompt takes 157 s on vLLM against 1 121 s on l
 of 65 items discriminate between the four systems at all, and the NVFP4 column above was produced
 *with* the non-deterministic kernel — which is why the fix is being re-validated on the full suite.
 
+### 5.7 Negative result: the upstream GDN FP32-beta fix (vLLM #53877) does not remove the reasoning loop
+
+Upstream hypothesis: the packed GDN decode kernel rounds `sigmoid(beta)` through BF16 on every decode step, the
+error compounds in the recurrent state and produces repetition loops (the PR's serving test: 20/42 → 1/42 loops).
+The fix is one line in `third_party/flash_linear_attention/ops/fused_recurrent.py`; our image had the buggy line, so
+we built an overlay (`topk` image + patch, file in `patch/fused_recurrent_fp32beta_TESTED_NEGATIVE.py`) and re-ran
+the known loop items and the main suite (`code/beta-kiserlet-mtp0.sh`).
+
+| | before fix | after fix |
+|---|---|---|
+| T14-01, MTP=2, 3 runs | 3/3 loop | 3/3 loop, **byte-identical reasoning SHA** — the patched kernel is not on the speculative path at all |
+| T14-01, MTP=0, 3 runs | 10/10, 864 tok | 10/10, 838 tok, different SHA (the kernel is live here) |
+| HU challenge, MTP=0 | CH-07 loops (16 384, empty) | CH-07 recovers (3 192 tok); **CH-09 now loops**; 9/10 items take a different path |
+| main suite 50×1, MTP=0 | 97.00 | **96.00** — T3-01 1→2, **T5-01 2→0 with a loop** on an item that never looped before |
+
+Code reason: `fused_recurrent_gated_delta_rule_packed_decode` runs only on the non-speculative decode branch
+(`spec_sequence_masks is None`); under MTP the model uses `fused_sigmoid_gating_delta_rule_update`, which already
+computes beta in FP32. Conclusion: the loop is a path-sensitive greedy+thinking property — any perturbation (MTP
+on/off, a kernel fix) only moves it to another input. The fix is not quality-neutral here (−1) and is inactive in the
+production recipe (MTP=2), so it is **not adopted**. A reasoning-loop guard remains the only mitigation.
+Results: `results/runaway-beta-mtp{2,0}.json`, `results/meres-flash-nvfp4-topk3-beta-mtp0.json`.
+
 ## 6. What product decision followed?
 
 See [decision-record.md](decision-record.md). Short version: the NVFP4/vLLM path is **not** an
