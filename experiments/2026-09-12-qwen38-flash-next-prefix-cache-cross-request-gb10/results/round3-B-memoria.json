@@ -1,0 +1,317 @@
+{
+  "cimke": "round3-B-memoria-timeline",
+  "args": {
+    "url": "http://SPARK-DEV:8000",
+    "model": "qwen38-flash-next-nvfp4",
+    "ssh_host": "spark-dev",
+    "kontener": "qwen38-val-b",
+    "lepcsok": "8000,16000,24000,32000,48000,64000",
+    "max_tokens": 24,
+    "timeout": 1800,
+    "cimke": "round3-B-memoria-timeline",
+    "out": "WORKDIR/eredmenyek/round3-B-memoria.json"
+  },
+  "kezdet": "2026-09-12T19:13:51",
+  "lepcsok": [
+    {
+      "cel_token": 8000,
+      "kitolto_tok": 7956,
+      "prompt_tok": 8024,
+      "cached_tok": null,
+      "completion_tok": 4,
+      "ms": 3827.2,
+      "elotte_host": {
+        "ts": "2026-09-12T19:13:52,597801344+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106382 1316 18125",
+        "docker_stats": "5.49GiB / 121.7GiB 3.74%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:14:01,033666610+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106407 1244 18172",
+        "docker_stats": "5.491GiB / 121.7GiB 3.76%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1504.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1417.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "415013.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "415013.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2185.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1508.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1420.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "423037.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "423037.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2189.0"
+      }
+    },
+    {
+      "cel_token": 16000,
+      "kitolto_tok": 15951,
+      "prompt_tok": 16019,
+      "cached_tok": null,
+      "completion_tok": 5,
+      "ms": 7020.8,
+      "elotte_host": {
+        "ts": "2026-09-12T19:14:05,264034258+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106396 1253 18174",
+        "docker_stats": "5.491GiB / 121.7GiB 3.48%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:14:16,665173622+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106397 1242 18186",
+        "docker_stats": "5.495GiB / 121.7GiB 3.59%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1508.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1420.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "423037.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "423037.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2189.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1512.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1424.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "439056.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "439056.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2194.0"
+      }
+    },
+    {
+      "cel_token": 24000,
+      "kitolto_tok": 23959,
+      "prompt_tok": 24027,
+      "cached_tok": null,
+      "completion_tok": 5,
+      "ms": 10478.5,
+      "elotte_host": {
+        "ts": "2026-09-12T19:14:20,897361305+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106409 1229 18187",
+        "docker_stats": "5.495GiB / 121.7GiB 3.34%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:14:35,875626795+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106409 1228 18188",
+        "docker_stats": "5.495GiB / 121.7GiB 3.48%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1512.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1424.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "439056.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "439056.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2194.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1516.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1428.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "463083.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "463083.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2199.0"
+      }
+    },
+    {
+      "cel_token": 32000,
+      "kitolto_tok": 31954,
+      "prompt_tok": 32022,
+      "cached_tok": null,
+      "completion_tok": 5,
+      "ms": 13651.5,
+      "elotte_host": {
+        "ts": "2026-09-12T19:14:40,206495276+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106410 1227 18188",
+        "docker_stats": "5.495GiB / 121.7GiB 3.44%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:14:58,645337140+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106403 1233 18189",
+        "docker_stats": "5.496GiB / 121.7GiB 3.37%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1516.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1428.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "463083.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "463083.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2199.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1520.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1432.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "495105.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "495105.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2204.0"
+      }
+    },
+    {
+      "cel_token": 48000,
+      "kitolto_tok": 47957,
+      "prompt_tok": 48025,
+      "cached_tok": null,
+      "completion_tok": 5,
+      "ms": 20472.6,
+      "elotte_host": {
+        "ts": "2026-09-12T19:15:02,843142902+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106426 1210 18189",
+        "docker_stats": "5.496GiB / 121.7GiB 3.39%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:15:27,972267274+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106426 1209 18190",
+        "docker_stats": "5.503GiB / 121.7GiB 2.37%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1520.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1432.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "495105.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "495105.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2204.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1524.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1436.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "543130.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "543130.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2209.0"
+      }
+    },
+    {
+      "cel_token": 64000,
+      "kitolto_tok": 63960,
+      "prompt_tok": 64028,
+      "cached_tok": null,
+      "completion_tok": 5,
+      "ms": 27653.6,
+      "elotte_host": {
+        "ts": "2026-09-12T19:15:32,069746169+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106427 1208 18190",
+        "docker_stats": "5.503GiB / 121.7GiB 3.46%"
+      },
+      "utana_host": {
+        "ts": "2026-09-12T19:16:04,601074411+02:00",
+        "nvidia_smi_apps": "404777, VLLM::EngineCore, 97124 MiB",
+        "free_m": "124609 106439 1194 18192",
+        "docker_stats": "5.51GiB / 121.7GiB 3.32%"
+      },
+      "elotte_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1524.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1436.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "543130.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "543130.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2209.0"
+      },
+      "utana_metrics": {
+        "vllm:spec_decode_num_draft_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1528.0",
+        "vllm:spec_decode_num_accepted_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1440.0",
+        "vllm:num_requests_running{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"capacity\"}": "0.0",
+        "vllm:num_requests_waiting_by_reason{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\",reason=\"deferred\"}": "0.0",
+        "vllm:kv_cache_usage_perc{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:prefix_cache_queries_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "607158.0",
+        "vllm:prefix_cache_hits_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "260800.0",
+        "vllm:num_preemptions_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "0.0",
+        "vllm:num_preemptions_created{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "1.7892324542576346e+09",
+        "vllm:prompt_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "607158.0",
+        "vllm:generation_tokens_total{engine=\"0\",model_name=\"qwen38-flash-next-nvfp4\"}": "2214.0"
+      }
+    }
+  ]
+}

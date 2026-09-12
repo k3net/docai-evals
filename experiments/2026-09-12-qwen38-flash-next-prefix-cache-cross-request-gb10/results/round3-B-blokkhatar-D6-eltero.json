@@ -1,0 +1,85 @@
+{
+  "args": {
+    "url": "http://SPARK-DEV:8000",
+    "model": "qwen38-flash-next-nvfp4",
+    "blokkmeret": 1600,
+    "ismetles": 6,
+    "max_tokens": 32,
+    "top": 20,
+    "mag": "b1a",
+    "prefix_doc": "D6",
+    "valodi_kar": "eltero",
+    "korpusz": "WORKDIR/korpusz",
+    "out": "WORKDIR/eredmenyek/round3-B-blokkhatar-D6-eltero.json",
+    "_a": 3032,
+    "_b": 3212
+  },
+  "kezdet": "2026-09-12T19:12:48",
+  "karok": [
+    {
+      "kar": "ELTERO-VALODI",
+      "cel": {
+        "prefix": 3002,
+        "A": 3032,
+        "B": 3212
+      },
+      "futasok": [
+        {
+          "teljes_hash": "69a50ed643fbc568",
+          "elso_token_sig_hash": "24e272b7ebe8b431",
+          "prompt_tok": 3267,
+          "ms": 2499.4,
+          "futas": 1
+        },
+        {
+          "teljes_hash": "fe7e5322630a38b7",
+          "elso_token_sig_hash": "6825e96aed658369",
+          "prompt_tok": 3267,
+          "ms": 1609.6,
+          "futas": 2
+        },
+        {
+          "teljes_hash": "fe7e5322630a38b7",
+          "elso_token_sig_hash": "6825e96aed658369",
+          "prompt_tok": 3267,
+          "ms": 1689.5,
+          "futas": 3
+        },
+        {
+          "teljes_hash": "fe7e5322630a38b7",
+          "elso_token_sig_hash": "6825e96aed658369",
+          "prompt_tok": 3267,
+          "ms": 1621.6,
+          "futas": 4
+        },
+        {
+          "teljes_hash": "fe7e5322630a38b7",
+          "elso_token_sig_hash": "6825e96aed658369",
+          "prompt_tok": 3267,
+          "ms": 1625.0,
+          "futas": 5
+        },
+        {
+          "teljes_hash": "fe7e5322630a38b7",
+          "elso_token_sig_hash": "6825e96aed658369",
+          "prompt_tok": 3267,
+          "ms": 1608.7,
+          "futas": 6
+        }
+      ],
+      "A": {
+        "teljes_hash": "0e2baba7221a64ec",
+        "elso_token_sig_hash": "e8bce2d2913ba76f",
+        "prompt_tok": 3086,
+        "ms": 2486.4
+      },
+      "ertekeles": {
+        "valtozatok": 2,
+        "elso_kulonbozik": true,
+        "A_blokk": 1,
+        "B_blokk": 2,
+        "eredmeny": "FAIL"
+      }
+    }
+  ]
+}

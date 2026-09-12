@@ -1,0 +1,84 @@
+{
+  "args": {
+    "url": "http://SPARK-DEV:8000",
+    "model": "qwen38-flash-next-nvfp4",
+    "blokkmeret": 1600,
+    "ismetles": 6,
+    "max_tokens": 32,
+    "top": 20,
+    "mag": "r5c",
+    "prefix_doc": "D6",
+    "korpusz": "WORKDIR/korpusz",
+    "out": "WORKDIR/eredmenyek/round3-A-blokkhatar-valodi-D6.json",
+    "_a": 3032,
+    "_b": 3212
+  },
+  "kezdet": "2026-09-12T15:55:26",
+  "karok": [
+    {
+      "kar": "ELTERO-VALODI",
+      "cel": {
+        "prefix": 3002,
+        "A": 3032,
+        "B": 3212
+      },
+      "futasok": [
+        {
+          "teljes_hash": "efcf7fe20a078576",
+          "elso_token_sig_hash": "a95961ad4b2affc7",
+          "prompt_tok": 3267,
+          "ms": 2839.7,
+          "futas": 1
+        },
+        {
+          "teljes_hash": "6f56c8a5b7dcfbaa",
+          "elso_token_sig_hash": "eeac852d2520fadf",
+          "prompt_tok": 3267,
+          "ms": 1820.1,
+          "futas": 2
+        },
+        {
+          "teljes_hash": "6f56c8a5b7dcfbaa",
+          "elso_token_sig_hash": "eeac852d2520fadf",
+          "prompt_tok": 3267,
+          "ms": 1771.2,
+          "futas": 3
+        },
+        {
+          "teljes_hash": "6f56c8a5b7dcfbaa",
+          "elso_token_sig_hash": "eeac852d2520fadf",
+          "prompt_tok": 3267,
+          "ms": 1760.2,
+          "futas": 4
+        },
+        {
+          "teljes_hash": "6f56c8a5b7dcfbaa",
+          "elso_token_sig_hash": "eeac852d2520fadf",
+          "prompt_tok": 3267,
+          "ms": 1756.2,
+          "futas": 5
+        },
+        {
+          "teljes_hash": "6f56c8a5b7dcfbaa",
+          "elso_token_sig_hash": "eeac852d2520fadf",
+          "prompt_tok": 3267,
+          "ms": 1769.1,
+          "futas": 6
+        }
+      ],
+      "A": {
+        "teljes_hash": "189315bdf22a2df7",
+        "elso_token_sig_hash": "bea5e9e4bad824e5",
+        "prompt_tok": 3086,
+        "ms": 4078.7
+      },
+      "ertekeles": {
+        "valtozatok": 2,
+        "elso_kulonbozik": true,
+        "A_blokk": 1,
+        "B_blokk": 2,
+        "eredmeny": "FAIL"
+      }
+    }
+  ]
+}

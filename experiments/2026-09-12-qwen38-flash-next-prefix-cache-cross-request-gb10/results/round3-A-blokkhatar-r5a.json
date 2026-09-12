@@ -1,0 +1,145 @@
+{
+  "args": {
+    "url": "http://SPARK-DEV:8000",
+    "model": "qwen38-flash-next-nvfp4",
+    "blokkmeret": 1600,
+    "ismetles": 6,
+    "max_tokens": 32,
+    "top": 20,
+    "mag": "r5a",
+    "out": "WORKDIR/eredmenyek/round3-A-blokkhatar-r5a.json"
+  },
+  "kezdet": "2026-09-12T15:52:35",
+  "karok": [
+    {
+      "kar": "ELTERO",
+      "cel": {
+        "prefix": 1680,
+        "A": 3160,
+        "B": 3260
+      },
+      "futasok": [
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 2876.7,
+          "futas": 1
+        },
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 1832.8,
+          "futas": 2
+        },
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 1815.7,
+          "futas": 3
+        },
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 1822.3,
+          "futas": 4
+        },
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 1827.8,
+          "futas": 5
+        },
+        {
+          "teljes_hash": "5e84c6e1c09e96d4",
+          "elso_token_sig_hash": "43d2be3641ee429c",
+          "prompt_tok": 3308,
+          "ms": 1803.3,
+          "futas": 6
+        }
+      ],
+      "A": {
+        "teljes_hash": "c71bbf99c480ff53",
+        "elso_token_sig_hash": "bc5a07406db6bf79",
+        "prompt_tok": 3208,
+        "ms": 2953.2
+      },
+      "ertekeles": {
+        "valtozatok": 1,
+        "elso_kulonbozik": false,
+        "A_blokk": 2,
+        "B_blokk": 2,
+        "eredmeny": "PASS"
+      }
+    },
+    {
+      "kar": "AZONOS",
+      "cel": {
+        "prefix": 1680,
+        "A": 3260,
+        "B": 3320
+      },
+      "futasok": [
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 2921.0,
+          "futas": 1
+        },
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 1841.4,
+          "futas": 2
+        },
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 1840.3,
+          "futas": 3
+        },
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 1859.2,
+          "futas": 4
+        },
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 1833.7,
+          "futas": 5
+        },
+        {
+          "teljes_hash": "bcb0ef5425c39e19",
+          "elso_token_sig_hash": "6326c2b40a473bcf",
+          "prompt_tok": 3371,
+          "ms": 1844.8,
+          "futas": 6
+        }
+      ],
+      "A": {
+        "teljes_hash": "aa8906da767bc1e6",
+        "elso_token_sig_hash": "02abf5dd6fe8cd94",
+        "prompt_tok": 3307,
+        "ms": 2946.0
+      },
+      "ertekeles": {
+        "valtozatok": 1,
+        "elso_kulonbozik": false,
+        "A_blokk": 2,
+        "B_blokk": 2,
+        "eredmeny": "PASS"
+      }
+    }
+  ]
+}

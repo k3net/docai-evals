@@ -1,0 +1,57 @@
+[i] round3-B-v029-detkernel — http://SPARK-DEV:8000 / qwen38-flash-next-nvfp4 · thinking=OFF · max_tokens=48 · 10× ismétlés
+
+  T3-01  (prompt 7269 kar, sha b38b52d8594d)
+      # 1  hash=3dd3f6900725240f  tok=  39      4257 ms  finish=stop
+      # 2  hash=3dd3f6900725240f  tok=  39      2605 ms  finish=stop
+      # 3  hash=3dd3f6900725240f  tok=  39      2629 ms  finish=stop
+      # 4  hash=3dd3f6900725240f  tok=  39      2606 ms  finish=stop
+      # 5  hash=3dd3f6900725240f  tok=  39      2657 ms  finish=stop
+      # 6  hash=3dd3f6900725240f  tok=  39      2613 ms  finish=stop
+      # 7  hash=3dd3f6900725240f  tok=  39      2610 ms  finish=stop
+      # 8  hash=3dd3f6900725240f  tok=  39      2640 ms  finish=stop
+      # 9  hash=3dd3f6900725240f  tok=  39      2707 ms  finish=stop
+      #10  hash=3dd3f6900725240f  tok=  39      2602 ms  finish=stop
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T6-02  (prompt 15458 kar, sha df6e6c69b01a)
+      # 1  hash=f7c2b3679dbbc0d3  tok=  46      5491 ms  finish=stop
+      # 2  hash=f7c2b3679dbbc0d3  tok=  46      3615 ms  finish=stop
+      # 3  hash=f7c2b3679dbbc0d3  tok=  46      2693 ms  finish=stop
+      # 4  hash=f7c2b3679dbbc0d3  tok=  46      2713 ms  finish=stop
+      # 5  hash=f7c2b3679dbbc0d3  tok=  46      2710 ms  finish=stop
+      # 6  hash=f7c2b3679dbbc0d3  tok=  46      2710 ms  finish=stop
+      # 7  hash=f7c2b3679dbbc0d3  tok=  46      2692 ms  finish=stop
+      # 8  hash=f7c2b3679dbbc0d3  tok=  46      2717 ms  finish=stop
+      # 9  hash=f7c2b3679dbbc0d3  tok=  46      2695 ms  finish=stop
+      #10  hash=f7c2b3679dbbc0d3  tok=  46      2716 ms  finish=stop
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T10-05  (prompt 61757 kar, sha 0bbbd0a07701)
+      # 1  hash=b2b8afbb3ccbaec6  tok=  48     14209 ms  finish=length
+      # 2  hash=b2b8afbb3ccbaec6  tok=  48      2550 ms  finish=length
+      # 3  hash=b2b8afbb3ccbaec6  tok=  48      2585 ms  finish=length
+      # 4  hash=b2b8afbb3ccbaec6  tok=  48      2556 ms  finish=length
+      # 5  hash=b2b8afbb3ccbaec6  tok=  48      2557 ms  finish=length
+      # 6  hash=b2b8afbb3ccbaec6  tok=  48      2680 ms  finish=length
+      # 7  hash=b2b8afbb3ccbaec6  tok=  48      2561 ms  finish=length
+      # 8  hash=b2b8afbb3ccbaec6  tok=  48      2660 ms  finish=length
+      # 9  hash=b2b8afbb3ccbaec6  tok=  48      2572 ms  finish=length
+      #10  hash=b2b8afbb3ccbaec6  tok=  48      2642 ms  finish=length
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T2-01  (prompt 7495 kar, sha aade5a1acf68)
+      # 1  hash=d47b49c2bd4d9c81  tok=  46      3174 ms  finish=stop
+      # 2  hash=b5421701f3ba54c2  tok=  46      2324 ms  finish=stop
+      # 3  hash=b5421701f3ba54c2  tok=  46      2250 ms  finish=stop
+      # 4  hash=b5421701f3ba54c2  tok=  46      2277 ms  finish=stop
+      # 5  hash=b5421701f3ba54c2  tok=  46      2208 ms  finish=stop
+      # 6  hash=b5421701f3ba54c2  tok=  46      2400 ms  finish=stop
+      # 7  hash=b5421701f3ba54c2  tok=  46      2249 ms  finish=stop
+      # 8  hash=b5421701f3ba54c2  tok=  46      2193 ms  finish=stop
+      # 9  hash=b5421701f3ba54c2  tok=  46      2190 ms  finish=stop
+      #10  hash=b5421701f3ba54c2  tok=  46      2189 ms  finish=stop
+    -> FAIL: 2 különböző hash 10 futásból (melegen 1), első eltérő token: 0, szövegváltozat: 1
+
+=== round3-B-v029-detkernel: 3/4 item PASS ===
+    FAIL: T2-01
+    WORKDIR/eredmenyek/round3-B-szonda-48tok.json

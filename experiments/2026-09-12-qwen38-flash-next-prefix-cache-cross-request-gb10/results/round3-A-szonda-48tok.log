@@ -1,0 +1,57 @@
+[i] round3-A-prodkontroll-exacttopk1 — http://SPARK-DEV:8000 / qwen38-flash-next-nvfp4 · thinking=OFF · max_tokens=48 · 10× ismétlés
+
+  T3-01  (prompt 7269 kar, sha b38b52d8594d)
+      # 1  hash=68c737654ac4b7ce  tok=  39      5292 ms  finish=stop
+      # 2  hash=68c737654ac4b7ce  tok=  39      3692 ms  finish=stop
+      # 3  hash=68c737654ac4b7ce  tok=  39      3176 ms  finish=stop
+      # 4  hash=68c737654ac4b7ce  tok=  39      3074 ms  finish=stop
+      # 5  hash=68c737654ac4b7ce  tok=  39      3048 ms  finish=stop
+      # 6  hash=68c737654ac4b7ce  tok=  39      3086 ms  finish=stop
+      # 7  hash=68c737654ac4b7ce  tok=  39      3006 ms  finish=stop
+      # 8  hash=68c737654ac4b7ce  tok=  39      3118 ms  finish=stop
+      # 9  hash=68c737654ac4b7ce  tok=  39      2972 ms  finish=stop
+      #10  hash=68c737654ac4b7ce  tok=  39      3037 ms  finish=stop
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T6-02  (prompt 15458 kar, sha df6e6c69b01a)
+      # 1  hash=b71656c432c55769  tok=  46      6798 ms  finish=stop
+      # 2  hash=b71656c432c55769  tok=  46      3121 ms  finish=stop
+      # 3  hash=b71656c432c55769  tok=  46      3071 ms  finish=stop
+      # 4  hash=b71656c432c55769  tok=  46      3088 ms  finish=stop
+      # 5  hash=b71656c432c55769  tok=  46      3065 ms  finish=stop
+      # 6  hash=b71656c432c55769  tok=  46      3106 ms  finish=stop
+      # 7  hash=b71656c432c55769  tok=  46      3203 ms  finish=stop
+      # 8  hash=b71656c432c55769  tok=  46      3347 ms  finish=stop
+      # 9  hash=b71656c432c55769  tok=  46      3064 ms  finish=stop
+      #10  hash=b71656c432c55769  tok=  46      3035 ms  finish=stop
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T10-05  (prompt 61757 kar, sha 0bbbd0a07701)
+      # 1  hash=538335a882ec27e6  tok=  48     19171 ms  finish=length
+      # 2  hash=538335a882ec27e6  tok=  48      3370 ms  finish=length
+      # 3  hash=538335a882ec27e6  tok=  48      2952 ms  finish=length
+      # 4  hash=538335a882ec27e6  tok=  48      2978 ms  finish=length
+      # 5  hash=538335a882ec27e6  tok=  48      2934 ms  finish=length
+      # 6  hash=538335a882ec27e6  tok=  48      2833 ms  finish=length
+      # 7  hash=538335a882ec27e6  tok=  48      2834 ms  finish=length
+      # 8  hash=538335a882ec27e6  tok=  48      2830 ms  finish=length
+      # 9  hash=538335a882ec27e6  tok=  48      2859 ms  finish=length
+      #10  hash=538335a882ec27e6  tok=  48      2835 ms  finish=length
+    -> PASS: 1 különböző hash 10 futásból (melegen 1), első eltérő token: None, szövegváltozat: 1
+
+  T2-01  (prompt 7495 kar, sha aade5a1acf68)
+      # 1  hash=3c147511fc22cc55  tok=  46      3976 ms  finish=stop
+      # 2  hash=15b516b667610745  tok=  46      2575 ms  finish=stop
+      # 3  hash=15b516b667610745  tok=  46      2598 ms  finish=stop
+      # 4  hash=15b516b667610745  tok=  46      2539 ms  finish=stop
+      # 5  hash=15b516b667610745  tok=  46      2672 ms  finish=stop
+      # 6  hash=15b516b667610745  tok=  46      2440 ms  finish=stop
+      # 7  hash=15b516b667610745  tok=  46      2496 ms  finish=stop
+      # 8  hash=15b516b667610745  tok=  46      2411 ms  finish=stop
+      # 9  hash=15b516b667610745  tok=  46      2439 ms  finish=stop
+      #10  hash=15b516b667610745  tok=  46      2487 ms  finish=stop
+    -> FAIL: 2 különböző hash 10 futásból (melegen 1), első eltérő token: 0, szövegváltozat: 1
+
+=== round3-A-prodkontroll-exacttopk1: 3/4 item PASS ===
+    FAIL: T2-01
+    WORKDIR/eredmenyek/round3-A-szonda-48tok.json
