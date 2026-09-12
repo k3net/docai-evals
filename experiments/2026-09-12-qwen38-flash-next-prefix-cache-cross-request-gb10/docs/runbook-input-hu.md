@@ -1,6 +1,6 @@
 # Qwen3.8-Flash-Next GB10 vLLM stabilitási validációs runbook
 
-**Célgép:** `spark-dev` — NVIDIA DGX Spark / GB10, Ubuntu 24.04, ARM64, 128 GB unified memory  
+**Célgép:** `SPARK-DEV` — NVIDIA DGX Spark / GB10, Ubuntu 24.04, ARM64, 128 GB unified memory  
 **Dátum:** 2026-09-12  
 **Cél:** a jelenlegi működő konfiguráció érintetlenül hagyása mellett validálni az újabb vLLM-javításokat, különösen a QSA-memóriakezelést, a Mamba-state kezelést, a determinisztikus Top-K-t és a prefix cache helyességét.
 
@@ -10,7 +10,7 @@ Három kart érdemes összehasonlítani:
 
 | Kar | Tartalom | Szerep |
 |---|---|---|
-| A — PROD CONTROL | A jelenlegi pinelt, már validált spark-dev image | Referencia, nem módosítjuk |
+| A — PROD CONTROL | A jelenlegi pinelt, már validált SPARK-DEV image | Referencia, nem módosítjuk |
 | B — v0.29 BUNDLE | A `blazux/qwen3.8-Flash-DGX` aktuális `v0.29` profilja | Hivatalos vLLM release + GB10 patchkészlet |
 | C — EXPERIMENTAL | B vagy friss vLLM `main`, kiegészítve a még nyitott PR-ekkel | Upstream-validáció, külön image-ben |
 
@@ -38,7 +38,7 @@ Kiemelt változások:
 ## 3. Munkakönyvtár és eredménykönyvtár
 
 ```bash
-ssh spark-dev
+ssh SPARK-DEV
 
 export RUN_DATE="$(date -u +%Y%m%dT%H%M%SZ)"
 export RUN_ROOT="/opt/vllm/qwen38-validation-${RUN_DATE}"

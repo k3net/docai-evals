@@ -1,4 +1,4 @@
-# Round3 / B kar — a blazux v0.29 bundle független GB10-validációja (spark-dev, 2026-09-12)
+# Round3 / B kar — a blazux v0.29 bundle független GB10-validációja (SPARK-DEV, 2026-09-12)
 
 > A runbook §6: a `blazux/qwen3.8-Flash-DGX` `v0.29` profilja a **hivatalos** `vllm/vllm-openai:v0.29.0`
 > alapra rétegzi a GB10-patchkészletet. Ez a legkisebb kockázatú candidate — és egyben az első
@@ -13,7 +13,7 @@
 | alap | `vllm/vllm-openai:v0.29.0` → a konténerben `vllm.__version__ == 0.29.0` |
 | det top-k kernel | `jschmied/qwen38-flash-next-gb10` @ **`e0ef69d4f5575dad00d34e05479eaf4c6547bace`**, sha256-pinelt fájlokkal, `DET_ARCH=121a` |
 | checkpoint | azonos az A karral: snapshot `7b719225242aacd3dbd3f9407468c2ee9a9d2594` |
-| gép | ugyanaz a spark-dev, ugyanaz a driver/CUDA (580.173.02 / 13.0) |
+| gép | ugyanaz a SPARK-DEV, ugyanaz a driver/CUDA (580.173.02 / 13.0) |
 
 ## 2. `./flash doctor v0.29` — minden zöld
 

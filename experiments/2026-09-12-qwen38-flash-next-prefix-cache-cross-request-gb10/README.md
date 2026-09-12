@@ -12,9 +12,10 @@
 
 Three questions, in this order:
 
-1. **Which cache path is actually wrong?** Round 1 (08-28), round 2 (09-03) and round 3 (09-12) all
-   see the same single item of fifty fail the same way: run 1's per-token logprob hash differs, runs
-   2–10 are identical to each other. Round 2 assumed the *partial* hit (run 1) was the faulty path.
+1. **Which cache path is actually wrong?** Round 2 (09-03) and round 3 (09-12) both see the same
+   single probe item (one of four drawn from the fifty-item suite) fail the same way: run 1's per-token
+   logprob hash differs, runs 2–10 are identical to each other. (In round 1 the stock kernel made every
+   item diverge, so the pattern was not visible yet.) Round 2 assumed the *partial* hit (run 1) was the faulty path.
 2. **Does the current release image fix it?** `blazux/qwen3.8-Flash-DGX` now has a `v0.29` profile
    built on the **official** `vllm/vllm-openai:v0.29.0` instead of the preview build we run, and it
    ships the deterministic top-k kernel (vllm#55122) compiled in.
@@ -161,8 +162,9 @@ Cold prefills, unique filler seed per step, `vllm:prefix_cache_hits_total` flat 
 | 48 025 | 25 491 ms | **20 473 ms** | 1 884 | **2 346** | **+25 %** |
 | 64 028 | 35 271 ms | **27 654 ms** | 1 815 | **2 315** | **+28 %** |
 
-Host memory stays on a flat plateau on both arms (107,5 GB ± 80 MB on A, 106,4 GB ± 60 MB on B); no
-step per context length, no preemption, no worker restart, no OOM in any of the seven container logs.
+Host memory stays on a flat plateau on both arms (before-step readings 107 557–107 570 MB on A and
+106 382–106 427 MB on B; the only larger move is a 425 MB *drop* after A's 64K step); no step per
+context length, no preemption, no worker restart, no OOM in any of the seven container logs.
 
 ⚠️ **Measurement limit:** on GB10 the memory is unified, `nvidia-smi --query-compute-apps=used_memory`
 returns `[N/A]`, and the torch caching allocator's `reserved` value is not readable from outside the

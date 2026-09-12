@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Blokkhatár-szonda — a cross-request prefix-cache eltérés HIPOTÉZISÉNEK tesztje.
 
-Megfigyelés (round3, spark-dev): a szennyezett kar (A×1, majd B×10 ugyanarra a közös
+Megfigyelés (round3, SPARK-DEV): a szennyezett kar (A×1, majd B×10 ugyanarra a közös
 prefixre) csak EGY itempáron bukott el ötből. A log szerint a cache blokkmérete 1600 token
 („Setting attention block size to 1600 tokens to ensure that attention page size is >= mamba
 page size"), és a bukó pár az EGYETLEN, ahol a két kérés **eltérő számú teljes blokkot** zár le:

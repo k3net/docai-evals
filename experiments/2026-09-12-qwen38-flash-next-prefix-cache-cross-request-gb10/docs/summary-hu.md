@@ -1,7 +1,7 @@
 # Round3 — Qwen3.8-Flash-Next GB10 vLLM stabilitási validáció, összefoglaló (2026-09-12)
 
-> A `2026-09-12-qwen38-gb10-vllm-stabilitas-validacios-runbook.md` végrehajtása a **spark-deven**.
-> A prod (spark-beta `night`-slot, `:8358`) végig **érintetlen** maradt.
+> A `2026-09-12-qwen38-gb10-vllm-stabilitas-validacios-runbook.md` végrehajtása a **SPARK-DEV-en**.
+> A prod (SPARK-BETA `night`-slot, `:8358`) végig **érintetlen** maradt.
 >
 > **Fejezetek:** `01-A-kar-prodkontroll.md` · `02-partial-hit-kiserlet.md` ·
 > `03-C-kar-pr-kompatibilitas.md` · `04-upstream-pr-kommentek.md` · `05-B-kar-v029.md` ·

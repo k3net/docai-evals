@@ -1,14 +1,14 @@
-# Round3 / A kar — prod-azonos kontrollmérés (spark-dev, 2026-09-12)
+# Round3 / A kar — prod-azonos kontrollmérés (SPARK-DEV, 2026-09-12)
 
 > **Mit validálunk?** A round3 runbook (`2026-09-12-qwen38-gb10-vllm-stabilitas-validacios-runbook.md`)
 > A karja: a jelenleg élesített recept (`spark/servers/vllm-qwen38-flash/`, blazux `e655b7d`) független
-> kontrollmérése a spark-deven, mielőtt bármelyik candidate (B: blazux v0.29, C: nyitott PR-ek) indulna.
-> A prod (spark-beta `night`-slot, `:8358`) a mérés alatt **érintetlen** — a spark-dev külön példány.
+> kontrollmérése a SPARK-DEV-en, mielőtt bármelyik candidate (B: blazux v0.29, C: nyitott PR-ek) indulna.
+> A prod (SPARK-BETA `night`-slot, `:8358`) a mérés alatt **érintetlen** — a SPARK-DEV külön példány.
 
-## 0. Eltérés a runbooktól — a spark-dev tényleges állapota
+## 0. Eltérés a runbooktól — a SPARK-DEV tényleges állapota
 
 A runbook §4–5 egy futó `qwen38-flash` konténert és egy `/opt/vllm/qwen3.8-Flash-DGX` checkoutot (`./flash`
-CLI) feltételez. A spark-deven **egyik sincs**: a gép a round2 óta szabad, a GPU üres, és a recept nem
+CLI) feltételez. A SPARK-DEV-en **egyik sincs**: a gép a round2 óta szabad, a GPU üres, és a recept nem
 `./flash` scripttel, hanem a vendorozott compose-szal/`docker run`-nal indul. Az A kar ezért a leállított
 `qwen38-det-a` konténer `docker inspect`-jéből visszanyert, **bájtra azonos** paraméterezéssel indult
 (`qwen38-flash-dgx-up:e655b7d`, `VLLM_QSA_EXACT_TOPK=1`, prefix cache ON, MTP=2, 262 144 ctx).
@@ -17,7 +17,7 @@ CLI) feltételez. A spark-deven **egyik sincs**: a gép a round2 óta szabad, a 
 
 | mit | érték |
 |---|---|
-| gép | spark-dev, NVIDIA GB10 (sm_121, `capability (12,1)`), ARM64, 128 GB unified |
+| gép | SPARK-DEV, NVIDIA GB10 (sm_121, `capability (12,1)`), ARM64, 128 GB unified |
 | driver / CUDA | 580.173.02 / 13.0 |
 | kernel | 6.17.0-1029-nvidia-aarch64 (konténer), host 6.17.0-1032-oem |
 | image | `qwen38-flash-dgx-up:e655b7d` (a prod recept dev-másolata) |
@@ -25,7 +25,7 @@ CLI) feltételez. A spark-deven **egyik sincs**: a gép a round2 óta szabad, a 
 | checkpoint | `RadixArk/Qwen3.8-Flash-Next-NVFP4` snapshot `7b719225242aacd3dbd3f9407468c2ee9a9d2594` |
 | MoE backend | `FLASHINFER_CUTLASS` (a #54945/#54948 érintett útja) |
 | Mamba cache mód | `align` — a vLLM a prefix caching miatt automatikusan ezt választja |
-| korpusz | `magyar-kie-eval`, corpus sha256 `c7589bae…` (a laptopon és a spark-deven **bitre azonos**) |
+| korpusz | `magyar-kie-eval`, corpus sha256 `c7589bae…` (a laptopon és a SPARK-DEV-en **bitre azonos**) |
 
 ⚠️ A `VLLM_PLE_MMAP*` és a `VLLM_QSA_EXACT_TOPK` a vLLM saját env-regiszterében ismeretlen
 (`Unknown vLLM environment variable detected`) — ezeket a vendorozott patchek olvassák `os.environ`-ból.

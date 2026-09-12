@@ -3,8 +3,8 @@ version: "1.0"
 date: "2026-09-12"
 title: "Qwen3.8-Flash-Next NVFP4 on vLLM, round 3: cross-request prefix-cache reuse changes the greedy logits, reproduced on two independently built stacks"
 question: >-
-  Round 2 left one item of fifty failing the determinism probe and attributed it to a partial
-  prefix-cache hit. Which cache path is actually wrong; does the effect survive a different engine
+  Round 2 left one of the four probe items (drawn from the fifty-item suite) failing the determinism
+  probe and attributed it to a partial prefix-cache hit. Which cache path is actually wrong; does the effect survive a different engine
   build, a different vLLM version and a different top-k implementation; can it be produced on demand
   on an unused document; and is vllm#56500 (bounded QSA prefill logits workspace) applicable or
   needed on this recipe?
@@ -118,7 +118,7 @@ results:
     arm_A_tok_s: { 8024: 1736, 16019: 1825, 24027: 1866, 32022: 1877, 48025: 1884, 64028: 1815 }
     arm_B_tok_s: { 8024: 2097, 16019: 2282, 24027: 2293, 32022: 2346, 48025: 2346, 64028: 2315 }
     det_kernel_speedup: "+21 % to +28 %"
-    host_memory: { arm_A: "107.5 GB plateau, +-80 MB", arm_B: "106.4 GB plateau, +-60 MB", step_function: false }
+    host_memory: { arm_A: "107557-107570 MB before each step; one 425 MB drop after the 64K step", arm_B: "106382-106427 MB before each step", step_function: false }
     failures: { oom: 0, illegal_memory_access: 0, preemption: 0, worker_restart: 0, container_logs_scanned: 7 }
   vllm_56500_applicability:
     main_hunk_target: "vllm/models/qwen4_exp/nvidia/ops/qsa_indexer.py (created 2026-09-02 by vllm#54513)"

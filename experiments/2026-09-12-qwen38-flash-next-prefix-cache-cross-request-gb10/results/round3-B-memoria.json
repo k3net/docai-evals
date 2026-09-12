@@ -3,7 +3,7 @@
   "args": {
     "url": "http://SPARK-DEV:8000",
     "model": "qwen38-flash-next-nvfp4",
-    "ssh_host": "spark-dev",
+    "ssh_host": "SPARK-DEV",
     "kontener": "qwen38-val-b",
     "lepcsok": "8000,16000,24000,32000,48000,64000",
     "max_tokens": 24,

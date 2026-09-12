@@ -1,8 +1,9 @@
-# Round3 / T2-01 — a prefix-cache-en átolvasott állapot izolálása (spark-dev, 2026-09-12)
+# Round3 / T2-01 — a prefix-cache-en átolvasott állapot izolálása (SPARK-DEV, 2026-09-12)
 
-> **A kiindulás:** a determinizmus-szondában a round1 (08-28), a round2 (09-03) és a round3 (09-12)
-> mérésén **ugyanaz az egyetlen item (T2-01) bukik, ugyanazzal a mintázattal**: az 1. futás hash-e
-> eltér, a 2–10. egymással azonos. A round2 ezt „részleges-vs-teljes cache-hit jelenségként" írta le,
+> **A kiindulás:** a determinizmus-szondában a round2 (09-03) és a round3 (09-12) mérésén
+> **ugyanaz az egyetlen szonda-item (T2-01, a négy vizsgált egyike) bukik, ugyanazzal a mintázattal**:
+> az 1. futás hash-e eltér, a 2–10. egymással azonos. (A round1-ben a gyári kernel még minden itemet
+> elvitt, ott ez a mintázat nem látszott.) A round2 ezt „részleges-vs-teljes cache-hit jelenségként" írta le,
 > de nem döntötte el, **melyik ág a helyes**. Ez a kísérlet eldönti.
 
 ## 1. A felállás
@@ -91,7 +92,7 @@ scheduler.py:392          block_size = self.block_size  # scheduler block size (
 
 Vagyis a fenti kísérletsor **nem** a javítatlan hibát méri: a „csupa nulla állapot" eset már el van
 hárítva, és **marad** egy finomabb, kérések közti eltérés. ⚠️ Ez nem jelenti, hogy a két upstream PR
-felesleges volna: azok lényegesen többet tesznek a kétsoros patchnél (#54076: +287/−17 hat fájlban,
+felesleges volna: azok lényegesen többet tesznek a kétsoros patchnél (#54076: +287/−17 négy fájlban,
 #53798: +64/−23), így nem zárható ki, hogy a maradék esetet is lefedik — ezt csak egy patchelt karon
 lehetne eldönteni.
 

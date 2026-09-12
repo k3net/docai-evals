@@ -65,7 +65,7 @@ def main():
     a = argparse.ArgumentParser()
     a.add_argument("--url", required=True)
     a.add_argument("--model", required=True)
-    a.add_argument("--ssh-host", default="spark-dev")
+    a.add_argument("--ssh-host", default="SPARK-DEV")
     a.add_argument("--kontener", required=True)
     a.add_argument("--lepcsok", default="8000,16000,24000,32000,48000,64000",
                    help="promptok hossza TOKENBEN (közelítés: 1 token ~ 1 szó-token a kitöltő szövegben)")
