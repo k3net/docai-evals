@@ -214,8 +214,9 @@ vllm#56500 is not adopted.
 
 [docai.hu/blog/prefix-cache-megvaltoztatja-a-valaszt](https://docai.hu/blog/prefix-cache-megvaltoztatja-a-valaszt)
 (HU) / [docai.hu/en/blog/prefix-cache-changes-the-answer](https://docai.hu/en/blog/prefix-cache-changes-the-answer) (EN).
-Upstream: a reproduction comment on vllm#54076 (with #53798 referenced), an independent
-throughput data point on vllm#55122, and a negative/packaging note on vllm#56500.
+Upstream (posted 2026-09-12): a [reproduction comment on vllm#54076](https://github.com/vllm-project/vllm/pull/54076#issuecomment-5647702147) (with #53798
+referenced), an [independent throughput data point on vllm#55122](https://github.com/vllm-project/vllm/pull/55122#issuecomment-5647704087), and a
+[negative/packaging note on vllm#56500](https://github.com/vllm-project/vllm/pull/56500#issuecomment-5647703250).
 
 ## Layout
 

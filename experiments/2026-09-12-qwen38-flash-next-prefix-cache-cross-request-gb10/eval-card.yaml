@@ -49,8 +49,8 @@ systems:
     hardware: same box
     backend: "model package vllm/models/qwen4_exp; QSA block-select = deterministic persistent_topk kernel (vllm#55122) built in-image from jschmied/qwen38-flash-next-gb10 @ e0ef69d4f5575dad00d34e05479eaf4c6547bace, DET_ARCH=121a, activation proven by 'QSADET active' in the log"
     sampling: { temperature: 0.0, top_p: 1, max_tokens: "24/32/48", thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4, max_model_len: 262144 }
-    deviation: >-
-      -cc.splitting_ops could not be byte-identical to arm A: the op names changed with the
+    notes: >-
+      Deviation: -cc.splitting_ops could not be byte-identical to arm A: the op names changed with the
       qwen3_8_flash_next -> qwen4_exp package rename. With arm A's list the engine fails during CUDA
       graph capture (the disk-backed PLE lookup lands inside the graph). The functionally equivalent
       v0.29 list was used, as selected by the recipe's own serve.sh from the image label.
@@ -149,7 +149,8 @@ reproducibility:
   code: published
   data: synthetic-only
   results: full
-  runs_per_variant: "1 arm per fresh server start; 7 starts total; the contaminated arm repeated on two starts"
+  runs_per_variant: 1
+  verified_by: "not exercised by CI: the probes need the two engine images on a GB10; the CI job validates this card's schema only. Each arm ran on its own fresh server start (7 starts total; the contaminated arm was repeated on a second start)."
   not_published: "the two engine images (third-party bases; both recipes are public and pinned by commit)"
 
 limitations:
@@ -165,4 +166,9 @@ limitations:
 related:
   article: "https://docai.hu/blog/prefix-cache-megvaltoztatja-a-valaszt (HU), https://docai.hu/en/blog/prefix-cache-changes-the-answer (EN)"
   experiments: [qwen38-flash-next-det-topk-kernel-batch-invariance-gb10, qwen38-flash-next-nvfp4-topk-nondeterminism-gb10]
-  upstream: ["vllm#54076", "vllm#53798", "vllm#55122", "vllm#56500", "vllm#54513"]
+  references:
+    - "vllm-project/vllm#54076 — Use the Mamba cache group's block size for align-mode chunk splitting (reproduction comment)"
+    - "vllm-project/vllm#53798 — Seed align-mode Mamba state_idx in Mamba blocks"
+    - "vllm-project/vllm#55122 — Make persistent_topk deterministic (throughput data point)"
+    - "vllm-project/vllm#56500 — Reuse bounded prefill logits workspace (negative + packaging note)"
+    - "vllm-project/vllm#54513 — creates qwen4_exp/nvidia/ops/qsa_indexer.py (2026-09-02)"
