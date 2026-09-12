@@ -1,0 +1,168 @@
+id: qwen38-flash-next-prefix-cache-cross-request-gb10
+version: "1.0"
+date: "2026-09-12"
+title: "Qwen3.8-Flash-Next NVFP4 on vLLM, round 3: cross-request prefix-cache reuse changes the greedy logits, reproduced on two independently built stacks"
+question: >-
+  Round 2 left one item of fifty failing the determinism probe and attributed it to a partial
+  prefix-cache hit. Which cache path is actually wrong; does the effect survive a different engine
+  build, a different vLLM version and a different top-k implementation; can it be produced on demand
+  on an unused document; and is vllm#56500 (bounded QSA prefill logits workspace) applicable or
+  needed on this recipe?
+
+task:
+  type: kie
+  document_types: [contract, invoice, synthetic-business-documents]
+  language: [hu]
+  output_format: strict-json
+
+dataset:
+  name: magyar-kie-eval round-1 corpus (synthetic Hungarian D1-D7), probe subsets + synthetic filler
+  size:
+    probe_items: 4
+    probe_repetitions: 10
+    document_pairs_tested: 4
+    block_boundary_arms: 7
+    memory_sweep_steps: 6
+    fresh_server_starts: 7
+  access: public
+  ground_truth: >-
+    Not used. Every probe compares the engine with itself; the metric is bit-identity of the
+    per-token top-20 logprob signature, never agreement with a reference answer.
+  notes: >-
+    The corpus ships in the round-1 experiment directory and is not duplicated. The memory sweep and
+    the block-boundary probe use synthetic filler sized through the server's own /tokenize endpoint,
+    with a unique seed per step so that every step is a genuine cold prefill.
+
+systems:
+  - label: A-preview-exact-topk
+    role: baseline
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, snapshot 7b71922, PLE table mmap-ed)
+    quantisation: "NVFP4 body, FP8 PLE shards"
+    engine: "vLLM 0.1.dev20073+g8e685d198 (blazux e655b7d image), torch 2.13.0+cu130, FlashInfer 0.6.17"
+    hardware: DGX Spark GB10 (sm_121a), driver 580.173.02, CUDA 13.0
+    backend: "model package vllm/models/qwen3_8_flash_next; QSA block-select = Python torch.topk (VLLM_QSA_EXACT_TOPK=1); NvFp4 MoE FLASHINFER_CUTLASS; mamba cache mode align; attention block size 1600"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: "24/32/48", thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4, max_model_len: 262144 }
+  - label: B-v0.29-det-kernel
+    role: candidate
+    model: same checkpoint
+    engine: "official vllm/vllm-openai:v0.29.0 (VLLM_BUILD_COMMIT=98dff2a81d747d1dba01a47f939f48c3526d4206), recipe blazux/qwen3.8-Flash-DGX @ c57881509af3dad83a28e59662fe3c4d29381628, Dockerfile.v0.29"
+    hardware: same box
+    backend: "model package vllm/models/qwen4_exp; QSA block-select = deterministic persistent_topk kernel (vllm#55122) built in-image from jschmied/qwen38-flash-next-gb10 @ e0ef69d4f5575dad00d34e05479eaf4c6547bace, DET_ARCH=121a, activation proven by 'QSADET active' in the log"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: "24/32/48", thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4, max_model_len: 262144 }
+    deviation: >-
+      -cc.splitting_ops could not be byte-identical to arm A: the op names changed with the
+      qwen3_8_flash_next -> qwen4_exp package rename. With arm A's list the engine fails during CUDA
+      graph capture (the disk-backed PLE lookup lands inside the graph). The functionally equivalent
+      v0.29 list was used, as selected by the recipe's own serve.sh from the image label.
+  - label: control-prefix-cache-off
+    role: control
+    model: same checkpoint
+    engine: same as arm A
+    backend: "--no-enable-prefix-caching; the engine does not switch to align Mamba mode at all"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 48, thinking: false, mtp: 2, prefix_cache: false }
+
+normaliser_version: "not applicable; the probes compare logprob signatures, not scored answers"
+
+metrics:
+  - name: full_logprob_hash_variants
+    definition: "distinct sha256 hashes over the per-token top-20 (token, logprob %.12g) lists, across N sequential identical requests"
+    primary: true
+  - name: first_run_matches_clean_arm
+    definition: "whether the contaminated arm's first request reproduces the cache-free clean arm's hash bit for bit"
+    primary: true
+  - name: block_count_asymmetry_triggers
+    definition: "whether sizing two requests onto different sides of a 1600-token block boundary reproduces the divergence on a previously unused document"
+    primary: true
+  - name: prefill_tok_s
+    definition: "prompt_tokens / cold-prefill wall time, unique filler seed per step (no cache hits)"
+    primary: true
+  - name: host_memory_plateau
+    definition: "host used memory (free -m) before and after each context step; proxy for new unified allocations"
+
+results:
+  which_cache_path_is_wrong:
+    clean_arm: { sequence: "B x10, fresh start", hash_variants: 1, hash: "fdc948fbf8f7698f" }
+    contaminated_arm: { sequence: "A x1 then B x10, fresh start", hash_variants: 2, run1: "fdc948fbf8f7698f", runs2_10: "dabe443eeea90df5", first_divergent_token: 0 }
+    control_prefix_cache_off: { sequence: "A x1 then B x10, fresh start", hash_variants: 1, hash: "c1dc6688b1004f2f" }
+    conclusion: >-
+      The contaminated arm's FIRST request (partial hit, own tail prefilled) equals the cache-free
+      clean arm bit for bit; the FULL cache hits diverge. The variable is which request wrote the
+      shared blocks, not cold vs cached. Prefix caching off removes the divergence.
+    repeat_on_another_start: { hash_variants: 2, pattern: identical, absolute_hashes: different }
+  already_fixed_bug_excluded:
+    patch: "blazux src/patch_mamba_block_size.py (two lines)"
+    touches: ["v1/worker/gpu/model_states/mamba_hybrid.py (= vllm#53798 area)", "v1/core/sched/scheduler.py (= vllm#54076 area)"]
+    present_in_both_images: true
+    note: "The all-zero restored Mamba state on every prefix hit is already handled; what remains is a subtler cross-request effect."
+  cross_stack_reproduction:
+    arm_A: { probe_items: 4, pass: 3, fail: 1, failing_item: T2-01, pattern: "run 1 differs, runs 2-10 identical" }
+    arm_B: { probe_items: 4, pass: 3, fail: 1, failing_item: T2-01, pattern: identical }
+    differs_between_arms: [base image, vllm version, model package name, top-k implementation]
+  block_boundary_probe:
+    block_size_tokens: 1600
+    natural_pairs:
+      D2_failing: { a_prompt: 3169, b_prompt: 3227, full_blocks: "1 vs 2", result: FAIL }
+      D3: { a_prompt: 2155, b_prompt: 2182, full_blocks: "1 vs 1", result: PASS }
+      D5: { a_prompt: 24384, b_prompt: 24404, full_blocks: "15 vs 15", result: PASS }
+    engineered:
+      synthetic_differing: { arm: A, a_prompt: 3091, b_prompt: 3308, full_blocks: "1 vs 2", result: PASS }
+      synthetic_equal: { arm: A, a_prompt: 3307, b_prompt: 3371, full_blocks: "2 vs 2", result: PASS }
+      real_D6_differing: { arm: A, a_prompt: 3086, b_prompt: 3267, full_blocks: "1 vs 2", result: FAIL, note: "predicted, on a document never used on that server start" }
+      real_D6_equal: { arm: A, a_prompt: 3307, b_prompt: 3371, full_blocks: "2 vs 2", result: PASS }
+      real_D1_differing: { arm: A, a_prompt: 4689, b_prompt: 4870, full_blocks: "2 vs 3", result: PASS, note: "same server start as real_D6_equal" }
+      real_D6_differing_armB: { arm: B, a_prompt: 3086, b_prompt: 3267, full_blocks: "1 vs 2", result: FAIL }
+      real_D3_equal_armB: { arm: B, a_prompt: 3264, b_prompt: 3346, full_blocks: "2 vs 2", result: PASS, note: "same server start as the row above" }
+    conclusion: "Block-count asymmetry is necessary-looking but NOT sufficient: it reproduced the effect on D6 on both stacks, failed to on D1, and synthetic low-entropy filler never triggered it."
+  memory_and_prefill_sweep:
+    prefix_cache_hits_total: "flat across all six steps on both arms (genuine cold prefills)"
+    arm_A_tok_s: { 8024: 1736, 16019: 1825, 24027: 1866, 32022: 1877, 48025: 1884, 64028: 1815 }
+    arm_B_tok_s: { 8024: 2097, 16019: 2282, 24027: 2293, 32022: 2346, 48025: 2346, 64028: 2315 }
+    det_kernel_speedup: "+21 % to +28 %"
+    host_memory: { arm_A: "107.5 GB plateau, +-80 MB", arm_B: "106.4 GB plateau, +-60 MB", step_function: false }
+    failures: { oom: 0, illegal_memory_access: 0, preemption: 0, worker_restart: 0, container_logs_scanned: 7 }
+  vllm_56500_applicability:
+    main_hunk_target: "vllm/models/qwen4_exp/nvidia/ops/qsa_indexer.py (created 2026-09-02 by vllm#54513)"
+    present_in_preview_image: false
+    present_in_v0290: false
+    present_in_main: true
+    both_bases_carry: "_LOGITS_WORKSPACE_BYTES = 128 * 1024 * 1024 (module constant) instead of envs.VLLM_SPARSE_INDEXER_MAX_LOGITS_MB (512 MB)"
+    current_workspace_manager_importable: true
+    symptom_reproduces_here: false
+    verdict: "not applicable and not needed on this recipe"
+
+verdict: >-
+  The single failing item that survived rounds 1 and 2 is explained, and the round-2 explanation was
+  inverted: the partial prefix-cache hit is the correct path, the full hit - on blocks written by a
+  differently sized request - is the one that diverges, from token 0, with the visible text
+  unchanged. Disabling prefix caching removes it; the already-merged-in-recipe block_size fix does
+  not. The effect reproduces on a second, independently built stack (official v0.29.0 image,
+  qwen4_exp package, deterministic top-k kernel), so it is not a property of our preview build or of
+  the exact-topk workaround. It can be produced on demand by sizing two requests onto either side of
+  a 1600-token block boundary on a previously unused document - but the same recipe failed on
+  another document and never triggered on synthetic filler, so block-count asymmetry is not a
+  sufficient condition and the mechanism remains open. Separately: vllm#56500 is inapplicable to
+  both shippable bases and its symptom does not reproduce here, while the deterministic top-k kernel
+  (vllm#55122) runs 21-28 % faster than the exact-topk workaround at identical determinism.
+
+reproducibility:
+  level: R2
+  code: published
+  data: synthetic-only
+  results: full
+  runs_per_variant: "1 arm per fresh server start; 7 starts total; the contaminated arm repeated on two starts"
+  not_published: "the two engine images (third-party bases; both recipes are public and pinned by commit)"
+
+limitations:
+  - "The mechanism is not identified: block-count asymmetry reproduced the effect on two documents (D2, D6 on both stacks) and failed on a third (D1); no kernel-level instrumentation was done."
+  - "The upstream PRs (vllm#53798, #54076) were not tested in full form - only the recipe's two-line equivalent was present. Whether the full PRs close the remainder is open."
+  - "Absolute logprob hashes are not stable across server starts, not even for the first entirely cold request; only the pattern reproduces. Comparisons hold within a start."
+  - "The 50-item quality suite was not re-run; the 21-28 % prefill win says nothing about extraction accuracy, and round 2 showed the two top-k paths produce different text."
+  - "Memory is measured as a host-level (free -m) proxy: on GB10 nvidia-smi reports [N/A] for compute-app memory and the torch allocator's reserved value is not readable from outside the engine."
+  - "No multi-hour soak and no 128K/262K context step."
+  - "Top-20 served logprobs only, server-quantised; distinct-vector counts are conservative."
+  - "Probes generate at most 48 tokens; production KIE runs with a 16 384-token budget."
+
+related:
+  article: "https://docai.hu/blog/prefix-cache-megvaltoztatja-a-valaszt (HU), https://docai.hu/en/blog/prefix-cache-changes-the-answer (EN)"
+  experiments: [qwen38-flash-next-det-topk-kernel-batch-invariance-gb10, qwen38-flash-next-nvfp4-topk-nondeterminism-gb10]
+  upstream: ["vllm#54076", "vllm#53798", "vllm#55122", "vllm#56500", "vllm#54513"]
