@@ -1,0 +1,159 @@
+id: qwen38-flash-next-prefix-cache-root-cause-gb10
+version: "1.0"
+date: "2026-09-14"
+title: "Qwen3.8-Flash-Next NVFP4 on vLLM, round 4: the cross-request prefix-cache divergence is a Mamba checkpoint the scheduler skips under MTP, and a one-line boundary stop removes it"
+question: >-
+  Round 3 showed that a full prefix-cache hit changes the greedy logits when the shared prefix was
+  written by a differently sized request, but not why, and one of its predictions failed on a third
+  document. Does the missing boundary stop in Scheduler._mamba_block_aligned_split explain the whole
+  round-3 pattern including that counterexample; does the length threshold it implies hold on the
+  GPU; and does the narrow backport of that one condition from vllm#54076 remove the divergence on
+  the same build?
+
+task:
+  type: kie
+  document_types: [contract, invoice, synthetic-business-documents]
+  language: [hu]
+  output_format: strict-json
+
+dataset:
+  name: magyar-kie-eval round-1 corpus (synthetic Hungarian D1-D7) + per-cell deterministic filler
+  size:
+    threshold_cells: 4
+    repetitions_per_cell: 4
+    original_item_pair_repetitions: 10
+    round3_pairs_replayed_on_cpu: 8
+    fresh_server_starts: 2
+  access: public
+  ground_truth: >-
+    Not used. Every comparison is the engine against itself; the metric is bit-identity of the
+    per-token top-20 logprob signature.
+  notes: >-
+    The corpus ships in the round-1 experiment directory and is not duplicated. Each cell's filler is
+    sized to an exact total prompt length through the server's own /tokenize endpoint on the
+    chat-rendered prompt, with a unique seed and a unique cache_salt per cell, so all four cells run
+    inside one server start without contaminating one another.
+
+systems:
+  - label: control-v0.29-recipe-patch
+    role: baseline
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, snapshot 7b71922, PLE table mmap-ed)
+    quantisation: "NVFP4 body, FP8 PLE shards"
+    engine: "official vllm/vllm-openai:v0.29.0 (VLLM_BUILD_COMMIT=98dff2a81d747d1dba01a47f939f48c3526d4206), recipe blazux/qwen3.8-Flash-DGX @ c57881509af3dad83a28e59662fe3c4d29381628, Dockerfile.v0.29; byte-identical to round 3 arm B"
+    hardware: DGX Spark GB10 (sm_121a), driver 580.173.02, CUDA 13.0
+    backend: "model package vllm/models/qwen4_exp; deterministic persistent_topk kernel (vllm#55122), 'QSADET active' in the log; mamba cache mode align; attention block size 1600; recipe's two-line mamba block-size patch only"
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 48, thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4, max_model_len: 262144 }
+    notes: >-
+      Adds --enable-prompt-tokens-details over round 3, so usage.prompt_tokens_details.cached_tokens
+      is reported per request.
+  - label: patched-boundary-stop
+    role: candidate
+    model: same checkpoint
+    engine: same image, same flags, same container command
+    hardware: same box
+    backend: >-
+      One condition in vllm/v1/core/sched/scheduler.py replaced at container start:
+      'next_block_boundary if start % block_size != 0 else 0' -> '0 if use_internal_checkpoint else
+      next_block_boundary'. Narrow semantic backport of vllm#54076 (open PR, 4 files, +287/-17), not
+      the full PR. Applied patch confirmed in the container log.
+    sampling: { temperature: 0.0, top_p: 1, max_tokens: 48, thinking: false, mtp: 2, cudagraph: PIECEWISE, prefix_cache: true, max_num_seqs: 4, max_model_len: 262144 }
+  - label: scheduler-source-probe
+    role: instrument
+    engine: "CPU only; AST-extracts _mamba_block_aligned_split from the running image's source and replays the chunk split with stub config objects"
+    notes: >-
+      No GPU, no model, no end-to-end vLLM import. Used to derive the checkpoint rule and to replay
+      the eight round-3 pairs before any GPU time was spent.
+
+normaliser_version: "not applicable; the probes compare logprob signatures, not scored answers"
+
+metrics:
+  - name: full_logprob_hash_variants
+    definition: "distinct sha256 digests over the per-token top-20 (token, logprob %.12g) lists across N identical sequential requests; PASS = 1 variant"
+    primary: true
+    preregistered: "full"
+  - name: canonical_hash_variants
+    definition: "the same digest over candidate lists sorted by token id, so a pure reordering of tied candidates cannot produce a difference on its own"
+    preregistered: "full"
+  - name: cached_prompt_tokens
+    definition: "usage.prompt_tokens_details.cached_tokens per request, as reported by the server with --enable-prompt-tokens-details"
+    preregistered: "full"
+  - name: shared_candidate_logprob_delta
+    definition: "max |delta logprob| over candidates present in both runs, computed from the stored raw top-20 lists"
+    preregistered: "post-hoc"
+  - name: checkpoint_rule_agreement
+    definition: "does 'A checkpoints at the shared boundary and B does too' predict the measured PASS/FAIL, over the eight round-3 pairs and the four new cells"
+    preregistered: "full"
+
+decision_rule: >-
+  The mechanism counts as identified only if (a) the source-derived rule matches all eight round-3
+  pairs including the D1 counterexample, (b) a threshold predicted in advance flips the outcome on
+  the GPU with the shared prefix and the B request held constant, and (c) the one-line backport turns
+  the original failing item pair green on the same build. A hash PASS alone is not sufficient; the
+  cached_tokens trace must be consistent with the mechanism.
+
+results:
+  checkpoint_rule_agreement:
+    round3_pairs: "8/8, including the D1 pair that broke round 3's block-count rule"
+    new_cells: "4/4 on the control arm"
+  threshold:
+    block_size_tokens: 1600
+    checkpoint_threshold_tokens: 3200
+    flip: "A = 3196 diverges, A = 3205 stable, with the same shared document and the same B (3259); a nine-token difference in A"
+  cached_tokens:
+    failing_cell: "[0, 1600, 1600, 1600] for B#1..B#4"
+    both_below_threshold: "[0, 0, 0, 0] - no hybrid hit at all"
+    correction: "B#1 is a zero hit, not the partial hit assumed in round 3; this is why B#1 is bit-identical to the cache-free arm"
+  logprob_delta_failing_cell:
+    token_0: { shared_candidates: "19/20", argmax: "unchanged", max_abs_delta: 0.745 }
+    token_1: { shared_candidates: "19/20", argmax: "unchanged", max_abs_delta: 0.664 }
+    token_2: { shared_candidates: "18/20", argmax: "unchanged", max_abs_delta: 1.062 }
+  patched_arm:
+    threshold_matrix: "4/4 PASS, including the cell that fails on the control arm"
+    original_item_pair: "PASS, 10/10 identical digests (this pair failed on two stacks across three rounds)"
+    cached_tokens: "unchanged from the control arm, so block origin is still mixed while the result is identical"
+
+verdict: >-
+  The root cause of the round-3 cross-request divergence is the missing unconditional block-boundary
+  stop in Scheduler._mamba_block_aligned_split: under MTP the last cacheable position is backed off by
+  one full block, so a request shorter than twice the block size prefills in a single chunk and stores
+  no Mamba state at the shared boundary while still publishing its KV blocks there. A later, longer
+  request then produces the state itself and, on its repeat, combines it with KV blocks written by the
+  earlier request's differently shaped chunk. The narrow one-line backport of vllm#54076 removes the
+  divergence, including the original failing item pair at 10/10. The first numerically differing
+  operation remains unlocated, and the performance cost of the fix is unmeasured.
+
+reproducibility:
+  level: R2
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 4
+  not_published: >-
+    Container logs and docker inspect dumps for the two server starts (about 230 KB) are kept
+    internally; the launch arguments and the applied patch are reproduced in the README, and the
+    activation lines (attention block size 1600, QSADET active, BOUNDARY FIX APPLIED OK) are quoted
+    there.
+  verified_by: >-
+    code/scheduler_source_probe.py reruns the CPU derivation from a scheduler source file and prints
+    the rule agreement table; code/checkpoint_probe.py reruns the GPU matrix against any server.
+
+limitations:
+  - "No kernel-level instrumentation: the first numerically differing operation is not located."
+  - "The logprob digest is not stable across server starts, so the control and patched arms are not comparable to each other; all conclusions are within a single start."
+  - "One condition was backported, not the whole of vllm#54076 (4 files, +287/-17)."
+  - "No throughput measurement on the patched arm; stopping at every block boundary adds scheduler steps."
+  - "The 50-item quality suite was not re-run on the patched arm."
+  - "Four repetitions per threshold cell (ten for the original item pair)."
+  - "The mixed-origin reading in 5.6 is an inference from behaviour, not a tensor-level comparison."
+
+related:
+  article: "https://docai.hu/blog/prefix-cache-megvaltoztatja-a-valaszt"
+  experiments:
+    - "2026-09-12-qwen38-flash-next-prefix-cache-cross-request-gb10"
+    - "2026-09-03-qwen38-flash-next-det-topk-kernel-batch-invariance-gb10"
+    - "2026-08-28-qwen38-flash-next-nvfp4-topk-nondeterminism-gb10"
+  references:
+    - "vllm#54076 - [Bugfix][V1] Use the Mamba cache group's block size for align-mode chunk splitting (open; head 244edeed3dc8587e9c2f6f8a4c6d72642fe64579 at the time of writing)"
+    - "vllm#53798 - align-mode Mamba prefix caching (open)"
+    - "vllm#55122 - deterministic QSA top-k kernel (open; present in the image under test)"
+    - "blazux/qwen3.8-Flash-DGX @ c57881509af3dad83a28e59662fe3c4d29381628 - the recipe whose two-line patch omits the boundary stop"

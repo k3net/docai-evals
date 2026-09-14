@@ -1,0 +1,137 @@
+{
+  "kar": "szennyezett",
+  "args": {
+    "url": "http://SPARK-DEV:8000",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "WORKDIR/korpusz",
+    "kar": "szennyezett",
+    "elo_item": "T3-01",
+    "cel_item": "T2-01",
+    "ismetles": 10,
+    "max_tokens": 48,
+    "top": 20,
+    "out": "results/round4-fix-t201-szennyezett.json"
+  },
+  "kezdet": "2026-09-14T10:03:51",
+  "elokeszites": [
+    {
+      "item": "T3-01",
+      "teljes_hash": "631ba6df26112d46",
+      "elso_token_sig_hash": "981a20143f3370db",
+      "elso_token": "{",
+      "token_db": 39,
+      "prompt_tok": 3169,
+      "tartalom_sha": "badeab3f01ca",
+      "ms": 3253.9
+    }
+  ],
+  "futasok": [
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 3251.0,
+      "futas": 1
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2662.0,
+      "futas": 2
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2335.5,
+      "futas": 3
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2337.1,
+      "futas": 4
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2339.5,
+      "futas": 5
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2329.0,
+      "futas": 6
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2346.9,
+      "futas": 7
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2353.7,
+      "futas": 8
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2441.7,
+      "futas": 9
+    },
+    {
+      "teljes_hash": "c05aff295d7b8b7d",
+      "elso_token_sig_hash": "90891966bb9a6cd2",
+      "elso_token": "{",
+      "token_db": 46,
+      "prompt_tok": 3227,
+      "tartalom_sha": "ef1800c92006",
+      "ms": 2346.1,
+      "futas": 10
+    }
+  ],
+  "ertekeles": {
+    "valtozatok": 1,
+    "elso_kulonbozik_a_tobbitol": false,
+    "meleg_valtozatok": 1,
+    "szoveg_valtozatok": 1,
+    "eredmeny": "PASS"
+  }
+}

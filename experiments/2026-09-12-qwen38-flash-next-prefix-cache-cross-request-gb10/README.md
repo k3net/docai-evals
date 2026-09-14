@@ -8,6 +8,8 @@
 > Round 2 left one item failing the determinism probe and explained it as "a partial prefix-cache hit
 > is not a full one". **That explanation was the wrong way round**, and this round shows why.
 
+
+> **Follow-up (2026-09-14):** the mechanism behind this round is now identified, and §5.3 below (the prediction that failed on a third document) is explained by it: the causal variable is not the difference in block count but whether the *first* request checkpoints its Mamba state at the shared block boundary. The "partial hit" reading of `B`'s first run is also corrected there: the measured hit is **zero**. See [2026-09-14-qwen38-flash-next-prefix-cache-root-cause-gb10](../2026-09-14-qwen38-flash-next-prefix-cache-root-cause-gb10/).
 ## 1. What was the measurement for?
 
 Three questions, in this order:
