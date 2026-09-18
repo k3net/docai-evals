@@ -1,0 +1,171 @@
+{
+  "config_name": "qwen3",
+  "validate_tool_preamble": null,
+  "guard_literal_tool_markers": null,
+  "cases": {
+    "A/fenced-xml": {
+      "note": "kodblokkban bemutatott hivas -> szoveg marad (patch 13)",
+      "expect_tool_call": false,
+      "expect_text_preserved": true,
+      "got_tool_call": [
+        true
+      ],
+      "got_text_preserved": [
+        false
+      ],
+      "verdict": "FAIL",
+      "chunks": {
+        "1": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 36,
+          "content_len": 23,
+          "kept_chars": 59,
+          "input_chars": 149,
+          "kept_ratio": 0.396
+        },
+        "7": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 36,
+          "content_len": 23,
+          "kept_chars": 59,
+          "input_chars": 149,
+          "kept_ratio": 0.396
+        },
+        "10000": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 36,
+          "content_len": 23,
+          "kept_chars": 59,
+          "input_chars": 149,
+          "kept_ratio": 0.396
+        }
+      }
+    },
+    "B/quoted-inline": {
+      "note": "prozaban idezett marker -> szoveg marad (patch 12)",
+      "expect_tool_call": false,
+      "expect_text_preserved": true,
+      "got_tool_call": [
+        false
+      ],
+      "got_text_preserved": [
+        false
+      ],
+      "verdict": "FAIL",
+      "chunks": {
+        "1": {
+          "tool_call": false,
+          "tool_name": "",
+          "reasoning_len": 3,
+          "content_len": 0,
+          "kept_chars": 3,
+          "input_chars": 84,
+          "kept_ratio": 0.036
+        },
+        "7": {
+          "tool_call": false,
+          "tool_name": "",
+          "reasoning_len": 3,
+          "content_len": 0,
+          "kept_chars": 3,
+          "input_chars": 84,
+          "kept_ratio": 0.036
+        },
+        "10000": {
+          "tool_call": false,
+          "tool_name": "",
+          "reasoning_len": 3,
+          "content_len": 0,
+          "kept_chars": 3,
+          "input_chars": 84,
+          "kept_ratio": 0.036
+        }
+      }
+    },
+    "C/genuine-call": {
+      "note": "valodi hivas tovabbra is parse-olodik (regressziós kontroll)",
+      "expect_tool_call": true,
+      "expect_text_preserved": false,
+      "got_tool_call": [
+        true
+      ],
+      "got_text_preserved": [
+        false
+      ],
+      "verdict": "PASS",
+      "chunks": {
+        "1": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 0,
+          "content_len": 0,
+          "kept_chars": 0,
+          "input_chars": 86,
+          "kept_ratio": 0.0
+        },
+        "7": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 0,
+          "content_len": 0,
+          "kept_chars": 0,
+          "input_chars": 86,
+          "kept_ratio": 0.0
+        },
+        "10000": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 0,
+          "content_len": 0,
+          "kept_chars": 0,
+          "input_chars": 86,
+          "kept_ratio": 0.0
+        }
+      }
+    },
+    "D/unfenced-reasoning": {
+      "note": "SZANDEKOSAN NEM FEDETT: reasoningben, fence nelkul",
+      "expect_tool_call": true,
+      "expect_text_preserved": false,
+      "got_tool_call": [
+        true
+      ],
+      "got_text_preserved": [
+        false
+      ],
+      "verdict": "PASS",
+      "chunks": {
+        "1": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 44,
+          "content_len": 47,
+          "kept_chars": 91,
+          "input_chars": 177,
+          "kept_ratio": 0.514
+        },
+        "7": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 44,
+          "content_len": 47,
+          "kept_chars": 91,
+          "input_chars": 177,
+          "kept_ratio": 0.514
+        },
+        "10000": {
+          "tool_call": true,
+          "tool_name": "Bash",
+          "reasoning_len": 44,
+          "content_len": 47,
+          "kept_chars": 91,
+          "input_chars": 177,
+          "kept_ratio": 0.514
+        }
+      }
+    }
+  }
+}

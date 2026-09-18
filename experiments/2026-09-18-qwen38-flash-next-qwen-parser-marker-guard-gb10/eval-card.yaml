@@ -1,0 +1,236 @@
+id: qwen38-flash-next-qwen-parser-marker-guard-gb10
+version: "1.0"
+date: "2026-09-18"
+title: "Qwen3.8-Flash-Next on vLLM: what the literal-marker parser patches actually fix on a qwen3_coder deployment, and the model-side termination hiding behind the same symptom"
+question: >-
+  Two patches landed in September 2026 for Qwen3 deployments that lose the answer around a quoted
+  <tool_call> marker. Does the guard reach a deployment served with --tool-call-parser qwen3_coder,
+  given that it is gated on name == "qwen3"? What does each patch fix on its own? Does adopting them
+  perturb a stack that depends on a deterministic top-k kernel and on cross-request prefix caching?
+  And when the answer still disappears with both applied, is the parser losing it at all?
+
+task:
+  type: chat-tool-use
+  document_types: [not-applicable]
+  language: [hu]
+  output_format: openai-chat-completions
+
+dataset:
+  name: hand-written parser inputs + six live prompts + the round-1 synthetic Hungarian corpus (D6) for the regression gate
+  size:
+    parser_probe_cases: 4
+    parser_probe_chunk_sizes: 3
+    parser_probe_builds: 3
+    live_prompts: 6
+    live_arms_per_prompt: 4          # tools on/off x streaming/non-streaming
+    raw_generations_captured: 12     # one per prompt per tools arm
+    regression_cells: 4
+    repetitions_per_cell: 4
+    smoke_prompts: 4
+    smoke_repetitions: 3
+  access: public
+  ground_truth: >-
+    Not used. The parser probe compares parser builds against each other on identical input; the
+    regression gate compares the engine against itself.
+  notes: >-
+    The live prompts are Hungarian without accents, exactly as sent; English glosses are in the probe
+    source. The regression corpus ships in the round-1 experiment directory and is not duplicated.
+
+systems:
+  - label: no-patch
+    role: baseline
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, snapshot 7b71922, PLE table mmap-ed)
+    engine: "qwen38-flash-dgx:v029-validation-20260912T120351Z - recipe blazux/qwen3.8-Flash-DGX, Dockerfile.v0.29, on official vllm/vllm-openai:v0.29.0 (VLLM_BUILD_COMMIT=98dff2a81d747d1dba01a47f939f48c3526d4206)"
+    hardware: DGX Spark GB10 (sm_121a), driver 580.173.02, CUDA 13.0
+    backend: "deterministic persistent_topk kernel ('QSADET active'), mamba cache mode align, attention block size 1600"
+    notes: "Neither parser patch present: validate_tool_preamble and guard_literal_tool_markers both absent."
+  - label: patch12
+    role: candidate
+    model: same checkpoint
+    engine: "the same image; src/patches/qwen-tool-preamble.patch applied to site-packages at container start"
+    backend: same
+    notes: >-
+      Backport of vllm#56661 (draft). Isolates patch 12 from patch 13, which are otherwise always
+      shipped together.
+  - label: patch12-13
+    role: candidate
+    model: same checkpoint
+    engine: "qwen38-flash-dgx:v029-parser1213-20260918 - Dockerfile.v0.29 rebuilt at blazux 5be6637 (sha256:83ed7b3b)"
+    backend: same
+    notes: >-
+      8 of 28459 .py files differ from the baseline image and the deterministic top-k .so is
+      byte-identical (a49272e17de15e785af8a63b8f122d363e6b1efb9fc28ff91ce4bfb8091fee7d) in both, so
+      the A/B is parser-only. The other differing files (vllm#55513 backport, PLE Prometheus
+      counters, fp8-hybrid coverage) were each checked to be inert on this checkpoint and these
+      launch flags.
+  - label: raw-generation
+    role: instrument
+    engine: "POST /v1/chat/completions/render for the token ids, then POST /v1/completions with skip_special_tokens=false and logprobs=0"
+    notes: >-
+      Takes the tool and reasoning parsers out of the path, so a truncated API answer can be
+      attributed to the parser or to the model. No separate build.
+  - label: parser-config-probe
+    role: instrument
+    engine: "CPU only; instantiates Qwen3EngineToolParser (what --tool-call-parser qwen3_coder resolves to), reads its engine config, drives StreamingParserEngine"
+    notes: "No GPU, no model, no weights. Runs inside any of the three images in about a second."
+
+normaliser_version: "not applicable; no scored answers"
+
+metrics:
+  - name: guard_active
+    definition: "validate_tool_preamble and guard_literal_tool_markers on the engine config that --tool-call-parser qwen3_coder actually builds, plus config.name"
+    preregistered: "full"
+  - name: tool_call_opened
+    definition: "does the parser emit a TOOL_NAME event for input where no call was meant"
+    primary: true
+    preregistered: "full"
+  - name: kept_chars_ratio
+    definition: >-
+      characters of the model's prose reaching REASONING_CHUNK or TEXT_CHUNK, over the characters
+      fed in with channel markers removed. Added after the first run: the marker-in-prose case
+      produces no phantom call even unpatched, so a call-presence check alone scores it as passing
+      while 96% of the text is gone.
+    preregistered: "post-hoc"
+  - name: raw_vs_parsed
+    definition: "does the raw generation (parsers bypassed) already end where the API answer ends"
+    preregistered: "post-hoc"
+  - name: mode_agreement
+    definition: >-
+      replaying one captured raw generation through the non-streaming adapters and through
+      StreamingParserEngine at three chunk sizes, does the kept character count agree. Holds the
+      text fixed so a difference cannot be the model's.
+    preregistered: "post-hoc"
+  - name: full_logprob_hash_variants
+    definition: "distinct sha256 digests over the per-token top-20 (token, logprob %.12g) lists across N identical sequential requests; PASS = 1 variant"
+    preregistered: "full"
+  - name: cached_prompt_tokens
+    definition: "usage.prompt_tokens_details.cached_tokens per request"
+    preregistered: "full"
+
+decision_rule: >-
+  The rebuilt image is adoptable only if (a) the guard is demonstrably active on the qwen3_coder
+  configuration we actually serve with, (b) a genuine tool call still parses on every build, and
+  (c) the round-4 cross-request threshold matrix reproduces its pre-patch pattern cell for cell,
+  including the cell that is known to fail. A parser improvement alone is not sufficient.
+
+results:
+  guard_active:
+    config_name: "qwen3 on all three builds"
+    no_patch: { validate_tool_preamble: null, guard_literal_tool_markers: null }
+    patch12: { validate_tool_preamble: true, guard_literal_tool_markers: null }
+    patch12_13: { validate_tool_preamble: true, guard_literal_tool_markers: true }
+    resolution_chain: "qwen3_coder -> Qwen3EngineToolParser -> Qwen3ParserToolAdapter -> Qwen3Parser, CONFIG_NAME = qwen3"
+  parser_cases:
+    fenced_xml_block:
+      no_patch: "phantom Bash call, 59/149 chars kept (40%)"
+      patch12: "phantom Bash call, 59/149 kept (40%) - unchanged"
+      patch12_13: "no call, 149/149 kept (100%)"
+    inline_quoted_marker:
+      no_patch: "no call, 3/84 kept (4%)"
+      patch12: "no call, 84/84 kept (100%)"
+      patch12_13: "no call, 84/84 kept (100%)"
+    genuine_call: "parses on all three builds"
+    unfenced_reasoning: "phantom call, 91/177 kept (51%) on all three builds"
+    chunk_size_sensitivity: "identical at 1, 7 and 10000 characters on every build and case"
+  image_diff:
+    py_files_total: 28459
+    py_files_differing: 8
+    det_topk_so_sha256: "a49272e17de15e785af8a63b8f122d363e6b1efb9fc28ff91ce4bfb8091fee7d - identical in both images"
+  regression_gate:
+    cells: "4/4 reproduce the round-4 control pattern"
+    failing_cell: "A=3199 below, B=3259 above -> FAIL, as before the patches"
+    cached_tokens: "[0,1600,1600,1600] above the threshold, [0,0,0,0] below - unchanged"
+  smoke:
+    stable_prompts: "4/4 over three repetitions"
+    empty_answers: 0
+  stability:
+    xid_or_nv_err: 0
+    worker_restarts: 0
+    mem_available_floor_mib: 19114
+    mem_samples: 935
+  live_serving:
+    requests: 24
+    phantom_tool_calls: 0
+    genuine_call_returned: "2/2 where one belonged"
+    empty_assistant_messages: 9
+    empty_where_raw_equally_truncated: 8
+  model_side_termination:
+    prompt: "Magyarazd el a `<tool_call>` literal sztringet, eszkozhivas nelkul. (with a Bash tool in the request)"
+    api_answer: "content empty, finish_reason stop, no tool call"
+    raw_generation: "1254 characters, 292 tokens, finish_reason stop - ends at the same point"
+    last_tokens: "' calling', ' format', ').', ' The', ' counterpart', ' is', ' `', '<|im_end|>'"
+    eos_token_id: 248046
+    marker_occurrences_in_turn: "5; no </think> anywhere in the raw text"
+    earlier_server_start: "same failure, different wording - 819 characters, 196 tokens, ending in a backtick then the tool_call special token then EOS"
+    without_tools: "the same prompt with no tools returns a full 878-character answer, 3/3 repetitions"
+  streaming_vs_non_streaming:
+    method: "the identical captured raw text replayed through both parse paths, 12 files x 3 chunk sizes"
+    divergences: 0
+    reading: >-
+      The apparent divergence in the live probe (0 vs 1055 characters on one prompt, 2398 vs 2352 on
+      another) is the model generating different text on two separate calls, not a parser bug.
+      Nothing is reported to vllm#47903.
+    text_kept_on_the_patched_build:
+      marker_only_losses: "8 characters (the </think> marker) on three files"
+      genuine_call: "108 of 213 - the tool-call markup consumed as a real call, correct"
+      empty_wrapper: "2581 of 2635 and 1099 of 1199 - marker terminals not re-emitted as text"
+      unfenced_reasoning: "2022 of 2471 - case D reproduced on real model output rather than a probe input"
+
+verdict: >-
+  On a deployment served with --tool-call-parser qwen3_coder the literal-marker guard is active,
+  because Qwen3Parser.CONFIG_NAME is "qwen3" and the coder and xml parsers are adapters over it, not
+  derived configurations. The two patches fix disjoint cases: patch 12 (vllm#56661) recovers the
+  text lost around a marker quoted in prose and leaves the fenced-code-block case untouched, while
+  patch 13 is what removes the phantom tool call and the content:null there. Adoption perturbs
+  nothing measurable: the cross-request threshold matrix reproduces its pre-patch pattern cell for
+  cell, including the known failing cell, and the deterministic kernel binary is unchanged. The
+  answer that still disappears with both patches applied is not lost by the parser at all - with the
+  parsers bypassed the raw generation is already truncated, because the model emits EOS itself
+  mid-sentence inside <think> after writing the <tool_call> special token into its own reasoning.
+  That failure is build-independent and out of reach of any serving-layer guard. Its frequency on
+  real traffic is unmeasured. On twenty-four live requests the patched build produced no phantom
+  tool call at all, and eight of its nine empty answers are ones where the raw generation is
+  equally truncated. A streaming versus non-streaming divergence that the live probe seemed to show
+  did not survive a control: replaying the identical raw text through both parse paths gives zero
+  divergences over twelve generations, so that difference was the model's, not the parser's.
+
+reproducibility:
+  level: R2
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 3
+  not_published: >-
+    Container logs and docker inspect dumps (about 300 KB) are kept internally; the launch arguments
+    are reproduced in the README and the activation lines (QSADET active, attention block size 1600,
+    PLE mmap) are quoted in the lab note. An earlier live run that read the wrong response field is
+    discarded, not published.
+  verified_by: >-
+    code/parser_config_probe.py reproduces the three-build table inside any of the images in about a
+    second, with no GPU; code/agentic_toolcall_probe.py reruns the live arm and re-captures the raw
+    generations against any server.
+
+limitations:
+  - "Patch 12 was measured as blazux's backport onto v0.29.0, not as vllm#56661's head on main."
+  - "The parser probe exercises the parser only; it establishes no rate on real traffic."
+  - "The frequency of the model-side termination is reproduced but not quantified."
+  - "Six live prompts, one language; no rate can be inferred from them."
+  - "The live arm ran on the patched image only; the other two builds were measured at the parser level, not end to end."
+  - "One box, one GPU, one checkpoint; no second stack reproduced this round."
+  - "The raw generation is a third request, not the same call as the two chat requests compared with it; the strict parser control is the replay, which holds the text fixed."
+  - "The replay covers twelve raw generations; a rarer divergence would not appear."
+  - "The Hungarian KIE suite, the soak and the throughput sweep were not re-run."
+
+related:
+  experiments:
+    - "2026-09-14-qwen38-flash-next-prefix-cache-root-cause-gb10"
+    - "2026-09-12-qwen38-flash-next-prefix-cache-cross-request-gb10"
+    - "2026-09-03-qwen38-flash-next-det-topk-kernel-batch-invariance-gb10"
+  references:
+    - "vllm#56658 - Qwen parser discards prose and final answers after a literal <tool_call> marker (open issue)"
+    - "vllm#56661 - [Bugfix][Parser] Preserve literal Qwen tool markers and following answers (draft; = patch 12)"
+    - "blazux/qwen3.8-Flash-DGX#20 - the same change in the recipe (patch 12, merged 2026-09-17)"
+    - "blazux/qwen3.8-Flash-DGX#29 - fenced-code-block and bare-header guard (patch 13, merged 2026-09-17; no upstream PR at the time of writing)"
+    - "vllm#55122 - deterministic QSA top-k kernel (open; present and byte-identical in both images)"
+    - "vllm#55513 - block-FP8 MTP in ModelOpt mixed checkpoints (backported in the rebuild; inert on an NVFP4 checkpoint)"
+    - "vllm#47903 - streaming vs non-streaming divergence on a truncated tool call (open; we looked and found nothing to add)"

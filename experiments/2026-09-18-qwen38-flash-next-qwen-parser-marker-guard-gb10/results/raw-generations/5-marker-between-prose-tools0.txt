@@ -1,0 +1,4 @@
+A felhasználó magyarul kér egy mondatot, majd a `<tool_call>` markert, majd még egy mondatot. Válaszolni kell magyarul, pontosan ezt a formátumot követve. Nem kell eszközhasználat, mert a felhasználó kifejezetten egy szöveges kimenetet kér.
+</think>
+
+A nap sugarai gyengéden simogatták a rétet. `<tool_call>` A madarak vidám kórusa betöltötte a csendes reggelt.

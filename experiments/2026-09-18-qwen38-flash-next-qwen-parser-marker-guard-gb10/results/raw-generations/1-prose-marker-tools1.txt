@@ -1,0 +1,13 @@
+The user asks in Hungarian: "Magyarazd el a `<tool_call>` literal sztringet, eszkozhivas nelkul." — "Explain the `<tool_call>` literal string, without tool calls."
+
+So I need to explain what the `<tool_call>` literal string is, without using tools. Respond in Hungarian.
+
+What is `<tool_call>`? It's a special token/literal string used in chat model / tool-calling serialization formats. In many chat templates (e.g., some models like Hermes, or in general function-calling formats), the model emits text like:
+
+<tool_call>
+{"name": "get_weather", "arguments": {"location": "Prague"}}
+</tool_call>
+
+It's a special control token marking the beginning of a tool/function call block in the model's output stream. It's part of the ChatML-like / Hermes-style function calling format. It's used by inference frameworks (vLLM, llama.cpp, Ollama, text-generation-webui) to parse the model's raw text output into structured tool calls, and it's also registered as a stop token / special token so the generation stops or is intercepted at that boundary.
+
+Also relevant: it's a literal string in the prompt/instruction text, not a real API call. It appears in system prompts of some models (e.g., Hermes 2/3 "Parsable" function calling format). The counterpart is `

@@ -1,0 +1,35 @@
+A felhasználó magyarul kéri, hogy részletesen dokumentáljam a Qwen tool-call XML formátumot, több példával, kodblokkokban, és ne hívjak eszközt. Válaszolni kell magyarul. Nem kell eszközhasználat. Fontos: a rendszer azt mondja, hogy a felhasználó kérésére válaszoljak, de a felhasználó explicit kéri, hogy ne hívjak eszközt. Tehát csak szöveges válasz.
+
+Tartalom: Qwen tool-call XML format. Valószínűleg a Qwen modellek tool-call formátuma XML-szerű tag-ekkel: <tool_call> ... </tool_call>, belül <tool_name>...</tool_name>, <parameters>...</parameters>, paraméterek XML tag-ekkel. Lehet több call. Lehet JSON? A Qwen tool call format lehet:
+
+<tool_call>
+<tool_name>get_weather</tool_name>
+<parameters>
+<city>Budapest</city>
+<unit>celsius</unit>
+</parameters>
+</tool_call>
+
+Egyes dokumentációk: Qwen3 tool call uses XML-like format:
+<tool_call>
+<tool_name>tool_name</tool_name>
+<parameters>
+<param_name>value</param_name>
+</parameters>
+</tool_call>
+
+Lehet több:
+<tool_call>
+...
+</tool_call>
+<tool_call>
+...
+</tool_call>
+
+Lehet nested parameters? Lehet listák, objektumok? Dokumentálni kell: szabályok, escape, típusok, üres paraméterek, opcionális, tömbök, objektumok, több call, hibák, parser elvárások.
+
+A felhasználó "Reszletesen dokumentald a Qwen tool-call XML formatumot, tobb peldaval, kodblokkokban. Ne hivj eszkozt." Magyarul, ékezet nélkül? Használhatok ékezeteket. Legyen részletes.
+
+Nem kell hivatkozni külső forrásra. Legyen átfogó: áttekintés, szintaxis, szabályok, típusok, escape, példa egyszerű, kötelező/opcionális, több call, nested object, array, boolean/number/null, string containing XML, error cases, best practices.
+
+Figyelni: "Ne hivj eszkozt" - ne használjak tool call-t a válaszban? Ha példákban tool_call tag-ek vannak, az nem eszköz hívás, csak dokumentáció. De lehet, hogy a rendszer felismeri? A felhasználó azt kéri, ne hívjak eszközt. A válaszban kodblokkban szereplő <tool_call> nem valódi hívás, de óvatosan: nem kell olyan formátumban írni, ami valódi tool-call trigger? A feladat dokumentálni, tehát kodblokkban kell. A rendszer nem fog tool-callt triggerelni, mert a válasz szöveg. De ha a platform parseolja? A felhasználó explicit kéri ne hívj eszközt. A válaszban lehet escape-olni? A kodblokkban a <tool_call> szöveg. Ha a

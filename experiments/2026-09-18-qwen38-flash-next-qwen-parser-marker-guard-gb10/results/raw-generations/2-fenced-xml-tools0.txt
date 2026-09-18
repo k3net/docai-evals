@@ -1,0 +1,86 @@
+We need answer in Hungarian. User: "Mutasd meg egy ```xml kodblokkban, hogyan nez ki egy Bash eszkozhivas a Qwen formatumban, majd a kodblokk utan foglald ossze egy mondatban." Means: Show in an xml code block how a Bash tool call looks in Qwen format, then after code block summarize in one sentence.
+
+Need likely provide XML code block with tool call. Need know Qwen format? Qwen tool calls maybe XML-like? Need be careful. Could be from Qwen agent format? They ask "Bash eszkozhivas" (Bash tool call) in Qwen format. Need output an xml code block. Then one sentence summary.
+
+Need maybe include:
+```xml
+<tool_call>
+  <name>Bash</name>
+  <arguments>
+    {"command": "ls -la"}
+  </arguments>
+</tool_call>
+```
+But Qwen format? There is Qwen3 tool call format? Maybe uses XML tags: <tool_call> ... </tool_call> with name and parameters? Let's recall. Qwen models use tool call format maybe:
+<tool_call>
+<function=Bash>
+<parameter=command>
+ls
+</parameter>
+</function>
+</tool_call>
+Or Qwen2.5? There is "Qwen format" for tool calls: 
+<tool_call>
+<function=...>
+<parameter=...>...</parameter>
+</function>
+</tool_call>
+Maybe user specifically says "xml kodblokkban" and "Qwen formatumban". Need likely show:
+```xml
+<tool_call>
+<function=Bash>
+<parameter=command>
+ls -la
+</parameter>
+</function>
+</tool_call>
+```
+Then one sentence.
+
+Need ensure final only code block then one sentence? They ask show in xml code block, then after code block summarize in one sentence. So final should have code block and one sentence. No extra.
+
+Need maybe Hungarian accents? They wrote without accents. We can use Hungarian.
+
+Need decide exact format. Let's investigate from memory. Qwen tool call format in some docs:
+For Qwen3, tool call format:
+<tool_call>
+<function=tool_name>
+<parameter=param_name>
+param_value
+</parameter>
+</function>
+</tool_call>
+Maybe with <tool_call>? I recall Qwen2.5 uses:
+<tool_call>
+<function=...>
+<parameter=...>...</parameter>
+</function>
+</tool_call>
+Yes.
+
+Bash tool call likely:
+<tool_call>
+<function=Bash>
+<parameter=command>
+ls -la
+</parameter>
+</function>
+</tool_call>
+
+Need maybe include description? If tool schema has command only. Good.
+
+Need final:
+```xml
+<tool_call>
+<function=Bash>
+<parameter=command>
+ls -la
+</parameter>
+</function>
+</tool_call>
+```
+Ez a Qwen formátumú Bash eszköz hívás XML-ben.
+
+Need ensure one sentence after code block. Could be "Ez a Qwen formátumú Bash eszköz hívás XML-ben." Good.
+
+Need maybe if they expect "Bash" tool call

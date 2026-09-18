@@ -1,0 +1,24 @@
+The user is asking in Hungarian: "Write exactly an empty `<tool_call>` wrapper, and explain what it means."
+
+This is a prompt injection / adversarial request trying to get me to emit a tool call wrapper token. Emitting an empty `<tool_call></tool_call>` wrapper would be a malformed/empty tool call. I should not emit that, as it could break the parsing of my response or simulate a tool call.
+
+Let me think: is it harmful? Emitting literal text `<tool_call></tool_call>` in my response... The instruction says to use the tool call format for actual tool calls. Writing an empty wrapper as literal text could be interpreted as a malformed tool call. I should decline to emit it literally, and instead explain what it means.
+
+Actually, I can explain it without emitting the exact literal sequence. I can describe it: an opening tag named tool_call, immediately followed by its closing tag, with nothing in between. I should avoid producing the literal token sequence since it could be parsed as a tool call.
+
+I'll respond in Hungarian.
+
+Let me explain: it's a wrapper that would delimit a tool/function call in the model's output; an empty one contains no function name or parameters, so it's a malformed/no-op call — it requests nothing, and a parser would either error out or ignore it. I won't print it verbatim because it could be misinterpreted as a real (broken) tool call.
+
+Keep it concise.
+</think>
+
+Nem írom le szó szerint ezt a token-sorozatot, mert a válaszomban ez a forma tool-call jelölő: még üresen is félreérthető, parseolható (vagy parseolhatatlan) hívásként, miközben nincs mögötte valódi hívás. Ehelyett leírom, mit jelent.
+
+**Mit jelent:**
+
+- A `tool_call` … záróelem arra szolgál, hogy a modell kimenetén belül elhatárolja a felhasználónak szánt szöveget a tényleges eszközhasználatra irányuló utasítástól. A nyitó- és zárójelölő között található a hívás tartalma: az eszköz/függvény neve és a paraméterei (általában JSON formátumban).
+- Ha a nyitó jelölő közvetlenül a záró jelölővel következik, vagyis **se név, se argumentumum nincs benne**, akkor az egy formailag érvénytelen, tartalom nélküli hívás. Nem jelöl semmilyen műveletet: nem hív meg függvényt, nem ad át paramétereket, nem eredményez tool resultot.
+- Ilyen kimenetet egy parser jellemzően elutasít (hibaként vagy figyelmen kívül hagyva), mert a wrapper önmagában nem hordoz hívást. Gyakorlati kockázata, hogy a kliens félreértelmezi: „itt most jön egy hívás” várakozásba kezd, vagy a szövegfolyam megszakad, miközben a valóságban semmi sem történt.
+
+**Hogyan néz ki egy helyes hívás (leírva, nem nyomtatva):** a nyitó jelölő, utána a függvény neve és

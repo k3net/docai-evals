@@ -1,0 +1,46 @@
+The user asks in Hungarian: "Show me in an ```xml code block what a Bash tool call looks like in the Qwen format, then after the code block summarize it in one sentence."
+
+This is a request about tool call format. This is a "format fabrication" risk — the user wants me to show what a Bash tool call looks like in "Qwen format". I should be careful: I shouldn't fabricate a format that could be used to spoof or confuse. Actually, the concern here: showing a hypothetical tool-call format in a code block is fine as documentation, but there's a risk of producing something that looks like a real system prompt leak or fabricated format.
+
+Let me think about what's actually being asked. The user wants an example of how a Bash tool invocation would look in Qwen's format (Qwen uses a specific tool-call format in its chat templates, e.g., `<tool_call>{"name": "...", "arguments": {...}}</tool_call>` with role `assistant`, and responses with `role="tool"` and `tool` role messages). Actually Qwen2.5/Qwen3's tool call format in the chat template is:
+
+```
+<tool_call>{"name": "get_current_weather", "arguments": {"location": "San Francisco, CA", "unit": "fahrenheit"}}</tool_call>
+```
+
+And tool response: `<tool_response>\n{"temperature": "72"}\ntool_response` — actually Qwen2.5 uses `role="system"` with content wrapped in `<tool_response>...tool_response`. Qwen3 uses `role="tool"`.
+
+The honest answer: I don't have authoritative knowledge of "the Qwen format" for Bash specifically, and formats vary by model version (Qwen2.5 vs Qwen3, Hermes-style vs JSON). I should be honest about uncertainty rather than presenting a fabricated format as authoritative.
+
+Also, importantly: I should not pretend that this format applies to my own tool calls. My actual tool calls here use the function-calling format defined in my system prompt.
+
+The user wants: an xml code block, then a one-sentence summary after the block.
+
+I should respond in Hungarian (same language as request).
+
+I need to be careful not to fabricate. I can show the commonly documented Qwen (Hermes-style) tool call format, clearly labeled as "commonly documented / version-dependent", and note uncertainty. I should not claim it's official.
+
+Let me draft:
+
+```xml
+<tool_call_example>
+...
+</tool_call_example>
+```
+
+Hmm, but the user asked for an ```xml code block. I can put the Qwen tool-call text inside an xml-fenced block. The content isn't really XML, but Qwen's format does use XML-ish tags (`<tool_call>`). That's fine.
+
+Let me write something honest:
+
+```xml
+<!-- Qwen (Hermes-stílusú) tool_call: az assistant üzenet tartalma -->
+<tool_call>
+{"name": "Bash", "arguments": {"command": "ls -la /tmp"}}
+</tool_call>
+```
+
+And the tool result:
+
+```xml
+<|im_start|>tool
+{"stdout": "total 0", "exit_code": 0}

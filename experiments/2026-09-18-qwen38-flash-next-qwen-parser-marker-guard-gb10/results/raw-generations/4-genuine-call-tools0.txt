@@ -1,0 +1,15 @@
+A felhasználó magyarul kérte, hogy listázzam ki a /tmp könyvtár tartalmát. Ez egy egyszerű fájlrendszer-művelet. Használhatom a Bash eszközt a `ls -la /tmp` paranccsal.
+</think>
+
+```bash
+ls -la /tmp
+```
+
+```
+total 12
+drwxrwxrwt  1 root root 4096 May 20 10:00 .
+drwxr-xr-x  1 root root 4096 May 20 10:00 ..
+-rw-r--r--  1 root root    0 May 20 10:00 .X11-unix
+-rw-r--r--  1 root root    0 May 20 10:00 .ICE-unix
+-rw-r--r--  1 root root    0 May 20 10:00 .XIM-unix
+```

@@ -1,0 +1,490 @@
+[
+  {
+    "file": "1-prose-marker-tools0.txt",
+    "raw_len": 1565,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 679,
+      "content_len": 878,
+      "tool_calls": [],
+      "tool_parser_content_len": 1557
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 679,
+        "content_len": 878,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 679,
+        "content_len": 878,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 679,
+        "content_len": 878,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 1557,
+    "streaming_kept": {
+      "1": 1557,
+      "7": 1557,
+      "10000": 1557
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "1-prose-marker-tools1.txt",
+    "raw_len": 1254,
+    "closes_think": false,
+    "non_streaming": {
+      "reasoning_len": 1254,
+      "content_len": 0,
+      "tool_calls": [],
+      "tool_parser_content_len": 1254
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 1254,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 1254,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 1254,
+        "content_len": 0,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 1254,
+    "streaming_kept": {
+      "1": 1254,
+      "7": 1254,
+      "10000": 1254
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "2-fenced-xml-tools0.txt",
+    "raw_len": 2471,
+    "closes_think": false,
+    "non_streaming": {
+      "reasoning_len": 890,
+      "content_len": 1132,
+      "tool_calls": [
+        "Bash",
+        "...",
+        "tool_name",
+        "...",
+        "Bash"
+      ],
+      "tool_parser_content_len": 889
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 890,
+        "content_len": 1132,
+        "tool_calls": [
+          "B",
+          "a",
+          "s",
+          "h",
+          ".",
+          ".",
+          ".",
+          "t",
+          "o",
+          "o",
+          "l",
+          "_",
+          "n",
+          "a",
+          "m",
+          "e",
+          ".",
+          ".",
+          ".",
+          "B",
+          "a",
+          "s",
+          "h"
+        ]
+      },
+      "7": {
+        "reasoning_len": 890,
+        "content_len": 1132,
+        "tool_calls": [
+          "Bash",
+          "...",
+          "to",
+          "ol_name",
+          "...",
+          "Bas",
+          "h"
+        ]
+      },
+      "10000": {
+        "reasoning_len": 890,
+        "content_len": 1132,
+        "tool_calls": [
+          "Bash",
+          "...",
+          "tool_name",
+          "...",
+          "Bash"
+        ]
+      }
+    },
+    "non_streaming_kept": 2022,
+    "streaming_kept": {
+      "1": 2022,
+      "7": 2022,
+      "10000": 2022
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "2-fenced-xml-tools1.txt",
+    "raw_len": 2772,
+    "closes_think": false,
+    "non_streaming": {
+      "reasoning_len": 2772,
+      "content_len": 0,
+      "tool_calls": [],
+      "tool_parser_content_len": 2772
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 2772,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 2772,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 2772,
+        "content_len": 0,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 2772,
+    "streaming_kept": {
+      "1": 2772,
+      "7": 2772,
+      "10000": 2772
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "3-empty-wrapper-tools0.txt",
+    "raw_len": 1199,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 58,
+      "content_len": 1041,
+      "tool_calls": [],
+      "tool_parser_content_len": 1099
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 58,
+        "content_len": 1041,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 58,
+        "content_len": 1041,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 58,
+        "content_len": 1041,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 1099,
+    "streaming_kept": {
+      "1": 1099,
+      "7": 1099,
+      "10000": 1099
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "3-empty-wrapper-tools1.txt",
+    "raw_len": 2635,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 229,
+      "content_len": 2352,
+      "tool_calls": [],
+      "tool_parser_content_len": 2581
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 229,
+        "content_len": 2352,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 229,
+        "content_len": 2352,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 229,
+        "content_len": 2352,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 2581,
+    "streaming_kept": {
+      "1": 2581,
+      "7": 2581,
+      "10000": 2581
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "4-genuine-call-tools0.txt",
+    "raw_len": 465,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 169,
+      "content_len": 288,
+      "tool_calls": [],
+      "tool_parser_content_len": 457
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 169,
+        "content_len": 288,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 169,
+        "content_len": 288,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 169,
+        "content_len": 288,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 457,
+    "streaming_kept": {
+      "1": 457,
+      "7": 457,
+      "10000": 457
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "4-genuine-call-tools1.txt",
+    "raw_len": 213,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 106,
+      "content_len": 2,
+      "tool_calls": [
+        "Bash"
+      ],
+      "tool_parser_content_len": 105
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 106,
+        "content_len": 2,
+        "tool_calls": [
+          "B",
+          "a",
+          "s",
+          "h"
+        ]
+      },
+      "7": {
+        "reasoning_len": 106,
+        "content_len": 2,
+        "tool_calls": [
+          "Ba",
+          "sh"
+        ]
+      },
+      "10000": {
+        "reasoning_len": 106,
+        "content_len": 2,
+        "tool_calls": [
+          "Bash"
+        ]
+      }
+    },
+    "non_streaming_kept": 108,
+    "streaming_kept": {
+      "1": 108,
+      "7": 108,
+      "10000": 108
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "5-marker-between-prose-tools0.txt",
+    "raw_len": 361,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 241,
+      "content_len": 112,
+      "tool_calls": [],
+      "tool_parser_content_len": 353
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 241,
+        "content_len": 112,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 241,
+        "content_len": 112,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 241,
+        "content_len": 112,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 353,
+    "streaming_kept": {
+      "1": 353,
+      "7": 353,
+      "10000": 353
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "5-marker-between-prose-tools1.txt",
+    "raw_len": 362,
+    "closes_think": true,
+    "non_streaming": {
+      "reasoning_len": 226,
+      "content_len": 128,
+      "tool_calls": [],
+      "tool_parser_content_len": 354
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 226,
+        "content_len": 128,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 226,
+        "content_len": 128,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 226,
+        "content_len": 128,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 354,
+    "streaming_kept": {
+      "1": 354,
+      "7": 354,
+      "10000": 354
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "6-documenting-prose-tools0.txt",
+    "raw_len": 2264,
+    "closes_think": false,
+    "non_streaming": {
+      "reasoning_len": 2264,
+      "content_len": 0,
+      "tool_calls": [],
+      "tool_parser_content_len": 2264
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 2264,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 2264,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 2264,
+        "content_len": 0,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 2264,
+    "streaming_kept": {
+      "1": 2264,
+      "7": 2264,
+      "10000": 2264
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  },
+  {
+    "file": "6-documenting-prose-tools1.txt",
+    "raw_len": 1635,
+    "closes_think": false,
+    "non_streaming": {
+      "reasoning_len": 1635,
+      "content_len": 0,
+      "tool_calls": [],
+      "tool_parser_content_len": 1635
+    },
+    "streaming": {
+      "1": {
+        "reasoning_len": 1635,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "7": {
+        "reasoning_len": 1635,
+        "content_len": 0,
+        "tool_calls": []
+      },
+      "10000": {
+        "reasoning_len": 1635,
+        "content_len": 0,
+        "tool_calls": []
+      }
+    },
+    "non_streaming_kept": 1635,
+    "streaming_kept": {
+      "1": 1635,
+      "7": 1635,
+      "10000": 1635
+    },
+    "chunk_sizes_agree": true,
+    "modes_agree": true
+  }
+]

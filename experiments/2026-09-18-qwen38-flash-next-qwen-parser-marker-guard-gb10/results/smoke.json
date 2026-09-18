@@ -1,0 +1,86 @@
+[
+  {
+    "prompt": "Mennyi 17 * 23? Csak a számot írd.",
+    "stabil": true,
+    "futasok": [
+      {
+        "content": "391",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "391",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "391",
+        "reasoning": "",
+        "finish": "stop"
+      }
+    ]
+  },
+  {
+    "prompt": "Sorold fel Magyarország három legnagyobb városát.",
+    "stabil": true,
+    "futasok": [
+      {
+        "content": "Magyarország három legnagyobb városa lakosság szerint a következők:\n\n1. **Budapest** – az ország fővárosa és egyértelműen a legnagyobb város.\n2. **Debrecen** – az ország második legnagyobb városa, a keleti régió központi települése",
+        "reasoning": "",
+        "finish": "length"
+      },
+      {
+        "content": "Magyarország három legnagyobb városa lakosság szerint a következők:\n\n1. **Budapest** – az ország fővárosa és egyértelműen a legnagyobb város.\n2. **Debrecen** – az ország második legnagyobb városa, a keleti régió központi települése",
+        "reasoning": "",
+        "finish": "length"
+      },
+      {
+        "content": "Magyarország három legnagyobb városa lakosság szerint a következők:\n\n1. **Budapest** – az ország fővárosa és egyértelműen a legnagyobb város.\n2. **Debrecen** – az ország második legnagyobb városa, a keleti régió központi települése",
+        "reasoning": "",
+        "finish": "length"
+      }
+    ]
+  },
+  {
+    "prompt": "Fordítsd angolra: A szerződés 2026. január 1-jén lép hatályba.",
+    "stabil": true,
+    "futasok": [
+      {
+        "content": "The contract shall enter into force on January 1, 2026.",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "The contract shall enter into force on January 1, 2026.",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "The contract shall enter into force on January 1, 2026.",
+        "reasoning": "",
+        "finish": "stop"
+      }
+    ]
+  },
+  {
+    "prompt": "Írj egy egymondatos összefoglalót a gépi tanulásról.",
+    "stabil": true,
+    "futasok": [
+      {
+        "content": "A gépi tanulás a mesterséges intelligencia egy ága, amely lehetővé teszi a számítógépek számára, hogy explicit programozás nélkül, adatokból tanulva javítsák teljesítményüket és felismerjenek mintázatokat.",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "A gépi tanulás a mesterséges intelligencia egy ága, amely lehetővé teszi a számítógépek számára, hogy explicit programozás nélkül, adatokból tanulva javítsák teljesítményüket és felismerjenek mintázatokat.",
+        "reasoning": "",
+        "finish": "stop"
+      },
+      {
+        "content": "A gépi tanulás a mesterséges intelligencia egy ága, amely lehetővé teszi a számítógépek számára, hogy explicit programozás nélkül, adatokból tanulva javítsák teljesítményüket és felismerjenek mintázatokat.",
+        "reasoning": "",
+        "finish": "stop"
+      }
+    ]
+  }
+]

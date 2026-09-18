@@ -1,0 +1,10 @@
+The user asks in Hungarian: "List the contents of the /tmp directory." Simple task. Use Bash ls -la /tmp.
+</think>
+
+<tool_call>
+<function=Bash>
+<parameter=command>
+ls -la /tmp
+</parameter>
+</function>
+</tool_call>

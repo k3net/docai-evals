@@ -1,0 +1,14 @@
+A user wants me to write one sentence, then the `<tool_call>` marker, then another sentence. The request is in Hungarian. Let me respond in Hungarian.
+
+I need to produce: a sentence, then `<tool_call>`, then another sentence.
+</think>
+
+Ez az első mondat.
+<tool_call>
+<parameter=example>
+parameter>
+value
+</parameter>
+</function>
+</tool_call>
+Ez a második mondat.

@@ -1,0 +1,21 @@
+A felhasználó magyarul kér: „Magyarazd el a `<tool_call>` literal sztringet, eszkozhivas nelkul.” Ez valószínűleg azt jelenti: magyarázza el a `<tool_call>` literál sztringet, eszközhasználat nélkül. Válaszolni kell magyarul. Nem kell eszközhasználat, csak szöveges magyarázat. Érdemes lehet tisztázni, hogy a `<tool_call>` egy speciális token/literal, amit gyakran modellek vagy API-k használnak tool call jelölésére, de itt csak sztringként értelmezzük. Lehet, hogy a felhasználó arra kíváncsi, hogy mi ez a literal string, hogyan viselkedik, miért van backtickben, és „eszkozhivas nelkul” = eszközhasználat nélkül, tehát ne hívjak meg eszközt. Válasz legyen tömör, de alapos.
+</think>
+
+A `<tool_call>` egy **literál sztring**, vagyis egy konkrét karakterlánc, nem pedig valós utasítás vagy eszközhasználat.
+
+Részletesen:
+
+- **`<tool_call>`** egy speciális jelölés, amelyet egyes rendszerekben arra használnak, hogy a modell jelölje: „itt egy eszköz hívása következne”.
+- Ha ez **literál sztringként** jelenik meg, akkor nem hajt végre semmit.
+- Ilyenkor egyszerűen egy szövegrészlet, ugyanolyan, mint például a `hello` vagy a `123`.
+- A backtickek, vagyis a `` ` `` jelek általában csak a szövegben jelölik, hogy a `<tool_call>` kódszerű elemként jelenjen meg.
+
+Például:
+
+```text
+<tool_call>
+```
+
+itt nem jelent valódi eszköz hívást, csak egy szöveges karakterláncot.
+
+Tehát **eszközhasználat nélkül** ez a `<tool_call>` literal sztring egyszerűen egy speciális szöveges token, amelynek nincs aktív funkciója, csak jelölésként vagy szöveges tartalomként létezik.

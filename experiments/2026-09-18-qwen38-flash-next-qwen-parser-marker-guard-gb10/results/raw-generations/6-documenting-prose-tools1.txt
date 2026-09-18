@@ -1,0 +1,51 @@
+The user asks in Hungarian: "Reszletesen dokumentald a Qwen tool-call XML formatumot, tobb peldaval, kodblokkokban. Ne hivj eszkozt." = "Document in detail the Qwen tool-call XML format, with several examples, in code blocks. Don't call tools."
+
+So I need to write documentation about Qwen's tool-call XML format. This is a known format: Qwen models (Qwen2.5 / Qwen3) use a Hermes-style tool call format wrapped in XML-ish tags:
+
+```
+<tool_call>
+<function=function_name>
+<parameter=param_name>
+value
+</parameter>
+</function>
+</tool_call>
+```
+
+And the tool definitions are given in the system prompt as:
+
+```
+# Tools
+
+You may have access to the following tools:
+
+<tools>
+{"type": "function", "function": {"name": "...", "description": "...", "parameters": {...}}},
+...
+</tools>
+
+If you choose to call a function ONLY reply in the following format with NO suffix:
+
+<tool_call>
+<function=example_function_name>
+<parameter=example_parameter_1>
+value_1
+</parameter>
+<parameter=example_parameter_2>
+This is the value for the second parameter
+that can span
+multiple lines
+</parameter>
+</function>
+</tool_call>
+
+<IMPORTANT>
+Reminder:
+- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags
+- Required parameters MUST be specified
+- You may provide optional reasoning for your function call in natural language before the function call, but NOT after
+- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls
+</IMPORTANT>
+```
+
+Also special tokens: <|im_start|>...
