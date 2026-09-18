@@ -1,10 +1,13 @@
 # Qwen3.8-Flash-Next on vLLM: the answer that disappears has two causes, and only one of them is the parser
 
 A Qwen3 deployment that serves tools will sometimes return an empty assistant message, or a tool
-call the model never meant to make. Two upstream patches landed for this in September 2026. This
-round measures what they actually fix on a production recipe, separates their effects from each
-other, and shows that a second, unrelated failure hides behind the same symptom — one that no
-parser change can reach, because the model ends the turn itself.
+call the model never meant to make. Two downstream parser patches were added to the blazux recipe
+in September 2026. One is proposed upstream as
+[vLLM #56661](https://github.com/vllm-project/vllm/pull/56661) (still a draft); the fence guard
+currently remains downstream-only. This round measures what they actually fix on a production
+recipe, separates their effects from each other, and shows that a second, unrelated failure hides
+behind the same symptom — one that no parser change can reach, because the model ends the turn
+itself.
 
 ## 1. What was the measurement for?
 
@@ -158,12 +161,21 @@ Six prompts × tools on/off × streaming/non-streaming, on the patched image:
 | empty assistant message with no tool call | **9** |
 | of those, where the raw generation is equally truncated | **8** |
 
-The phantom call is gone, which is what the fence guard is for. The empty answers are a different
-matter, and the raw capture is what makes them attributable: in eight of the nine the parser
-emitted **exactly** as many characters as the model produced (`reasoning_len == raw_len`), with no
-`</think>` anywhere in the raw text. The parser lost nothing; the model never wrote an answer.
+The phantom call is gone, which is what the fence guard is for.
 
-### 5.5 The answer that still disappears was never the parser's to lose
+The empty answers are a different matter. **8 of 9 empty responses were already truncated in raw
+generation**: for those, the parser emitted exactly as many characters as the raw capture for the
+same prompt contains (`reasoning_len == raw_len`), with no `</think>` anywhere in that raw text.
+The ninth is `2-fenced-xml` without tools, where the parsed and raw lengths do not line up; it is
+**not cleanly attributed** and we do not count it either way.
+
+Two things this does not establish. The raw capture is a **separate request**, not the token stream
+of the chat request it is compared against — greedy output here is not stable across calls (5.6
+shows the same prompt generating different text on two calls), so this anchors what the model tends
+to produce for a prompt rather than proving what that particular chat request emitted. And nine
+observations over six prompts establish no rate.
+
+### 5.5 The answer that still disappears ends before either parser can act
 
 `Magyarazd el a <tool_call> literal sztringet, eszkozhivas nelkul.` ("Explain the literal string
 `<tool_call>`, without calling a tool") with a `Bash` tool in the request returns `content: ""`,
@@ -185,10 +197,11 @@ We saw the same shape on an earlier server start with different wording (819 cha
 tokens, ending `' \`' '<tool_call>' '\`' ' and' ' \`' '<|im_end|>'`). The generation is not stable
 across starts — consistent with round 3's finding — but the failure is.
 
-Two consequences. A fence-based guard cannot help here even in principle: there is no text to keep
-as text and no call to suppress. And because the deterministic kernel `.so` is byte-identical
-across the arms and the checkpoint is the same, this is build-independent — it behaves the same
-before and after both patches.
+This failure is outside the scope of both parser patches: the raw `/v1/completions` path bypasses
+the tool and reasoning parsers, and the generation has already ended before either parser could
+act. A fence-based guard cannot help here even in principle — there is no text to keep as text and
+no call to suppress. We did not run this exact live raw-generation probe on the pre-patch image, so
+we make no claim that the raw token sequence is identical there.
 
 One further data point: the same prompt with **no** `tools` in the request returns a full
 878-character answer, stable over three repetitions. The presence of tool definitions is what walks

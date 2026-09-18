@@ -53,8 +53,10 @@ tokenizálódott, és két tokennel utána jött az EOS.
 
 - A patch 13 fence-alapú guardja elvileg sem foghatja meg: itt a modell a valódi speciális tokent
   emittálja, nem szöveget, így nincs mit „szövegként megtartani".
-- Mivel a determinisztikus Top-K `.so` bitre azonos a két image-ben és a checkpoint ugyanaz,
-  a nyers token-szekvencia image-független: ez a hiba a mai változás előtt és után is azonos.
+- A hiba **mindkét parser-patch hatókörén kívül esik**: a nyers `/v1/completions` út megkerüli a
+  tool- és reasoning-parsert, és a generálás már véget ért, mielőtt bármelyik parser dolgozhatott
+  volna. Ezt a konkrét élő nyers-generálás szondát a patch előtti image-en **nem futtattuk le**,
+  tehát nem állítjuk, hogy ott azonos a token-szekvencia.
 
 ## Amit ez együtt jelent
 

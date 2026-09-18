@@ -3,8 +3,10 @@ version: "1.0"
 date: "2026-09-18"
 title: "Qwen3.8-Flash-Next on vLLM: what the literal-marker parser patches actually fix on a qwen3_coder deployment, and the model-side termination hiding behind the same symptom"
 question: >-
-  Two patches landed in September 2026 for Qwen3 deployments that lose the answer around a quoted
-  <tool_call> marker. Does the guard reach a deployment served with --tool-call-parser qwen3_coder,
+  Two downstream parser patches were added to the blazux recipe in September 2026 for Qwen3
+  deployments that lose the answer around a quoted <tool_call> marker; one is proposed upstream as
+  vllm#56661 (still a draft), the fence guard remains downstream-only.
+  Does the guard reach a deployment served with --tool-call-parser qwen3_coder,
   given that it is gated on name == "qwen3"? What does each patch fix on its own? Does adopting them
   perturb a stack that depends on a deterministic top-k kernel and on cross-request prefix caching?
   And when the answer still disappears with both applied, is the parser losing it at all?
@@ -154,6 +156,12 @@ results:
     genuine_call_returned: "2/2 where one belonged"
     empty_assistant_messages: 9
     empty_where_raw_equally_truncated: 8
+    empty_not_cleanly_attributed: 1
+    attribution_caveat: >-
+      8 of 9 empty responses were already truncated in raw generation. The ninth (2-fenced-xml
+      without tools) does not line up and is counted neither way. The raw capture is a separate
+      request, not the token stream of the chat request it is compared against, so this anchors what
+      the model tends to produce for a prompt rather than proving what that chat request emitted.
   model_side_termination:
     prompt: "Magyarazd el a `<tool_call>` literal sztringet, eszkozhivas nelkul. (with a Bash tool in the request)"
     api_answer: "content empty, finish_reason stop, no tool call"
@@ -184,13 +192,15 @@ verdict: >-
   patch 13 is what removes the phantom tool call and the content:null there. Adoption perturbs
   nothing measurable: the cross-request threshold matrix reproduces its pre-patch pattern cell for
   cell, including the known failing cell, and the deterministic kernel binary is unchanged. The
-  answer that still disappears with both patches applied is not lost by the parser at all - with the
-  parsers bypassed the raw generation is already truncated, because the model emits EOS itself
-  mid-sentence inside <think> after writing the <tool_call> special token into its own reasoning.
-  That failure is build-independent and out of reach of any serving-layer guard. Its frequency on
-  real traffic is unmeasured. On twenty-four live requests the patched build produced no phantom
-  tool call at all, and eight of its nine empty answers are ones where the raw generation is
-  equally truncated. A streaming versus non-streaming divergence that the live probe seemed to show
+  answer that still disappears with both patches applied is outside the scope of either patch: the
+  raw /v1/completions path bypasses the tool and reasoning parsers, and the generation has already
+  ended before either parser could act, because the model emits EOS itself mid-sentence inside
+  <think> after writing the <tool_call> special token into its own reasoning. This exact live
+  raw-generation probe was not run on the pre-patch image, so no claim is made that the raw token
+  sequence is identical there. Its frequency on real traffic is unmeasured. On twenty-four live
+  requests the patched build produced no phantom tool call at all; 8 of 9 empty responses were
+  already truncated in raw generation, and the ninth is not cleanly attributed. A streaming versus
+  non-streaming divergence that the live probe seemed to show
   did not survive a control: replaying the identical raw text through both parse paths gives zero
   divergences over twelve generations, so that difference was the model's, not the parser's.
 
