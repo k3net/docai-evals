@@ -1,0 +1,8 @@
+példány-sorozat · 2026-09-19 07:38 · 17 item: 12 igazoló + 5 billenő
+
+K0             vs K0-ujpeldany   : sha egyezés   : 92/150 pass eltérés  : 5 ['C9-09', 'T3-02', 'T3-03', 'T3-05', 'T7-08'] 
+K0             vs K0-inst3       : sha egyezés   : 17/17 pass eltérés  : 0 [] 
+K0             vs K0-inst4       : sha egyezés   : 8/17 pass eltérés  : 3 ['C9-09', 'T3-02', 'T7-08'] 
+K0-inst3       vs K0-ujpeldany   : sha egyezés   : 9/17 pass eltérés  : 5 ['C9-09', 'T3-02', 'T3-03', 'T3-05', 'T7-08'] 
+K0-inst3       vs K0-inst4       : sha egyezés   : 8/17 pass eltérés  : 3 ['C9-09', 'T3-02', 'T7-08'] 
+K0-inst4       vs K0-ujpeldany   : sha egyezés   : 10/17 pass eltérés  : 2 ['T3-03', 'T3-05'] 

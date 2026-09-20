@@ -1,0 +1,23 @@
+
+=== K0 ===
+  MIND             144/150 =  96.0 % [ 91.5– 98.2]   pont  192.50/200
+  régi 50           49/50  =  98.0 % [ 89.5– 99.6]   pont   97.00/100
+  új 100            95/100 =  95.0 % [ 88.8– 97.8]   pont   95.50/100
+  — hibaosztályonként —
+      C1            12/12  = 100.0 % [ 75.8–100.0]   pont   12.00/12
+      C2            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C3            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C4            10/11  =  90.9 % [ 62.3– 98.4]   pont   10.50/11
+      C5            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C6            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C7            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C8            11/11  = 100.0 % [ 74.1–100.0]   pont   11.00/11
+      C9             7/11  =  63.6 % [ 35.4– 84.8]   pont    7.00/11
+  instabil (nem determinisztikus greedy): 72/150 · formátumsértés: 0/150
+
+=== A MŰSZER SAJÁT ZAJA (futásonkénti ingadozás) ===
+kar       vizsgált  szöveg eltér  pont eltér  PASS eltér
+K0             150            72           4           3
+   A „PASS eltér" oszlop a mérés zaja: ennyi itemnél fordul elő, hogy az
+   egyik greedy futás átmegy, a másik nem. A kar-összevetés felbontása
+   ennél finomabb nem lehet.

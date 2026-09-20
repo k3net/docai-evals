@@ -1,0 +1,311 @@
+{
+ "S01-t0.6": {
+  "valaszok": 3,
+  "poziciok": 3663,
+  "megfigyelt_han": 0,
+  "szakaszok": 0,
+  "erintett_valasz": 0,
+  "szegmens_poziciok": {
+   "gondolkodás": 292,
+   "válasz": 3371
+  },
+  "szegmens_han": {
+   "gondolkodás": 0,
+   "válasz": 0
+  },
+  "beallitasok": {
+   "A pp1.5 t0.6 (prod)": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "B pp0   t0.6": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "C pp1.5 t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "D pp0   t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "K pp1.5 t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "L pp0   t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "pp1.5 t0.8": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "greedy": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "poisson": {
+   "gondolkodás": {
+    "esemeny": 0,
+    "pozicio": 292,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 10259.357101212297
+   },
+   "válasz": {
+    "esemeny": 0,
+    "pozicio": 3371,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 888.6776249047733
+   }
+  }
+ },
+ "S01-t0.8": {
+  "valaszok": 2,
+  "poziciok": 3943,
+  "megfigyelt_han": 0,
+  "szakaszok": 0,
+  "erintett_valasz": 0,
+  "szegmens_poziciok": {
+   "gondolkodás": 1286,
+   "válasz": 2657
+  },
+  "szegmens_han": {
+   "gondolkodás": 0,
+   "válasz": 0
+  },
+  "beallitasok": {
+   "A pp1.5 t0.6 (prod)": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "B pp0   t0.6": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "C pp1.5 t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "D pp0   t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "K pp1.5 t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "L pp0   t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "pp1.5 t0.8": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "greedy": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "poisson": {
+   "gondolkodás": {
+    "esemeny": 0,
+    "pozicio": 1286,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 2329.496324692061
+   },
+   "válasz": {
+    "esemeny": 0,
+    "pozicio": 2657,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 1127.4867420225785
+   }
+  }
+ },
+ "S01-t1.0": {
+  "valaszok": 3,
+  "poziciok": 5840,
+  "megfigyelt_han": 0,
+  "szakaszok": 0,
+  "erintett_valasz": 0,
+  "szegmens_poziciok": {
+   "gondolkodás": 1168,
+   "válasz": 4672
+  },
+  "szegmens_han": {
+   "gondolkodás": 0,
+   "válasz": 0
+  },
+  "beallitasok": {
+   "A pp1.5 t0.6 (prod)": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "B pp0   t0.6": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "C pp1.5 t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "D pp0   t0.3": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "K pp1.5 t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "L pp0   t1.0": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "pp1.5 t0.8": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   },
+   "greedy": {
+    "gondolkodas_per_M": 0.0,
+    "valasz_per_M": 0.0,
+    "E_han_per_valasz": 0.0,
+    "bootstrap95": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "poisson": {
+   "gondolkodás": {
+    "esemeny": 0,
+    "pozicio": 1168,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 2564.8392753030744
+   },
+   "válasz": {
+    "esemeny": 0,
+    "pozicio": 4672,
+    "megfigyelt_per_M": 0.0,
+    "felso_korlat_per_M": 641.2098188257686
+   }
+  }
+ }
+}

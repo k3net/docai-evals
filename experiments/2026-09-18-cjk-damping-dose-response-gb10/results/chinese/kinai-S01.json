@@ -1,0 +1,1080 @@
+{
+ "cimke": "S01",
+ "args": {
+  "url": "http://127.0.0.1:18355",
+  "model": "qwen36",
+  "cimke": "S01",
+  "items": "items-kinai.jsonl",
+  "futasok": 1,
+  "max_tokens": 2048,
+  "timeout": 300,
+  "parallel": 1,
+  "out": "<home>/experiments/2026-09-18-cjk-csillapitas/eredmenyek/kinai-S01.json"
+ },
+ "osszegzes": {
+  "pontszam": {
+   "helyes": 0,
+   "ossz": 36,
+   "arany": 0.0,
+   "wilson95": [
+    0.0,
+    0.09641862859446367
+   ]
+  },
+  "han_nelkul": {
+   "db": 36,
+   "ossz": 36,
+   "arany": 1.0,
+   "wilson95": [
+    0.9035813714055363,
+    1.0
+   ]
+  },
+  "instabil": 0,
+  "kategoriank": {
+   "changshi": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "chengyu": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "erxuanyi": {
+    "helyes": 0,
+    "ossz": 3
+   },
+   "fanjian": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "fanyici": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "fenlei": {
+    "helyes": 0,
+    "ossz": 3
+   },
+   "liangci": {
+    "helyes": 0,
+    "ossz": 6
+   }
+  }
+ },
+ "eredmenyek": [
+  {
+   "id": "ZH-01",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "本"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2150,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30217.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-02",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "头"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 1661,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30498.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-03",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "张"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 8086,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30431.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-04",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "条"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2225,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30215.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-05",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "匹"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2142,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30193.2
+    }
+   ]
+  },
+  {
+   "id": "ZH-06",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "朵",
+    "束"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2145,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30213.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-07",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "小"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\n“”",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 893,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 329,
+      "completion_tokens": 289,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 4846.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-08",
+   "kategoria": "fanyici",
+   "valasz": "Màn",
+   "gt": [
+    "慢"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\nMàn",
+     "valasz": "Màn",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 308,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 351,
+      "completion_tokens": 311,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 5436.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-09",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "晚",
+    "迟"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 4257,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30336.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-10",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "重"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 5575,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30488.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-11",
+   "kategoria": "fanyici",
+   "valasz": "nuǎn",
+   "gt": [
+    "热",
+    "暖"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\nnuǎn",
+     "valasz": "nuǎn",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 1081,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 390,
+      "completion_tokens": 350,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 5872.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-12",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "卖"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 5000,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30427.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-13",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "一举两得"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 6162,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30273.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-14",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "画蛇添足"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 4770,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30944.2
+    }
+   ]
+  },
+  {
+   "id": "ZH-15",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "守株待兔"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 7166,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30778.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-16",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "亡羊补牢"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2168,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30486.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-17",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "井底之蛙"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2265,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 28577.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-18",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "对牛弹琴"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 6512,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30428.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-19",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "学"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 9050,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30364.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-20",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "国"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 10605,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30508.2
+    }
+   ]
+  },
+  {
+   "id": "ZH-21",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "体"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 8717,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30155.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-22",
+   "kategoria": "fanjian",
+   "valasz": "Guang",
+   "gt": [
+    "广"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\n   Guang",
+     "valasz": "Guang",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 3351,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 936,
+      "completion_tokens": 895,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 14947.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-23",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "东"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 8717,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30187.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-24",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "马"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 8717,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30461.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-25",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "北京"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2147,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30177.0
+    }
+   ]
+  },
+  {
+   "id": "ZH-26",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "四"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2097,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 42,
+      "total_tokens": 2090,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30226.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-27",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "东",
+    "东方"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 4782,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 39,
+      "total_tokens": 2087,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30499.0
+    }
+   ]
+  },
+  {
+   "id": "ZH-28",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "七"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2098,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 42,
+      "total_tokens": 2090,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30149.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-29",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "长江"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 1627,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 38,
+      "total_tokens": 2086,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30626.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-30",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "珠穆朗玛峰",
+    "珠峰"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 3110,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 38,
+      "total_tokens": 2086,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 29421.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-31",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "正面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 7170,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 56,
+      "total_tokens": 2104,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30668.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-32",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "负面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 7894,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 58,
+      "total_tokens": 2106,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30431.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-33",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "正面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 6504,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 54,
+      "total_tokens": 2102,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30299.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-34",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "医院"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2554,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 48,
+      "total_tokens": 2096,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30553.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-35",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "冬天"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 4401,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 49,
+      "total_tokens": 2097,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30850.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-36",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "跑步"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2136,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 44,
+      "total_tokens": 2092,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30396.4
+    }
+   ]
+  }
+ ]
+}

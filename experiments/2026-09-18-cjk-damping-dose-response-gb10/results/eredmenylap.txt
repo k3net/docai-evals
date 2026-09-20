@@ -1,0 +1,68 @@
+=== EREDMÉNYLAP (runbook §10) ===
+
+Han-kockázat: pozíciónkénti E[Han], VÁLASZ-szegmens, /M, [95 % válaszonkénti bootstrap CI]
+
+kar     forma    maszk         par              Han t=0,6              Han t=0,8              Han t=1,0             csapda 150              kínai     KIE  contract
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+K0      kontroll —               —     5.48    [0.0;10.8]   105.46  [21.1;248.2]   219.93  [69.8;443.6]  145/150 96.7% [92-99]    100.0% [90-100]   1.000     0.923
+S09     szorzas  nyers         0.9            0,00 ⭐exact    16.92    [2.1;37.9]     3.30     [0.0;8.7]  145/150 96.7% [92-99]    100.0% [90-100]   1.000     0.910
+S08     szorzas  nyers         0.8            0,00 ⭐exact            0,00 ⭐exact     1.61     [0.0;4.8]  143/150 95.3% [91-98]    100.0% [90-100]   0.970     0.920
+S07     szorzas  nyers         0.7            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  145/150 96.7% [92-99]    100.0% [90-100]   1.000     0.917
+S06     szorzas  nyers         0.6            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  143/150 95.3% [91-98]      55.6% [40-70]   0.970     0.920
+S05     szorzas  nyers         0.5            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  145/150 96.7% [92-99]        2.8% [0-14]   1.000     0.919
+S03     szorzas  nyers         0.3            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  145/150 96.7% [92-99]        0.0% [0-10]   1.000     0.915
+S01     szorzas  nyers         0.1            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  144/150 96.0% [92-98]        0.0% [0-10]   0.982     0.931
+A200    irany    nyers         200            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  145/150 96.7% [92-99]        0.0% [0-10]   1.000     0.915
+A050    irany    nyers          50            0,00 ⭐exact            0,00 ⭐exact            0,00 ⭐exact  143/150 95.3% [91-98]        0.0% [0-10]   0.986     0.921
+S05F    szorzas  finomitott    0.5            0,00 ⭐exact    10.79    [0.0;23.2]    11.33    [0.0;22.0]  144/150 96.0% [92-98]      19.4% [10-35]   0.982     0.931
+A200F   irany    finomitott    200     4.26    [0.0;10.2]    39.33   [0.0;104.8]     2.62     [0.0;7.3]  145/150 96.7% [92-99]        2.8% [0-14]   1.000     0.923
+
+— RÉSZLETEK —
+K0: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 0.0 %
+    t=0.6: 5.48/M, 7 válasz / 12481 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 382/M
+    t=0.8: 105.46/M, 9 válasz / 13352 pozíció · megfigyelt 1 esemény, Poisson felső korlát < 536/M
+    t=1.0: 219.93/M, 8 válasz / 15295 pozíció · megfigyelt 8 esemény, Poisson felső korlát < 1403/M
+S09: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 0.0 %
+    t=0.6: 0.00/M, 7 válasz / 12481 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 382/M
+    t=0.8: 16.92/M, 9 válasz / 14193 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 307/M
+    t=1.0: 3.30/M, 6 válasz / 12691 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 370/M
+S08: csapda régi 50 → 47/50 (94.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 0.0 %
+    t=0.6: 0.00/M, 6 válasz / 10542 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 394/M
+    t=0.8: 0.00/M, 7 válasz / 11986 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 348/M
+    t=1.0: 1.61/M, 6 válasz / 10366 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 393/M
+S07: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 0.0 %
+    t=0.6: 0.00/M, 5 válasz / 8134 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 585/M
+    t=0.8: 0.00/M, 5 válasz / 7750 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 665/M
+    t=1.0: 0.00/M, 3 válasz / 5548 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 860/M
+S06: csapda régi 50 → 47/50 (94.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 44.4 %
+    t=0.6: 0.00/M, 6 válasz / 10542 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 394/M
+    t=0.8: 0.00/M, 7 válasz / 11986 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 348/M
+    t=1.0: 0.00/M, 6 válasz / 10366 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 393/M
+S05: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 97.2 %
+    t=0.6: 0.00/M, 7 válasz / 12481 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 382/M
+    t=0.8: 0.00/M, 9 válasz / 14193 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 307/M
+    t=1.0: 0.00/M, 6 válasz / 9707 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 429/M
+S03: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 100.0 %
+    t=0.6: 0.00/M, 5 válasz / 8134 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 585/M
+    t=0.8: 0.00/M, 5 válasz / 7750 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 665/M
+    t=1.0: 0.00/M, 3 válasz / 5548 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 860/M
+S01: csapda régi 50 → 47/50 (94.0 %) · új 100 → 97/100 (97.0 %) · párhuzam=1 · kínai Han nélkül 100.0 %
+    t=0.6: 0.00/M, 3 válasz / 3663 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 889/M
+    t=0.8: 0.00/M, 2 válasz / 3943 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 1127/M
+    t=1.0: 0.00/M, 3 válasz / 5840 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 641/M
+A200: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 100.0 %
+    t=0.6: 0.00/M, 6 válasz / 11206 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 483/M
+    t=0.8: 0.00/M, 6 válasz / 11627 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 415/M
+    t=1.0: 0.00/M, 8 válasz / 13112 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 336/M
+A050: csapda régi 50 → 46/50 (92.0 %) · új 100 → 97/100 (97.0 %) · párhuzam=1 · kínai Han nélkül 97.2 %
+    t=0.6: 0.00/M, 5 válasz / 7501 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 527/M
+    t=0.8: 0.00/M, 4 válasz / 7551 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 673/M
+    t=1.0: 0.00/M, 4 válasz / 7291 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 679/M
+S05F: csapda régi 50 → 47/50 (94.0 %) · új 100 → 97/100 (97.0 %) · párhuzam=1 · kínai Han nélkül 44.4 %
+    t=0.6: 0.00/M, 3 válasz / 3663 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 889/M
+    t=0.8: 10.79/M, 2 válasz / 3943 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 1127/M
+    t=1.0: 11.33/M, 3 válasz / 5840 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 641/M
+A200F: csapda régi 50 → 49/50 (98.0 %) · új 100 → 96/100 (96.0 %) · párhuzam=1 · kínai Han nélkül 86.1 %
+    t=0.6: 4.26/M, 5 válasz / 7665 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 545/M
+    t=0.8: 39.33/M, 4 válasz / 8323 pozíció · megfigyelt 1 esemény, Poisson felső korlát < 955/M
+    t=1.0: 2.62/M, 5 válasz / 10106 pozíció · megfigyelt 0 esemény, Poisson felső korlát < 476/M

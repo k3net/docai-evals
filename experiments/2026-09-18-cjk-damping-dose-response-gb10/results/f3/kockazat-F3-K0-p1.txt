@@ -1,0 +1,124 @@
+Han-tokenek gyűjtése a vocabból…
+  55328 Han-tartalmú token a 248077 elemű vocabban (22.3 %)
+
+=== F3-K0-p1-alap06: 6 KÜLÖNBÖZŐ végső válasz, 12992 pozíció, 65 ténylegesen generált Han token
+      ebből gondolkodás: 5833 pozíció, 63 Han token | válasz: 7159 pozíció, 2 Han token
+      a szonda 2 Han-szakaszt talált a VÁLASZOKBAN (2 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+      A pp1.5 t0.6 (prod)        10065.6/M          12.0/M          0.0143
+      B pp0   t0.6                9393.8/M           2.7/M          0.0032
+      C pp1.5 t0.3               10101.3/M           0.0/M          0.0000
+      D pp0   t0.3                9372.6/M           0.0/M          0.0000
+      K pp1.5 t1.0               10245.5/M         102.7/M          0.1225
+      L pp0   t1.0                9530.1/M          42.7/M          0.0510
+        pp1.5 t0.8               10129.6/M          46.0/M          0.0549
+        greedy                    9429.1/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 6 válasz) —
+      A pp1.5 t0.6 (prod)  VÁLASZ     12.02/M  95 % bootstrap CI [0.00; 29.38]/M
+      B pp0   t0.6         VÁLASZ      2.68/M  95 % bootstrap CI [0.00; 9.23]/M
+      C pp1.5 t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      D pp0   t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      K pp1.5 t1.0         VÁLASZ    102.67/M  95 % bootstrap CI [30.58; 167.77]/M
+      L pp0   t1.0         VÁLASZ     42.71/M  95 % bootstrap CI [13.93; 73.67]/M
+        pp1.5 t0.8         VÁLASZ     45.99/M  95 % bootstrap CI [8.23; 98.40]/M
+        greedy             VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    63 esemény / 5833 pozíció = 10800.6/M  ·  Poisson 95 % felső korlát: < 13321.17/M
+      MEGFIGYELT válasz         2 esemény / 7159 pozíció = 279.4/M  ·  Poisson 95 % felső korlát: < 879.42/M
+
+=== F3-K0-p1-alap03: 8 KÜLÖNBÖZŐ végső válasz, 12201 pozíció, 0 ténylegesen generált Han token
+      ebből gondolkodás: 4078 pozíció, 0 Han token | válasz: 8123 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+      A pp1.5 t0.6 (prod)            0.0/M           2.6/M          0.0027
+      B pp0   t0.6                   0.0/M           0.0/M          0.0000
+      C pp1.5 t0.3                   0.0/M           0.0/M          0.0000
+      D pp0   t0.3                   0.0/M           0.0/M          0.0000
+      K pp1.5 t1.0                   0.0/M          90.9/M          0.0923
+      L pp0   t1.0                   0.0/M          27.1/M          0.0276
+        pp1.5 t0.8                   0.0/M          27.5/M          0.0279
+        greedy                       0.0/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 8 válasz) —
+      A pp1.5 t0.6 (prod)  VÁLASZ      2.64/M  95 % bootstrap CI [0.00; 7.12]/M
+      B pp0   t0.6         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      C pp1.5 t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      D pp0   t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      K pp1.5 t1.0         VÁLASZ     90.89/M  95 % bootstrap CI [44.31; 133.67]/M
+      L pp0   t1.0         VÁLASZ     27.14/M  95 % bootstrap CI [6.64; 50.82]/M
+        pp1.5 t0.8         VÁLASZ     27.51/M  95 % bootstrap CI [5.26; 46.86]/M
+        greedy             VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    0 esemény / 4078 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 734.61/M
+      MEGFIGYELT válasz         0 esemény / 8123 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 368.80/M
+
+=== F3-K0-p1-ujra09: 4 KÜLÖNBÖZŐ végső válasz, 7424 pozíció, 0 ténylegesen generált Han token
+      ebből gondolkodás: 2393 pozíció, 0 Han token | válasz: 5031 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+      A pp1.5 t0.6 (prod)           38.4/M          23.8/M          0.0300
+      B pp0   t0.6                  23.9/M           5.4/M          0.0068
+      C pp1.5 t0.3                   3.4/M           1.1/M          0.0014
+      D pp0   t0.3                   2.6/M           0.0/M          0.0000
+      K pp1.5 t1.0                 135.3/M         123.5/M          0.1553
+      L pp0   t1.0                  82.8/M          55.6/M          0.0699
+        pp1.5 t0.8                  79.3/M          62.9/M          0.0791
+        greedy                       0.0/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 4 válasz) —
+      A pp1.5 t0.6 (prod)  VÁLASZ     23.84/M  95 % bootstrap CI [1.79; 41.07]/M
+      B pp0   t0.6         VÁLASZ      5.41/M  95 % bootstrap CI [0.76; 8.61]/M
+      C pp1.5 t0.3         VÁLASZ      1.13/M  95 % bootstrap CI [0.00; 2.40]/M
+      D pp0   t0.3         VÁLASZ      0.03/M  95 % bootstrap CI [0.00; 0.05]/M
+      K pp1.5 t1.0         VÁLASZ    123.49/M  95 % bootstrap CI [41.69; 178.27]/M
+      L pp0   t1.0         VÁLASZ     55.57/M  95 % bootstrap CI [23.39; 78.31]/M
+        pp1.5 t0.8         VÁLASZ     62.92/M  95 % bootstrap CI [12.64; 99.33]/M
+        greedy             VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    0 esemény / 2393 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 1251.87/M
+      MEGFIGYELT válasz         0 esemény / 5031 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 595.45/M
+
+=== F3-K0-p1-alap06-par: 4 KÜLÖNBÖZŐ végső válasz, 9597 pozíció, 0 ténylegesen generált Han token
+      ebből gondolkodás: 5232 pozíció, 0 Han token | válasz: 4365 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+      A pp1.5 t0.6 (prod)            0.0/M           0.0/M          0.0000
+      B pp0   t0.6                   0.0/M           0.0/M          0.0000
+      C pp1.5 t0.3                   0.0/M           0.0/M          0.0000
+      D pp0   t0.3                   0.0/M           0.0/M          0.0000
+      K pp1.5 t1.0                   5.8/M          42.4/M          0.0463
+      L pp0   t1.0                   1.9/M          12.2/M          0.0133
+        pp1.5 t0.8                   0.0/M           8.4/M          0.0092
+        greedy                       0.0/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 4 válasz) —
+      A pp1.5 t0.6 (prod)  VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      B pp0   t0.6         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      C pp1.5 t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      D pp0   t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      K pp1.5 t1.0         VÁLASZ     42.41/M  95 % bootstrap CI [0.00; 85.76]/M
+      L pp0   t1.0         VÁLASZ     12.23/M  95 % bootstrap CI [0.00; 29.39]/M
+        pp1.5 t0.8         VÁLASZ      8.39/M  95 % bootstrap CI [0.00; 18.28]/M
+        greedy             VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    0 esemény / 5232 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 572.58/M
+      MEGFIGYELT válasz         0 esemény / 4365 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 686.31/M
+
+=== F3-K0-p1-csapda06: 269 KÜLÖNBÖZŐ végső válasz (+181 ismétlődő kihagyva), 250663 pozíció, 7 ténylegesen generált Han token
+      ebből gondolkodás: 241407 pozíció, 7 Han token | válasz: 9256 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+      A pp1.5 t0.6 (prod)           17.3/M           0.0/M          0.0000
+      B pp0   t0.6                  15.2/M           0.0/M          0.0000
+      C pp1.5 t0.3                  16.0/M           0.0/M          0.0000
+      D pp0   t0.3                  15.8/M           0.0/M          0.0000
+      K pp1.5 t1.0                  22.3/M           0.0/M          0.0000
+      L pp0   t1.0                  17.7/M           0.0/M          0.0000
+        pp1.5 t0.8                  19.3/M           0.0/M          0.0000
+        greedy                      16.6/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 269 válasz) —
+      A pp1.5 t0.6 (prod)  VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      B pp0   t0.6         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      C pp1.5 t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      D pp0   t0.3         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      K pp1.5 t1.0         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      L pp0   t1.0         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+        pp1.5 t0.8         VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+        greedy             VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    7 esemény / 241407 pozíció = 29.0/M  ·  Poisson 95 % felső korlát: < 54.46/M
+      MEGFIGYELT válasz         0 esemény / 9256 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 323.65/M
+
+gépi kimenet: /work/eredmenyek/kockazat-F3-K0-p1.json

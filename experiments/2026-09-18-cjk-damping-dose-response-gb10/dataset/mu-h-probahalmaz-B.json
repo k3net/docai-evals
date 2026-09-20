@@ -1,0 +1,188 @@
+{
+ "nev": "mu-h-probahalmaz-B",
+ "verzio": "1.0",
+ "datum": "2026-09-18",
+ "leiras": "Általános magyar köznyelvi próbahalmaz a μ_h ÉRZÉKENYSÉG-ellenőrzéséhez (runbook §9). Szándékosan MÁS tárgykör, más rendszerprompt és más regiszter, mint az A halmazé: ha a két becslés iránya egybeesik, a μ_h nem a próbahalmaz műterméke.",
+ "itemek": [
+  {
+   "id": "B-01",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért sárgulnak ősszel a falevelek?",
+   "asszisztens": "Ősszel a nappalok rövidülésével a fák leállítják a klorofill termelését, és a meglévő zöld festékanyag lebomlik. A levélben addig is jelen lévő sárga és narancssárga színanyagokat így már semmi nem takarja el, ezért válnak láthatóvá. A folyamat végén a levélnyél tövében elválasztó réteg alakul ki, és a levél lehullik."
+  },
+  {
+   "id": "B-02",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan készül a jó házi lecsó?",
+   "asszisztens": "A hagymát zsíron vagy olajon üvegesre pároljuk, majd rászórjuk a pirospaprikát, és azonnal felöntjük egy kevés vízzel, hogy ne keseredjen meg. Ezután kerül bele a felkarikázott paprika, és csak akkor a paradicsom, amikor a paprika már félig megpuhult. Sóval ízesítjük, fedő nélkül forraljuk, hogy a leve besűrűsödjön."
+  },
+  {
+   "id": "B-03",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit érdemes tudni a Balaton vízszintjéről?",
+   "asszisztens": "A tó vízszintjét zsilippel szabályozzák, és a szabályozási sáv évszakonként eltér: tavasszal magasabb szintet tartanak, télen alacsonyabbat. A vízpótlás elsősorban a befolyó vizekből és a csapadékból származik, a párolgás nyáron jelentős veszteséget okoz. Tartós szárazság idején a szintet nehéz a célértéken tartani."
+  },
+  {
+   "id": "B-04",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan működik a kerékpár váltója?",
+   "asszisztens": "A váltó a láncot különböző méretű fogaskerekek közé tereli, ezzel változtatva az áttételt. Kisebb hátsó fogaskeréken nagyobb sebesség érhető el, de nagyobb erőkifejtés kell, nagyobb fogaskerék viszont könnyebb tekerést ad emelkedőn. Váltani mindig tekerés közben, terhelés csökkentésével érdemes."
+  },
+  {
+   "id": "B-05",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért kell szellőztetni télen is?",
+   "asszisztens": "A zárt térben felgyülemlik a szén-dioxid és a pára, ami rontja a közérzetet és penészedéshez vezethet. A leghatékonyabb a rövid, intenzív keresztszellőztetés: néhány percre teljesen kinyitott ablakok mellett a levegő kicserélődik, a falak viszont nem hűlnek ki. A hosszan résre nyitott ablak ezzel szemben sokkal több hőt visz el."
+  },
+  {
+   "id": "B-06",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mi a különbség a vihar és a zivatar között?",
+   "asszisztens": "A zivatar mindig gomolyfelhőhöz kötődik, és villámlás, mennydörgés kíséri, gyakran heves esővel vagy jégesővel. A vihar tágabb fogalom: elsősorban az erős szélre utal, és villámtevékenység nélkül is kialakulhat. A kettő természetesen együtt is jelentkezhet, ilyenkor beszélünk viharos zivatarról."
+  },
+  {
+   "id": "B-07",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan lehet megtanulni egy új nyelvet felnőttként?",
+   "asszisztens": "A legfontosabb a rendszeresség: naponta rövid ideig többet ér, mint hetente egyszer hosszan. Érdemes az első hetekben a leggyakoribb szavakra és a mindennapi helyzetekre koncentrálni, mert ezek adják a beszéd gerincét. A hallás utáni értést célszerű már az elején gyakorolni, még akkor is, ha eleinte alig érthető valami."
+  },
+  {
+   "id": "B-08",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért fontos a talajtakarás a kertben?",
+   "asszisztens": "A takaróréteg megakadályozza a talaj kiszáradását, mert csökkenti a felszíni párolgást, és mérsékli a hőingadozást is. Emellett elnyomja a gyomokat, hiszen fényhez nem jutnak a magvak. Bomlás közben a szerves takaróanyag tápanyagot is ad vissza a talajnak."
+  },
+  {
+   "id": "B-09",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit jelent az, hogy egy étel dagasztás nélkül készül?",
+   "asszisztens": "Ilyenkor a tésztában lévő sikérhálót nem gyúrással, hanem hosszú pihentetéssel alakítjuk ki: a magas víztartalmú tészta több óra alatt magától összeáll. A módszer kevés munkát igényel, cserébe időt. Az eredmény jellemzően nagy lyukú bélzet és vastag, ropogós héj."
+  },
+  {
+   "id": "B-10",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan érdemes felkészülni egy hosszabb túrára?",
+   "asszisztens": "A cipőt előre be kell járni, mert az új bakancs a leggyakoribb oka a feltört lábnak. Vizet és élelmet a tervezett idő másfélszeresére érdemes vinni, és mindig legyen nálunk esőkabát, akkor is, ha derült az égbolt. Az útvonalat és a visszaérkezés várható idejét jó, ha valaki tudja otthon."
+  },
+  {
+   "id": "B-11",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért nem szabad a sütőt gyakran kinyitni sütés közben?",
+   "asszisztens": "Az ajtó nyitásakor a forró levegő kiáramlik, és a sütőtér hőmérséklete gyorsan esik, amit a fűtés csak lassan pótol. A kelt és a piskótatészta ilyenkor összeesik, mert a szerkezete még nem szilárdult meg. Az utolsó harmadban már kevésbé érzékeny a tészta, de a hőingás akkor is rontja az eredményt."
+  },
+  {
+   "id": "B-12",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit csinál a szervezet alvás közben?",
+   "asszisztens": "Az alvás nem passzív állapot: ilyenkor zajlik a sejtek helyreállítása, az izmok regenerációja és a hormontermelés jelentős része. Az agy a nap során szerzett információkat rendezi, és a fontosakat tartós emléknyomokká alakítja. A mélyalvás és az álomfázis szabályos váltakozása adja a pihentető alvást."
+  },
+  {
+   "id": "B-13",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan lehet csökkenteni a háztartás energiafogyasztását?",
+   "asszisztens": "A legnagyobb tétel általában a fűtés, ezért a nyílászárók tömítése és a radiátorok mögé helyezett hőtükör gyorsan megtérül. A világítás cseréje energiatakarékos izzókra egyszerű lépés, a készenléti üzemmódban hagyott eszközök kikapcsolása pedig észrevétlenül sokat spórol. A mosógépet érdemes teli adaggal, alacsonyabb hőmérsékleten működtetni."
+  },
+  {
+   "id": "B-14",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért keserű a túl sokáig főzött kávé?",
+   "asszisztens": "A forró víz először a kellemes savakat és aromákat oldja ki, a hosszabb érintkezés azonban már a keserű vegyületeket is kivonja az őrleményből. Ezt hívják túlextrakciónak. A megoldás a durvább őrlés, a rövidebb főzési idő vagy az alacsonyabb vízhőmérséklet."
+  },
+  {
+   "id": "B-15",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mire jó a komposztálás?",
+   "asszisztens": "A konyhai és kerti szerves hulladék komposztálva tápanyagdús talajjavítóvá alakul, így nem a szemétbe kerül. A folyamathoz levegő, nedvesség és a zöld, illetve barna anyagok megfelelő aránya kell. Néhány hónap alatt morzsalékos, földszagú anyag keletkezik, amelyet a veteményesbe lehet dolgozni."
+  },
+  {
+   "id": "B-16",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan működik a hőszivattyú?",
+   "asszisztens": "A hőszivattyú nem termeli, hanem áthelyezi a hőt: a külső levegőből vagy a talajból von ki energiát, és azt juttatja a fűtési rendszerbe. Ehhez elektromos áramra van szüksége, de a leadott hő többszöröse a felvett áramnak. Hatékonysága annál jobb, minél kisebb a hőmérséklet-különbség a forrás és a fűtővíz között."
+  },
+  {
+   "id": "B-17",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért látszik a Hold nappal is?",
+   "asszisztens": "A Hold a Nap fényét veri vissza, és ha elég magasan van a horizont fölött, a nappali égen is látható marad. A kékesen szórt légköri fény mellett kevésbé feltűnő, de a kontraszt így is elegendő a megfigyeléséhez. A jelenség a holdfázistól és attól függ, mikor kel és nyugszik az adott napon."
+  },
+  {
+   "id": "B-18",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit érdemes tudni a szobanövények öntözéséről?",
+   "asszisztens": "A leggyakoribb hiba a túlöntözés: az állandóan nedves földben a gyökér nem jut levegőhöz, és elrothad. Öntözés előtt érdemes megnézni, kiszáradt-e a föld felső néhány centimétere. Télen a legtöbb növénynek jóval kevesebb vízre van szüksége, mert a növekedése lelassul."
+  },
+  {
+   "id": "B-19",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan alakult ki a magyar helyesírás mai formája?",
+   "asszisztens": "A mai rendszer hosszú folyamat eredménye, amelyben a kiejtés, a szóelemzés, a hagyomány és az egyszerűsítés elve együtt érvényesül. Az egységesítés a tizenkilencedik században gyorsult fel, amikor a szabályokat először foglalták össze. A szabályzat azóta több kiadást ért meg, de az alapelvek nem változtak."
+  },
+  {
+   "id": "B-20",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mi a teendő, ha lemerül az autó akkumulátora?",
+   "asszisztens": "Bikázáshoz először a segítő autó pozitív pólusát kötjük össze a lemerült akkumulátor pozitív pólusával, majd a negatív kábelt a segítő autó negatív pólusára és a lemerült autó fémes karosszériájára. A segítő autót járatni kell néhány percig, csak ezután indítsuk a másikat. A kábeleket fordított sorrendben vesszük le."
+  },
+  {
+   "id": "B-21",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért fontos a mozgás ülőmunka mellett?",
+   "asszisztens": "A hosszan tartó ülés megterheli a gerincet, és lassítja a vérkeringést, ami fáradtsághoz és derékfájáshoz vezet. Óránként néhány perc felállás és nyújtás észrevehetően javít a közérzeten. Hosszabb távon a rendszeres mozgás az anyagcserére és az alvás minőségére is kedvezően hat."
+  },
+  {
+   "id": "B-22",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan lehet felismerni a megbízható hírforrást?",
+   "asszisztens": "Érdemes megnézni, megnevezi-e a cikk a forrását, és visszakövethető-e az eredeti közlés. A megbízható forrás elkülöníti a tényeket a véleménytől, és a tévedéseit utólag javítja. Ha egy hír csak felindulást akar kelteni, és nincs mögötte ellenőrizhető adat, az önmagában is figyelmeztető jel."
+  },
+  {
+   "id": "B-23",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit jelent a fenntartható erdőgazdálkodás?",
+   "asszisztens": "Azt jelenti, hogy az erdőből évente legfeljebb annyi fát termelnek ki, amennyi közben újranő, így az erdő területe és készlete nem csökken. A kitermelés mellett figyelembe veszik a talaj, a vízháztartás és az élővilág védelmét is. A felújítás történhet természetes úton vagy telepítéssel."
+  },
+  {
+   "id": "B-24",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan érdemes elrendezni egy kis konyhát?",
+   "asszisztens": "A leggyakrabban használt három pont, a hűtő, a mosogató és a tűzhely érdemes, hogy háromszöget alkosson, rövid távolságokkal. A munkafelületet a mosogató és a tűzhely közé célszerű tenni, mert ott zajlik az előkészítés. A ritkán használt eszközök kerüljenek magasra vagy a legalsó fiókba."
+  },
+  {
+   "id": "B-25",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért sós a tenger?",
+   "asszisztens": "A szárazföldi kőzetekből a csapadék és a folyók oldott ásványi sókat mosnak ki, amelyeket a folyók a tengerbe szállítanak. A víz elpárolog, a só viszont ott marad, így az évmilliók során feldúsult. A sótartalom területenként eltér, a párolgás és a hozzáfolyó édesvíz arányától függően."
+  },
+  {
+   "id": "B-26",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mit csináljunk, ha elakad a beszélgetés egy idegennel?",
+   "asszisztens": "Segít, ha nyitott kérdést teszünk fel, olyat, amelyre nem lehet egy szóval válaszolni. Jó téma a közös helyzet: az esemény, ahol vagyunk, vagy éppen az időjárás. Ha a másik rövid válaszokat ad, nem feltétlenül az érdektelenség jele, lehet, hogy csak ő is feszeng."
+  },
+  {
+   "id": "B-27",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan romlik meg az étel a hűtőben?",
+   "asszisztens": "A hűtés lassítja, de nem állítja meg a baktériumok szaporodását, ezért néhány nap után a romlás így is elindul. A nyers hús levének más ételekre cseppenése keresztszennyezést okoz, ez a leggyakoribb hiba. Az ajtó gyakori nyitogatása megemeli a belső hőmérsékletet, és rövidíti az eltarthatóságot."
+  },
+  {
+   "id": "B-28",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Mi a különbség a zápor és az eső között?",
+   "asszisztens": "A zápor rövid ideig tart, hirtelen kezdődik és hirtelen ér véget, mert gomolyfelhőből hullik. A tartós eső rétegfelhőből származik, egyenletesebb és hosszabb. Ugyanannyi csapadék záporból sokkal rövidebb idő alatt érkezik, ezért gyakrabban okoz villámárvizet."
+  },
+  {
+   "id": "B-29",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Miért érdemes jegyzetelni előadás közben?",
+   "asszisztens": "A jegyzetelés arra kényszerít, hogy a hallottakat azonnal feldolgozzuk és a lényeget kiválasszuk, ez önmagában erősíti az emlékezést. A saját szavakkal írt jegyzet többet ér a szó szerinti lejegyzésnél. Utólag néhány perc átnézés jelentősen javítja a megőrzést."
+  },
+  {
+   "id": "B-30",
+   "rendszer": "Magyarul beszélő, segítőkész asszisztens vagy. Röviden és világosan válaszolj.",
+   "felhasznalo": "Hogyan működik a kovászos kenyér?",
+   "asszisztens": "A kovász lisztből és vízből álló, természetes élesztőgombákat és tejsavbaktériumokat tartalmazó tenyészet, amely a tésztát megkeleszti és megsavanyítja. A savasság lassítja a penészedést, ezért a kovászos kenyér tovább eláll. Az erjedés jóval lassabb, mint az élesztős tésztánál, ezért a sütés több órát vagy akár egy napot vesz igénybe."
+  }
+ ]
+}

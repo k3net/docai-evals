@@ -1,0 +1,33 @@
+========================================================================
+KAPU F0 / (1) — a kontroll hozza-e a round5 eredményét?
+========================================================================
+ez a kör : K0  (150 item)
+round5   : kiindulo-betabuild  (50 item)
+közös    : 50 item — ezeken párosítva vetjük össze
+
+                              pass-rate       pontszám
+K0         49/50 = 98.0 % [89.5–99.6]      97.00/100
+kiindulo-betabuild 49/50 = 98.0 % [89.5–99.6]      97.00/100
+
+párosított: b=1 (most átment, akkor bukott), c=1 (most bukott, akkor átment)
+Δ pass-rate = +0.00 pp [-5.54; +5.54], McNemar p = 1.0000 (exact)
+  eltérő itemek:
+    T3-02: most BUKOTT, akkor átment (1.00 vs 2.00 pont)
+    T7-08: most átment, akkor BUKOTT (1.00 vs 0.00 pont)
+
+→ (1) VERDIKT: a CI-k ÁTFEDNEK, a párosított különbség nem szignifikáns → a kapu TELJESÜL
+
+========================================================================
+KAPU F0 / (2) — az új itemek reprodukciós állapota a kontrollon
+========================================================================
+új item: 100
+  K0 ÁTMENT réteg:  95 — itt van fejtér LEFELÉ (a folt ÁRA mérhető)
+  K0 BUKOTT réteg:   5 — itt van fejtér FELFELÉ (a JAVULÁS mérhető)
+    bukott: C4-10, C9-02, C9-04, C9-09, C9-11
+
+A MŰSZER SAJÁT ZAJA (150 item, 3 greedy futás):
+  nyers szöveg eltér : 72
+  pontszám eltér     : 4
+  PASS/FAIL eltér    : 3  ← a felbontás alsó határa (2.00 pp)
+  ⚠️ A zaj (2.00 pp) eléri vagy meghaladja a −1.33 pp-os nem-inferioritási margót:
+     a margón belüli eltérés NEM megkülönböztethető a műszer zajától.

@@ -1,0 +1,46 @@
+{
+ "kar": "A200F",
+ "forma": "irany",
+ "maszk": "finomitott",
+ "skala": null,
+ "alpha": 200.0,
+ "mu_h": "mu-h-probahalmaz-A v1.0",
+ "celzott_sor": 54939,
+ "forras_snapshot": "<base-snapshot>",
+ "ujrairt_shard": "outside.safetensors",
+ "ujrairt_shard_sha256": "a8faff4abd2cf8e015cda22c1155b0991306c45ba9b18d4815d85426a90d47fc",
+ "szimlink_fajl": 55,
+ "celtokenek_forras": "/work/eredmenyek/celtokenek.json",
+ "celtokenek_stat": {
+  "vocab": 248077,
+  "nyers": 55424,
+  "finomitott": 54939,
+  "pure": 53480,
+  "mixed": 1944,
+  "broken": 953,
+  "csak_nyers": 4056,
+  "csak_finomitott": 3571,
+  "finomitott_okok": {
+   "kana": 5474,
+   "csak_egyszerusitett": 30902,
+   "tobbkarakteres_han": 48003
+  }
+ },
+ "elojel_diagnosztika": {
+  "celzott_logit_mu_h_elotte": {
+   "atlag": -1.640089750289917,
+   "min": -7.588582515716553,
+   "max": 2.2790117263793945,
+   "negativ_sor": 52975,
+   "negativ_arany": 0.9642512798309326
+  },
+  "celzott_logit_mu_h_utana": {
+   "atlag": -200.06764221191406,
+   "min": -200.067626953125,
+   "max": -200.067626953125,
+   "negativ_sor": 54939
+  },
+  "logit_nott_sor": 0
+ },
+ "megjegyzes": "csak a lm_head.weight célzott sorai módosultak; az FP8 súlyok és a shard minden egyéb tenzora bitre érintetlen"
+}

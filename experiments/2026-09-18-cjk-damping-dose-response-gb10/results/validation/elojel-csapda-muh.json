@@ -1,0 +1,91 @@
+{
+ "mu-h-probahalmaz-A": {
+  "K0": {
+   "t=0.6": {
+    "han_tomeg": 0.0032612893264740705,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 16
+   },
+   "t=0.8": {
+    "han_tomeg": 0.03930932655930519,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "t=1.0": {
+    "han_tomeg": 0.1052573025226593,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "logit": {
+    "max": 7.973459243774414,
+    "cel_atlag": -1.6543439626693726,
+    "cel_max": 2.2790117263793945,
+    "cel_negativ_arany": 0.9639506340026855
+   }
+  },
+  "S07": {
+   "t=0.6": {
+    "han_tomeg": 0.00402101781219244,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 16
+   },
+   "t=0.8": {
+    "han_tomeg": 0.05089161917567253,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "t=1.0": {
+    "han_tomeg": 0.13350637257099152,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "logit": {
+    "max": 7.973459243774414,
+    "cel_atlag": -1.1580618619918823,
+    "cel_max": 1.597852349281311,
+    "cel_negativ_arany": 0.9638965129852295
+   }
+  },
+  "S05": {
+   "t=0.6": {
+    "han_tomeg": 0.005197358317673206,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 16
+   },
+   "t=0.8": {
+    "han_tomeg": 0.06417043507099152,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "t=1.0": {
+    "han_tomeg": 0.16137629747390747,
+    "top20_han_db": 0,
+    "top20_han_tomeg": 0.0,
+    "han_tomeg_csonkolt": 0.0,
+    "megtartott_jelolt": 18
+   },
+   "logit": {
+    "max": 7.973459243774414,
+    "cel_atlag": -0.8271719813346863,
+    "cel_max": 1.1395058631896973,
+    "cel_negativ_arany": 0.9639506340026855
+   }
+  }
+ }
+}

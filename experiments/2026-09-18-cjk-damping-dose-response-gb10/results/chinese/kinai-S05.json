@@ -1,0 +1,1080 @@
+{
+ "cimke": "S05",
+ "args": {
+  "url": "http://127.0.0.1:18355",
+  "model": "qwen36",
+  "cimke": "S05",
+  "items": "items-kinai.jsonl",
+  "futasok": 1,
+  "max_tokens": 2048,
+  "timeout": 300,
+  "parallel": 1,
+  "out": "<home>/experiments/2026-09-18-cjk-csillapitas/eredmenyek/kinai-S05.json"
+ },
+ "osszegzes": {
+  "pontszam": {
+   "helyes": 1,
+   "ossz": 36,
+   "arany": 0.027777777777777776,
+   "wilson95": [
+    0.004920407139810443,
+    0.14169718653273855
+   ]
+  },
+  "han_nelkul": {
+   "db": 35,
+   "ossz": 36,
+   "arany": 0.9722222222222222,
+   "wilson95": [
+    0.8583028134672614,
+    0.9950795928601897
+   ]
+  },
+  "instabil": 0,
+  "kategoriank": {
+   "changshi": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "chengyu": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "erxuanyi": {
+    "helyes": 0,
+    "ossz": 3
+   },
+   "fanjian": {
+    "helyes": 1,
+    "ossz": 6
+   },
+   "fanyici": {
+    "helyes": 0,
+    "ossz": 6
+   },
+   "fenlei": {
+    "helyes": 0,
+    "ossz": 3
+   },
+   "liangci": {
+    "helyes": 0,
+    "ossz": 6
+   }
+  }
+ },
+ "eredmenyek": [
+  {
+   "id": "ZH-01",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "本"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 5863,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30430.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-02",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "头"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 4691,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30768.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-03",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "张"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 8280,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30204.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-04",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "条"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 3152,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30694.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-05",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "匹"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5373,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 31077.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-06",
+   "kategoria": "liangci",
+   "valasz": "",
+   "gt": [
+    "朵",
+    "束"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2145,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30076.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-07",
+   "kategoria": "fanyici",
+   "valasz": "xiao",
+   "gt": [
+    "小"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\nxiao",
+     "valasz": "xiao",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 766,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 289,
+      "completion_tokens": 249,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 4056.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-08",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "慢"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 4356,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30305.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-09",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "晚",
+    "迟"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2826,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30772.0
+    }
+   ]
+  },
+  {
+   "id": "ZH-10",
+   "kategoria": "fanyici",
+   "valasz": "zhòng)\n   - Output:  <think>\n   - Wait, I need to output exactly one character with no punctuation.\n   - Output:  <think>\n   - Let's just output:  <think>\n   - Actually, the prompt says \"  \" (zhòng)\n   - I will output:  <think>\n   - Wait, I'm overthinking. Just output the character.\n   - Output:  <think>\n   - Final:  <think>\n   - Let's produce it. \n   - Output:  <think>\n   - Wait, I'll just write:  <think>\n   - Actually, I'll just output:  <think>\n   - Final decision:  <think>\n   - Output:  <think>\n   - I'm stuck in a loop. Let's just output the character.\n   - Output:  <think>\n   - I will output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Okay, I'll output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>",
+   "gt": [
+    "重"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\n  \"  \" (zhòng)\n   - Output:  <think>\n   - Wait, I need to output exactly one character with no punctuation.\n   - Output:  <think>\n   - Let's just output:  <think>\n   - Actually, the prompt says \"  \" (zhòng)\n   - I will output:  <think>\n   - Wait, I'm overthinking. Just output the character.\n   - Output:  <think>\n   - Final:  <think>\n   - Let's produce it. \n   - Output:  <think>\n   - Wait, I'll just write:  <think>\n   - Actually, I'll just output:  <think>\n   - Final decision:  <think>\n   - Output:  <think>\n   - I'm stuck in a loop. Let's just output the character.\n   - Output:  <think>\n   - ",
+     "valasz": "zhòng)\n   - Output:  <think>\n   - Wait, I need to output exactly one character with no punctuation.\n   - Output:  <think>\n   - Let's just output:  <think>\n   - Actually, the prompt says \"  \" (zhòng)\n   - I will output:  <think>\n   - Wait, I'm overthinking. Just output the character.\n   - Output:  <think>\n   - Final:  <think>\n   - Let's produce it. \n   - Output:  <think>\n   - Wait, I'll just write:  <think>\n   - Actually, I'll just output:  <think>\n   - Final decision:  <think>\n   - Output:  <think>\n   - I'm stuck in a loop. Let's just output the character.\n   - Output:  <think>\n   - I will output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Okay, I'll output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>\n   - Final:  <think>\n   - I'll just output:  <think>",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 141,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 31266.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-11",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "热",
+    "暖"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5368,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30432.4
+    }
+   ]
+  },
+  {
+   "id": "ZH-12",
+   "kategoria": "fanyici",
+   "valasz": "",
+   "gt": [
+    "卖"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 5000,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30251.9
+    }
+   ]
+  },
+  {
+   "id": "ZH-13",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "一举两得"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 3201,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 32097.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-14",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "画蛇添足"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5616,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30673.1
+    }
+   ]
+  },
+  {
+   "id": "ZH-15",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "守株待兔"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 6749,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30821.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-16",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "亡羊补牢"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 6637,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30803.1
+    }
+   ]
+  },
+  {
+   "id": "ZH-17",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "井底之蛙"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5201,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30487.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-18",
+   "kategoria": "chengyu",
+   "valasz": "",
+   "gt": [
+    "对牛弹琴"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 6813,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30756.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-19",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "学"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 3954,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30784.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-20",
+   "kategoria": "fanjian",
+   "valasz": "国",
+   "gt": [
+    "国"
+   ],
+   "helyes": true,
+   "han_a_valaszban": true,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\n国",
+     "valasz": "国",
+     "han_a_valaszban": true,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 901,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 294,
+      "completion_tokens": 253,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 4040.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-21",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "体"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5256,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 32800.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-22",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "广"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 4138,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 31806.2
+    }
+   ]
+  },
+  {
+   "id": "ZH-23",
+   "kategoria": "fanjian",
+   "valasz": "dong",
+   "gt": [
+    "东"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "\n\ndong",
+     "valasz": "dong",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 810,
+     "finish": "stop",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 268,
+      "completion_tokens": 227,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 3893.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-24",
+   "kategoria": "fanjian",
+   "valasz": "",
+   "gt": [
+    "马"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 6077,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 2089,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30713.2
+    }
+   ]
+  },
+  {
+   "id": "ZH-25",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "北京"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5570,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 40,
+      "total_tokens": 2088,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30385.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-26",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "四"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2300,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 42,
+      "total_tokens": 2090,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 28717.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-27",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "东",
+    "东方"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 6226,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 39,
+      "total_tokens": 2087,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30680.8
+    }
+   ]
+  },
+  {
+   "id": "ZH-28",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "七"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2217,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 42,
+      "total_tokens": 2090,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30472.0
+    }
+   ]
+  },
+  {
+   "id": "ZH-29",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "长江"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2240,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 38,
+      "total_tokens": 2086,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30760.5
+    }
+   ]
+  },
+  {
+   "id": "ZH-30",
+   "kategoria": "changshi",
+   "valasz": "",
+   "gt": [
+    "珠穆朗玛峰",
+    "珠峰"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 5151,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 38,
+      "total_tokens": 2086,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30849.1
+    }
+   ]
+  },
+  {
+   "id": "ZH-31",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "正面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2847,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 56,
+      "total_tokens": 2104,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 31045.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-32",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "负面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2611,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 58,
+      "total_tokens": 2106,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 29067.7
+    }
+   ]
+  },
+  {
+   "id": "ZH-33",
+   "kategoria": "fenlei",
+   "valasz": "",
+   "gt": [
+    "正面"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": true,
+     "gondolkodas_hossz": 2517,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 54,
+      "total_tokens": 2102,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 31101.6
+    }
+   ]
+  },
+  {
+   "id": "ZH-34",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "医院"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2191,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 48,
+      "total_tokens": 2096,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30709.3
+    }
+   ]
+  },
+  {
+   "id": "ZH-35",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "冬天"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2386,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 49,
+      "total_tokens": 2097,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30916.1
+    }
+   ]
+  },
+  {
+   "id": "ZH-36",
+   "kategoria": "erxuanyi",
+   "valasz": "",
+   "gt": [
+    "跑步"
+   ],
+   "helyes": false,
+   "han_a_valaszban": false,
+   "instabil": false,
+   "futasok": [
+    {
+     "nyers": "",
+     "valasz": "",
+     "han_a_valaszban": false,
+     "han_a_gondolkodasban": false,
+     "gondolkodas_hossz": 2136,
+     "finish": "length",
+     "usage": {
+      "prompt_tokens": 44,
+      "total_tokens": 2092,
+      "completion_tokens": 2048,
+      "prompt_tokens_details": null
+     },
+     "wall_ms": 30484.3
+    }
+   ]
+  }
+ ]
+}

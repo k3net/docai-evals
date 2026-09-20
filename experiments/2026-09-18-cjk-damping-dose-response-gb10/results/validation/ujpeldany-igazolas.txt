@@ -1,0 +1,187 @@
+### PÉLDÁNYOK KÖZÖTT: soros K0 (1. példány, 3×) vs soros K0 (friss példány, 1×)
+párhuzamos : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0.json  (parallel=1)
+soros      : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0-ujpeldany.json  (parallel=1)
+közös item : 150
+
+item      sha (1. futás)                 pont               pass
+C1-01     3afe964de5bf/3afe964de5bf ✓            1.00/1.00   ✓    ✓
+C1-02     37bccc614481/37bccc614481 ✓            1.00/1.00   ✓    ✓
+C1-03     6f6001341422/6f6001341422 ✓            1.00/1.00   ✓    ✓
+C1-04     1d27b9e524cd/1d145045a12c ✗            1.00/1.00   ✓    ✓
+C1-05     ada51f9436b3/0f0481146a3f ✗            1.00/1.00   ✓    ✓
+C1-06     71d446182e8d/71d446182e8d ✓            1.00/1.00   ✓    ✓
+C1-07     edda94a2f708/d3dcab332b79 ✗            1.00/1.00   ✓    ✓
+C1-08     71287c5a4c93/71287c5a4c93 ✓            1.00/1.00   ✓    ✓
+C1-09     c20c269a78a8/c6fe8d981b09 ✗            1.00/1.00   ✓    ✓
+C1-10     25111bee1917/25111bee1917 ✓            1.00/1.00   ✓    ✓
+C1-11     7ef3e60e137b/7ef3e60e137b ✓            1.00/1.00   ✓    ✓
+C1-12     5e772d62b340/5e772d62b340 ✓            1.00/1.00   ✓    ✓
+C2-01     514c8b540744/f49b86f91a45 ✗            1.00/1.00   ✓    ✓
+C2-02     b76f380c437b/b76f380c437b ✓            1.00/1.00   ✓    ✓
+C2-03     9136b20947d3/9136b20947d3 ✓            1.00/1.00   ✓    ✓
+C2-04     bbb969c0ac6d/1d37bb3c5e98 ✗            1.00/1.00   ✓    ✓
+C2-05     6d30934035f0/6d30934035f0 ✓            1.00/1.00   ✓    ✓
+C2-06     ab74ed957b58/725f538ebd56 ✗            1.00/1.00   ✓    ✓
+C2-07     abc4a5035d7d/ce52cf4c46c6 ✗            1.00/1.00   ✓    ✓
+C2-08     1a5855f3633c/1a5855f3633c ✓            1.00/1.00   ✓    ✓
+C2-09     7c19d61710f6/7c19d61710f6 ✓            1.00/1.00   ✓    ✓
+C2-10     dad3b92c1852/dad3b92c1852 ✓            1.00/1.00   ✓    ✓
+C2-11     c0a518529f71/c0a518529f71 ✓            1.00/1.00   ✓    ✓
+C3-01     d94a6e5fbec2/2962811a042a ✗            1.00/1.00   ✓    ✓
+C3-02     86081cb48e9b/86081cb48e9b ✓            1.00/1.00   ✓    ✓
+C3-03     c9fd2a0b7b9f/c9fd2a0b7b9f ✓            1.00/1.00   ✓    ✓
+C3-04     6659139e2f74/afc88fe0d034 ✗            1.00/1.00   ✓    ✓
+C3-05     dd032d86caac/dd032d86caac ✓            1.00/1.00   ✓    ✓
+C3-06     50a1222760db/6168fedc0504 ✗            1.00/1.00   ✓    ✓
+C3-07     9926b37bc189/9926b37bc189 ✓            1.00/1.00   ✓    ✓
+C3-08     355a4c72b605/355a4c72b605 ✓            1.00/1.00   ✓    ✓
+C3-09     a82a107e9db5/a82a107e9db5 ✓            1.00/1.00   ✓    ✓
+C3-10     3b43c3011a9e/3b43c3011a9e ✓            1.00/1.00   ✓    ✓
+C3-11     6f8d82731b4c/198c4c6d473f ✗            1.00/1.00   ✓    ✓
+C4-01     bc66e242d902/bc66e242d902 ✓            1.00/1.00   ✓    ✓
+C4-02     c0ea7247e3e7/16f3273cf049 ✗            1.00/1.00   ✓    ✓
+C4-03     2dd7bf0b9dac/2dd7bf0b9dac ✓            1.00/1.00   ✓    ✓
+C4-04     fb956382a5e3/fb956382a5e3 ✓            1.00/1.00   ✓    ✓
+C4-05     a0a903aa6753/a0a903aa6753 ✓            1.00/1.00   ✓    ✓
+C4-06     bf2c1d151410/bf2c1d151410 ✓            1.00/1.00   ✓    ✓
+C4-07     bd841da37065/484c6f841798 ✗            1.00/1.00   ✓    ✓
+C4-08     58dd5de7529f/58dd5de7529f ✓            1.00/1.00   ✓    ✓
+C4-09     ab766c6fb51a/829ce62f6aa5 ✗            1.00/1.00   ✓    ✓
+C4-10     590dbc9b98d1/590dbc9b98d1 ✓            1.00/1.00   ✓    ✓
+C4-11     540ba0fe2687/7a2f616eb6dc ✗            1.00/1.00   ✓    ✓
+C5-01     6f0e1aa43ff3/6f0e1aa43ff3 ✓            1.00/1.00   ✓    ✓
+C5-02     4e28d2dfe72e/4e28d2dfe72e ✓            1.00/1.00   ✓    ✓
+C5-03     69caacfc088f/fc39120600c7 ✗            1.00/1.00   ✓    ✓
+C5-04     79553515db8f/79553515db8f ✓            1.00/1.00   ✓    ✓
+C5-05     9971af71af80/f73eb7340031 ✗            1.00/1.00   ✓    ✓
+C5-06     857dafbe3c76/563cbcfe9956 ✗            1.00/1.00   ✓    ✓
+C5-07     beac97fa35bc/beac97fa35bc ✓            1.00/1.00   ✓    ✓
+C5-08     e1d96d7fe6b3/3ed3bb66f78e ✗            1.00/1.00   ✓    ✓
+C5-09     3fb3f2a8d70b/4724daa7a78f ✗            1.00/1.00   ✓    ✓
+C5-10     cc76714bcd16/ed3bfa3f0a6e ✗            1.00/1.00   ✓    ✓
+C5-11     eb25b611e32d/eb25b611e32d ✓            1.00/1.00   ✓    ✓
+C6-01     9eb3f4c1f522/9eb3f4c1f522 ✓            1.00/1.00   ✓    ✓
+C6-02     24329936cc06/ba97bfcd4434 ✗            1.00/1.00   ✓    ✓
+C6-03     34c5dc3b8f22/4c2681c79a6b ✗            1.00/1.00   ✓    ✓
+C6-04     ac7d732a5a6f/ac7d732a5a6f ✓            1.00/1.00   ✓    ✓
+C6-05     738ef1859132/738ef1859132 ✓            1.00/1.00   ✓    ✓
+C6-06     441f13f0f294/441f13f0f294 ✓            1.00/1.00   ✓    ✓
+C6-07     fb7f0548e137/fb7f0548e137 ✓            1.00/1.00   ✓    ✓
+C6-08     2a354a840d6f/2a354a840d6f ✓            1.00/1.00   ✓    ✓
+C6-09     5c836ecd77d3/5c836ecd77d3 ✓            1.00/1.00   ✓    ✓
+C6-10     4f388421991a/4f388421991a ✓            1.00/1.00   ✓    ✓
+C6-11     a78ed20f1940/a78ed20f1940 ✓            1.00/1.00   ✓    ✓
+C7-01     3fbcee21d918/3fbcee21d918 ✓            1.00/1.00   ✓    ✓
+C7-02     b2767943171d/b2767943171d ✓            1.00/1.00   ✓    ✓
+C7-03     e5ab9cc1af5d/e5ab9cc1af5d ✓            1.00/1.00   ✓    ✓
+C7-04     0e0179e14b4c/2baf71d48914 ✗            1.00/1.00   ✓    ✓
+C7-05     96e36868ba5d/96e36868ba5d ✓            1.00/1.00   ✓    ✓
+C7-06     01a699e56496/01a699e56496 ✓            1.00/1.00   ✓    ✓
+C7-07     adf405555365/58d2fd2318ce ✗            1.00/1.00   ✓    ✓
+C7-08     e7ff1db4fac4/e7ff1db4fac4 ✓            1.00/1.00   ✓    ✓
+C7-09     77558099ceee/77558099ceee ✓            1.00/1.00   ✓    ✓
+C7-10     a801d6ba281c/08c13ff4bf9b ✗            1.00/1.00   ✓    ✓
+C7-11     84546da62495/84546da62495 ✓            1.00/1.00   ✓    ✓
+C8-01     ed5e045cb127/af28f51f660e ✗            1.00/1.00   ✓    ✓
+C8-02     2788b91b5072/2788b91b5072 ✓            1.00/1.00   ✓    ✓
+C8-03     c985e91f94f6/c985e91f94f6 ✓            1.00/1.00   ✓    ✓
+C8-04     923f83a6776c/0b4b6be5feb9 ✗            1.00/1.00   ✓    ✓
+C8-05     b0a5647a6ceb/4bc571096d07 ✗            1.00/1.00   ✓    ✓
+C8-06     265ecf8a0c73/fa08fe343ca8 ✗            1.00/1.00   ✓    ✓
+C8-07     808f6c7c2424/05e7b6d11d2b ✗            1.00/1.00   ✓    ✓
+C8-08     b5e01a34517e/28e1011ee4e3 ✗            1.00/1.00   ✓    ✓
+C8-09     aff025f3f66b/723096bc45ca ✗            1.00/1.00   ✓    ✓
+C8-10     d0a4ea0f28e4/d0a4ea0f28e4 ✓            1.00/1.00   ✓    ✓
+C8-11     b95507020aa1/b95507020aa1 ✓            1.00/1.00   ✓    ✓
+C9-01     afb3b78d4495/afb3b78d4495 ✓            1.00/1.00   ✓    ✓
+C9-02     732ccad1dabd/732ccad1dabd ✓            0.00/0.00   ✓    ✓
+C9-03     afb3b78d4495/afb3b78d4495 ✓            1.00/1.00   ✓    ✓
+C9-04     732ccad1dabd/bc6021b23834 ✗            0.00/0.00   ✓    ✓
+C9-05     732ccad1dabd/732ccad1dabd ✓            1.00/1.00   ✓    ✓
+C9-06     5b0e775619dd/afb3b78d4495 ✗            1.00/1.00   ✓    ✓
+C9-07     afb3b78d4495/5b0e775619dd ✗            1.00/1.00   ✓    ✓
+C9-08     732ccad1dabd/732ccad1dabd ✓            1.00/1.00   ✓    ✓
+C9-09     732ccad1dabd/5b8e2ae7cdf9 ✗            0.00/1.00   ✗    ✗
+C9-10     bc6021b23834/732ccad1dabd ✗            1.00/1.00   ✓    ✓
+C9-11     fd465c6364d4/fe2d4a9fee19 ✗            0.00/0.25   ✗    ✓
+T1-01     b1e22e07eaf4/745316c25f77 ✗            9.00/9.00   ✓    ✓
+T10-01    d0a39554c8dc/d0a39554c8dc ✓            2.00/2.00   ✓    ✓
+T10-02    6ec8b0a5fa92/6ec8b0a5fa92 ✓            2.00/2.00   ✓    ✓
+T10-03    b1120db0ce8e/a2a2db499548 ✗            2.00/2.00   ✓    ✓
+T10-04    87b962495384/87b962495384 ✓            2.00/2.00   ✓    ✓
+T10-05    13f851f21eac/5f1cdc24e6dd ✗            2.00/2.00   ✓    ✓
+T2-01     abf9a1082069/abf9a1082069 ✓            2.00/2.00   ✓    ✓
+T2-02     ff78d81f28be/ff78d81f28be ✓            2.00/2.00   ✓    ✓
+T2-03     c73bfa7c1b91/c73bfa7c1b91 ✓            2.00/2.00   ✓    ✓
+T2-04     c25b617ccd03/0b709e28badd ✗            2.00/2.00   ✓    ✓
+T2-05     c25b617ccd03/0b709e28badd ✗            2.00/2.00   ✓    ✓
+T3-01     3b6d1caed6af/3b6d1caed6af ✓            2.00/2.00   ✓    ✓
+T3-02     33b413c77041/35fbc1b23a48 ✗            2.00/1.00   ✗    ✗
+T3-03     e300855ebe70/a8b737add2ec ✗            2.00/1.00   ✗    ✗
+T3-04     d7922daa589f/d7922daa589f ✓            2.00/2.00   ✓    ✓
+T3-05     c2cb09127c69/e3b0c44298fc ✗            2.00/0.00   ✗    ✗
+T4-01     8b93528619e7/8b93528619e7 ✓            2.00/2.00   ✓    ✓
+T4-02     228f86b02d7f/228f86b02d7f ✓            2.00/2.00   ✓    ✓
+T4-03     b28ed75b8061/b28ed75b8061 ✓            2.00/2.00   ✓    ✓
+T4-04     36a71bfe1dbf/918301441b05 ✗            2.00/2.00   ✓    ✓
+T4-05     ba4ce4f53819/ba4ce4f53819 ✓            2.00/2.00   ✓    ✓
+T5-01     6eedc5af2f8a/6eedc5af2f8a ✓            2.00/2.00   ✓    ✓
+T5-02     81ba0c76c880/81ba0c76c880 ✓            2.00/2.00   ✓    ✓
+T5-03     f6bc3c1d6dd3/f6bc3c1d6dd3 ✓            2.00/2.00   ✓    ✓
+T5-04     101d7629333d/670a4a13494b ✗            2.00/2.00   ✓    ✓
+T5-05     fe5cc3a5a7df/16e1990e6d5f ✗            2.00/2.00   ✓    ✓
+T6-01     5f68d130134a/badd5dd6e287 ✗            2.00/2.00   ✓    ✓
+T6-02     b577477840dc/b577477840dc ✓            2.00/2.00   ✓    ✓
+T6-03     bdbeeeb1c7f8/bdbeeeb1c7f8 ✓            2.00/2.00   ✓    ✓
+T6-04     474f1e76677a/efb4fc052e72 ✗            2.00/2.00   ✓    ✓
+T6-05     2ed578f2c3f5/2ed578f2c3f5 ✓            2.00/2.00   ✓    ✓
+T7-01     c69237295b58/c69237295b58 ✓            1.00/1.00   ✓    ✓
+T7-02     2606593e0733/2606593e0733 ✓            1.00/1.00   ✓    ✓
+T7-03     c69237295b58/b77a16a4b6e9 ✗            1.00/1.00   ✓    ✓
+T7-04     75d2fbd364c1/75d2fbd364c1 ✓            1.00/1.00   ✓    ✓
+T7-05     b77a16a4b6e9/b77a16a4b6e9 ✓            1.00/1.00   ✓    ✓
+T7-06     b77a16a4b6e9/b77a16a4b6e9 ✓            1.00/1.00   ✓    ✓
+T7-07     2606593e0733/2606593e0733 ✓            1.00/1.00   ✓    ✓
+T7-08     b77a16a4b6e9/83d1b2d47a03 ✗            0.00/1.00   ✗    ✗
+T7-09     6f9a28a137be/a591fead8a3b ✗            1.00/1.00   ✓    ✓
+T8-01     f11b9f273b6a/f11b9f273b6a ✓            2.00/2.00   ✓    ✓
+T8-02     f11b9f273b6a/b97938f89ca4 ✗            2.00/2.00   ✓    ✓
+T8-03     a2cef77fb50e/a2cef77fb50e ✓            2.00/2.00   ✓    ✓
+T8-04     a2cef77fb50e/a2cef77fb50e ✓            2.00/2.00   ✓    ✓
+T8-05     2fb3d18c2618/2fb3d18c2618 ✓            2.00/2.00   ✓    ✓
+T9-01     584e9d50f7f0/584e9d50f7f0 ✓            2.00/2.00   ✓    ✓
+T9-02     5fee473c12a7/d9d0c013dfc4 ✗            2.00/2.00   ✓    ✓
+T9-03     aba3f8518a05/aba3f8518a05 ✓            2.00/2.00   ✓    ✓
+T9-04     584e9d50f7f0/584e9d50f7f0 ✓            2.00/2.00   ✓    ✓
+T9-05     0a73da5cbc90/0a73da5cbc90 ✓            2.00/2.00   ✓    ✓
+
+sha egyezés   : 92/150
+pont eltérés  : 6 ['C9-09', 'C9-11', 'T3-02', 'T3-03', 'T3-05', 'T7-08']
+pass eltérés  : 5 ['C9-09', 'T3-02', 'T3-03', 'T3-05', 'T7-08']
+
+⛔ VERDIKT: a kötegméret a PASS/FAIL-t is átbillenti. A párhuzamosítás ebben a formában NEM használható: vagy soros mérés kell, vagy a párhuzamosságot a mért változók közé kell venni.
+
+### PÉLDÁNYON BELÜL: soros (friss) vs parallel=6 (friss), 12 item
+párhuzamos : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0-ujpeldany-par6.json  (parallel=6)
+soros      : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0-ujpeldany.json  (parallel=1)
+közös item : 12
+
+item      sha (1. futás)                 pont               pass
+C1-01     3afe964de5bf/3afe964de5bf ✓            1.00/1.00   ✓    ✓
+C2-02     bba7436c7d2c/b76f380c437b ✗            1.00/1.00   ✓    ✓
+C5-03     fc39120600c7/fc39120600c7 ✓            1.00/1.00   ✓    ✓
+C6-01     9eb3f4c1f522/9eb3f4c1f522 ✓            1.00/1.00   ✓    ✓
+C7-01     3fbcee21d918/3fbcee21d918 ✓            1.00/1.00   ✓    ✓
+C9-02     732ccad1dabd/732ccad1dabd ✓            0.00/0.00   ✓    ✓
+T1-01     ee1b45fea3d9/745316c25f77 ✗            9.00/9.00   ✓    ✓
+T10-01    d0a39554c8dc/d0a39554c8dc ✓            2.00/2.00   ✓    ✓
+T2-01     abf9a1082069/abf9a1082069 ✓            2.00/2.00   ✓    ✓
+T5-01     5dabba9f25aa/6eedc5af2f8a ✗            2.00/2.00   ✓    ✓
+T7-08     b77a16a4b6e9/83d1b2d47a03 ✗            1.00/1.00   ✓    ✓
+T9-01     584e9d50f7f0/584e9d50f7f0 ✓            2.00/2.00   ✓    ✓
+
+sha egyezés   : 8/12
+pont eltérés  : 0 []
+pass eltérés  : 0 []
+
+⚠️ VERDIKT: a nyers kimenet eltér, de a PASS/FAIL nem. A párhuzamosítás használható, de a kötegméretet a jegyzőkönyvbe kell írni, és minden kart AZONOS kötegmérettel kell mérni.

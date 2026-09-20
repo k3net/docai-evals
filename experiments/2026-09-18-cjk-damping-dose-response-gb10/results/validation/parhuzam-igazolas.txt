@@ -1,0 +1,23 @@
+párhuzamos : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0.json  (parallel=6)
+soros      : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0-soros.json  (parallel=1)
+közös item : 12
+
+item      sha (1. futás)                 pont               pass
+C1-01     3afe964de5bf/3afe964de5bf ✓            1.00/1.00   ✓    ✓
+C2-02     b76f380c437b/b76f380c437b ✓            1.00/1.00   ✓    ✓
+C5-03     fc39120600c7/69caacfc088f ✗            1.00/1.00   ✓    ✓
+C6-01     9eb3f4c1f522/9eb3f4c1f522 ✓            1.00/1.00   ✓    ✓
+C7-01     3fbcee21d918/3fbcee21d918 ✓            1.00/1.00   ✓    ✓
+C9-02     732ccad1dabd/732ccad1dabd ✓            0.00/0.00   ✓    ✓
+T1-01     6393d51d2175/b1e22e07eaf4 ✗            9.00/9.00   ✓    ✓
+T10-01    d0a39554c8dc/d0a39554c8dc ✓            2.00/2.00   ✓    ✓
+T2-01     abf9a1082069/abf9a1082069 ✓            2.00/2.00   ✓    ✓
+T5-01     6eedc5af2f8a/6eedc5af2f8a ✓            2.00/2.00   ✓    ✓
+T7-08     83d1b2d47a03/b77a16a4b6e9 ✗            1.00/0.00   ✗    ✗
+T9-01     584e9d50f7f0/584e9d50f7f0 ✓            2.00/2.00   ✓    ✓
+
+sha egyezés   : 9/12
+pont eltérés  : 1 ['T7-08']
+pass eltérés  : 1 ['T7-08']
+
+⛔ VERDIKT: a kötegméret a PASS/FAIL-t is átbillenti. A párhuzamosítás ebben a formában NEM használható: vagy soros mérés kell, vagy a párhuzamosságot a mért változók közé kell venni.

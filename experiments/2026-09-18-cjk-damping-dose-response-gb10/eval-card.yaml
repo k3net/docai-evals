@@ -1,0 +1,175 @@
+id: cjk-damping-dose-response-gb10
+version: "1.0"
+date: "2026-09-20"
+title: "How much may be taken from a token class? CJK damping in the output head of Qwen3.6-35B-A3B-FP8 — a dose-response study"
+question: >-
+  A weight-level fix for Chinese function words appearing in Hungarian agent output exists
+  (rescaling the CJK rows of lm_head). How much may be taken before it costs — in Hungarian and
+  in Chinese — and does the direction-based row replacement or a language-specific mask pay less
+  for the same benefit?
+
+task:
+  type: interpretability          # weight-level intervention on the output head; the closest schema value — the endpoint is a language-mixing gate
+  document_types: [agent-trace, synthetic-hungarian-business-document, chinese-short-task]
+  language: [hu, zh]
+  output_format: free-text and strict JSON
+
+dataset:
+  name: "cjk-damping-dose-response (trap corpus 150 items over 16 synthetic documents; Chinese probe 36 items; 3 customer agent traces)"
+  size:
+    arms: 12
+    trap_items: 150
+    trap_documents: 16
+    chinese_probe_items: 36
+    agent_traces: 3
+    risk_positions_per_arm_per_temperature: "3 500 - 15 300"
+    f3_synthetic_positions_under_production_sampler: 232814
+  access: synthetic-only          # the public part; the three customer traces behind results/risk are private (see notes)
+  ground_truth: >-
+    Trap corpus: exact-match fields per item, written with the documents (gen_csapda.py, 385
+    consistency assertions). Chinese probe: exact-match answers. Han risk needs no ground truth:
+    it is the model's own top-20 probability mass on CJK tokens at every generated position.
+  notes: >-
+    The trap corpus, the Chinese probe and every per-arm output on them are public. The three
+    Hungarian agent traces are customer data and are not; only aggregates are published
+    (results/risk). Internal KIE and contract extraction were run on every arm as confirmatory
+    instruments and are not published.
+
+systems:
+  - label: K0
+    role: baseline
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.19.1rc1.dev328+g18013df6a, FP8 KV cache, MTP draft 2, prefix caching, DGX Spark GB10"
+    sampling: { greedy_for_trap_and_probe: true, risk_probe: "t 0.6/0.8/1.0, top_p 0.95, top_k 20, presence 1.5, repetition 1.05" }
+  - label: S09 S08 S07 S06 S05 S03 S01
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8 with lm_head rows of 55 424 CJK tokens scaled by S
+    notes: "Single-tensor patch; all other bytes identical to the base. S07 is the published checkpoint."
+  - label: A200 A050
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8 with the same rows replaced by -alpha * mu_h / ||mu_h||^2
+    notes: "Direction form of ThakiCloud/Qwen3.8-27B-ko-cjk-suppressed; mu_h measured on 30 synthetic Hungarian items (dataset/mu-h-A.json)."
+  - label: S05F A200F
+    role: candidate
+    model: as above with the refined (Korean-style) mask of 54 939 rows
+    notes: "Keeps 3 964 frequent single-character Han tokens untouched."
+
+metrics:
+  - name: han_risk_per_million
+    definition: >-
+      Position-wise expected CJK token count, sum over answer positions of the CJK probability
+      mass after the sampling chain (presence penalty, temperature, top_k, top_p) applied to the
+      recorded top-20 log-probabilities, per million positions; answer-level bootstrap 95% CI
+      (2 000 resamples). "Exact 0" = every position has zero CJK mass in the truncated support.
+      LOWER BOUND when computed from raw log-probabilities (penalties act before top-k); the F3
+      re-measurement used processed log-probabilities and is exact for the production sampler.
+    primary: true
+    preregistered: "partial"
+  - name: trap_pass_rate
+    definition: >-
+      Share of the 150 items whose ground-truth fields all match exactly, Wilson 95% CI; paired
+      McNemar against the control; non-inferiority margin -2 items. Registered as the primary
+      cost endpoint; found to be a null instrument for lm_head-row interventions by construction
+      (byte-identical greedy output to a same-instance-mode control; measured on 8 of 11 patches, derived for S08/S06/A050) and reported as a negative control — the
+      role change is dated 2026-09-19 in the protocol log.
+    primary: true
+    preregistered: "partial"
+  - name: chinese_probe_accuracy
+    definition: "Exact-match accuracy on 36 Chinese tasks; and the share of answers containing no CJK character. Paired McNemar vs control, Holm over arms."
+    primary: true
+    preregistered: "full"
+  - name: raw_cjk_mass
+    definition: "Sum of softmax mass over the 55 424 targeted rows on the mean Hungarian hidden state, before and after top_k/top_p truncation (the sign-trap instrument, code/elojel_csapda.py)."
+    primary: false
+    preregistered: "post-hoc"
+
+decision_rule: >-
+  Fixed 2026-09-19 before the F3 data: a production canary of S07 at t=0.6 is recommended if its
+  E[Han] on the actual sampling support is not above the current production state (K0 at t=0.3),
+  its trap-corpus result under the production sampler is not worse than K0 at t=0.6 within
+  instance noise, and no CJK token is observed in any answer over three fresh instances, 15 seeds
+  and a concurrent batch.
+
+results:
+  chinese_probe_accuracy:
+    K0: 1.00
+    S09: 1.00
+    S08: 1.00
+    S07: 1.00
+    S06: 0.556
+    S05: 0.028
+    S03: 0.0
+    S01: 0.0
+    A200: 0.0
+    A050: 0.0
+    S05F: 0.194
+    A200F: 0.028
+    n: 36
+  han_risk_per_million_raw_method:
+    K0: { t0_6: 5.5, t0_8: 105.5, t1_0: 219.9 }
+    S09: { t0_6: 0.0, t0_8: 16.9, t1_0: 3.3 }
+    S08: { t0_6: 0.0, t0_8: 0.0, t1_0: 1.6 }
+    S07: { t0_6: 0.0, t0_8: 0.0, t1_0: 0.0 }
+    S05F: { t0_6: 0.0, t0_8: 10.8, t1_0: 11.3 }
+    A200F: { t0_6: 4.3, t0_8: 39.3, t1_0: 2.6 }
+    others: "exact 0 at all three temperatures (S06, S05, S03, S01, A200, A050)"
+  han_risk_per_million_actual_support_f3:
+    K0: { t0_6: 73.4, t0_3: 392.4, retry_t0_9: 306.1, observed_answer_events_t0_3: 4 }
+    S07: { t0_6: 0.0, t0_3: 0.0, retry_t0_9: 0.45, observed_answer_events: 0 }
+  trap_pass_rate_greedy:
+    all_arms: "byte-identical to the control of the same server-instance mode where such a control exists (8 of 11 patches; S08 = S06 byte-identical to each other, A050 alone in its mode); 143-145/150 depending on the instance mode"
+  trap_under_production_sampler_f3:
+    K0: { pass: 146, score: 191.0, format_errors: 2 }
+    S07: { pass: 146, score: 194.5, format_errors: 0 }
+  s07_confirmation_f3:
+    fresh_instances: 3
+    seeds_x_profiles: 15
+    observed_cjk_tokens_anywhere: 0
+    positions_approx: 300000
+    base_on_same_seeds_cjk_tokens: 65
+
+verdict: >-
+  S07 (multiplicative scaling by 0.7, raw mask) is the smallest dose that zeroes the CJK risk on
+  the production sampler at every temperature measured AND leaves the Chinese probe intact
+  (36/36). Cost is a cliff in Chinese between S=0.7 and 0.6; the Hungarian cost is zero by
+  construction. The direction form and the refined mask are worse on both axes. The temperature
+  firefight (t=0.3) does not remove the risk. Proposed for a reversible production canary.
+
+reproducibility:
+  level: R1
+  code: published
+  data: synthetic-only
+  results: full
+  runs_per_variant: 1
+  not_published: >-
+    The three Hungarian customer agent traces (cases.jsonl) and the per-position probe records
+    built on them (~2 GB); only their aggregates are in results/risk and results/f3. The internal
+    KIE and contract extraction runs (customer documents). The 35 GB checkpoint itself is on
+    Hugging Face; it is rebuildable from the base with code/patch_lm_head.py and verifiable with
+    code/ellenoriz_kar.py against the shard sha256 in results/arms/S07.json.
+  verified_by: >-
+    code/ellenoriz_kar.py (507 file/tensor/row checks per arm, run on every arm before
+    measurement); code/determinizmus_ellenoriz.py and code/parhuzam_ellenoriz.py
+    (results/validation/); code/hf_csomag.sh re-verifies the published package against the base.
+
+limitations:
+  - "Three customer agent traces carry the Hungarian risk numbers; the public counterpart is the 150-document run under the production sampler (F3), whose answers are short JSON."
+  - "Chinese only on the cost side: kanji and hanja share the mask but were not measured."
+  - "Raw-log-probability risk numbers are lower bounds; the base is roughly an order of magnitude worse on the actual support (ratio of point estimates from three traces, wide CIs). The retry-path figure for S07 (0.45/M) is itself a lower bound (top-k ties under top_p=1.0). S08 was not re-measured on the actual support; nothing between S=0.6 and 0.7 was measured."
+  - "Server-instance non-determinism: 2-5 of 150 greedy items flip between fresh vLLM processes (>= 5 discrete modes over 16 starts); batch size flips the same items. Published greedy numbers are serial; arm differences on the trap corpus identify the instance mode, not the arm."
+  - "The patch's zeros depend on a truncating sampler (top_k/top_p); the raw CJK mass of the S arms is higher than the base's (sign trap)."
+  - "The risk calculator skips records without a final answer (tool-call turns, runaways); an all-record recount (results/f3/ujraszamolas-minden-rekord.txt) keeps S07 at zero generated CJK tokens over ~1.09 M positions (Poisson < 2.8/M) and adds a 6 593-token CJK runaway for the base on the retry profile. The retry profile degenerates in 2 of 15 runs with or without the patch."
+  - "Same-mode arms follow identical sampled trajectories (shared server RNG stream), so the exact zeros of the scale arms in the 12-arm table are not independent samples; a bootstrap CI of [0; 0] is structural, not statistical."
+  - "Poisson upper bounds on observed CJK events are 300-1 100/M per arm; the exact-zero claims rest on position-wise probability mass, not on event counts."
+  - "One model, one quantisation (FP8), one engine build, one hardware (GB10)."
+
+related:
+  article: "https://docai.hu/blog/kinai-szavak-a-magyar-valaszban"
+  study: "https://docai.hu/kutatas/cjk-csillapitas"
+  experiments:
+    - "2026-08-28-qwen38-flash-next-nvfp4-topk-nondeterminism-gb10"
+    - "2026-09-03-qwen38-flash-next-det-topk-kernel-batch-invariance-gb10"
+  references:
+    - "dnotitia/smoothie-qwen — the CJK target-class definition, used unchanged as the raw mask."
+    - "ThakiCloud/Qwen3.8-27B-ko-cjk-suppressed — the direction-based row replacement and the language-specific (Korean) mask re-tested here as the A* and *F arms."
+    - "vLLM batch-invariant mode (VLLM_BATCH_INVARIANT), verified here as the only cross-instance-reproducible path on GB10."

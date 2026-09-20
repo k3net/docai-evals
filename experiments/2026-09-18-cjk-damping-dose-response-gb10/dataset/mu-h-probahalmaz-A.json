@@ -1,0 +1,188 @@
+{
+ "nev": "mu-h-probahalmaz-A",
+ "verzio": "1.0",
+ "datum": "2026-09-18",
+ "leiras": "Termékközeli magyar iratfeldolgozó próbahalmaz a μ_h becsléséhez. Minden item egy rendszerprompt + felhasználói kérdés + MAGYAR asszisztens-válasz hármas; az átlag csak a válasz pozícióira megy. A szövegek kitaláltak, ügyféladatot nem tartalmaznak: szándékosan nincs bennük cégnév, adószám, összeg és dátum sem.",
+ "itemek": [
+  {
+   "id": "A-01",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Foglald össze, mit tartalmaz a csatolt bérleti szerződés díjazási fejezete.",
+   "asszisztens": "A szerződés havi bérleti díjat állapít meg, amelyet minden hónap ötödik napjáig kell átutalni a bérbeadó bankszámlájára. A díj évente egyszer, január elsejével emelkedik a Központi Statisztikai Hivatal által közzétett éves fogyasztóiár-index mértékével, de a növekedés felső határa a szerződésben rögzített százalék. Késedelmes fizetés esetén a bérlő a jegybanki alapkamat kétszeresének megfelelő késedelmi kamatot tartozik fizetni."
+  },
+  {
+   "id": "A-02",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen fizetési határidő szerepel a számlán?",
+   "asszisztens": "A számlán a teljesítés napjától számított harminc napos fizetési határidő szerepel. A kiállítás kelte és a teljesítés időpontja eltér egymástól, ezért a határidőt a teljesítési dátumtól kell számolni, nem a kiállítástól. A fizetési mód átutalás, a kedvezményezett bankszámlaszáma a számla alsó szegélyén, a közlemény rovatban a számlaszámot kell feltüntetni."
+  },
+  {
+   "id": "A-03",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mi a különbség az előlegszámla és a végszámla között ebben a csomagban?",
+   "asszisztens": "Az előlegszámla a megrendeléskor kifizetett összegről szól, és önmagában nem igazolja a teljesítést. A végszámla a teljes ellenértéket tartalmazza, amelyből az előleg összegét levonták, így a ténylegesen esedékes összeg a különbözet. A két bizonylat áfatartalma külön-külön szerepel, és a könyvelésben mindkettőt rögzíteni kell, de az adóalapot csak egyszer, a végszámlánál kell figyelembe venni."
+  },
+  {
+   "id": "A-04",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Ki a szerződés két szerződő fele, és milyen minőségben járnak el?",
+   "asszisztens": "Az egyik fél gazdasági társaság, amely a szerződésben megrendelőként szerepel, és a székhelye szerinti cégbíróságon bejegyzett cégjegyzékszámmal azonosítható. A másik fél vállalkozóként köti a megállapodást, és a képviseletében az ügyvezető jár el önálló aláírási joggal. Mindkét fél adószáma és bankszámlaszáma az irat fejrészében szerepel."
+  },
+  {
+   "id": "A-05",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit mond ki a szerződés a titoktartásról?",
+   "asszisztens": "A felek kötelesek a szerződés teljesítése során tudomásukra jutott üzleti titkot megőrizni, harmadik személynek nem adhatják át, és saját célra sem használhatják fel. A titoktartási kötelezettség a szerződés megszűnése után is fennmarad, határozott ideig. A kötelezettség megsértése kártérítési felelősséget von maga után, és a szerződés azonnali hatályú felmondására ad alapot."
+  },
+  {
+   "id": "A-06",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Hány tételsor van a számlán, és mi a nettó végösszeg?",
+   "asszisztens": "A számlán négy tételsor szerepel, mindegyiknél külön megadva a mennyiség, a mértékegység, az egységár és a nettó érték. A tételsorok nettó értékeinek összege adja a számla nettó végösszegét, amelyhez az általános forgalmi adó hozzáadódik. Az adóalap és az adó összege a bizonylat összesítő rovatában külön sorban látható."
+  },
+  {
+   "id": "A-07",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Van-e a szerződésben kötbérkikötés, és milyen mértékű?",
+   "asszisztens": "Igen, a szerződés késedelmi kötbért köt ki, amelynek alapja a nettó vállalkozói díj, napi mértéke pedig a szerződésben megadott százalék. A kötbér legfeljebb a nettó díj meghatározott hányadáig halmozódhat, ez a felső határ a kikötés szerves része. A hibás teljesítés esetére külön, ettől eltérő mértékű kötbért írnak elő."
+  },
+  {
+   "id": "A-08",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mikor lép hatályba a megállapodás?",
+   "asszisztens": "A megállapodás mindkét fél aláírásának napján lép hatályba, tehát a későbbi aláírás időpontja az irányadó. A szövegben nem szerepel külön hatálybalépési dátum, ezért nem lehet előre rögzített naphoz kötni. A határozott időtartam a hatálybalépéstől számítódik, és a lejárat előtt írásban meghosszabbítható."
+  },
+  {
+   "id": "A-09",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit tartalmaz az átadás-átvételi jegyzőkönyv hibalistája?",
+   "asszisztens": "A jegyzőkönyv a műszaki átadáskor feltárt hiányosságokat sorolja fel, mindegyikhez megadva a javítás határidejét és a felelős személyt. A hibák egy része a rendeltetésszerű használatot nem akadályozza, ezért a felek az átadást ezekkel együtt is teljesítettnek tekintik. A fennmaradó tételek javításáig a megrendelő visszatartja a vállalkozói díj egy részét."
+  },
+  {
+   "id": "A-10",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit jelent a számlán szereplő fordított adózás megjelölés?",
+   "asszisztens": "A fordított adózás azt jelenti, hogy az általános forgalmi adót nem a kibocsátó, hanem a vevő vallja be és fizeti meg. Ilyenkor a számla nem tartalmaz áthárított adót, és az összesítő rovatban az adó összege helyén a vonatkozó jogszabályi hivatkozás szerepel. Ez nem azonos az alanyi adómentességgel, amely a kibocsátó saját jogállásából következik."
+  },
+  {
+   "id": "A-11",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen felmondási szabályokat rögzít a szerződés?",
+   "asszisztens": "A szerződést bármelyik fél rendes felmondással megszüntetheti, a felmondási idő a szerződésben megadott hónapszám, amely a felmondás kézhezvételét követő hónap első napjától számít. Súlyos szerződésszegés esetén azonnali hatályú felmondásnak van helye, előzetes felszólítás nélkül. A felmondást írásban, igazolható módon kell közölni."
+  },
+  {
+   "id": "A-12",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mi a szerződés tárgya?",
+   "asszisztens": "A szerződés tárgya egy meghatározott műszaki tartalmú kivitelezési munka elvégzése, amelynek részletes leírását a szerződés első számú melléklete tartalmazza. A vállalkozó a munkát saját eszközeivel és saját anyagbeszerzéssel végzi, a megrendelő a munkaterületet biztosítja. A teljesítés helye a megrendelő telephelye."
+  },
+  {
+   "id": "A-13",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Melyik módosítás van hatályban, ha kettő is készült?",
+   "asszisztens": "A későbbi keltezésű módosítás az irányadó, mert az kifejezetten rendelkezik a korábbi módosítás érintett pontjának hatályon kívül helyezéséről. Ahol a második módosítás nem rendelkezik, ott az első módosítás szövege marad hatályban. Az alapszerződés minden egyéb rendelkezése változatlanul érvényes."
+  },
+  {
+   "id": "A-14",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen adatok azonosítják a beszállítót?",
+   "asszisztens": "A beszállítót a cégneve, a székhelyének címe, az adószáma és a cégjegyzékszáma azonosítja, ezek a bizonylat fejrészében szerepelnek. A bankszámlaszám ettől külön, a fizetési adatok között található. A kapcsolattartó neve és elérhetősége nem kötelező eleme a számlának, de ebben az iratban fel van tüntetve."
+  },
+  {
+   "id": "A-15",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mi következik abból, hogy az irat mellékletet is tartalmaz?",
+   "asszisztens": "A melléklet a szerződés elválaszthatatlan része, tehát a benne foglaltak ugyanúgy kötelezik a feleket, mint a törzsszöveg. Ha a melléklet és a törzsszöveg között ellentmondás van, a szerződés rendelkezik arról, melyik élvez elsőbbséget. A mellékletben szereplő iratminta önmagában nem kikötés, csak formai példa."
+  },
+  {
+   "id": "A-16",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen szavatossági időt köt ki a szerződés?",
+   "asszisztens": "A vállalkozó a teljesítéstől számított meghatározott hónapig vállal jótállást az elvégzett munkára és a beépített anyagokra. Ezen belül a felmerülő hibákat saját költségén köteles kijavítani, a bejelentéstől számított rövid határidőn belül. A jótállási idő a javítással érintett részekre újraindul."
+  },
+  {
+   "id": "A-17",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mire szolgál a szerződésben a teljesítésigazolás?",
+   "asszisztens": "A teljesítésigazolás a megrendelő írásbeli nyilatkozata arról, hogy a vállalkozó a munkát szerződésszerűen elvégezte. Számlát csak kiállított teljesítésigazolás birtokában lehet benyújtani, ezért a fizetési határidő is ehhez igazodik. Az igazolás megtagadását a megrendelőnek indokolnia kell."
+  },
+  {
+   "id": "A-18",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Hogyan rendezi a szerződés a vitás kérdéseket?",
+   "asszisztens": "A felek elsődlegesen tárgyalásos úton kísérlik meg a vita rendezését, és csak ennek eredménytelensége esetén fordulnak bírósághoz. A szerződés kiköti az eljáró bíróságot, és rögzíti, hogy a jogviszonyra a magyar jog az irányadó. A peres eljárás költségeit a pervesztes fél viseli."
+  },
+  {
+   "id": "A-19",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen biztosítékot ír elő a megállapodás?",
+   "asszisztens": "A vállalkozó a szerződés aláírásával egyidejűleg teljesítési biztosítékot nyújt, bankgarancia vagy óvadék formájában, a nettó vállalkozói díj meghatározott százalékában. A biztosíték a teljesítésigazolás kiadásáig áll fenn, ezt követően a megrendelő felszabadítja. Jóteljesítési biztosítékot a jótállási időre külön kell nyújtani."
+  },
+  {
+   "id": "A-20",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit tartalmaz a munkarendre vonatkozó melléklet?",
+   "asszisztens": "A melléklet naptári bontásban sorolja fel a munkanapokat, a pihenőnapokat és az áthelyezett munkanapokat az érintett időszakra. A határidőket ennek alapján kell számolni, nem az általános naptár szerint. Ahol a szerződés naptári napot ír, ott az áthelyezés nem befolyásolja a számítást."
+  },
+  {
+   "id": "A-21",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Az iratban szerepel-e bármilyen engedmény vagy kedvezmény?",
+   "asszisztens": "Igen, a szerződés mennyiségi engedményt tartalmaz arra az esetre, ha a megrendelő a keretösszeget egy naptári éven belül meghaladja. Az engedmény mértéke sávosan növekszik, és az éves elszámoláskor jóváírásként jelenik meg. Külön fizetési határidő-kedvezményt az irat nem említ."
+  },
+  {
+   "id": "A-22",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Hogyan kell értelmezni a kereszthivatkozásokat?",
+   "asszisztens": "A szerződés több pontja hivatkozik más pontokra, ezeket a hivatkozott pont szövegével együtt kell olvasni. Ha egy hivatkozás olyan pontra mutat, amely az iratban nem létezik, azt elírásnak kell tekinteni, és a hivatkozó pont önmagában nem alkalmazható. Ilyen esetben a szerződés általános szabálya irányadó."
+  },
+  {
+   "id": "A-23",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mi a helyzet, ha a dokumentum egy kért adatot nem tartalmaz?",
+   "asszisztens": "Ilyenkor nem szabad a hiányzó értéket kitalálni vagy más adatból következtetni rá. A helyes válasz az, hogy az adat nem szerepel az iratban, és ezt kifejezetten jelezni kell. A hiány önmagában is információ: gyakran arra utal, hogy az adott kikötés a felek között nem jött létre."
+  },
+  {
+   "id": "A-24",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen módon kell a felek közötti értesítéseket közölni?",
+   "asszisztens": "Az értesítéseket írásban, tértivevényes postai küldeményben vagy igazolható elektronikus úton kell megküldeni a szerződésben megadott címre. A kézbesítés napja az átvétel napja, sikertelen kézbesítés esetén a szerződésben rögzített vélelem alkalmazandó. A címváltozást haladéktalanul be kell jelenteni."
+  },
+  {
+   "id": "A-25",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit rögzít a szerződés az alvállalkozók igénybevételéről?",
+   "asszisztens": "A vállalkozó alvállalkozót a megrendelő előzetes írásbeli hozzájárulásával vehet igénybe. Az alvállalkozó teljesítéséért úgy felel, mintha a munkát maga végezte volna el. Az alvállalkozói szerződések nem érintik a megrendelő és a vállalkozó közötti jogviszonyt."
+  },
+  {
+   "id": "A-26",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mi a teendő, ha két összeg ellentmond egymásnak az iraton?",
+   "asszisztens": "Az ellentmondást jelezni kell, és nem szabad önkényesen az egyiket helyesnek választani. Ha a szerződés rendelkezik a betűvel és a számmal kiírt összeg viszonyáról, akkor az a szabály dönt. Egyéb esetben a tételsorok összege az irányadó a kézzel megadott végösszeggel szemben, de ezt a feltevést külön jelezni kell."
+  },
+  {
+   "id": "A-27",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Hogyan azonosítható a szerződés tárgyát képző ingatlan?",
+   "asszisztens": "Az ingatlant a helyrajzi száma, a település neve és a pontos címe azonosítja, ezek együtt szerepelnek a szerződés bevezető részében. Az alapterület és a rendeltetés külön bekezdésben található. A tulajdoni lap adataira a szerződés hivatkozik, de a lapot magát nem csatolja."
+  },
+  {
+   "id": "A-28",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mit ír elő a szerződés az adatkezelésről?",
+   "asszisztens": "A felek a teljesítés során tudomásukra jutott személyes adatokat kizárólag a szerződés céljából kezelik, és az adatkezelés időtartama a szerződéses jogviszony megszűnéséig, illetve a jogszabályi megőrzési időig tart. Az érintettek jogairól a felek tájékoztatást adnak. Adattovábbítás harmadik országba nem történik."
+  },
+  {
+   "id": "A-29",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Mennyi a szerződés szerinti teljesítési határidő?",
+   "asszisztens": "A teljesítési határidő a munkaterület átadásától számított munkanapokban van megadva, ezért a naptári napokra való átszámításhoz a munkarendi mellékletet kell használni. A határidő a megrendelő érdekkörében felmerült akadály idejével meghosszabbodik. Előteljesítés a megrendelő hozzájárulásával lehetséges."
+  },
+  {
+   "id": "A-30",
+   "rendszer": "Magyar dokumentumfeldolgozó asszisztens vagy. Kizárólag a megadott irat alapján, magyarul válaszolj.",
+   "felhasznalo": "Milyen elszámolási rendet ír elő a megállapodás?",
+   "asszisztens": "A megállapodás havi részszámlázást tesz lehetővé a tényleges készültségi fok alapján, amelyet a műszaki ellenőr igazol. A részszámlák összege nem haladhatja meg a vállalkozói díj kilencven százalékát, a fennmaradó rész a végszámlával válik esedékessé. Az elszámolás pénzneme forint."
+  }
+ ]
+}

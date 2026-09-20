@@ -1,0 +1,10 @@
+fájl       : <home>/experiments/2026-09-18-cjk-csillapitas/magyar-kie-eval/reports/csapda-K0.json
+címke      : K0   parallel=1   futások=3
+item       : 150
+
+vizsgált item (2+ jó futás) : 150
+kevés futás miatt kihagyva          : 0
+bájtra eltérő kimenet               : 0
+
+✅ VERDIKT: a soros mérés 150/150 itemen bitre reprodukálható. Az ismétlés
+   a többi karon elhagyható; a karok közti eltérés a MODELLBŐL jön, nem a mérésből.

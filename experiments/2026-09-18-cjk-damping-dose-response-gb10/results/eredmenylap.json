@@ -1,0 +1,1238 @@
+{
+ "K0": {
+  "forma": "kontroll",
+  "maszk": "—",
+  "param": null,
+  "han": {
+   "0.6": {
+    "per_M": 5.476754031883446,
+    "ci": [
+     0.0,
+     10.836100858456186
+    ],
+    "poziciok": 12481,
+    "valaszok": 7,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7839,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 382.1574529345568
+    }
+   },
+   "0.8": {
+    "per_M": 105.46380625366001,
+    "ci": [
+     21.14751542211564,
+     248.23204103579238
+    ],
+    "poziciok": 13352,
+    "valaszok": 9,
+    "megfigyelt": {
+     "esemeny": 1,
+     "pozicio": 8850,
+     "megfigyelt_per_M": 112.99435028248588,
+     "felso_korlat_per_M": 536.0298890836813
+    }
+   },
+   "1.0": {
+    "per_M": 219.93048872115236,
+    "ci": [
+     69.80311759406045,
+     443.63455936300295
+    ],
+    "poziciok": 15295,
+    "valaszok": 8,
+    "megfigyelt": {
+     "esemeny": 8,
+     "pozicio": 10285,
+     "megfigyelt_per_M": 777.8317938745746,
+     "felso_korlat_per_M": 1403.4661852402835
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6893
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.926,
+   "f1": 0.923,
+   "latencia_s": 44.2
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 1.0,
+   "ci": [
+    0.9035813714055363,
+    1.0
+   ],
+   "han_nelkul": 0.0
+  }
+ },
+ "S09": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.9,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 12481,
+    "valaszok": 7,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7839,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 382.1574529345568
+    }
+   },
+   "0.8": {
+    "per_M": 16.918360908807117,
+    "ci": [
+     2.119623531896717,
+     37.85419850656266
+    ],
+    "poziciok": 14193,
+    "valaszok": 9,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 9767,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 306.7197986642767
+    }
+   },
+   "1.0": {
+    "per_M": 3.2963488251403428,
+    "ci": [
+     0.0,
+     8.707654567031051
+    ],
+    "poziciok": 12691,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 8093,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 370.1633848454208
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6912
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.914,
+   "f1": 0.91,
+   "latencia_s": 44.6
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 1.0,
+   "ci": [
+    0.9035813714055363,
+    1.0
+   ],
+   "han_nelkul": 0.0
+  }
+ },
+ "S08": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.8,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 10542,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7595,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 394.4347957279777
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 11986,
+    "valaszok": 7,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 8620,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 347.53274635197107
+    }
+   },
+   "1.0": {
+    "per_M": 1.6112284776820598,
+    "ci": [
+     0.0,
+     4.7810431957356805
+    ],
+    "poziciok": 10366,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7629,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 392.6769266685006
+    }
+   }
+  },
+  "kie": {
+   "f1": 0.97,
+   "p": 0.963,
+   "r": 0.977,
+   "latencia_ms": 7041
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.922,
+   "f1": 0.92,
+   "latencia_s": 43.6
+  },
+  "csapda": {
+   "mind": {
+    "atment": 143,
+    "ossz": 150,
+    "arany": 0.9533333333333334,
+    "ci": [
+     0.9068135276008725,
+     0.9772134508387381
+    ]
+   },
+   "regi": {
+    "atment": 47,
+    "ossz": 50,
+    "arany": 0.94,
+    "ci": [
+     0.8378290831116182,
+     0.979385029651026
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 1.0,
+   "ci": [
+    0.9035813714055363,
+    1.0
+   ],
+   "han_nelkul": 0.0
+  }
+ },
+ "S07": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.7,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 8134,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 5120,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 585.1039596785138
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 7750,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4507,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 664.6843296103818
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 5548,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 3484,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 859.8542691027528
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6903
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.921,
+   "f1": 0.917,
+   "latencia_s": 43.9
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 1.0,
+   "ci": [
+    0.9035813714055363,
+    1.0
+   ],
+   "han_nelkul": 0.0
+  }
+ },
+ "S06": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.6,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 10542,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7595,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 394.4347957279777
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 11986,
+    "valaszok": 7,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 8620,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 347.53274635197107
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 10366,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7629,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 392.6769266685006
+    }
+   }
+  },
+  "kie": {
+   "f1": 0.97,
+   "p": 0.963,
+   "r": 0.977,
+   "latencia_ms": 7069
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.924,
+   "f1": 0.92,
+   "latencia_s": 43.1
+  },
+  "csapda": {
+   "mind": {
+    "atment": 143,
+    "ossz": 150,
+    "arany": 0.9533333333333334,
+    "ci": [
+     0.9068135276008725,
+     0.9772134508387381
+    ]
+   },
+   "regi": {
+    "atment": 47,
+    "ossz": 50,
+    "arany": 0.94,
+    "ci": [
+     0.8378290831116182,
+     0.979385029651026
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.5555555555555556,
+   "ci": [
+    0.395810617556973,
+    0.7045873125991978
+   ],
+   "han_nelkul": 0.4444444444444444
+  }
+ },
+ "S05": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.5,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 12481,
+    "valaszok": 7,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7839,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 382.1574529345568
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 14193,
+    "valaszok": 9,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 9767,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 306.7197986642767
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 9707,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 6980,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 429.188004807162
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6887
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.923,
+   "f1": 0.919,
+   "latencia_s": 44.2
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.027777777777777776,
+   "ci": [
+    0.004920407139810443,
+    0.14169718653273855
+   ],
+   "han_nelkul": 0.9722222222222222
+  }
+ },
+ "S03": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.3,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 8134,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 5120,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 585.1039596785138
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 7750,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4507,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 664.6843296103818
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 5548,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 3484,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 859.8542691027528
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6928
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.924,
+   "f1": 0.915,
+   "latencia_s": 44.4
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.0,
+   "ci": [
+    0.0,
+    0.09641862859446367
+   ],
+   "han_nelkul": 1.0
+  }
+ },
+ "S01": {
+  "forma": "szorzas",
+  "maszk": "nyers",
+  "param": 0.1,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 3663,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 3371,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 888.6776249047733
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 3943,
+    "valaszok": 2,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 2657,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 1127.4867420225785
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 5840,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4672,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 641.2098188257686
+    }
+   }
+  },
+  "kie": {
+   "f1": 0.982,
+   "p": 0.973,
+   "r": 0.991,
+   "latencia_ms": 7050
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.936,
+   "f1": 0.931,
+   "latencia_s": 43.3
+  },
+  "csapda": {
+   "mind": {
+    "atment": 144,
+    "ossz": 150,
+    "arany": 0.96,
+    "ci": [
+     0.915486535783444,
+     0.9815408393979256
+    ]
+   },
+   "regi": {
+    "atment": 47,
+    "ossz": 50,
+    "arany": 0.94,
+    "ci": [
+     0.8378290831116182,
+     0.979385029651026
+    ]
+   },
+   "uj": {
+    "atment": 97,
+    "ossz": 100,
+    "arany": 0.97,
+    "ci": [
+     0.9154806357094724,
+     0.9897454759759611
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.0,
+   "ci": [
+    0.0,
+    0.09641862859446367
+   ],
+   "han_nelkul": 1.0
+  }
+ },
+ "A200": {
+  "forma": "irany",
+  "maszk": "nyers",
+  "param": 200.0,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 11206,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 6199,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 483.26057002000175
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 11627,
+    "valaszok": 6,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 7220,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 414.92136752825354
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 13112,
+    "valaszok": 8,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 8913,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 336.1081873167273
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6902
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.921,
+   "f1": 0.915,
+   "latencia_s": 43.0
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.0,
+   "ci": [
+    0.0,
+    0.09641862859446367
+   ],
+   "han_nelkul": 1.0
+  }
+ },
+ "A050": {
+  "forma": "irany",
+  "maszk": "nyers",
+  "param": 50.0,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 7501,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 5683,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 527.139235184584
+    }
+   },
+   "0.8": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 7551,
+    "valaszok": 4,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4450,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 673.198263719998
+    }
+   },
+   "1.0": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 7291,
+    "valaszok": 4,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4412,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 678.9964355290097
+    }
+   }
+  },
+  "kie": {
+   "f1": 0.986,
+   "p": 0.982,
+   "r": 0.991,
+   "latencia_ms": 7129
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.926,
+   "f1": 0.921,
+   "latencia_s": 43.8
+  },
+  "csapda": {
+   "mind": {
+    "atment": 143,
+    "ossz": 150,
+    "arany": 0.9533333333333334,
+    "ci": [
+     0.9068135276008725,
+     0.9772134508387381
+    ]
+   },
+   "regi": {
+    "atment": 46,
+    "ossz": 50,
+    "arany": 0.92,
+    "ci": [
+     0.8116175308165717,
+     0.968450485911407
+    ]
+   },
+   "uj": {
+    "atment": 97,
+    "ossz": 100,
+    "arany": 0.97,
+    "ci": [
+     0.9154806357094724,
+     0.9897454759759611
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.0,
+   "ci": [
+    0.0,
+    0.09641862859446367
+   ],
+   "han_nelkul": 0.9722222222222222
+  }
+ },
+ "S05F": {
+  "forma": "szorzas",
+  "maszk": "finomitott",
+  "param": 0.5,
+  "han": {
+   "0.6": {
+    "per_M": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "poziciok": 3663,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 3371,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 888.6776249047733
+    }
+   },
+   "0.8": {
+    "per_M": 10.793301042301287,
+    "ci": [
+     0.0,
+     23.22089139222228
+    ],
+    "poziciok": 3943,
+    "valaszok": 2,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 2657,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 1127.4867420225785
+    }
+   },
+   "1.0": {
+    "per_M": 11.333079029590952,
+    "ci": [
+     0.0,
+     21.957118822134557
+    ],
+    "poziciok": 5840,
+    "valaszok": 3,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 4672,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 641.2098188257686
+    }
+   }
+  },
+  "kie": {
+   "f1": 0.982,
+   "p": 0.973,
+   "r": 0.991,
+   "latencia_ms": 7017
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.936,
+   "f1": 0.931,
+   "latencia_s": 43.5
+  },
+  "csapda": {
+   "mind": {
+    "atment": 144,
+    "ossz": 150,
+    "arany": 0.96,
+    "ci": [
+     0.915486535783444,
+     0.9815408393979256
+    ]
+   },
+   "regi": {
+    "atment": 47,
+    "ossz": 50,
+    "arany": 0.94,
+    "ci": [
+     0.8378290831116182,
+     0.979385029651026
+    ]
+   },
+   "uj": {
+    "atment": 97,
+    "ossz": 100,
+    "arany": 0.97,
+    "ci": [
+     0.9154806357094724,
+     0.9897454759759611
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.19444444444444445,
+   "ci": [
+    0.09753095418928728,
+    0.3502804299517739
+   ],
+   "han_nelkul": 0.4444444444444444
+  }
+ },
+ "A200F": {
+  "forma": "irany",
+  "maszk": "finomitott",
+  "param": 200.0,
+  "han": {
+   "0.6": {
+    "per_M": 4.259337876011488,
+    "ci": [
+     0.0,
+     10.186823745238966
+    ],
+    "poziciok": 7665,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 5496,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 545.075013383186
+    }
+   },
+   "0.8": {
+    "per_M": 39.32819167341582,
+    "ci": [
+     0.0,
+     104.84936727680841
+    ],
+    "poziciok": 8323,
+    "valaszok": 4,
+    "megfigyelt": {
+     "esemeny": 1,
+     "pozicio": 4965,
+     "megfigyelt_per_M": 201.4098690835851,
+     "felso_korlat_per_M": 955.461131599311
+    }
+   },
+   "1.0": {
+    "per_M": 2.6182199680282907,
+    "ci": [
+     0.0,
+     7.250543980154084
+    ],
+    "poziciok": 10106,
+    "valaszok": 5,
+    "megfigyelt": {
+     "esemeny": 0,
+     "pozicio": 6289,
+     "megfigyelt_per_M": 0.0,
+     "felso_korlat_per_M": 476.3447723889316
+    }
+   }
+  },
+  "kie": {
+   "f1": 1.0,
+   "p": 1.0,
+   "r": 1.0,
+   "latencia_ms": 6925
+  },
+  "contract": {
+   "doksi": 30,
+   "acc": 0.926,
+   "f1": 0.923,
+   "latencia_s": 43.5
+  },
+  "csapda": {
+   "mind": {
+    "atment": 145,
+    "ossz": 150,
+    "arany": 0.9666666666666667,
+    "ci": [
+     0.9243482038212211,
+     0.9856795681019074
+    ]
+   },
+   "regi": {
+    "atment": 49,
+    "ossz": 50,
+    "arany": 0.98,
+    "ci": [
+     0.8950455641036219,
+     0.9964607407283539
+    ]
+   },
+   "uj": {
+    "atment": 96,
+    "ossz": 100,
+    "arany": 0.96,
+    "ci": [
+     0.9016292856411208,
+     0.9843366960084523
+    ]
+   },
+   "kesz": 150,
+   "parallel": 1
+  },
+  "kinai": {
+   "arany": 0.027777777777777776,
+   "ci": [
+    0.004920407139810443,
+    0.14169718653273855
+   ],
+   "han_nelkul": 0.8611111111111112
+  }
+ }
+}

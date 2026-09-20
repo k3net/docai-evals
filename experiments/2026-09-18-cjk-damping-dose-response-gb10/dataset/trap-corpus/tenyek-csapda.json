@@ -1,0 +1,198 @@
+{
+ "C1": {
+  "sorok": [
+   {
+    "sorszam": 1,
+    "nev": "Kábelcsatorna PVC 40×60",
+    "mennyiseg": 12,
+    "egysegar": 40000,
+    "netto": 480000
+   },
+   {
+    "sorszam": 2,
+    "nev": "Szerelvénydoboz süllyesztett",
+    "mennyiseg": 45,
+    "egysegar": 3200,
+    "netto": 144000
+   },
+   {
+    "sorszam": 3,
+    "nev": "Vezeték MCU 2,5 mm²",
+    "mennyiseg": 350,
+    "egysegar": 1250,
+    "netto": 437500
+   },
+   {
+    "sorszam": 4,
+    "nev": "Munkadíj — erősáramú szerelés",
+    "mennyiseg": 84,
+    "egysegar": 11500,
+    "netto": 966000
+   }
+  ],
+  "netto_osszesen": 2027500,
+  "afa": 547425,
+  "brutto": 2574925
+ },
+ "C2": {
+  "sorok": [
+   {
+    "sorszam": 1,
+    "nev": "Havi könyvviteli szolgáltatás — 2026. július",
+    "mennyiseg": 1,
+    "egysegar": 185000,
+    "netto": 185000
+   },
+   {
+    "sorszam": 2,
+    "nev": "Bérszámfejtés (14 fő)",
+    "mennyiseg": 14,
+    "egysegar": 4500,
+    "netto": 63000
+   }
+  ],
+  "osszesen": 248000,
+  "hianyzik": [
+   "fizetesi_mod",
+   "afa_osszeg",
+   "afakulcs",
+   "bankszamlaszam",
+   "teljesites_idopontja",
+   "kesedelmi_kamat"
+  ]
+ },
+ "C3": {
+  "sorok": [
+   {
+    "sorszam": 1,
+    "nev": "Raklapos áruszállítás — Győr",
+    "mennyiseg": 26,
+    "egysegar": 18500,
+    "netto": 481000
+   },
+   {
+    "sorszam": 2,
+    "nev": "Raktározási díj (2026. július)",
+    "mennyiseg": 1,
+    "egysegar": 240000,
+    "netto": 240000
+   },
+   {
+    "sorszam": 3,
+    "nev": "Rakodási pótdíj — munkaszüneti nap",
+    "mennyiseg": 3,
+    "egysegar": 27000,
+    "netto": 81000
+   }
+  ],
+  "tetelsorok_szama": 3,
+  "netto_tetelek": 802000,
+  "engedmeny": 32080,
+  "netto_kedvezmenyes": 769920,
+  "afa": 207878.4,
+  "brutto": 977798.4,
+  "fizetendo": 977800
+ },
+ "C4": {
+  "sorok": [
+   {
+    "sorszam": 1,
+    "nev": "Karbantartási átalánydíj — 2026. I. negyedév",
+    "mennyiseg": 1,
+    "egysegar": 1240000,
+    "netto": 1240000
+   },
+   {
+    "sorszam": 2,
+    "nev": "Karbantartási átalánydíj — 2026. II. negyedév",
+    "mennyiseg": 1,
+    "egysegar": 980000,
+    "netto": 980000
+   },
+   {
+    "sorszam": 3,
+    "nev": "Karbantartási átalánydíj — 2026. III. negyedév",
+    "mennyiseg": 1,
+    "egysegar": 1615000,
+    "netto": 1615000
+   },
+   {
+    "sorszam": 4,
+    "nev": "Karbantartási átalánydíj — 2026. IV. negyedév",
+    "mennyiseg": 1,
+    "egysegar": 1105000,
+    "netto": 1105000
+   }
+  ],
+  "netto_osszesen": 4940000,
+  "legnagyobb": {
+   "sorszam": 3,
+   "nev": "Karbantartási átalánydíj — 2026. III. negyedév",
+   "mennyiseg": 1,
+   "egysegar": 1615000,
+   "netto": 1615000
+  },
+  "legkisebb": {
+   "sorszam": 2,
+   "nev": "Karbantartási átalánydíj — 2026. II. negyedév",
+   "mennyiseg": 1,
+   "egysegar": 980000,
+   "netto": 980000
+  }
+ },
+ "C5": {
+  "nyito": 48217,
+  "zaro": 53964,
+  "fogyasztas": 5747,
+  "egysegar": 52.4,
+  "energiadij": 301142.8,
+  "rendszerdij": 106894.2,
+  "alapdij": 2480.0,
+  "netto": 410517.0,
+  "afa": 110839.59,
+  "brutto": 521356.59,
+  "fizetesi_mod": "csoportos beszedési megbízás",
+  "fizetesi_hatarido": "2026-07-15"
+ },
+ "C6": {
+  "hatalybalepes_alapja": "aláírás napja",
+  "hatalybalepes_datuma": "nincs az iratban",
+  "kelt": "2026-03-04",
+  "idotartam_honap": 18,
+  "rendszerterv_hatarido": "2026-05-15",
+  "eles_indulas": "2026-09-01",
+  "hosszabbitas_nap": 30
+ },
+ "C7": {
+  "jelleg": "kölcsönös",
+  "adatkozlo": "mindkét fél",
+  "adatfogado": "mindkét fél",
+  "idotartam_ev": 5,
+  "kotber": 8000000,
+  "visszaszolgaltatasra_kotelezett": "Delfinárium Szoftverfejlesztő Kft.",
+  "nem_kotelezett": "Tarlóvirág Agrártechnikai Zrt."
+ },
+ "C8": {
+  "szamlazasi_mod": "használatarányos",
+  "oradij": 24500,
+  "rendelkezesre_allasi_dij": 320000,
+  "marciusi_oraszam": 37,
+  "marciusi_munkadij": 906500,
+  "marciusi_netto": 1226500,
+  "atalany_tartalmaz_oraszamot": false
+ },
+ "C9": {
+  "keretosszeg": 45000000,
+  "szallitasi_hatarido_munkanap": 10,
+  "felmondasi_ido_honap": 3,
+  "jotallas_honap": 12,
+  "araremeles_evente": 1,
+  "ertesites_nap": 60,
+  "alvallalkozo_hozzajarulas_kell": false,
+  "nyitva_hagyott": [
+   "keretosszeg automatikus emelése",
+   "sürgős megrendelés határideje",
+   "azonnali hatályú felmondás esetei"
+  ]
+ }
+}

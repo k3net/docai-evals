@@ -1,0 +1,44 @@
+Han-tokenek gyűjtése a vocabból…
+  55328 Han-tartalmú token a 248077 elemű vocabban (22.3 %)
+
+=== F3-K0-fd-alap06: 5 KÜLÖNBÖZŐ végső válasz, 10813 pozíció, 0 ténylegesen generált Han token
+      ebből gondolkodás: 3488 pozíció, 0 Han token | válasz: 7325 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+        TÉNYLEGES (feldolgozott logprob)           2.8/M          73.3/M          0.1075
+      — válaszonkénti bootstrap (2000 újramintavétel, 5 válasz) —
+        TÉNYLEGES (feldolgozott logprob) VÁLASZ     73.35/M  95 % bootstrap CI [14.85; 148.11]/M
+      MEGFIGYELT gondolkodás    0 esemény / 3488 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 858.87/M
+      MEGFIGYELT válasz         0 esemény / 7325 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 408.97/M
+
+=== F3-K0-fd-alap03: 7 KÜLÖNBÖZŐ végső válasz, 12090 pozíció, 6 ténylegesen generált Han token
+      ebből gondolkodás: 4221 pozíció, 2 Han token | válasz: 7869 pozíció, 4 Han token
+      a szonda 3 Han-szakaszt talált a VÁLASZOKBAN (2 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+        TÉNYLEGES (feldolgozott logprob)         473.8/M         392.4/M          0.4411
+      — válaszonkénti bootstrap (2000 újramintavétel, 7 válasz) —
+        TÉNYLEGES (feldolgozott logprob) VÁLASZ    392.37/M  95 % bootstrap CI [0.00; 870.92]/M
+      MEGFIGYELT gondolkodás    2 esemény / 4221 pozíció = 473.8/M  ·  Poisson 95 % felső korlát: < 1491.54/M
+      MEGFIGYELT válasz         4 esemény / 7869 pozíció = 508.3/M  ·  Poisson 95 % felső korlát: < 1163.24/M
+
+=== F3-K0-fd-ujra09: 6 KÜLÖNBÖZŐ végső válasz, 11447 pozíció, 4 ténylegesen generált Han token
+      ebből gondolkodás: 4797 pozíció, 1 Han token | válasz: 6650 pozíció, 3 Han token
+      a szonda 2 Han-szakaszt talált a VÁLASZOKBAN (2 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+        TÉNYLEGES (feldolgozott logprob)         172.3/M         306.1/M          0.3392
+      — válaszonkénti bootstrap (2000 újramintavétel, 6 válasz) —
+        TÉNYLEGES (feldolgozott logprob) VÁLASZ    306.09/M  95 % bootstrap CI [103.30; 600.27]/M
+      MEGFIGYELT gondolkodás    1 esemény / 4797 pozíció = 208.5/M  ·  Poisson 95 % felső korlát: < 988.92/M
+      MEGFIGYELT válasz         3 esemény / 6650 pozíció = 451.1/M  ·  Poisson 95 % felső korlát: < 1165.96/M
+
+=== F3-K0-fd-csapda06: 264 KÜLÖNBÖZŐ végső válasz (+183 ismétlődő kihagyva), 232814 pozíció, 2 ténylegesen generált Han token
+      ebből gondolkodás: 223476 pozíció, 2 Han token | válasz: 9338 pozíció, 0 Han token
+      a szonda 0 Han-szakaszt talált a VÁLASZOKBAN (0 válasz érintett)
+      beállítás                 gondolkodás           VÁLASZ   E[Han]/válasz
+        TÉNYLEGES (feldolgozott logprob)           2.2/M           0.0/M          0.0000
+      — válaszonkénti bootstrap (2000 újramintavétel, 264 válasz) —
+        TÉNYLEGES (feldolgozott logprob) VÁLASZ      0.00/M  95 % bootstrap CI [0.00; 0.00]/M  ⭐ EXACT NULLA
+      MEGFIGYELT gondolkodás    2 esemény / 223476 pozíció = 8.9/M  ·  Poisson 95 % felső korlát: < 28.17/M
+      MEGFIGYELT válasz         0 esemény / 9338 pozíció = 0.0/M  ·  Poisson 95 % felső korlát: < 320.81/M
+
+gépi kimenet: /work/eredmenyek/kockazat-F3-K0-fd.json
