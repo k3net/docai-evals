@@ -6,7 +6,7 @@
 ## Decision
 
 1. The production cron path may return from the `t = 0.3` firefight to `t = 0.6` **only** with
-   the damped checkpoint `Qwen3.6-35B-A3B-FP8-cjk-damped-S07`, and only through a small,
+   the damped checkpoint [`Qwen3.6-35B-A3B-FP8-cjk-damped-S07`](https://huggingface.co/k3dani/Qwen3.6-35B-A3B-FP8-cjk-damped-S07), and only through a small,
    reversible canary with CJK occurrence and task quality monitored. The base checkpoint at
    `t = 0.3` is **not** a safe state: on the actual sampling support it carries 392/M expected
    CJK positions and produced real CJK tokens in answers.

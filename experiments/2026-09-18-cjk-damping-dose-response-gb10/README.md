@@ -5,7 +5,7 @@ outputs on the synthetic corpus; the three customer agent traces behind the risk
 public) · **Card:** [eval-card.yaml](eval-card.yaml) · **Decision:**
 [decision-record.md](decision-record.md) · **Pre-registered protocol (Hungarian):**
 [protocol/00-runbook.md](protocol/00-runbook.md) · **Model:**
-`Qwen3.6-35B-A3B-FP8-cjk-damped-S07` (Hugging Face)
+[`Qwen3.6-35B-A3B-FP8-cjk-damped-S07`](https://huggingface.co/k3dani/Qwen3.6-35B-A3B-FP8-cjk-damped-S07) (Hugging Face)
 
 > A Hungarian document agent, run with sampling, occasionally switched to Chinese function words
 > mid-answer. A known fix rescales the CJK rows of the output matrix. This measurement asks the
@@ -137,7 +137,7 @@ dropped). The short version:
 
 `S07` is proposed for a small, reversible production canary at `t = 0.6`, with CJK occurrence
 and task quality monitored — see [decision-record.md](decision-record.md). The published
-checkpoint is `Qwen3.6-35B-A3B-FP8-cjk-damped-S07`; its model card carries the whole table above
+checkpoint is [`Qwen3.6-35B-A3B-FP8-cjk-damped-S07`](https://huggingface.co/k3dani/Qwen3.6-35B-A3B-FP8-cjk-damped-S07); its model card carries the whole table above
 and the sampler caveat.
 
 ## 7. What are the limits of the measurement?

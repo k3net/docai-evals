@@ -85,8 +85,7 @@ a runbook §9 szerint a motorbuild önmagában többet mozdít, mint a folt.
 | ⛔ **önellenőrzés a lezárás után** | ✅ (2026-09-20) a táblák számai független újraszámolással egyeznek; négy javítás ([F3-naplo.md](jegyzokonyv/F3-naplo.md) §6): a számító kihagyta a végső válasz nélküli rekordokat (`S07` így is 0 Han ~1,09 M pozíción; a `K0`-nál egy **6 593 Han-tokenes** elszabadulás maradt rejtve), az újrapróbálkozási profil folttól függetlenül degenerál (2/15), a 0,45/M alsó korlát, a „~10×" pontbecslés-hányados |
 | **F4 — HF-csomag, publikus mérési könyvtár, tanulmány, cikk** | ✅ **kész** (2026-09-20) — `hf-release/`, `docai-evals/experiments/2026-09-18-cjk-damping-dose-response-gb10/`, `/kutatas/cjk-csillapitas`, blog HU+EN; **a feltöltés és a commitok a felhasználóé** |
 
-**Ami a felhasználóé:** (a) a HF-feltöltés a mérőgépről:
-`huggingface-cli upload <org>/Qwen3.6-35B-A3B-FP8-cjk-damped-S07 ~/experiments/2026-09-18-cjk-csillapitas/hf-release/Qwen3.6-35B-A3B-FP8-cjk-damped-S07 .`
+**Ami a felhasználóé:** (a) ✅ a HF-feltöltés kész (2026-09-21): <https://huggingface.co/k3dani/Qwen3.6-35B-A3B-FP8-cjk-damped-S07> — publikus, 69 fájl, az átírt shard sha256-a a HF oldalán egyezik a build-rekorddal.
 (b) commit a `docai-evals` (új experiment-könyvtár + két index-sor) és a `docai_web` (controller, route, 3 nézet,
 2 index, 6 kép) repóban, utána `php artisan sitemap:generate`; (c) a prod-próba `S07 @ 0,6`.
 
