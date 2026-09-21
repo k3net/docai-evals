@@ -82,6 +82,7 @@ a runbook §9 szerint a motorbuild önmagában többet mozdít, mint a folt.
 | **F3 B) `S07` megerősítés** | ✅ 3 friss példány, 15 seed, 3 profil, párhuzamos köteg, 150 irat: **0 Han bárhol**; csapda prod-profilon `S07` = `K0` (146/150), pontban jobb |
 | **F3 C) S08 / S09 / S06** | ✅ (13:02) az ablak két széle: kínai **S ≥ 0,7-ig ép**, 0,6-on 55,6 %; Han exact 0 a prod-úton **S ≤ 0,8-ig**, S09 szivárog → **`S* = S07`** marad, a költség-lépcső szélén |
 | prod-próba `S07 @ 0,6`-tal | ✅ **javasolható** — a döntési szabály mindhárom feltétele teljesül; a felhasználó dönt |
+| ⛔ **önellenőrzés a lezárás után** | ✅ (2026-09-20) a táblák számai független újraszámolással egyeznek; négy javítás ([F3-naplo.md](jegyzokonyv/F3-naplo.md) §6): a számító kihagyta a végső válasz nélküli rekordokat (`S07` így is 0 Han ~1,09 M pozíción; a `K0`-nál egy **6 593 Han-tokenes** elszabadulás maradt rejtve), az újrapróbálkozási profil folttól függetlenül degenerál (2/15), a 0,45/M alsó korlát, a „~10×" pontbecslés-hányados |
 | **F4 — HF-csomag, publikus mérési könyvtár, tanulmány, cikk** | ✅ **kész** (2026-09-20) — `hf-release/`, `docai-evals/experiments/2026-09-18-cjk-damping-dose-response-gb10/`, `/kutatas/cjk-csillapitas`, blog HU+EN; **a feltöltés és a commitok a felhasználóé** |
 
 **Ami a felhasználóé:** (a) a HF-feltöltés a mérőgépről:
@@ -90,7 +91,6 @@ a runbook §9 szerint a motorbuild önmagában többet mozdít, mint a folt.
 2 index, 6 kép) repóban, utána `php artisan sitemap:generate`; (c) a prod-próba `S07 @ 0,6`.
 
 A mérés lezárult; a measurement-hosten nem fut semmi. A HF-csomag: `~/experiments/2026-09-18-cjk-csillapitas/hf-release/`.
-(és `STATUS-KAR`).
 
 ## Ami eldőlt, és ami még nem
 
@@ -112,9 +112,11 @@ A részletek a jegyzőkönyvben; a három legfontosabb:
    itemen a PASS/FAIL-t is megfordítja a sorossal szemben — akkora hatás, mint amit mérni
    akarunk, tehát **konfundál**. A mérőpad ezért sorosra állt, és mivel a soros dekódolás
    bitre reprodukálható, ez **nem került többe**: 450 kérés/kar helyett 150, ~108 perc
-   helyett ~46. Mellékhatásként a korábban „műszerzajnak" hitt **2,00 pp** is a
-   párhuzamosításé volt — ha a soros determinizmus a teljes korpuszon igazolódik, a
-   −1,33 pp-os margó újra használható.
+   helyett ~46. ⛔ Utólag: a soros mérés egy példányon belül bájtra reprodukálható, de
+   **friss példányok között nem** (2–5 item / 150, diszkrét numerika-módok) — a zaj tehát
+   nem csak a párhuzamosításé volt; ld. [F1-naplo.md](jegyzokonyv/F1-naplo.md) §8.
 
-Ami még nem dőlt el: minden, ami a karok tényleges méréséből jön — a dózis-hatás görbe,
-az `S*`, a H1–H6 verdiktje és a publikálási döntés.
+Ami azóta eldőlt: a dózis-hatás két lépcső, `S* = S07`, a H1–H6 verdiktje az
+[F2-naplo.md](jegyzokonyv/F2-naplo.md) §3-ban, a prod-próba javasolható. Ami nyitva maradt:
+az `S08` a tényleges tartón, egy pont S = 0,6 és 0,7 között, a kanji/hanja próba, és az
+újrapróbálkozási profil (`t=0,9 / top_p=1,0`) degenerációja — ez utóbbi nem a folt kérdése.
