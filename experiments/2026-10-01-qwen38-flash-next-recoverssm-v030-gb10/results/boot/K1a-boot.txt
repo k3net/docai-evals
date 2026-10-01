@@ -1,0 +1,11 @@
+(EngineCore pid=358) INFO 10-01 10:40:25 [gpu_worker.py:441] Using V2 Model Runner
+(EngineCore pid=358) INFO 10-01 10:42:23 [interface.py:933] Setting attention block size to 1600 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=358) WARNING 10-01 10:42:50 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=358) QSADET active: /opt/llm/kernel-det/_C_det.so
+(EngineCore pid=358) INFO 10-01 10:42:58 [model_runner.py:1066] Graph capturing finished in 7 secs, took 0.46 GiB
+(EngineCore pid=358) INFO 10-01 10:42:58 [gpu_worker.py:640] Available KV cache memory: 8.29 GiB
+(EngineCore pid=358) WARNING 10-01 10:42:58 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=358) INFO 10-01 10:42:58 [kv_cache_utils.py:2395] GPU KV cache size: 292,558 tokens, Maximum concurrency for 262,144 tokens per request: 1.12x
+(EngineCore pid=358) INFO 10-01 10:43:13 [model_runner.py:1066] Graph capturing finished in 1 secs, took 0.20 GiB
+(EngineCore pid=358) INFO 10-01 10:43:13 [gpu_worker.py:888] Free memory on device (115.47/121.69 GiB) on startup. Desired GPU memory utilization is (0.78, 94.92 GiB). Actual usage is 84.4 GiB for consumed memory (weights + non-torch), 2.23 GiB for peak activation, and 0.2 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=8536064144` (7.95 GiB) to fit into req
+(EngineCore pid=358) INFO 10-01 10:43:15 [kv_cache_utils.py:749] kv lcm block sizes 1600

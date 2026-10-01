@@ -1,0 +1,290 @@
+{
+  "cimke": "K2on",
+  "args": {
+    "url": "http://localhost:8421",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "$HOME/round7/kie",
+    "mag": "K2on-144716",
+    "cimke": "K2on",
+    "out": "eredmenyek/M6-K2on.json",
+    "reszek": "ttft,decode",
+    "ismetles": 2
+  },
+  "kezdet": "2026-10-01T15:56:57+0200",
+  "ttft": [
+    {
+      "ttft_ms": 2987.6,
+      "ossz_ms": 2987.8,
+      "gen_tok": 1,
+      "ms_per_tok": 0.155,
+      "cached": 0,
+      "prompt_tok": 8192,
+      "ctx": 8192,
+      "futas": 1
+    },
+    {
+      "ttft_ms": 3035.0,
+      "ossz_ms": 3035.2,
+      "gen_tok": 1,
+      "ms_per_tok": 0.197,
+      "cached": 0,
+      "prompt_tok": 8192,
+      "ctx": 8192,
+      "futas": 2
+    },
+    {
+      "ttft_ms": 11979.1,
+      "ossz_ms": 11979.2,
+      "gen_tok": 1,
+      "ms_per_tok": 0.099,
+      "cached": 0,
+      "prompt_tok": 32768,
+      "ctx": 32768,
+      "futas": 1
+    },
+    {
+      "ttft_ms": 12006.2,
+      "ossz_ms": 12006.3,
+      "gen_tok": 1,
+      "ms_per_tok": 0.099,
+      "cached": 0,
+      "prompt_tok": 32768,
+      "ctx": 32768,
+      "futas": 2
+    },
+    {
+      "ttft_ms": 23966.8,
+      "ossz_ms": 23967.0,
+      "gen_tok": 1,
+      "ms_per_tok": 0.178,
+      "cached": 0,
+      "prompt_tok": 65536,
+      "ctx": 65536,
+      "futas": 1
+    },
+    {
+      "ttft_ms": 23998.3,
+      "ossz_ms": 23998.5,
+      "gen_tok": 1,
+      "ms_per_tok": 0.216,
+      "cached": 0,
+      "prompt_tok": 65536,
+      "ctx": 65536,
+      "futas": 2
+    }
+  ],
+  "decode": [
+    {
+      "ctx": 1000,
+      "c": 1,
+      "futas": 1,
+      "ms_per_tok": [
+        27.883
+      ],
+      "ms_per_tok_atlag": 27.883,
+      "cached": [
+        0
+      ],
+      "ttft_ms": [
+        615.1
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 356.0,
+        "spec_decode_num_draft_tokens_total": 712.0,
+        "spec_decode_num_accepted_tokens_total": 645.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 645.0
+      },
+      "elfogadas": 0.9059
+    },
+    {
+      "ctx": 1000,
+      "c": 1,
+      "futas": 2,
+      "ms_per_tok": [
+        27.682
+      ],
+      "ms_per_tok_atlag": 27.682,
+      "cached": [
+        0
+      ],
+      "ttft_ms": [
+        553.8
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 356.0,
+        "spec_decode_num_draft_tokens_total": 712.0,
+        "spec_decode_num_accepted_tokens_total": 645.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 645.0
+      },
+      "elfogadas": 0.9059
+    },
+    {
+      "ctx": 1000,
+      "c": 4,
+      "futas": 1,
+      "ms_per_tok": [
+        50.358,
+        51.515,
+        50.711,
+        51.69
+      ],
+      "ms_per_tok_atlag": 51.069,
+      "cached": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "ttft_ms": [
+        1645.9,
+        1982.4,
+        1645.1,
+        1981.9
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 1537.0,
+        "spec_decode_num_draft_tokens_total": 3074.0,
+        "spec_decode_num_accepted_tokens_total": 2461.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 2461.0
+      },
+      "elfogadas": 0.8006
+    },
+    {
+      "ctx": 1000,
+      "c": 4,
+      "futas": 2,
+      "ms_per_tok": [
+        48.003,
+        49.506,
+        49.507,
+        48.443
+      ],
+      "ms_per_tok_atlag": 48.865,
+      "cached": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "ttft_ms": [
+        1471.2,
+        1471.1,
+        1471.1,
+        1470.0
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 1526.0,
+        "spec_decode_num_draft_tokens_total": 3052.0,
+        "spec_decode_num_accepted_tokens_total": 2475.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 2475.0
+      },
+      "elfogadas": 0.8109
+    },
+    {
+      "ctx": 40000,
+      "c": 1,
+      "futas": 1,
+      "ms_per_tok": [
+        32.271
+      ],
+      "ms_per_tok_atlag": 32.271,
+      "cached": [
+        38272
+      ],
+      "ttft_ms": [
+        900.7
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 395.0,
+        "spec_decode_num_draft_tokens_total": 790.0,
+        "spec_decode_num_accepted_tokens_total": 605.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 605.0
+      },
+      "elfogadas": 0.7658
+    },
+    {
+      "ctx": 40000,
+      "c": 1,
+      "futas": 2,
+      "ms_per_tok": [
+        30.546
+      ],
+      "ms_per_tok_atlag": 30.546,
+      "cached": [
+        38272
+      ],
+      "ttft_ms": [
+        920.5
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 395.0,
+        "spec_decode_num_draft_tokens_total": 790.0,
+        "spec_decode_num_accepted_tokens_total": 605.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 605.0
+      },
+      "elfogadas": 0.7658
+    },
+    {
+      "ctx": 40000,
+      "c": 4,
+      "futas": 1,
+      "ms_per_tok": [
+        53.501,
+        58.004,
+        54.905,
+        50.91
+      ],
+      "ms_per_tok_atlag": 54.33,
+      "cached": [
+        38272,
+        38272,
+        38272,
+        38272
+      ],
+      "ttft_ms": [
+        2976.2,
+        2207.4,
+        2972.1,
+        2970.7
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 1608.0,
+        "spec_decode_num_draft_tokens_total": 3216.0,
+        "spec_decode_num_accepted_tokens_total": 2392.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 2392.0
+      },
+      "elfogadas": 0.7438
+    },
+    {
+      "ctx": 40000,
+      "c": 4,
+      "futas": 2,
+      "ms_per_tok": [
+        51.293,
+        50.176,
+        51.49,
+        47.732
+      ],
+      "ms_per_tok_atlag": 50.173,
+      "cached": [
+        38272,
+        38272,
+        38272,
+        38272
+      ],
+      "ttft_ms": [
+        2212.7,
+        2951.7,
+        2948.5,
+        2946.1
+      ],
+      "spec": {
+        "spec_decode_num_drafts_total": 1568.0,
+        "spec_decode_num_draft_tokens_total": 3136.0,
+        "spec_decode_num_accepted_tokens_total": 2434.0,
+        "spec_decode_num_accepted_tokens_per_pos_total": 2434.0
+      },
+      "elfogadas": 0.7761
+    }
+  ]
+}

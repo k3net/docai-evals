@@ -1,0 +1,12 @@
+elindult: r8-K0e port=8430 image=qwen38-flash-dgx:v029-parser1213-20260918 split=v029 retention=<nincs> trace=<nincs> cg=PIECEWISE extra=
+== K0e 18:27:51
+
+[e] K0e
+    A_86K          prompt= 85890 cached=     0 (  0.0%)    40993 ms
+    B_50K_resz     prompt= 50654 cached= 48000 ( 94.8%)     1384 ms
+    B_50K_resz#2   prompt= 50654 cached= 48000 ( 94.8%)     1390 ms
+    C_86K_mas_kerdes prompt= 85888 cached= 83200 ( 96.9%)     1560 ms
+  [e_reszleges_prefix] /metrics delta: queries=273086.0 hits=179200.0
+
+[>] eredmenyek/M1e-K0e.json
+== M1E KESZ 18:28:45

@@ -1,0 +1,458 @@
+{
+  "cimke": "K2on",
+  "args": {
+    "url": "http://localhost:8421",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "$HOME/round7/kie",
+    "blokk": 1664,
+    "k": "1,2,4,8",
+    "d": "0,1,2,3,5,10",
+    "gen": 256,
+    "folyt_gen": 64,
+    "mag": "K2on-144716",
+    "cimke": "K2on",
+    "out": "eredmenyek/M3h-K2on.json"
+  },
+  "kezdet": "2026-10-01T14:53:46+0200",
+  "promptok": [
+    {
+      "L": 1664,
+      "k": 1,
+      "d": 0,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1932,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 1663,
+      "k": 1,
+      "d": 1,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1931,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 1662,
+      "k": 1,
+      "d": 2,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1930,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 1661,
+      "k": 1,
+      "d": 3,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1929,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 1659,
+      "k": 1,
+      "d": 5,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1927,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 1654,
+      "k": 1,
+      "d": 10,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 1922,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3328,
+      "k": 2,
+      "d": 0,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 1664
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3596,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3327,
+      "k": 2,
+      "d": 1,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3595,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3326,
+      "k": 2,
+      "d": 2,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3594,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3325,
+      "k": 2,
+      "d": 3,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3593,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3323,
+      "k": 2,
+      "d": 5,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3591,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 3318,
+      "k": 2,
+      "d": 10,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 0
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 3586,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6656,
+      "k": 4,
+      "d": 0,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 4992
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6924,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6655,
+      "k": 4,
+      "d": 1,
+      "cached": {
+        "prime": 0,
+        "hit": 3328,
+        "folyt_hit": 3328
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6923,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6654,
+      "k": 4,
+      "d": 2,
+      "cached": {
+        "prime": 0,
+        "hit": 3328,
+        "folyt_hit": 3328
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6922,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6653,
+      "k": 4,
+      "d": 3,
+      "cached": {
+        "prime": 0,
+        "hit": 3328,
+        "folyt_hit": 3328
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6921,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6651,
+      "k": 4,
+      "d": 5,
+      "cached": {
+        "prime": 0,
+        "hit": 3328,
+        "folyt_hit": 3328
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6919,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 6646,
+      "k": 4,
+      "d": 10,
+      "cached": {
+        "prime": 0,
+        "hit": 3328,
+        "folyt_hit": 3328
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 6914,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13312,
+      "k": 8,
+      "d": 0,
+      "cached": {
+        "prime": 0,
+        "hit": 0,
+        "folyt_hit": 11648
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13580,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13311,
+      "k": 8,
+      "d": 1,
+      "cached": {
+        "prime": 0,
+        "hit": 9984,
+        "folyt_hit": 9984
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13579,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13310,
+      "k": 8,
+      "d": 2,
+      "cached": {
+        "prime": 0,
+        "hit": 9984,
+        "folyt_hit": 9984
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13578,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13309,
+      "k": 8,
+      "d": 3,
+      "cached": {
+        "prime": 0,
+        "hit": 9984,
+        "folyt_hit": 9984
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13577,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13307,
+      "k": 8,
+      "d": 5,
+      "cached": {
+        "prime": 0,
+        "hit": 9984,
+        "folyt_hit": 9984
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13575,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    },
+    {
+      "L": 13302,
+      "k": 8,
+      "d": 10,
+      "cached": {
+        "prime": 0,
+        "hit": 9984,
+        "folyt_hit": 9984
+      },
+      "hideg_det": true,
+      "hideg_elso_elteres": null,
+      "prime_vs_hideg": null,
+      "hit_vs_hideg": null,
+      "folyt_len": 13570,
+      "folyt_hit_vs_hideg": null,
+      "hit_vs_hideg_fazis": null,
+      "folyt_hit_vs_hideg_fazis": null
+    }
+  ],
+  "osszeg": {
+    "n": 24,
+    "hideg_nemdet": 0,
+    "hit_elteres": 0,
+    "folyt_elteres": 0,
+    "folyt_cached_pozitiv": 13
+  }
+}

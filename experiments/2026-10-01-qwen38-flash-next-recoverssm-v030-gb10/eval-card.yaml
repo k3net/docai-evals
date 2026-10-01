@@ -1,0 +1,200 @@
+id: qwen38-flash-next-recoverssm-v030-gb10
+version: "1.0"
+date: "2026-10-01"
+title: "Qwen3.8-Flash-Next on vLLM v0.30.0: RecoverSSM (vllm#58863) on GB10, and what the v0.30 prefix-cache retention default costs"
+question: >-
+  Should the next experimental build of our night-shift model move to vLLM v0.30.0 and adopt RecoverSSM
+  (vllm#58863, rebased 2026-10-01)? Concretely: does the align-mode prefix cache still get reused on v0.30
+  with our recipe, does the round-4 cross-request divergence survive on v0.30 and with RecoverSSM, is the
+  RecoverSSM backport correct on GB10 (including the 3388ba1 race fix), and does it make our recipe
+  (MTP-2, PIECEWISE, mmap PLE) faster?
+
+task:
+  type: inference-performance
+  document_types: [not-applicable]
+  language: [hu]
+  output_format: openai-completions-and-chat
+
+dataset:
+  name: the published synthetic Hungarian corpus (D1-D7 in the 2026-08-28 experiment, C1/C3/C5 in the 2026-09-18 trap corpus)
+  size:
+    prefix_reuse_scenarios: 5
+    partial_prefix_arms: 3
+    cross_request_cells_per_arm: 5
+    cross_request_sweep_pairs_per_arm: 10
+    repetitions_per_cross_request_pair: 4
+    hit_vs_cold_documents: 4
+    boundary_sweep_prompts_per_arm: 24
+    long_generations_per_arm: 24
+    unit_test_repeats: 32
+    performance_starts_per_arm: 2
+  access: public
+  ground_truth: >-
+    Not used. Every probe compares the engine against itself (cache-hit vs cold, flag on vs off, v0.29 vs
+    v0.30) on identical, byte-reproducible prompts.
+  notes: >-
+    All documents used are byte-identical (sha256) to the published copies, so nothing new is published.
+    Exact-length prompts are sized through the server's /tokenize with seed-independent filler.
+
+systems:
+  - label: K0
+    role: baseline
+    model: Qwen3.8-Flash-Next (RadixArk NVFP4, snapshot 7b71922, PLE table mmap-ed)
+    engine: "qwen38-flash-dgx:v029-parser1213-20260918 - recipe blazux/qwen3.8-Flash-DGX @ 5be6637 on vllm/vllm-openai:v0.29.0 (= production)"
+    hardware: DGX Spark GB10 (sm_121), driver 580.173.02
+    backend: "V2 runner, deterministic QSA top-k (QSADET active), align mode, block 1600, MTP-2, PIECEWISE"
+    notes: "prefix_cache_retention_interval resolves to None (dense) via the v0.29 release-branch override; read from inside the engine."
+  - label: K1a
+    role: candidate
+    model: same checkpoint
+    engine: "qwen38-flash-dgx:v030-bb661c4 - recipe @ bb661c4 on vllm/vllm-openai:v0.30.0 (sha256:91d9b077)"
+    backend: same
+    notes: "retention unset -> 0. The recipe patches the scheduler's align-mode split (block-size fix); the KV-cache manager is unmodified."
+  - label: K1b
+    role: control
+    model: same checkpoint
+    engine: same image as K1a
+    backend: same
+    notes: "--prefix-cache-retention-interval 1600 (one block, which the Mamba manager treats as dense)."
+  - label: K2off
+    role: control
+    model: same checkpoint
+    engine: "qwen38-flash-dgx:v030-bb661c4-rssm58863 - K1 + vllm#58863 a80e41d..3388ba1 backported (23 Python files, fail-closed import check)"
+    backend: same
+    notes: "Flag off. Prefix-cache counts and the cross-request pattern are identical to K1a, so the patch is inert without the flag."
+  - label: K2on
+    role: candidate
+    model: same checkpoint
+    engine: same image as K2off
+    backend: "as above, plus --use-replayssm (GDN and PLE RecoverSSM paths taken); block becomes 1664"
+  - label: r8trace
+    role: instrument
+    engine: "logging-only overlay loaded through a .pth file; records scheduler geometry, effective retention and KV groups at startup"
+
+normaliser_version: "not applicable; no scored answers"
+
+metrics:
+  - name: cached_tokens
+    definition: "usage.prompt_tokens_details.cached_tokens per request; cross-checked against the /metrics prefix_cache_hits_total delta per scenario"
+    primary: true
+    preregistered: "full"
+  - name: partial_prefix_hit
+    definition: "cached_tokens of a 50,654-token request sharing the first ~50K tokens of an earlier 85,890-token request"
+    preregistered: "post-hoc"
+  - name: cross_request_pass
+    definition: "one distinct sha256 over per-token top-20 (token, logprob %.12g) lists across 4 identical requests B issued after one request A on a shared prefix"
+    preregistered: "full"
+  - name: hit_vs_cold
+    definition: "identical top-20 digests between cache-hit runs (shared salt) and always-cold runs (unique salts)"
+    preregistered: "full"
+  - name: boundary_sweep
+    definition: "first differing output token between cold, cache-hit and follow-up-from-cache runs on token-id prompts of length k*B - d"
+    preregistered: "full"
+  - name: unit_test_repeats
+    definition: "test_recoverssm_gdn.py repeated 20x at 3388ba1 and 12x with recoverssm_gdn.py reverted to before it"
+    preregistered: "full"
+  - name: decode_ms_per_token
+    definition: "streaming, after the first token, 1,000 forced tokens, prompt primed into the cache; median over 2 starts x 2 runs"
+    preregistered: "full"
+  - name: ttft_ms
+    definition: "streaming, cold (unique salt), 8K/32K/64K token prompts"
+    preregistered: "full"
+  - name: mtp_acceptance
+    definition: "/metrics spec_decode_num_accepted_tokens / num_draft_tokens delta per decode cell"
+    preregistered: "full"
+  - name: foreign_script_or_switch
+    definition: "Han/Kana/Hangul/Cyrillic/Arabic/Thai characters, and English 40-word windows with >= 35% English stop words, in reasoning and content"
+    preregistered: "post-hoc"
+
+decision_rule: >-
+  RecoverSSM is adoptable only if it is correct on every probe (unit tests, race fix, boundary sweep,
+  hit-vs-cold, no language switch) and not slower than the native path on our recipe. A move to v0.30 is
+  adoptable only if prefix reuse (including partial prefixes) is at least as good as on v0.29.
+
+results:
+  retention_default:
+    v029_effective: "None (dense)"
+    v030_effective_unset: 0
+    partial_prefix_50654_tokens:
+      v029_dense: "48000 cached, 1.38 s"
+      v030_unset: "0 cached, 18.0 s"
+      v030_interval_1600: "48000 cached, 1.17 s"
+    repeats_and_continuations: "identical on all three arms (9,698 -> 8,000; 45,642 -> 43,200; 85,890 -> 83,200; chat 1,600 per turn)"
+    note: "An initial conclusion that the setting was inert was based on repeat-only scenarios and is withdrawn."
+  cross_request_divergence:
+    v030_condition_unchanged: true
+    below_threshold_lengths_diverging: { K0: "2/5", K1a: "4/5", K2off: "4/5", K2on: "2/4" }
+    above_threshold_lengths_diverging: { K0: "0/5", K1a: "0/5", K2off: "0/5", K2on: "0/6" }
+    hit_vs_cold_real_documents: "4/4 PASS on every arm"
+    failed_own_prediction: "A >= 3*block pairs: 0 divergences in 16 pairs"
+  recoverssm_correctness:
+    unit_tests: "121 passed (5 files)"
+    race_fix: "20/20 pass at 3388ba1; 9/12 runs fail with it reverted (1-4 cases per run)"
+    boundary_sweep: "24/24 identical on both arms; 10 cache hits and 13 follow-up hits exercised per arm"
+    long_generations: "24/24 hit the 6,000-token limit (17 still in reasoning); no language switch; isolated CJK characters 3/24 (on) vs 6/24 (off)"
+  recoverssm_performance:
+    decode_c1_1k_ms: { off: 27.25, on: 27.78 }
+    decode_c1_40k_ms: { off: 30.2, on: 31.5, note: "off from one start" }
+    decode_c4_1k_40k_ms: { off: "53.3 / 51.2", on: "50.0 / 52.3", note: "inside the +-10% run-to-run spread; off 40K is a single run" }
+    ttft_8k_32k_64k_s: { off: "3.08 / 11.65 / 23.31", on: "3.05 / 12.01 / 24.00" }
+    mtp_acceptance_c1_1k_40k: { off: "0.933 / 0.821", on: "0.906 / 0.766" }
+    kv_tokens: { off: "288,213 / 295,455", on: "296,677 / 295,108" }
+    block_size: { off: 1600, on: 1664 }
+    repeat_hit_9698_tokens: { off: "8000, 0.80 s", on: "6656, 1.22 s" }
+  v030_other:
+    kv_tokens_v029_vs_v030: "433,044 vs 292,558 at gpu_memory_utilization 0.78 (weights+non-torch 80.6 vs 84.4 GiB); cause not found"
+    cold_prefill_s_45k_86k: { v029: "19.9 / 38.0", v030: "16.6 / 30.8", n: 1 }
+  stability:
+    container_errors: 0
+    mem_available_floor_mib: 17197
+    kernel_nv_err_no_memory: "non-fatal lines during 4 boots (3 of the v0.29 control, 1 RecoverSSM); no Xid"
+
+verdict: >-
+  Production stays on v0.29.0. Moving to v0.30.0 is possible but not free. With the unset retention
+  default, a request sharing only part of a long earlier prompt gets no cache hit (0 vs 48,000 tokens,
+  18.0 vs 1.2 s); --prefix-cache-retention-interval 1600 restores the v0.29 behaviour, so that flag is
+  mandatory for a v0.30 deployment. KV capacity also drops by 32 % at the same memory setting, for a
+  reason we have not found. The round-4 cross-request divergence is still present on v0.30.0 and with
+  RecoverSSM, under the same necessary condition. RecoverSSM (vllm#58863, backported to v0.30.0) is
+  correct on every probe we ran, and the 3388ba1 race fix reproduces exactly (9/12 failing before, 20/20
+  after). On our recipe (MTP-2, PIECEWISE, mmap PLE) it is not faster (+2 to +4 % per decoded token, lower
+  MTP acceptance), it gives no measurable KV gain, and it coarsens prompt-cache granularity because the
+  block grows to 1664 tokens. It is not adopted in this form.
+
+reproducibility:
+  level: R2
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 2
+  not_published: >-
+    Full container logs (about 2 MB) and the full scheduler traces (about 1.7 MB) are kept internally;
+    the startup lines that matter and the trace's init record are in results/boot/. One early K0
+    cross-request run made with the old, imprecise prompt sizer is discarded.
+  verified_by: >-
+    Every number in the README was recomputed from the files in results/ before publication. The probes
+    in code/ rerun against any OpenAI-compatible vLLM server; checkpoint_szonda_cpu_v030.py runs without
+    a GPU inside the v0.30 image.
+
+limitations:
+  - "One box, one checkpoint, MTP-2, PIECEWISE only; FULL graphs, K=3/5 and vllm#59366 were not run."
+  - "#58863 was measured as a backport onto v0.30.0, not as the PR head on main."
+  - "The partial-prefix result is one sequence per arm on one document and one cut point."
+  - "Five A lengths per arm below the cross-request threshold support 'present', not a rate."
+  - "The long-generation probe mostly exercised reasoning text; the language detector is a heuristic."
+  - "c=4 decode varied by +-10% between runs, more than the effect being measured."
+  - "No KIE quality suite was run on the RecoverSSM arm."
+  - "The cause of the 32% KV-capacity drop on the v0.30 image is not identified."
+
+related:
+  experiments:
+    - "2026-09-18-qwen38-flash-next-qwen-parser-marker-guard-gb10"
+    - "2026-09-14-qwen38-flash-next-prefix-cache-root-cause-gb10"
+    - "2026-09-12-qwen38-flash-next-prefix-cache-cross-request-gb10"
+  references:
+    - "vllm#58863 - [Spec Decode][Qwen4Exp] RecoverSSM for Qwen GDN and the PLE short conv (open; head c84caa4739)"
+    - "vllm#59366 - fused CUDA verify for GDN RecoverSSM (draft, stacked on #58863; not measured)"
+    - "vllm#58549 - default prefix_cache_retention_interval to a block multiple for hybrid + EAGLE (open)"
+    - "vllm#58303 - the dense default reverts to 0% prefix reuse under interleaved long conversations (open)"
+    - "vllm#54076 - align-mode chunk splitting boundary stop (open; condition still present in v0.30.0)"
+    - "blazux/qwen3.8-Flash-DGX @ bb661c4 - the v0.30 recipe"

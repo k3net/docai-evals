@@ -1,0 +1,519 @@
+a7079347a1c8168fa4a15a81b04239d0733845b8b5fe5de6ebfba28c1fb01b75
+elindult: r8-K2off port=8420 image=qwen38-flash-dgx:v030-bb661c4-rssm58863 split=v030 retention=<nincs> trace=$HOME/experiments/round8/trace/K2off cg=PIECEWISE extra=
+boot: 230 s
+[i] K2off blokk=1600 parok=3170:3261,3177:3261,3184:3261,3191:3261,3198:3261,3205:3261,3219:3261,4808:3261,4815:3261,4836:3261
+== K2off M1 2026-10-01T13:22:13+02:00
+
+[a] K2off
+    #1             prompt=  9698 cached=     0 (  0.0%)     4478 ms
+    #2             prompt=  9698 cached=  8000 ( 82.5%)      803 ms
+    #3             prompt=  9698 cached=  8000 ( 82.5%)      803 ms
+    #4             prompt=  9698 cached=  8000 ( 82.5%)      803 ms
+  [a_azonos_prompt] /metrics delta: queries=38792.0 hits=24000.0
+
+[b] K2off
+    k1/q1          prompt=  9698 cached=     0 (  0.0%)     3500 ms
+    k1/q2          prompt=  9699 cached=  8000 ( 82.5%)      807 ms
+    k1/q3          prompt=  9696 cached=  8000 ( 82.5%)      812 ms
+    k2/q1          prompt=  9698 cached=  8000 ( 82.5%)      797 ms
+    k2/q2          prompt=  9699 cached=  8000 ( 82.5%)      804 ms
+    k2/q3          prompt=  9696 cached=  8000 ( 82.5%)      804 ms
+  [b_kozos_doksi_mas_kerdes] /metrics delta: queries=58186.0 hits=40000.0
+
+[c] K2off
+    kör 1          prompt=  3760 cached=     0 (  0.0%)     7171 ms
+    kör 2          prompt=  3953 cached=  1600 ( 40.5%)     4541 ms
+    kör 3          prompt=  4078 cached=  1600 ( 39.2%)     6832 ms
+    kör 4          prompt=  4266 cached=  1600 ( 37.5%)     7476 ms
+    kör 5          prompt=  4454 cached=  1600 ( 35.9%)     6511 ms
+    kör 6          prompt=  4643 cached=  1600 ( 34.5%)     3940 ms
+  [c_tobbkoros_chat] /metrics delta: queries=25154.0 hits=8000.0
+
+[d] K2off
+    32K #1         prompt= 45642 cached=     0 (  0.0%)    16595 ms
+    32K #2         prompt= 45642 cached= 43200 ( 94.6%)     1098 ms
+    60K #1         prompt= 85890 cached=     0 (  0.0%)    30889 ms
+    60K #2         prompt= 85890 cached= 83200 ( 96.9%)     1255 ms
+  [d_hosszu] /metrics delta: queries=263064.0 hits=126400.0
+
+[>] eredmenyek/M1-K2off.json
+== K2off M2a 2026-10-01T13:23:54+02:00
+[i] D6.md + sablon = 3052 tok · blokkméret=1600 · küszöb=3200 · http://localhost:8420
+
+[1-A_alatt_B_felett] A=3184 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3184 cached=0 2716 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 3003 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2250 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2252 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2245 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[2-A_felett_B_felett] A=3212 tok (ckpt: [1600]) · B=3261 tok (ckpt: [1600]) · jóslat: PASS
+  A     prompt=3212 cached=0 2997 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2933 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2256 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2246 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2247 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[3-A_alatt_B_alatt] A=3100 tok (ckpt: []) · B=3156 tok (ckpt: []) · jóslat: PASS
+  A     prompt=3100 cached=0 2647 ms
+  B#1  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2639 ms
+  B#2  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2616 ms
+  B#3  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2625 ms
+  B#4  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2611 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[4-A_felett_B_alatt] A=3212 tok (ckpt: [1600]) · B=3156 tok (ckpt: []) · jóslat: PASS
+  A     prompt=3212 cached=0 2873 ms
+  B#1  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2588 ms
+  B#2  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2618 ms
+  B#3  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2622 ms
+  B#4  prompt=3156 cached=0      api=39db58d193722f21 kanon=f5db8329fb496193 2621 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[5-A_3B_felett_B_2B_felett] A=4815 tok (ckpt: [3200]) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=4815 cached=0 3402 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2935 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2261 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2254 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2246 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[=] összegzés
+  1-A_alatt_B_felett     A= 3184 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+  2-A_felett_B_felett    A= 3212 B= 3261 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  3-A_alatt_B_alatt      A= 3100 B= 3156 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 0, 0, 0]
+  4-A_felett_B_alatt     A= 3212 B= 3156 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 0, 0, 0]
+  5-A_3B_felett_B_2B_felett A= 4815 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+[=] jóslat-egyezés: 3/5
+[>] eredmenyek/M2a-K2off.json
+== K2off M2s 2026-10-01T13:25:00+02:00
+[i] D6.md + sablon = 3052 tok · blokkméret=1600 · küszöb=3200 · http://localhost:8420
+
+[p3170-3261] A=3170 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3170 cached=0 2588 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2966 ms
+  B#2  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2175 ms
+  B#3  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2178 ms
+  B#4  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2179 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 1
+
+[p3177-3261] A=3177 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3177 cached=0 2592 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2977 ms
+  B#2  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2178 ms
+  B#3  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2170 ms
+  B#4  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2170 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 1
+
+[p3184-3261] A=3184 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3184 cached=0 2598 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2977 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2250 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2252 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2255 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3191-3261] A=3191 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3191 cached=0 2594 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2969 ms
+  B#2  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2178 ms
+  B#3  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2177 ms
+  B#4  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2182 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 1
+
+[p3198-3261] A=3198 tok (ckpt: []) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=3198 cached=0 2681 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2972 ms
+  B#2  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2180 ms
+  B#3  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2177 ms
+  B#4  prompt=3261 cached=1600   api=6936fcc691cfdc91 kanon=e0f1686dc092c3a3 2176 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 1
+
+[p3205-3261] A=3205 tok (ckpt: [1600]) · B=3261 tok (ckpt: [1600]) · jóslat: PASS
+  A     prompt=3205 cached=0 2897 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2979 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2248 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2256 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2252 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3219-3261] A=3219 tok (ckpt: [1600]) · B=3261 tok (ckpt: [1600]) · jóslat: PASS
+  A     prompt=3219 cached=0 2933 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2967 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2255 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2258 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2257 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p4808-3261] A=4808 tok (ckpt: [3200]) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=4808 cached=0 3378 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2974 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2250 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2248 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2252 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p4815-3261] A=4815 tok (ckpt: [3200]) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=4815 cached=0 3330 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2931 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2266 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2256 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2254 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p4836-3261] A=4836 tok (ckpt: [3200]) · B=3261 tok (ckpt: [1600]) · jóslat: FAIL
+  A     prompt=4836 cached=0 3370 ms
+  B#1  prompt=3261 cached=0      api=60c4489e88fede00 kanon=dee82d4cc627edc7 2932 ms
+  B#2  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2259 ms
+  B#3  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2256 ms
+  B#4  prompt=3261 cached=1600   api=60c4489e88fede00 kanon=dee82d4cc627edc7 2252 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[=] összegzés
+  p3170-3261             A= 3170 B= 3261 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p3177-3261             A= 3177 B= 3261 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p3184-3261             A= 3184 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+  p3191-3261             A= 3191 B= 3261 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p3198-3261             A= 3198 B= 3261 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p3205-3261             A= 3205 B= 3261 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p3219-3261             A= 3219 B= 3261 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1600, 1600, 1600]
+  p4808-3261             A= 4808 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+  p4815-3261             A= 4815 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+  p4836-3261             A= 4836 B= 3261 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1600, 1600, 1600]
+[=] jóslat-egyezés: 6/10
+[>] eredmenyek/M2s-K2off.json
+== K2off M2b 2026-10-01T13:27:06+02:00
+[D1] prompt=3762 hit_cached=[0, 1600, 1600, 1600, 1600, 1600] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D2] prompt=3002 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D3] prompt=1950 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D6] prompt=3068 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[=] 4/4 PASS -> eredmenyek/M2b-K2off.json
+== K2off M3h 2026-10-01T13:28:39+02:00
+L=  1600 (k=1 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1599 (k=1 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1598 (k=1 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1597 (k=1 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1595 (k=1 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1590 (k=1 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3200 (k=2 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 1600} OK
+L=  3199 (k=2 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3198 (k=2 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3197 (k=2 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3195 (k=2 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3190 (k=2 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  6400 (k=4 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 4800} OK
+L=  6399 (k=4 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3200, 'folyt_hit': 3200} OK
+L=  6398 (k=4 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3200, 'folyt_hit': 3200} OK
+L=  6397 (k=4 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3200, 'folyt_hit': 3200} OK
+L=  6395 (k=4 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3200, 'folyt_hit': 3200} OK
+L=  6390 (k=4 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3200, 'folyt_hit': 3200} OK
+L= 12800 (k=8 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 11200} OK
+L= 12799 (k=8 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9600, 'folyt_hit': 9600} OK
+L= 12798 (k=8 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9600, 'folyt_hit': 9600} OK
+L= 12797 (k=8 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9600, 'folyt_hit': 9600} OK
+L= 12795 (k=8 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9600, 'folyt_hit': 9600} OK
+L= 12790 (k=8 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9600, 'folyt_hit': 9600} OK
+[=] {'n': 24, 'hideg_nemdet': 0, 'hit_elteres': 0, 'folyt_elteres': 0, 'folyt_cached_pozitiv': 13} -> eredmenyek/M3h-K2off.json
+== K2off M3ny 2026-10-01T13:47:21+02:00
+[=] {'n': 48, 'gen_tok': 144000, 'gyanus': 0, 'nemlatin_content_db': 0, 'nemlatin_reasoning_db': 5, 'ures_content': 48, 'length': 48, 'fal_s': 2689.1} -> eredmenyek/M3ny-K2off.json
+== K2off M6 2026-10-01T14:32:10+02:00
+TTFT   8192:    3036.9 ms (cached=0)
+TTFT   8192:    3075.0 ms (cached=0)
+TTFT  32768:   11636.1 ms (cached=0)
+TTFT  32768:   11644.8 ms (cached=0)
+TTFT  65536:   23308.7 ms (cached=0)
+TTFT  65536:   23315.6 ms (cached=0)
+decode ctx= 1000 c=1: 27.27 ms/tok (elfogadás 0.9327, cached [0])
+decode ctx= 1000 c=1: 26.87 ms/tok (elfogadás 0.9327, cached [0])
+decode ctx= 1000 c=4: 55.20 ms/tok (elfogadás 0.7728, cached [0, 0, 0, 0])
+decode ctx= 1000 c=4: 44.88 ms/tok (elfogadás 0.7728, cached [0, 0, 0, 0])
+decode ctx=60000 c=1: 32.60 ms/tok (elfogadás 0.7678, cached [57600])
+decode ctx=60000 c=1: 30.38 ms/tok (elfogadás 0.7678, cached [57600])
+decode ctx=60000 c=4: 54.86 ms/tok (elfogadás 0.7634, cached [57600, 57600, 0, 57600])
+decode ctx=60000 c=4: 69.78 ms/tok (elfogadás 0.725, cached [0, 0, 0, 0])
+[>] eredmenyek/M6-K2off.json
+== K2off KESZ 2026-10-01T14:43:37+02:00
+e316801ac0012505bb4b23968322497b70c881b3c88ebb5c840fd160ca935211
+elindult: r8-K2on port=8421 image=qwen38-flash-dgx:v030-bb661c4-rssm58863 split=v030 retention=<nincs> trace=$HOME/experiments/round8/trace/K2on cg=PIECEWISE extra=--use-replayssm
+boot: 216 s
+[i] K2on blokk=1664 parok=3298:3389,3305:3389,3312:3389,3319:3389,3326:3389,3333:3389,3347:3389,5000:3389,5007:3389,5028:3389
+== K2on M1 2026-10-01T14:47:16+02:00
+
+[a] K2on
+    #1             prompt=  9698 cached=     0 (  0.0%)     4625 ms
+    #2             prompt=  9698 cached=  6656 ( 68.6%)     1224 ms
+    #3             prompt=  9698 cached=  6656 ( 68.6%)     1225 ms
+    #4             prompt=  9698 cached=  6656 ( 68.6%)     1224 ms
+  [a_azonos_prompt] /metrics delta: queries=38792.0 hits=19968.0
+
+[b] K2on
+    k1/q1          prompt=  9698 cached=     0 (  0.0%)     3530 ms
+    k1/q2          prompt=  9699 cached=  6656 ( 68.6%)     1229 ms
+    k1/q3          prompt=  9696 cached=  6656 ( 68.6%)     1230 ms
+    k2/q1          prompt=  9698 cached=  6656 ( 68.6%)     1227 ms
+    k2/q2          prompt=  9699 cached=  6656 ( 68.6%)     1224 ms
+    k2/q3          prompt=  9696 cached=  6656 ( 68.6%)     1223 ms
+  [b_kozos_doksi_mas_kerdes] /metrics delta: queries=58186.0 hits=33280.0
+
+[c] K2on
+    kör 1          prompt=  3760 cached=     0 (  0.0%)     7018 ms
+    kör 2          prompt=  3953 cached=  1664 ( 42.1%)     4028 ms
+    kör 3          prompt=  4071 cached=  1664 ( 40.9%)     6857 ms
+    kör 4          prompt=  4259 cached=  1664 ( 39.1%)     7624 ms
+    kör 5          prompt=  4447 cached=  1664 ( 37.4%)     4940 ms
+    kör 6          prompt=  4596 cached=  1664 ( 36.2%)     4994 ms
+  [c_tobbkoros_chat] /metrics delta: queries=25086.0 hits=8320.0
+
+[d] K2on
+    32K #1         prompt= 45642 cached=     0 (  0.0%)    17007 ms
+    32K #2         prompt= 45642 cached= 43264 ( 94.8%)     1078 ms
+    60K #1         prompt= 85890 cached=     0 (  0.0%)    31690 ms
+    60K #2         prompt= 85890 cached= 83200 ( 96.9%)     1247 ms
+  [d_hosszu] /metrics delta: queries=263064.0 hits=126464.0
+
+[>] eredmenyek/M1-K2on.json
+== K2on M2a 2026-10-01T14:49:00+02:00
+[i] D6.md + sablon = 3052 tok · blokkméret=1664 · küszöb=3328 · http://localhost:8421
+
+[1-A_alatt_B_felett] A=3310 tok (ckpt: []) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=3310 cached=0 2746 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 3010 ms
+  B#2  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2330 ms
+  B#3  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2280 ms
+  B#4  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2276 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 2
+
+[2-A_felett_B_felett] A=3338 tok (ckpt: [1664]) · B=3394 tok (ckpt: [1664]) · jóslat: PASS
+  A     prompt=3338 cached=0 2965 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2907 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2179 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2182 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2182 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[3-A_alatt_B_alatt] A=3233 tok (ckpt: []) · B=3282 tok (ckpt: []) · jóslat: PASS
+  A     prompt=3233 cached=0 2591 ms
+  B#1  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2733 ms
+  B#2  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2651 ms
+  B#3  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2651 ms
+  B#4  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2650 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[4-A_felett_B_alatt] A=3338 tok (ckpt: [1664]) · B=3282 tok (ckpt: []) · jóslat: PASS
+  A     prompt=3338 cached=0 2946 ms
+  B#1  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2686 ms
+  B#2  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2649 ms
+  B#3  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2646 ms
+  B#4  prompt=3282 cached=0      api=5f70764d736fd4c4 kanon=4ecbfee82de8f481 2647 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[5-A_3B_felett_B_2B_felett] A=5004 tok (ckpt: [3328]) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=5004 cached=0 3404 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2876 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2191 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2180 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2188 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[=] összegzés
+  1-A_alatt_B_felett     A= 3310 B= 3394 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  2-A_felett_B_felett    A= 3338 B= 3394 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  3-A_alatt_B_alatt      A= 3233 B= 3282 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 0, 0, 0]
+  4-A_felett_B_alatt     A= 3338 B= 3282 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 0, 0, 0]
+  5-A_3B_felett_B_2B_felett A= 5004 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+[=] jóslat-egyezés: 4/5
+[>] eredmenyek/M2a-K2on.json
+== K2on M2s 2026-10-01T14:50:06+02:00
+[i] D6.md + sablon = 3052 tok · blokkméret=1664 · küszöb=3328 · http://localhost:8421
+
+[p3298-3389] A=3303 tok (ckpt: []) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=3303 cached=0 2659 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2880 ms
+  B#2  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2281 ms
+  B#3  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2266 ms
+  B#4  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2276 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 2
+
+[p3305-3389] A=3310 tok (ckpt: []) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=3310 cached=0 2607 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2904 ms
+  B#2  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2274 ms
+  B#3  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2282 ms
+  B#4  prompt=3394 cached=1664   api=c2e2b4e02c909e5b kanon=4163e82fd6f3db52 2266 ms
+  => FAIL (jóslat: FAIL, EGYEZIK) · api-változat: 2 · kanon-változat: 2 · szöveg-változat: 2
+
+[p3312-3389] A=3317 tok (ckpt: []) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=3317 cached=0 2706 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2916 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2186 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2182 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2187 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3319-3389] A=3324 tok (ckpt: []) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=3324 cached=0 2627 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2928 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2188 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2186 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2180 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3326-3389] A=3331 tok (ckpt: [1664]) · B=3394 tok (ckpt: [1664]) · jóslat: PASS
+  A     prompt=3331 cached=0 2892 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2911 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2183 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2177 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2182 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3333-3389] A=3338 tok (ckpt: [1664]) · B=3394 tok (ckpt: [1664]) · jóslat: PASS
+  A     prompt=3338 cached=0 2955 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2926 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2183 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2182 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2185 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p3347-3389] A=3352 tok (ckpt: [1664]) · B=3394 tok (ckpt: [1664]) · jóslat: PASS
+  A     prompt=3352 cached=0 2962 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2926 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2184 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2185 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2193 ms
+  => PASS (jóslat: PASS, EGYEZIK) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p5000-3389] A=5004 tok (ckpt: [3328]) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=5004 cached=0 3387 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2875 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2183 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2186 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2180 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p5007-3389] A=5011 tok (ckpt: [3328]) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=5011 cached=0 3439 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2906 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2179 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2190 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2186 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[p5028-3389] A=5032 tok (ckpt: [3328]) · B=3394 tok (ckpt: [1664]) · jóslat: FAIL
+  A     prompt=5032 cached=0 3413 ms
+  B#1  prompt=3394 cached=0      api=b8f099399ca405c1 kanon=4976028c0b88a030 2881 ms
+  B#2  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2186 ms
+  B#3  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2190 ms
+  B#4  prompt=3394 cached=1664   api=b8f099399ca405c1 kanon=4976028c0b88a030 2188 ms
+  => PASS (jóslat: FAIL, **NEM EGYEZIK**) · api-változat: 1 · kanon-változat: 1 · szöveg-változat: 1
+
+[=] összegzés
+  p3298-3389             A= 3303 B= 3394 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  p3305-3389             A= 3310 B= 3394 jóslat=FAIL  mért=FAIL  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  p3312-3389             A= 3317 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+  p3319-3389             A= 3324 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+  p3326-3389             A= 3331 B= 3394 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  p3333-3389             A= 3338 B= 3394 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  p3347-3389             A= 3352 B= 3394 jóslat=PASS  mért=PASS  EGYEZIK · B cached_tok=[0, 1664, 1664, 1664]
+  p5000-3389             A= 5004 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+  p5007-3389             A= 5011 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+  p5028-3389             A= 5032 B= 3394 jóslat=FAIL  mért=PASS  **NEM** · B cached_tok=[0, 1664, 1664, 1664]
+[=] jóslat-egyezés: 5/10
+[>] eredmenyek/M2s-K2on.json
+== K2on M2b 2026-10-01T14:52:12+02:00
+[D1] prompt=3762 hit_cached=[0, 1664, 1664, 1664, 1664, 1664] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D2] prompt=3002 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D3] prompt=1950 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[D6] prompt=3068 hit_cached=[0, 0, 0, 0, 0, 0] hideg_cached=[0, 0, 0] hideg-változat=1 hit≠hideg: api 0/6 kanon 0 szöveg 0 => PASS
+[=] 4/4 PASS -> eredmenyek/M2b-K2on.json
+== K2on M3h 2026-10-01T14:53:46+02:00
+L=  1664 (k=1 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1663 (k=1 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1662 (k=1 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1661 (k=1 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1659 (k=1 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  1654 (k=1 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3328 (k=2 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 1664} OK
+L=  3327 (k=2 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3326 (k=2 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3325 (k=2 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3323 (k=2 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  3318 (k=2 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 0} OK
+L=  6656 (k=4 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 4992} OK
+L=  6655 (k=4 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3328, 'folyt_hit': 3328} OK
+L=  6654 (k=4 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3328, 'folyt_hit': 3328} OK
+L=  6653 (k=4 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3328, 'folyt_hit': 3328} OK
+L=  6651 (k=4 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3328, 'folyt_hit': 3328} OK
+L=  6646 (k=4 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 3328, 'folyt_hit': 3328} OK
+L= 13312 (k=8 d= 0) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 0, 'folyt_hit': 11648} OK
+L= 13311 (k=8 d= 1) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9984, 'folyt_hit': 9984} OK
+L= 13310 (k=8 d= 2) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9984, 'folyt_hit': 9984} OK
+L= 13309 (k=8 d= 3) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9984, 'folyt_hit': 9984} OK
+L= 13307 (k=8 d= 5) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9984, 'folyt_hit': 9984} OK
+L= 13302 (k=8 d=10) hideg-det=True hit≠hideg@None folyt-hit≠hideg@None cached={'prime': 0, 'hit': 9984, 'folyt_hit': 9984} OK
+[=] {'n': 24, 'hideg_nemdet': 0, 'hit_elteres': 0, 'folyt_elteres': 0, 'folyt_cached_pozitiv': 13} -> eredmenyek/M3h-K2on.json
+== K2on M3ny 2026-10-01T15:12:43+02:00
+[=] {'n': 24, 'gen_tok': 144000, 'gyanus': 3, 'nemlatin_content_db': 2, 'nemlatin_reasoning_db': 1, 'ures_content': 17, 'length': 24, 'angol_reasoning_valasz_db': 2, 'fal_s': 2653.0} -> eredmenyek/M3ny-K2on.json
+== K2on M6 2026-10-01T15:56:57+02:00
+TTFT   8192:    2987.6 ms (cached=0)
+TTFT   8192:    3035.0 ms (cached=0)
+TTFT  32768:   11979.1 ms (cached=0)
+TTFT  32768:   12006.2 ms (cached=0)
+TTFT  65536:   23966.8 ms (cached=0)
+TTFT  65536:   23998.3 ms (cached=0)
+decode ctx= 1000 c=1: 27.88 ms/tok (elfogadás 0.9059, cached [0])
+decode ctx= 1000 c=1: 27.68 ms/tok (elfogadás 0.9059, cached [0])
+decode ctx= 1000 c=4: 51.07 ms/tok (elfogadás 0.8006, cached [0, 0, 0, 0])
+decode ctx= 1000 c=4: 48.87 ms/tok (elfogadás 0.8109, cached [0, 0, 0, 0])
+decode ctx=40000 c=1: 32.27 ms/tok (elfogadás 0.7658, cached [38272])
+decode ctx=40000 c=1: 30.55 ms/tok (elfogadás 0.7658, cached [38272])
+decode ctx=40000 c=4: 54.33 ms/tok (elfogadás 0.7438, cached [38272, 38272, 38272, 38272])
+decode ctx=40000 c=4: 50.17 ms/tok (elfogadás 0.7761, cached [38272, 38272, 38272, 38272])
+[>] eredmenyek/M6-K2on.json
+== K2on KESZ 2026-10-01T16:05:11+02:00
+9e7394a21e02f4cc2cf29089e3c794f4c731e21edd861728f7d36a710cbf5052
+elindult: r8-K2on-2 port=8422 image=qwen38-flash-dgx:v030-bb661c4-rssm58863 split=v030 retention=<nincs> trace=$HOME/experiments/round8/trace/K2on-2 cg=PIECEWISE extra=--use-replayssm
+boot: 231 s
+[i] K2on-2 blokk=1664 parok=3298:3389,3305:3389,3312:3389,3319:3389,3326:3389,3333:3389,3347:3389,5000:3389,5007:3389,5028:3389
+== K2on-2 M6 2026-10-01T16:09:05+02:00
+TTFT   8192:    3789.6 ms (cached=0)
+TTFT   8192:    3060.8 ms (cached=0)
+TTFT  32768:   12288.0 ms (cached=0)
+TTFT  32768:   12017.1 ms (cached=0)
+TTFT  65536:   24123.8 ms (cached=0)
+TTFT  65536:   24000.1 ms (cached=0)
+decode ctx= 1000 c=1: 28.20 ms/tok (elfogadás 0.9059, cached [0])
+decode ctx= 1000 c=1: 27.50 ms/tok (elfogadás 0.9059, cached [0])
+decode ctx= 1000 c=4: 52.93 ms/tok (elfogadás 0.812, cached [0, 0, 0, 0])
+decode ctx= 1000 c=4: 43.94 ms/tok (elfogadás 0.8109, cached [0, 0, 0, 0])
+decode ctx=40000 c=1: 33.71 ms/tok (elfogadás 0.7658, cached [38272])
+decode ctx=40000 c=1: 30.73 ms/tok (elfogadás 0.7658, cached [38272])
+decode ctx=40000 c=4: 55.50 ms/tok (elfogadás 0.7761, cached [38272, 38272, 38272, 38272])
+decode ctx=40000 c=4: 46.08 ms/tok (elfogadás 0.7761, cached [38272, 38272, 38272, 38272])
+[>] eredmenyek/M6-K2on-2.json
+== K2on-2 KESZ 2026-10-01T16:17:16+02:00
+b88b4c9c619fc537260c1ad2a26488e409fd747b42d46076aa89a932a2fc5b84
+elindult: r8-K2off-2 port=8423 image=qwen38-flash-dgx:v030-bb661c4-rssm58863 split=v030 retention=<nincs> trace=$HOME/experiments/round8/trace/K2off-2 cg=PIECEWISE extra=
+boot: 215 s
+[i] K2off-2 blokk=1600 parok=3170:3261,3177:3261,3184:3261,3191:3261,3198:3261,3205:3261,3219:3261,4808:3261,4815:3261,4836:3261
+== K2off-2 M3ny 2026-10-01T16:20:54+02:00
+[=] {'n': 24, 'gen_tok': 144000, 'gyanus': 6, 'nemlatin_content_db': 2, 'nemlatin_reasoning_db': 4, 'ures_content': 19, 'length': 24, 'angol_reasoning_valasz_db': 4, 'fal_s': 2740.5} -> eredmenyek/M3ny-K2off-2.json
+== K2off-2 M6 2026-10-01T17:06:35+02:00
+TTFT   8192:    3252.2 ms (cached=0)
+TTFT   8192:    3082.8 ms (cached=0)
+TTFT  32768:   11874.3 ms (cached=0)
+TTFT  32768:   11650.4 ms (cached=0)
+TTFT  65536:   23352.7 ms (cached=0)
+TTFT  65536:   23238.5 ms (cached=0)
+decode ctx= 1000 c=1: 27.66 ms/tok (elfogadás 0.9327, cached [0])
+decode ctx= 1000 c=1: 27.23 ms/tok (elfogadás 0.9327, cached [0])
+decode ctx= 1000 c=4: 51.35 ms/tok (elfogadás 0.8189, cached [0, 0, 0, 0])
+decode ctx= 1000 c=4: 55.29 ms/tok (elfogadás 0.7728, cached [0, 0, 0, 0])
+decode ctx=40000 c=1: 30.76 ms/tok (elfogadás 0.8214, cached [0])
+decode ctx=40000 c=1: 29.57 ms/tok (elfogadás 0.8214, cached [36800])
+decode ctx=40000 c=4: 72.28 ms/tok (elfogadás 0.7264, cached [0, 0, 0, 0])
+decode ctx=40000 c=4: 51.19 ms/tok (elfogadás 0.7957, cached [36800, 36800, 36800, 36800])
+[>] eredmenyek/M6-K2off-2.json
+== K2off-2 KESZ 2026-10-01T17:16:05+02:00
+== C SOR KESZ 2026-10-01T17:16:07+02:00

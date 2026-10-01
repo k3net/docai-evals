@@ -1,0 +1,31 @@
+(APIServer pid=1) INFO 10-01 12:43:46 [api_utils.py:286] non-default args: {'model_tag': '/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', 'enable_auto_tool_choice': True, 'tool_call_parser': 'qwen3_coder', 'enable_prompt_tokens_details': True, 'host': '0.0.0.0', 'model': '/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b71922524
+(EngineCore pid=360) INFO 10-01 12:44:12 [core.py:123] Initializing a V1 LLM engine (v0.30.0) with config: model='/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', speculative_config=SpeculativeConfig(method='mtp', model='/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', num_spec_tokens=2), 
+(EngineCore pid=360) INFO 10-01 12:44:13 [gpu_worker.py:441] Using V2 Model Runner
+(EngineCore pid=360) INFO 10-01 12:44:14 [qwen_gdn_linear_attn.py:566] GDN RecoverSSM speculative verify active (spec_query_len 3)
+(EngineCore pid=360) WARNING 10-01 12:46:20 [speculator.py:235] Draft model Qwen4ExpMTP does not support external multimodal embeddings. Embeddings from the target model will not be passed to the drafter; using text-only draft inputs instead.
+(EngineCore pid=360) INFO 10-01 12:46:21 [interface.py:933] Setting attention block size to 1664 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=360) WARNING 10-01 12:46:48 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:46:48 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:46:48 [ple_recoverssm.py:321] PLE RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:46:48 [ple_recoverssm.py:255] PLE RecoverSSM commit context: 1 layers, history 9
+(EngineCore pid=360) QSADET active: /opt/llm/kernel-det/_C_det.so
+(EngineCore pid=360) INFO 10-01 12:46:52 [model_runner.py:1066] Graph capturing finished in 4 secs, took 0.47 GiB
+(EngineCore pid=360) INFO 10-01 12:46:52 [gpu_worker.py:640] Available KV cache memory: 8.05 GiB
+(EngineCore pid=360) WARNING 10-01 12:46:52 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=360) INFO 10-01 12:46:52 [kv_cache_utils.py:2395] GPU KV cache size: 296,677 tokens, Maximum concurrency for 262,144 tokens per request: 1.13x
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:172] GDN RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:47:00 [gdn_recoverssm.py:106] GDN RecoverSSM commit context: 12 layers, spec_query_len 3
+(EngineCore pid=360) INFO 10-01 12:47:00 [ple_recoverssm.py:321] PLE RecoverSSM path taken: 4 spec rows, align=True
+(EngineCore pid=360) INFO 10-01 12:47:00 [ple_recoverssm.py:255] PLE RecoverSSM commit context: 1 layers, history 9
+(EngineCore pid=360) INFO 10-01 12:47:08 [model_runner.py:1066] Graph capturing finished in 1 secs, took -0.37 GiB
+(EngineCore pid=360) INFO 10-01 12:47:08 [gpu_worker.py:888] Free memory on device (115.69/121.69 GiB) on startup. Desired GPU memory utilization is (0.78, 94.92 GiB). Actual usage is 84.63 GiB for consumed memory (weights + non-torch), 2.23 GiB for peak activation, and -0.37 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=8885391504` (8.28 GiB) to fit into 
+(EngineCore pid=360) INFO 10-01 12:47:10 [kv_cache_utils.py:749] kv lcm block sizes 1664

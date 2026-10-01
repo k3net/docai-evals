@@ -1,0 +1,77 @@
+{
+ "ev": "init",
+ "pid": 358,
+ "block_size": 1600,
+ "cache_config.block_size": 1600,
+ "hash_block_size": 1600,
+ "mamba_block_size": 1600,
+ "mamba_cache_mode": "align",
+ "prefix_cache_retention_interval": 0,
+ "enable_prefix_caching": true,
+ "use_recoverssm": "<n/a>",
+ "use_eagle": true,
+ "use_eagle_block_drop": true,
+ "need_mamba_block_aligned_split": true,
+ "mamba_prefill_checkpoint_alignment": null,
+ "mamba_has_prefill_checkpoint_blocks": false,
+ "mamba_partial_cache_hit": false,
+ "mamba_fine_grained_prefix_cache": false,
+ "max_num_scheduled_tokens": 8192,
+ "kv_groups": [
+  {
+   "i": 0,
+   "type": "MambaSpec",
+   "block_size": 1600,
+   "n_layers": 12,
+   "num_prefill_checkpoint_blocks": 0,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": 2
+  },
+  {
+   "i": 1,
+   "type": "MambaSpec",
+   "block_size": 1600,
+   "n_layers": 12,
+   "num_prefill_checkpoint_blocks": 0,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": 2
+  },
+  {
+   "i": 2,
+   "type": "MambaSpec",
+   "block_size": 1600,
+   "n_layers": 12,
+   "num_prefill_checkpoint_blocks": 0,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": 2
+  },
+  {
+   "i": 3,
+   "type": "MambaSpec",
+   "block_size": 1600,
+   "n_layers": 1,
+   "num_prefill_checkpoint_blocks": 0,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": 2
+  },
+  {
+   "i": 4,
+   "type": "CircularBufferSpec",
+   "block_size": 8,
+   "n_layers": 13,
+   "num_prefill_checkpoint_blocks": null,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": null
+  },
+  {
+   "i": 5,
+   "type": "MLAAttentionSpec",
+   "block_size": 1600,
+   "n_layers": 26,
+   "num_prefill_checkpoint_blocks": null,
+   "prefill_checkpoint_alignment": null,
+   "num_speculative_blocks": null
+  }
+ ],
+ "t": 1790851395.0966
+}

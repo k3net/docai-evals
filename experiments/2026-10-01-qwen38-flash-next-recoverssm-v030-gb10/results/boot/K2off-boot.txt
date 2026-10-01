@@ -1,0 +1,14 @@
+(APIServer pid=1) INFO 10-01 11:18:30 [api_utils.py:286] non-default args: {'model_tag': '/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', 'enable_auto_tool_choice': True, 'tool_call_parser': 'qwen3_coder', 'enable_prompt_tokens_details': True, 'host': '0.0.0.0', 'model': '/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b71922524
+(EngineCore pid=359) INFO 10-01 11:18:57 [core.py:123] Initializing a V1 LLM engine (v0.30.0) with config: model='/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', speculative_config=SpeculativeConfig(method='mtp', model='/hf/hub/models--RadixArk--Qwen3.8-Flash-Next-NVFP4/snapshots/7b719225242aacd3dbd3f9407468c2ee9a9d2594', num_spec_tokens=2), 
+(EngineCore pid=359) INFO 10-01 11:18:58 [gpu_worker.py:441] Using V2 Model Runner
+(EngineCore pid=359) WARNING 10-01 11:21:16 [speculator.py:235] Draft model Qwen4ExpMTP does not support external multimodal embeddings. Embeddings from the target model will not be passed to the drafter; using text-only draft inputs instead.
+(EngineCore pid=359) INFO 10-01 11:21:17 [interface.py:933] Setting attention block size to 1600 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=359) WARNING 10-01 11:21:44 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=359) QSADET active: /opt/llm/kernel-det/_C_det.so
+(EngineCore pid=359) INFO 10-01 11:21:52 [model_runner.py:1066] Graph capturing finished in 7 secs, took 0.67 GiB
+(EngineCore pid=359) INFO 10-01 11:21:52 [gpu_worker.py:640] Available KV cache memory: 8.17 GiB
+(EngineCore pid=359) WARNING 10-01 11:21:52 [kv_cache_utils.py:2206] Speculative decoding (method=mtp) is enabled but no KV cache group could be identified as the draft model's.
+(EngineCore pid=359) INFO 10-01 11:21:52 [kv_cache_utils.py:2395] GPU KV cache size: 288,213 tokens, Maximum concurrency for 262,144 tokens per request: 1.10x
+(EngineCore pid=359) INFO 10-01 11:22:06 [model_runner.py:1066] Graph capturing finished in 1 secs, took -0.42 GiB
+(EngineCore pid=359) INFO 10-01 11:22:06 [gpu_worker.py:888] Free memory on device (115.71/121.69 GiB) on startup. Desired GPU memory utilization is (0.78, 94.92 GiB). Actual usage is 84.31 GiB for consumed memory (weights + non-torch), 2.43 GiB for peak activation, and -0.42 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=9065177232` (8.44 GiB) to fit into 
+(EngineCore pid=359) INFO 10-01 11:22:08 [kv_cache_utils.py:749] kv lcm block sizes 1600

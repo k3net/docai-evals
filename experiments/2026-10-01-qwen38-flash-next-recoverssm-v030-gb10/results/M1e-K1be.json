@@ -1,0 +1,53 @@
+{
+  "cimke": "K1b-e",
+  "args": {
+    "url": "http://localhost:8432",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "$HOME/round7/kie",
+    "mag": "K1be-183252",
+    "mintak": "e",
+    "cimke": "K1b-e",
+    "chat_max_tokens": 160,
+    "out": "eredmenyek/M1e-K1be.json"
+  },
+  "kezdet": "2026-10-01T18:32:52+0200",
+  "mintak": [
+    {
+      "minta": "e_reszleges_prefix",
+      "sorok": [
+        {
+          "prompt_tok": 85890,
+          "cached_tok": 0,
+          "gen_tok": 1,
+          "ms": 31553.8,
+          "cimke": "A_86K"
+        },
+        {
+          "prompt_tok": 50654,
+          "cached_tok": 48000,
+          "gen_tok": 1,
+          "ms": 1170.4,
+          "cimke": "B_50K_resz"
+        },
+        {
+          "prompt_tok": 50654,
+          "cached_tok": 48000,
+          "gen_tok": 1,
+          "ms": 1172.7,
+          "cimke": "B_50K_resz#2"
+        },
+        {
+          "prompt_tok": 85888,
+          "cached_tok": 83200,
+          "gen_tok": 1,
+          "ms": 1276.6,
+          "cimke": "C_86K_mas_kerdes"
+        }
+      ],
+      "metrics_delta": {
+        "prefix_cache_queries_total": 273086.0,
+        "prefix_cache_hits_total": 179200.0
+      }
+    }
+  ]
+}

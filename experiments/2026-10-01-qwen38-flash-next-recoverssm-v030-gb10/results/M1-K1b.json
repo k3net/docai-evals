@@ -1,0 +1,208 @@
+{
+  "cimke": "K1b",
+  "args": {
+    "url": "http://localhost:8402",
+    "model": "qwen38-flash-next-nvfp4",
+    "korpusz": "$HOME/round7/kie",
+    "mag": "K1b-125455",
+    "mintak": "a,b,c,d",
+    "cimke": "K1b",
+    "chat_max_tokens": 160,
+    "out": "eredmenyek/M1-K1b.json"
+  },
+  "kezdet": "2026-10-01T12:54:55+0200",
+  "mintak": [
+    {
+      "minta": "a_azonos_prompt",
+      "sorok": [
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 0,
+          "gen_tok": 1,
+          "ms": 4463.8,
+          "futas": 1
+        },
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 804.8,
+          "futas": 2
+        },
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 801.3,
+          "futas": 3
+        },
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 809.0,
+          "futas": 4
+        }
+      ],
+      "metrics_delta": {
+        "prefix_cache_queries_total": 38792.0,
+        "prefix_cache_hits_total": 24000.0
+      }
+    },
+    {
+      "minta": "b_kozos_doksi_mas_kerdes",
+      "sorok": [
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 0,
+          "gen_tok": 1,
+          "ms": 3500.0,
+          "kor": 1,
+          "kerdes": 1
+        },
+        {
+          "prompt_tok": 9699,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 809.5,
+          "kor": 1,
+          "kerdes": 2
+        },
+        {
+          "prompt_tok": 9696,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 801.0,
+          "kor": 1,
+          "kerdes": 3
+        },
+        {
+          "prompt_tok": 9698,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 805.9,
+          "kor": 2,
+          "kerdes": 1
+        },
+        {
+          "prompt_tok": 9699,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 801.9,
+          "kor": 2,
+          "kerdes": 2
+        },
+        {
+          "prompt_tok": 9696,
+          "cached_tok": 8000,
+          "gen_tok": 1,
+          "ms": 799.9,
+          "kor": 2,
+          "kerdes": 3
+        }
+      ],
+      "metrics_delta": {
+        "prefix_cache_queries_total": 58186.0,
+        "prefix_cache_hits_total": 40000.0
+      }
+    },
+    {
+      "minta": "c_tobbkoros_chat",
+      "sorok": [
+        {
+          "prompt_tok": 3760,
+          "cached_tok": 0,
+          "gen_tok": 160,
+          "ms": 7448.3,
+          "kor": 1,
+          "valasz_hossz": 403
+        },
+        {
+          "prompt_tok": 3953,
+          "cached_tok": 1600,
+          "gen_tok": 97,
+          "ms": 4491.5,
+          "kor": 2,
+          "valasz_hossz": 232
+        },
+        {
+          "prompt_tok": 4078,
+          "cached_tok": 1600,
+          "gen_tok": 160,
+          "ms": 7068.4,
+          "kor": 3,
+          "valasz_hossz": 417
+        },
+        {
+          "prompt_tok": 4266,
+          "cached_tok": 1600,
+          "gen_tok": 160,
+          "ms": 7571.7,
+          "kor": 4,
+          "valasz_hossz": 444
+        },
+        {
+          "prompt_tok": 4454,
+          "cached_tok": 1600,
+          "gen_tok": 160,
+          "ms": 6521.1,
+          "kor": 5,
+          "valasz_hossz": 406
+        },
+        {
+          "prompt_tok": 4643,
+          "cached_tok": 1600,
+          "gen_tok": 69,
+          "ms": 3885.9,
+          "kor": 6,
+          "valasz_hossz": 213
+        }
+      ],
+      "metrics_delta": {
+        "prefix_cache_queries_total": 25154.0,
+        "prefix_cache_hits_total": 8000.0
+      }
+    },
+    {
+      "minta": "d_hosszu",
+      "sorok": [
+        {
+          "prompt_tok": 45642,
+          "cached_tok": 0,
+          "gen_tok": 1,
+          "ms": 16659.1,
+          "cel": "32K",
+          "futas": 1
+        },
+        {
+          "prompt_tok": 45642,
+          "cached_tok": 43200,
+          "gen_tok": 1,
+          "ms": 1103.0,
+          "cel": "32K",
+          "futas": 2
+        },
+        {
+          "prompt_tok": 85890,
+          "cached_tok": 0,
+          "gen_tok": 1,
+          "ms": 30961.9,
+          "cel": "60K",
+          "futas": 1
+        },
+        {
+          "prompt_tok": 85890,
+          "cached_tok": 83200,
+          "gen_tok": 1,
+          "ms": 1256.6,
+          "cel": "60K",
+          "futas": 2
+        }
+      ],
+      "metrics_delta": {
+        "prefix_cache_queries_total": 263064.0,
+        "prefix_cache_hits_total": 126400.0
+      }
+    }
+  ]
+}

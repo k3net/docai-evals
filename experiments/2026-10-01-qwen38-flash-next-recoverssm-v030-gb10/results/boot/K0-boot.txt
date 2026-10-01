@@ -1,0 +1,9 @@
+(APIServer pid=1) INFO 10-01 10:15:03 [arg_utils.py:2404] Hybrid model with EAGLE speculative decoding: defaulting prefix_cache_retention_interval to dense checkpointing.
+(EngineCore pid=369) INFO 10-01 10:15:15 [gpu_worker.py:429] Using V2 Model Runner
+(EngineCore pid=369) INFO 10-01 10:27:19 [interface.py:918] Setting attention block size to 1600 tokens to ensure that attention page size is >= mamba page size.
+(EngineCore pid=369) QSADET active: /opt/llm/kernel-det/_C_det.so
+(EngineCore pid=369) INFO 10-01 10:28:50 [model_runner.py:960] Graph capturing finished in 8 secs, took 0.31 GiB
+(EngineCore pid=369) INFO 10-01 10:28:51 [gpu_worker.py:625] Available KV cache memory: 12.25 GiB
+(EngineCore pid=369) INFO 10-01 10:28:51 [kv_cache_utils.py:2032] GPU KV cache size: 433,044 tokens, Maximum concurrency for 262,144 tokens per request: 1.65x
+(EngineCore pid=369) INFO 10-01 10:28:55 [model_runner.py:960] Graph capturing finished in 2 secs, took 0.13 GiB
+(EngineCore pid=369) INFO 10-01 10:28:55 [gpu_worker.py:860] Free memory on device (115.59/121.69 GiB) on startup. Desired GPU memory utilization is (0.78, 94.92 GiB). Actual usage is 80.58 GiB for consumed memory (weights + non-torch), 2.09 GiB for peak activation, and 0.13 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=12854818960` (11.97 GiB) to fit into

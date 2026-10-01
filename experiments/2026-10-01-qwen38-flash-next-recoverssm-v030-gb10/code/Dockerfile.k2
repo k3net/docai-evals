@@ -1,0 +1,10 @@
+# Round8 K2: K1 (blazux bb661c4, vLLM v0.30.0) + vllm#58863 @ c84caa4739 (RecoverSSM for Qwen GDN + PLE short conv)
+# backport a v0.30.0-ra (8 commit, a80e41d..3388ba1; csak Python, csrc-változás nincs).
+FROM qwen38-flash-dgx:v030-bb661c4
+ARG SP=/usr/local/lib/python3.12/dist-packages
+COPY pr58863-runtime.patch /tmp/pr58863-runtime.patch
+RUN cd ${SP} && patch -p1 --batch --forward --no-backup-if-mismatch < /tmp/pr58863-runtime.patch \
+ && ! find ${SP}/vllm -name "*.rej" | grep -q . \
+ && python3 -c "import dataclasses; from vllm.config.cache import CacheConfig; f={x.name for x in dataclasses.fields(CacheConfig)}; assert 'use_recoverssm' in f and 'use_kda_recoverssm' not in f, f; import vllm.model_executor.layers.mamba.gdn.recoverssm_gdn, vllm.v1.attention.backends.gdn_recoverssm, vllm.v1.attention.backends.ple_recoverssm, vllm.model_executor.layers.mamba.ops.recoverssm; print('pr58863 OK')" \
+ && rm /tmp/pr58863-runtime.patch
+LABEL docai.round8=K2 docai.pr58863=c84caa473949781bfdd3e4a201bfab2abd43a2db docai.base=qwen38-flash-dgx:v030-bb661c4

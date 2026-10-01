@@ -1,0 +1,58 @@
+elindult: r8-K0e port=8430 image=qwen38-flash-dgx:v029-parser1213-20260918 split=v029 retention=<nincs> trace=<nincs> cg=PIECEWISE extra=
+== K0e 18:08:20
+
+[e] K0e
+Traceback (most recent call last):
+  File "$HOME/experiments/round8/eszkozok/prefix_reuse_szonda.py", line 166, in <module>
+    main()
+  File "$HOME/experiments/round8/eszkozok/prefix_reuse_szonda.py", line 156, in main
+    ki["mintak"].append(minta("e_reszleges_prefix", url, fe))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$HOME/experiments/round8/eszkozok/prefix_reuse_szonda.py", line 66, in minta
+    m0 = metrikak(url)
+         ^^^^^^^^^^^^^
+  File "$HOME/experiments/round8/eszkozok/prefix_reuse_szonda.py", line 38, in metrikak
+    txt = urllib.request.urlopen(url.rstrip("/") + "/metrics", timeout=30).read().decode()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 1348, in do_open
+    r = h.getresponse()
+        ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1457, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+elindult: r8-K1e port=8431 image=qwen38-flash-dgx:v030-bb661c4 split=v030 retention=<nincs> trace=<nincs> cg=PIECEWISE extra=
+== K1e 18:12:08
+
+[e] K1e
+    A_86K          prompt= 85890 cached=     0 (  0.0%)    31749 ms
+    B_50K_resz     prompt= 50654 cached=     0 (  0.0%)    18003 ms
+    B_50K_resz#2   prompt= 50654 cached= 48000 ( 94.8%)     1172 ms
+    C_86K_mas_kerdes prompt= 85888 cached= 83200 ( 96.9%)     1264 ms
+  [e_reszleges_prefix] /metrics delta: queries=273086.0 hits=131200.0
+
+[>] eredmenyek/M1e-K1e.json
+== M1E KESZ 18:13:03

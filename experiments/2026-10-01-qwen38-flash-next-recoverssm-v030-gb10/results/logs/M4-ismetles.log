@@ -1,0 +1,35 @@
+== zöld 2026-10-01T13:05:43+02:00
+zold #1 62 passed, 14 warnings in 16.08s
+zold #2 62 passed, 14 warnings in 10.62s
+zold #3 62 passed, 14 warnings in 11.54s
+zold #4 62 passed, 14 warnings in 11.43s
+zold #5 62 passed, 14 warnings in 10.60s
+zold #6 62 passed, 14 warnings in 11.57s
+zold #7 62 passed, 14 warnings in 10.66s
+zold #8 62 passed, 14 warnings in 10.65s
+zold #9 62 passed, 14 warnings in 11.66s
+zold #10 62 passed, 14 warnings in 10.66s
+zold #11 62 passed, 14 warnings in 11.68s
+zold #12 62 passed, 14 warnings in 10.52s
+zold #13 62 passed, 14 warnings in 11.71s
+zold #14 62 passed, 14 warnings in 10.60s
+zold #15 62 passed, 14 warnings in 11.69s
+zold #16 62 passed, 14 warnings in 10.62s
+zold #17 62 passed, 14 warnings in 11.51s
+zold #18 62 passed, 14 warnings in 10.49s
+zold #19 62 passed, 14 warnings in 11.57s
+zold #20 62 passed, 14 warnings in 10.48s
+== piros 2026-10-01T13:11:14+02:00
+piros #1 4 failed, 58 passed, 14 warnings in 15.35s
+piros #2 1 failed, 61 passed, 14 warnings in 11.60s
+piros #3 3 failed, 59 passed, 14 warnings in 11.79s
+piros #4 1 failed, 61 passed, 14 warnings in 11.61s
+piros #5 1 failed, 61 passed, 14 warnings in 11.54s
+piros #6 2 failed, 60 passed, 14 warnings in 11.59s
+piros #7 62 passed, 14 warnings in 10.61s
+piros #8 1 failed, 61 passed, 14 warnings in 10.72s
+piros #9 1 failed, 61 passed, 14 warnings in 11.60s
+piros #10 62 passed, 14 warnings in 11.48s
+piros #11 62 passed, 14 warnings in 10.62s
+piros #12 1 failed, 61 passed, 14 warnings in 11.60s
+== KESZ 2026-10-01T13:14:38+02:00
