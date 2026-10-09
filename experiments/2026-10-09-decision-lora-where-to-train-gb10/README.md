@@ -119,6 +119,8 @@ Full sheets (Hungarian): [results/r00/eredmenylap.md](results/r00/eredmenylap.md
 
 ⚠ precision failure. A coverage/ceiling ratio above 1 means the arm assigns "none of these" items to a tool.
 
+![Risk–coverage curves of both rounds: the adapter's curves run below the calibrated base model's on invoice lines and above it on tool selection](figures/1_risk_coverage_en.png)
+
 - **H1 refuted on both endpoints.** Coverage +4.9 points [3.6; 6.6], but precision fails for every seed
   (0.83–0.85); AURC is significantly better for the base model (+0.0279 [0.0219; 0.034]). Cut to a common
   coverage it is the same: at 50 % coverage the error rate is 4.9 % for L1★ and 7.3–8.0 % for L3.
@@ -150,6 +152,8 @@ these" items:
 | BFCL-live irrelevance | 875 | 0.657 / 0.331 | 0.504–0.560 / 0.432–0.482 |
 | When2Call "cannot answer" | 1 035 | 0.775 / 0.210 | 0.689–0.730 / 0.269–0.309 |
 
+![Recognising "none of these": 43 % → 94–97 % on round 1's forced cases; lower with the adapter on all three kinds of genuine irrelevance in round 2](figures/2_none_of_these_en.png)
+
 80 % of the training "none of these" items were forced: the same request with the right tool removed. What that
 teaches is "if a similar tool is listed, call it". The test put genuinely irrelevant requests next to close but
 wrong tools. In round 1 the test's "none of these" items were forced in exactly the training's way, so the same
@@ -178,6 +182,8 @@ tracks) and compared on the 2 328 When2Call items that our round-2 test shares w
 | **L1★ calibrated base** | **0.964** | 8.6 % | **14.1 %** | 22.5 % |
 | L3 (3 seeds) | 0.945–0.959 | 9.5–11.7 % | 15.7–17.3 % | 27–31 % |
 | JEV-27B | 0.949 | 9.7 % | 37.3 % | 6.2 % |
+
+![False calls at 95 % recall of correct calls on the 2 328 shared When2Call items, with AUROC: L1★ 14.1 %, L3 15.7–17.3 %, JEV models 33–37 %](figures/3_jev_en.png)
 
 JEV-27B's low call rate is a more cautious operating point, not a better separation: it also skips 13 % of the
 correct calls. Threshold-free it lands at our adapter's level, and both fall short of the calibrated base model.
@@ -259,4 +265,5 @@ protocol/   both pre-registered runbooks with their logs, the round-2 draft befo
 code/       eszkozok/ (round 1 + shared: generator, read-out, training, analysis) · kor01/eszkozok/ (round 2) · verify_package.py
 dataset/    r00/ the three evaluation splits of hu-invoice-catalog-decisions · r01/ full Hungarian rows, reference rows, catalogue
 results/    r00/ result sheet, analyses, 00b, perf, read-outs · r01/ result sheet, analyses, H4, arm selection, read-outs · f5b/ JEV
+figures/    the study's three figures (English), drawn from the published read-outs
 ```

@@ -947,3 +947,39 @@ leíróan jelentve, ítélet nélkül.
   - **Nyitott:** a hivatkozott `docai-evals/experiments/2026-10-09-decision-lora-where-to-train-gb10` mappa még nem
     létezik (a link addig 404). Hozzá Dani döntése kell a T-hu `forras: gepi` címkéiről. A commitot és a deployt Dani
     kezeli.
+- **2026-10-09 — A docai-evals mérési csomag összeállítva (`experiments/2026-10-09-decision-lora-where-to-train-gb10`,
+  commit nélkül).**
+  - **Szerkezet** (a CJK-kör mintájára; forrás: `publikacio/docai-evals/`, csomagoló:
+    `eszkozok/docai_evals_csomag.py`):
+    - `protocol/`: a két runbook, a v0.1-es vázlat, két jegyzőkönyv és az F4-értelmezés, kitakarva;
+    - `code/`: `eszkozok/`, `kor01/eszkozok/` és `verify_package.py`;
+    - `dataset/`: r00 = a HF három kiértékelő splitje, r01 = magyar teljes sorok + hivatkozási sorok + katalógus;
+    - `results/`: eredménylapok, elemzések, H4, F3, F5b, a két kör itemenkénti kiolvasásai;
+    - mellette README (EN), eval-card, decision-record, `corpus_manifest.json`.
+    - Mérete 24 MB, 173 fájl. A gyökér-README, a README.hu és a `docs/blog-index.md` egy-egy sorral bővült.
+  - **A `forras: gepi` címkék** a 8. pont előírása szerint jelölve kerülnek be, nem Dani-döntésre várva.
+    - A gépi-only bejegyzések mind kétértelmű-jelölések, ezért nem pontozottak.
+    - Minden címkejavítás emberi megerősítésű (`gepi+dani` vagy `dani`).
+  - **Hivatkozási sorok:** a BFCL, a When2Call és az xLAM sorai csak azonosítóval, sha256-tal és álnevesített
+    eszköznévvel kerülnek be. Az álnév képlete: `t_` + sha256(só + név)[:12].
+    - Ok: a BFCL a 8. pont szerint csak teszt; a When2Call-teszt BFCL-live-ból épült; az xLAM DeepSeek-V2
+      generátor-licence nincs ellenőrizve.
+    - A kiolvasások ugyanazt az álnevet viselik.
+  - **Kitakarás:**
+    - a tenant neve és adatbázisa;
+    - az ügyfél-azonosító alkategórianév (00 Napló, 2026-10-04);
+    - termékkód-útvonalak;
+    - gépnevek.
+    - Az `auditok.py` valószerűségi auditjában a termék-sémát mutató SQL helyett fájlbeolvasás áll.
+    - Kimarad a `tenant_profil.py`, a `sync.sh`, a `reboot_hook.sh`, a licenc- és szerződésjegyzet és a backlog-jegyzet.
+    - A csomagoló tiltottminta-ellenőrzése üres.
+  - **Ellenőrzés:**
+    - `code/verify_package.py` a publikált kiolvasásokból újraszámolja mindkét kör L0/L1★/L3 pontbecsléseit;
+      1491 közölt számból 0 tér el (1e-9).
+    - A manifest-hash-ek, a HF-manifest és az eval-card séma (`--strict`) is rendben.
+  - **Javítás a docai_web-en:** a jelentés melléklete az 1. kör adatkészletét Apache-2.0-nak írta; helyesen
+    CC-BY-4.0 (az adapter Apache-2.0). A melléklet a bővebb csomagtartalmat is leírja.
+  - **Nyitott:**
+    - a docai-evals és a docai_web commitja, deployja (Dani);
+    - commit után `php artisan sitemap:generate`;
+    - az xLAM generátor-licencének ellenőrzése, a 01 HF-adatkártyája előtt.
