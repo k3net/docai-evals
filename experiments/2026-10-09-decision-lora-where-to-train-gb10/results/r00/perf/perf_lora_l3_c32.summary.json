@@ -1,0 +1,11 @@
+{
+  "n": 512,
+  "acc": 0.919921875,
+  "missing_rows": 0,
+  "fingerprint": "0c6d1779379f5cb4c08f21f522de695de110e092b3329cb0cf63928045ec381c",
+  "wall_s": 33.66578507423401,
+  "model": "l3mixse_h2_s3",
+  "perms": [
+    0
+  ]
+}

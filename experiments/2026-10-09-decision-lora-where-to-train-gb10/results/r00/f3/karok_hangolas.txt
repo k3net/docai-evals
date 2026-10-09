@@ -1,0 +1,3 @@
+l3mixse_h1_s1|mix+se|none|--seed 1 --lr 2e-4
+l3mixse_h2_s1|mix+se|none|--seed 1 --eps 0.05
+l3mixse_h3_s1|mix+se|none|--seed 1 --epochs 2

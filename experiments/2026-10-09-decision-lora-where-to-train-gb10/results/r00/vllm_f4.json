@@ -1,0 +1,2451 @@
+{
+  "motor": "vllm",
+  "bemenetek": {
+    "items": "adat/f1",
+    "motor": "vllm",
+    "l0_val": "eredmenyek/F4/vllm/l0_val.jsonl",
+    "l0_test": "eredmenyek/F4/vllm/l0_test.jsonl",
+    "l0r_test": "eredmenyek/F4/vllm/l0r_test.jsonl",
+    "l3": [
+      "s1:eredmenyek/F4/vllm/l3_s1_val.jsonl:eredmenyek/F4/vllm/l3_s1_test.jsonl",
+      "s2:eredmenyek/F4/vllm/l3_s2_val.jsonl:eredmenyek/F4/vllm/l3_s2_test.jsonl",
+      "s3:eredmenyek/F4/vllm/l3_s3_val.jsonl:eredmenyek/F4/vllm/l3_s3_test.jsonl"
+    ],
+    "l2a": "",
+    "reps": 10000,
+    "seed": 0,
+    "out": "eredmenyek/F4/vllm_f4.json"
+  },
+  "n_val": 1006,
+  "n_teszt": 3534,
+  "L1_temperature": 1.337468180433225,
+  "pont": {
+    "L0": {
+      "95": {
+        "tau": 0.9223669958073702,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.5648484848484848,
+          "besorolasi_precizitas": 0.9678111587982833,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.5931206297722728,
+          "aurc": 0.03951716643517242,
+          "ece": 0.04996347751575879,
+          "pontossag": 0.7903030303030303,
+          "dontesi_lefedettseg": 0.5709090909090909,
+          "dontesi_precizitas": 0.9681528662420382,
+          "x_precizitas": 0.7906976744186046,
+          "x_fedes": 0.3487179487179487,
+          "ketertelmu_atlepes": 0.3259668508287293
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.5963576158940397,
+          "besorolasi_precizitas": 0.9566907273736813,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6014926062577309,
+          "aurc": 0.03702998702260706,
+          "ece": 0.04781779184760072,
+          "pontossag": 0.8066225165562914,
+          "dontesi_lefedettseg": 0.6112582781456953,
+          "dontesi_precizitas": 0.957204767063922,
+          "x_precizitas": 0.8502994011976048,
+          "x_fedes": 0.3853459972862958,
+          "ketertelmu_atlepes": 0.3326848249027237
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.6198547215496368,
+            "besorolasi_precizitas": 0.96875,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6654982014862202,
+            "aurc": 0.03368045838549456,
+            "ece": 0.05806720261582985,
+            "pontossag": 0.7990314769975787,
+            "dontesi_lefedettseg": 0.6343825665859564,
+            "dontesi_precizitas": 0.9694656488549618,
+            "x_precizitas": 0.775,
+            "x_fedes": 0.3333333333333333,
+            "ketertelmu_atlepes": 0.4098360655737705
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.5480059084194978,
+            "besorolasi_precizitas": 0.9595687331536388,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.5534900971986547,
+            "aurc": 0.03829392174991994,
+            "ece": 0.0305608539637881,
+            "pontossag": 0.8072378138847858,
+            "dontesi_lefedettseg": 0.5605612998522895,
+            "dontesi_precizitas": 0.9591567852437418,
+            "x_precizitas": 0.8363636363636363,
+            "x_fedes": 0.41317365269461076,
+            "ketertelmu_atlepes": 0.315018315018315
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.6355140186915887,
+            "besorolasi_precizitas": 0.9240196078431373,
+            "precizitas_bukas": true,
+            "ertek_sulyozott_lefedettseg": 0.6061612904611922,
+            "aurc": 0.05454646622650056,
+            "ece": 0.09633622470772417,
+            "pontossag": 0.7725856697819314,
+            "dontesi_lefedettseg": 0.6495327102803738,
+            "dontesi_precizitas": 0.9256594724220624,
+            "x_precizitas": 0.8727272727272727,
+            "x_fedes": 0.2926829268292683,
+            "ketertelmu_atlepes": 0.2857142857142857
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.646481178396072,
+            "besorolasi_precizitas": 0.9772151898734177,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6763524777013856,
+            "aurc": 0.02028647015376472,
+            "ece": 0.04353078980525986,
+            "pontossag": 0.8461538461538461,
+            "dontesi_lefedettseg": 0.6677577741407529,
+            "dontesi_precizitas": 0.9779411764705882,
+            "x_precizitas": 0.9054054054054054,
+            "x_fedes": 0.4589041095890411,
+            "ketertelmu_atlepes": 0.3902439024390244
+          }
+        }
+      },
+      "90": {
+        "tau": 0.7892012982561428,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.6654545454545454,
+          "besorolasi_precizitas": 0.9216757741347905,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7660541445584391,
+          "aurc": 0.03951716643517242,
+          "ece": 0.04996347751575879,
+          "pontossag": 0.7903030303030303,
+          "dontesi_lefedettseg": 0.6836363636363636,
+          "dontesi_precizitas": 0.9219858156028369,
+          "x_precizitas": 0.7906976744186046,
+          "x_fedes": 0.3487179487179487,
+          "ketertelmu_atlepes": 0.4585635359116022
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.6887417218543046,
+          "besorolasi_precizitas": 0.9322115384615385,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6887878225062752,
+          "aurc": 0.03702998702260706,
+          "ece": 0.04781779184760072,
+          "pontossag": 0.8066225165562914,
+          "dontesi_lefedettseg": 0.7221854304635762,
+          "dontesi_precizitas": 0.9335167354424576,
+          "x_precizitas": 0.8502994011976048,
+          "x_fedes": 0.3853459972862958,
+          "ketertelmu_atlepes": 0.4455252918287938
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7021791767554479,
+            "besorolasi_precizitas": 0.9310344827586207,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6952268435933252,
+            "aurc": 0.03368045838549456,
+            "ece": 0.05806720261582985,
+            "pontossag": 0.7990314769975787,
+            "dontesi_lefedettseg": 0.7288135593220338,
+            "dontesi_precizitas": 0.9335548172757475,
+            "x_precizitas": 0.775,
+            "x_fedes": 0.3333333333333333,
+            "ketertelmu_atlepes": 0.47540983606557374
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.6528803545051699,
+            "besorolasi_precizitas": 0.9366515837104072,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6657426341418253,
+            "aurc": 0.03829392174991994,
+            "ece": 0.0305608539637881,
+            "pontossag": 0.8072378138847858,
+            "dontesi_lefedettseg": 0.6875923190546529,
+            "dontesi_precizitas": 0.9366272824919442,
+            "x_precizitas": 0.8363636363636363,
+            "x_fedes": 0.41317365269461076,
+            "ketertelmu_atlepes": 0.43223443223443225
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7227414330218068,
+            "besorolasi_precizitas": 0.9008620689655172,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7047441841111711,
+            "aurc": 0.05454646622650056,
+            "ece": 0.09633622470772417,
+            "pontossag": 0.7725856697819314,
+            "dontesi_lefedettseg": 0.7507788161993769,
+            "dontesi_precizitas": 0.9024896265560166,
+            "x_precizitas": 0.8727272727272727,
+            "x_fedes": 0.2926829268292683,
+            "ketertelmu_atlepes": 0.40816326530612246
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.723404255319149,
+            "besorolasi_precizitas": 0.9570135746606335,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7358186835195195,
+            "aurc": 0.02028647015376472,
+            "ece": 0.04353078980525986,
+            "pontossag": 0.8461538461538461,
+            "dontesi_lefedettseg": 0.7643207855973814,
+            "dontesi_precizitas": 0.9593147751605996,
+            "x_precizitas": 0.9054054054054054,
+            "x_fedes": 0.4589041095890411,
+            "ketertelmu_atlepes": 0.5121951219512195
+          }
+        }
+      }
+    },
+    "L1csillag": {
+      "95": {
+        "tau": 0.7983409876632919,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.5842424242424242,
+          "besorolasi_precizitas": 0.966804979253112,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7151933764489897,
+          "aurc": 0.031280561367087484,
+          "ece": 0.05370048876868378,
+          "pontossag": 0.8181818181818182,
+          "dontesi_lefedettseg": 0.5915151515151515,
+          "dontesi_precizitas": 0.9672131147540983,
+          "x_precizitas": 0.8555555555555555,
+          "x_fedes": 0.39487179487179486,
+          "ketertelmu_atlepes": 0.3259668508287293
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.6155629139072848,
+          "besorolasi_precizitas": 0.9752555137170522,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6072314377830618,
+          "aurc": 0.027260256551379914,
+          "ece": 0.04331308149860755,
+          "pontossag": 0.8304635761589404,
+          "dontesi_lefedettseg": 0.6301324503311259,
+          "dontesi_precizitas": 0.9758276405675249,
+          "x_precizitas": 0.8913649025069638,
+          "x_fedes": 0.43419267299864317,
+          "ketertelmu_atlepes": 0.36186770428015563
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.639225181598063,
+            "besorolasi_precizitas": 0.9772727272727273,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6793448969260716,
+            "aurc": 0.022789926345130527,
+            "ece": 0.057907805751750877,
+            "pontossag": 0.8280871670702179,
+            "dontesi_lefedettseg": 0.6513317191283293,
+            "dontesi_precizitas": 0.9776951672862454,
+            "x_precizitas": 0.8604651162790697,
+            "x_fedes": 0.3978494623655914,
+            "ketertelmu_atlepes": 0.47540983606557374
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.5723781388478582,
+            "besorolasi_precizitas": 0.9806451612903225,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.5274178352909121,
+            "aurc": 0.027458742940075522,
+            "ece": 0.062215953686473036,
+            "pontossag": 0.827917282127031,
+            "dontesi_lefedettseg": 0.5827178729689808,
+            "dontesi_precizitas": 0.9809885931558935,
+            "x_precizitas": 0.8823529411764706,
+            "x_fedes": 0.4491017964071856,
+            "ketertelmu_atlepes": 0.34065934065934067
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.6433021806853583,
+            "besorolasi_precizitas": 0.9515738498789347,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6308890747424635,
+            "aurc": 0.042945090534674324,
+            "ece": 0.04003828447849464,
+            "pontossag": 0.794392523364486,
+            "dontesi_lefedettseg": 0.6573208722741433,
+            "dontesi_precizitas": 0.95260663507109,
+            "x_precizitas": 0.8548387096774194,
+            "x_fedes": 0.3231707317073171,
+            "ketertelmu_atlepes": 0.32653061224489793
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.6661211129296236,
+            "besorolasi_precizitas": 0.9877149877149877,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6991239928930106,
+            "aurc": 0.013848245418200214,
+            "ece": 0.059516111033742956,
+            "pontossag": 0.8756137479541735,
+            "dontesi_lefedettseg": 0.6923076923076923,
+            "dontesi_precizitas": 0.9881796690307328,
+            "x_precizitas": 0.9523809523809523,
+            "x_fedes": 0.547945205479452,
+            "ketertelmu_atlepes": 0.3902439024390244
+          }
+        }
+      },
+      "90": {
+        "tau": 0.5638919919873966,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7418181818181818,
+          "besorolasi_precizitas": 0.9215686274509803,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.839616171738759,
+          "aurc": 0.031280561367087484,
+          "ece": 0.05370048876868378,
+          "pontossag": 0.8181818181818182,
+          "dontesi_lefedettseg": 0.7684848484848484,
+          "dontesi_precizitas": 0.9227129337539433,
+          "x_precizitas": 0.8555555555555555,
+          "x_fedes": 0.39487179487179486,
+          "ketertelmu_atlepes": 0.5359116022099447
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7543046357615895,
+          "besorolasi_precizitas": 0.9280070237050044,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7345987835476373,
+          "aurc": 0.027260256551379914,
+          "ece": 0.04331308149860755,
+          "pontossag": 0.8304635761589404,
+          "dontesi_lefedettseg": 0.7986754966887417,
+          "dontesi_precizitas": 0.9303482587064676,
+          "x_precizitas": 0.8913649025069638,
+          "x_fedes": 0.43419267299864317,
+          "ketertelmu_atlepes": 0.5428015564202334
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7627118644067796,
+            "besorolasi_precizitas": 0.9396825396825397,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7697992275950958,
+            "aurc": 0.022789926345130527,
+            "ece": 0.057907805751750877,
+            "pontossag": 0.8280871670702179,
+            "dontesi_lefedettseg": 0.7990314769975787,
+            "dontesi_precizitas": 0.9393939393939394,
+            "x_precizitas": 0.8604651162790697,
+            "x_fedes": 0.3978494623655914,
+            "ketertelmu_atlepes": 0.6557377049180327
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.7311669128508124,
+            "besorolasi_precizitas": 0.9363636363636364,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6727920914211329,
+            "aurc": 0.027458742940075522,
+            "ece": 0.062215953686473036,
+            "pontossag": 0.827917282127031,
+            "dontesi_lefedettseg": 0.7776957163958641,
+            "dontesi_precizitas": 0.9373219373219374,
+            "x_precizitas": 0.8823529411764706,
+            "x_fedes": 0.4491017964071856,
+            "ketertelmu_atlepes": 0.5274725274725275
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7741433021806854,
+            "besorolasi_precizitas": 0.8853118712273642,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7615617178729513,
+            "aurc": 0.042945090534674324,
+            "ece": 0.04003828447849464,
+            "pontossag": 0.794392523364486,
+            "dontesi_lefedettseg": 0.8099688473520249,
+            "dontesi_precizitas": 0.8903846153846153,
+            "x_precizitas": 0.8548387096774194,
+            "x_fedes": 0.3231707317073171,
+            "ketertelmu_atlepes": 0.5102040816326531
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.779050736497545,
+            "besorolasi_precizitas": 0.9474789915966386,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7972829431218488,
+            "aurc": 0.013848245418200214,
+            "ece": 0.059516111033742956,
+            "pontossag": 0.8756137479541735,
+            "dontesi_lefedettseg": 0.8330605564648118,
+            "dontesi_precizitas": 0.9508840864440079,
+            "x_precizitas": 0.9523809523809523,
+            "x_fedes": 0.547945205479452,
+            "ketertelmu_atlepes": 0.5487804878048781
+          }
+        }
+      }
+    },
+    "L3_s1": {
+      "95": {
+        "tau": 0.2748952545190677,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7575757575757576,
+          "besorolasi_precizitas": 0.9696,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7691898927508467,
+          "aurc": 0.0009540409211301281,
+          "ece": 0.014417414991711357,
+          "pontossag": 0.9587878787878787,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9587878787878787,
+          "x_precizitas": 0.925,
+          "x_fedes": 0.9487179487179487,
+          "ketertelmu_atlepes": 0.7955801104972375
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7506622516556292,
+          "besorolasi_precizitas": 0.9810322011468902,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7314604682217326,
+          "aurc": 0.001894462677817274,
+          "ece": 0.010857440166003502,
+          "pontossag": 0.9705298013245033,
+          "dontesi_lefedettseg": 0.9996688741721854,
+          "dontesi_precizitas": 0.9708512752567076,
+          "x_precizitas": 0.9401595744680851,
+          "x_fedes": 0.9592944369063772,
+          "ketertelmu_atlepes": 0.7976653696498055
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7723970944309927,
+            "besorolasi_precizitas": 0.987460815047022,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7453263362416663,
+            "aurc": 0.0005899695969827639,
+            "ece": 0.012067078104090752,
+            "pontossag": 0.9830508474576272,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9830508474576272,
+            "x_precizitas": 0.9680851063829787,
+            "x_fedes": 0.978494623655914,
+            "ketertelmu_atlepes": 0.8688524590163934
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.742245199409158,
+            "besorolasi_precizitas": 0.9800995024875622,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7036662443538446,
+            "aurc": 0.0027098605166255762,
+            "ece": 0.014965857993757993,
+            "pontossag": 0.965288035450517,
+            "dontesi_lefedettseg": 0.9992614475627769,
+            "dontesi_precizitas": 0.9660014781966001,
+            "x_precizitas": 0.9252873563218391,
+            "x_fedes": 0.9640718562874252,
+            "ketertelmu_atlepes": 0.7802197802197802
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7461059190031153,
+            "besorolasi_precizitas": 0.9728601252609603,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.717423074276698,
+            "aurc": 0.0030818401368142914,
+            "ece": 0.017558332204016137,
+            "pontossag": 0.9641744548286605,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9641744548286605,
+            "x_precizitas": 0.9386503067484663,
+            "x_fedes": 0.9329268292682927,
+            "ketertelmu_atlepes": 0.7857142857142857
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7594108019639935,
+            "besorolasi_precizitas": 0.9870689655172413,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7687703462640532,
+            "aurc": 0.00014971798667097003,
+            "ece": 0.011131748991031627,
+            "pontossag": 0.9803600654664485,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9803600654664485,
+            "x_precizitas": 0.9591836734693877,
+            "x_fedes": 0.9657534246575342,
+            "ketertelmu_atlepes": 0.8170731707317073
+          }
+        }
+      },
+      "90": {
+        "tau": 0.2748952545190677,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7575757575757576,
+          "besorolasi_precizitas": 0.9696,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7691898927508467,
+          "aurc": 0.0009540409211301281,
+          "ece": 0.014417414991711357,
+          "pontossag": 0.9587878787878787,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9587878787878787,
+          "x_precizitas": 0.925,
+          "x_fedes": 0.9487179487179487,
+          "ketertelmu_atlepes": 0.7955801104972375
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7506622516556292,
+          "besorolasi_precizitas": 0.9810322011468902,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7314604682217326,
+          "aurc": 0.001894462677817274,
+          "ece": 0.010857440166003502,
+          "pontossag": 0.9705298013245033,
+          "dontesi_lefedettseg": 0.9996688741721854,
+          "dontesi_precizitas": 0.9708512752567076,
+          "x_precizitas": 0.9401595744680851,
+          "x_fedes": 0.9592944369063772,
+          "ketertelmu_atlepes": 0.7976653696498055
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7723970944309927,
+            "besorolasi_precizitas": 0.987460815047022,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7453263362416663,
+            "aurc": 0.0005899695969827639,
+            "ece": 0.012067078104090752,
+            "pontossag": 0.9830508474576272,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9830508474576272,
+            "x_precizitas": 0.9680851063829787,
+            "x_fedes": 0.978494623655914,
+            "ketertelmu_atlepes": 0.8688524590163934
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.742245199409158,
+            "besorolasi_precizitas": 0.9800995024875622,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7036662443538446,
+            "aurc": 0.0027098605166255762,
+            "ece": 0.014965857993757993,
+            "pontossag": 0.965288035450517,
+            "dontesi_lefedettseg": 0.9992614475627769,
+            "dontesi_precizitas": 0.9660014781966001,
+            "x_precizitas": 0.9252873563218391,
+            "x_fedes": 0.9640718562874252,
+            "ketertelmu_atlepes": 0.7802197802197802
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7461059190031153,
+            "besorolasi_precizitas": 0.9728601252609603,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.717423074276698,
+            "aurc": 0.0030818401368142914,
+            "ece": 0.017558332204016137,
+            "pontossag": 0.9641744548286605,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9641744548286605,
+            "x_precizitas": 0.9386503067484663,
+            "x_fedes": 0.9329268292682927,
+            "ketertelmu_atlepes": 0.7857142857142857
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7594108019639935,
+            "besorolasi_precizitas": 0.9870689655172413,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7687703462640532,
+            "aurc": 0.00014971798667097003,
+            "ece": 0.011131748991031627,
+            "pontossag": 0.9803600654664485,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9803600654664485,
+            "x_precizitas": 0.9591836734693877,
+            "x_fedes": 0.9657534246575342,
+            "ketertelmu_atlepes": 0.8170731707317073
+          }
+        }
+      }
+    },
+    "L3_s2": {
+      "95": {
+        "tau": 0.3364250174613652,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7684848484848484,
+          "besorolasi_precizitas": 0.9652996845425867,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7554732138536668,
+          "aurc": 0.0013144764807994102,
+          "ece": 0.020461136880825202,
+          "pontossag": 0.9563636363636364,
+          "dontesi_lefedettseg": 0.9975757575757576,
+          "dontesi_precizitas": 0.9586877278250304,
+          "x_precizitas": 0.9365079365079365,
+          "x_fedes": 0.9076923076923077,
+          "ketertelmu_atlepes": 0.8287292817679558
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7612582781456954,
+          "besorolasi_precizitas": 0.973466724662897,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7455399842866636,
+          "aurc": 0.00226063153232257,
+          "ece": 0.00789009065154501,
+          "pontossag": 0.9705298013245033,
+          "dontesi_lefedettseg": 0.9990066225165563,
+          "dontesi_precizitas": 0.9714948624461386,
+          "x_precizitas": 0.9638386648122392,
+          "x_fedes": 0.9402985074626866,
+          "ketertelmu_atlepes": 0.8015564202334631
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7796610169491526,
+            "besorolasi_precizitas": 0.9813664596273292,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.744873682606834,
+            "aurc": 0.00251983088104253,
+            "ece": 0.015707726569547546,
+            "pontossag": 0.9782082324455206,
+            "dontesi_lefedettseg": 0.9975786924939467,
+            "dontesi_precizitas": 0.9805825242718447,
+            "x_precizitas": 0.9777777777777777,
+            "x_fedes": 0.946236559139785,
+            "ketertelmu_atlepes": 0.8524590163934426
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.757754800590842,
+            "besorolasi_precizitas": 0.9707602339181286,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7308360760128766,
+            "aurc": 0.0021521380723513637,
+            "ece": 0.011665278964759305,
+            "pontossag": 0.9689807976366323,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9689807976366323,
+            "x_precizitas": 0.9634146341463414,
+            "x_fedes": 0.9461077844311377,
+            "ketertelmu_atlepes": 0.7875457875457875
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7523364485981309,
+            "besorolasi_precizitas": 0.9627329192546584,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7233510128974244,
+            "aurc": 0.003992598623392523,
+            "ece": 0.018621219497849704,
+            "pontossag": 0.9579439252336449,
+            "dontesi_lefedettseg": 0.9984423676012462,
+            "dontesi_precizitas": 0.9594383775351014,
+            "x_precizitas": 0.9433962264150944,
+            "x_fedes": 0.9146341463414634,
+            "ketertelmu_atlepes": 0.8163265306122449
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7659574468085106,
+            "besorolasi_precizitas": 0.9850427350427351,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7762172176337251,
+            "aurc": 0.0005083507049988264,
+            "ece": 0.008330766624576005,
+            "pontossag": 0.9819967266775778,
+            "dontesi_lefedettseg": 0.9983633387888707,
+            "dontesi_precizitas": 0.9836065573770492,
+            "x_precizitas": 0.9788732394366197,
+            "x_fedes": 0.952054794520548,
+            "ketertelmu_atlepes": 0.7926829268292683
+          }
+        }
+      },
+      "90": {
+        "tau": 0.16471789187139887,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7709090909090909,
+          "besorolasi_precizitas": 0.9622641509433962,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7582622142326454,
+          "aurc": 0.0013144764807994102,
+          "ece": 0.020461136880825202,
+          "pontossag": 0.9563636363636364,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9563636363636364,
+          "x_precizitas": 0.9365079365079365,
+          "x_fedes": 0.9076923076923077,
+          "ketertelmu_atlepes": 0.861878453038674
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7619205298013245,
+          "besorolasi_precizitas": 0.9726205997392438,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7467319154684926,
+          "aurc": 0.00226063153232257,
+          "ece": 0.00789009065154501,
+          "pontossag": 0.9705298013245033,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9705298013245033,
+          "x_precizitas": 0.9638386648122392,
+          "x_fedes": 0.9402985074626866,
+          "ketertelmu_atlepes": 0.8385214007782101
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7820823244552058,
+            "besorolasi_precizitas": 0.978328173374613,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7502940151150236,
+            "aurc": 0.00251983088104253,
+            "ece": 0.015707726569547546,
+            "pontossag": 0.9782082324455206,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9782082324455206,
+            "x_precizitas": 0.9777777777777777,
+            "x_fedes": 0.946236559139785,
+            "ketertelmu_atlepes": 0.9016393442622951
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.757754800590842,
+            "besorolasi_precizitas": 0.9707602339181286,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7308360760128766,
+            "aurc": 0.0021521380723513637,
+            "ece": 0.011665278964759305,
+            "pontossag": 0.9689807976366323,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9689807976366323,
+            "x_precizitas": 0.9634146341463414,
+            "x_fedes": 0.9461077844311377,
+            "ketertelmu_atlepes": 0.8315018315018315
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7523364485981309,
+            "besorolasi_precizitas": 0.9627329192546584,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7233510128974244,
+            "aurc": 0.003992598623392523,
+            "ece": 0.018621219497849704,
+            "pontossag": 0.9579439252336449,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9579439252336449,
+            "x_precizitas": 0.9433962264150944,
+            "x_fedes": 0.9146341463414634,
+            "ketertelmu_atlepes": 0.8367346938775511
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7675941080196399,
+            "besorolasi_precizitas": 0.9829424307036247,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.779388645908854,
+            "aurc": 0.0005083507049988264,
+            "ece": 0.008330766624576005,
+            "pontossag": 0.9819967266775778,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9819967266775778,
+            "x_precizitas": 0.9788732394366197,
+            "x_fedes": 0.952054794520548,
+            "ketertelmu_atlepes": 0.8170731707317073
+          }
+        }
+      }
+    },
+    "L3_s3": {
+      "95": {
+        "tau": 0.34332694239039263,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7490909090909091,
+          "besorolasi_precizitas": 0.9741100323624595,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.763243683582743,
+          "aurc": 0.0005008941878650844,
+          "ece": 0.018179228077758066,
+          "pontossag": 0.953939393939394,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.953939393939394,
+          "x_precizitas": 0.893719806763285,
+          "x_fedes": 0.9487179487179487,
+          "ketertelmu_atlepes": 0.8066298342541437
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7453642384105961,
+          "besorolasi_precizitas": 0.9822301199466904,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7223059831077133,
+          "aurc": 0.0011624985254507292,
+          "ece": 0.00995222617463518,
+          "pontossag": 0.9692052980132451,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9692052980132451,
+          "x_precizitas": 0.9310793237971391,
+          "x_fedes": 0.9715061058344641,
+          "ketertelmu_atlepes": 0.7723735408560312
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7723970944309927,
+            "besorolasi_precizitas": 0.987460815047022,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7458577438526715,
+            "aurc": 0.0011796106877410908,
+            "ece": 0.014345871016888107,
+            "pontossag": 0.9830508474576272,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9830508474576272,
+            "x_precizitas": 0.9680851063829787,
+            "x_fedes": 0.978494623655914,
+            "ketertelmu_atlepes": 0.8360655737704918
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.7378138847858198,
+            "besorolasi_precizitas": 0.9819819819819819,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6857834381226567,
+            "aurc": 0.00062014876050085,
+            "ece": 0.012657535731494562,
+            "pontossag": 0.965288035450517,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.965288035450517,
+            "x_precizitas": 0.9183098591549296,
+            "x_fedes": 0.9760479041916168,
+            "ketertelmu_atlepes": 0.7472527472527473
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7445482866043613,
+            "besorolasi_precizitas": 0.9665271966527197,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7177031455961072,
+            "aurc": 0.003523149230019523,
+            "ece": 0.01966998258260581,
+            "pontossag": 0.9579439252336449,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9579439252336449,
+            "x_precizitas": 0.9329268292682927,
+            "x_fedes": 0.9329268292682927,
+            "ketertelmu_atlepes": 0.7755102040816326
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7446808510638298,
+            "besorolasi_precizitas": 0.9956043956043956,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7622962329717761,
+            "aurc": 1.0799095855009105e-05,
+            "ece": 0.01484231678134337,
+            "pontossag": 0.9803600654664485,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9803600654664485,
+            "x_precizitas": 0.9358974358974359,
+            "x_fedes": 1.0,
+            "ketertelmu_atlepes": 0.8048780487804879
+          }
+        }
+      },
+      "90": {
+        "tau": 0.34332694239039263,
+        "val": {
+          "n": 825,
+          "kétértelmű_n": 181,
+          "besorolasi_lefedettseg": 0.7490909090909091,
+          "besorolasi_precizitas": 0.9741100323624595,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.763243683582743,
+          "aurc": 0.0005008941878650844,
+          "ece": 0.018179228077758066,
+          "pontossag": 0.953939393939394,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.953939393939394,
+          "x_precizitas": 0.893719806763285,
+          "x_fedes": 0.9487179487179487,
+          "ketertelmu_atlepes": 0.8066298342541437
+        },
+        "teszt": {
+          "n": 3020,
+          "kétértelmű_n": 514,
+          "besorolasi_lefedettseg": 0.7453642384105961,
+          "besorolasi_precizitas": 0.9822301199466904,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7223059831077133,
+          "aurc": 0.0011624985254507292,
+          "ece": 0.00995222617463518,
+          "pontossag": 0.9692052980132451,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9692052980132451,
+          "x_precizitas": 0.9310793237971391,
+          "x_fedes": 0.9715061058344641,
+          "ketertelmu_atlepes": 0.7723735408560312
+        },
+        "retegek": {
+          "T-belso": {
+            "n": 413,
+            "kétértelmű_n": 61,
+            "besorolasi_lefedettseg": 0.7723970944309927,
+            "besorolasi_precizitas": 0.987460815047022,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7458577438526715,
+            "aurc": 0.0011796106877410908,
+            "ece": 0.014345871016888107,
+            "pontossag": 0.9830508474576272,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9830508474576272,
+            "x_precizitas": 0.9680851063829787,
+            "x_fedes": 0.978494623655914,
+            "ketertelmu_atlepes": 0.8360655737704918
+          },
+          "T-szallito": {
+            "n": 1354,
+            "kétértelmű_n": 273,
+            "besorolasi_lefedettseg": 0.7378138847858198,
+            "besorolasi_precizitas": 0.9819819819819819,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.6857834381226567,
+            "aurc": 0.00062014876050085,
+            "ece": 0.012657535731494562,
+            "pontossag": 0.965288035450517,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.965288035450517,
+            "x_precizitas": 0.9183098591549296,
+            "x_fedes": 0.9760479041916168,
+            "ketertelmu_atlepes": 0.7472527472527473
+          },
+          "T-kozeli": {
+            "n": 642,
+            "kétértelmű_n": 98,
+            "besorolasi_lefedettseg": 0.7445482866043613,
+            "besorolasi_precizitas": 0.9665271966527197,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7177031455961072,
+            "aurc": 0.003523149230019523,
+            "ece": 0.01966998258260581,
+            "pontossag": 0.9579439252336449,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9579439252336449,
+            "x_precizitas": 0.9329268292682927,
+            "x_fedes": 0.9329268292682927,
+            "ketertelmu_atlepes": 0.7755102040816326
+          },
+          "T-tavoli": {
+            "n": 611,
+            "kétértelmű_n": 82,
+            "besorolasi_lefedettseg": 0.7446808510638298,
+            "besorolasi_precizitas": 0.9956043956043956,
+            "precizitas_bukas": false,
+            "ertek_sulyozott_lefedettseg": 0.7622962329717761,
+            "aurc": 1.0799095855009105e-05,
+            "ece": 0.01484231678134337,
+            "pontossag": 0.9803600654664485,
+            "dontesi_lefedettseg": 1.0,
+            "dontesi_precizitas": 0.9803600654664485,
+            "x_precizitas": 0.9358974358974359,
+            "x_fedes": 1.0,
+            "ketertelmu_atlepes": 0.8048780487804879
+          }
+        }
+      }
+    }
+  },
+  "bontasok": {
+    "L1csillag": {
+      "x_vs_nemx": {
+        "X": {
+          "n": 737,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.05698778833107191,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.0919498198633628,
+          "aurc": 0.5658073270013546,
+          "ece": 0.15157298071835887,
+          "pontossag": 0.43419267299864317,
+          "dontesi_lefedettseg": 0.11668928086838534,
+          "dontesi_precizitas": 0.5116279069767442,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.43419267299864317,
+          "ketertelmu_atlepes": 0.14705882352941177
+        },
+        "nem-X": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.7958826106000876,
+          "besorolasi_precizitas": 0.9977985690698954,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7933947167229669,
+          "aurc": 0.00143102836716519,
+          "ece": 0.08840016842162539,
+          "pontossag": 0.9583880858519492,
+          "dontesi_lefedettseg": 0.7958826106000876,
+          "dontesi_precizitas": 0.9977985690698954,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.43915343915343913
+        }
+      },
+      "listahossz": {
+        "10": {
+          "n": 214,
+          "kétértelmű_n": 24,
+          "besorolasi_lefedettseg": 0.5,
+          "besorolasi_precizitas": 0.9626168224299065,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.23129213230142046,
+          "aurc": 0.04633204116489505,
+          "ece": 0.07959925320937349,
+          "pontossag": 0.7616822429906542,
+          "dontesi_lefedettseg": 0.5233644859813084,
+          "dontesi_precizitas": 0.9642857142857143,
+          "x_precizitas": 0.8857142857142857,
+          "x_fedes": 0.4189189189189189,
+          "ketertelmu_atlepes": 0.125
+        },
+        "2": {
+          "n": 47,
+          "kétértelmű_n": 12,
+          "besorolasi_lefedettseg": 0.5319148936170213,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.2553854701430041,
+          "aurc": 0.0,
+          "ece": 0.20025449777009413,
+          "pontossag": 0.9787234042553191,
+          "dontesi_lefedettseg": 0.574468085106383,
+          "dontesi_precizitas": 1.0,
+          "x_precizitas": 0.9166666666666666,
+          "x_fedes": 1.0,
+          "ketertelmu_atlepes": 0.3333333333333333
+        },
+        "3": {
+          "n": 69,
+          "kétértelmű_n": 14,
+          "besorolasi_lefedettseg": 0.43478260869565216,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.4899155634262756,
+          "aurc": 0.023502550737173132,
+          "ece": 0.14324803247332216,
+          "pontossag": 0.7971014492753623,
+          "dontesi_lefedettseg": 0.4492753623188406,
+          "dontesi_precizitas": 1.0,
+          "x_precizitas": 0.6,
+          "x_fedes": 0.375,
+          "ketertelmu_atlepes": 0.35714285714285715
+        },
+        "4": {
+          "n": 107,
+          "kétértelmű_n": 22,
+          "besorolasi_lefedettseg": 0.6728971962616822,
+          "besorolasi_precizitas": 0.9861111111111112,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7304535606591787,
+          "aurc": 0.012555738936851668,
+          "ece": 0.07680018489192765,
+          "pontossag": 0.8598130841121495,
+          "dontesi_lefedettseg": 0.7009345794392523,
+          "dontesi_precizitas": 0.9866666666666667,
+          "x_precizitas": 0.8461538461538461,
+          "x_fedes": 0.5,
+          "ketertelmu_atlepes": 0.45454545454545453
+        },
+        "5": {
+          "n": 270,
+          "kétértelmű_n": 64,
+          "besorolasi_lefedettseg": 0.6518518518518519,
+          "besorolasi_precizitas": 0.9829545454545454,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7016200875618118,
+          "aurc": 0.012334834027873675,
+          "ece": 0.07778242871985877,
+          "pontossag": 0.8888888888888888,
+          "dontesi_lefedettseg": 0.6814814814814815,
+          "dontesi_precizitas": 0.9836956521739131,
+          "x_precizitas": 0.9487179487179487,
+          "x_fedes": 0.6065573770491803,
+          "ketertelmu_atlepes": 0.28125
+        },
+        "6": {
+          "n": 442,
+          "kétértelmű_n": 83,
+          "besorolasi_lefedettseg": 0.6199095022624435,
+          "besorolasi_precizitas": 0.9781021897810219,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.630757139748983,
+          "aurc": 0.022655228205859596,
+          "ece": 0.08031299177451537,
+          "pontossag": 0.8687782805429864,
+          "dontesi_lefedettseg": 0.6289592760180995,
+          "dontesi_precizitas": 0.9784172661870504,
+          "x_precizitas": 0.9473684210526315,
+          "x_fedes": 0.5192307692307693,
+          "ketertelmu_atlepes": 0.42168674698795183
+        },
+        "7": {
+          "n": 662,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.6268882175226587,
+          "besorolasi_precizitas": 0.980722891566265,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6295110856224905,
+          "aurc": 0.027170544422028375,
+          "ece": 0.0494714272640628,
+          "pontossag": 0.824773413897281,
+          "dontesi_lefedettseg": 0.6389728096676737,
+          "dontesi_precizitas": 0.9810874704491725,
+          "x_precizitas": 0.9078947368421053,
+          "x_fedes": 0.42073170731707316,
+          "ketertelmu_atlepes": 0.35294117647058826
+        },
+        "8": {
+          "n": 663,
+          "kétértelmű_n": 121,
+          "besorolasi_lefedettseg": 0.6546003016591252,
+          "besorolasi_precizitas": 0.967741935483871,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.679148436280077,
+          "aurc": 0.02986585195992665,
+          "ece": 0.04959530365682224,
+          "pontossag": 0.8220211161387632,
+          "dontesi_lefedettseg": 0.665158371040724,
+          "dontesi_precizitas": 0.9682539682539683,
+          "x_precizitas": 0.890625,
+          "x_fedes": 0.37012987012987014,
+          "ketertelmu_atlepes": 0.4132231404958678
+        },
+        "9": {
+          "n": 546,
+          "kétértelmű_n": 38,
+          "besorolasi_lefedettseg": 0.5970695970695971,
+          "besorolasi_precizitas": 0.9693251533742331,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.5472692177762392,
+          "aurc": 0.03763421342331551,
+          "ece": 0.03594474139112305,
+          "pontossag": 0.8003663003663004,
+          "dontesi_lefedettseg": 0.608058608058608,
+          "dontesi_precizitas": 0.9698795180722891,
+          "x_precizitas": 0.8301886792452831,
+          "x_fedes": 0.33587786259541985,
+          "ketertelmu_atlepes": 0.34210526315789475
+        }
+      },
+      "x_fajta": {
+        "-": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.7958826106000876,
+          "besorolasi_precizitas": 0.9977985690698954,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7933947167229669,
+          "aurc": 0.00143102836716519,
+          "ece": 0.08840016842162539,
+          "pontossag": 0.9583880858519492,
+          "dontesi_lefedettseg": 0.7958826106000876,
+          "dontesi_precizitas": 0.9977985690698954,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.43915343915343913
+        },
+        "a": {
+          "n": 564,
+          "kétértelmű_n": 103,
+          "besorolasi_lefedettseg": 0.05319148936170213,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.09738709982212056,
+          "aurc": 0.5602836879432583,
+          "ece": 0.15849093538527279,
+          "pontossag": 0.4397163120567376,
+          "dontesi_lefedettseg": 0.10815602836879433,
+          "dontesi_precizitas": 0.5081967213114754,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.4397163120567376,
+          "ketertelmu_atlepes": 0.13592233009708737
+        },
+        "a-termeszetes": {
+          "n": 74,
+          "kétértelmű_n": 16,
+          "besorolasi_lefedettseg": 0.0945945945945946,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.05031277187172731,
+          "aurc": 0.5540540540540535,
+          "ece": 0.1967001411796535,
+          "pontossag": 0.44594594594594594,
+          "dontesi_lefedettseg": 0.1891891891891892,
+          "dontesi_precizitas": 0.5,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.44594594594594594,
+          "ketertelmu_atlepes": 0.1875
+        },
+        "b": {
+          "n": 99,
+          "kétértelmű_n": 17,
+          "besorolasi_lefedettseg": 0.050505050505050504,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.02314291526339965,
+          "aurc": 0.6060606060606059,
+          "ece": 0.25430727627929606,
+          "pontossag": 0.3939393939393939,
+          "dontesi_lefedettseg": 0.1111111111111111,
+          "dontesi_precizitas": 0.5454545454545454,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.3939393939393939,
+          "ketertelmu_atlepes": 0.17647058823529413
+        }
+      },
+      "ketertelmu": {
+        "n": 514,
+        "atlepes": 0.36186770428015563,
+        "soft_gold_talalat_az_atlepokon": 1.0
+      }
+    },
+    "L3_s1": {
+      "x_vs_nemx": {
+        "X": {
+          "n": 737,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.03934871099050204,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.049592697883676616,
+          "aurc": 0.04070556309362281,
+          "ece": 0.015192899207744975,
+          "pontossag": 0.9592944369063772,
+          "dontesi_lefedettseg": 0.9986431478968792,
+          "dontesi_precizitas": 0.9605978260869565,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9592944369063772,
+          "ketertelmu_atlepes": 0.4411764705882353
+        },
+        "nem-X": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.9802890932982917,
+          "besorolasi_precizitas": 0.9937444146559428,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.9786860216324327,
+          "aurc": 0.00011973833261153513,
+          "ece": 0.010545630363277176,
+          "pontossag": 0.9741568112133158,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9741568112133158,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9259259259259259
+        }
+      },
+      "listahossz": {
+        "10": {
+          "n": 214,
+          "kétértelmű_n": 24,
+          "besorolasi_lefedettseg": 0.6401869158878505,
+          "besorolasi_precizitas": 0.9927007299270073,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.4087204243821309,
+          "aurc": 0.00046410148102746,
+          "ece": 0.026236363389464685,
+          "pontossag": 0.9766355140186916,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9766355140186916,
+          "x_precizitas": 0.948051948051948,
+          "x_fedes": 0.9864864864864865,
+          "ketertelmu_atlepes": 0.7083333333333334
+        },
+        "2": {
+          "n": 47,
+          "kétértelmű_n": 12,
+          "besorolasi_lefedettseg": 0.7446808510638298,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8311514545116649,
+          "aurc": 0.0,
+          "ece": 0.016796619661234198,
+          "pontossag": 0.9787234042553191,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9787234042553191,
+          "x_precizitas": 0.9166666666666666,
+          "x_fedes": 1.0,
+          "ketertelmu_atlepes": 0.75
+        },
+        "3": {
+          "n": 69,
+          "kétértelmű_n": 14,
+          "besorolasi_lefedettseg": 0.782608695652174,
+          "besorolasi_precizitas": 0.9814814814814815,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6511855101102091,
+          "aurc": 0.0008205393083708642,
+          "ece": 0.018902529234532187,
+          "pontossag": 0.9855072463768116,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9855072463768116,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9375,
+          "ketertelmu_atlepes": 1.0
+        },
+        "4": {
+          "n": 107,
+          "kétértelmű_n": 22,
+          "besorolasi_lefedettseg": 0.8130841121495327,
+          "besorolasi_precizitas": 0.9770114942528736,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8668159459970561,
+          "aurc": 0.0005447278552428549,
+          "ece": 0.016307948961591424,
+          "pontossag": 0.9813084112149533,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9813084112149533,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9090909090909091,
+          "ketertelmu_atlepes": 0.8181818181818182
+        },
+        "5": {
+          "n": 270,
+          "kétértelmű_n": 64,
+          "besorolasi_lefedettseg": 0.7814814814814814,
+          "besorolasi_precizitas": 0.981042654028436,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8223275422033454,
+          "aurc": 0.0010497647745200385,
+          "ece": 0.018865409747773502,
+          "pontossag": 0.9777777777777777,
+          "dontesi_lefedettseg": 0.9962962962962963,
+          "dontesi_precizitas": 0.9814126394052045,
+          "x_precizitas": 0.9827586206896551,
+          "x_fedes": 0.9344262295081968,
+          "ketertelmu_atlepes": 0.890625
+        },
+        "6": {
+          "n": 442,
+          "kétértelmű_n": 83,
+          "besorolasi_lefedettseg": 0.7624434389140271,
+          "besorolasi_precizitas": 0.9821958456973294,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7710766456823608,
+          "aurc": 0.007480637603429679,
+          "ece": 0.014997595824306303,
+          "pontossag": 0.9751131221719457,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9751131221719457,
+          "x_precizitas": 0.9523809523809523,
+          "x_fedes": 0.9615384615384616,
+          "ketertelmu_atlepes": 0.8072289156626506
+        },
+        "7": {
+          "n": 662,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.7447129909365559,
+          "besorolasi_precizitas": 0.9817444219066938,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7157942706941803,
+          "aurc": 0.003439897722502528,
+          "ece": 0.019032154216179164,
+          "pontossag": 0.9682779456193353,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9682779456193353,
+          "x_precizitas": 0.9289940828402367,
+          "x_fedes": 0.9573170731707317,
+          "ketertelmu_atlepes": 0.7720588235294118
+        },
+        "8": {
+          "n": 663,
+          "kétértelmű_n": 121,
+          "besorolasi_lefedettseg": 0.7616892911010558,
+          "besorolasi_precizitas": 0.9801980198019802,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7531495349727129,
+          "aurc": 0.0009198930327044459,
+          "ece": 0.01601769472603999,
+          "pontossag": 0.9698340874811463,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9698340874811463,
+          "x_precizitas": 0.9367088607594937,
+          "x_fedes": 0.961038961038961,
+          "ketertelmu_atlepes": 0.7768595041322314
+        },
+        "9": {
+          "n": 546,
+          "kétértelmű_n": 38,
+          "besorolasi_lefedettseg": 0.7472527472527473,
+          "besorolasi_precizitas": 0.9754901960784313,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7465576236964818,
+          "aurc": 0.0009639990115776049,
+          "ece": 0.01997401528963655,
+          "pontossag": 0.9597069597069597,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9597069597069597,
+          "x_precizitas": 0.9130434782608695,
+          "x_fedes": 0.9618320610687023,
+          "ketertelmu_atlepes": 0.7631578947368421
+        }
+      },
+      "x_fajta": {
+        "-": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.9802890932982917,
+          "besorolasi_precizitas": 0.9937444146559428,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.9786860216324327,
+          "aurc": 0.00011973833261153513,
+          "ece": 0.010545630363277176,
+          "pontossag": 0.9741568112133158,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9741568112133158,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9259259259259259
+        },
+        "a": {
+          "n": 564,
+          "kétértelmű_n": 103,
+          "besorolasi_lefedettseg": 0.03900709219858156,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.050565621066966715,
+          "aurc": 0.040780141843971635,
+          "ece": 0.017196637253164563,
+          "pontossag": 0.9592198581560284,
+          "dontesi_lefedettseg": 0.99822695035461,
+          "dontesi_precizitas": 0.9609236234458259,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9592198581560284,
+          "ketertelmu_atlepes": 0.4368932038834951
+        },
+        "a-termeszetes": {
+          "n": 74,
+          "kétértelmű_n": 16,
+          "besorolasi_lefedettseg": 0.05405405405405406,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.007006219430684075,
+          "aurc": 0.05405405405405406,
+          "ece": 0.043299014851493484,
+          "pontossag": 0.9459459459459459,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9459459459459459,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9459459459459459,
+          "ketertelmu_atlepes": 0.5
+        },
+        "b": {
+          "n": 99,
+          "kétértelmű_n": 17,
+          "besorolasi_lefedettseg": 0.030303030303030304,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.005480725964178804,
+          "aurc": 0.030303030303030304,
+          "ece": 0.025605484417533925,
+          "pontossag": 0.9696969696969697,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9696969696969697,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9696969696969697,
+          "ketertelmu_atlepes": 0.4117647058823529
+        }
+      },
+      "ketertelmu": {
+        "n": 514,
+        "atlepes": 0.7976653696498055,
+        "soft_gold_talalat_az_atlepokon": 0.975609756097561
+      }
+    },
+    "L3_s2": {
+      "x_vs_nemx": {
+        "X": {
+          "n": 737,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.05834464043419267,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.07662246501885069,
+          "aurc": 0.05970149253731346,
+          "ece": 0.027696214643254974,
+          "pontossag": 0.9402985074626866,
+          "dontesi_lefedettseg": 0.9986431478968792,
+          "dontesi_precizitas": 0.9415760869565217,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9402985074626866,
+          "ketertelmu_atlepes": 0.45588235294117646
+        },
+        "nem-X": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.988173455978975,
+          "besorolasi_precizitas": 0.9920212765957447,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.98651005895595,
+          "aurc": 0.00016895986454187523,
+          "ece": 0.007457735401158958,
+          "pontossag": 0.9802890932982917,
+          "dontesi_lefedettseg": 0.9991239597021463,
+          "dontesi_precizitas": 0.9811486190267427,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9259259259259259
+        }
+      },
+      "listahossz": {
+        "10": {
+          "n": 214,
+          "kétértelmű_n": 24,
+          "besorolasi_lefedettseg": 0.6728971962616822,
+          "besorolasi_precizitas": 0.9583333333333334,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.5625916742309953,
+          "aurc": 0.0014703911015088516,
+          "ece": 0.0155591203623636,
+          "pontossag": 0.9579439252336449,
+          "dontesi_lefedettseg": 0.9953271028037384,
+          "dontesi_precizitas": 0.9624413145539906,
+          "x_precizitas": 0.9710144927536232,
+          "x_fedes": 0.9054054054054054,
+          "ketertelmu_atlepes": 0.7916666666666666
+        },
+        "2": {
+          "n": 47,
+          "kétértelmű_n": 12,
+          "besorolasi_lefedettseg": 0.7659574468085106,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8353805182531753,
+          "aurc": 0.0,
+          "ece": 0.02593575726527912,
+          "pontossag": 1.0,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 1.0,
+          "x_precizitas": 1.0,
+          "x_fedes": 1.0,
+          "ketertelmu_atlepes": 0.8333333333333334
+        },
+        "3": {
+          "n": 69,
+          "kétértelmű_n": 14,
+          "besorolasi_lefedettseg": 0.782608695652174,
+          "besorolasi_precizitas": 0.9814814814814815,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6511855101102091,
+          "aurc": 0.002937746382828546,
+          "ece": 0.03434182159240632,
+          "pontossag": 0.9855072463768116,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9855072463768116,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9375,
+          "ketertelmu_atlepes": 1.0
+        },
+        "4": {
+          "n": 107,
+          "kétértelmű_n": 22,
+          "besorolasi_lefedettseg": 0.822429906542056,
+          "besorolasi_precizitas": 0.9659090909090909,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8677436415674057,
+          "aurc": 0.0009759344147007372,
+          "ece": 0.012013377290027421,
+          "pontossag": 0.9719626168224299,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9719626168224299,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.8636363636363636,
+          "ketertelmu_atlepes": 0.7272727272727273
+        },
+        "5": {
+          "n": 270,
+          "kétértelmű_n": 64,
+          "besorolasi_lefedettseg": 0.7851851851851852,
+          "besorolasi_precizitas": 0.9669811320754716,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8281518459847846,
+          "aurc": 0.002516728164709678,
+          "ece": 0.0162743003179673,
+          "pontossag": 0.9629629629629629,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9629629629629629,
+          "x_precizitas": 0.9482758620689655,
+          "x_fedes": 0.9016393442622951,
+          "ketertelmu_atlepes": 0.90625
+        },
+        "6": {
+          "n": 442,
+          "kétértelmű_n": 83,
+          "besorolasi_lefedettseg": 0.7669683257918553,
+          "besorolasi_precizitas": 0.9823008849557522,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7717174871246208,
+          "aurc": 0.004866068632178942,
+          "ece": 0.009688800488257907,
+          "pontossag": 0.9796380090497737,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9796380090497737,
+          "x_precizitas": 0.970873786407767,
+          "x_fedes": 0.9615384615384616,
+          "ketertelmu_atlepes": 0.7831325301204819
+        },
+        "7": {
+          "n": 662,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.7552870090634441,
+          "besorolasi_precizitas": 0.978,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.720040958148283,
+          "aurc": 0.005469920222429424,
+          "ece": 0.013761129602068248,
+          "pontossag": 0.9758308157099698,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9758308157099698,
+          "x_precizitas": 0.9691358024691358,
+          "x_fedes": 0.9573170731707317,
+          "ketertelmu_atlepes": 0.7867647058823529
+        },
+        "8": {
+          "n": 663,
+          "kétértelmű_n": 121,
+          "besorolasi_lefedettseg": 0.7767722473604827,
+          "besorolasi_precizitas": 0.9728155339805825,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7534433792686145,
+          "aurc": 0.0006344427606919852,
+          "ece": 0.020104871705820704,
+          "pontossag": 0.9728506787330317,
+          "dontesi_lefedettseg": 0.9984917043740573,
+          "dontesi_precizitas": 0.974320241691843,
+          "x_precizitas": 0.9795918367346939,
+          "x_fedes": 0.935064935064935,
+          "ketertelmu_atlepes": 0.7768595041322314
+        },
+        "9": {
+          "n": 546,
+          "kétértelmű_n": 38,
+          "besorolasi_lefedettseg": 0.7527472527472527,
+          "besorolasi_precizitas": 0.9683698296836983,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7504746991340627,
+          "aurc": 0.0009680862083482006,
+          "ece": 0.021161118062380493,
+          "pontossag": 0.9578754578754579,
+          "dontesi_lefedettseg": 0.9981684981684982,
+          "dontesi_precizitas": 0.9596330275229358,
+          "x_precizitas": 0.9259259259259259,
+          "x_fedes": 0.9541984732824428,
+          "ketertelmu_atlepes": 0.7631578947368421
+        }
+      },
+      "x_fajta": {
+        "-": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.988173455978975,
+          "besorolasi_precizitas": 0.9920212765957447,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.98651005895595,
+          "aurc": 0.00016895986454187523,
+          "ece": 0.007457735401158958,
+          "pontossag": 0.9802890932982917,
+          "dontesi_lefedettseg": 0.9991239597021463,
+          "dontesi_precizitas": 0.9811486190267427,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9259259259259259
+        },
+        "a": {
+          "n": 564,
+          "kétértelmű_n": 103,
+          "besorolasi_lefedettseg": 0.04609929078014184,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.0556985750681907,
+          "aurc": 0.046099290780141855,
+          "ece": 0.02388807483737469,
+          "pontossag": 0.9539007092198581,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9539007092198581,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9539007092198581,
+          "ketertelmu_atlepes": 0.4563106796116505
+        },
+        "a-termeszetes": {
+          "n": 74,
+          "kétértelmű_n": 16,
+          "besorolasi_lefedettseg": 0.16216216216216217,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.09854403524060422,
+          "aurc": 0.17567567567567569,
+          "ece": 0.0901354400736984,
+          "pontossag": 0.8243243243243243,
+          "dontesi_lefedettseg": 0.9864864864864865,
+          "dontesi_precizitas": 0.8356164383561644,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.8243243243243243,
+          "ketertelmu_atlepes": 0.5625
+        },
+        "b": {
+          "n": 99,
+          "kétértelmű_n": 17,
+          "besorolasi_lefedettseg": 0.050505050505050504,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.01993732610663602,
+          "aurc": 0.05050505050505051,
+          "ece": 0.03131672341313283,
+          "pontossag": 0.9494949494949495,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9494949494949495,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9494949494949495,
+          "ketertelmu_atlepes": 0.35294117647058826
+        }
+      },
+      "ketertelmu": {
+        "n": 514,
+        "atlepes": 0.8015564202334631,
+        "soft_gold_talalat_az_atlepokon": 0.9830097087378641
+      }
+    },
+    "L3_s3": {
+      "x_vs_nemx": {
+        "X": {
+          "n": 737,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.028493894165535955,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.05254074865806604,
+          "aurc": 0.028493894165535966,
+          "ece": 0.010302962113934002,
+          "pontossag": 0.9715061058344641,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9715061058344641,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9715061058344641,
+          "ketertelmu_atlepes": 0.40441176470588236
+        },
+        "nem-X": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.9767849321068769,
+          "besorolasi_precizitas": 0.9914798206278027,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.9652838116081975,
+          "aurc": 0.00014201227339985848,
+          "ece": 0.01470257224101081,
+          "pontossag": 0.9684625492772667,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9684625492772667,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9047619047619048
+        }
+      },
+      "listahossz": {
+        "10": {
+          "n": 214,
+          "kétértelmű_n": 24,
+          "besorolasi_lefedettseg": 0.6448598130841121,
+          "besorolasi_precizitas": 0.9710144927536232,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.4345471417504593,
+          "aurc": 0.0016669463151031733,
+          "ece": 0.02311887223279173,
+          "pontossag": 0.9579439252336449,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9579439252336449,
+          "x_precizitas": 0.9342105263157895,
+          "x_fedes": 0.9594594594594594,
+          "ketertelmu_atlepes": 0.7083333333333334
+        },
+        "2": {
+          "n": 47,
+          "kétértelmű_n": 12,
+          "besorolasi_lefedettseg": 0.7021276595744681,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8291429117514199,
+          "aurc": 0.0,
+          "ece": 0.06086474956490082,
+          "pontossag": 0.9361702127659575,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9361702127659575,
+          "x_precizitas": 0.7857142857142857,
+          "x_fedes": 1.0,
+          "ketertelmu_atlepes": 0.75
+        },
+        "3": {
+          "n": 69,
+          "kétértelmű_n": 14,
+          "besorolasi_lefedettseg": 0.7246376811594203,
+          "besorolasi_precizitas": 0.98,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.6387628306336778,
+          "aurc": 0.0002898550724637681,
+          "ece": 0.055255355965677204,
+          "pontossag": 0.927536231884058,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.927536231884058,
+          "x_precizitas": 0.7894736842105263,
+          "x_fedes": 0.9375,
+          "ketertelmu_atlepes": 1.0
+        },
+        "4": {
+          "n": 107,
+          "kétértelmű_n": 22,
+          "besorolasi_lefedettseg": 0.7850467289719626,
+          "besorolasi_precizitas": 1.0,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8659801425324892,
+          "aurc": 0.0,
+          "ece": 0.021099970467740987,
+          "pontossag": 0.9906542056074766,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9906542056074766,
+          "x_precizitas": 0.9565217391304348,
+          "x_fedes": 1.0,
+          "ketertelmu_atlepes": 0.7272727272727273
+        },
+        "5": {
+          "n": 270,
+          "kétértelmű_n": 64,
+          "besorolasi_lefedettseg": 0.7666666666666667,
+          "besorolasi_precizitas": 0.9806763285024155,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.8144335714632376,
+          "aurc": 0.0014619698373044205,
+          "ece": 0.018374678512024848,
+          "pontossag": 0.9666666666666667,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9666666666666667,
+          "x_precizitas": 0.9206349206349206,
+          "x_fedes": 0.9508196721311475,
+          "ketertelmu_atlepes": 0.828125
+        },
+        "6": {
+          "n": 442,
+          "kétértelmű_n": 83,
+          "besorolasi_lefedettseg": 0.7647058823529411,
+          "besorolasi_precizitas": 0.9792899408284024,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7758419510139425,
+          "aurc": 0.001291834656317999,
+          "ece": 0.014607089314157605,
+          "pontossag": 0.9751131221719457,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9751131221719457,
+          "x_precizitas": 0.9615384615384616,
+          "x_fedes": 0.9615384615384616,
+          "ketertelmu_atlepes": 0.7710843373493976
+        },
+        "7": {
+          "n": 662,
+          "kétértelmű_n": 136,
+          "besorolasi_lefedettseg": 0.743202416918429,
+          "besorolasi_precizitas": 0.9857723577235772,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7162798789536259,
+          "aurc": 0.0034295092592220087,
+          "ece": 0.014348085078258998,
+          "pontossag": 0.974320241691843,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.974320241691843,
+          "x_precizitas": 0.9411764705882353,
+          "x_fedes": 0.975609756097561,
+          "ketertelmu_atlepes": 0.75
+        },
+        "8": {
+          "n": 663,
+          "kétértelmű_n": 121,
+          "besorolasi_lefedettseg": 0.7631975867269984,
+          "besorolasi_precizitas": 0.9822134387351779,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.7515814978377378,
+          "aurc": 0.00030831596090042323,
+          "ece": 0.01574799638570917,
+          "pontossag": 0.975867269984917,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.975867269984917,
+          "x_precizitas": 0.9554140127388535,
+          "x_fedes": 0.974025974025974,
+          "ketertelmu_atlepes": 0.7851239669421488
+        },
+        "9": {
+          "n": 546,
+          "kétértelmű_n": 38,
+          "besorolasi_lefedettseg": 0.7380952380952381,
+          "besorolasi_precizitas": 0.9801488833746899,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.688038591181238,
+          "aurc": 0.0005135549878459274,
+          "ece": 0.018910485118047625,
+          "pontossag": 0.9597069597069597,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9597069597069597,
+          "x_precizitas": 0.9020979020979021,
+          "x_fedes": 0.9847328244274809,
+          "ketertelmu_atlepes": 0.7105263157894737
+        }
+      },
+      "x_fajta": {
+        "-": {
+          "n": 2283,
+          "kétértelmű_n": 378,
+          "besorolasi_lefedettseg": 0.9767849321068769,
+          "besorolasi_precizitas": 0.9914798206278027,
+          "precizitas_bukas": false,
+          "ertek_sulyozott_lefedettseg": 0.9652838116081975,
+          "aurc": 0.00014201227339985848,
+          "ece": 0.01470257224101081,
+          "pontossag": 0.9684625492772667,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9684625492772667,
+          "x_precizitas": 0.0,
+          "x_fedes": null,
+          "ketertelmu_atlepes": 0.9047619047619048
+        },
+        "a": {
+          "n": 564,
+          "kétértelmű_n": 103,
+          "besorolasi_lefedettseg": 0.024822695035460994,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.052293564360135984,
+          "aurc": 0.024822695035460984,
+          "ece": 0.012770983132522187,
+          "pontossag": 0.975177304964539,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.975177304964539,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.975177304964539,
+          "ketertelmu_atlepes": 0.3786407766990291
+        },
+        "a-termeszetes": {
+          "n": 74,
+          "kétértelmű_n": 16,
+          "besorolasi_lefedettseg": 0.06756756756756757,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.014755248901299908,
+          "aurc": 0.06756756756756757,
+          "ece": 0.05669322274618592,
+          "pontossag": 0.9324324324324325,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9324324324324325,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9324324324324325,
+          "ketertelmu_atlepes": 0.5625
+        },
+        "b": {
+          "n": 99,
+          "kétértelmű_n": 17,
+          "besorolasi_lefedettseg": 0.020202020202020204,
+          "besorolasi_precizitas": 0.0,
+          "precizitas_bukas": true,
+          "ertek_sulyozott_lefedettseg": 0.004394170427568113,
+          "aurc": 0.020202020202020204,
+          "ece": 0.03603007444391394,
+          "pontossag": 0.9797979797979798,
+          "dontesi_lefedettseg": 1.0,
+          "dontesi_precizitas": 0.9797979797979798,
+          "x_precizitas": 1.0,
+          "x_fedes": 0.9797979797979798,
+          "ketertelmu_atlepes": 0.4117647058823529
+        }
+      },
+      "ketertelmu": {
+        "n": 514,
+        "atlepes": 0.7723735408560312,
+        "soft_gold_talalat_az_atlepokon": 0.9748110831234257
+      }
+    }
+  },
+  "mcnemar_pontossag": {
+    "L3_s1_vs_L1csillag": {
+      "csak_a_jo": 452,
+      "csak_b_jo": 29,
+      "p_egzakt": 9.905795778477752e-99
+    },
+    "L3_s2_vs_L1csillag": {
+      "csak_a_jo": 444,
+      "csak_b_jo": 21,
+      "p_egzakt": 2.832116330548223e-104
+    },
+    "L3_s3_vs_L1csillag": {
+      "csak_a_jo": 460,
+      "csak_b_jo": 41,
+      "p_egzakt": 9.193348180450087e-91
+    }
+  },
+  "ismetlesi_zaj_L0_L0vesszo": {
+    "top_cimke_billenes": 0.0,
+    "abs_dp_atlag": 5.063340783369479e-05,
+    "abs_dp_max": 0.0688759008723916,
+    "lef95_kulonbseg_rogzitett_tau": 0.0
+  },
+  "bootstrap": {
+    "reps": 10000,
+    "seed": 0,
+    "L3_minus_L1csillag": {
+      "teszt:lef95": {
+        "delta_median": 0.12842321635709353,
+        "ci95": [
+          0.048405665652438534,
+          0.20981443501315716
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "teszt:aurc": {
+        "delta_median": -0.025452041771292903,
+        "ci95": [
+          -0.030027556652086118,
+          -0.02130778878677908
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "teszt:ece": {
+        "delta_median": -0.03513095239143944,
+        "ci95": [
+          -0.048903528324735254,
+          -0.022816287686237346
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-szallito:lef95": {
+        "delta_median": 0.16254386653068692,
+        "ci95": [
+          0.06893672558975321,
+          0.25923098841031145
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-szallito:aurc": {
+        "delta_median": -0.025570001966550078,
+        "ci95": [
+          -0.0339960689772554,
+          -0.019525198154856253
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-szallito:ece": {
+        "delta_median": -0.04876738409986381,
+        "ci95": [
+          -0.07163905822403309,
+          -0.030094566030962333
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-kategoria:lef95": {
+        "delta_median": 0.08802297122456543,
+        "ci95": [
+          0.016760248293995837,
+          0.15517509102591545
+        ],
+        "p_ketoldali": 0.0046,
+        "reps": 10000
+      },
+      "T-kategoria:aurc": {
+        "delta_median": -0.02569744115782311,
+        "ci95": [
+          -0.032694034676937926,
+          -0.019731598291133398
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-kategoria:ece": {
+        "delta_median": -0.024063331001725783,
+        "ci95": [
+          -0.03861700824854678,
+          -0.011249525096410518
+        ],
+        "p_ketoldali": 0.0002,
+        "reps": 10000
+      },
+      "T-kozeli:lef95": {
+        "delta_median": 0.0930955032078627,
+        "ci95": [
+          0.014729557249334774,
+          0.16307988818107708
+        ],
+        "p_ketoldali": 0.0116,
+        "reps": 10000
+      },
+      "T-kozeli:aurc": {
+        "delta_median": -0.03921074467230827,
+        "ci95": [
+          -0.05246196573973915,
+          -0.02822506718580258
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-kozeli:ece": {
+        "delta_median": -0.028447969474826362,
+        "ci95": [
+          -0.05045797985690246,
+          -0.008290925648632166
+        ],
+        "p_ketoldali": 0.004,
+        "reps": 10000
+      },
+      "T-tavoli:lef95": {
+        "delta_median": 0.07971596063926312,
+        "ci95": [
+          0.011685656649972133,
+          0.15485996705107086
+        ],
+        "p_ketoldali": 0.0134,
+        "reps": 10000
+      },
+      "T-tavoli:aurc": {
+        "delta_median": -0.013518669897900836,
+        "ci95": [
+          -0.020175722884532916,
+          -0.00848148036332587
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-tavoli:ece": {
+        "delta_median": -0.04943456446777797,
+        "ci95": [
+          -0.07099393852162766,
+          -0.029649824268264968
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-belso:lef95": {
+        "delta_median": 0.1279543602281989,
+        "ci95": [
+          0.04995795865085208,
+          0.24665670339517629
+        ],
+        "p_ketoldali": 0.0002,
+        "reps": 10000
+      },
+      "T-belso:aurc": {
+        "delta_median": -0.021341362840670286,
+        "ci95": [
+          -0.031907113066187764,
+          -0.012923441932250401
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "T-belso:ece": {
+        "delta_median": -0.048338186432093116,
+        "ci95": [
+          -0.07275747222424489,
+          -0.026373177779072346
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "teszt:lef90": {
+        "delta_median": 0.0003119665522806625,
+        "ci95": [
+          -0.03257947686050972,
+          0.04904637357127095
+        ],
+        "p_ketoldali": 0.9888,
+        "reps": 10000
+      },
+      "T-szallito:lef90": {
+        "delta_median": 0.01664217172643645,
+        "ci95": [
+          -0.026883966484145195,
+          0.07524369026119886
+        ],
+        "p_ketoldali": 0.4084,
+        "reps": 10000
+      },
+      "T-kategoria:lef90": {
+        "delta_median": -0.021110603235126646,
+        "ci95": [
+          -0.05483879597507732,
+          0.021624900611697452
+        ],
+        "p_ketoldali": 0.3904,
+        "reps": 10000
+      },
+      "T-kozeli:lef90": {
+        "delta_median": -0.022365960235581517,
+        "ci95": [
+          -0.06924400500552934,
+          0.02951686419243664
+        ],
+        "p_ketoldali": 0.4292,
+        "reps": 10000
+      },
+      "T-tavoli:lef90": {
+        "delta_median": -0.01830282861896848,
+        "ci95": [
+          -0.05154724942964479,
+          0.0229316551383907
+        ],
+        "p_ketoldali": 0.3972,
+        "reps": 10000
+      },
+      "T-belso:lef90": {
+        "delta_median": 0.019559902200488977,
+        "ci95": [
+          -0.016471364783537185,
+          0.06827358213341175
+        ],
+        "p_ketoldali": 0.3108,
+        "reps": 10000
+      }
+    }
+  },
+  "H1": {
+    "lef95": {
+      "p": 0.0,
+      "holm_kuszob": 0.025,
+      "szignifikans": true,
+      "jo_irany": true,
+      "cafolat": [],
+      "all": true
+    },
+    "aurc": {
+      "p": 0.0,
+      "holm_kuszob": 0.05,
+      "szignifikans": true,
+      "jo_irany": true,
+      "cafolat": [],
+      "all": true
+    },
+    "teljesul": true,
+    "masodlagos_lef90": {
+      "delta_median": 0.0003119665522806625,
+      "ci95": [
+        -0.03257947686050972,
+        0.04904637357127095
+      ],
+      "p_ketoldali": 0.9888,
+      "reps": 10000
+    }
+  },
+  "H2": {
+    "T-szallito": {
+      "delta_median": 0.16254386653068692,
+      "ci95": [
+        0.06893672558975321,
+        0.25923098841031145
+      ],
+      "p_ketoldali": 0.0,
+      "reps": 10000,
+      "itelet": "általánosít",
+      "aurc": {
+        "delta_median": -0.025570001966550078,
+        "ci95": [
+          -0.0339960689772554,
+          -0.019525198154856253
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      },
+      "szallito_permutacio": {
+        "szallitok": 14,
+        "delta": 0.17355982274741508,
+        "egzakt": true,
+        "p_ketoldali": 0.0001220703125
+      }
+    },
+    "T-kategoria": {
+      "delta_median": 0.08802297122456543,
+      "ci95": [
+        0.016760248293995837,
+        0.15517509102591545
+      ],
+      "p_ketoldali": 0.0046,
+      "reps": 10000,
+      "itelet": "általánosít",
+      "aurc": {
+        "delta_median": -0.02569744115782311,
+        "ci95": [
+          -0.032694034676937926,
+          -0.019731598291133398
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      }
+    },
+    "T-kozeli": {
+      "delta_median": 0.0930955032078627,
+      "ci95": [
+        0.014729557249334774,
+        0.16307988818107708
+      ],
+      "p_ketoldali": 0.0116,
+      "reps": 10000,
+      "itelet": "általánosít",
+      "aurc": {
+        "delta_median": -0.03921074467230827,
+        "ci95": [
+          -0.05246196573973915,
+          -0.02822506718580258
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      }
+    },
+    "T-tavoli": {
+      "delta_median": 0.07971596063926312,
+      "ci95": [
+        0.011685656649972133,
+        0.15485996705107086
+      ],
+      "p_ketoldali": 0.0134,
+      "reps": 10000,
+      "itelet": "általánosít",
+      "aurc": {
+        "delta_median": -0.013518669897900836,
+        "ci95": [
+          -0.020175722884532916,
+          -0.00848148036332587
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      }
+    },
+    "T-belso": {
+      "delta_median": 0.1279543602281989,
+      "ci95": [
+        0.04995795865085208,
+        0.24665670339517629
+      ],
+      "p_ketoldali": 0.0002,
+      "reps": 10000,
+      "itelet": "általánosít",
+      "aurc": {
+        "delta_median": -0.021341362840670286,
+        "ci95": [
+          -0.031907113066187764,
+          -0.012923441932250401
+        ],
+        "p_ketoldali": 0.0,
+        "reps": 10000
+      }
+    }
+  },
+  "H4_H5_holm": {
+    "H5_ece": {
+      "p": 0.0,
+      "holm_kuszob": 0.05,
+      "szignifikans": true,
+      "jo_irany": true
+    }
+  },
+  "H5_ece": {
+    "delta_median": -0.03513095239143944,
+    "ci95": [
+      -0.048903528324735254,
+      -0.022816287686237346
+    ],
+    "p_ketoldali": 0.0,
+    "reps": 10000
+  }
+}

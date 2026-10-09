@@ -1,0 +1,37 @@
+{
+  "p_min": 0.5,
+  "biralok": [
+    "mistral",
+    "llama"
+  ],
+  "hianyzo_bíralat": 0,
+  "train": {
+    "kizart_azonos_nevu_opcio:xlam": 28,
+    "kizart_azonos_nevu_opcio:w2c_train": 1,
+    "erintett_item": 3439,
+    "xdrop_csere": 590,
+    "kozeli_jelzes": 56,
+    "kozeli_ketertelmu": 131
+  },
+  "val": {
+    "kizart_azonos_nevu_opcio:xlam": 7,
+    "erintett_item": 1082,
+    "xdrop_csere": 240,
+    "kozeli_jelzes": 36,
+    "kozeli_ketertelmu": 80
+  },
+  "teszt": {
+    "erintett_item": 1001,
+    "xdrop_csere": 330,
+    "kozeli_ketertelmu": 94,
+    "kozeli_jelzes": 34
+  },
+  "katalogus": {
+    "erintett_item": 159,
+    "xdrop_csere": 86
+  },
+  "xdrop_igen_bíralonkent": {
+    "mistral": 1018,
+    "llama": 636
+  }
+}

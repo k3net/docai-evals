@@ -1,0 +1,115 @@
+{
+  "a_aktivalas_K0c": {
+    "forras": "eredmenyek/F0/k0c/k0c.json",
+    "teljesul": true
+  },
+  "b_lora_hatas_egyezese": {
+    "pearson_r": 0.9756282245745831,
+    "parok": 28731,
+    "kuszob": 0.9,
+    "teljesul": true
+  },
+  "c_motorok_kozti_egyezes": {
+    "L3_egyezes": 0.987549518958687,
+    "L0_egyezes": 0.944538766270515,
+    "kulonbseg": 0.043010752688172046,
+    "egyoldali_95_also": 0.03623988382302417,
+    "kuszob": -0.02,
+    "teljesul": true
+  },
+  "d_lora_nelkuli_keresek": {
+    "peldanyok": {
+      "lora": 5,
+      "lora_nelkul": 5
+    },
+    "lora_vs_lora_nelkul_egyezes": 0.9366,
+    "lora_nelkul_egymas_kozt": 1.0,
+    "kuszob": -0.01,
+    "teljesul": false
+  },
+  "peldany_robusztussag": {
+    "billenes": {
+      "lora_nelkul_L0": 0.0,
+      "lora_L0": 0.043099999999999916,
+      "lora_L3": 0.010599999999999943
+    },
+    "numerika_modok": {
+      "proba_ujjlenyomat": {
+        "lora": 5,
+        "lora_nelkul": 3
+      },
+      "top_cimke_vektor": {
+        "lora_L0": 4,
+        "lora_L3": 5,
+        "lora_nelkul_L0": 1
+      }
+    },
+    "fo_peldany_ujjlenyomat_eleje_vege": [
+      "687d03020513f146f600870730d66fedd5534ac1e2c7c18799867a2eabb7abc7",
+      "663b3b9056dbcda4a9f44f24872be2a18549cf5fba0a0ef593f617a1c6bee9b4"
+    ]
+  },
+  "H3_teljesul": false,
+  "teljesitmeny": {
+    "a_lora_nelkuli_peldany": {
+      "1": {
+        "n": 512,
+        "dontes_per_s": 4.730211615860411,
+        "p50_ms": 212.18491299077868,
+        "p95_ms": 225.9687938640127
+      },
+      "8": {
+        "n": 512,
+        "dontes_per_s": 10.488664919740785,
+        "p50_ms": 781.7707740177866,
+        "p95_ms": 836.9431218510726
+      },
+      "32": {
+        "n": 512,
+        "dontes_per_s": 14.489350303785459,
+        "p50_ms": 2276.9772799802013,
+        "p95_ms": 2655.5846427945653
+      }
+    },
+    "b_lora_peldany_lora_nelkul": {
+      "1": {
+        "n": 512,
+        "dontes_per_s": 6.35713165125181,
+        "p50_ms": 158.14438398228958,
+        "p95_ms": 170.53174277825747
+      },
+      "8": {
+        "n": 512,
+        "dontes_per_s": 12.200708437328238,
+        "p50_ms": 636.751644051401,
+        "p95_ms": 689.6814722509589
+      },
+      "32": {
+        "n": 512,
+        "dontes_per_s": 16.85423445282745,
+        "p50_ms": 1958.6986969807185,
+        "p95_ms": 2284.6078686387045
+      }
+    },
+    "c_lora_request": {
+      "1": {
+        "n": 512,
+        "dontes_per_s": 6.225652470596303,
+        "p50_ms": 161.0344630025793,
+        "p95_ms": 174.08379224070814
+      },
+      "8": {
+        "n": 512,
+        "dontes_per_s": 11.79290577208731,
+        "p50_ms": 678.0920114833862,
+        "p95_ms": 723.81989636051
+      },
+      "32": {
+        "n": 512,
+        "dontes_per_s": 15.20831903581115,
+        "p50_ms": 2171.647978510009,
+        "p95_ms": 2525.84018096386
+      }
+    }
+  }
+}

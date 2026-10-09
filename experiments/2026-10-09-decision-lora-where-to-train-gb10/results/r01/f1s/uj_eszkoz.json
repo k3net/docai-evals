@@ -1,0 +1,41 @@
+{
+  "kuszob": 0.85,
+  "train_itemek": 14513,
+  "itemek": 6410,
+  "t_uj_eszkoz": 5556,
+  "ebbol_x": 1767,
+  "forrasonkent": {
+    "bfcl_simple": {
+      "n": 399,
+      "uj": 318
+    },
+    "bfcl_multiple": {
+      "n": 200,
+      "uj": 163
+    },
+    "bfcl_irrelevance:X": {
+      "n": 240,
+      "uj": 213
+    },
+    "bfcl_live_simple": {
+      "n": 258,
+      "uj": 209
+    },
+    "bfcl_live_multiple": {
+      "n": 1050,
+      "uj": 978
+    },
+    "bfcl_live_irrelevance:X": {
+      "n": 875,
+      "uj": 665
+    },
+    "w2c_teszt:X": {
+      "n": 1035,
+      "uj": 889
+    },
+    "w2c_teszt": {
+      "n": 2353,
+      "uj": 2121
+    }
+  }
+}

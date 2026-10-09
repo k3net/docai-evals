@@ -1,0 +1,62 @@
+{
+  "retegek": {
+    "T-ujszallito": {
+      "cellak": {
+        "konszenzus": {
+          "pool": 30,
+          "atnezett": 30,
+          "gold_hibas": 0,
+          "ketertelmu": 1,
+          "zaj": 1,
+          "zajarany": 0.03333333333333333,
+          "cp95": [
+            0.0008435709266304788,
+            0.17216945563341265
+          ]
+        },
+        "tobbi_x": {
+          "pool": 387,
+          "atnezett": 28,
+          "gold_hibas": 0,
+          "ketertelmu": 0,
+          "zaj": 0,
+          "zajarany": 0.0,
+          "cp95": [
+            0.0,
+            0.12343611850026381
+          ]
+        },
+        "tobbi_nemx": {
+          "pool": 1257,
+          "atnezett": 92,
+          "gold_hibas": 0,
+          "ketertelmu": 0,
+          "zaj": 0,
+          "zajarany": 0.0,
+          "cp95": [
+            0.0,
+            0.03930328773951803
+          ]
+        }
+      },
+      "n": 1674,
+      "becsult_hiba_osszes": 0.0005973715651135006,
+      "becsult_maradek_javitas_utan": 0.0
+    }
+  },
+  "teszt": {
+    "teszt": {
+      "n": 1674,
+      "pont": 0.0017921146953405018,
+      "felso95": 0.014934289127837515
+    },
+    "val": {
+      "n": 0,
+      "pont": 0.0,
+      "felso95": 0.0
+    },
+    "kapu_max": 0.02,
+    "kapu_ok": true
+  },
+  "javitasok": 1
+}

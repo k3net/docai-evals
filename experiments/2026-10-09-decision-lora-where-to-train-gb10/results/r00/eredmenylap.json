@@ -1,0 +1,48 @@
+{
+  "erzekenyseg_javitatlan_teszten": {
+    "vllm": {
+      "L1csillag": {
+        "besorolasi_lefedettseg": 0.6153591525984773,
+        "besorolasi_precizitas": 0.9752555137170522,
+        "aurc": 0.027265936725957625
+      },
+      "L3_s1": {
+        "besorolasi_lefedettseg": 0.7504137702747434,
+        "besorolasi_precizitas": 0.9810322011468902,
+        "aurc": 0.0018938355799431215
+      },
+      "L3_s2": {
+        "besorolasi_lefedettseg": 0.7613373055279709,
+        "besorolasi_precizitas": 0.9734782608695652,
+        "aurc": 0.0022614291689428273
+      },
+      "L3_s3": {
+        "besorolasi_lefedettseg": 0.7451175107580271,
+        "besorolasi_precizitas": 0.9822301199466904,
+        "aurc": 0.0011621137195833191
+      }
+    },
+    "hf": {
+      "L1csillag": {
+        "besorolasi_lefedettseg": 0.6425024826216484,
+        "besorolasi_precizitas": 0.970118495620814,
+        "aurc": 0.027280720978196026
+      },
+      "L3_s1": {
+        "besorolasi_lefedettseg": 0.7497517378351539,
+        "besorolasi_precizitas": 0.9805739514348786,
+        "aurc": 0.0016067155215629546
+      },
+      "L3_s2": {
+        "besorolasi_lefedettseg": 0.7610062893081762,
+        "besorolasi_precizitas": 0.9747716398434102,
+        "aurc": 0.002305524406951969
+      },
+      "L3_s3": {
+        "besorolasi_lefedettseg": 0.7464415756372063,
+        "besorolasi_precizitas": 0.9818181818181818,
+        "aurc": 0.001087133445238316
+      }
+    }
+  }
+}

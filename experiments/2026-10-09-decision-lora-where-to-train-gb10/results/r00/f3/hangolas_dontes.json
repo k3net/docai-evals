@@ -1,0 +1,55 @@
+{
+  "gyoztes_kar": "l3mixse_h2_s1",
+  "konfig": "l3mixse_h2",
+  "celmodulok": "mix+se",
+  "fakequant": "none",
+  "kapcsolok": "--eps 0.05",
+  "seedek": [
+    2,
+    3
+  ],
+  "osszevetes": [
+    {
+      "pontok": {
+        "l3mixse_s1": {
+          "lef95": 0.7551515151515151,
+          "lef90": 0.7551515151515151,
+          "aurc": 0.0009118776377194563
+        },
+        "l3mixse_h1_s1": {
+          "lef95": 0.7636363636363637,
+          "lef90": 0.7636363636363637,
+          "aurc": 0.0015599334532052876
+        },
+        "l3mixse_h2_s1": {
+          "lef95": 0.7587878787878788,
+          "lef90": 0.7587878787878788,
+          "aurc": 0.0008627847399724335
+        },
+        "l3mixse_h3_s1": {
+          "lef95": 0.76,
+          "lef90": 0.76,
+          "aurc": 0.001682481019476066
+        }
+      }
+    },
+    {
+      "kihivo": "l3mixse_h1_s1",
+      "vedo": "l3mixse_s1",
+      "dont": "aurc",
+      "kihivo_nyer": false
+    },
+    {
+      "kihivo": "l3mixse_h2_s1",
+      "vedo": "l3mixse_s1",
+      "dont": "aurc",
+      "kihivo_nyer": true
+    },
+    {
+      "kihivo": "l3mixse_h3_s1",
+      "vedo": "l3mixse_h2_s1",
+      "dont": "aurc",
+      "kihivo_nyer": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+k01_l3mixse_p30_s1 | --targets mix+se --eps 0.05 --perm-aug 0.3 --seed 1 | train=kor01/adat/items_train.jsonl,kor01/adat/f1s/items_eu180k.jsonl

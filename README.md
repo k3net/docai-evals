@@ -78,11 +78,15 @@ docai-evals/
 | [lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) | Does fine-tuning beat a deterministic best-of-8 selector? | On form, no — the untrained selector wins every metric. On voice, only training works: +36 points | **R1** |
 | [where-knowledge-lives-hu-en-zh](experiments/2026-08-26-where-knowledge-lives-hu-en-zh/) | Does a multilingual model reach Hungarian facts through English? | No — the pull is semantic, not English; but Hungarian-only knowledge scored lowest in Hungarian in this sample (7%, n = 15) | **R1** |
 | [cjk-damping-dose-response-gb10](experiments/2026-09-18-cjk-damping-dose-response-gb10/) | How much may be taken from a token class before it costs? | S = 0.7: CJK risk exactly zero on the production sampler, Chinese intact; one step further loses 45 % of Chinese, and the Hungarian cost is zero by construction — the temperature firefight was not a fix | R1 |
+| [decision-lora-where-to-train-gb10](experiments/2026-10-09-decision-lora-where-to-train-gb10/) | Where is it worth training a decision adapter? | Where the base model is weak: the same LoRA recipe automates 13.7 points more on invoice-line matching, and loses to the calibrated base model on tool selection | R1 |
 
 `R1/R2/R3` are reproducibility levels — see **[docs/reproducibility.md](docs/reproducibility.md)**.
-Two entries are **R1**, both because their corpus is one we are allowed to publish: the verse
-experiment runs on public-domain poetry, and where-knowledge-lives on a purpose-built set of
-factual questions that ships in the repository. Everything else here measures customer documents.
+Four entries are **R1**, all because their corpus is one we are allowed to publish: the verse
+experiment runs on public-domain poetry, where-knowledge-lives on a purpose-built set of factual
+questions that ships in the repository, cjk-damping on a synthetic trap corpus (the customer traces
+behind its risk numbers stay private), and decision-lora-where-to-train on a synthetic dataset and
+public benchmarks, whose rows it ships as hashed references. Everything else here measures customer
+documents.
 
 For where-knowledge-lives, CI re-runs the reproduction on every push
 ([`.github/workflows/reproduce.yml`](.github/workflows/reproduce.yml)): it rebuilds the prompts from
@@ -112,6 +116,7 @@ Each experiment links back to the article that tells its story. The articles are
 - [A Qwen3.6 ott hozott, ahol nem kellett volna](https://docai.hu/blog/qwen36-mtp-gb10) — multi-token prediction, measured four ways
 - [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) — why a kernel benchmark is not a serving gain
 - [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) — a fine-tune that lost to a few dozen lines of scoring code, and won on the one axis the scorer cannot see
+- [Hol érdemes tanítani a modellt?](https://docai.hu/blog/hol-erdemes-tanitani) — one decision adapter, two tasks, opposite results: train where the base model is weak (long form: [research report](https://docai.hu/kutatas/hol-erdemes-tanitani))
 - All articles: **[docai.hu/blog](https://docai.hu/blog)**
 
 ## Reading a result honestly

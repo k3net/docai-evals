@@ -1,0 +1,19 @@
+{
+ "datum": "2026-10-07T12:40:14",
+ "fajl": "adat/k00b/meres/items_T-ujszallito.jsonl",
+ "itemek": 2107,
+ "pontozott": 1673,
+ "x_arany_pontozott": 0.24506873879258817,
+ "szallitok": 16,
+ "atnezes": {
+  "minta": 150,
+  "egyezik": 149,
+  "ketertelmure": 1
+ },
+ "maradek_zaj": {
+  "n": 1674,
+  "pont": 0.0017921146953405018,
+  "felso95": 0.014934289127837515
+ },
+ "kapu_ok": true
+}

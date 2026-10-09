@@ -1,0 +1,83 @@
+{
+  "zaj_max": 0.01,
+  "negativ_kontroll_dgold": 0.004272907385837348,
+  "k0c_attn": {
+    "loaded_modules": 20,
+    "expected": 20,
+    "kinds": [
+      "language_model.model.layers.N.self_attn.o_proj",
+      "language_model.model.layers.N.self_attn.qkv_proj"
+    ],
+    "expert_modules": 0,
+    "no_weights_reported": 170,
+    "logits_moved": true,
+    "mean_abs_dprob_gold": 0.02576123759393354,
+    "label_logprob_max_abs_diff": 2.6160125732421875,
+    "top_label_agreement_vs_base": 1.0,
+    "ok": true
+  },
+  "k0c_gdn": {
+    "loaded_modules": 90,
+    "expected": 90,
+    "kinds": [
+      "language_model.model.layers.N.linear_attn.in_proj_ba",
+      "language_model.model.layers.N.linear_attn.in_proj_qkvz",
+      "language_model.model.layers.N.linear_attn.out_proj"
+    ],
+    "expert_modules": 0,
+    "no_weights_reported": 100,
+    "logits_moved": true,
+    "mean_abs_dprob_gold": 0.027415541425459464,
+    "label_logprob_max_abs_diff": 3.4981894493103027,
+    "top_label_agreement_vs_base": 0.98,
+    "ok": true
+  },
+  "k0c_se": {
+    "loaded_modules": 80,
+    "expected": 80,
+    "kinds": [
+      "language_model.model.layers.N.mlp.shared_expert.down_proj",
+      "language_model.model.layers.N.mlp.shared_expert.gate_up_proj"
+    ],
+    "expert_modules": 0,
+    "no_weights_reported": 110,
+    "logits_moved": true,
+    "mean_abs_dprob_gold": 0.04755538381968222,
+    "label_logprob_max_abs_diff": 4.33311653137207,
+    "top_label_agreement_vs_base": 0.96,
+    "ok": true
+  },
+  "k0c_all": {
+    "loaded_modules": 190,
+    "expected": 190,
+    "kinds": [
+      "language_model.model.layers.N.linear_attn.in_proj_ba",
+      "language_model.model.layers.N.linear_attn.in_proj_qkvz",
+      "language_model.model.layers.N.linear_attn.out_proj",
+      "language_model.model.layers.N.mlp.shared_expert.down_proj",
+      "language_model.model.layers.N.mlp.shared_expert.gate_up_proj",
+      "language_model.model.layers.N.self_attn.o_proj",
+      "language_model.model.layers.N.self_attn.qkv_proj"
+    ],
+    "expert_modules": 0,
+    "no_weights_reported": 0,
+    "logits_moved": true,
+    "mean_abs_dprob_gold": 0.0427166784725878,
+    "label_logprob_max_abs_diff": 3.373694896697998,
+    "top_label_agreement_vs_base": 0.94,
+    "ok": true
+  },
+  "k0c_all_norename": {
+    "loaded_modules": 0,
+    "expected": 0,
+    "kinds": [],
+    "expert_modules": 0,
+    "no_weights_reported": 190,
+    "logits_moved": false,
+    "mean_abs_dprob_gold": 0.004272907385837348,
+    "label_logprob_max_abs_diff": 3.3704662322998047,
+    "top_label_agreement_vs_base": 1.0,
+    "ok": true
+  },
+  "K0c_ok": true
+}

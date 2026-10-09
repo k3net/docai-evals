@@ -1,0 +1,197 @@
+id: decision-lora-where-to-train-gb10
+version: "1.0"
+date: "2026-10-09"
+title: "Where is it worth training a decision adapter? One recipe, two pre-registered rounds (invoice line -> catalogue article; tool selection), opposite results, on Qwen3.6-35B-A3B-FP8"
+question: >-
+  Does a small decision LoRA on an already served chat model give more coverage at 95 % precision, and a better
+  risk-coverage curve, than a careful calibration of the same model's untrained label probabilities? Round 1 asks
+  it for matching Hungarian invoice lines to catalogue articles, round 2 for tool selection with "none of these".
+
+task:
+  type: classification            # selective multiple-choice decision with abstention; round 2 is tool selection (closest values: classification / chat-tool-use)
+  document_types: [invoice-line, tool-call-request]
+  language: [hu, en]
+  output_format: single label token (A-J or X) with label-restricted probability
+
+dataset:
+  name: "Round 1: hu-invoice-catalog-decisions (synthetic). Round 2: tool selection over BFCL v3, When2Call, xLAM, MASSIVE hu-HU, a 62-tool general catalogue, EU-180k"
+  size:
+    round1_train: 5593
+    round1_val: 1006
+    round1_test: 3534
+    round1_test_scored: 3020
+    round1_test_new_suppliers: 2107
+    round1_test_new_suppliers_scored: 1673
+    round2_train: 14513
+    round2_val: 3524
+    round2_test: 10013
+    round2_pool_scored: 7561
+    jev_overlap_items_when2call: 2328
+  access: public                  # round 1 synthetic (Hugging Face + dataset/r00); round 2 Hungarian rows in full, public-benchmark rows as hashed references (dataset/r01)
+  ground_truth: >-
+    Round 1: by construction (each line is generated from a known article; "none of these" = the article removed),
+    two independent LLM judges (Llama-3.3-70B, Mistral Small 4) as a pre-filter, stratified human review of 424
+    items; residual noise 0.40 % (upper 95 % 1.36 %). Round 2: the benchmarks' own gold for BFCL and When2Call;
+    the scored Hungarian layers reviewed in full by a GPT-based agent with a blind human audit (300 unchanged +
+    70 corrections), every correction human-confirmed; residual noise 1.2 % (upper 2.4 %), above the 2 % gate.
+  notes: >-
+    The round-1 generator worked from an aggregated purchasing profile of one customer (pattern types and
+    distributions only); the profile is not published, the frozen synthetic dataset is. Round-2 rows from BFCL
+    (test-only by protocol), When2Call (built from BFCL-live) and xLAM (generator licence check open) are published
+    as references: id, layer, pseudonymised tool names, non-text meta, and the sha256 of the converted row.
+
+systems:
+  - label: L0
+    role: baseline
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.30.0 (vllm/vllm-openai:v0.30.0, sha256:8a69ffad...), no MTP, DGX Spark GB10"
+    sampling: { mode: "one forward pass; label-token log-probabilities via logprob_token_ids", thinking: false }
+    notes: "Raw read-out restricted to the label tokens."
+  - label: L1★
+    role: baseline
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    notes: "Calibrated read-out: four option orders averaged, temperature fitted on the validation set (perm 0). The baseline of H1 in both rounds."
+  - label: L3
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8 + decision LoRA
+    notes: "LoRA r16 on attention, GatedDeltaNet projections and the shared-expert MLP (no LoRA on routed experts); 1 epoch; CE on present labels + 0.5*Brier, eps 0.05; round 2 with 30 % option permutation; trained in BF16 on a de-quantised copy, served on the FP8 checkpoint; temperature-calibrated; 3 seeds. Round-1 adapter public (k3dani/Qwen3.6-35B-A3B-invoice-decision-lora), round-2 adapter not."
+  - label: L2a
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8 hidden state, layer 40
+    engine: HF transformers
+    notes: "Round 1 only: linear probe without LoRA (H4)."
+  - label: L0n
+    role: reference
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    notes: "Round 2 only: native tool calling (chat template with tools, greedy)."
+  - label: S2
+    role: reference
+    model: Qwen/Qwen3.6-35B-A3B-FP8, thinking mode
+    notes: "Round 2, post hoc: re-decides the items below the L3 threshold."
+  - label: JEV-27B, JEV-9B, JEV-Gemma4-26B-A4B
+    role: reference
+    model: autotrust/JEV-27B and siblings
+    notes: "Not run by us: the authors' published per-item probabilities on the Decision Index (autotrust/jev-decision-index-results, Apache-2.0); gold rebuilt from the kit's pinned sources, their published accuracies reproduced exactly."
+  - label: Llama-3.3-70B-Instruct-FP8, Mistral Small 4 119B-A6B NVFP4
+    role: judge
+    notes: "Label pre-filter (both rounds), local. Their output is never a label or a soft target."
+  - label: GPT-based review agent
+    role: judge
+    notes: "Round 2: reviewed the scored Hungarian test labels in full; blind human audit. A correction reached the data only with human confirmation."
+
+metrics:
+  - name: coverage_at_95_precision
+    definition: >-
+      Share of scored items assigned to an option above tau; tau chosen on validation as the smallest threshold whose
+      one-sided 95 % Clopper-Pearson lower bound of precision is >= 0.95. Test precision < 0.93 = precision failure.
+      Upper bound: the share of items with a correct option (ceiling). Hierarchical bootstrap (seed x cluster),
+      10 000 replicates, validation resampled and tau re-chosen per replicate.
+    primary: true
+    preregistered: "full"
+  - name: aurc
+    definition: "Area under the risk-coverage curve of the arm's own assignments; co-primary with Holm. Also reported cut to a common coverage (post hoc)."
+    primary: true
+    preregistered: "full"
+  - name: x_coverage
+    definition: "Share of 'none of these' items whose top label is X, threshold-free. Round 2 H5 (non-inferiority margin -2 points)."
+    primary: false
+    preregistered: "full"
+  - name: ece
+    definition: "Expected calibration error, 15 equal-mass bins. Round 1 H5."
+    primary: false
+    preregistered: "full"
+  - name: generalisation_layers
+    definition: >-
+      Round 1 H2: the coverage@95 difference on held-out category branches and new suppliers; round 2 H2 on
+      T-BFCL-live + When2Call and T-hu. Verdict from the CI: generalises / does not (upper < 2 points) / undecidable.
+      Round 2's definition has no precision condition (a weakness noted in the results). Round 1's supplier layer
+      was not held out (generator bug); a pre-registered addendum (00b) measured 16 new suppliers.
+    primary: false
+    preregistered: "partial"
+  - name: call_separation_auroc
+    definition: "When2Call items shared by round 2 and the Decision Index: AUROC of the call probability (1 - P(X); JEV: P(tool call)), false-call rate at 90 / 95 % recall of correct calls."
+    primary: false
+    preregistered: "post-hoc"
+
+decision_rule: >-
+  Fixed before each round's test: the dataset is public in every case; the adapter is public only if H1 holds and
+  H2 generalises on every pre-registered layer (round 1: with a serving note if H3 fails); if H1 fails, the adapter
+  is not published and the study reports "the calibrated logit is enough" as a negative result.
+
+results:
+  round1_pool_vllm:
+    L0: { coverage_at_95: 0.596, precision: 0.957, aurc: 0.0370, ece: 0.048, x_coverage: 0.385 }
+    L1_star: { coverage_at_95: 0.616, precision: 0.975, aurc: 0.0273, ece: 0.043, x_coverage: 0.434 }
+    L3_mean_3_seeds: { coverage_at_95: 0.752, coverage_range: [0.745, 0.761], precision: 0.979, aurc: 0.0018, ece: 0.010, x_coverage: 0.957 }
+    ceiling: 0.756
+    H1_gain_points: { point: 13.7, ci95: [4.8, 21.0] }
+    H2_category_points: { point: 9.8, ci95: [1.7, 15.5] }
+    H2_new_suppliers_points: { point: 19.5, ci95: [10.2, 29.2], supplier_permutation_p: 3.1e-5, suppliers_positive: "16/16" }
+    H3: "refuted: --enable-lora switches the MoE FP8 kernel; ~6 % of uncertain LoRA-free decisions flip, no accuracy loss detectable at +-1.3 points"
+    H4_probe_vs_L1_star_points: { point: 6.4, ci95: [0.95, 13.3] }
+    H5_ece: { L1_star: 0.043, L3: 0.010 }
+    gain_by_x_share_points: { x25: 13.7, x10: 3.5, x05: 1.1 }
+  round2_pool_vllm:
+    L0: { coverage_at_95: 0.684, precision: 0.893, aurc: 0.0333, ece: 0.056, x_coverage: 0.762 }
+    L1_star: { coverage_at_95: 0.717, precision: 0.882, aurc: 0.0331, ece: 0.023, x_coverage: 0.762 }
+    L3_mean_3_seeds: { coverage_at_95: 0.767, coverage_range: [0.758, 0.775], precision: 0.840, precision_range: [0.832, 0.847], aurc: 0.0609, ece: 0.088, x_coverage: 0.673 }
+    L0n_native: { call_rate: 0.674, precision: 0.850, x_coverage: 0.735 }
+    ceiling: 0.669
+    H1: "refuted: coverage +4.9 [3.6, 6.6] points but precision failure on all seeds; AURC +0.0279 [0.0219, 0.034] in L1*'s favour"
+    risk_at_50pct_coverage: { L1_star: 0.049, L3: [0.073, 0.080] }
+    H3_vs_native_points: { L3_precision_at_native_coverage: 3.4, L3_coverage_at_native_precision: 7.4, L1_star_same: [5.7, 5.1] }
+    H4: "holds: two adapters on one instance, serial and c=16 mixed traffic, within the noise floor"
+    H5_x_coverage_points: { point: -8.9, ci95: [-11.4, -6.3] }
+  f5b_when2call_overlap:
+    auroc: { L1_star: 0.964, L3: [0.945, 0.959], JEV_27B: 0.949, JEV_9B: 0.953, JEV_Gemma4_26B_A4B: 0.943 }
+    false_calls_at_95: { L1_star: 0.141, L3: [0.157, 0.173], JEV_27B: 0.373 }
+    clinc_oos_recognised: { JEV_9B: 0.213, JEV_27B: 0.384, JEV_Gemma4_26B_A4B: 0.671 }
+
+verdict: >-
+  The same recipe on the same served model gains where the base model is weak and hurts where it is strong. Invoice
+  line -> article: +13.7 points of coverage at 95 % precision (+19.5 with new suppliers), mostly from recognising
+  "none of these"; the adapter stays and is public. Tool selection: the calibrated base model is better on precision,
+  AURC and genuine irrelevance; the adapter is not published and the calibrated read-out stays in production. A
+  public soft-target distilled model (JEV-27B) separates call from no-call no better than our adapter on the same
+  items. Train only where the calibrated base is weak, with the kinds of "none of these" production brings.
+
+reproducibility:
+  level: R1
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 3
+  not_published: >-
+    The round-2 adapter (by the pre-registered rule; retrainable from code/eszkozok/tren_lora.py and the dataset).
+    Round-2 rows from BFCL, When2Call and xLAM as rows (published as hashed references; rebuilt from the upstream
+    files whose sha256 are in corpus_manifest.json - a clean-room rebuild has not been run). The tenant profile
+    behind round 1's generator and the realism audit's real lines (customer data). Judge outputs, run logs and the
+    HF-engine per-item read-outs (aggregates in results/r00/hf_f4.json).
+  verified_by: >-
+    code/verify_package.py: checks every dataset file against corpus_manifest.json (and round 1's splits against the
+    Hugging Face manifest), then recomputes L0, L1* and L3 for both rounds from the published read-outs with the
+    measurement's own scoring code - 1 491 published numbers, all within 1e-9 on 2026-10-09.
+
+limitations:
+  - "One model, one quantisation (FP8), one engine build (vLLM 0.30.0), one hardware (GB10)."
+  - "Round 1 is synthetic, from one generator family, with mostly constructed 'none of these' items; the gain depends on the real share of them (+13.7 points at 25 %, +3.5 at 10 %)."
+  - "Round 1's supplier layer was not held out (generator bug, found in the self-check); H2 there is not testable, the 00b addendum measured 16 new suppliers."
+  - "Round 2's Hungarian labels: residual noise up to 2.4 % (upper bound), above the pre-registered 2 % gate; reviewer a GPT-based agent, corrections human-confirmed."
+  - "Round 2's H2 definition judges coverage without a precision condition and reports 'generalises' where the adapter fails on precision."
+  - "No arm kept 95 % precision on round 2's test: the validation 'none of these' items did not represent the test's genuine irrelevance."
+  - "The JEV comparison runs in a different frame (four response modes vs tools + X) on the same items, from published probabilities; JEV was not run."
+  - "Mechanism analyses (X-type breakdown, relabelled items, thinking mode, two-stage decision) are post hoc."
+  - "Throughput from one instance, one run each."
+
+related:
+  study: "https://docai.hu/kutatas/hol-erdemes-tanitani"
+  article: "https://docai.hu/blog/hol-erdemes-tanitani"
+  background_article: "https://docai.hu/blog/a-modell-amely-nem-ir-csak-dont"
+  experiments:
+    - "2026-08-14-lora-vs-reranker-hu-verse"
+    - "2026-09-18-cjk-damping-dose-response-gb10"
+  references:
+    - "Qwen/Qwen3.6-35B-A3B-FP8 - the subject model."
+    - "autotrust/JEV-27B and autotrust/jev-decision-index-results (Apache-2.0); the Decision Index kit (apolinario/decision-index, MIT)."
+    - "BFCL v3 (Berkeley Function-Calling Leaderboard), When2Call (NAACL 2025), xLAM / APIGen (arXiv:2406.18518), MASSIVE, CLINC150, EU-180k."
+    - "Hammer (arXiv:2410.04587) - the irrelevance trade-off in function-calling fine-tuning."

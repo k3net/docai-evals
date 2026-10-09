@@ -1,0 +1,11 @@
+{
+  "n": 512,
+  "acc": 0.759765625,
+  "missing_rows": 0,
+  "fingerprint": "73941eb4895f8494b133fbd58e8e80b94d968f4dd1320a9709cc559c0b1a9a3f",
+  "wall_s": 80.53946781158447,
+  "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "perms": [
+    0
+  ]
+}

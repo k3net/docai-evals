@@ -1,0 +1,336 @@
+{
+  "forras": {
+    "jev": "autotrust/jev-decision-index-results",
+    "when2call": "nvidia/When2Call@0582f77",
+    "clinc": "clinc/oos-eval data_full.json"
+  },
+  "When2Call MCQ": {
+    "JEV-9B": {
+      "aurc": 0.08636775114894227,
+      "ece": 0.034928322341684935,
+      "x_fedes": 0.6772200772200773,
+      "x_precizitas": 0.9733629300776915,
+      "pontossag": 0.7751916757940854,
+      "plafon": 0.6453997809419496,
+      "tau_ket_fel": [
+        Infinity,
+        Infinity
+      ],
+      "lef95": 0.0,
+      "prec95": null,
+      "x_besorolva95": 0.0,
+      "helyes_kategoriankent": {
+        "cannot_answer": 0.6772200772200773,
+        "request_for_info": 0.6949152542372882,
+        "tool_call": 0.938996138996139
+      },
+      "konfuzio": {
+        "cannot_answer->cannot_answer": 877,
+        "cannot_answer->direct": 70,
+        "cannot_answer->request_for_info": 67,
+        "cannot_answer->tool_call": 281,
+        "request_for_info->cannot_answer": 13,
+        "request_for_info->direct": 8,
+        "request_for_info->request_for_info": 738,
+        "request_for_info->tool_call": 303,
+        "tool_call->cannot_answer": 11,
+        "tool_call->direct": 11,
+        "tool_call->request_for_info": 57,
+        "tool_call->tool_call": 1216
+      }
+    },
+    "JEV-27B": {
+      "aurc": 0.0775381735433692,
+      "ece": 0.04111141836824813,
+      "x_fedes": 0.6841698841698842,
+      "x_precizitas": 0.977924944812362,
+      "pontossag": 0.7853231106243155,
+      "plafon": 0.6453997809419496,
+      "tau_ket_fel": [
+        0.9949097927581433,
+        Infinity
+      ],
+      "lef95": 0.06407447973713033,
+      "prec95": 0.9444444444444444,
+      "x_besorolva95": 0.0015444015444015444,
+      "helyes_kategoriankent": {
+        "cannot_answer": 0.6841698841698842,
+        "request_for_info": 0.807909604519774,
+        "tool_call": 0.8679536679536679
+      },
+      "konfuzio": {
+        "cannot_answer->cannot_answer": 886,
+        "cannot_answer->direct": 164,
+        "cannot_answer->request_for_info": 174,
+        "cannot_answer->tool_call": 71,
+        "request_for_info->cannot_answer": 8,
+        "request_for_info->direct": 17,
+        "request_for_info->request_for_info": 858,
+        "request_for_info->tool_call": 179,
+        "tool_call->cannot_answer": 12,
+        "tool_call->direct": 25,
+        "tool_call->request_for_info": 134,
+        "tool_call->tool_call": 1124
+      }
+    },
+    "JEV-Gemma4-26B-A4B": {
+      "aurc": 0.04110448049600968,
+      "ece": 0.05538146712328555,
+      "x_fedes": 0.8208494208494208,
+      "x_precizitas": 0.9779208831646734,
+      "pontossag": 0.8567907995618839,
+      "plafon": 0.6453997809419496,
+      "tau_ket_fel": [
+        0.9873946036273967,
+        0.9867939545966179
+      ],
+      "lef95": 0.3359802847754655,
+      "prec95": 0.9641401792991035,
+      "x_besorolva95": 0.004633204633204633,
+      "helyes_kategoriankent": {
+        "cannot_answer": 0.8208494208494208,
+        "request_for_info": 0.8747645951035782,
+        "tool_call": 0.877992277992278
+      },
+      "konfuzio": {
+        "cannot_answer->cannot_answer": 1063,
+        "cannot_answer->direct": 12,
+        "cannot_answer->request_for_info": 94,
+        "cannot_answer->tool_call": 126,
+        "request_for_info->cannot_answer": 11,
+        "request_for_info->direct": 3,
+        "request_for_info->request_for_info": 929,
+        "request_for_info->tool_call": 119,
+        "tool_call->cannot_answer": 13,
+        "tool_call->direct": 3,
+        "tool_call->request_for_info": 142,
+        "tool_call->tool_call": 1137
+      }
+    }
+  },
+  "CLINC150+OOS": {
+    "JEV-9B": {
+      "aurc": 0.08034556493561822,
+      "ece": 0.07742919783399321,
+      "x_fedes": 0.213,
+      "x_precizitas": 0.6635514018691588,
+      "pontossag": 0.7256363636363636,
+      "plafon": 0.8181818181818182,
+      "tau_ket_fel": [
+        0.9658555550887429,
+        0.9857260527074361
+      ],
+      "lef95": 0.3841818181818182,
+      "prec95": 0.9564600094652154,
+      "x_besorolva95": 0.035,
+      "helyes_kategoriankent": {
+        "in": 0.8395555555555556,
+        "oos": 0.213
+      }
+    },
+    "JEV-27B": {
+      "aurc": 0.05216880727192598,
+      "ece": 0.04725533194559893,
+      "x_fedes": 0.384,
+      "x_precizitas": 0.810126582278481,
+      "pontossag": 0.7954545454545454,
+      "plafon": 0.8181818181818182,
+      "tau_ket_fel": [
+        0.9710329325836903,
+        0.9737881844651551
+      ],
+      "lef95": 0.4874545454545455,
+      "prec95": 0.958970533383066,
+      "x_besorolva95": 0.044,
+      "helyes_kategoriankent": {
+        "in": 0.8868888888888888,
+        "oos": 0.384
+      }
+    },
+    "JEV-Gemma4-26B-A4B": {
+      "aurc": 0.01334236691760304,
+      "ece": 0.039726693694236544,
+      "x_fedes": 0.671,
+      "x_precizitas": 0.9882179675994109,
+      "pontossag": 0.9089090909090909,
+      "plafon": 0.8181818181818182,
+      "tau_ket_fel": [
+        0.8761428779682382,
+        0.8830673605375915
+      ],
+      "lef95": 0.7909090909090909,
+      "prec95": 0.9577011494252874,
+      "x_besorolva95": 0.119,
+      "helyes_kategoriankent": {
+        "in": 0.9617777777777777,
+        "oos": 0.671
+      }
+    }
+  },
+  "atfedes_01_when2call": {
+    "n_parositott": 3388,
+    "n_kategoriankent": {
+      "cannot_answer": 1035,
+      "request_for_info": 1060,
+      "tool_call": 1293
+    },
+    "karok": {
+      "L1★": {
+        "cannot_answer": {
+          "hiv": 0.2251207729468599
+        },
+        "request_for_info": {
+          "hiv": 0.9216981132075471,
+          "helyes_eszkoz": 0.8867924528301887
+        },
+        "tool_call": {
+          "hiv": 0.9721577726218097,
+          "helyes_eszkoz": 0.9590100541376644
+        },
+        "szetvalasztas": {
+          "auroc": 0.9638473235668837,
+          "hamis_hivas@90": 0.08599033816425121,
+          "hamis_hivas@95": 0.14106280193236714
+        }
+      },
+      "L3 s1": {
+        "cannot_answer": {
+          "hiv": 0.2995169082125604
+        },
+        "request_for_info": {
+          "hiv": 0.9688679245283018,
+          "helyes_eszkoz": 0.9367924528301886
+        },
+        "tool_call": {
+          "hiv": 0.9860788863109049,
+          "helyes_eszkoz": 0.9636504253673627
+        },
+        "szetvalasztas": {
+          "auroc": 0.9593321153292907,
+          "hamis_hivas@90": 0.09468599033816426,
+          "hamis_hivas@95": 0.16521739130434782
+        }
+      },
+      "L3 s2": {
+        "cannot_answer": {
+          "hiv": 0.3111111111111111
+        },
+        "request_for_info": {
+          "hiv": 0.9754716981132076,
+          "helyes_eszkoz": 0.9349056603773584
+        },
+        "tool_call": {
+          "hiv": 0.9899458623356535,
+          "helyes_eszkoz": 0.9644238205723125
+        },
+        "szetvalasztas": {
+          "auroc": 0.9549887726927977,
+          "hamis_hivas@90": 0.09758454106280193,
+          "hamis_hivas@95": 0.157487922705314
+        }
+      },
+      "L3 s3": {
+        "cannot_answer": {
+          "hiv": 0.26956521739130435
+        },
+        "request_for_info": {
+          "hiv": 0.9650943396226415,
+          "helyes_eszkoz": 0.9226415094339623
+        },
+        "tool_call": {
+          "hiv": 0.9837587006960556,
+          "helyes_eszkoz": 0.9582366589327146
+        },
+        "szetvalasztas": {
+          "auroc": 0.9445120698222685,
+          "hamis_hivas@90": 0.11690821256038647,
+          "hamis_hivas@95": 0.17294685990338166
+        }
+      },
+      "JEV-9B": {
+        "cannot_answer": {
+          "hiv": 0.242512077294686,
+          "valasz_direct": 0.03768115942028986,
+          "valasz_tool_call": 0.242512077294686,
+          "valasz_request_for_info": 0.06280193236714976,
+          "valasz_cannot_answer": 0.6570048309178744
+        },
+        "request_for_info": {
+          "hiv": 0.2858490566037736,
+          "valasz_direct": 0.007547169811320755,
+          "valasz_tool_call": 0.2858490566037736,
+          "valasz_request_for_info": 0.6943396226415094,
+          "valasz_cannot_answer": 0.012264150943396227
+        },
+        "tool_call": {
+          "hiv": 0.9389017788089714,
+          "valasz_direct": 0.008507347254447023,
+          "valasz_tool_call": 0.9389017788089714,
+          "valasz_request_for_info": 0.04408352668213457,
+          "valasz_cannot_answer": 0.008507347254447023
+        },
+        "szetvalasztas": {
+          "auroc": 0.9531838102603764,
+          "hamis_hivas@90": 0.10434782608695652,
+          "hamis_hivas@95": 0.3342995169082126
+        }
+      },
+      "JEV-27B": {
+        "cannot_answer": {
+          "hiv": 0.06183574879227053,
+          "valasz_direct": 0.09855072463768116,
+          "valasz_tool_call": 0.06183574879227053,
+          "valasz_request_for_info": 0.1565217391304348,
+          "valasz_cannot_answer": 0.6830917874396135
+        },
+        "request_for_info": {
+          "hiv": 0.16886792452830188,
+          "valasz_direct": 0.016037735849056604,
+          "valasz_tool_call": 0.16886792452830188,
+          "valasz_request_for_info": 0.8075471698113208,
+          "valasz_cannot_answer": 0.007547169811320755
+        },
+        "tool_call": {
+          "hiv": 0.8677494199535963,
+          "valasz_direct": 0.019334880123743233,
+          "valasz_tool_call": 0.8677494199535963,
+          "valasz_request_for_info": 0.10363495746326373,
+          "valasz_cannot_answer": 0.009280742459396751
+        },
+        "szetvalasztas": {
+          "auroc": 0.9490014982196966,
+          "hamis_hivas@90": 0.0966183574879227,
+          "hamis_hivas@95": 0.37294685990338167
+        }
+      },
+      "JEV-Gemma4-26B-A4B": {
+        "cannot_answer": {
+          "hiv": 0.11980676328502415,
+          "valasz_direct": 0.008695652173913044,
+          "valasz_tool_call": 0.11980676328502415,
+          "valasz_request_for_info": 0.09082125603864734,
+          "valasz_cannot_answer": 0.7806763285024154
+        },
+        "request_for_info": {
+          "hiv": 0.11226415094339623,
+          "valasz_direct": 0.002830188679245283,
+          "valasz_tool_call": 0.11226415094339623,
+          "valasz_request_for_info": 0.8745283018867924,
+          "valasz_cannot_answer": 0.010377358490566037
+        },
+        "tool_call": {
+          "hiv": 0.8785769528228925,
+          "valasz_direct": 0.002320185614849188,
+          "valasz_tool_call": 0.8785769528228925,
+          "valasz_request_for_info": 0.10904872389791183,
+          "valasz_cannot_answer": 0.010054137664346482
+        },
+        "szetvalasztas": {
+          "auroc": 0.9431513426066034,
+          "hamis_hivas@90": 0.15072463768115943,
+          "hamis_hivas@95": 0.3565217391304348
+        }
+      }
+    }
+  }
+}

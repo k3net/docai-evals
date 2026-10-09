@@ -1,0 +1,118 @@
+{
+ "dataset": {
+  "dataset/r00/test.jsonl.gz": {
+   "sha256": "ecc9d06448232c2ae0b0c63ecd1c75a5f81890aab998b826819990c39523a59a",
+   "bytes": 476545,
+   "sha256_uncompressed": "86c125f4aac8143fc8b0fd6faae69c6a6af6f306941dca2af86023b21a2bd480",
+   "bytes_uncompressed": 5162750
+  },
+  "dataset/r00/test_new_suppliers.jsonl.gz": {
+   "sha256": "cae5e1bd6d0d4709f95eaffa8a3f445b2a57590c2e0e6855352f35809df24a56",
+   "bytes": 288572,
+   "sha256_uncompressed": "4287e275f56fa9e2912af47c33bd88ce88c17c685ef5e87e7d9bc1d947d88651",
+   "bytes_uncompressed": 3099917
+  },
+  "dataset/r00/validation.jsonl.gz": {
+   "sha256": "da75a26536bac8ecfe53495ece07e2177711218d480e071d844457a40d72f21b",
+   "bytes": 156785,
+   "sha256_uncompressed": "466ef2be645c475bea6fc17b6e50bcba75157d77a4385a02fe334c80c0ca937d",
+   "bytes_uncompressed": 1467207
+  },
+  "dataset/r01/README.md": {
+   "sha256": "66b511a579714fa7ffcde7a747d9f12c10f15a57796a5c286d5d91378b302e99",
+   "bytes": 4704
+  },
+  "dataset/r01/catalog/massive_mapping.json": {
+   "sha256": "7c694838233d7fb1b2abbc60a3e0e455962fc13c8397826eb0a086df24a27bd6",
+   "bytes": 4626
+  },
+  "dataset/r01/catalog/tools.json": {
+   "sha256": "41cd52f4e9adfebb474f009c4531d6c693a54397e703ed38307910b0370bd0e6",
+   "bytes": 36968
+  },
+  "dataset/r01/items_hu.jsonl.gz": {
+   "sha256": "94699e90db6c7b79f196a4df6fb9812a698575ab93a643feaca3ed29e8030c8f",
+   "bytes": 853675,
+   "sha256_uncompressed": "0fe769808f31d9650f8b85a68023ecad6688fcf0b446b2a11641ffd5569dfe6e",
+   "bytes_uncompressed": 14108475
+  },
+  "dataset/r01/items_ref.jsonl.gz": {
+   "sha256": "4f9b28e6ae459bed0fb50129ecf7a5630afbaed075fe76fe01fff69fb6741955",
+   "bytes": 1344476,
+   "sha256_uncompressed": "48b5b7ab8b03e99dafca9b1205924e81dd51255d59641a08e53c2d94c843b2b9",
+   "bytes_uncompressed": 6021852
+  },
+  "dataset/r01/layers.json": {
+   "sha256": "a5eb66a0d59ac11234e2347ec72446ec914d4b6ac2210576c59e858f8e4d96c5",
+   "bytes": 229448
+  }
+ },
+ "r00_hugging_face": {
+  "hf_dataset": "k3dani/hu-invoice-catalog-decisions",
+  "licence": "CC-BY-4.0",
+  "hf_manifest": {
+   "data/test.jsonl": "86c125f4aac8143fc8b0fd6faae69c6a6af6f306941dca2af86023b21a2bd480",
+   "data/test_new_suppliers.jsonl": "4287e275f56fa9e2912af47c33bd88ce88c17c685ef5e87e7d9bc1d947d88651",
+   "data/train.jsonl": "d1c2b67903aa261b08fd7df203c7ba6e30bb2e546f3ebc96a466f41095e956f7",
+   "data/validation.jsonl": "466ef2be645c475bea6fc17b6e50bcba75157d77a4385a02fe334c80c0ca937d"
+  }
+ },
+ "upstream": {
+  "bfcl": {
+   "source": "gorilla-llm/Berkeley-Function-Calling-Leaderboard (v3)",
+   "licence": "Apache-2.0",
+   "files": {
+    "bfcl/BFCL_v3_simple.json": "fbc37b2ad252bf9af985582e0e07b456173fe627d957491472ea9cef5fb83158",
+    "bfcl/possible_answer_simple.json": "2911a2bc00df82c4f999ffa64fedb0164cb88e96212ffa5972087eb91fd496ee",
+    "bfcl/BFCL_v3_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+    "bfcl/possible_answer_multiple.json": "244e00ce9395df948bcafc7bee64e8f9c87ef70887587d83cae45b13699f3047",
+    "bfcl/BFCL_v3_irrelevance.json": "975f51c51f688649fd190078efd87081241e0a326f9114a2ea3c1ca2440d8690",
+    "bfcl/BFCL_v3_live_simple.json": "b398743e6c0dfd2a87cee97a3bc1b9b90b81edc228c3153a820a93b51186fc00",
+    "bfcl/possible_answer_live_simple.json": "4a1988780cdd8a723967587614cb84a9f53aa5d6fd37f83c78a0dd7acc2f3d15",
+    "bfcl/BFCL_v3_live_multiple.json": "af2520ac5bb0b05aa9b8abe14a79b87198e5a3137a707d4f5633c792330f0cee",
+    "bfcl/possible_answer_live_multiple.json": "97e90d59c5bd76c55a2920ce93e5566e9046307d3f558578f085f9d3a56c3084",
+    "bfcl/BFCL_v3_live_irrelevance.json": "0d259e1c3ab6ba06c2a51911e2f49ecaa2eac3723a4a14f183a7687955e61338"
+   }
+  },
+  "when2call": {
+   "source": "nvidia/When2Call",
+   "licence": "CC-BY-4.0",
+   "files": {
+    "when2call/when2call_test_mcq.jsonl": "8c3694e583eeeb8dbc297e6cd90da70efc68efa4b6adb7227523e828c6b7b14c",
+    "when2call/when2call_train_sft.jsonl": "3eb20258557513579995ff55c09fcc33fabf2cd2004dea49dc3a0ba9880e631c"
+   }
+  },
+  "xlam": {
+   "source": "Salesforce/xlam-function-calling-60k (gated; cite APIGen, arXiv:2406.18518)",
+   "licence": "CC-BY-4.0",
+   "files": {
+    "xlam/xlam_function_calling_60k.json": "4ef5c6f0dc552f2231f93f5853a9ef431e9e806d7aa514d0f6b615606ce576c6"
+   }
+  },
+  "xlam_irrel": {
+   "source": "MadeAgents/xlam-irrelevance-7.5k",
+   "licence": "CC-BY-4.0",
+   "files": {
+    "xlam_irrel/xlam-7.5k-irrelevancek.json": "2e6f3d0adbd40248a592ea001e3f3a4f1624a5d50f434fa1e7d019e93e922327"
+   }
+  },
+  "massive": {
+   "source": "AmazonScience/massive 1.1, hu-HU",
+   "licence": "CC-BY-4.0",
+   "files": {
+    "massive/1.1/data/hu-HU.jsonl": "620145338c34dd7cea59b5fe463b864df1121c52b0f4f9540229d5e9e31be4e7"
+   }
+  },
+  "eu180k": {
+   "source": "stindardlogic/eu-multilang-tool-calling-180k",
+   "licence": "CC-BY-4.0",
+   "files": {
+    "eu180k/eu-multilang-tool-calling-180k.jsonl": "b71262b7e4b7a145eca6a57a3c5bee8afb44260d75a866f62704a15fccc69363"
+   }
+  }
+ },
+ "pseudonym": {
+  "function": "t_ + sha256('docai-evals/2026-10-09:' + tool_name)[:12]",
+  "applies_to": "option ids, gold and tool-name meta fields of reference rows (forras bfcl_*, w2c_*, xlam*), and their read-outs"
+ }
+}

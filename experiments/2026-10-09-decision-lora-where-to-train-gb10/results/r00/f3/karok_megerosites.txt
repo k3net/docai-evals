@@ -1,0 +1,2 @@
+l3mixse_h2_s2|mix+se|none|--seed 2 --eps 0.05
+l3mixse_h2_s3|mix+se|none|--seed 3 --eps 0.05

@@ -1,0 +1,533 @@
+{
+  "kar": "k01_l3mixse_p30_s2",
+  "n_val": 3524,
+  "pontozott": 3435,
+  "ketertelmu": 89,
+  "plafon": {
+    "osszes": 0.7287,
+    "val-xlam": 0.7513,
+    "val-massive": 0.7113
+  },
+  "bazis": {
+    "temperature": 1.3701321921797298,
+    "L1_csillag": "perm_avg",
+    "karok": {
+      "nyers": {
+        "95": {
+          "tau": 0.6371,
+          "osszes": {
+            "lef": 0.6664,
+            "prec": 0.9576,
+            "aurc": 0.007,
+            "ece": 0.0297,
+            "pontossag": 0.9124,
+            "x_fedes": 0.9442
+          },
+          "val-xlam": {
+            "lef": 0.7265,
+            "prec": 0.9963,
+            "aurc": 0.0001,
+            "ece": 0.0047,
+            "pontossag": 0.9806,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.6202,
+            "prec": 0.9228,
+            "aurc": 0.0178,
+            "ece": 0.0539,
+            "pontossag": 0.86,
+            "x_fedes": 0.9091
+          }
+        },
+        "90": {
+          "tau": 0.2833,
+          "osszes": {
+            "lef": 0.6987,
+            "prec": 0.9392,
+            "aurc": 0.007,
+            "ece": 0.0297,
+            "pontossag": 0.9124,
+            "x_fedes": 0.9442
+          },
+          "val-xlam": {
+            "lef": 0.7366,
+            "prec": 0.9945,
+            "aurc": 0.0001,
+            "ece": 0.0047,
+            "pontossag": 0.9806,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.6696,
+            "prec": 0.8924,
+            "aurc": 0.0178,
+            "ece": 0.0539,
+            "pontossag": 0.86,
+            "x_fedes": 0.9091
+          }
+        }
+      },
+      "temp": {
+        "95": {
+          "tau": 0.5483,
+          "osszes": {
+            "lef": 0.6687,
+            "prec": 0.9578,
+            "aurc": 0.0067,
+            "ece": 0.0146,
+            "pontossag": 0.9124,
+            "x_fedes": 0.9442
+          },
+          "val-xlam": {
+            "lef": 0.7306,
+            "prec": 0.9954,
+            "aurc": 0.0001,
+            "ece": 0.0179,
+            "pontossag": 0.9806,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.6212,
+            "prec": 0.9238,
+            "aurc": 0.0178,
+            "ece": 0.0303,
+            "pontossag": 0.86,
+            "x_fedes": 0.9091
+          }
+        },
+        "90": {
+          "tau": 0.2647,
+          "osszes": {
+            "lef": 0.6987,
+            "prec": 0.9392,
+            "aurc": 0.0067,
+            "ece": 0.0146,
+            "pontossag": 0.9124,
+            "x_fedes": 0.9442
+          },
+          "val-xlam": {
+            "lef": 0.7366,
+            "prec": 0.9945,
+            "aurc": 0.0001,
+            "ece": 0.0179,
+            "pontossag": 0.9806,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.6696,
+            "prec": 0.8924,
+            "aurc": 0.0178,
+            "ece": 0.0303,
+            "pontossag": 0.86,
+            "x_fedes": 0.9091
+          }
+        }
+      },
+      "perm_avg": {
+        "95": {
+          "tau": 0.4781,
+          "osszes": {
+            "lef": 0.6824,
+            "prec": 0.9578,
+            "aurc": 0.0059,
+            "ece": 0.018,
+            "pontossag": 0.9188,
+            "x_fedes": 0.9549
+          },
+          "val-xlam": {
+            "lef": 0.7386,
+            "prec": 0.9964,
+            "aurc": 0.0001,
+            "ece": 0.022,
+            "pontossag": 0.9846,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.6392,
+            "prec": 0.9235,
+            "aurc": 0.0158,
+            "ece": 0.0226,
+            "pontossag": 0.8682,
+            "x_fedes": 0.9269
+          }
+        },
+        "90": {
+          "tau": 0.2854,
+          "osszes": {
+            "lef": 0.6975,
+            "prec": 0.9457,
+            "aurc": 0.0059,
+            "ece": 0.018,
+            "pontossag": 0.9188,
+            "x_fedes": 0.9549
+          },
+          "val-xlam": {
+            "lef": 0.7399,
+            "prec": 0.9955,
+            "aurc": 0.0001,
+            "ece": 0.022,
+            "pontossag": 0.9846,
+            "x_fedes": 0.9973
+          },
+          "val-massive": {
+            "lef": 0.665,
+            "prec": 0.9033,
+            "aurc": 0.0158,
+            "ece": 0.0226,
+            "pontossag": 0.8682,
+            "x_fedes": 0.9269
+          }
+        }
+      },
+      "batch_0.5": {
+        "95": {
+          "tau": 0.645,
+          "osszes": {
+            "lef": 0.6509,
+            "prec": 0.958,
+            "aurc": 0.0093,
+            "ece": 0.0087,
+            "pontossag": 0.9022,
+            "x_fedes": 0.9099
+          },
+          "val-xlam": {
+            "lef": 0.7131,
+            "prec": 0.9953,
+            "aurc": 0.0002,
+            "ece": 0.0151,
+            "pontossag": 0.9745,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.6032,
+            "prec": 0.9241,
+            "aurc": 0.024,
+            "ece": 0.0221,
+            "pontossag": 0.8466,
+            "x_fedes": 0.8538
+          }
+        },
+        "90": {
+          "tau": 0.2918,
+          "osszes": {
+            "lef": 0.715,
+            "prec": 0.9165,
+            "aurc": 0.0093,
+            "ece": 0.0087,
+            "pontossag": 0.9022,
+            "x_fedes": 0.9099
+          },
+          "val-xlam": {
+            "lef": 0.7326,
+            "prec": 0.9927,
+            "aurc": 0.0002,
+            "ece": 0.0151,
+            "pontossag": 0.9745,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7015,
+            "prec": 0.8555,
+            "aurc": 0.024,
+            "ece": 0.0221,
+            "pontossag": 0.8466,
+            "x_fedes": 0.8538
+          }
+        }
+      },
+      "batch_0.75": {
+        "95": {
+          "tau": 0.6909,
+          "osszes": {
+            "lef": 0.6396,
+            "prec": 0.9581,
+            "aurc": 0.0113,
+            "ece": 0.0112,
+            "pontossag": 0.8946,
+            "x_fedes": 0.8884
+          },
+          "val-xlam": {
+            "lef": 0.7038,
+            "prec": 0.9952,
+            "aurc": 0.0003,
+            "ece": 0.0166,
+            "pontossag": 0.9732,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.5903,
+            "prec": 0.9241,
+            "aurc": 0.0281,
+            "ece": 0.03,
+            "pontossag": 0.8343,
+            "x_fedes": 0.8182
+          }
+        },
+        "90": {
+          "tau": 0.4334,
+          "osszes": {
+            "lef": 0.7147,
+            "prec": 0.9104,
+            "aurc": 0.0113,
+            "ece": 0.0112,
+            "pontossag": 0.8946,
+            "x_fedes": 0.8884
+          },
+          "val-xlam": {
+            "lef": 0.7312,
+            "prec": 0.9927,
+            "aurc": 0.0003,
+            "ece": 0.0166,
+            "pontossag": 0.9732,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.702,
+            "prec": 0.8446,
+            "aurc": 0.0281,
+            "ece": 0.03,
+            "pontossag": 0.8343,
+            "x_fedes": 0.8182
+          }
+        }
+      },
+      "batch_1.0": {
+        "95": {
+          "tau": 0.7475,
+          "osszes": {
+            "lef": 0.6253,
+            "prec": 0.9581,
+            "aurc": 0.0141,
+            "ece": 0.0178,
+            "pontossag": 0.8862,
+            "x_fedes": 0.8584
+          },
+          "val-xlam": {
+            "lef": 0.6897,
+            "prec": 0.9951,
+            "aurc": 0.0004,
+            "ece": 0.0199,
+            "pontossag": 0.9725,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.5759,
+            "prec": 0.924,
+            "aurc": 0.0346,
+            "ece": 0.036,
+            "pontossag": 0.8199,
+            "x_fedes": 0.7683
+          }
+        },
+        "90": {
+          "tau": 0.5076,
+          "osszes": {
+            "lef": 0.7066,
+            "prec": 0.9102,
+            "aurc": 0.0141,
+            "ece": 0.0178,
+            "pontossag": 0.8862,
+            "x_fedes": 0.8584
+          },
+          "val-xlam": {
+            "lef": 0.7245,
+            "prec": 0.9935,
+            "aurc": 0.0004,
+            "ece": 0.0199,
+            "pontossag": 0.9725,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.6927,
+            "prec": 0.8432,
+            "aurc": 0.0346,
+            "ece": 0.036,
+            "pontossag": 0.8199,
+            "x_fedes": 0.7683
+          }
+        }
+      }
+    }
+  },
+  "L3": {
+    "temperature": 0.8128463802125179,
+    "karok": {
+      "nyers": {
+        "95": {
+          "tau": 0.4649,
+          "osszes": {
+            "lef": 0.7234,
+            "prec": 0.9573,
+            "aurc": 0.0032,
+            "ece": 0.0364,
+            "pontossag": 0.9531,
+            "x_fedes": 0.9539
+          },
+          "val-xlam": {
+            "lef": 0.748,
+            "prec": 0.9964,
+            "aurc": 0.0,
+            "ece": 0.0294,
+            "pontossag": 0.9926,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7046,
+            "prec": 0.9255,
+            "aurc": 0.0112,
+            "ece": 0.0399,
+            "pontossag": 0.9228,
+            "x_fedes": 0.9269
+          }
+        },
+        "90": {
+          "tau": 0.3164,
+          "osszes": {
+            "lef": 0.7278,
+            "prec": 0.954,
+            "aurc": 0.0032,
+            "ece": 0.0364,
+            "pontossag": 0.9531,
+            "x_fedes": 0.9539
+          },
+          "val-xlam": {
+            "lef": 0.7493,
+            "prec": 0.9946,
+            "aurc": 0.0,
+            "ece": 0.0294,
+            "pontossag": 0.9926,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7113,
+            "prec": 0.9211,
+            "aurc": 0.0112,
+            "ece": 0.0399,
+            "pontossag": 0.9228,
+            "x_fedes": 0.9269
+          }
+        }
+      },
+      "temp": {
+        "95": {
+          "tau": 0.5088,
+          "osszes": {
+            "lef": 0.7234,
+            "prec": 0.9573,
+            "aurc": 0.0031,
+            "ece": 0.0248,
+            "pontossag": 0.9531,
+            "x_fedes": 0.9539
+          },
+          "val-xlam": {
+            "lef": 0.748,
+            "prec": 0.9964,
+            "aurc": 0.0,
+            "ece": 0.0143,
+            "pontossag": 0.9926,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7046,
+            "prec": 0.9255,
+            "aurc": 0.0106,
+            "ece": 0.0324,
+            "pontossag": 0.9228,
+            "x_fedes": 0.9269
+          }
+        },
+        "90": {
+          "tau": 0.3344,
+          "osszes": {
+            "lef": 0.7278,
+            "prec": 0.954,
+            "aurc": 0.0031,
+            "ece": 0.0248,
+            "pontossag": 0.9531,
+            "x_fedes": 0.9539
+          },
+          "val-xlam": {
+            "lef": 0.7493,
+            "prec": 0.9946,
+            "aurc": 0.0,
+            "ece": 0.0143,
+            "pontossag": 0.9926,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7113,
+            "prec": 0.9211,
+            "aurc": 0.0106,
+            "ece": 0.0324,
+            "pontossag": 0.9228,
+            "x_fedes": 0.9269
+          }
+        }
+      },
+      "perm_avg": {
+        "95": {
+          "tau": 0.3814,
+          "osszes": {
+            "lef": 0.7255,
+            "prec": 0.9603,
+            "aurc": 0.0026,
+            "ece": 0.019,
+            "pontossag": 0.9569,
+            "x_fedes": 0.9592
+          },
+          "val-xlam": {
+            "lef": 0.7493,
+            "prec": 0.9955,
+            "aurc": 0.0,
+            "ece": 0.0129,
+            "pontossag": 0.9933,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7072,
+            "prec": 0.9316,
+            "aurc": 0.0094,
+            "ece": 0.0254,
+            "pontossag": 0.929,
+            "x_fedes": 0.9358
+          }
+        },
+        "90": {
+          "tau": 0.3814,
+          "osszes": {
+            "lef": 0.7255,
+            "prec": 0.9603,
+            "aurc": 0.0026,
+            "ece": 0.019,
+            "pontossag": 0.9569,
+            "x_fedes": 0.9592
+          },
+          "val-xlam": {
+            "lef": 0.7493,
+            "prec": 0.9955,
+            "aurc": 0.0,
+            "ece": 0.0129,
+            "pontossag": 0.9933,
+            "x_fedes": 0.9946
+          },
+          "val-massive": {
+            "lef": 0.7072,
+            "prec": 0.9316,
+            "aurc": 0.0094,
+            "ece": 0.0254,
+            "pontossag": 0.929,
+            "x_fedes": 0.9358
+          }
+        }
+      }
+    }
+  },
+  "hf_vllm_top_egyezes_perm0": 0.9935,
+  "top_cimke_atvaltas_L1csillag_vs_L3temp": {
+    "jo→jo": 3113,
+    "rossz→rossz": 118,
+    "rossz→jo": 161,
+    "jo→rossz": 43
+  }
+}

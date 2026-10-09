@@ -1,0 +1,257 @@
+{
+ "alarm_query": {
+  "eszkoz": "list_alarms",
+  "felulvizsgal": []
+ },
+ "alarm_remove": {
+  "eszkoz": "delete_alarm",
+  "felulvizsgal": []
+ },
+ "alarm_set": {
+  "eszkoz": "set_alarm",
+  "felulvizsgal": [
+   "set_timer"
+  ]
+ },
+ "audio_volume_down": {
+  "eszkoz": "set_volume",
+  "felulvizsgal": []
+ },
+ "audio_volume_mute": {
+  "eszkoz": "mute_audio",
+  "felulvizsgal": []
+ },
+ "audio_volume_other": {
+  "eszkoz": "set_volume",
+  "felulvizsgal": []
+ },
+ "audio_volume_up": {
+  "eszkoz": "set_volume",
+  "felulvizsgal": []
+ },
+ "calendar_query": {
+  "eszkoz": "list_events",
+  "felulvizsgal": []
+ },
+ "calendar_remove": {
+  "eszkoz": "delete_event",
+  "felulvizsgal": []
+ },
+ "calendar_set": {
+  "eszkoz": "create_event",
+  "felulvizsgal": [
+   "set_reminder"
+  ]
+ },
+ "cooking_query": {
+  "eszkoz": "find_recipe",
+  "felulvizsgal": []
+ },
+ "cooking_recipe": {
+  "eszkoz": "find_recipe",
+  "felulvizsgal": []
+ },
+ "datetime_convert": {
+  "eszkoz": "convert_timezone",
+  "felulvizsgal": []
+ },
+ "datetime_query": {
+  "eszkoz": "get_current_time",
+  "felulvizsgal": []
+ },
+ "email_addcontact": {
+  "eszkoz": "add_contact",
+  "felulvizsgal": []
+ },
+ "email_query": {
+  "eszkoz": "search_email",
+  "felulvizsgal": []
+ },
+ "email_querycontact": {
+  "eszkoz": "get_contact",
+  "felulvizsgal": []
+ },
+ "email_sendemail": {
+  "eszkoz": "send_email",
+  "felulvizsgal": [
+   "reply_email"
+  ]
+ },
+ "general_greet": {
+  "eszkoz": null,
+  "felulvizsgal": [],
+  "ok": "köszönés, nincs eszköz"
+ },
+ "general_joke": {
+  "eszkoz": null,
+  "felulvizsgal": [],
+  "ok": "vicc kérése, eszköz nélkül válaszolható"
+ },
+ "general_quirky": {
+  "eszkoz": null,
+  "felulvizsgal": [],
+  "ok": "csevegés, eszköz nélkül"
+ },
+ "iot_cleaning": {
+  "eszkoz": "start_vacuum",
+  "felulvizsgal": []
+ },
+ "iot_coffee": {
+  "eszkoz": "make_coffee",
+  "felulvizsgal": []
+ },
+ "iot_hue_lightchange": {
+  "eszkoz": "set_lights",
+  "felulvizsgal": []
+ },
+ "iot_hue_lightdim": {
+  "eszkoz": "set_lights",
+  "felulvizsgal": []
+ },
+ "iot_hue_lightoff": {
+  "eszkoz": "set_lights",
+  "felulvizsgal": []
+ },
+ "iot_hue_lighton": {
+  "eszkoz": "set_lights",
+  "felulvizsgal": []
+ },
+ "iot_hue_lightup": {
+  "eszkoz": "set_lights",
+  "felulvizsgal": []
+ },
+ "iot_wemo_off": {
+  "eszkoz": "smart_plug",
+  "felulvizsgal": []
+ },
+ "iot_wemo_on": {
+  "eszkoz": "smart_plug",
+  "felulvizsgal": []
+ },
+ "lists_createoradd": {
+  "eszkoz": "add_to_list",
+  "felulvizsgal": []
+ },
+ "lists_query": {
+  "eszkoz": "get_list",
+  "felulvizsgal": []
+ },
+ "lists_remove": {
+  "eszkoz": "remove_from_list",
+  "felulvizsgal": []
+ },
+ "music_dislikeness": {
+  "eszkoz": "rate_song",
+  "felulvizsgal": []
+ },
+ "music_likeness": {
+  "eszkoz": "rate_song",
+  "felulvizsgal": []
+ },
+ "music_query": {
+  "eszkoz": "get_now_playing",
+  "felulvizsgal": []
+ },
+ "music_settings": {
+  "eszkoz": "set_player_mode",
+  "felulvizsgal": []
+ },
+ "news_query": {
+  "eszkoz": "get_news",
+  "felulvizsgal": []
+ },
+ "play_audiobook": {
+  "eszkoz": "play_audiobook",
+  "felulvizsgal": []
+ },
+ "play_game": {
+  "eszkoz": "start_game",
+  "felulvizsgal": []
+ },
+ "play_music": {
+  "eszkoz": "play_music",
+  "felulvizsgal": []
+ },
+ "play_podcasts": {
+  "eszkoz": "play_podcast",
+  "felulvizsgal": []
+ },
+ "play_radio": {
+  "eszkoz": "play_radio",
+  "felulvizsgal": []
+ },
+ "qa_currency": {
+  "eszkoz": "convert_currency",
+  "felulvizsgal": []
+ },
+ "qa_definition": {
+  "eszkoz": "define_word",
+  "felulvizsgal": []
+ },
+ "qa_factoid": {
+  "eszkoz": "web_search",
+  "felulvizsgal": [
+   "get_news"
+  ]
+ },
+ "qa_maths": {
+  "eszkoz": "calculate",
+  "felulvizsgal": []
+ },
+ "qa_stock": {
+  "eszkoz": "get_stock_quote",
+  "felulvizsgal": []
+ },
+ "recommendation_events": {
+  "eszkoz": "find_events",
+  "felulvizsgal": []
+ },
+ "recommendation_locations": {
+  "eszkoz": "find_places",
+  "felulvizsgal": []
+ },
+ "recommendation_movies": {
+  "eszkoz": "recommend_movies",
+  "felulvizsgal": []
+ },
+ "social_post": {
+  "eszkoz": "post_social",
+  "felulvizsgal": [
+   "create_support_ticket"
+  ]
+ },
+ "social_query": {
+  "eszkoz": "get_social_feed",
+  "felulvizsgal": []
+ },
+ "takeaway_order": {
+  "eszkoz": "order_food",
+  "felulvizsgal": []
+ },
+ "takeaway_query": {
+  "eszkoz": "get_restaurant_info",
+  "felulvizsgal": [
+   "track_package"
+  ]
+ },
+ "transport_query": {
+  "eszkoz": "plan_trip",
+  "felulvizsgal": []
+ },
+ "transport_taxi": {
+  "eszkoz": "book_taxi",
+  "felulvizsgal": []
+ },
+ "transport_ticket": {
+  "eszkoz": "buy_ticket",
+  "felulvizsgal": []
+ },
+ "transport_traffic": {
+  "eszkoz": "get_traffic",
+  "felulvizsgal": []
+ },
+ "weather_query": {
+  "eszkoz": "get_weather",
+  "felulvizsgal": []
+ }
+}

@@ -1,0 +1,1755 @@
+[
+ {
+  "name": "get_weather",
+  "domain": "időjárás",
+  "leiras": "Aktuális időjárás vagy előrejelzés egy helyre és napra: hőmérséklet, csapadék, szél.",
+  "description": "Current weather or forecast for a place and day: temperature, precipitation, wind.",
+  "params": [
+   {
+    "name": "location",
+    "type": "string",
+    "required": true,
+    "description": "City or place name.",
+    "leiras": "Település vagy hely neve."
+   },
+   {
+    "name": "date",
+    "type": "string",
+    "required": false,
+    "description": "Date in YYYY-MM-DD; default today.",
+    "leiras": "Dátum ÉÉÉÉ-HH-NN formában; alapból ma."
+   }
+  ],
+  "massive": [
+   "weather_query"
+  ],
+  "kozeli": [
+   "get_air_quality"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_air_quality",
+  "domain": "időjárás",
+  "leiras": "Levegőminőség-index és pollenterhelés egy helyen.",
+  "description": "Air quality index and pollen levels at a place.",
+  "params": [
+   {
+    "name": "location",
+    "type": "string",
+    "required": true,
+    "description": "City or place name.",
+    "leiras": "Település vagy hely neve."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "get_weather"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "send_email",
+  "domain": "e-mail",
+  "leiras": "Új e-mail küldése egy vagy több címzettnek, tárggyal és szöveggel.",
+  "description": "Send a new email to one or more recipients with a subject and body.",
+  "params": [
+   {
+    "name": "to",
+    "type": "array",
+    "required": true,
+    "description": "Recipient addresses or contact names.",
+    "leiras": "Címzettek címe vagy névjegyneve."
+   },
+   {
+    "name": "subject",
+    "type": "string",
+    "required": false,
+    "description": "Subject line.",
+    "leiras": "Tárgy."
+   },
+   {
+    "name": "body",
+    "type": "string",
+    "required": true,
+    "description": "Message body.",
+    "leiras": "Az üzenet szövege."
+   }
+  ],
+  "massive": [
+   "email_sendemail"
+  ],
+  "kozeli": [
+   "reply_email",
+   "send_sms"
+  ],
+  "felulvizsgal": [
+   "reply_email"
+  ]
+ },
+ {
+  "name": "reply_email",
+  "domain": "e-mail",
+  "leiras": "Válasz egy meglévő e-mailre az eredeti szálban.",
+  "description": "Reply to an existing email in its original thread.",
+  "params": [
+   {
+    "name": "message_id",
+    "type": "string",
+    "required": true,
+    "description": "Id of the email being answered.",
+    "leiras": "A megválaszolt e-mail azonosítója."
+   },
+   {
+    "name": "body",
+    "type": "string",
+    "required": true,
+    "description": "Reply text.",
+    "leiras": "A válasz szövege."
+   },
+   {
+    "name": "reply_all",
+    "type": "boolean",
+    "required": false,
+    "description": "Reply to all recipients.",
+    "leiras": "Válasz mindenkinek."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "send_email"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "search_email",
+  "domain": "e-mail",
+  "leiras": "E-mailek keresése vagy listázása feladó, tárgy, dátum vagy olvasatlanság szerint.",
+  "description": "Search or list emails by sender, subject, date or unread status.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": false,
+    "description": "Free-text search.",
+    "leiras": "Szabad szöveges keresés."
+   },
+   {
+    "name": "sender",
+    "type": "string",
+    "required": false,
+    "description": "Sender name or address.",
+    "leiras": "Feladó neve vagy címe."
+   },
+   {
+    "name": "unread_only",
+    "type": "boolean",
+    "required": false,
+    "description": "Only unread messages.",
+    "leiras": "Csak az olvasatlanok."
+   }
+  ],
+  "massive": [
+   "email_query"
+  ],
+  "kozeli": [
+   "search_documents"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "add_contact",
+  "domain": "e-mail",
+  "leiras": "Új névjegy felvétele névvel, e-mail-címmel, telefonszámmal.",
+  "description": "Add a new contact with name, email address and phone number.",
+  "params": [
+   {
+    "name": "name",
+    "type": "string",
+    "required": true,
+    "description": "Contact name.",
+    "leiras": "Név."
+   },
+   {
+    "name": "email",
+    "type": "string",
+    "required": false,
+    "description": "Email address.",
+    "leiras": "E-mail-cím."
+   },
+   {
+    "name": "phone",
+    "type": "string",
+    "required": false,
+    "description": "Phone number.",
+    "leiras": "Telefonszám."
+   }
+  ],
+  "massive": [
+   "email_addcontact"
+  ],
+  "kozeli": [
+   "get_contact"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_contact",
+  "domain": "e-mail",
+  "leiras": "Egy névjegy adatainak lekérdezése: e-mail, telefon, cím, születésnap.",
+  "description": "Look up a contact's details: email, phone, address, birthday.",
+  "params": [
+   {
+    "name": "name",
+    "type": "string",
+    "required": true,
+    "description": "Contact name.",
+    "leiras": "Név."
+   },
+   {
+    "name": "field",
+    "type": "string",
+    "required": false,
+    "description": "Requested field.",
+    "leiras": "A kért adat.",
+    "enum": [
+     "email",
+     "phone",
+     "address",
+     "birthday"
+    ]
+   }
+  ],
+  "massive": [
+   "email_querycontact"
+  ],
+  "kozeli": [
+   "add_contact"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "send_sms",
+  "domain": "üzenet",
+  "leiras": "SMS vagy azonnali üzenet küldése telefonszámra vagy névjegynek.",
+  "description": "Send a text message to a phone number or contact.",
+  "params": [
+   {
+    "name": "to",
+    "type": "string",
+    "required": true,
+    "description": "Phone number or contact name.",
+    "leiras": "Telefonszám vagy névjegy."
+   },
+   {
+    "name": "text",
+    "type": "string",
+    "required": true,
+    "description": "Message text.",
+    "leiras": "Az üzenet szövege."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "send_email"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "create_event",
+  "domain": "naptár",
+  "leiras": "Új esemény felvétele a naptárba időponttal, hellyel, résztvevőkkel.",
+  "description": "Create a calendar event with time, place and attendees.",
+  "params": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": "Event title.",
+    "leiras": "Az esemény címe."
+   },
+   {
+    "name": "start",
+    "type": "string",
+    "required": true,
+    "description": "Start, ISO 8601.",
+    "leiras": "Kezdés, ISO 8601."
+   },
+   {
+    "name": "end",
+    "type": "string",
+    "required": false,
+    "description": "End, ISO 8601.",
+    "leiras": "Vége, ISO 8601."
+   },
+   {
+    "name": "attendees",
+    "type": "array",
+    "required": false,
+    "description": "Attendee names or emails.",
+    "leiras": "Résztvevők."
+   }
+  ],
+  "massive": [
+   "calendar_set"
+  ],
+  "kozeli": [
+   "book_appointment",
+   "set_reminder",
+   "list_events"
+  ],
+  "felulvizsgal": [
+   "set_reminder"
+  ]
+ },
+ {
+  "name": "list_events",
+  "domain": "naptár",
+  "leiras": "A naptár eseményeinek lekérdezése egy időszakra vagy kulcsszóra.",
+  "description": "List calendar events for a period or keyword.",
+  "params": [
+   {
+    "name": "date_from",
+    "type": "string",
+    "required": false,
+    "description": "Start date.",
+    "leiras": "Kezdő dátum."
+   },
+   {
+    "name": "date_to",
+    "type": "string",
+    "required": false,
+    "description": "End date.",
+    "leiras": "Záró dátum."
+   },
+   {
+    "name": "query",
+    "type": "string",
+    "required": false,
+    "description": "Keyword.",
+    "leiras": "Kulcsszó."
+   }
+  ],
+  "massive": [
+   "calendar_query"
+  ],
+  "kozeli": [
+   "create_event",
+   "get_holidays"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "delete_event",
+  "domain": "naptár",
+  "leiras": "Egy naptáresemény törlése vagy lemondása.",
+  "description": "Delete or cancel a calendar event.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": true,
+    "description": "Which event (title, date).",
+    "leiras": "Melyik esemény (cím, dátum)."
+   },
+   {
+    "name": "date",
+    "type": "string",
+    "required": false,
+    "description": "Date in YYYY-MM-DD; default today.",
+    "leiras": "Dátum ÉÉÉÉ-HH-NN formában; alapból ma."
+   }
+  ],
+  "massive": [
+   "calendar_remove"
+  ],
+  "kozeli": [
+   "create_event"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "book_appointment",
+  "domain": "naptár",
+  "leiras": "Időpontfoglalás külső szolgáltatónál: orvos, fodrász, autószerviz, ügyfélszolgálat.",
+  "description": "Book an appointment with an external provider: doctor, hairdresser, car service.",
+  "params": [
+   {
+    "name": "provider",
+    "type": "string",
+    "required": true,
+    "description": "Provider name or type.",
+    "leiras": "Szolgáltató neve vagy típusa."
+   },
+   {
+    "name": "datetime",
+    "type": "string",
+    "required": true,
+    "description": "Requested time, ISO 8601.",
+    "leiras": "Kért időpont, ISO 8601."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "create_event",
+   "book_restaurant"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_holidays",
+  "domain": "naptár",
+  "leiras": "Ünnepnapok, munkaszüneti és áthelyezett munkanapok egy országban és évben.",
+  "description": "Public holidays and moved working days for a country and year.",
+  "params": [
+   {
+    "name": "country",
+    "type": "string",
+    "required": false,
+    "description": "Country code; default HU.",
+    "leiras": "Országkód; alapból HU."
+   },
+   {
+    "name": "year",
+    "type": "integer",
+    "required": false,
+    "description": "Year.",
+    "leiras": "Év."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "list_events",
+   "get_current_time"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_alarm",
+  "domain": "ébresztő",
+  "leiras": "Ébresztő beállítása egy adott időpontra, opcionálisan ismétléssel.",
+  "description": "Set an alarm for a clock time, optionally repeating.",
+  "params": [
+   {
+    "name": "time",
+    "type": "string",
+    "required": true,
+    "description": "Clock time HH:MM.",
+    "leiras": "Időpont ÓÓ:PP."
+   },
+   {
+    "name": "date",
+    "type": "string",
+    "required": false,
+    "description": "Date in YYYY-MM-DD; default today.",
+    "leiras": "Dátum ÉÉÉÉ-HH-NN formában; alapból ma."
+   },
+   {
+    "name": "repeat",
+    "type": "string",
+    "required": false,
+    "description": "Repeat rule.",
+    "leiras": "Ismétlés.",
+    "enum": [
+     "none",
+     "daily",
+     "weekdays",
+     "weekly"
+    ]
+   }
+  ],
+  "massive": [
+   "alarm_set"
+  ],
+  "kozeli": [
+   "set_timer",
+   "set_reminder"
+  ],
+  "felulvizsgal": [
+   "set_timer"
+  ]
+ },
+ {
+  "name": "list_alarms",
+  "domain": "ébresztő",
+  "leiras": "A beállított ébresztők listázása.",
+  "description": "List the alarms that are set.",
+  "params": [],
+  "massive": [
+   "alarm_query"
+  ],
+  "kozeli": [
+   "set_alarm"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "delete_alarm",
+  "domain": "ébresztő",
+  "leiras": "Egy vagy minden ébresztő törlése.",
+  "description": "Delete one or all alarms.",
+  "params": [
+   {
+    "name": "time",
+    "type": "string",
+    "required": false,
+    "description": "Which alarm; empty = all.",
+    "leiras": "Melyik ébresztő; üres = mind."
+   }
+  ],
+  "massive": [
+   "alarm_remove"
+  ],
+  "kozeli": [
+   "list_alarms"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_timer",
+  "domain": "ébresztő",
+  "leiras": "Visszaszámláló időzítő indítása adott időtartamra.",
+  "description": "Start a countdown timer for a duration.",
+  "params": [
+   {
+    "name": "minutes",
+    "type": "number",
+    "required": true,
+    "description": "Duration in minutes.",
+    "leiras": "Időtartam percben."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "set_alarm"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_reminder",
+  "domain": "ébresztő",
+  "leiras": "Emlékeztető egy teendőről egy adott időpontban.",
+  "description": "Remind about a to-do at a given time.",
+  "params": [
+   {
+    "name": "text",
+    "type": "string",
+    "required": true,
+    "description": "What to remind about.",
+    "leiras": "Miről emlékeztessen."
+   },
+   {
+    "name": "time",
+    "type": "string",
+    "required": true,
+    "description": "When, ISO 8601.",
+    "leiras": "Mikor, ISO 8601."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "set_alarm",
+   "create_task"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "add_to_list",
+  "domain": "listák",
+  "leiras": "Tétel hozzáadása egy listához (pl. bevásárlólista); új lista létrehozása is.",
+  "description": "Add items to a list (e.g. shopping list); creates the list if needed.",
+  "params": [
+   {
+    "name": "list_name",
+    "type": "string",
+    "required": true,
+    "description": "List name.",
+    "leiras": "A lista neve."
+   },
+   {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "Items to add.",
+    "leiras": "A tételek."
+   }
+  ],
+  "massive": [
+   "lists_createoradd"
+  ],
+  "kozeli": [
+   "create_task",
+   "remove_from_list"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_list",
+  "domain": "listák",
+  "leiras": "Egy lista tartalmának lekérdezése.",
+  "description": "Show the contents of a list.",
+  "params": [
+   {
+    "name": "list_name",
+    "type": "string",
+    "required": true,
+    "description": "List name.",
+    "leiras": "A lista neve."
+   }
+  ],
+  "massive": [
+   "lists_query"
+  ],
+  "kozeli": [
+   "add_to_list"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "remove_from_list",
+  "domain": "listák",
+  "leiras": "Tétel törlése egy listáról, vagy a lista törlése.",
+  "description": "Remove items from a list or delete the list.",
+  "params": [
+   {
+    "name": "list_name",
+    "type": "string",
+    "required": true,
+    "description": "List name.",
+    "leiras": "A lista neve."
+   },
+   {
+    "name": "items",
+    "type": "array",
+    "required": false,
+    "description": "Items; empty = whole list.",
+    "leiras": "Tételek; üres = az egész lista."
+   }
+  ],
+  "massive": [
+   "lists_remove"
+  ],
+  "kozeli": [
+   "add_to_list"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "create_task",
+  "domain": "listák",
+  "leiras": "Feladat létrehozása a feladatkezelőben határidővel és felelőssel.",
+  "description": "Create a task in the task manager with a due date and assignee.",
+  "params": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": "Task title.",
+    "leiras": "A feladat címe."
+   },
+   {
+    "name": "due",
+    "type": "string",
+    "required": false,
+    "description": "Due date.",
+    "leiras": "Határidő."
+   },
+   {
+    "name": "assignee",
+    "type": "string",
+    "required": false,
+    "description": "Assignee.",
+    "leiras": "Felelős."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "add_to_list",
+   "set_reminder"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "web_search",
+  "domain": "keresés",
+  "leiras": "Általános webes keresés tényekre, személyekre, eseményekre.",
+  "description": "General web search for facts, people and events.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": true,
+    "description": "Search query.",
+    "leiras": "Keresőkifejezés."
+   }
+  ],
+  "massive": [
+   "qa_factoid"
+  ],
+  "kozeli": [
+   "get_news",
+   "define_word",
+   "search_documents"
+  ],
+  "felulvizsgal": [
+   "get_news"
+  ]
+ },
+ {
+  "name": "define_word",
+  "domain": "keresés",
+  "leiras": "Szó vagy kifejezés jelentése szótárból.",
+  "description": "Dictionary definition of a word or phrase.",
+  "params": [
+   {
+    "name": "term",
+    "type": "string",
+    "required": true,
+    "description": "Word or phrase.",
+    "leiras": "Szó vagy kifejezés."
+   }
+  ],
+  "massive": [
+   "qa_definition"
+  ],
+  "kozeli": [
+   "web_search",
+   "translate_text"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "calculate",
+  "domain": "keresés",
+  "leiras": "Matematikai kifejezés kiszámítása.",
+  "description": "Evaluate a mathematical expression.",
+  "params": [
+   {
+    "name": "expression",
+    "type": "string",
+    "required": true,
+    "description": "Expression.",
+    "leiras": "Kifejezés."
+   }
+  ],
+  "massive": [
+   "qa_maths"
+  ],
+  "kozeli": [
+   "convert_currency"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "convert_currency",
+  "domain": "pénzügy",
+  "leiras": "Összeg átváltása devizák között az aktuális árfolyamon.",
+  "description": "Convert an amount between currencies at the current rate.",
+  "params": [
+   {
+    "name": "amount",
+    "type": "number",
+    "required": false,
+    "description": "Amount; default 1.",
+    "leiras": "Összeg; alapból 1."
+   },
+   {
+    "name": "from_currency",
+    "type": "string",
+    "required": true,
+    "description": "Source currency.",
+    "leiras": "Forrásdeviza."
+   },
+   {
+    "name": "to_currency",
+    "type": "string",
+    "required": true,
+    "description": "Target currency.",
+    "leiras": "Céldeviza."
+   }
+  ],
+  "massive": [
+   "qa_currency"
+  ],
+  "kozeli": [
+   "get_stock_quote",
+   "calculate"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_stock_quote",
+  "domain": "pénzügy",
+  "leiras": "Részvény vagy index aktuális árfolyama.",
+  "description": "Current price of a stock or index.",
+  "params": [
+   {
+    "name": "symbol",
+    "type": "string",
+    "required": true,
+    "description": "Ticker or company name.",
+    "leiras": "Ticker vagy cégnév."
+   }
+  ],
+  "massive": [
+   "qa_stock"
+  ],
+  "kozeli": [
+   "convert_currency"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "translate_text",
+  "domain": "keresés",
+  "leiras": "Szöveg fordítása másik nyelvre.",
+  "description": "Translate text into another language.",
+  "params": [
+   {
+    "name": "text",
+    "type": "string",
+    "required": true,
+    "description": "Text.",
+    "leiras": "Szöveg."
+   },
+   {
+    "name": "target_language",
+    "type": "string",
+    "required": true,
+    "description": "Target language.",
+    "leiras": "Célnyelv."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "define_word"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "search_documents",
+  "domain": "keresés",
+  "leiras": "Keresés a saját dokumentumok és fájlok között.",
+  "description": "Search the user's own documents and files.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": true,
+    "description": "Search query.",
+    "leiras": "Keresőkifejezés."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "web_search",
+   "search_email"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_news",
+  "domain": "hírek",
+  "leiras": "Friss hírek témára, forrásra vagy országra.",
+  "description": "Latest news by topic, source or country.",
+  "params": [
+   {
+    "name": "topic",
+    "type": "string",
+    "required": false,
+    "description": "Topic.",
+    "leiras": "Téma."
+   },
+   {
+    "name": "source",
+    "type": "string",
+    "required": false,
+    "description": "News source.",
+    "leiras": "Hírforrás."
+   }
+  ],
+  "massive": [
+   "news_query"
+  ],
+  "kozeli": [
+   "web_search"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_current_time",
+  "domain": "idő",
+  "leiras": "Pontos idő, dátum vagy a hét napja, opcionálisan más időzónában.",
+  "description": "Current time, date or weekday, optionally in another time zone.",
+  "params": [
+   {
+    "name": "location",
+    "type": "string",
+    "required": false,
+    "description": "Place or time zone.",
+    "leiras": "Hely vagy időzóna."
+   }
+  ],
+  "massive": [
+   "datetime_query"
+  ],
+  "kozeli": [
+   "convert_timezone",
+   "get_holidays"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "convert_timezone",
+  "domain": "idő",
+  "leiras": "Időpont átszámítása időzónák között.",
+  "description": "Convert a time between time zones.",
+  "params": [
+   {
+    "name": "time",
+    "type": "string",
+    "required": true,
+    "description": "Time.",
+    "leiras": "Időpont."
+   },
+   {
+    "name": "from_zone",
+    "type": "string",
+    "required": true,
+    "description": "Source zone.",
+    "leiras": "Forrászóna."
+   },
+   {
+    "name": "to_zone",
+    "type": "string",
+    "required": true,
+    "description": "Target zone.",
+    "leiras": "Célzóna."
+   }
+  ],
+  "massive": [
+   "datetime_convert"
+  ],
+  "kozeli": [
+   "get_current_time"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "play_music",
+  "domain": "média",
+  "leiras": "Zene lejátszása előadó, dal, album, műfaj vagy lejátszási lista szerint.",
+  "description": "Play music by artist, song, album, genre or playlist.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": true,
+    "description": "What to play.",
+    "leiras": "Mit játsszon."
+   }
+  ],
+  "massive": [
+   "play_music"
+  ],
+  "kozeli": [
+   "play_radio",
+   "play_podcast"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "play_radio",
+  "domain": "média",
+  "leiras": "Rádióállomás lejátszása.",
+  "description": "Play a radio station.",
+  "params": [
+   {
+    "name": "station",
+    "type": "string",
+    "required": true,
+    "description": "Station name or frequency.",
+    "leiras": "Állomás neve vagy frekvenciája."
+   }
+  ],
+  "massive": [
+   "play_radio"
+  ],
+  "kozeli": [
+   "play_music"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "play_podcast",
+  "domain": "média",
+  "leiras": "Podcast vagy podcastepizód lejátszása.",
+  "description": "Play a podcast or episode.",
+  "params": [
+   {
+    "name": "show",
+    "type": "string",
+    "required": true,
+    "description": "Show or episode.",
+    "leiras": "Műsor vagy epizód."
+   }
+  ],
+  "massive": [
+   "play_podcasts"
+  ],
+  "kozeli": [
+   "play_audiobook"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "play_audiobook",
+  "domain": "média",
+  "leiras": "Hangoskönyv lejátszása vagy folytatása.",
+  "description": "Play or resume an audiobook.",
+  "params": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": "Book title.",
+    "leiras": "A könyv címe."
+   }
+  ],
+  "massive": [
+   "play_audiobook"
+  ],
+  "kozeli": [
+   "play_podcast"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "rate_song",
+  "domain": "média",
+  "leiras": "Az éppen szóló dal kedvelése vagy nemtetszés jelölése.",
+  "description": "Like or dislike the current song.",
+  "params": [
+   {
+    "name": "rating",
+    "type": "string",
+    "required": true,
+    "description": "Rating.",
+    "leiras": "Értékelés.",
+    "enum": [
+     "like",
+     "dislike"
+    ]
+   }
+  ],
+  "massive": [
+   "music_likeness",
+   "music_dislikeness"
+  ],
+  "kozeli": [
+   "get_now_playing"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_now_playing",
+  "domain": "média",
+  "leiras": "Információ az éppen szóló dalról: cím, előadó, album.",
+  "description": "Info about the song now playing.",
+  "params": [],
+  "massive": [
+   "music_query"
+  ],
+  "kozeli": [
+   "rate_song"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_player_mode",
+  "domain": "média",
+  "leiras": "Lejátszó módja: keverés, ismétlés, ugrás.",
+  "description": "Player mode: shuffle, repeat, skip.",
+  "params": [
+   {
+    "name": "mode",
+    "type": "string",
+    "required": true,
+    "description": "Mode.",
+    "leiras": "Mód.",
+    "enum": [
+     "shuffle",
+     "repeat",
+     "skip",
+     "previous"
+    ]
+   }
+  ],
+  "massive": [
+   "music_settings"
+  ],
+  "kozeli": [
+   "set_volume"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_volume",
+  "domain": "média",
+  "leiras": "Hangerő növelése, csökkentése vagy beállítása.",
+  "description": "Increase, decrease or set the volume.",
+  "params": [
+   {
+    "name": "level",
+    "type": "integer",
+    "required": false,
+    "description": "Absolute level 0–100.",
+    "leiras": "Abszolút szint 0–100."
+   },
+   {
+    "name": "direction",
+    "type": "string",
+    "required": false,
+    "description": "Relative change.",
+    "leiras": "Relatív változás.",
+    "enum": [
+     "up",
+     "down"
+    ]
+   }
+  ],
+  "massive": [
+   "audio_volume_up",
+   "audio_volume_down",
+   "audio_volume_other"
+  ],
+  "kozeli": [
+   "mute_audio"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "mute_audio",
+  "domain": "média",
+  "leiras": "Hang némítása vagy visszakapcsolása.",
+  "description": "Mute or unmute audio.",
+  "params": [
+   {
+    "name": "mute",
+    "type": "boolean",
+    "required": true,
+    "description": "True = mute.",
+    "leiras": "Igaz = némítás."
+   }
+  ],
+  "massive": [
+   "audio_volume_mute"
+  ],
+  "kozeli": [
+   "set_volume"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "start_game",
+  "domain": "média",
+  "leiras": "Egyszerű szöveges vagy kvízjáték indítása.",
+  "description": "Start a simple text or quiz game.",
+  "params": [
+   {
+    "name": "game",
+    "type": "string",
+    "required": false,
+    "description": "Game name.",
+    "leiras": "A játék neve."
+   }
+  ],
+  "massive": [
+   "play_game"
+  ],
+  "kozeli": [],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_lights",
+  "domain": "okosotthon",
+  "leiras": "Világítás ki- és bekapcsolása, fényerő és szín állítása helyiségenként.",
+  "description": "Turn lights on or off, set brightness and colour per room.",
+  "params": [
+   {
+    "name": "room",
+    "type": "string",
+    "required": false,
+    "description": "Room.",
+    "leiras": "Helyiség."
+   },
+   {
+    "name": "power",
+    "type": "string",
+    "required": false,
+    "description": "On or off.",
+    "leiras": "Be vagy ki.",
+    "enum": [
+     "on",
+     "off"
+    ]
+   },
+   {
+    "name": "brightness",
+    "type": "integer",
+    "required": false,
+    "description": "Brightness 0–100.",
+    "leiras": "Fényerő 0–100."
+   },
+   {
+    "name": "color",
+    "type": "string",
+    "required": false,
+    "description": "Colour.",
+    "leiras": "Szín."
+   }
+  ],
+  "massive": [
+   "iot_hue_lightchange",
+   "iot_hue_lightdim",
+   "iot_hue_lightup",
+   "iot_hue_lightoff",
+   "iot_hue_lighton"
+  ],
+  "kozeli": [
+   "smart_plug"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "smart_plug",
+  "domain": "okosotthon",
+  "leiras": "Okos konnektorra kötött eszköz be- vagy kikapcsolása.",
+  "description": "Switch a device on a smart plug on or off.",
+  "params": [
+   {
+    "name": "device",
+    "type": "string",
+    "required": true,
+    "description": "Device.",
+    "leiras": "Eszköz."
+   },
+   {
+    "name": "state",
+    "type": "string",
+    "required": true,
+    "description": "State.",
+    "leiras": "Állapot.",
+    "enum": [
+     "on",
+     "off"
+    ]
+   }
+  ],
+  "massive": [
+   "iot_wemo_on",
+   "iot_wemo_off"
+  ],
+  "kozeli": [
+   "set_lights"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "start_vacuum",
+  "domain": "okosotthon",
+  "leiras": "Robotporszívó indítása vagy leállítása.",
+  "description": "Start or stop the robot vacuum.",
+  "params": [
+   {
+    "name": "action",
+    "type": "string",
+    "required": true,
+    "description": "Action.",
+    "leiras": "Művelet.",
+    "enum": [
+     "start",
+     "stop",
+     "dock"
+    ]
+   }
+  ],
+  "massive": [
+   "iot_cleaning"
+  ],
+  "kozeli": [],
+  "felulvizsgal": []
+ },
+ {
+  "name": "make_coffee",
+  "domain": "okosotthon",
+  "leiras": "Kávéfőzés indítása az okos kávéfőzőn.",
+  "description": "Start brewing on the smart coffee maker.",
+  "params": [
+   {
+    "name": "type",
+    "type": "string",
+    "required": false,
+    "description": "Drink type.",
+    "leiras": "Ital típusa."
+   }
+  ],
+  "massive": [
+   "iot_coffee"
+  ],
+  "kozeli": [],
+  "felulvizsgal": []
+ },
+ {
+  "name": "set_thermostat",
+  "domain": "okosotthon",
+  "leiras": "A fűtés vagy hűtés célhőmérsékletének beállítása.",
+  "description": "Set the heating or cooling target temperature.",
+  "params": [
+   {
+    "name": "temperature",
+    "type": "number",
+    "required": true,
+    "description": "Target °C.",
+    "leiras": "Cél °C."
+   },
+   {
+    "name": "room",
+    "type": "string",
+    "required": false,
+    "description": "Room.",
+    "leiras": "Helyiség."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "get_weather"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "plan_trip",
+  "domain": "közlekedés",
+  "leiras": "Útvonal- és menetrend-tervezés A-ból B-be: indulások, átszállások, menetidő.",
+  "description": "Plan a route and timetable from A to B: departures, transfers, travel time.",
+  "params": [
+   {
+    "name": "origin",
+    "type": "string",
+    "required": false,
+    "description": "From; default current location.",
+    "leiras": "Honnan; alapból a jelenlegi hely."
+   },
+   {
+    "name": "destination",
+    "type": "string",
+    "required": true,
+    "description": "To.",
+    "leiras": "Hová."
+   },
+   {
+    "name": "mode",
+    "type": "string",
+    "required": false,
+    "description": "Mode.",
+    "leiras": "Mód.",
+    "enum": [
+     "car",
+     "transit",
+     "walk",
+     "bike"
+    ]
+   }
+  ],
+  "massive": [
+   "transport_query"
+  ],
+  "kozeli": [
+   "get_traffic",
+   "buy_ticket"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_traffic",
+  "domain": "közlekedés",
+  "leiras": "Forgalmi helyzet, dugók, útlezárások egy útvonalon vagy területen.",
+  "description": "Traffic conditions, jams and closures on a route or area.",
+  "params": [
+   {
+    "name": "area",
+    "type": "string",
+    "required": true,
+    "description": "Road or area.",
+    "leiras": "Út vagy terület."
+   }
+  ],
+  "massive": [
+   "transport_traffic"
+  ],
+  "kozeli": [
+   "plan_trip"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "book_taxi",
+  "domain": "közlekedés",
+  "leiras": "Taxi rendelése egy címre.",
+  "description": "Order a taxi to an address.",
+  "params": [
+   {
+    "name": "pickup",
+    "type": "string",
+    "required": true,
+    "description": "Pickup address.",
+    "leiras": "Felvételi cím."
+   },
+   {
+    "name": "destination",
+    "type": "string",
+    "required": false,
+    "description": "Destination.",
+    "leiras": "Cél."
+   }
+  ],
+  "massive": [
+   "transport_taxi"
+  ],
+  "kozeli": [
+   "buy_ticket"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "buy_ticket",
+  "domain": "közlekedés",
+  "leiras": "Vonat-, busz- vagy repülőjegy vásárlása.",
+  "description": "Buy a train, bus or plane ticket.",
+  "params": [
+   {
+    "name": "origin",
+    "type": "string",
+    "required": true,
+    "description": "From.",
+    "leiras": "Honnan."
+   },
+   {
+    "name": "destination",
+    "type": "string",
+    "required": true,
+    "description": "To.",
+    "leiras": "Hová."
+   },
+   {
+    "name": "date",
+    "type": "string",
+    "required": false,
+    "description": "Date in YYYY-MM-DD; default today.",
+    "leiras": "Dátum ÉÉÉÉ-HH-NN formában; alapból ma."
+   }
+  ],
+  "massive": [
+   "transport_ticket"
+  ],
+  "kozeli": [
+   "plan_trip",
+   "book_taxi"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "order_food",
+  "domain": "étel",
+  "leiras": "Étel rendelése kiszállítással vagy elvitelre.",
+  "description": "Order food for delivery or takeaway.",
+  "params": [
+   {
+    "name": "restaurant",
+    "type": "string",
+    "required": false,
+    "description": "Restaurant.",
+    "leiras": "Étterem."
+   },
+   {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "Dishes.",
+    "leiras": "Ételek."
+   }
+  ],
+  "massive": [
+   "takeaway_order"
+  ],
+  "kozeli": [
+   "book_restaurant",
+   "get_restaurant_info"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "get_restaurant_info",
+  "domain": "étel",
+  "leiras": "Étterem adatai: nyitvatartás, kiszállítás, menü, értékelés.",
+  "description": "Restaurant details: opening hours, delivery, menu, rating.",
+  "params": [
+   {
+    "name": "restaurant",
+    "type": "string",
+    "required": true,
+    "description": "Restaurant.",
+    "leiras": "Étterem."
+   }
+  ],
+  "massive": [
+   "takeaway_query"
+  ],
+  "kozeli": [
+   "order_food",
+   "find_places",
+   "track_package"
+  ],
+  "felulvizsgal": [
+   "track_package"
+  ]
+ },
+ {
+  "name": "book_restaurant",
+  "domain": "étel",
+  "leiras": "Asztalfoglalás étterembe.",
+  "description": "Book a table at a restaurant.",
+  "params": [
+   {
+    "name": "restaurant",
+    "type": "string",
+    "required": true,
+    "description": "Restaurant.",
+    "leiras": "Étterem."
+   },
+   {
+    "name": "datetime",
+    "type": "string",
+    "required": true,
+    "description": "Time.",
+    "leiras": "Időpont."
+   },
+   {
+    "name": "people",
+    "type": "integer",
+    "required": false,
+    "description": "Party size.",
+    "leiras": "Létszám."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "order_food",
+   "book_appointment"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "find_recipe",
+  "domain": "étel",
+  "leiras": "Recept keresése étel vagy hozzávaló szerint, főzési útmutatóval.",
+  "description": "Find a recipe by dish or ingredient, with cooking instructions.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": true,
+    "description": "Dish or ingredient.",
+    "leiras": "Étel vagy hozzávaló."
+   }
+  ],
+  "massive": [
+   "cooking_recipe",
+   "cooking_query"
+  ],
+  "kozeli": [],
+  "felulvizsgal": []
+ },
+ {
+  "name": "track_package",
+  "domain": "vásárlás",
+  "leiras": "Csomag vagy rendelés nyomon követése azonosító alapján.",
+  "description": "Track a parcel or order by its id.",
+  "params": [
+   {
+    "name": "tracking_id",
+    "type": "string",
+    "required": true,
+    "description": "Tracking or order id.",
+    "leiras": "Követési vagy rendelésszám."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "get_restaurant_info"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "find_events",
+  "domain": "ajánlás",
+  "leiras": "Programok, koncertek, kiállítások keresése helyre és időre.",
+  "description": "Find events, concerts and exhibitions by place and time.",
+  "params": [
+   {
+    "name": "location",
+    "type": "string",
+    "required": true,
+    "description": "City or place name.",
+    "leiras": "Település vagy hely neve."
+   },
+   {
+    "name": "date",
+    "type": "string",
+    "required": false,
+    "description": "Date in YYYY-MM-DD; default today.",
+    "leiras": "Dátum ÉÉÉÉ-HH-NN formában; alapból ma."
+   }
+  ],
+  "massive": [
+   "recommendation_events"
+  ],
+  "kozeli": [
+   "find_places",
+   "list_events"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "find_places",
+  "domain": "ajánlás",
+  "leiras": "Helyek ajánlása: étterem, kávézó, bolt, látnivaló a közelben.",
+  "description": "Recommend places nearby: restaurant, café, shop, sight.",
+  "params": [
+   {
+    "name": "category",
+    "type": "string",
+    "required": true,
+    "description": "Kind of place.",
+    "leiras": "A hely típusa."
+   },
+   {
+    "name": "location",
+    "type": "string",
+    "required": true,
+    "description": "City or place name.",
+    "leiras": "Település vagy hely neve."
+   }
+  ],
+  "massive": [
+   "recommendation_locations"
+  ],
+  "kozeli": [
+   "find_events",
+   "get_restaurant_info"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "recommend_movies",
+  "domain": "ajánlás",
+  "leiras": "Film- vagy sorozatajánlás műfaj, szereplő vagy hangulat szerint.",
+  "description": "Recommend films or series by genre, actor or mood.",
+  "params": [
+   {
+    "name": "query",
+    "type": "string",
+    "required": false,
+    "description": "Preferences.",
+    "leiras": "Preferenciák."
+   }
+  ],
+  "massive": [
+   "recommendation_movies"
+  ],
+  "kozeli": [],
+  "felulvizsgal": []
+ },
+ {
+  "name": "post_social",
+  "domain": "közösségi",
+  "leiras": "Bejegyzés vagy panasz közzététele közösségi oldalon.",
+  "description": "Post an update or complaint on social media.",
+  "params": [
+   {
+    "name": "platform",
+    "type": "string",
+    "required": false,
+    "description": "Platform.",
+    "leiras": "Platform."
+   },
+   {
+    "name": "text",
+    "type": "string",
+    "required": true,
+    "description": "Post text.",
+    "leiras": "A bejegyzés szövege."
+   }
+  ],
+  "massive": [
+   "social_post"
+  ],
+  "kozeli": [
+   "get_social_feed",
+   "create_support_ticket"
+  ],
+  "felulvizsgal": [
+   "create_support_ticket"
+  ]
+ },
+ {
+  "name": "get_social_feed",
+  "domain": "közösségi",
+  "leiras": "Közösségi hírfolyam vagy egy ismerős friss bejegyzései.",
+  "description": "Social feed or a friend's latest posts.",
+  "params": [
+   {
+    "name": "person",
+    "type": "string",
+    "required": false,
+    "description": "Whose posts.",
+    "leiras": "Kinek a bejegyzései."
+   }
+  ],
+  "massive": [
+   "social_query"
+  ],
+  "kozeli": [
+   "post_social"
+  ],
+  "felulvizsgal": []
+ },
+ {
+  "name": "create_support_ticket",
+  "domain": "ügyfélszolgálat",
+  "leiras": "Hibajegy vagy panasz nyitása egy cég ügyfélszolgálatánál.",
+  "description": "Open a support ticket or complaint with a company.",
+  "params": [
+   {
+    "name": "company",
+    "type": "string",
+    "required": true,
+    "description": "Company.",
+    "leiras": "Cég."
+   },
+   {
+    "name": "issue",
+    "type": "string",
+    "required": true,
+    "description": "Problem description.",
+    "leiras": "A probléma leírása."
+   }
+  ],
+  "massive": [],
+  "kozeli": [
+   "post_social",
+   "send_email"
+  ],
+  "felulvizsgal": []
+ }
+]

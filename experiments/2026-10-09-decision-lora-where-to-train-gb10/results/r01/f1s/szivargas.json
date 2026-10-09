@@ -1,0 +1,136 @@
+{
+  "train_itemek": 14471,
+  "train_eszkozok": 3330,
+  "kuszobok": [
+    0.85,
+    0.9,
+    0.95
+  ],
+  "val": {
+    "xlam": {
+      "n": 1493,
+      "gold_nev_a_trainben": 17,
+      "keres_duplikatum": 20,
+      "gold_cos>=0.85": 440,
+      "keres_cos>=0.85": 241,
+      "gold_cos>=0.9": 178,
+      "keres_cos>=0.9": 122,
+      "gold_cos>=0.95": 78,
+      "keres_cos>=0.95": 52
+    },
+    "massive_hu": {
+      "n": 2033,
+      "gold_nev_a_trainben": 1470,
+      "keres_duplikatum": 64,
+      "gold_cos>=0.85": 1470,
+      "keres_cos>=0.85": 733,
+      "gold_cos>=0.9": 1470,
+      "keres_cos>=0.9": 431,
+      "gold_cos>=0.95": 1470,
+      "keres_cos>=0.95": 192
+    }
+  },
+  "teszt": {
+    "bfcl_simple": {
+      "n": 399,
+      "gold_nev_a_trainben": 23,
+      "keres_duplikatum": 2,
+      "gold_cos>=0.85": 70,
+      "keres_cos>=0.85": 46,
+      "gold_cos>=0.9": 41,
+      "keres_cos>=0.9": 26,
+      "gold_cos>=0.95": 19,
+      "keres_cos>=0.95": 10
+    },
+    "bfcl_multiple": {
+      "n": 200,
+      "gold_nev_a_trainben": 6,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 36,
+      "keres_cos>=0.85": 17,
+      "gold_cos>=0.9": 14,
+      "keres_cos>=0.9": 5,
+      "gold_cos>=0.95": 6,
+      "keres_cos>=0.95": 2
+    },
+    "bfcl_irrelevance": {
+      "n": 240,
+      "gold_nev_a_trainben": 0,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 0,
+      "keres_cos>=0.85": 13,
+      "gold_cos>=0.9": 0,
+      "keres_cos>=0.9": 9,
+      "gold_cos>=0.95": 0,
+      "keres_cos>=0.95": 5
+    },
+    "bfcl_live_simple": {
+      "n": 258,
+      "gold_nev_a_trainben": 24,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 24,
+      "keres_cos>=0.85": 0,
+      "gold_cos>=0.9": 1,
+      "keres_cos>=0.9": 0,
+      "gold_cos>=0.95": 0,
+      "keres_cos>=0.95": 0
+    },
+    "bfcl_live_multiple": {
+      "n": 1050,
+      "gold_nev_a_trainben": 12,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 66,
+      "keres_cos>=0.85": 4,
+      "gold_cos>=0.9": 5,
+      "keres_cos>=0.9": 0,
+      "gold_cos>=0.95": 1,
+      "keres_cos>=0.95": 0
+    },
+    "bfcl_live_irrelevance": {
+      "n": 875,
+      "gold_nev_a_trainben": 0,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 0,
+      "keres_cos>=0.85": 33,
+      "gold_cos>=0.9": 0,
+      "keres_cos>=0.9": 7,
+      "gold_cos>=0.95": 0,
+      "keres_cos>=0.95": 2
+    },
+    "w2c_teszt": {
+      "n": 3388,
+      "gold_nev_a_trainben": 70,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 206,
+      "keres_cos>=0.85": 36,
+      "gold_cos>=0.9": 12,
+      "keres_cos>=0.9": 6,
+      "gold_cos>=0.95": 2,
+      "keres_cos>=0.95": 0
+    },
+    "massive_hu": {
+      "n": 2974,
+      "gold_nev_a_trainben": 2074,
+      "keres_duplikatum": 108,
+      "gold_cos>=0.85": 2074,
+      "keres_cos>=0.85": 1075,
+      "gold_cos>=0.9": 2074,
+      "keres_cos>=0.9": 615,
+      "gold_cos>=0.95": 2074,
+      "keres_cos>=0.95": 279
+    }
+  },
+  "katalogus": {
+    "katalogus_hu": {
+      "n": 647,
+      "gold_nev_a_trainben": 488,
+      "keres_duplikatum": 0,
+      "gold_cos>=0.85": 488,
+      "keres_cos>=0.85": 2,
+      "gold_cos>=0.9": 488,
+      "keres_cos>=0.9": 0,
+      "gold_cos>=0.95": 488,
+      "keres_cos>=0.95": 0
+    }
+  }
+}
