@@ -1,0 +1,50 @@
+# 03-as kör — a keverő v0 paraméterei (F1): a jelöltkészlet (pool), amelyből az F2 után a 15–20 ezres MVP készül.
+#
+# A pool nagyjából kétszerese az MVP-nek, hogy a 10. pont 4. döntése (a bázis plafonja közelében lévő család legfeljebb
+# a train 5%-a) az F2 L1★-mérése után szűkíthessen. A szinonimaszűrés, a gépi zajbecslés és a szivárgás-audit a pool
+# itemjeire fut, nem a teljes 226 ezres F0-készletre.
+#
+# Arányszabályok (a runbookból): angol gerinc ~25% (3.3, 10./5.); konstrukciós (Wikipédia + NJT) ≤ 15% (3.4);
+# szintetikus ≤ 30% (3.5); X családonként 10–30%, de legalább két család 0% (2.); egy X-típus sem haladhatja meg az
+# X-itemek 50%-át (2.); a hosszú item (> 6000 karakter, ~2K token) ≤ 10% (8.).
+
+seed: "kevero03:2026-10-09"
+val_arany: 0.10            # a val-pool a családok saját val-splitjéből, a train-kvóta ennyiszerese
+hosszu_karakter: 6000
+hosszu_max: 0.10
+x_csaladon_belul_max: 0.30
+x_tipus_max: 0.50
+
+# család (vagy családprefix) → train-kvóta a poolban. A „*” végű kulcs prefix: a kvóta a találatok közt egyenletesen
+# oszlik (forrásonként legfeljebb `forrasonkent`).
+kvota:
+  # magyar, természetes forrás
+  qa.hurc: 2000
+  qa.milqa: 2000
+  jogi.multieurlex: 2000
+  entitas.nerkor: 2000
+  kozbeszerzes.ted_cpv: 1500
+  szentiment.husst: 1500
+  nyelv.hucola: 1000
+  nli.hurte: 1000
+  nli.huwnli: 400
+  nli.hucb: 215
+  qa.hucopa: 355
+  # konstrukciós (≤ 15%)
+  konstrukcios.wiki_szakaszcim: 1200
+  konstrukcios.wiki_folytatas: 1200
+  jogi.njt_torveny: 700
+  jogi.njt_fejezet: 700
+  jogi.njt_cim: 700
+  # angol gerinc (~25%)
+  "en.ts.*": {osszes: 4000, forrasonkent: 30}
+  "en.proc.*": {osszes: 2000}
+  "en.oj.*": {osszes: 2000}
+  # szintetikus (≤ 30%): a generálás után kerül be (szint03.py)
+  "level.triage": 1000
+  "level.dokumentumtipus": 1000
+  "level.szerzodesklauzula": 1000
+  "entitas.egyezes": 1000
+  "rag.relevancia": 1000
+  "rag.valaszbiralat": 1000
+  "jogi.hivatali_ugytipus": 1000

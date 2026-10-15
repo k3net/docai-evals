@@ -1,0 +1,84 @@
+{
+ "n_val": 3067,
+ "n_teszt": {
+  "ho-termek": 4524,
+  "ho-routing": 7416,
+  "ho-routing-hu": 1127,
+  "ho-uj": 2200
+ },
+ "reps": 1000,
+ "parok": {
+  "H1: G3 s1 − L1★": {
+   "megfigyelt_val": {
+    "lef95": 0.15030974894033255,
+    "aurc": -0.012735150581966212
+   },
+   "lef95": {
+    "tau_resz_aranya": 0.892,
+    "mde80": {
+     "ho-routing": 0.0647,
+     "ho-routing-hu": 0.0728,
+     "ho-termek": 0.0657,
+     "ho-uj": 0.0683
+    }
+   },
+   "aurc": {
+    "tau_resz_aranya": 0.0,
+    "mde80": {
+     "ho-routing": 0.0031,
+     "ho-routing-hu": 0.008,
+     "ho-termek": 0.004,
+     "ho-uj": 0.0058
+    }
+   }
+  },
+  "H4: G3 s1 − G3-hu s1": {
+   "megfigyelt_val": {
+    "lef95": 0.06031953048581673,
+    "aurc": -0.004115815137599444
+   },
+   "lef95": {
+    "tau_resz_aranya": 0.85,
+    "mde80": {
+     "ho-routing": 0.0401,
+     "ho-routing-hu": 0.0472,
+     "ho-termek": 0.041,
+     "ho-uj": 0.0433
+    }
+   },
+   "aurc": {
+    "tau_resz_aranya": 0.0,
+    "mde80": {
+     "ho-routing": 0.002,
+     "ho-routing-hu": 0.0052,
+     "ho-termek": 0.0026,
+     "ho-uj": 0.0037
+    }
+   }
+  },
+  "H6: G3 s1 − G3-kemény s1": {
+   "megfigyelt_val": {
+    "lef95": -0.013368112161721624,
+    "aurc": -0.0002952515609993822
+   },
+   "lef95": {
+    "tau_resz_aranya": 0.847,
+    "mde80": {
+     "ho-routing": 0.0273,
+     "ho-routing-hu": 0.0321,
+     "ho-termek": 0.0279,
+     "ho-uj": 0.0295
+    }
+   },
+   "aurc": {
+    "tau_resz_aranya": 0.0,
+    "mde80": {
+     "ho-routing": 0.0015,
+     "ho-routing-hu": 0.0038,
+     "ho-termek": 0.0019,
+     "ho-uj": 0.0027
+    }
+   }
+  }
+ }
+}

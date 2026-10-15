@@ -1,0 +1,6 @@
+03-as kör, v1 rögzítése — 2026-10-14 10:08:49
+Jóváhagyás: Dani, 2026-10-14 (03-runbook 10. pont 18.; 7. pont).
+Az F4 összehasonlító eredményei a rögzítéskor nem voltak megtekintve (a kiolvasás lepecsételve fut).
+MANIFEST.sha256      86e5e9ac1f54caaa5c7d432a4dc486fb75146ece13baad2239994ce1f6716abb
+f4_elemzes_lanc.sh   27580db0cb1083d585b99d10dabcc34dfdf8df622d6209029e2d9a09ba6aa80b   (a manifest hash-ét tartalmazza, ezért nincs a manifestben)
+PECSET-pillanatkep   9 sor

@@ -1,0 +1,84 @@
+# 03-as kör — a KIE/validáció csoport családspecifikációja (HO-új-család; 03-runbook 3.4, 4.6, 5.).
+#
+# A csoport kitartott: minden itemje a `ho-uj` splitbe kerül, a trainben nincs rokon forrás (a kitartás-lista szerint
+# a számtani, időbeli és kinyerési feladatok az angol gerincből is kimaradtak). A dokumentumok szintetikus magyar
+# számlák; a gold a generátor adatszerkezetéből számolódik, modell és ember nélkül. A kie03.py generálja, a
+# test_kie03.py a renderelt szövegből, a generátortól függetlenül számolja újra a goldot.
+#
+# Fiktív adatok: a cég- és személynevek szólistákból összerakottak, valós cégre nem utalnak. Az adószám törzsszáma
+# 99-cel, a bankszámlaszám 999-es bankkóddal kezdődik; mindkettőnek érvényes az ellenőrző számjegye. Ezeket a
+# tartományokat a szokásos kiosztástól távolinak szántuk; publikálás előtt ellenőrizendő, hogy valóban nem kiosztottak.
+
+seed: "kie03:2026-10-09"
+split: ho-uj
+kalibracio_n: 200        # a H3 célréteg-kalibrációs mintája (4.6): ennyi item kap meta.kalibracio = true jelölést
+group: kie
+license: konstrukcio
+
+dokumentum:
+  tetelszam: [1, 6]
+  afakulcsok: {"27": 0.70, "18": 0.10, "5": 0.15, "AAM": 0.05}   # AAM: alanyi adómentes, 0 Ft ÁFA
+  fizetesi_mod: {"átutalás": 0.8, "készpénz": 0.1, "bankkártya": 0.1}
+  fizetesi_napok: [8, 15, 30, 45, 60]
+  datum_tartomany: ["2025-01-01", "2026-09-30"]
+  elrendezesek: [tablazatos, folyoszoveg, ocr]     # három szövegforma, eltérő címkékkel, szám- és dátumformával
+
+csaladok:
+  kie.osszeg:                 # numeric.consistency
+    n: 800
+    kerdesek:
+      hibas_sor:
+        arany: 0.4
+        kind: choice
+        kerdes: "Melyik tételsor számítása hibás (mennyiség × egységár, az ÁFA vagy a bruttó összeg)?"
+        opciok: a tételsorok (2–6)
+        x: {tipus: natural, arany: 0.3}         # egyik sor sem hibás
+        hiba: egy sorban a nettó, az ÁFA vagy a bruttó érték eltér (±1–30%, legalább 10 Ft)
+      vegosszeg:
+        arany: 0.3
+        kind: noul
+        kerdes: "Egyezik-e a bruttó végösszeg a tételsorok bruttó összegeinek összegével?"
+        hiba: {arany: 0.5, leiras: a végösszeg eltér (±1–20%, legalább 10 Ft); a sorok helyesek}
+      afa_osszesen:
+        arany: 0.3
+        kind: choice
+        kerdes: "Mennyi a számla ÁFA-tartalma összesen?"
+        dokumentum: az ÁFA-oszlop és az ÁFA-összesen nem látszik, a kulcsok és a nettó összegek igen
+        opciok: helyes összeg + tipikus tévesztések (a nettó vagy a bruttó végösszeg, 27%-kal számolt, soronkénti kerekítés nélkül)
+        x: {tipus: missing-precondition, arany: 0.2}   # az ÁFA-kulcsok sem látszanak: nem számolható
+  kie.datum:                  # date.reasoning
+    n: 800
+    kerdesek:
+      hatarido_szamolt:
+        arany: 0.4
+        kind: choice
+        kerdes: "A számla szerint mikor jár le a fizetési határidő?"
+        dokumentum: kelte + teljesítés + „a számla keltétől számított N naptári napon belül”, kifejezett határidő nélkül
+        opciok: kelte + N (gold), teljesítés + N, kelte + N ± 1, kelte, teljesítés
+        x: {tipus: missing-precondition, arany: 0.2}   # se határidő, se fizetési feltétel; a 30 napos opció ekkor nincs a listán
+      kesedelem:
+        arany: 0.3
+        kind: noul
+        kerdes: "Késedelmes volt-e a fizetés, ha az összeg {datum} napján érkezett meg?"
+        dokumentum: kifejezett fizetési határidő
+        gold: igen, ha a fizetés napja a határidő után van; a határidő napja még nem késedelem
+      teljesites_datuma:
+        arany: 0.3
+        kind: choice
+        kerdes: "Melyik dátum a teljesítés dátuma?"
+        opciok: a dokumentum különböző dátumai (kelte, teljesítés, határidő, megrendelés)
+        x: {tipus: missing-precondition, arany: 0.2}   # a teljesítés dátuma nincs a dokumentumban
+  kie.mezo:                   # KIE-mezőellenőrzés
+    n: 800
+    kerdesek:
+      mezo_valasztas:
+        arany: 0.5
+        kind: choice
+        kerdes: "Mi {mezo}?"            # mezo: az eladó adószáma | a vevő adószáma | a számla sorszáma | az eladó bankszámlaszáma
+        opciok: a dokumentum azonosítói (adószámok, sorszám, rendelésszám, bankszámlaszám, cégjegyzékszám)
+        x: {tipus: missing-precondition, arany: 0.2}   # a kérdezett mező hiányzik a dokumentumból
+      kinyert_ertek:
+        arany: 0.5
+        kind: noul
+        kerdes: "A kinyert érték: {mezo} = {ertek}. Megegyezik a dokumentumban szereplővel?"
+        hiba: {arany: 0.5, leiras: "két szomszédos számjegy felcserélve, egy számjegy elírva, vagy egy másik mező értéke"}

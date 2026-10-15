@@ -1,0 +1,803 @@
+{
+ "karok": {
+  "F4:k03v2_g3_s1": {
+   "ut": "kor03/eredmenyek/F4/k03v2_g3_s1/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9869994147407384,
+    1.1283271421356177e-08
+   ],
+   "cimketomeg_05_alatt": 121,
+   "modellnev": {
+    "k03v2_g3_s1": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 5545,
+   "hibanaplo_parok": 5545,
+   "sha256": "179036b4a47bf290044b115b4f809a9c589894bea115901200c0f803e222509c",
+   "pecset_hashek": 2,
+   "pecset_utolso_egyezik": true,
+   "pecset_elotagok": {
+    "548a29b13f708601e19f71dec5c99e9f4f37506fbea935c3f59e9e4eed0178c8": 178315
+   },
+   "eredeti_sorok": 178315,
+   "potolt_sorok": 5545,
+   "potolt_itemek": 1387,
+   "potolt_egyezik_a_hibanaploval": true,
+   "potlas_futasazonosito": [
+    "K03F4-potlas 2026-10-14 21:20:34 (k03v2_g3_s1, vLLM-napló: kor03/eredmenyek/F4/k03v2_g3_s1/potlas)"
+   ],
+   "rendben": true
+  },
+  "F4:k03v2_g3_s2": {
+   "ut": "kor03/eredmenyek/F4/k03v2_g3_s2/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9861032599891745,
+    2.103928506001673e-11
+   ],
+   "cimketomeg_05_alatt": 133,
+   "modellnev": {
+    "k03v2_g3_s2": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "09a00b729406b35bc8995943dc0c9bc0353e4cf4ebcfd5fd56d9448647f72b92",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:k03v2_g3_s3": {
+   "ut": "kor03/eredmenyek/F4/k03v2_g3_s3/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9848185354982921,
+    2.8928091442410114e-10
+   ],
+   "cimketomeg_05_alatt": 101,
+   "modellnev": {
+    "k03v2_g3_s3": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 2206,
+   "hibanaplo_parok": 2206,
+   "sha256": "7645e2466bb6ac32f2b0a7266119869d84eb1dc74927ca7bc36e58b8e504e852",
+   "pecset_hashek": 2,
+   "pecset_utolso_egyezik": true,
+   "pecset_elotagok": {
+    "3eba5eaa7ebd1a43a11be79f10e716918d1de2c4031f9d12ee0ec69c75f18e78": 181654
+   },
+   "eredeti_sorok": 181654,
+   "potolt_sorok": 2206,
+   "potolt_itemek": 553,
+   "potolt_egyezik_a_hibanaploval": true,
+   "potlas_futasazonosito": [
+    "K03F4-potlas 2026-10-14 21:31:45 (k03v2_g3_s3, vLLM-napló: kor03/eredmenyek/F4/k03v2_g3_s3/potlas)"
+   ],
+   "rendben": true
+  },
+  "F4:k03v2_g3kemeny_s1": {
+   "ut": "kor03/eredmenyek/F4/k03v2_g3kemeny_s1/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9809089192692423,
+    2.785440605882754e-09
+   ],
+   "cimketomeg_05_alatt": 166,
+   "modellnev": {
+    "k03v2_g3kemeny_s1": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "e31138dc3eec78211c08168b458d922f7213ca29c46d2aeffbf52d5770367648",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:k03v2_g3hu_s1": {
+   "ut": "kor03/eredmenyek/F4/k03v2_g3hu_s1/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9852348259309294,
+    8.055621665056547e-14
+   ],
+   "cimketomeg_05_alatt": 160,
+   "modellnev": {
+    "k03v2_g3hu_s1": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "a12b85824102e0494a03d698ee62a74e17cf63987cef9f3ed3409b3918de4187",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:l0r": {
+   "ut": "kor03/eredmenyek/F4/l0r/vllm_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9986288005443997,
+    3.953404816839421e-08
+   ],
+   "cimketomeg_05_alatt": 58,
+   "modellnev": {
+    "Qwen/Qwen3.6-35B-A3B-FP8": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "23f6430cef4823669a4a6e42359c4250be5514cf22bf59e683cb412085452b9c",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:l3mixse_h2_s1": {
+   "ut": "kor03/eredmenyek/F4/l3mixse_h2_s1/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_termek.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 22564,
+   "jelen": 22564,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.986060059507034,
+    2.2244800178590577e-06
+   ],
+   "cimketomeg_05_alatt": 12,
+   "modellnev": {
+    "l3mixse_h2_s1": 22564
+   },
+   "keret": {
+    "auto": 22564
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "2e0c2c63e1112d337d3e1829c4e4a8fb5a035a9405ed5eeefd0b2ac7f4801540",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:k01_l3mixse_p30_s1": {
+   "ut": "kor03/eredmenyek/F4/k01_l3mixse_p30_s1/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_routing.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 40052,
+   "jelen": 40052,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9752510219680531,
+    3.545129265794489e-08
+   ],
+   "cimketomeg_05_alatt": 15,
+   "modellnev": {
+    "k01_l3mixse_p30_s1": 40052
+   },
+   "keret": {
+    "auto": 40052
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "c1f9df57a3f34205537b1113b6bfa5233696c3836037cd5141ec39e12528cd51",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:l3mixse_h2_s2": {
+   "ut": "kor03/eredmenyek/F4/l3mixse_h2_s2/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_termek.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 22564,
+   "jelen": 22564,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9912447608357782,
+    1.1062927507096125e-06
+   ],
+   "cimketomeg_05_alatt": 11,
+   "modellnev": {
+    "l3mixse_h2_s2": 22564
+   },
+   "keret": {
+    "auto": 22564
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "b0f2a8e84a5f28a4e9ae7708d7094490d61c1e1cd1f946583ad37d2420e767c5",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:k01_l3mixse_p30_s2": {
+   "ut": "kor03/eredmenyek/F4/k01_l3mixse_p30_s2/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_routing.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 40052,
+   "jelen": 40052,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9814359331188164,
+    1.6467920928906329e-07
+   ],
+   "cimketomeg_05_alatt": 14,
+   "modellnev": {
+    "k01_l3mixse_p30_s2": 40052
+   },
+   "keret": {
+    "auto": 40052
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "97d04d3735cff68e95ef5fa580907cd131cf9784971406834de34697ad86233e",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:l3mixse_h2_s3": {
+   "ut": "kor03/eredmenyek/F4/l3mixse_h2_s3/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_termek.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 22564,
+   "jelen": 22564,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.992391761142928,
+    1.330060362268287e-06
+   ],
+   "cimketomeg_05_alatt": 14,
+   "modellnev": {
+    "l3mixse_h2_s3": 22564
+   },
+   "keret": {
+    "auto": 22564
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "41b2d89d2a443511f641ec7c7cc42f1b1a2786cef24f88600320c1235213853d",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F4:k01_l3mixse_p30_s3": {
+   "ut": "kor03/eredmenyek/F4/k01_l3mixse_p30_s3/vllm_eval.jsonl",
+   "items": "kor03/adat/f4/items_ho_routing.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 40052,
+   "jelen": 40052,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9703989783262382,
+    3.284850765566451e-06
+   ],
+   "cimketomeg_05_alatt": 8,
+   "modellnev": {
+    "k01_l3mixse_p30_s3": 40052
+   },
+   "keret": {
+    "auto": 40052
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "793c4f71565192ef770fb3d60c4877ffc476756e33a6ae1493755c9969cd73ec",
+   "pecset_hashek": 1,
+   "pecset_utolso_egyezik": true,
+   "potlas_futasazonosito": [],
+   "rendben": true
+  },
+  "F2:L1★ eval": {
+   "ut": "kor03/eredmenyek/F2/qwen_eval.jsonl",
+   "items": "kor03/adat/f2/items_eval.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 183860,
+   "jelen": 183860,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 176,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9986296703495912,
+    1.3271806319063782e-11
+   ],
+   "cimketomeg_05_alatt": 59,
+   "modellnev": {
+    "Qwen/Qwen3.6-35B-A3B-FP8": 183860
+   },
+   "keret": {
+    "auto": 183860
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "f809478441afe756c825f2bdf2d4ec75850ca8a6eebfb918a77daf696908b52f",
+   "rendben": true
+  },
+  "F2:L1★ val": {
+   "ut": "kor03/eredmenyek/F2/qwen_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 340,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9982031780032251,
+    2.412727152144652e-08
+   ],
+   "cimketomeg_05_alatt": 7,
+   "modellnev": {
+    "Qwen/Qwen3.6-35B-A3B-FP8": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "75aec5070f4f000c696339a7a067a3876a520f43816378b915b5ecd71042d6cd",
+   "rendben": true
+  },
+  "F3:k03v2_g3_s1 val": {
+   "ut": "kor03/eredmenyek/F3/k03v2_g3_s1/vllm_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9830376627322988,
+    3.615925119422606e-11
+   ],
+   "cimketomeg_05_alatt": 13,
+   "modellnev": {
+    "k03v2_g3_s1": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "57cb4379a4dcbe2e7e05031519f79b0ab04749de68147d8329946b9e965dbc0c",
+   "rendben": true
+  },
+  "F3:k03v2_g3_s2 val": {
+   "ut": "kor03/eredmenyek/F3/k03v2_g3_s2/vllm_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9818279657225222,
+    1.0812638709906806e-07
+   ],
+   "cimketomeg_05_alatt": 9,
+   "modellnev": {
+    "k03v2_g3_s2": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "9aabea1648acfaa918da1269a8074d8eccc144399f98836de5113228f4eba61e",
+   "rendben": true
+  },
+  "F3:k03v2_g3_s3 val": {
+   "ut": "kor03/eredmenyek/F3/k03v2_g3_s3/vllm_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9815695700049039,
+    4.832242359997177e-07
+   ],
+   "cimketomeg_05_alatt": 11,
+   "modellnev": {
+    "k03v2_g3_s3": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "e9172bc5c336ce801a3a3736ac3eb0f2bd4814805d8d44d257f2dd5b97347f2b",
+   "rendben": true
+  },
+  "F3:k03v2_g3kemeny_s1 val": {
+   "ut": "kor03/eredmenyek/F3/k03v2_g3kemeny_s1/vllm_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9775026537160019,
+    1.1151396697317885e-06
+   ],
+   "cimketomeg_05_alatt": 20,
+   "modellnev": {
+    "k03v2_g3kemeny_s1": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "1a5359104e77249361c36a6e6b64091c33f4b6ad4cd7de4d00feaab66827394d",
+   "rendben": true
+  },
+  "F3:k03v2_g3hu_s1 val": {
+   "ut": "kor03/eredmenyek/F3/k03v2_g3hu_s1/vllm_val.jsonl",
+   "items": "kor03/adat/f2/items_val.jsonl",
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 12488,
+   "jelen": 12488,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "cimketomeg_median_min": [
+    0.9823649192438003,
+    5.722560555699212e-06
+   ],
+   "cimketomeg_05_alatt": 6,
+   "modellnev": {
+    "k03v2_g3hu_s1": 12488
+   },
+   "keret": {
+    "auto": 12488
+   },
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "d748799a6698fcb3a974f27d51a5ea21fce73ea27b906b7c497079bcabf981dc",
+   "rendben": true
+  },
+  "00:l3_s1 val": {
+   "ut": "eredmenyek/F4/vllm/l3_s1_val.jsonl",
+   "items": [
+    "adat/f1/items_val-belso.jsonl",
+    "adat/f1/items_val-szallito.jsonl"
+   ],
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 4024,
+   "jelen": 4024,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "5bdc747eab2d99908d965bdd7f9e79d5e94b144d28ef095155852c120dd34398",
+   "rendben": true
+  },
+  "01:l3_s1 val": {
+   "ut": "kor01/eredmenyek/F4/vllm/l3_s1_val.jsonl",
+   "items": [
+    "kor01/adat/items_val.jsonl"
+   ],
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 14096,
+   "jelen": 14096,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "d764b8665ebe8cf4d3531fa049090780ef7fd713cbea2dc08b33350a9b87e8a9",
+   "rendben": true
+  },
+  "00:l3_s2 val": {
+   "ut": "eredmenyek/F4/vllm/l3_s2_val.jsonl",
+   "items": [
+    "adat/f1/items_val-belso.jsonl",
+    "adat/f1/items_val-szallito.jsonl"
+   ],
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 4024,
+   "jelen": 4024,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "47340ade21aae22f911608198ec697c34bbd568ba75675868d566b672ea0ee0b",
+   "rendben": true
+  },
+  "01:l3_s2 val": {
+   "ut": "kor01/eredmenyek/F4/vllm/l3_s2_val.jsonl",
+   "items": [
+    "kor01/adat/items_val.jsonl"
+   ],
+   "perms": [
+    0
+   ],
+   "elvart_par": 3524,
+   "jelen": 3524,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "c1e68a75435cf488564820c95b6091d155852765c73d1fe2707039fc08a51e11",
+   "rendben": true
+  },
+  "00:l3_s3 val": {
+   "ut": "eredmenyek/F4/vllm/l3_s3_val.jsonl",
+   "items": [
+    "adat/f1/items_val-belso.jsonl",
+    "adat/f1/items_val-szallito.jsonl"
+   ],
+   "perms": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "elvart_par": 4024,
+   "jelen": 4024,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "1bf0f1c9234a717aad6f03671d191b79bb980ea2932e411f7e92edc11a5ea795",
+   "rendben": true
+  },
+  "01:l3_s3 val": {
+   "ut": "kor01/eredmenyek/F4/vllm/l3_s3_val.jsonl",
+   "items": [
+    "kor01/adat/items_val.jsonl"
+   ],
+   "perms": [
+    0
+   ],
+   "elvart_par": 3524,
+   "jelen": 3524,
+   "hianyzik": 0,
+   "ismetlodo": 0,
+   "ervenytelen": {},
+   "tobblet_sor_kikerult_itemre": 0,
+   "pelda_hianyzo": [],
+   "hibanaplo_sorok": 0,
+   "hibanaplo_parok": 0,
+   "sha256": "345c0f91de96c474faf212bd890df78d2c214cac44f279fee38274bdd23b7dae",
+   "rendben": true
+  }
+ },
+ "pecset_pillanatkep_egyezik": true,
+ "rendben": true
+}

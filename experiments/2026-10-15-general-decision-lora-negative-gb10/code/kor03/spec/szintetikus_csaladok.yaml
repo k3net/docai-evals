@@ -1,0 +1,116 @@
+# 03-as kör — a szintetikus családok specifikációja (03-runbook 3.5; F0, a generálás az F1-ben fut a Sparkon).
+#
+# Recept (az ötletanyag 2.D pontja): családspecifikáció → szcenárióváz → állapotszöveg → független visszacímkézés →
+# ellentényes minimális szerkesztés. Emberi átnézés nincs (10. pont, 7.): a minőséget a független visszacímkézés és a
+# gépi zajbecslés (4.2) adja.
+#
+# Közös szabályok (minden családra):
+#   generator:   Apache-2.0 modell (9. pont): Mistral Small 4, Gemma 4 vagy Muse-Glimmer-30B; a Qwen-család nem (az alany
+#                családja). A családonként választott generátor a `generator` mezőben.
+#   ellenorzo:   másik családú Apache-2.0 modell (a generátortól eltérő), vakon: csak az állapotot, a kérdést és az
+#                opciókat látja, a szándékolt címkét nem. Ha a top-1 eltér a szándékolttól, vagy a bizalma < 0,6, az
+#                item kétértelmű (puha cél, nem pontozott) vagy eldobjuk (`eltérés` mező).
+#   tanar:       a soft target a 4.4 szerinti, kapun átment tanártól jön; a generátor szándékolt címkéje a gold (4.1
+#                rangsor, 3. szint).
+#   ellenteny:   az itemek ~20%-ához ellentényes pár: a címkét átfordító, egy-két szavas szerkesztés (ugyanaz a
+#                group_id); az ellenőrző mindkét változatot vakon címkézi, csak az egyező pár marad.
+#   nev_es_pii:  csak kitalált személy- és cégnevek, a kie03.py szólistáiból vagy a generátor által, a valós
+#                személyre utaló nevek szűrésével; e-mail-cím csak .example tartományban, telefonszám csak a
+#                +36 1 555 xxxx mintára. Valós ügyféladat, tenantadat, DocAI-szöveg soha (3.6).
+#   kitartas:    egyik család sem fedheti át a kitartott csoportokat (5. pont): nincs eszköz- vagy szolgáltatás-
+#                választás („melyik rendszer/funkció kezelje”), nincs termék–katalógus párosítás, nincs számszaki vagy
+#                dátum-ellenőrzés, mezőkinyerés (KIE). A kérdés a szöveg jellegére, tartalmára, viszonyaira vonatkozik.
+#   nyelv:       magyar; a regiszter (hivatalos, köznapi, tömör, bőbeszédű, elírásokkal) családonként változik.
+#   meret:       családonként n_cel item a generálás után; a keverőben a szintetikus rész legfeljebb a train 30%-a.
+#   split:       a szcenárióváz hash-e szerint 10% val, 10% teszt-ID, a többi train; a teszt-ID csak leíró (4.6).
+#   x:           családonként 10–30%, a négy X-típusból a családnak megfelelőkkel (2. pont).
+
+kozos:
+  n_cel: 2500
+  ellenteny_arany: 0.2
+  ellenorzo_min_bizalom: 0.6
+  split: {val: 0.1, test-id: 0.1}
+
+csaladok:
+  level.triage:
+    csoport: level
+    generator: gemma-4-26b-a4b     # 2026-10-09: Mistral helyett (lassú, helykitöltőket írt); ellenőrző: Mistral
+    leiras: beérkező levél (ügyfél, partner, hatóság, belső) jellegének és sürgősségének megítélése
+    kerdesek:
+      - {kind: choice, kerdes: "Milyen jellegű ez a levél?",
+         opciok: [panasz, árajánlatkérés, megrendelés, lemondás, időpont-egyeztetés, tájékoztatás, hiánypótlási felszólítás,
+                  reklám vagy hírlevél, adategyeztetés]}
+      - {kind: choice, kerdes: "Mennyire sürgős a válasz?", opciok: ["azonnal (aznap)", "néhány napon belül", "nem sürgős", "nem igényel választ"]}
+      - {kind: noul, kerdes: "Kér-e a levél írója kifejezetten visszahívást vagy személyes egyeztetést?"}
+    x: {out-of-scope: 0.10, missing-precondition: 0.05}   # pl. a levél jellege egyik opcióba sem illik
+    szcenario_dimenziok: [feladó típusa, ágazat, hangnem, hossz, csatolmány említése, többféle kérés egy levélben]
+    tilos: ["melyik osztály/rendszer kezelje", "számla- vagy összegellenőrzés"]
+
+  level.dokumentumtipus:
+    csoport: level
+    generator: muse-glimmer-30b   # 2026-10-10: Qwen helyett (Dani: a tanított alany családja nem generál); ellenőrző: Gemma
+    leiras: rövid dokumentumrészlet típusa (az első 1–3 bekezdés)
+    kerdesek:
+      - {kind: choice, kerdes: "Milyen típusú dokumentumból való a részlet?",
+         opciok: [szerződés, megrendelő, teljesítésigazolás, jegyzőkönyv, meghatalmazás, árajánlat, felszólítás, hatósági
+                  határozat, belső szabályzat, pályázati felhívás]}
+    x: {out-of-scope: 0.15}
+    szcenario_dimenziok: [ágazat, formalitás, a fejléc megléte, csonkolás helye]
+    tilos: ["számla (a KIE-csoport dokumentuma)", "mezőértékek kérdezése"]
+
+  level.szerzodesklauzula:
+    csoport: level
+    generator: muse-glimmer-30b   # 2026-10-10: Qwen helyett (Dani: a tanított alany családja nem generál); ellenőrző: Gemma
+    leiras: szerződési pont jellegének és hatásának megítélése
+    kerdesek:
+      - {kind: choice, kerdes: "Milyen típusú rendelkezés ez?",
+         opciok: [titoktartás, felelősségkorlátozás, kötbér, felmondás, vis maior, joghatóság és irányadó jog,
+                  szellemi tulajdon, adatkezelés, fizetési feltétel, jótállás]}
+      - {kind: noul, kerdes: "Egyoldalú jogot ad-e ez a pont az egyik félnek?"}
+    x: {out-of-scope: 0.10, natural: 0.05}
+    szcenario_dimenziok: [szerződéstípus, fél szerepe, megfogalmazás bonyolultsága]
+    tilos: ["határidő- vagy összegszámítás"]
+
+  entitas.egyezes:
+    csoport: entitas
+    generator: gemma-4-26b-a4b
+    leiras: két rekord ugyanarra a cégre, személyre vagy címre utal-e (névváltozat, rövidítés, elírás, átköltözés)
+    kerdesek:
+      - {kind: noul, kerdes: "Ugyanarra a {tipusra} vonatkozik a két rekord?"}   # tipusra: cégre | személyre | címre
+      - {kind: choice, kerdes: "Melyik jelölt rekord azonos a keresettel?", opciok: "2–6 kitalált rekord, nehéz negatívokkal"}
+    x: {gold-drop: 0.15}
+    szcenario_dimenziok: [rekordtípus, eltérés típusa (rövidítés, ékezet, sorrend, elírás, cégforma), nehéz negatív]
+    tilos: ["termék–katalógus párosítás (a termék-csoport)", "adószám-ellenőrzés (a KIE-csoport)"]
+
+  rag.relevancia:
+    csoport: rag
+    generator: mistral-small-4
+    leiras: egy kérdéshez melyik szövegrész releváns, és alátámasztja-e az állítást
+    kerdesek:
+      - {kind: choice, kerdes: "Melyik részlet válaszolja meg a kérdést?", opciok: "2–6 részlet, egy releváns"}
+      - {kind: noul, kerdes: "Alátámasztja-e a részlet az állítást?"}
+    x: {natural: 0.20}   # egyik részlet sem válaszol (megválaszolhatatlan)
+    szcenario_dimenziok: [téma, a megtévesztő részlet típusa (közeli, de más kérdésre válaszol; elavult; ellentmondó)]
+    forrasszoveg: NJT, Wikipédia (a 3.4 forrásai), nem MILQA- és nem HuRC-szöveg (szivárgás)
+
+  rag.valaszbiralat:
+    csoport: rag
+    generator: muse-glimmer-30b   # 2026-10-10: Qwen helyett (Dani: a tanított alany családja nem generál); ellenőrző: Gemma
+    leiras: egy válasz a kérdésre és a forrásra nézve helyes, részben helyes, hallucinált vagy kitérő-e
+    kerdesek:
+      - {kind: choice, kerdes: "Milyen a válasz a forráshoz képest?",
+         opciok: ["helyes és teljes", "helyes, de hiányos", "a forrással ellentétes", "a forrásban nem szereplő állítást tesz", "nem válaszol a kérdésre"]}
+    x: {}
+    szcenario_dimenziok: [a hiba helye, a hiba finomsága]
+
+  jogi.hivatali_ugytipus:
+    csoport: jogi
+    generator: gemma-4-26b-a4b
+    leiras: állampolgári vagy vállalkozói beadvány ügytípusa (a beadvány tartalma szerint, nem az illetékes szerv szerint)
+    kerdesek:
+      - {kind: choice, kerdes: "Milyen ügyről szól a beadvány?",
+         opciok: [építési engedély, adóügyi kérelem, panasz, közérdekű adatigénylés, méltányossági kérelem, fellebbezés,
+                  bejelentés, adatmódosítás, támogatási kérelem]}
+    x: {out-of-scope: 0.10, missing-precondition: 0.05}
+    szcenario_dimenziok: [beadó (magánszemély, vállalkozás), hangnem, több kérés egyben]
+    tilos: ["melyik hivatal/rendszer illetékes (routing-rokon)"]

@@ -64,6 +64,7 @@ A teljes szabályrendszer: **[docs/data-policy.md](docs/data-policy.md)**.
 | [vllm-prod-config-tuning-gb10](experiments/2026-08-04-vllm-prod-config-tuning-gb10/) | Melyik serving-flag számít valójában élesben? | A hat javasolt mérésből kettőt volt érdemes lefuttatni; az async scheduling kikapcsolva marad |
 | [lora-vs-reranker-hu-verse](experiments/2026-08-14-lora-vs-reranker-hu-verse/) | Ver-e a finomhangolás egy determinisztikus best-of-8 válogatót? | Formában nem — a tanulás nélküli válogató minden metrikán nyer. A hangon viszont csak a tanulás segít: +36 pont |
 | [decision-lora-where-to-train-gb10](experiments/2026-10-09-decision-lora-where-to-train-gb10/) | Hol érdemes döntési adaptert tanítani? | Ahol az alapmodell gyenge: ugyanaz a LoRA-recept a számlasor → cikk feladaton 13,7 ponttal többet automatizál, az eszközválasztásban alulmarad a kalibrált alapmodellel szemben |
+| [general-decision-lora-negative-gb10](experiments/2026-10-15-general-decision-lora-negative-gb10/) | Átviszi-e egy sok magyar feladatcsaládon tanított döntési adapter a nyereséget olyan feladatcsoportra, amelyet nem látott? | Nem — előre rögzített negatív eredmény: mindhárom kitartott csoporton 7,2–11,1 ponttal többet dönt, de 0,866–0,912-es precizitással, mert magabiztosan választ ott, ahol az „egyik sem” a helyes |
 
 ## Mérési szettek
 
@@ -86,6 +87,7 @@ A teljes szabályrendszer: **[docs/data-policy.md](docs/data-policy.md)**.
 - [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) — miért nem serving-nyereség a kernel-benchmark
 - [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) — egy finomhangolás, ami veszített néhány tucat sor pontozókóddal szemben, és nyert azon az egy tengelyen, amit a pontozó nem lát
 - [Hol érdemes tanítani a modellt?](https://docai.hu/blog/hol-erdemes-tanitani) — egy döntési adapter, két feladat, ellentétes eredmény; a hosszú változat [kutatási jelentés](https://docai.hu/kutatas/hol-erdemes-tanitani)
+- [Az általános döntési adapter, amely nem lett általános](https://docai.hu/blog/altalanos-dontesi-adapter-negativ-eredmeny) — egy sok magyar feladatcsaládon tanított döntési adapter nem visz át a kitartott csoportokra: magabiztosan választ ott, ahol az „egyik sem” a helyes
 - Minden cikk: **[docai.hu/blog](https://docai.hu/blog)**
 
 ## Hogyan olvasd az eredményeket?

@@ -79,14 +79,16 @@ docai-evals/
 | [where-knowledge-lives-hu-en-zh](experiments/2026-08-26-where-knowledge-lives-hu-en-zh/) | Does a multilingual model reach Hungarian facts through English? | No — the pull is semantic, not English; but Hungarian-only knowledge scored lowest in Hungarian in this sample (7%, n = 15) | **R1** |
 | [cjk-damping-dose-response-gb10](experiments/2026-09-18-cjk-damping-dose-response-gb10/) | How much may be taken from a token class before it costs? | S = 0.7: CJK risk exactly zero on the production sampler, Chinese intact; one step further loses 45 % of Chinese, and the Hungarian cost is zero by construction — the temperature firefight was not a fix | R1 |
 | [decision-lora-where-to-train-gb10](experiments/2026-10-09-decision-lora-where-to-train-gb10/) | Where is it worth training a decision adapter? | Where the base model is weak: the same LoRA recipe automates 13.7 points more on invoice-line matching, and loses to the calibrated base model on tool selection | R1 |
+| [general-decision-lora-negative-gb10](experiments/2026-10-15-general-decision-lora-negative-gb10/) | Does one decision adapter trained on many Hungarian task families transfer to task groups it never saw? | No — a pre-registered negative result: it decides 7.2–11.1 points more on all three held-out groups, but at 0.866–0.912 precision, because it confidently answers where "none of these" is correct | R1 |
 
 `R1/R2/R3` are reproducibility levels — see **[docs/reproducibility.md](docs/reproducibility.md)**.
-Four entries are **R1**, all because their corpus is one we are allowed to publish: the verse
+Five entries are **R1**, all because their corpus is one we are allowed to publish: the verse
 experiment runs on public-domain poetry, where-knowledge-lives on a purpose-built set of factual
 questions that ships in the repository, cjk-damping on a synthetic trap corpus (the customer traces
-behind its risk numbers stay private), and decision-lora-where-to-train on a synthetic dataset and
-public benchmarks, whose rows it ships as hashed references. Everything else here measures customer
-documents.
+behind its risk numbers stay private), decision-lora-where-to-train on a synthetic dataset and
+public benchmarks, whose rows it ships as hashed references, and general-decision-lora-negative on
+public and synthetic training data and the earlier rounds' held-out tests (its per-item read-outs are
+published by hash only). Everything else here measures customer documents.
 
 For where-knowledge-lives, CI re-runs the reproduction on every push
 ([`.github/workflows/reproduce.yml`](.github/workflows/reproduce.yml)): it rebuilds the prompts from
@@ -117,6 +119,7 @@ Each experiment links back to the article that tells its story. The articles are
 - [Két nap, hat óra Triton tuning, egy GB10, és egy nagy semmi](https://docai.hu/blog/vllm-gb10-tuning) — why a kernel benchmark is not a serving gain
 - [Versel nekünk az AI — de tud-e Arany Jánosul?](https://docai.hu/blog/versel-nekunk-az-ai) — a fine-tune that lost to a few dozen lines of scoring code, and won on the one axis the scorer cannot see
 - [Hol érdemes tanítani a modellt?](https://docai.hu/blog/hol-erdemes-tanitani) — one decision adapter, two tasks, opposite results: train where the base model is weak (long form: [research report](https://docai.hu/kutatas/hol-erdemes-tanitani))
+- [Az általános döntési adapter, amely nem lett általános](https://docai.hu/blog/altalanos-dontesi-adapter-negativ-eredmeny) — one decision adapter for many Hungarian task families did not transfer to held-out groups: it confidently answers where "none of these" is correct ([English](https://docai.hu/en/blog/general-decision-adapter-negative-result))
 - All articles: **[docai.hu/blog](https://docai.hu/blog)**
 
 ## Reading a result honestly

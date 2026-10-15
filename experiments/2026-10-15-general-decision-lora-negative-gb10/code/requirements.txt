@@ -1,0 +1,6 @@
+# verify_package.py: standard library only.
+# The analysis (kor03/eszkozok/f4_elemzes03.py, f4_leiro03.py, f4_ketlepcso03.py, mde03.py) on the read-outs:
+numpy>=1.26
+scipy>=1.11
+# Item building, training and read-out additionally use pyyaml, pyarrow, huggingface_hub, tokenizers, transformers,
+# peft and torch, and a vLLM 0.30.0 server (see eszkozok/lib.sh); they are not needed to verify the package.
