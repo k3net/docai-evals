@@ -1,0 +1,306 @@
+{
+ "n_tetel": 262,
+ "kihagyva_K_N": 4,
+ "tobb_szamla": 7,
+ "cimke_allapot": {
+  "MATCH": 142,
+  "MISSING_DATA": 62,
+  "OUT_OF_SCOPE": 47,
+  "NO_MATCH": 7
+ },
+ "jeloltlefedes": {
+  "van_helyes_szamla": 140,
+  "a_listan": 139
+ },
+ "termek": {
+  "kötött, helyes": 134,
+  "kötött; címke M (a látott adatból nem dönthető el)": 35,
+  "kategorizált, címke O": 45,
+  "kategorizált, címke más": 19,
+  "kötött a listán kívül; címke: MISSING_DATA": 5,
+  "nem oldotta meg, címke NO_MATCH": 4,
+  "kötött a listán kívül; címke: NO_MATCH": 3,
+  "kötött a listán kívül; címke: OUT_OF_SCOPE": 1,
+  "nem oldotta meg, címke OUT_OF_SCOPE": 1,
+  "nem oldotta meg, címke MISSING_DATA": 3,
+  "nem oldotta meg, címke MATCH": 3,
+  "kötött, téves: a címke más számla": 2
+ },
+ "kiegeszito_hatokor": {
+  "megoldatlan": 11,
+  "modellhez": 7,
+  "cimkek": {
+   "NO_MATCH": 4,
+   "OUT_OF_SCOPE": 1,
+   "MISSING_DATA": 3,
+   "MATCH": 3
+  }
+ },
+ "keretek": {
+  "keret4": {
+   "n": 230,
+   "helyes_dontes": 142,
+   "tevesztes": {
+    "MATCH|SELECT=helyes": 139,
+    "MISSING_DATA|SELECT": 38,
+    "MISSING_DATA|X": 15,
+    "NO_MATCH|X": 3,
+    "OUT_OF_SCOPE|SELECT": 4,
+    "OUT_OF_SCOPE|X": 31
+   },
+   "kiegeszito_dontesek": {
+    "MATCH|SELECT=helyes": 3,
+    "MISSING_DATA|X": 2,
+    "NO_MATCH|X": 1,
+    "OUT_OF_SCOPE|SELECT": 1
+   },
+   "munkapont": {
+    "B1-4S": {
+     "nincs_munkapont": true
+    },
+    "B1-4R": {
+     "nincs_munkapont": false,
+     "atlag": {
+      "lezart": 129.0,
+      "hibas": 9.666666666666666,
+      "helyes_kotes": 119.33333333333333,
+      "tobblet_helyes_kotes": 5.0,
+      "uj_hiba_ahol_a_termek_jo": 0.0,
+      "uj_hiba_ahol_a_termek_nem_kotott": 0.3333333333333333,
+      "reszfizetes_lezart": 3.0,
+      "reszfizetes_hibas": 0.0,
+      "kieg_lezart": 3.0,
+      "kieg_helyes_kotes": 3.0,
+      "kieg_helyes_x": 0.0,
+      "kieg_hibas": 0.0,
+      "utkozes": 2.6666666666666665,
+      "utkozes_modell_jo": 2.0,
+      "utkozes_termek_jo": 0.0,
+      "utkozes_cimke_m": 0.6666666666666666,
+      "termek_plusz_modell_helyes_kotes": 139.0,
+      "termek_plusz_kieg_helyes_kotes": 137.0
+     },
+     "futasok": [
+      {
+       "lezart": 135,
+       "hibas": 10,
+       "helyes_kotes": 125,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 0,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 2,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 0,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      },
+      {
+       "lezart": 120,
+       "hibas": 7,
+       "helyes_kotes": 113,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 0,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 2,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 0,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      },
+      {
+       "lezart": 132,
+       "hibas": 12,
+       "helyes_kotes": 120,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 1,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 4,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 2,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      }
+     ]
+    },
+    "B1-4LR": {
+     "nincs_munkapont": true
+    }
+   }
+  },
+  "keret2": {
+   "n": 230,
+   "helyes_dontes": 142,
+   "tevesztes": {
+    "MATCH|SELECT=helyes": 139,
+    "MISSING_DATA|SELECT": 35,
+    "MISSING_DATA|X": 18,
+    "NO_MATCH|X": 3,
+    "OUT_OF_SCOPE|SELECT": 3,
+    "OUT_OF_SCOPE|X": 32
+   },
+   "kiegeszito_dontesek": {
+    "MATCH|SELECT=helyes": 3,
+    "MISSING_DATA|X": 2,
+    "NO_MATCH|X": 1,
+    "OUT_OF_SCOPE|X": 1
+   },
+   "munkapont": {
+    "B1-S": {
+     "nincs_munkapont": true
+    },
+    "B1-R": {
+     "nincs_munkapont": false,
+     "atlag": {
+      "lezart": 138.33333333333334,
+      "hibas": 19.0,
+      "helyes_kotes": 119.33333333333333,
+      "tobblet_helyes_kotes": 5.0,
+      "uj_hiba_ahol_a_termek_jo": 0.0,
+      "uj_hiba_ahol_a_termek_nem_kotott": 9.0,
+      "reszfizetes_lezart": 3.0,
+      "reszfizetes_hibas": 0.0,
+      "kieg_lezart": 3.0,
+      "kieg_helyes_kotes": 3.0,
+      "kieg_helyes_x": 0.0,
+      "kieg_hibas": 0.0,
+      "utkozes": 5.0,
+      "utkozes_modell_jo": 2.0,
+      "utkozes_termek_jo": 0.0,
+      "utkozes_cimke_m": 3.0,
+      "termek_plusz_modell_helyes_kotes": 139.0,
+      "termek_plusz_kieg_helyes_kotes": 137.0
+     },
+     "futasok": [
+      {
+       "lezart": 135,
+       "hibas": 18,
+       "helyes_kotes": 117,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 10,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 5,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 3,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      },
+      {
+       "lezart": 142,
+       "hibas": 19,
+       "helyes_kotes": 123,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 8,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 5,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 3,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      },
+      {
+       "lezart": 138,
+       "hibas": 20,
+       "helyes_kotes": 118,
+       "tobblet_helyes_kotes": 5,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 9,
+       "reszfizetes_lezart": 3,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 3,
+       "kieg_helyes_kotes": 3,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 5,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 3,
+       "termek_plusz_modell_helyes_kotes": 139,
+       "termek_plusz_kieg_helyes_kotes": 137
+      }
+     ]
+    },
+    "B1-LR": {
+     "nincs_munkapont": false,
+     "atlag": {
+      "lezart": 140.0,
+      "hibas": 12.0,
+      "helyes_kotes": 128.0,
+      "tobblet_helyes_kotes": 4.0,
+      "uj_hiba_ahol_a_termek_jo": 0.0,
+      "uj_hiba_ahol_a_termek_nem_kotott": 6.0,
+      "reszfizetes_lezart": 2.0,
+      "reszfizetes_hibas": 0.0,
+      "kieg_lezart": 2.0,
+      "kieg_helyes_kotes": 2.0,
+      "kieg_helyes_x": 0.0,
+      "kieg_hibas": 0.0,
+      "utkozes": 3.0,
+      "utkozes_modell_jo": 2.0,
+      "utkozes_termek_jo": 0.0,
+      "utkozes_cimke_m": 1.0,
+      "termek_plusz_modell_helyes_kotes": 138.0,
+      "termek_plusz_kieg_helyes_kotes": 136.0
+     },
+     "futasok": [
+      {
+       "lezart": 140,
+       "hibas": 12,
+       "helyes_kotes": 128,
+       "tobblet_helyes_kotes": 4,
+       "uj_hiba_ahol_a_termek_jo": 0,
+       "uj_hiba_ahol_a_termek_nem_kotott": 6,
+       "reszfizetes_lezart": 2,
+       "reszfizetes_hibas": 0,
+       "kieg_lezart": 2,
+       "kieg_helyes_kotes": 2,
+       "kieg_helyes_x": 0,
+       "kieg_hibas": 0,
+       "utkozes": 3,
+       "utkozes_modell_jo": 2,
+       "utkozes_termek_jo": 0,
+       "utkozes_cimke_m": 1,
+       "termek_plusz_modell_helyes_kotes": 138,
+       "termek_plusz_kieg_helyes_kotes": 136
+      }
+     ]
+    }
+   }
+  }
+ },
+ "teljes_folyamat_nevezo": 262
+}

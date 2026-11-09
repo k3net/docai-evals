@@ -1,0 +1,41 @@
+{
+ "helyesseg": "helyes",
+ "H-B1": {
+  "itelet": "nem lép tovább",
+  "teljesul_retegek": []
+ },
+ "H-T-meta~B1-T": {
+  "itelet": "nem lép tovább",
+  "teljesul_retegek": [
+   "teszt:ho-routing"
+  ]
+ },
+ "H-T-kal~B1-T": {
+  "itelet": "nem lép tovább",
+  "teljesul_retegek": [
+   "teszt:ho-routing"
+  ]
+ },
+ "S3_S5": "nem lép tovább",
+ "kapu_05b": false,
+ "H6": {
+  "teszt:ho-termek": {
+   "L1v": "JEV jobb",
+   "G3": "JEV jobb"
+  },
+  "teszt:ho-routing": {
+   "L1v": "nem teljesíti",
+   "G3": "JEV rosszabb"
+  },
+  "teszt:ho-uj": {
+   "L1v": "nem eldönthető",
+   "G3": "nem eldönthető"
+  }
+ },
+ "H6_erzekenyseg": {
+  "teszt:ho-routing-hu": {
+   "L1v": "JEV rosszabb",
+   "G3": "JEV rosszabb"
+  }
+ }
+}

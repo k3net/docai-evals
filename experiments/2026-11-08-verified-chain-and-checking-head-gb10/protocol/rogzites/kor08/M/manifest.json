@@ -1,0 +1,17 @@
+{
+ "rogzitve": "2026-11-06T10:32:37",
+ "jovahagyas": "Dani 2026-11-06: 1. indulhat",
+ "d12_sha256": "4a058dab8a681e4832346c4e977d8c75063377608e1c86bdd1ff3c8496b912f5",
+ "fajlok": {
+  "kor08/M-rogzites.md": "97c8fb2753f9c72992abaea3447d6bb3c50cf60b84cce89539b1868ffeea0da6",
+  "kor08/eredmenyek/M/felszin/illesztes.json": "231c9371d56e6713d0bb357b4dbd088fe7c15b90b1d4e23cc56043f10160e2c5",
+  "kor08/eszkozok/illeszt08m.py": "c81fb5e8343d4e48540406c72951520d4f7d0e0a512bdcd5923aeffcbf363ac8",
+  "kor08/eszkozok/szint08m.py": "144f00052a1b1903d011b43bfeca3064270598355c0c99dd6da22c59d1e0777b",
+  "kor08/eszkozok/felszin08m.py": "3993c109519768edb800e4dbc78b2fad69ecb5e0e71de6bba54ecee1b983cea9",
+  "kor08/eszkozok/m08.py": "6848df9e3cd902336c42667e0838ce0a853259c3a816d4711d9bdd53f3260e01",
+  "kor08/eszkozok/k08m.sh": "e7ddd8ef4bc98816d711998afaf8237ae5b964b87c68f39eb93691726487022a",
+  "kor08/adat/M/items/penzugy.bankparositas.jsonl": "74ac6060053eb427c85f5a787ab05610d51875dd0daa1bd40c6cfca57fbc1542",
+  "kor08/adat/M/items/muszaki.hibaelharitas.jsonl": "647b15da5bed117126de3cfda107c1e2d932a8a042d9eada539680d82096f10f",
+  "kor08/adat/M/items/szabaly.koltsegelszamolas.jsonl": "1c5f3fd0143abc421751cef2359a098bc7b68b2f03ba19edd926980ecdbae84a"
+ }
+}

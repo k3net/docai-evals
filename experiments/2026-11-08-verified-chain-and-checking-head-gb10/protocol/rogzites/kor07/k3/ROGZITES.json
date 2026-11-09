@@ -1,0 +1,8 @@
+{
+ "verzio": "v1-K3",
+ "rogzitve": "2026-11-01T19:45:17",
+ "jovahagyas": "Dani, 2026-11-01 19:3x: igen, mehet így tovább — a végső minta öt döntése (kor07/nehez3-javaslat.md), köztük: a K3 elemzője a kiolvasás előtt rögzül, a kiolvasás pecsét alatt",
+ "manifest_sha256": "1a8b3dfab66056105d164c945f39f18a7c05857cb041bc0407c0d8916041fdba",
+ "v1_manifest_sha256": "725078096d240660c42cef5a55737ce17602c8d2c61d91321d2f76e8afb52686",
+ "megjegyzes": "A K3 elemzője a végső diagnosztikai minta generálása és kiolvasása előtt rögzítve; a kiolvasás a cache/k07/pecset_k3 alá megy (root, 700), és csak a NYITAS.json után olvasható."
+}

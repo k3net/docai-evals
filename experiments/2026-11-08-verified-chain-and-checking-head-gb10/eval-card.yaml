@@ -1,0 +1,204 @@
+id: verified-chain-and-checking-head-gb10
+version: "1.0"
+date: "2026-11-08"
+title: "A verified computation chain and a checking head on synthetic Hungarian/English decision tasks: four pre-registered rounds on Qwen3.6-35B-A3B-FP8"
+question: >-
+  Do code-verified calculation steps before the model's decision remove the confident mistakes that come from skipped
+  calculations on constructed trap items (synthetic), and does a small reliability head trained on target-domain examples
+  recognise the errors code cannot fix, once a text-only baseline is applied as a control?
+
+task:
+  type: classification            # selective multiple-choice decision with abstention states (A-J, X, Y, Z)
+  document_types: [bank-transaction, fault-report, expense-claim]
+  language: [hu, en]
+  output_format: single label token with label-restricted probability; a threshold on reliability closes the case
+
+dataset:
+  name: "Fresh synthetic families (bank matching, fault diagnosis, expense-rule compliance) per round; round 03's held-out layers for 05a; real-data development sample for 07B/K08V"
+  size:
+    round_05a_ho_termek: 3854
+    round_05a_ho_routing: 6659
+    round_05a_ho_uj: 1900
+    round_06_cal_per_family: 500
+    round_06_test_per_family: 1000
+    round_07_cal_per_family: 500
+    round_07_test_per_family: 1000
+    round_07_k3_trap_items: [186, 182, 199]
+    round_08_cal_per_family: 500
+    round_08_test_per_family: 1000
+    round_08_trap_items: [90, 91, 200]
+    round_08_repair_round_items: [197, 210, 220]
+    round_08_interpretation_test_items: { rule: 2204, bank: 256, fault: 248 }
+    round_08_control_m_units: 551
+    round_08_control_n_units: 348
+    real_bank_development_sample: 262
+  access: not published (synthetic items and read-outs); generators and code published
+  ground_truth: >-
+    Labels from the construction: each text was written by Muse-Glimmer-30B (Apache-2.0 per its model card, revision
+    a4e59da52a7bc87ae7251dd5545c0dd437c44b68 in round 08) from a detailed plan in which the answer is known; a
+    fact-checker enforces the plan; a Gemma 4 second opinion is triage only (it cannot express the missing-data state).
+    The subject's Qwen family neither generated nor labelled any data. Blind human audits per round, with reported
+    failures: round 06 first audit 12/300 (gate failed, upper bound 6.40 %), second 1/300 (1.57 %, passed); round 07
+    0/300 (0.99 %); round 08 G1 pilot 5/115 (gate failed, corrected, closed 115/115); round 08 G2 test random sample
+    0/30 (rule, [0.0; 11.4] %), 2/30 = 6.7 % (bank, [1.8; 21.3] %), 3/30 = 10.0 % (fault, [3.5; 25.6] %), faulty units
+    removed; minimal pairs N first audit failed 3/30 (gate limit 2), second fresh 30 passed 0/30; K3 and J samples had
+    no blind audit.
+  notes: >-
+    Real bank items (07B, K08V: 262 transactions of one contributing company, June to September 2026, one blind labeller,
+    product candidate list) appear only as aggregates and only as development numbers (known sample, known labels; K08V
+    thresholds chosen on the sample). No Hugging Face dataset or model in this round; a later study will carry a dataset.
+
+systems:
+  - label: B1-S / L-S
+    role: baseline
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    engine: "vLLM 0.30.0 (extraction: FP8, temperature 0, JSON schema); BF16 HF read-out for hidden states and scores, determinism guard on a 50-item reference slice; DGX Spark GB10"
+    notes: "The base model's own confidence on its chosen label."
+  - label: B1-R / B1-4R / L-RN
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8 + reliability head (small trained head on hidden states of the chosen-answer position)
+    notes: "Pre-trained on D_meta, tuned on T500 of the target family (round 06), on the four-state prompt (round 07), and with a 50-50 % mix of T500 and an interpretation training set after the chain (round 08). Three seeds."
+  - label: chain
+    role: candidate
+    model: "verified computation chain (code) around the subject model's field extraction"
+    notes: "The model extracts fields with verbatim source quotes; code verifies, computes (instalment, conversion, net/gross, currency), compares and excludes on proof, binds only on an exact invoice-number match with a matching amount (bank family); it states only what it can prove; missing data excludes nothing."
+  - label: Muse-Glimmer-30B
+    role: instrument
+    notes: "Generator of the synthetic texts from plans; no role in the subject or in labelling."
+  - label: Gemma 4 26B-A4B-it
+    role: instrument
+    notes: "Triage only (second opinion); deletes nothing; labels come from the construction."
+
+metrics:
+  - name: k2_correct_rate
+    definition: "On trap items: correct final decision rate without the chain, with the chain on real extraction, and with the chain on oracle fields; target >= 90 % correct and <= 2 % false pass (point estimates), no false exclusion and no false binding added in the repair round."
+    primary: true
+    preregistered: "full"
+  - name: k1_auroc_gain
+    definition: "AUROC of L-RN minus L-S on undecidable-vs-decidable (K1(a)) and on wrong-vs-correct selections (K1(b)), rule family, template-group cluster bootstrap, Holm over the two main pairs; reading table with AUROC 0.60 and delta-AUROC 0.05."
+    primary: true
+    preregistered: "full"
+  - name: k1_controls
+    definition: "Matched control M and minimal pairs N, each with pre-registered text-only gates and readings; N is the head's final control."
+    primary: true
+    preregistered: "full"
+  - name: k3_useful_coverage
+    definition: "Share of all test items closed correctly at tau chosen on CAL (Clopper-Pearson lower bound of closure precision >= 0.95, at least 200 closed, on the model's own closable decisions), and closure error rate; chain bindings count as closures."
+    primary: false
+    preregistered: "full"
+  - name: aurc_ratio_06_07
+    definition: "Average AURC of the head over the base score across three families (and K1/K2 in round 07); ratio rule from the 06 protocol."
+    primary: true
+    preregistered: "full"
+  - name: surface_baseline
+    definition: "Text-only TF-IDF classifiers (word and character n-grams, length) on the same K1(a) set; reading fixed before the run."
+    primary: false
+    preregistered: "post-hoc run with a pre-run fixed reading"
+  - name: real_data_development
+    definition: "Closures, errors and new closures on 262 known real bank items; bindings by direct search for candidate invoice numbers versus extraction; development numbers."
+    primary: false
+    preregistered: "descriptive, development"
+
+decision_rule: >-
+  Each round's rule and analysis were frozen before the outcome data were read (dates in README.md; manifests in
+  protocol/rogzites/). The protocol's chain wiring (D9: a passing K2 may go to a product specification) is not acted
+  on: the owner's decision of 2026-11-08 keeps the chain's claim synthetic and makes a pre-registered fresh real-data
+  check of about 150 bank items the next step. The head's question closes with the narrowed claim and no product use.
+
+results:
+  round_05a:
+    verdict: "does not advance: S3 (H - B1) 0/3 layers, S5 1/3 (only HO-routing); 05b gate closed"
+    delta_aurc_h_minus_b1: { ho_termek: [+0.0230, 0.0159, 0.0292], ho_routing: [-0.0909, -0.1080, -0.0699], ho_uj: [+0.0179, -0.0013, 0.0525] }
+    h_precision_at_own_tau: { ho_termek: 0.974, ho_routing: 0.899, ho_uj: 0.909 }
+    jev_a_h6: { ho_termek_vs_l1v: "-0.0078 [-0.0107, -0.0050], precision 0.996", ho_routing_vs_l1v_precision: 0.787, ho_uj: "not decidable" }
+  round_06:
+    aurc_ratio_b1r_over_b1s: [0.205, 0.187, 0.224]
+    delta_aurc: { bank: [-0.0942, -0.1114, -0.0786], fault: [-0.2036, -0.2307, -0.1773], rule: [-0.2539, -0.2778, -0.2270] }
+    none_last_rule_share_of_gain: "72 %"
+    lenient_correctness_ratio: [0.965, 0.881, 1.063]
+    working_point_b1r: { bank: "0.665 at 0.983", fault: "0.679 at 0.975", rule: "0.717 at 0.967", b1s: "no working point" }
+  round_07:
+    k1_ratio_b14r_over_b14s: [0.507, 0.459, 0.562]
+    k2_useful_coverage_percent: { "B1-S": 0.0, "B1-N": 15.2, "B1-4S": 36.9, "B1-4R": 64.8, "B1-R": 66.6, "B1-LR": 51.2 }
+    k2_verdicts: "the prompt alone does not bring the head in (-29.6 points [-34.2; -15.2]); the head improves on top (+27.9 points [7.8; 33.5], closure error 2.5 %)"
+  round_07_k3_trap_items:
+    auroc: { "B1-4S": [0.413, 0.363, 0.462], "B1-4R": [0.452, 0.393, 0.507], "B1-4R_bank": 0.211 }
+    wrong_closures_at_unchanged_tau: { bank: "100 % (11 / 11)", fault: "27 % (16 / 60)", rule: "81 % (122 / 151)" }
+    paired_computed_line_test_exploratory: { bank: "29 % to 100 %", fault: "52 % to 94 %", rule: "24 % to 67 %" }
+  round_08_chain_k2:
+    correct_percent_without_chain: { bank: 44.4, fault: 59.3, rule: 28.0 }
+    correct_percent_with_chain: { bank: 97.8, fault: 98.9, rule: 97.5 }
+    false_pass: { bank: "1/90", fault: "3/91 = 3.3 %, target failed", rule: "0/199" }
+    false_exclusion: 0
+    false_binding: 0
+  round_08_repair_j:
+    correct_percent_without_chain: { bank: 42.6, fault: 50.0, rule: 27.3 }
+    correct_percent_with_chain: { bank: 100.0, fault: 98.6, rule: 100.0 }
+    false_pass: { bank: "0/197", fault: "0/210", rule: "1/220" }
+    frozen_chain_on_same_extraction_fault: "5/210 = 2.4 % (would have failed the target)"
+    verdict: "rule met on all three families (new condition: no false exclusion, no false binding, met)"
+  round_08_k3_natural_mix:
+    useful_coverage_percent: { rule: { "L-S": 62.6, "L-RN": 71.9, "L-R": 72.5, "B1-4R_no_chain": 71.9 }, fault: { "L-S": 62.9, "L-RN": 67.6, "L-R": 67.6, "B1-4R_no_chain": 71.2 } }
+    closure_error_percent: { rule: { "L-S": 4.7, "L-RN": 3.1 }, fault: { "L-S": 4.1, "L-RN": 3.6 } }
+    bank: "chain binds 363/1000 with 0 wrong; chain arms have no model working point in 100 % of replicates"
+    reading: "the coverage gain is not from targeted training; the chain adds no coverage on a natural mix by itself"
+  round_08_head_k1:
+    g5_k1a_l_rn_minus_l_s: { delta: 0.186, ci95: [0.121, 0.258], holm: [0.111, 0.269], reading: "improves materially, but a text-only TF-IDF scores 1.000 on the same set (artefact)" }
+    g5_k1b_l_rn_minus_l_s: { delta: 0.036, ci95: [-0.047, 0.086], reading: "not decidable" }
+    m_matched_control: { delta: 0.144, ci95: [0.085, 0.211], text_only: 0.998, reading: "not evidence (matching failed)" }
+    n_minimal_pairs: { delta: 0.075, ci95: [0.028, 0.131], text_only: 0.699, reading: "the claim stands in a narrowed form", undecidable_closed_above_tau: { head: 77.7, base: 37.9 } }
+  real_bank_development_numbers:
+    n: 262
+    chain_direct_search_bindings: "70, 0 errors"
+    chain_plus_model: "2 / 126 = 1.6 % closure error"
+    model_own_closures: "2 / 56 = 3.6 %"
+    new_closures_vs_product: "1-3"
+    head_vs_model_auroc: { head: 0.910, model: 0.911 }
+
+verdict: >-
+  On constructed trap items (synthetic), code-verified calculation before the decision raises correct answers from 28-59 % to
+  97.5-98.9 % with no false exclusion or binding; a repair round on fresh items meets the targets. On a natural mix the
+  chain adds no coverage by itself. The checking head's main pre-registered gain is a construction artefact; its narrowed
+  claim on minimal pairs holds for this family and construction but is unusable at the operating point. All claims about the
+  chain working are synthetic-only; the next step is a pre-registered fresh real-data sample of about 150 bank items. No
+  product benefit is claimed for the head.
+
+reproducibility:
+  level: R1-style
+  code: published
+  data: "generators and analysis code published; synthetic item files and generated texts not published"
+  results: aggregated
+  runs_per_variant: 3
+  not_published: >-
+    Synthetic item files, generated texts, per-item extractions, per-item read-outs and scores, the audit pages and
+    decisions, the cache/ tree (trained heads, feature caches), the real-data items and labels. Hashes of these are in
+    the manifests where the protocols listed them. A later study will carry a dataset.
+  verified_by: >-
+    code/verify_package.py: checks each round's manifest against its freeze record, the 08 cross-references and the G5
+    opening record, every published manifest entry byte for byte (redacted files are listed with the reason), the results
+    hash files, about 150 headline numbers recomputed from results/ against README.md, the freeze dates, and a
+    forbidden-string privacy scan. Read-outs and bootstraps are not recomputed.
+
+limitations:
+  - "Everything but the real-bank development numbers is synthetic; one generator, three families, two languages, one subject model, one engine build, one machine."
+  - "The chain's claim is synthetic-only; trap items are constructed and do not measure how frequent the mistake is in real traffic; on a natural mix the chain alone adds no coverage."
+  - "Small K2 samples (one item = 1.1 points on the fault family); two extraction error types remain unfixed; J did not re-measure K1 or K3."
+  - "The head's K1(a) claim is one family, one construction, these heads; K1(b) is not decidable; the head is unusable at the operating point on the minimal-pair construction and does not beat the model's own score on real items."
+  - "Sequential controls G5, M, N on one question; every reading was fixed before its run, each step was stricter and the effect shrank at each step; N's filter was built from the first audit's errors and its second audit is its weakest point."
+  - "Label errors: audited random samples show 6.7 % (bank) and 10 % (fault) before the removed units; audited items only; K3 and J samples were not blind-audited."
+  - "Closure errors on the fault family vary with the numeric mode of the read-out (3.6-5.5 %); a held 5 % is not claimed there."
+  - "Round 05a's layers were reused from round 03; its AURC endpoint was chosen after a development trial, before the hold-out was opened."
+  - "Real data: one company, four months, 262 known items, one labeller; K08V thresholds chosen on the sample; development numbers only."
+  - "Numbers are checked by hash and against machine outputs, not recomputed: read-outs and bootstraps need unpublished items and a GPU."
+  - "Process errors found and fixed are logged in the runbooks (e.g. an edit of a frozen analysis file reverted and the analysis re-run bitwise in round 07)."
+
+related:
+  article: "https://docai.hu/blog/amit-ki-lehet-szamolni"
+  article_english: "https://docai.hu/en/blog/dont-train-what-you-can-compute"
+  experiments:
+    - "2026-10-09-decision-lora-where-to-train-gb10"
+    - "2026-10-15-general-decision-lora-negative-gb10"
+  references:
+    - "Qwen/Qwen3.6-35B-A3B-FP8 - the subject model."
+    - "meta-models/Muse-Glimmer-30B (revision a4e59da52a7bc87ae7251dd5545c0dd437c44b68) - generator of the synthetic texts."
+    - "JEV-35B - external reference in round 05a (H6)."

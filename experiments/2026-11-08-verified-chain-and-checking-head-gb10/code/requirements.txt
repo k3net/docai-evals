@@ -1,0 +1,6 @@
+# verify_package.py: standard library only.
+# The analysis scripts (kor06-08 elemzes*, g5_k*_08.py, kor05 riport05/diag05) on the read-outs:
+numpy>=1.26
+scipy>=1.11
+# Item generation, extraction, read-out and head training additionally use pyyaml, transformers, tokenizers, torch and a
+# vLLM 0.30.0 server (see eszkozok/lib.sh, kor08/eszkozok/lib08.sh); they are not needed to verify the package.

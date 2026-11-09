@@ -1,0 +1,477 @@
+{
+ "penzugy.bankparositas": {
+  "CAL": {
+   "n": 500,
+   "allapot": {
+    "MATCH": 300,
+    "NO_MATCH": 100,
+    "MISSING_DATA": 50,
+    "OUT_OF_SCOPE": 50
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 299,
+     "NONE": 1
+    },
+    "MISSING_DATA": {
+     "SELECT": 49,
+     "NONE": 1
+    },
+    "NO_MATCH": {
+     "SELECT": 40,
+     "NONE": 60
+    },
+    "OUT_OF_SCOPE": {
+     "NONE": 50
+    }
+   },
+   "MATCH_py_median": 0.0019490643828630342,
+   "MATCH_py_p90": 0.00674787173689078,
+   "MISSING_DATA_py_median": 0.0248104287249511,
+   "MISSING_DATA_py_p90": 0.08124340667078925,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9630741928878574,
+    "-gap": 0.9982253771073647
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.205
+   },
+   "OOS_s_median": 0.04907839156328821,
+   "iker": {
+    "MISSING_top1_ikres": 0.98,
+    "MISSING_r_median": 0.6566664039781729,
+    "MATCH_goldikres_n": 129,
+    "MATCH_goldikres_r_median": 0.019861490400255654,
+    "AUROC_r_MISSING_vs_MATCH_SELECT": 0.998498396013924,
+    "AUROC_r_MISSING_vs_MATCHgoldikres_SELECT": 0.9965195380477773
+   }
+  },
+  "TESZT": {
+   "n": 1000,
+   "allapot": {
+    "MATCH": 600,
+    "NO_MATCH": 200,
+    "MISSING_DATA": 100,
+    "OUT_OF_SCOPE": 100
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 600
+    },
+    "MISSING_DATA": {
+     "SELECT": 99,
+     "NONE": 1
+    },
+    "NO_MATCH": {
+     "NONE": 132,
+     "SELECT": 66,
+     "MISSING": 2
+    },
+    "OUT_OF_SCOPE": {
+     "NONE": 100
+    }
+   },
+   "MATCH_py_median": 0.0020806036121209987,
+   "MATCH_py_p90": 0.007540254231763494,
+   "MISSING_DATA_py_median": 0.02809639308985525,
+   "MISSING_DATA_py_p90": 0.11426426020775032,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9586700336700337,
+    "-gap": 0.9981986531986532
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.2271212121212121
+   },
+   "OOS_s_median": 0.055929607009971676,
+   "iker": {
+    "MISSING_top1_ikres": 0.99,
+    "MISSING_r_median": 0.6766805478632314,
+    "MATCH_goldikres_n": 253,
+    "MATCH_goldikres_r_median": 0.023136904490893215,
+    "AUROC_r_MISSING_vs_MATCH_SELECT": 0.9977441077441077,
+    "AUROC_r_MISSING_vs_MATCHgoldikres_SELECT": 0.9946500578911646
+   }
+  },
+  "szabaly_CAL_to_TESZT": {
+   "iker": {
+    "r_csillag": 0.10133826581089984,
+    "cel_n": 100,
+    "cel_jelzett_elotte": 0,
+    "cel_talalat": 99,
+    "vedett_n": 600,
+    "vedett_atfordul": 24,
+    "mas_allapot_atfordul": {},
+    "szigoru_helyes_elotte": 732,
+    "szigoru_helyes_utana": 807,
+    "n": 1000
+   },
+   "py": {
+    "y_csillag": 0.00944660283736621,
+    "cel_n": 100,
+    "cel_jelzett_elotte": 0,
+    "cel_talalat": 80,
+    "vedett_n": 600,
+    "vedett_atfordul": 40,
+    "mas_allapot_atfordul": {
+     "NO_MATCH": 41
+    },
+    "szigoru_helyes_elotte": 732,
+    "szigoru_helyes_utana": 772,
+    "n": 1000
+   },
+   "oos": {
+    "s_csillag": 0.15489772916363043,
+    "cel_n": 100,
+    "cel_jelzett_elotte": 0,
+    "cel_talalat": 3,
+    "vedett_n": 200,
+    "vedett_atfordul": 19,
+    "mas_allapot_atfordul": {},
+    "szigoru_helyes_elotte": 732,
+    "szigoru_helyes_utana": 716,
+    "n": 1000
+   }
+  },
+  "k2_ikerszabaly": {
+   "B1-4S|eredeti": {
+    "pont": {
+     "hasznos_lef": 0.0,
+     "lezarasi_hiba": NaN,
+     "lezart": 0.0,
+     "helyes_adatbekeres": 0.0,
+     "nem_lezart_tau_alatt": 0.998
+    },
+    "ci95": {
+     "hasznos_lef": [
+      0.0,
+      0.4399606458123108
+     ],
+     "lezarasi_hiba": [
+      0.02504299607835179,
+      0.06082587485889373
+     ],
+     "lezart": [
+      0.0,
+      0.45940005984587706
+     ],
+     "helyes_adatbekeres": [
+      0.0,
+      0.0
+     ],
+     "nem_lezart_tau_alatt": [
+      0.5382206728129678,
+      1.0
+     ]
+    },
+    "nincs_munkapont_replika": 0.9
+   },
+   "B1-4S|ikerszabaly": {
+    "pont": {
+     "hasznos_lef": 0.0,
+     "lezarasi_hiba": NaN,
+     "lezart": 0.0,
+     "helyes_adatbekeres": 0.99,
+     "nem_lezart_tau_alatt": 0.875
+    },
+    "ci95": {
+     "hasznos_lef": [
+      0.0,
+      0.4399606458123108
+     ],
+     "lezarasi_hiba": [
+      0.02504299607835179,
+      0.06082587485889373
+     ],
+     "lezart": [
+      0.0,
+      0.45940005984587706
+     ],
+     "helyes_adatbekeres": [
+      0.967391304347826,
+      1.0
+     ],
+     "nem_lezart_tau_alatt": [
+      0.4155481258567818,
+      0.8896833503575077
+     ]
+    },
+    "nincs_munkapont_replika": 0.9
+   },
+   "B1-4S|delta_hasznos_lef": {
+    "pont": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "B1-4R|eredeti": {
+    "pont": {
+     "hasznos_lef": 0.594,
+     "lezarasi_hiba": 0.024624350433119627,
+     "lezart": 0.609,
+     "helyes_adatbekeres": 0.0,
+     "nem_lezart_tau_alatt": 0.38899999999999996
+    },
+    "ci95": {
+     "hasznos_lef": [
+      0.0,
+      0.6804873437148428
+     ],
+     "lezarasi_hiba": [
+      0.00691070882228323,
+      0.04865647995967503
+     ],
+     "lezart": [
+      0.0,
+      0.709424768849869
+     ],
+     "helyes_adatbekeres": [
+      0.0,
+      0.0
+     ],
+     "nem_lezart_tau_alatt": [
+      0.2876073448726659,
+      0.9989827318479186
+     ]
+    },
+    "nincs_munkapont_replika": 0.17583333333333334
+   },
+   "B1-4R|ikerszabaly": {
+    "pont": {
+     "hasznos_lef": 0.5753333333333334,
+     "lezarasi_hiba": 0.022133855166642052,
+     "lezart": 0.5883333333333334,
+     "helyes_adatbekeres": 0.9899999999999999,
+     "nem_lezart_tau_alatt": 0.2866666666666667
+    },
+    "ci95": {
+     "hasznos_lef": [
+      0.0,
+      0.663667847769029
+     ],
+     "lezarasi_hiba": [
+      0.007001835106949652,
+      0.04277140759168493
+     ],
+     "lezart": [
+      0.0,
+      0.6889235384455715
+     ],
+     "helyes_adatbekeres": [
+      0.967391304347826,
+      1.0
+     ],
+     "nem_lezart_tau_alatt": [
+      0.1840874437752535,
+      0.8815290751773392
+     ]
+    },
+    "nincs_munkapont_replika": 0.23416666666666666
+   },
+   "B1-4R|delta_hasznos_lef": {
+    "pont": -0.01866666666666661,
+    "ci95": [
+     -0.2340604674101141,
+     0.0
+    ]
+   },
+   "r_csillag": 0.10133826581089984,
+   "reps": 2000,
+   "seed": 20261101
+  }
+ },
+ "muszaki.hibaelharitas": {
+  "CAL": {
+   "n": 500,
+   "allapot": {
+    "MATCH": 300,
+    "NO_MATCH": 100,
+    "MISSING_DATA": 50,
+    "OUT_OF_SCOPE": 50
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 295,
+     "NONE": 5
+    },
+    "MISSING_DATA": {
+     "MISSING": 35,
+     "SELECT": 9,
+     "NONE": 6
+    },
+    "NO_MATCH": {
+     "NONE": 72,
+     "SELECT": 26,
+     "OOS": 2
+    },
+    "OUT_OF_SCOPE": {
+     "MISSING": 19,
+     "NONE": 3,
+     "OOS": 28
+    }
+   },
+   "MATCH_py_median": 0.008190425448422559,
+   "MATCH_py_p90": 0.046348815035880876,
+   "MISSING_DATA_py_median": 0.3734379517261748,
+   "MISSING_DATA_py_p90": 0.5734191029642924,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9879472693032015,
+    "-gap": 0.9664783427495292
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.7453703703703703
+   },
+   "OOS_s_median": 0.7258962974560544
+  },
+  "TESZT": {
+   "n": 1000,
+   "allapot": {
+    "MATCH": 600,
+    "NO_MATCH": 200,
+    "MISSING_DATA": 100,
+    "OUT_OF_SCOPE": 100
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 598,
+     "NONE": 2
+    },
+    "MISSING_DATA": {
+     "MISSING": 67,
+     "SELECT": 15,
+     "NONE": 18
+    },
+    "NO_MATCH": {
+     "NONE": 129,
+     "SELECT": 61,
+     "MISSING": 8,
+     "OOS": 2
+    },
+    "OUT_OF_SCOPE": {
+     "OOS": 61,
+     "MISSING": 37,
+     "NONE": 2
+    }
+   },
+   "MATCH_py_median": 0.007815667163166172,
+   "MATCH_py_p90": 0.03930206427301596,
+   "MISSING_DATA_py_median": 0.37773096789734273,
+   "MISSING_DATA_py_p90": 0.641912297040078,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9948717948717949,
+    "-gap": 0.946711259754738
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.6976744186046512
+   },
+   "OOS_s_median": 0.7040671931271558
+  },
+  "szabaly_CAL_to_TESZT": {
+   "oos": {
+    "s_csillag": 0.41925525809354613,
+    "cel_n": 100,
+    "cel_jelzett_elotte": 61,
+    "cel_talalat": 1,
+    "vedett_n": 200,
+    "vedett_atfordul": 9,
+    "mas_allapot_atfordul": {},
+    "szigoru_helyes_elotte": 850,
+    "szigoru_helyes_utana": 842,
+    "n": 1000
+   }
+  }
+ },
+ "szabaly.koltsegelszamolas": {
+  "CAL": {
+   "n": 500,
+   "allapot": {
+    "MATCH": 300,
+    "NO_MATCH": 100,
+    "MISSING_DATA": 50,
+    "OUT_OF_SCOPE": 50
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 300
+    },
+    "MISSING_DATA": {
+     "MISSING": 24,
+     "SELECT": 26
+    },
+    "NO_MATCH": {
+     "NONE": 69,
+     "SELECT": 31
+    },
+    "OUT_OF_SCOPE": {
+     "NONE": 38,
+     "OOS": 12
+    }
+   },
+   "MATCH_py_median": 0.002961697592253519,
+   "MATCH_py_p90": 0.023491181569370183,
+   "MISSING_DATA_py_median": 0.3306933623806581,
+   "MISSING_DATA_py_p90": 0.5239559674181723,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9873076923076923,
+    "-gap": 0.941923076923077
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.8035850495804729
+   },
+   "OOS_s_median": 0.3689403245891739
+  },
+  "TESZT": {
+   "n": 1000,
+   "allapot": {
+    "MATCH": 600,
+    "NO_MATCH": 200,
+    "MISSING_DATA": 100,
+    "OUT_OF_SCOPE": 100
+   },
+   "dontes_allapotonkent": {
+    "MATCH": {
+     "SELECT": 600
+    },
+    "MISSING_DATA": {
+     "MISSING": 51,
+     "SELECT": 49
+    },
+    "NO_MATCH": {
+     "SELECT": 51,
+     "NONE": 149
+    },
+    "OUT_OF_SCOPE": {
+     "MISSING": 4,
+     "NONE": 80,
+     "OOS": 16
+    }
+   },
+   "MATCH_py_median": 0.00351031255215346,
+   "MATCH_py_p90": 0.0244403268183095,
+   "MISSING_DATA_py_median": 0.3686960884882675,
+   "MISSING_DATA_py_p90": 0.5337701923071585,
+   "AUROC_MISSING_vs_MATCH_SELECT": {
+    "p(Y)": 0.9978911564625851,
+    "-gap": 0.9342517006802721
+   },
+   "AUROC_OOS_vs_NO_MATCH_NONE": {
+    "p(Z)/(p(X)+p(Z))": 0.8317953020134228
+   },
+   "OOS_s_median": 0.35316179181118956
+  },
+  "szabaly_CAL_to_TESZT": {
+   "oos": {
+    "s_csillag": 0.3386445956564557,
+    "cel_n": 100,
+    "cel_jelzett_elotte": 16,
+    "cel_talalat": 33,
+    "vedett_n": 200,
+    "vedett_atfordul": 7,
+    "mas_allapot_atfordul": {},
+    "szigoru_helyes_elotte": 805,
+    "szigoru_helyes_utana": 831,
+    "n": 1000
+   }
+  }
+ }
+}

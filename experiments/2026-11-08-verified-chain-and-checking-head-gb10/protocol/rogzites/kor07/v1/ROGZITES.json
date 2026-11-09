@@ -1,0 +1,10 @@
+{
+ "verzio": "v1",
+ "rogzitve": "2026-11-01T09:42:44",
+ "jovahagyas": "Dani, 2026-11-01 09:43: a v1 rögzíthető, a pecsét nyitható, az F5 mehet (válasz: „mehet”, a 157 fájlos MANIFEST.sha256-ra, 725078096d240660c42cef5a55737ce17602c8d2c61d91321d2f76e8afb52686).",
+ "manifest_sha256": "725078096d240660c42cef5a55737ce17602c8d2c61d91321d2f76e8afb52686",
+ "pecset_manifest": {
+  "K07F3": "a41c1a25b5ebd581095a15c9de6531584ff8a2b3c801b48cb49b3b446f020df3"
+ },
+ "megjegyzes": "A friss CAL- és TESZT-kiolvasások a rögzítéskor nem voltak megtekintve; a kiolvasás pecsételve futott (cache/k07/pecset/, root, 700). A fejek a rögzítés előtt készültek és a manifestben vannak."
+}

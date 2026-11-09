@@ -1,0 +1,626 @@
+{
+ "fazis": "K05JEV",
+ "lezarva": "2026-10-29T12:00:00",
+ "v1a_rogzitve": false,
+ "teljes": true,
+ "feladatok": {
+  "cel_ho-routing__b1": {
+   "kesz": true,
+   "n": 2733,
+   "shardok": 3
+  },
+  "cel_ho-routing__kanonikus": {
+   "kesz": true,
+   "n": 911,
+   "shardok": 1
+  },
+  "cel_ho-termek__b1": {
+   "kesz": true,
+   "n": 3006,
+   "shardok": 4
+  },
+  "cel_ho-termek__kanonikus": {
+   "kesz": true,
+   "n": 1002,
+   "shardok": 2
+  },
+  "cel_ho-uj__b1": {
+   "kesz": true,
+   "n": 1500,
+   "shardok": 2
+  },
+  "cel_ho-uj__kanonikus": {
+   "kesz": true,
+   "n": 500,
+   "shardok": 1
+  },
+  "leiro_t-hu-maradek__b1": {
+   "kesz": true,
+   "n": 7122,
+   "shardok": 8
+  },
+  "leiro_t-hu-maradek__kanonikus": {
+   "kesz": true,
+   "n": 2374,
+   "shardok": 3
+  },
+  "teszt_ho-routing-hu__b1": {
+   "kesz": true,
+   "n": 3240,
+   "shardok": 4
+  },
+  "teszt_ho-routing-hu__kanonikus": {
+   "kesz": true,
+   "n": 1080,
+   "shardok": 2
+  },
+  "teszt_ho-routing__b1": {
+   "kesz": true,
+   "n": 20184,
+   "shardok": 21
+  },
+  "teszt_ho-routing__kanonikus": {
+   "kesz": true,
+   "n": 6728,
+   "shardok": 7
+  },
+  "teszt_ho-termek__b1": {
+   "kesz": true,
+   "n": 13917,
+   "shardok": 14
+  },
+  "teszt_ho-termek__kanonikus": {
+   "kesz": true,
+   "n": 4639,
+   "shardok": 5
+  },
+  "teszt_ho-uj__b1": {
+   "kesz": true,
+   "n": 5700,
+   "shardok": 6
+  },
+  "teszt_ho-uj__kanonikus": {
+   "kesz": true,
+   "n": 1900,
+   "shardok": 2
+  }
+ },
+ "kod_sha256": {
+  "kor05/eszkozok/hf_jellemzo05.py": "2d614b8e484eac75d3632558fb89f8db4f1a996c80af9f6471e43ef3bbc86e39",
+  "kor05/eszkozok/allapot05.py": "5a4b81f9cb233fe8148008eb8d7a8dc548593815aecf00b71c5b8bd2f8241aa9",
+  "kor05/eszkozok/pecset05.py": "ed55e0dbb71a3c91546fb9d79311521277a3786562508378ef9c535b4e9fb7cd",
+  "kor05/adat/szeletek05.json": "6aad604a4086210a48ca6b2fb804aba7f4f5ff2637badc8138b56b384b0e04dc",
+  "kor03/eszkozok/kozos03.py": "b66c9fefbb9d6821b2780dd42d7a84430ed23c22e12d3339e864509db097fa6b",
+  "eszkozok/common.py": "5f317825a37d3f2e6e749c7bf748d9a77c7cb9672f86cc384998dd7d50728849"
+ },
+ "fajlok": {
+  "jellemzok/cel_ho-routing__b1/osszegzes.json": {
+   "meret": 176,
+   "sha256": "8606f158dfd53a978e1275e5dbba6ce4a0e6fa91c042b14318a465c26266813b"
+  },
+  "jellemzok/cel_ho-routing__b1/sorok_0000.jsonl": {
+   "meret": 702786,
+   "sha256": "f554a9e9b08164961537eff027df6d329e3dea2f4a79353ad0e2da077430e7cc"
+  },
+  "jellemzok/cel_ho-routing__b1/sorok_0001.jsonl": {
+   "meret": 860069,
+   "sha256": "f479ee22d982236ef57335d3d51e20dd7fa8dd123d38d27e13dfb90161257355"
+  },
+  "jellemzok/cel_ho-routing__b1/sorok_0002.jsonl": {
+   "meret": 561070,
+   "sha256": "ceb4eeb6a430065d97d588a0a6b578072c21b6bfb25fc4ded661f80452d339f4"
+  },
+  "jellemzok/cel_ho-routing__kanonikus/jellemzok_0000.pt": {
+   "meret": 115891715,
+   "sha256": "280a4a8e1d46d550fafef73fa5f2d42bc848854930e6282e769b4469a1801828"
+  },
+  "jellemzok/cel_ho-routing__kanonikus/osszegzes.json": {
+   "meret": 182,
+   "sha256": "de7008ba57e8d213fa5fbf712752f74e418814dab0c5e0fa912521546dd9db70"
+  },
+  "jellemzok/cel_ho-routing__kanonikus/sorok_0000.jsonl": {
+   "meret": 707935,
+   "sha256": "9981592571b180bf864be24d4503b10ff6588964ceb78cbfe65474f7e8a270e9"
+  },
+  "jellemzok/cel_ho-termek__b1/osszegzes.json": {
+   "meret": 175,
+   "sha256": "95891766d979706d0a5f88a0ad4cafb6a6560441c838c1959aef3102508e17b2"
+  },
+  "jellemzok/cel_ho-termek__b1/sorok_0000.jsonl": {
+   "meret": 916387,
+   "sha256": "3750c6d41d942a53dd969b7ff49748e506286dd119e761e05448536b15809a34"
+  },
+  "jellemzok/cel_ho-termek__b1/sorok_0001.jsonl": {
+   "meret": 949632,
+   "sha256": "c54b6b105fd977b7dc64811861dd11e15143f34a9869e13847685a244bed3981"
+  },
+  "jellemzok/cel_ho-termek__b1/sorok_0002.jsonl": {
+   "meret": 935090,
+   "sha256": "b171d332580daee1f4ff7f50fcb443ab2653e326ca32c46ee74253f0dd756e01"
+  },
+  "jellemzok/cel_ho-termek__b1/sorok_0003.jsonl": {
+   "meret": 6388,
+   "sha256": "6f329eb7f8729f030e86f75a55ff0bab29660e5ecfac9f86f713565b484002b4"
+  },
+  "jellemzok/cel_ho-termek__kanonikus/jellemzok_0000.pt": {
+   "meret": 214513649,
+   "sha256": "316519ea31f5191bfeee0a3b7da6768554cc9ce50ea1abfa719c63edbc9214e6"
+  },
+  "jellemzok/cel_ho-termek__kanonikus/jellemzok_0001.pt": {
+   "meret": 523637,
+   "sha256": "63b91c99a7796d1c04970181342a2bd7d0eb7c95e5a02c2011adc1243c499f0c"
+  },
+  "jellemzok/cel_ho-termek__kanonikus/osszegzes.json": {
+   "meret": 182,
+   "sha256": "63052b924a1c7b36211fe79f98804bc985819772bb0fd899919affcd05a13450"
+  },
+  "jellemzok/cel_ho-termek__kanonikus/sorok_0000.jsonl": {
+   "meret": 933833,
+   "sha256": "e1c407e51301961d4a1e02b932cbc196252e958ec35ce6098c6ec75527516916"
+  },
+  "jellemzok/cel_ho-termek__kanonikus/sorok_0001.jsonl": {
+   "meret": 2120,
+   "sha256": "5b0b3b58784565f86d6d3e1e55685c0d9e27ec2f49e9438b5b5ed77399b91352"
+  },
+  "jellemzok/cel_ho-uj__b1/osszegzes.json": {
+   "meret": 171,
+   "sha256": "07473c92b60d3e0842e16247570993c9f0684bc04204378dbed54a2ae8fc20d6"
+  },
+  "jellemzok/cel_ho-uj__b1/sorok_0000.jsonl": {
+   "meret": 646644,
+   "sha256": "94f88dc492b90f3afc537e7b7edaea112792ef70ba3e7903637d6ae35a175b12"
+  },
+  "jellemzok/cel_ho-uj__b1/sorok_0001.jsonl": {
+   "meret": 328922,
+   "sha256": "b422e100cadef3e7b7cdee2ab3d16f29d08d0b3a397b5c9eea5b040777aaf79b"
+  },
+  "jellemzok/cel_ho-uj__kanonikus/jellemzok_0000.pt": {
+   "meret": 58487129,
+   "sha256": "c863dcd4bee96cbcdd99164392aa95de3aca70d35f0626d757fc1ad6c06aaeed"
+  },
+  "jellemzok/cel_ho-uj__kanonikus/osszegzes.json": {
+   "meret": 177,
+   "sha256": "02f6bc8f48be0b165a1ca2b7a89267856ee27ac2bd90d219c5db27f8f494aedc"
+  },
+  "jellemzok/cel_ho-uj__kanonikus/sorok_0000.jsonl": {
+   "meret": 325264,
+   "sha256": "4ac9edc280594bd5aaa270153eccf5f73774064e05c48ba8c21fc8a886a6720b"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/osszegzes.json": {
+   "meret": 180,
+   "sha256": "c49b62dedda451b1338909f79d74f4fd831dc287b32e8121df8e22e2f1e92f00"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0000.jsonl": {
+   "meret": 1012982,
+   "sha256": "74571faa8a9dd0a0afcea78bbba386f21e4b4027cee7a1ca8c571a3eaf45eb96"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0001.jsonl": {
+   "meret": 1003800,
+   "sha256": "79c6d17d38f9bd8ba960608ad91d48004e609fd4bf3540283a36f7590c6e1676"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0002.jsonl": {
+   "meret": 1008966,
+   "sha256": "f93354925f0f4c82e03dd6fb7d198cd062672a845f4b3b6cc758210962c5a629"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0003.jsonl": {
+   "meret": 999280,
+   "sha256": "571d70018a9adf3dd70d8f7e713c1514d7cd7d21a30f35e7f8155630c57ca2c2"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0004.jsonl": {
+   "meret": 993545,
+   "sha256": "152bab02617606d545b8dd042ec61d528831d7fce2ea449b8f56e4ebf3cea5c9"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0005.jsonl": {
+   "meret": 996666,
+   "sha256": "49e315216e98821950ec647e2bd98dc59d2c6771265b980cefb47959c27b5af5"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0006.jsonl": {
+   "meret": 996091,
+   "sha256": "c29376b7fc5217f6a06183a9603b05c25f952d662b601beedd17b46afa760a84"
+  },
+  "jellemzok/leiro_t-hu-maradek__b1/sorok_0007.jsonl": {
+   "meret": 120442,
+   "sha256": "4d8ab7c7af623fdd606538ab52cd829af6e77f58c57b1d9e6ff0575971168347"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/jellemzok_0000.pt": {
+   "meret": 219608433,
+   "sha256": "75d87eea19566292e59eabd85cfc9674efd653920de35ab905d3523ca7bee080"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/jellemzok_0001.pt": {
+   "meret": 215335025,
+   "sha256": "f83b9ac9475f8599780dfc458536cee6f1b99805f2c2f12b506501c00cbaa04a"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/jellemzok_0002.pt": {
+   "meret": 80491797,
+   "sha256": "09f08d912a147cf84d07fcf1f922d6c1ce91a996cee58c5f4dcb734ec0553870"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/osszegzes.json": {
+   "meret": 187,
+   "sha256": "afd75768a7a8b541b91d4f808f42f96fc68f06b4f2c5e0e939db593466c0215e"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/sorok_0000.jsonl": {
+   "meret": 1008872,
+   "sha256": "f4f20bc30de0c3285c0a5451d5736b9321eed2191f60ee7ae3e81ef4c16a6fce"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/sorok_0001.jsonl": {
+   "meret": 996472,
+   "sha256": "1946a642289ab6c7a51bb8300c4f211dc65b923256286d1eac0f9c636214615d"
+  },
+  "jellemzok/leiro_t-hu-maradek__kanonikus/sorok_0002.jsonl": {
+   "meret": 372166,
+   "sha256": "bcb4c3d0250a161f998c2abeec674bbab5014cf4d0b3b1f0da1a04993994cc17"
+  },
+  "jellemzok/teszt_ho-routing-hu__b1/osszegzes.json": {
+   "meret": 181,
+   "sha256": "2d3fa3f29ca68b6c8ebedc81434d35c6e03ac9283ff0bdbd13f6dd74118312ad"
+  },
+  "jellemzok/teszt_ho-routing-hu__b1/sorok_0000.jsonl": {
+   "meret": 1013359,
+   "sha256": "161b2fdd990fa6d1f39ed75524fdbb907fc5cd7590de1a2a49da607333864a07"
+  },
+  "jellemzok/teszt_ho-routing-hu__b1/sorok_0001.jsonl": {
+   "meret": 992766,
+   "sha256": "bc515211b4b97ce8184003f74b43c59472b31a81a4cb0d537dab8c691920127f"
+  },
+  "jellemzok/teszt_ho-routing-hu__b1/sorok_0002.jsonl": {
+   "meret": 1017661,
+   "sha256": "08f03edead20a93931b9a815cf542b6a1240aad6614a4b500f2b9f7e5c8ffff4"
+  },
+  "jellemzok/teszt_ho-routing-hu__b1/sorok_0003.jsonl": {
+   "meret": 242601,
+   "sha256": "4c259e953f823029b84cb153680864ad092c932c7fc8db5aee9edd157943b9e4"
+  },
+  "jellemzok/teszt_ho-routing-hu__kanonikus/jellemzok_0000.pt": {
+   "meret": 219727153,
+   "sha256": "172a7450039f6d3c6bfa91f7d4e9cd1a3aa46545fb6078d36e53b5873ea05b6e"
+  },
+  "jellemzok/teszt_ho-routing-hu__kanonikus/jellemzok_0001.pt": {
+   "meret": 17639737,
+   "sha256": "078d89024700c5569d0d20984557bcf5b1ec0c85744c5df7340cbdcf493c4fcc"
+  },
+  "jellemzok/teszt_ho-routing-hu__kanonikus/osszegzes.json": {
+   "meret": 188,
+   "sha256": "7fc11379a72e77835f1d2c1686447bfa0a3ea29ed827faad7d0ad42ac5bec0df"
+  },
+  "jellemzok/teszt_ho-routing-hu__kanonikus/sorok_0000.jsonl": {
+   "meret": 1007752,
+   "sha256": "1cfda4bfb8ca4fabddbd09f81d0b0c031247f888a018f99f1780d11cb820b008"
+  },
+  "jellemzok/teszt_ho-routing-hu__kanonikus/sorok_0001.jsonl": {
+   "meret": 80836,
+   "sha256": "8bbd6abcdef79dbcffd0a07fe8749d627b55e80507cf7703a02dddd1c605178f"
+  },
+  "jellemzok/teszt_ho-routing__b1/osszegzes.json": {
+   "meret": 179,
+   "sha256": "76dffa2201adf6bb35bcb9cfc46748bed2613f2e04f805a0aab0578c4c397c50"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0000.jsonl": {
+   "meret": 589163,
+   "sha256": "90e4cf66c614e7334db8cc89a79061c4cbd4ddfbd5c0c4614b4dd30d0bde0181"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0001.jsonl": {
+   "meret": 638650,
+   "sha256": "76592be6d03c0fe0404079855d86509babd2238fd781cad18351ecc93975cc48"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0002.jsonl": {
+   "meret": 732488,
+   "sha256": "ad7e8d11d03da5e17e392c6a0a8cb8191ebe6696da80c847153c3ba2cf76b26d"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0003.jsonl": {
+   "meret": 832724,
+   "sha256": "31db3df0a034a65dc31470f2912cb759a5abb4bd7d31797c1eceedf336cb9aad"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0004.jsonl": {
+   "meret": 832662,
+   "sha256": "f90282c271b2ca2660289c10e703ce42c1881d6292d9033d017699a7319b6cf6"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0005.jsonl": {
+   "meret": 712104,
+   "sha256": "1303ca603b18b15d2a74f4f3ba780a5055a8e149ca68bed4eb898cdb056828de"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0006.jsonl": {
+   "meret": 642688,
+   "sha256": "b3836ccafd3cfd1b763ef652214f816bac2e58d6b686eb8f697f90ba440088d6"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0007.jsonl": {
+   "meret": 559030,
+   "sha256": "6a947c1e07716dbb1ecb71f6b16fa133d683a547455d547839f880626f442488"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0008.jsonl": {
+   "meret": 1006979,
+   "sha256": "d78eed4424997148a3205ceceba0b14f3b13d8226322ae5b1cefe2cb36368d9a"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0009.jsonl": {
+   "meret": 994509,
+   "sha256": "910b6abe0d21fcdbf45884fcd86ec38b619961c3a62d543c2fe38775b11f2371"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0010.jsonl": {
+   "meret": 1016417,
+   "sha256": "2800939f1ed281e5a8e4c018988467dcdfe027a8fed175251b27763aecf679c6"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0011.jsonl": {
+   "meret": 826228,
+   "sha256": "1977b2feda96c0f431a5f75a2785740c7f3334d3dc8ed5e00d05e8984933186e"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0012.jsonl": {
+   "meret": 760792,
+   "sha256": "738a8fb1d72d0ca7539af0849210178bc9e643647fe1f8c07ee7e8a785d18461"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0013.jsonl": {
+   "meret": 758461,
+   "sha256": "9aa3b77f402f2ae7033d70be89e5f5c766e19859737ed974eeaf5899d31f4930"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0014.jsonl": {
+   "meret": 757691,
+   "sha256": "02617fdad3f082cd333f834eb67e55cfbb8dbdf38193c2a8eed570188875e16d"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0015.jsonl": {
+   "meret": 767349,
+   "sha256": "ffa7c1f5aff98a918818d76bf8f079a5a014e03774c1f29befcf8347b8e581d7"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0016.jsonl": {
+   "meret": 778962,
+   "sha256": "d98d5aee8dc6d1bdb645f93ceba8c28881dc7919b8ad3fb945b29e576bcf7a92"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0017.jsonl": {
+   "meret": 760710,
+   "sha256": "260f3f71e959630d0e53244018be4a66a06a79c292d933c6223c1eb5647b1686"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0018.jsonl": {
+   "meret": 763803,
+   "sha256": "ada317061322e536af068a927d9023bbb6cf507f8263eedd7274438e3efb9589"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0019.jsonl": {
+   "meret": 768364,
+   "sha256": "d50e9395401669fae003b6c954a4d95c9fc1e8e7cba54a6e42bf57fd23d86002"
+  },
+  "jellemzok/teszt_ho-routing__b1/sorok_0020.jsonl": {
+   "meret": 139516,
+   "sha256": "6a1a332b0f1675bc03d671835d2c87d71096fc0c60e880a09c359326d1ca1aa1"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0000.pt": {
+   "meret": 89239153,
+   "sha256": "54a7b9a53442da2de611f8d53e751b79ceb9746d17361d47c55f5e7252bee7b5"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0001.pt": {
+   "meret": 129041457,
+   "sha256": "c4419894c6ffccfff3cb8fa480ca2cc4c621e6ef2e0fe2b3969176c92b2a26cc"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0002.pt": {
+   "meret": 123658353,
+   "sha256": "30bae3c2a1d2f0f3eef1df5b8873894601bab745deb8907817a54a7f589fdee2"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0003.pt": {
+   "meret": 193700337,
+   "sha256": "21901a9aef39695ab3e4ef8dd63d763f099aa845418ab5d147dba8a50ad694ec"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0004.pt": {
+   "meret": 116257329,
+   "sha256": "f77e994ec424e20d2deb4f274eb64a0d496f2e79fde96c996d2a7170a2dfef47"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0005.pt": {
+   "meret": 118753841,
+   "sha256": "d1c583acf6adbe8f142cbf89bfd0c2994a103db6af2855515f0b7e24760e6048"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/jellemzok_0006.pt": {
+   "meret": 86144273,
+   "sha256": "aa7095011bb99f1eb3f19f6897ce61fecf2653edc291cc8db52cf77abf40da13"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/osszegzes.json": {
+   "meret": 185,
+   "sha256": "1af117201585afeefbd5edd27db89b5d8c103390316fe5e32f17f4ae7cf7c6a5"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0000.jsonl": {
+   "meret": 653492,
+   "sha256": "74bfe94a7289e8f1c55546df8f53f06d875b2b75a5c51b714e75fd270a41acc4"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0001.jsonl": {
+   "meret": 792281,
+   "sha256": "93667a32da81917c32c0e21f14c5bca2a0fc9888d647ea7674ba22f53c007ab3"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0002.jsonl": {
+   "meret": 736272,
+   "sha256": "40de39d8eae4ba089a15a6865351a7eacc0789383506155a940ba6b7fe39f7bb"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0003.jsonl": {
+   "meret": 945370,
+   "sha256": "d616cce34192f86e54f6836a20c12125ac475061997da73bf79041b3641b1634"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0004.jsonl": {
+   "meret": 758721,
+   "sha256": "868ff827dd202200797cb19cbd635b9261ee1afd26b78538d93cad95dab3c214"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0005.jsonl": {
+   "meret": 768806,
+   "sha256": "24efee1624db36aa4781de0c51526b30f3cf4a925b24a99b21e588b2059f0c35"
+  },
+  "jellemzok/teszt_ho-routing__kanonikus/sorok_0006.jsonl": {
+   "meret": 557310,
+   "sha256": "6f27f3f79a5b783ed165e7c7b75044943b83e9408401b02861f91c87b70efb11"
+  },
+  "jellemzok/teszt_ho-termek__b1/osszegzes.json": {
+   "meret": 178,
+   "sha256": "a6ab91b77798903c61a39c4fc6f18c4a91bf86f6b1f9ded49556f28a2287be7e"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0000.jsonl": {
+   "meret": 882058,
+   "sha256": "11f4de237b236d792e325358549389ac63b4fe99044f981fa7bb5a0bf4413ada"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0001.jsonl": {
+   "meret": 895394,
+   "sha256": "e6938f20e8fde7c5ca174a3660dc32ad6c9cc1b57920bb91943c4499a8ca22a3"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0002.jsonl": {
+   "meret": 909013,
+   "sha256": "0abc4c129e15fd388208e56947cb6974d887f4dc404b3dbc2f5ea9b66f48a71c"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0003.jsonl": {
+   "meret": 963014,
+   "sha256": "b02ecc8033a7e0a75a83fc070029bb9781d3f1338bf1b0b4d6f25e8ec574bfb9"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0004.jsonl": {
+   "meret": 974096,
+   "sha256": "f88a09d23cb6eeb890adcbfcb49dcf4d9ee90a45917c1a1b9917db44aa415f9c"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0005.jsonl": {
+   "meret": 930130,
+   "sha256": "58c61a34500ea70dda7e2ac9fa979e1359b21eb006c5bff5c1d92b772852ee9f"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0006.jsonl": {
+   "meret": 969577,
+   "sha256": "02a78503d79900a27967cb191668f548a759a527c3da559880cb81d607eb26f6"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0007.jsonl": {
+   "meret": 939227,
+   "sha256": "8550d5e617449ddafe93e1bc23dbdc2ada9e1fe5c34b794545bbd64310de00e3"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0008.jsonl": {
+   "meret": 943707,
+   "sha256": "9005cdaa3be124bffb86ac2e87df33eff6f8b104b2193ae0a783b501e15cb99b"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0009.jsonl": {
+   "meret": 902116,
+   "sha256": "c16de29d129ccb3c2b2641833d9082506e4573251a22e306edfde8a9b42b37bb"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0010.jsonl": {
+   "meret": 917686,
+   "sha256": "de15842c036639b2e437c8c6ff93fc27b7243f210399ed6ba4ff8ed293253e73"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0011.jsonl": {
+   "meret": 927783,
+   "sha256": "3ee6ec21ce3047ab8352094227b31e4f05853dc4906bfda796f2240abc68e2a8"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0012.jsonl": {
+   "meret": 928076,
+   "sha256": "b7277d5d7963af5fe607bbb9ec3b5d802e17942326cba306b2521c4ba3362313"
+  },
+  "jellemzok/teszt_ho-termek__b1/sorok_0013.jsonl": {
+   "meret": 904133,
+   "sha256": "f53e6c0a3312b737f004f4217c941fd5be86b8812c9c883ee1bba28ace1c6b6b"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/jellemzok_0000.pt": {
+   "meret": 200708081,
+   "sha256": "cc1b5acb0d674b1d95becc0f12907c9b0d3c235fa3e384dfbe70c96f29463936"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/jellemzok_0001.pt": {
+   "meret": 222218353,
+   "sha256": "2cba833218060c5c3d3c38fb7eaa4042d7210f403662912997bff0f61384501b"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/jellemzok_0002.pt": {
+   "meret": 220193521,
+   "sha256": "ca989152be6f8f0bf468bb7e296729dff726d0f0419bdb11026014ad1d9912e3"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/jellemzok_0003.pt": {
+   "meret": 208018225,
+   "sha256": "7375e74851669c2b647fc7f6181874605ef357c08638b504121d15d2b45322ba"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/jellemzok_0004.pt": {
+   "meret": 141888611,
+   "sha256": "fa822ca24a67751d5c5ab3df6df0a24114457e4296023c79a2b757082ed51f4a"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/osszegzes.json": {
+   "meret": 184,
+   "sha256": "0a853e072654aab1e804f6fa6a9b1ac89df7f2df1cd7b13aa2b2afe25c9a7762"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/sorok_0000.jsonl": {
+   "meret": 895645,
+   "sha256": "b693aeac16ef3caa7a75205ec5f1d6abfb1086c6f12f0bbca04dcce8fbf3c4c5"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/sorok_0001.jsonl": {
+   "meret": 955485,
+   "sha256": "3e3e055f5a6a17eb6f469423ce4fcda29a7cbc2f7dc46dffa2106965c0ae57e5"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/sorok_0002.jsonl": {
+   "meret": 950513,
+   "sha256": "1995cbab62547f4809c5fc200506ef2a3586caf229e46b0cf3fbdfe7b6f6300d"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/sorok_0003.jsonl": {
+   "meret": 915779,
+   "sha256": "0b8a57407305dd2a4f74d220eb3f1a5c2dbc60816a16bc137bf5eb840a3f5593"
+  },
+  "jellemzok/teszt_ho-termek__kanonikus/sorok_0004.jsonl": {
+   "meret": 610590,
+   "sha256": "6f916ca91020522510bd0d669232d09984efa1f66cf4ec2bc6c23b9d08e47003"
+  },
+  "jellemzok/teszt_ho-uj__b1/osszegzes.json": {
+   "meret": 172,
+   "sha256": "bca75e3a15236f03780c2af7c502a0fb68b68753ae87dfe8299c5f75e55d62e8"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0000.jsonl": {
+   "meret": 660261,
+   "sha256": "c561a97c87ed34ebf1a114aac092a38f95251d433a9b3ed948930406738335e0"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0001.jsonl": {
+   "meret": 643814,
+   "sha256": "30255b90d7dfbe4fe12b7469e84a5e725e34acf8ee9ac7c1583214d13ee957cc"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0002.jsonl": {
+   "meret": 598854,
+   "sha256": "0dd397cbad3551b79eab2e941dd436d33ff0817a6d23de4a33b6c1783b9c1d3f"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0003.jsonl": {
+   "meret": 720185,
+   "sha256": "47b31df1c5508ca86069b85073052bfc1829664633d6b9a33d8b5dded9c4789e"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0004.jsonl": {
+   "meret": 688353,
+   "sha256": "d206a33bc59da2a6d2601c1a055cc021d90fcaefda7ff68c79917f1d43997bfd"
+  },
+  "jellemzok/teszt_ho-uj__b1/sorok_0005.jsonl": {
+   "meret": 421598,
+   "sha256": "06f1c394b3580ee17e9b5f00dde626061be601a7e3e34711765a070722425822"
+  },
+  "jellemzok/teszt_ho-uj__kanonikus/jellemzok_0000.pt": {
+   "meret": 109963377,
+   "sha256": "89cccacfef19d38678a83b30167b61e0b6c8d9760acca0cf8564c5b3789f7345"
+  },
+  "jellemzok/teszt_ho-uj__kanonikus/jellemzok_0001.pt": {
+   "meret": 115621113,
+   "sha256": "8068bd76b3b73b72d84c82580c3f8a43f710584bb441c8d6e9031c1e386734e8"
+  },
+  "jellemzok/teszt_ho-uj__kanonikus/osszegzes.json": {
+   "meret": 180,
+   "sha256": "419b72cd2b2d3e6898a19b848d9d959ee4c87bdb5d2fe90305f20ec3b65212b2"
+  },
+  "jellemzok/teszt_ho-uj__kanonikus/sorok_0000.jsonl": {
+   "meret": 634252,
+   "sha256": "54dd07f3f411e12878eb03c1bfbb09091bc5b5012b8626752ca27cccf07f2a2b"
+  },
+  "jellemzok/teszt_ho-uj__kanonikus/sorok_0001.jsonl": {
+   "meret": 609914,
+   "sha256": "d8d97f4a2f9112d39951c3220ab9032fe63a71f5ccfcdb6fc7ad21d425c0f5ea"
+  },
+  "jev/teszt_ho-routing-hu.hibak.jsonl": {
+   "meret": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "jev/teszt_ho-routing-hu.jsonl": {
+   "meret": 13017613,
+   "sha256": "f23c7d309393bc50d7c7bcc1527f7d9ab80047bd2ca34677635b4807effe6908"
+  },
+  "jev/teszt_ho-routing.hibak.jsonl": {
+   "meret": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "jev/teszt_ho-routing.jsonl": {
+   "meret": 51237618,
+   "sha256": "6d4dec7bf67a97627ce2e8ae46666da6bde27da79e21c4b882807325573de85d"
+  },
+  "jev/teszt_ho-termek.hibak.jsonl": {
+   "meret": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "jev/teszt_ho-termek.jsonl": {
+   "meret": 52575926,
+   "sha256": "e7cdca961d2b08ed86b1e2f4e49b5d5516d966a6991f723eb134e8f98c151d5c"
+  },
+  "jev/teszt_ho-uj.hibak.jsonl": {
+   "meret": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "jev/teszt_ho-uj.jsonl": {
+   "meret": 13796037,
+   "sha256": "154bb9ed11dcf238929b7315f3cbe25abc60c7d145e0caa70eb057afb55febe2"
+  }
+ }
+}

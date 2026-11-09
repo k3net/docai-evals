@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# K08G3-shim (11-04; nem rögzített, a `k08g3_burok.sh` teszi a PATH elejére). A rögzített `k08g3.sh` a pecsét alatti utat
+# (`cache/k08/pecset`: a konténer root-jáé, 700, a gazdagép felhasználója nem látja) három helyen a gazdagép python3-jával
+# érné el: `pecset08 nyit`, `pecset08 lezar` és a determinizmus-őr (`det_or08 ellenoriz`) a pecsét alatti kiolvasáson.
+# Ez a shim csak ezt a két rögzített, változatlan scriptet futtatja a konténerben root-ként (ahogy a 07: `py … pecset07`),
+# és a gazdagépre írt kimenetüket (`--out`, a pecsét-manifest) a gazdagép felhasználójáé teszi; minden más hívás a valódi
+# python3. A kísérlet a saját abszolút útján is fel van csatolva (a futtató `--out`-ja abszolút). A `det_or08` a pecsét
+# alól csak a referenciaszeleteket (det0, det1) olvassa.
+case "${1:-}" in
+  kor08/eszkozok/pecset08.py | kor08/eszkozok/det_or08.py) ;;
+  *) exec /usr/bin/python3 "$@" ;;
+esac
+EXP="$(cd "$(dirname "$0")/../../.." && pwd)"
+ki=""
+prev=""
+for x in "$@"; do
+  [ "$prev" = "--out" ] && ki="$x"
+  prev="$x"
+done
+[ "$1" = kor08/eszkozok/pecset08.py ] && ki="kor08/rogzites/pecset"
+docker run --rm --ipc host --network host --name "ldh-burok-$$-$RANDOM" \
+  -v "$EXP:/exp" -v "$EXP:$EXP" -v /etc/localtime:/etc/localtime:ro -e PYTHONUNBUFFERED=1 -e KI="$ki" -e TULAJ="$(id -u):$(id -g)" \
+  -w /exp --entrypoint sh "${TOOL_IMAGE:-lora-train:2}" -c 'python3 "$@"; rc=$?
+    case "$KI" in /*) t="$KI" ;; ?*) t="/exp/$KI" ;; *) t="" ;; esac
+    [ -n "$t" ] && [ -e "$t" ] && chown -R "$TULAJ" "$t"
+    exit $rc' sh "$@"

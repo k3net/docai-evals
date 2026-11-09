@@ -1,0 +1,20 @@
+{
+ "rogzitve": "2026-11-08T09:11:43",
+ "jovahagyas": "Dani 2026-11-08: elfogadom, mehet (v0.2)",
+ "d12_sha256": "4a058dab8a681e4832346c4e977d8c75063377608e1c86bdd1ff3c8496b912f5",
+ "fajlok": {
+  "kor08/N-rogzites.md": "97d8f1b8559a6cede1e8018d9e75aeb3865fadb128d8c0375245c0b856b6b6ee",
+  "kor08/eredmenyek/N/felszin/illesztes.json": "e09563a3d1ca706cd63b2743c6e7602e55ed5b062ab018b2b0551e602eac7c7c",
+  "kor08/eszkozok/illeszt08m.py": "c81fb5e8343d4e48540406c72951520d4f7d0e0a512bdcd5923aeffcbf363ac8",
+  "kor08/eszkozok/szint08n.py": "08986a994298ca4a2626aa830226d91d53b3ec9f5cc43cb11b9d608e0e8cf458",
+  "kor08/eszkozok/szures08n.py": "a37ab007d01d96b8e1a46356bf6607ce093a352304956d835533e717580214ce",
+  "kor08/eszkozok/felszin08n.py": "5b52118a3d54485dbc584ae5b8fc44f59115ae7599b65f0995473c1c980db964",
+  "kor08/eszkozok/n08.py": "6763643a87ecbf344c4dd6bc33bf2e8b9a46de262468723249258c6b577fb9b4",
+  "kor08/eszkozok/k08n.sh": "f095b4d58d8af139fc6aabced127156c3d285f4aa6d9fdbed3338fa3bb6a2c53",
+  "kor08/adat/N/audit/dontesek.json": "92cbb28c21370778c3b4fc33025109156f4b800857b8d3d596919b7329c5578f",
+  "kor08/adat/N/audit/kulcs.json": "0c87238a19fd6407d51d428fea416f6565af79b8db0726dae48f50b246001b77",
+  "kor08/adat/N/audit/dontesek2.json": "af0a72a74b76ad2ee3a1e51db0ea26c08f8bb8a7270e0dc1d251ceeca2371842",
+  "kor08/adat/N/audit/kulcs2.json": "0aea20848f3cd94aed7ac7dec1a2f4bef2feb41e90f09440db733469a3a38130",
+  "kor08/adat/N/items/szabaly.koltsegelszamolas.jsonl": "f0f428f751335fa8f50a9400ee59d19f109f328c5aa9d2ec5e8edec5e43e3c57"
+ }
+}

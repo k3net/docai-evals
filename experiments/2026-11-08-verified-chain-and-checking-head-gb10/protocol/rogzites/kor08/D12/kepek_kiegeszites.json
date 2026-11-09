@@ -1,0 +1,8 @@
+{
+ "keszult": "2026-11-04T10:17:08",
+ "manifest_sha256": "4a058dab8a681e4832346c4e977d8c75063377608e1c86bdd1ff3c8496b912f5",
+ "ok": "a manifest kepek mezőjében a lora-train:2 üres: helyben épített image, nincs RepoDigest, a rogzit08 formátuma elhasalt",
+ "kepek": {
+  "lora-train:2": "sha256:9d0da0ae9825ff982ad16ed79562c5ffaad10c612f45bb7b745c89fcab8b16e9"
+ }
+}

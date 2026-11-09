@@ -1,0 +1,337 @@
+{
+ "_megjegyzes": "Aggregate audit summaries derived from the per-round audit outputs (not byte-identical to any manifest entry): the per-item fields are dropped, audit pages and decisions are not published. Blind human audits; gates as stated in the protocols.",
+ "kor06_1_kor": {
+  "sig": "300-f4f65705fa",
+  "atnezve": 300,
+  "hianyzik": 0,
+  "nyitott_masodik_itelet": 0,
+  "hiba": 12,
+  "felso_korlat_95": 0.06400391537870745,
+  "kapu": 0.02,
+  "kapu_atment": false,
+  "cellak": {
+   "muszaki.hibaelharitas|MATCH": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "muszaki.hibaelharitas|MISSING_DATA": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "muszaki.hibaelharitas|NO_MATCH": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "muszaki.hibaelharitas|OUT_OF_SCOPE": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "penzugy.bankparositas|MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "penzugy.bankparositas|MISSING_DATA": {
+    "n": 25,
+    "egyezik": 22,
+    "ketertelmu": 3
+   },
+   "penzugy.bankparositas|NO_MATCH": {
+    "n": 24,
+    "egyezik": 21,
+    "ketertelmu": 3
+   },
+   "penzugy.bankparositas|OUT_OF_SCOPE": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "szabaly.koltsegelszamolas|MATCH": {
+    "n": 25,
+    "gold_hibas": 2,
+    "egyezik": 23
+   },
+   "szabaly.koltsegelszamolas|MISSING_DATA": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "szabaly.koltsegelszamolas|NO_MATCH": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "szabaly.koltsegelszamolas|OUT_OF_SCOPE": {
+    "n": 25,
+    "egyezik": 21,
+    "ketertelmu": 4
+   }
+  }
+ },
+ "kor06_2_kor": {
+  "sig": "200-b85784f958",
+  "atnezve": 300,
+  "hianyzik": 0,
+  "nyitott_masodik_itelet": 0,
+  "hiba": 1,
+  "felso_korlat_95": 0.01571455489158395,
+  "kapu": 0.02,
+  "kapu_atment": true,
+  "cellak": {
+   "muszaki.hibaelharitas|MATCH": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "muszaki.hibaelharitas|MISSING_DATA": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "muszaki.hibaelharitas|NO_MATCH": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "muszaki.hibaelharitas|OUT_OF_SCOPE": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "penzugy.bankparositas|MATCH": {
+    "n": 25,
+    "egyezik": 24,
+    "gold_hibas": 1
+   },
+   "penzugy.bankparositas|MISSING_DATA": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "penzugy.bankparositas|NO_MATCH": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "penzugy.bankparositas|OUT_OF_SCOPE": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "szabaly.koltsegelszamolas|MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "szabaly.koltsegelszamolas|MISSING_DATA": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "szabaly.koltsegelszamolas|NO_MATCH": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "szabaly.koltsegelszamolas|OUT_OF_SCOPE": {
+    "n": 25,
+    "egyezik": 25
+   }
+  }
+ },
+ "kor07": {
+  "sig": "300-fbc0d2defa",
+  "atnezve": 300,
+  "hianyzik": 0,
+  "nyitott_masodik_itelet": 0,
+  "hiba": 0,
+  "felso_korlat_95": 0.009936081944457708,
+  "kapu": 0.02,
+  "kapu_atment": true,
+  "cellak": {
+   "muszaki.hibaelharitas|MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "muszaki.hibaelharitas|MISSING_DATA": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "muszaki.hibaelharitas|NO_MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "muszaki.hibaelharitas|OUT_OF_SCOPE": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "penzugy.bankparositas|MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "penzugy.bankparositas|MISSING_DATA": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "penzugy.bankparositas|NO_MATCH": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "penzugy.bankparositas|OUT_OF_SCOPE": {
+    "n": 24,
+    "egyezik": 24
+   },
+   "szabaly.koltsegelszamolas|MATCH": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "szabaly.koltsegelszamolas|MISSING_DATA": {
+    "n": 25,
+    "egyezik": 25
+   },
+   "szabaly.koltsegelszamolas|NO_MATCH": {
+    "n": 26,
+    "egyezik": 26
+   },
+   "szabaly.koltsegelszamolas|OUT_OF_SCOPE": {
+    "n": 24,
+    "egyezik": 24
+   }
+  }
+ },
+ "kor08_G1b_D7": {
+  "sig": "115-5d2ef47130",
+  "atnezve": 115,
+  "hianyzik": 0,
+  "nyitott_masodik_itelet": 0,
+  "hiba": 5,
+  "felso_korlat_95": 0.08924026209763046,
+  "kapu": 0.02,
+  "kapu_atment": false,
+  "cellak": {
+   "szabaly.koltsegelszamolas|MATCH": {
+    "n": 87,
+    "egyezik": 82,
+    "ketertelmu": 3,
+    "gold_hibas": 2
+   },
+   "szabaly.koltsegelszamolas|MISSING_DATA": {
+    "n": 28,
+    "egyezik": 28
+   }
+  }
+ },
+ "kor08_G2_ert_teszt": {
+  "sig": "6c285aa7bce4",
+  "csaladok": {
+   "penzugy.bankparositas": {
+    "lefedesi": {
+     "alapeset": 33,
+     "item": 80,
+     "hibas_alapeset": 1,
+     "hibas_item": 1,
+     "kizart": 1,
+     "javitott": 0
+    },
+    "veletlen": {
+     "alapeset": 30,
+     "item": 78,
+     "hibas_alapeset": 2,
+     "hibas_item": 2,
+     "kizart": 2,
+     "javitott": 0
+    },
+    "jelzett": {
+     "alapeset": 15,
+     "item": 60,
+     "hibas_alapeset": 1,
+     "hibas_item": 1,
+     "kizart": 1,
+     "javitott": 0
+    },
+    "cimkehibaarany_veletlen": {
+     "alapeset": 0.06666666666666667,
+     "ci95": [
+      0.01847663532769335,
+      0.21323817721072091
+     ]
+    }
+   },
+   "muszaki.hibaelharitas": {
+    "lefedesi": {
+     "alapeset": 33,
+     "item": 72,
+     "hibas_alapeset": 3,
+     "hibas_item": 3,
+     "kizart": 3,
+     "javitott": 0
+    },
+    "veletlen": {
+     "alapeset": 30,
+     "item": 66,
+     "hibas_alapeset": 3,
+     "hibas_item": 3,
+     "kizart": 3,
+     "javitott": 0
+    },
+    "jelzett": {
+     "alapeset": 6,
+     "item": 24,
+     "hibas_alapeset": 2,
+     "hibas_item": 2,
+     "kizart": 2,
+     "javitott": 0
+    },
+    "cimkehibaarany_veletlen": {
+     "alapeset": 0.1,
+     "ci95": [
+      0.03459925995971615,
+      0.25621441315266624
+     ]
+    }
+   },
+   "szabaly.koltsegelszamolas": {
+    "lefedesi": {
+     "alapeset": 80,
+     "item": 320,
+     "hibas_alapeset": 0,
+     "hibas_item": 0,
+     "kizart": 0,
+     "javitott": 0
+    },
+    "veletlen": {
+     "alapeset": 30,
+     "item": 120,
+     "hibas_alapeset": 0,
+     "hibas_item": 0,
+     "kizart": 0,
+     "javitott": 0
+    },
+    "jelzett": {
+     "alapeset": 19,
+     "item": 76,
+     "hibas_alapeset": 2,
+     "hibas_item": 2,
+     "kizart": 2,
+     "javitott": 0
+    },
+    "cimkehibaarany_veletlen": {
+     "alapeset": 0.0,
+     "ci95": [
+      0.0,
+      0.113517091390478
+     ]
+    }
+   }
+  },
+  "kezeles": {
+   "javitott": 0,
+   "kizart_egyseg": 8,
+   "felulvizsgalando_cella": 1,
+   "felulvizsgalando_forgatokonyv": 0
+  }
+ },
+ "kor08_N": {
+  "forras": "protocol/rogzites/kor08/N-rogzites.md, 4. pont (a döntések nem publikáltak)",
+  "kor1": {
+   "n": 30,
+   "elteres": 3,
+   "kapu_legfeljebb": 2,
+   "atment": false,
+   "megjegyzes": "mindhárom eltérés generálási hiba; a szerkezeti szűrő ezekből készült"
+  },
+  "kor2": {
+   "n": 30,
+   "elteres": 0,
+   "kapu_legfeljebb": 2,
+   "atment": true,
+   "megjegyzes": "friss, diszjunkt 30 a szűrt mintából"
+  }
+ }
+}

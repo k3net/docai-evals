@@ -1,0 +1,2285 @@
+{
+ "forras": "cache/k07/k3",
+ "csaladok": {
+  "penzugy.bankparositas": {
+   "keret4": {
+    "összes": {
+     "B1-4S": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 186,
+      "tau": [
+       2.803396987915039,
+       3.091438460350037,
+       2.7176027536392215
+      ],
+      "f5_teszt_lezarasi_hiba": 0.024624350433119627,
+      "atlag": {
+       "lezart": 11.0,
+       "hibas": 11.0,
+       "helyes": 0.0,
+       "hibas_x": 5.0,
+       "csali": 6.0
+      },
+      "futasok": [
+       {
+        "lezart": 14,
+        "hibas": 14,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 9
+       },
+       {
+        "lezart": 8,
+        "hibas": 8,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 3
+       },
+       {
+        "lezart": 11,
+        "hibas": 11,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 6
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     }
+    },
+    "változat B3a-reszfizetes": {
+     "B1-4S": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 186,
+      "tau": [
+       2.803396987915039,
+       3.091438460350037,
+       2.7176027536392215
+      ],
+      "f5_teszt_lezarasi_hiba": 0.024624350433119627,
+      "atlag": {
+       "lezart": 11.0,
+       "hibas": 11.0,
+       "helyes": 0.0,
+       "hibas_x": 5.0,
+       "csali": 6.0
+      },
+      "futasok": [
+       {
+        "lezart": 14,
+        "hibas": 14,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 9
+       },
+       {
+        "lezart": 8,
+        "hibas": 8,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 3
+       },
+       {
+        "lezart": 11,
+        "hibas": 11,
+        "helyes": 0,
+        "hibas_x": 5,
+        "csali": 6
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-4S": {
+      "n": 100,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 100,
+      "tau": [
+       2.803396987915039,
+       3.091438460350037,
+       2.7176027536392215
+      ],
+      "f5_teszt_lezarasi_hiba": 0.024624350433119627,
+      "atlag": {
+       "lezart": 6.333333333333333,
+       "hibas": 6.333333333333333,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 4.333333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 8,
+        "hibas": 8,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 6
+       },
+       {
+        "lezart": 5,
+        "hibas": 5,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 3
+       },
+       {
+        "lezart": 6,
+        "hibas": 6,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 4
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 100,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-4S": {
+      "n": 86,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 86,
+      "tau": [
+       2.803396987915039,
+       3.091438460350037,
+       2.7176027536392215
+      ],
+      "f5_teszt_lezarasi_hiba": 0.024624350433119627,
+      "atlag": {
+       "lezart": 4.666666666666667,
+       "hibas": 4.666666666666667,
+       "helyes": 0.0,
+       "hibas_x": 3.0,
+       "csali": 1.6666666666666667
+      },
+      "futasok": [
+       {
+        "lezart": 6,
+        "hibas": 6,
+        "helyes": 0,
+        "hibas_x": 3,
+        "csali": 3
+       },
+       {
+        "lezart": 3,
+        "hibas": 3,
+        "helyes": 0,
+        "hibas_x": 3,
+        "csali": 0
+       },
+       {
+        "lezart": 5,
+        "hibas": 5,
+        "helyes": 0,
+        "hibas_x": 3,
+        "csali": 2
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 86,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     }
+    }
+   },
+   "keret2": {
+    "összes": {
+     "B1-S": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 186,
+      "tau": [
+       2.486253625154495,
+       1.9481046915054323,
+       2.656012654304505
+      ],
+      "f5_teszt_lezarasi_hiba": 0.028251864259064258,
+      "atlag": {
+       "lezart": 19.0,
+       "hibas": 17.666666666666668,
+       "helyes": 1.3333333333333333,
+       "hibas_x": 3.0,
+       "csali": 14.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 13,
+        "hibas": 12,
+        "helyes": 1,
+        "hibas_x": 3,
+        "csali": 9
+       },
+       {
+        "lezart": 24,
+        "hibas": 22,
+        "helyes": 2,
+        "hibas_x": 3,
+        "csali": 19
+       },
+       {
+        "lezart": 20,
+        "hibas": 19,
+        "helyes": 1,
+        "hibas_x": 3,
+        "csali": 16
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 186,
+      "tau": [
+       2.499304650458253
+      ],
+      "f5_teszt_lezarasi_hiba": 0.0341726618705036,
+      "atlag": {
+       "lezart": 14.0,
+       "hibas": 11.0,
+       "helyes": 3.0,
+       "hibas_x": 2.0,
+       "csali": 9.0
+      },
+      "futasok": [
+       {
+        "lezart": 14,
+        "hibas": 11,
+        "helyes": 3,
+        "hibas_x": 2,
+        "csali": 9
+       }
+      ]
+     }
+    },
+    "változat B3a-reszfizetes": {
+     "B1-S": {
+      "n": 186,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 186,
+      "tau": [
+       2.486253625154495,
+       1.9481046915054323,
+       2.656012654304505
+      ],
+      "f5_teszt_lezarasi_hiba": 0.028251864259064258,
+      "atlag": {
+       "lezart": 19.0,
+       "hibas": 17.666666666666668,
+       "helyes": 1.3333333333333333,
+       "hibas_x": 3.0,
+       "csali": 14.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 13,
+        "hibas": 12,
+        "helyes": 1,
+        "hibas_x": 3,
+        "csali": 9
+       },
+       {
+        "lezart": 24,
+        "hibas": 22,
+        "helyes": 2,
+        "hibas_x": 3,
+        "csali": 19
+       },
+       {
+        "lezart": 20,
+        "hibas": 19,
+        "helyes": 1,
+        "hibas_x": 3,
+        "csali": 16
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 186,
+      "tau": [
+       2.499304650458253
+      ],
+      "f5_teszt_lezarasi_hiba": 0.0341726618705036,
+      "atlag": {
+       "lezart": 14.0,
+       "hibas": 11.0,
+       "helyes": 3.0,
+       "hibas_x": 2.0,
+       "csali": 9.0
+      },
+      "futasok": [
+       {
+        "lezart": 14,
+        "hibas": 11,
+        "helyes": 3,
+        "hibas_x": 2,
+        "csali": 9
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-S": {
+      "n": 100,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 100,
+      "tau": [
+       2.486253625154495,
+       1.9481046915054323,
+       2.656012654304505
+      ],
+      "f5_teszt_lezarasi_hiba": 0.028251864259064258,
+      "atlag": {
+       "lezart": 12.666666666666666,
+       "hibas": 11.333333333333334,
+       "helyes": 1.3333333333333333,
+       "hibas_x": 1.0,
+       "csali": 10.333333333333334
+      },
+      "futasok": [
+       {
+        "lezart": 9,
+        "hibas": 8,
+        "helyes": 1,
+        "hibas_x": 1,
+        "csali": 7
+       },
+       {
+        "lezart": 16,
+        "hibas": 14,
+        "helyes": 2,
+        "hibas_x": 1,
+        "csali": 13
+       },
+       {
+        "lezart": 13,
+        "hibas": 12,
+        "helyes": 1,
+        "hibas_x": 1,
+        "csali": 11
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 100,
+      "tau": [
+       2.499304650458253
+      ],
+      "f5_teszt_lezarasi_hiba": 0.0341726618705036,
+      "atlag": {
+       "lezart": 4.0,
+       "hibas": 4.0,
+       "helyes": 0.0,
+       "hibas_x": 1.0,
+       "csali": 3.0
+      },
+      "futasok": [
+       {
+        "lezart": 4,
+        "hibas": 4,
+        "helyes": 0,
+        "hibas_x": 1,
+        "csali": 3
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-S": {
+      "n": 86,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 86,
+      "tau": [
+       2.486253625154495,
+       1.9481046915054323,
+       2.656012654304505
+      ],
+      "f5_teszt_lezarasi_hiba": 0.028251864259064258,
+      "atlag": {
+       "lezart": 6.333333333333333,
+       "hibas": 6.333333333333333,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 4.333333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 4,
+        "hibas": 4,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 2
+       },
+       {
+        "lezart": 8,
+        "hibas": 8,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 6
+       },
+       {
+        "lezart": 7,
+        "hibas": 7,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 5
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 86,
+      "tau": [
+       2.499304650458253
+      ],
+      "f5_teszt_lezarasi_hiba": 0.0341726618705036,
+      "atlag": {
+       "lezart": 10.0,
+       "hibas": 7.0,
+       "helyes": 3.0,
+       "hibas_x": 1.0,
+       "csali": 6.0
+      },
+      "futasok": [
+       {
+        "lezart": 10,
+        "hibas": 7,
+        "helyes": 3,
+        "hibas_x": 1,
+        "csali": 6
+       }
+      ]
+     }
+    }
+   }
+  },
+  "muszaki.hibaelharitas": {
+   "keret4": {
+    "összes": {
+     "B1-4S": {
+      "n": 182,
+      "tau": [
+       0.481436278284449
+      ],
+      "f5_teszt_lezarasi_hiba": 0.04669887278582931,
+      "atlag": {
+       "lezart": 116.0,
+       "hibas": 46.0,
+       "helyes": 70.0,
+       "hibas_x": 0.0,
+       "csali": 46.0
+      },
+      "futasok": [
+       {
+        "lezart": 116,
+        "hibas": 46,
+        "helyes": 70,
+        "hibas_x": 0,
+        "csali": 46
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 182,
+      "tau": [
+       3.311546564102173,
+       2.9338439226150514,
+       3.3495062351226803
+      ],
+      "f5_teszt_lezarasi_hiba": 0.012558070137770855,
+      "atlag": {
+       "lezart": 60.333333333333336,
+       "hibas": 16.0,
+       "helyes": 44.333333333333336,
+       "hibas_x": 4.333333333333333,
+       "csali": 11.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 53,
+        "hibas": 11,
+        "helyes": 42,
+        "hibas_x": 3,
+        "csali": 8
+       },
+       {
+        "lezart": 69,
+        "hibas": 21,
+        "helyes": 48,
+        "hibas_x": 5,
+        "csali": 16
+       },
+       {
+        "lezart": 59,
+        "hibas": 16,
+        "helyes": 43,
+        "hibas_x": 5,
+        "csali": 11
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 182,
+      "tau": [
+       2.410464654471912
+      ],
+      "f5_teszt_lezarasi_hiba": 0.027287319422150885,
+      "atlag": {
+       "lezart": 78.0,
+       "hibas": 35.0,
+       "helyes": 43.0,
+       "hibas_x": 3.0,
+       "csali": 32.0
+      },
+      "futasok": [
+       {
+        "lezart": 78,
+        "hibas": 35,
+        "helyes": 43,
+        "hibas_x": 3,
+        "csali": 32
+       }
+      ]
+     }
+    },
+    "változat H3-valtas": {
+     "B1-4S": {
+      "n": 182,
+      "tau": [
+       0.481436278284449
+      ],
+      "f5_teszt_lezarasi_hiba": 0.04669887278582931,
+      "atlag": {
+       "lezart": 116.0,
+       "hibas": 46.0,
+       "helyes": 70.0,
+       "hibas_x": 0.0,
+       "csali": 46.0
+      },
+      "futasok": [
+       {
+        "lezart": 116,
+        "hibas": 46,
+        "helyes": 70,
+        "hibas_x": 0,
+        "csali": 46
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 182,
+      "tau": [
+       3.311546564102173,
+       2.9338439226150514,
+       3.3495062351226803
+      ],
+      "f5_teszt_lezarasi_hiba": 0.012558070137770855,
+      "atlag": {
+       "lezart": 60.333333333333336,
+       "hibas": 16.0,
+       "helyes": 44.333333333333336,
+       "hibas_x": 4.333333333333333,
+       "csali": 11.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 53,
+        "hibas": 11,
+        "helyes": 42,
+        "hibas_x": 3,
+        "csali": 8
+       },
+       {
+        "lezart": 69,
+        "hibas": 21,
+        "helyes": 48,
+        "hibas_x": 5,
+        "csali": 16
+       },
+       {
+        "lezart": 59,
+        "hibas": 16,
+        "helyes": 43,
+        "hibas_x": 5,
+        "csali": 11
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 182,
+      "tau": [
+       2.410464654471912
+      ],
+      "f5_teszt_lezarasi_hiba": 0.027287319422150885,
+      "atlag": {
+       "lezart": 78.0,
+       "hibas": 35.0,
+       "helyes": 43.0,
+       "hibas_x": 3.0,
+       "csali": 32.0
+      },
+      "futasok": [
+       {
+        "lezart": 78,
+        "hibas": 35,
+        "helyes": 43,
+        "hibas_x": 3,
+        "csali": 32
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-4S": {
+      "n": 86,
+      "tau": [
+       0.481436278284449
+      ],
+      "f5_teszt_lezarasi_hiba": 0.04669887278582931,
+      "atlag": {
+       "lezart": 50.0,
+       "hibas": 19.0,
+       "helyes": 31.0,
+       "hibas_x": 0.0,
+       "csali": 19.0
+      },
+      "futasok": [
+       {
+        "lezart": 50,
+        "hibas": 19,
+        "helyes": 31,
+        "hibas_x": 0,
+        "csali": 19
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 86,
+      "tau": [
+       3.311546564102173,
+       2.9338439226150514,
+       3.3495062351226803
+      ],
+      "f5_teszt_lezarasi_hiba": 0.012558070137770855,
+      "atlag": {
+       "lezart": 29.0,
+       "hibas": 6.666666666666667,
+       "helyes": 22.333333333333332,
+       "hibas_x": 2.0,
+       "csali": 4.666666666666667
+      },
+      "futasok": [
+       {
+        "lezart": 26,
+        "hibas": 5,
+        "helyes": 21,
+        "hibas_x": 2,
+        "csali": 3
+       },
+       {
+        "lezart": 31,
+        "hibas": 7,
+        "helyes": 24,
+        "hibas_x": 2,
+        "csali": 5
+       },
+       {
+        "lezart": 30,
+        "hibas": 8,
+        "helyes": 22,
+        "hibas_x": 2,
+        "csali": 6
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 86,
+      "tau": [
+       2.410464654471912
+      ],
+      "f5_teszt_lezarasi_hiba": 0.027287319422150885,
+      "atlag": {
+       "lezart": 40.0,
+       "hibas": 20.0,
+       "helyes": 20.0,
+       "hibas_x": 3.0,
+       "csali": 17.0
+      },
+      "futasok": [
+       {
+        "lezart": 40,
+        "hibas": 20,
+        "helyes": 20,
+        "hibas_x": 3,
+        "csali": 17
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-4S": {
+      "n": 96,
+      "tau": [
+       0.481436278284449
+      ],
+      "f5_teszt_lezarasi_hiba": 0.04669887278582931,
+      "atlag": {
+       "lezart": 66.0,
+       "hibas": 27.0,
+       "helyes": 39.0,
+       "hibas_x": 0.0,
+       "csali": 27.0
+      },
+      "futasok": [
+       {
+        "lezart": 66,
+        "hibas": 27,
+        "helyes": 39,
+        "hibas_x": 0,
+        "csali": 27
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 96,
+      "tau": [
+       3.311546564102173,
+       2.9338439226150514,
+       3.3495062351226803
+      ],
+      "f5_teszt_lezarasi_hiba": 0.012558070137770855,
+      "atlag": {
+       "lezart": 31.333333333333332,
+       "hibas": 9.333333333333334,
+       "helyes": 22.0,
+       "hibas_x": 2.3333333333333335,
+       "csali": 7.0
+      },
+      "futasok": [
+       {
+        "lezart": 27,
+        "hibas": 6,
+        "helyes": 21,
+        "hibas_x": 1,
+        "csali": 5
+       },
+       {
+        "lezart": 38,
+        "hibas": 14,
+        "helyes": 24,
+        "hibas_x": 3,
+        "csali": 11
+       },
+       {
+        "lezart": 29,
+        "hibas": 8,
+        "helyes": 21,
+        "hibas_x": 3,
+        "csali": 5
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 96,
+      "tau": [
+       2.410464654471912
+      ],
+      "f5_teszt_lezarasi_hiba": 0.027287319422150885,
+      "atlag": {
+       "lezart": 38.0,
+       "hibas": 15.0,
+       "helyes": 23.0,
+       "hibas_x": 0.0,
+       "csali": 15.0
+      },
+      "futasok": [
+       {
+        "lezart": 38,
+        "hibas": 15,
+        "helyes": 23,
+        "hibas_x": 0,
+        "csali": 15
+       }
+      ]
+     }
+    }
+   },
+   "keret2": {
+    "összes": {
+     "B1-S": {
+      "n": 182,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 182,
+      "tau": [
+       2.210690212249756,
+       2.0531567573547362,
+       2.096416449546814
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02603315962137312,
+      "atlag": {
+       "lezart": 50.666666666666664,
+       "hibas": 11.666666666666666,
+       "helyes": 39.0,
+       "hibas_x": 3.0,
+       "csali": 8.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 49,
+        "hibas": 10,
+        "helyes": 39,
+        "hibas_x": 3,
+        "csali": 7
+       },
+       {
+        "lezart": 55,
+        "hibas": 13,
+        "helyes": 42,
+        "hibas_x": 2,
+        "csali": 11
+       },
+       {
+        "lezart": 48,
+        "hibas": 12,
+        "helyes": 36,
+        "hibas_x": 4,
+        "csali": 8
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 182,
+      "tau": [
+       1.9016828563514845
+      ],
+      "f5_teszt_lezarasi_hiba": 0.023715415019762844,
+      "atlag": {
+       "lezart": 109.0,
+       "hibas": 43.0,
+       "helyes": 66.0,
+       "hibas_x": 0.0,
+       "csali": 43.0
+      },
+      "futasok": [
+       {
+        "lezart": 109,
+        "hibas": 43,
+        "helyes": 66,
+        "hibas_x": 0,
+        "csali": 43
+       }
+      ]
+     }
+    },
+    "változat H3-valtas": {
+     "B1-S": {
+      "n": 182,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 182,
+      "tau": [
+       2.210690212249756,
+       2.0531567573547362,
+       2.096416449546814
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02603315962137312,
+      "atlag": {
+       "lezart": 50.666666666666664,
+       "hibas": 11.666666666666666,
+       "helyes": 39.0,
+       "hibas_x": 3.0,
+       "csali": 8.666666666666666
+      },
+      "futasok": [
+       {
+        "lezart": 49,
+        "hibas": 10,
+        "helyes": 39,
+        "hibas_x": 3,
+        "csali": 7
+       },
+       {
+        "lezart": 55,
+        "hibas": 13,
+        "helyes": 42,
+        "hibas_x": 2,
+        "csali": 11
+       },
+       {
+        "lezart": 48,
+        "hibas": 12,
+        "helyes": 36,
+        "hibas_x": 4,
+        "csali": 8
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 182,
+      "tau": [
+       1.9016828563514845
+      ],
+      "f5_teszt_lezarasi_hiba": 0.023715415019762844,
+      "atlag": {
+       "lezart": 109.0,
+       "hibas": 43.0,
+       "helyes": 66.0,
+       "hibas_x": 0.0,
+       "csali": 43.0
+      },
+      "futasok": [
+       {
+        "lezart": 109,
+        "hibas": 43,
+        "helyes": 66,
+        "hibas_x": 0,
+        "csali": 43
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-S": {
+      "n": 86,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 86,
+      "tau": [
+       2.210690212249756,
+       2.0531567573547362,
+       2.096416449546814
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02603315962137312,
+      "atlag": {
+       "lezart": 20.0,
+       "hibas": 3.3333333333333335,
+       "helyes": 16.666666666666668,
+       "hibas_x": 0.6666666666666666,
+       "csali": 2.6666666666666665
+      },
+      "futasok": [
+       {
+        "lezart": 21,
+        "hibas": 4,
+        "helyes": 17,
+        "hibas_x": 1,
+        "csali": 3
+       },
+       {
+        "lezart": 22,
+        "hibas": 2,
+        "helyes": 20,
+        "hibas_x": 0,
+        "csali": 2
+       },
+       {
+        "lezart": 17,
+        "hibas": 4,
+        "helyes": 13,
+        "hibas_x": 1,
+        "csali": 3
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 86,
+      "tau": [
+       1.9016828563514845
+      ],
+      "f5_teszt_lezarasi_hiba": 0.023715415019762844,
+      "atlag": {
+       "lezart": 42.0,
+       "hibas": 14.0,
+       "helyes": 28.0,
+       "hibas_x": 0.0,
+       "csali": 14.0
+      },
+      "futasok": [
+       {
+        "lezart": 42,
+        "hibas": 14,
+        "helyes": 28,
+        "hibas_x": 0,
+        "csali": 14
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-S": {
+      "n": 96,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 96,
+      "tau": [
+       2.210690212249756,
+       2.0531567573547362,
+       2.096416449546814
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02603315962137312,
+      "atlag": {
+       "lezart": 30.666666666666668,
+       "hibas": 8.333333333333334,
+       "helyes": 22.333333333333332,
+       "hibas_x": 2.3333333333333335,
+       "csali": 6.0
+      },
+      "futasok": [
+       {
+        "lezart": 28,
+        "hibas": 6,
+        "helyes": 22,
+        "hibas_x": 2,
+        "csali": 4
+       },
+       {
+        "lezart": 33,
+        "hibas": 11,
+        "helyes": 22,
+        "hibas_x": 2,
+        "csali": 9
+       },
+       {
+        "lezart": 31,
+        "hibas": 8,
+        "helyes": 23,
+        "hibas_x": 3,
+        "csali": 5
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 96,
+      "tau": [
+       1.9016828563514845
+      ],
+      "f5_teszt_lezarasi_hiba": 0.023715415019762844,
+      "atlag": {
+       "lezart": 67.0,
+       "hibas": 29.0,
+       "helyes": 38.0,
+       "hibas_x": 0.0,
+       "csali": 29.0
+      },
+      "futasok": [
+       {
+        "lezart": 67,
+        "hibas": 29,
+        "helyes": 38,
+        "hibas_x": 0,
+        "csali": 29
+       }
+      ]
+     }
+    }
+   }
+  },
+  "szabaly.koltsegelszamolas": {
+   "keret4": {
+    "összes": {
+     "B1-4S": {
+      "n": 199,
+      "tau": [
+       0.7518652229343785
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02824858757062147,
+      "atlag": {
+       "lezart": 36.0,
+       "hibas": 36.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 36.0
+      },
+      "futasok": [
+       {
+        "lezart": 36,
+        "hibas": 36,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 36
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 199,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03819340311009781,
+      "atlag": {
+       "lezart": 151.0,
+       "hibas": 122.33333333333333,
+       "helyes": 28.666666666666668,
+       "hibas_x": 3.0,
+       "csali": 119.33333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 155,
+        "hibas": 124,
+        "helyes": 31,
+        "hibas_x": 3,
+        "csali": 121
+       },
+       {
+        "lezart": 155,
+        "hibas": 127,
+        "helyes": 28,
+        "hibas_x": 3,
+        "csali": 124
+       },
+       {
+        "lezart": 143,
+        "hibas": 116,
+        "helyes": 27,
+        "hibas_x": 3,
+        "csali": 113
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 199,
+      "tau": [
+       0.9847310074399964
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03185595567867036,
+      "atlag": {
+       "lezart": 138.0,
+       "hibas": 107.0,
+       "helyes": 31.0,
+       "hibas_x": 3.0,
+       "csali": 104.0
+      },
+      "futasok": [
+       {
+        "lezart": 138,
+        "hibas": 107,
+        "helyes": 31,
+        "hibas_x": 3,
+        "csali": 104
+       }
+      ]
+     }
+    },
+    "változat S3a-netto": {
+     "B1-4S": {
+      "n": 100,
+      "tau": [
+       0.7518652229343785
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02824858757062147,
+      "atlag": {
+       "lezart": 3.0,
+       "hibas": 3.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 3.0
+      },
+      "futasok": [
+       {
+        "lezart": 3,
+        "hibas": 3,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 3
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 100,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03819340311009781,
+      "atlag": {
+       "lezart": 75.0,
+       "hibas": 60.666666666666664,
+       "helyes": 14.333333333333334,
+       "hibas_x": 0.0,
+       "csali": 60.666666666666664
+      },
+      "futasok": [
+       {
+        "lezart": 77,
+        "hibas": 60,
+        "helyes": 17,
+        "hibas_x": 0,
+        "csali": 60
+       },
+       {
+        "lezart": 76,
+        "hibas": 63,
+        "helyes": 13,
+        "hibas_x": 0,
+        "csali": 63
+       },
+       {
+        "lezart": 72,
+        "hibas": 59,
+        "helyes": 13,
+        "hibas_x": 0,
+        "csali": 59
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 100,
+      "tau": [
+       0.9847310074399964
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03185595567867036,
+      "atlag": {
+       "lezart": 54.0,
+       "hibas": 38.0,
+       "helyes": 16.0,
+       "hibas_x": 0.0,
+       "csali": 38.0
+      },
+      "futasok": [
+       {
+        "lezart": 54,
+        "hibas": 38,
+        "helyes": 16,
+        "hibas_x": 0,
+        "csali": 38
+       }
+      ]
+     }
+    },
+    "változat S3b-deviza": {
+     "B1-4S": {
+      "n": 99,
+      "tau": [
+       0.7518652229343785
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02824858757062147,
+      "atlag": {
+       "lezart": 33.0,
+       "hibas": 33.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 33.0
+      },
+      "futasok": [
+       {
+        "lezart": 33,
+        "hibas": 33,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 33
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 99,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03819340311009781,
+      "atlag": {
+       "lezart": 76.0,
+       "hibas": 61.666666666666664,
+       "helyes": 14.333333333333334,
+       "hibas_x": 3.0,
+       "csali": 58.666666666666664
+      },
+      "futasok": [
+       {
+        "lezart": 78,
+        "hibas": 64,
+        "helyes": 14,
+        "hibas_x": 3,
+        "csali": 61
+       },
+       {
+        "lezart": 79,
+        "hibas": 64,
+        "helyes": 15,
+        "hibas_x": 3,
+        "csali": 61
+       },
+       {
+        "lezart": 71,
+        "hibas": 57,
+        "helyes": 14,
+        "hibas_x": 3,
+        "csali": 54
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 99,
+      "tau": [
+       0.9847310074399964
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03185595567867036,
+      "atlag": {
+       "lezart": 84.0,
+       "hibas": 69.0,
+       "helyes": 15.0,
+       "hibas_x": 3.0,
+       "csali": 66.0
+      },
+      "futasok": [
+       {
+        "lezart": 84,
+        "hibas": 69,
+        "helyes": 15,
+        "hibas_x": 3,
+        "csali": 66
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-4S": {
+      "n": 100,
+      "tau": [
+       0.7518652229343785
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02824858757062147,
+      "atlag": {
+       "lezart": 1.0,
+       "hibas": 1.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 1.0
+      },
+      "futasok": [
+       {
+        "lezart": 1,
+        "hibas": 1,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 1
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 100,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03819340311009781,
+      "atlag": {
+       "lezart": 66.66666666666667,
+       "hibas": 39.0,
+       "helyes": 27.666666666666668,
+       "hibas_x": 3.0,
+       "csali": 36.0
+      },
+      "futasok": [
+       {
+        "lezart": 69,
+        "hibas": 39,
+        "helyes": 30,
+        "hibas_x": 3,
+        "csali": 36
+       },
+       {
+        "lezart": 67,
+        "hibas": 40,
+        "helyes": 27,
+        "hibas_x": 3,
+        "csali": 37
+       },
+       {
+        "lezart": 64,
+        "hibas": 38,
+        "helyes": 26,
+        "hibas_x": 3,
+        "csali": 35
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 100,
+      "tau": [
+       0.9847310074399964
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03185595567867036,
+      "atlag": {
+       "lezart": 67.0,
+       "hibas": 38.0,
+       "helyes": 29.0,
+       "hibas_x": 3.0,
+       "csali": 35.0
+      },
+      "futasok": [
+       {
+        "lezart": 67,
+        "hibas": 38,
+        "helyes": 29,
+        "hibas_x": 3,
+        "csali": 35
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-4S": {
+      "n": 99,
+      "tau": [
+       0.7518652229343785
+      ],
+      "f5_teszt_lezarasi_hiba": 0.02824858757062147,
+      "atlag": {
+       "lezart": 35.0,
+       "hibas": 35.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 35.0
+      },
+      "futasok": [
+       {
+        "lezart": 35,
+        "hibas": 35,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 35
+       }
+      ]
+     },
+     "B1-4R": {
+      "n": 99,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03819340311009781,
+      "atlag": {
+       "lezart": 84.33333333333333,
+       "hibas": 83.33333333333333,
+       "helyes": 1.0,
+       "hibas_x": 0.0,
+       "csali": 83.33333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 86,
+        "hibas": 85,
+        "helyes": 1,
+        "hibas_x": 0,
+        "csali": 85
+       },
+       {
+        "lezart": 88,
+        "hibas": 87,
+        "helyes": 1,
+        "hibas_x": 0,
+        "csali": 87
+       },
+       {
+        "lezart": 79,
+        "hibas": 78,
+        "helyes": 1,
+        "hibas_x": 0,
+        "csali": 78
+       }
+      ]
+     },
+     "B1-4LR": {
+      "n": 99,
+      "tau": [
+       0.9847310074399964
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03185595567867036,
+      "atlag": {
+       "lezart": 71.0,
+       "hibas": 69.0,
+       "helyes": 2.0,
+       "hibas_x": 0.0,
+       "csali": 69.0
+      },
+      "futasok": [
+       {
+        "lezart": 71,
+        "hibas": 69,
+        "helyes": 2,
+        "hibas_x": 0,
+        "csali": 69
+       }
+      ]
+     }
+    }
+   },
+   "keret2": {
+    "összes": {
+     "B1-S": {
+      "n": 199,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 199,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03163929877256846,
+      "atlag": {
+       "lezart": 132.33333333333334,
+       "hibas": 107.33333333333333,
+       "helyes": 25.0,
+       "hibas_x": 2.0,
+       "csali": 105.33333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 139,
+        "hibas": 113,
+        "helyes": 26,
+        "hibas_x": 2,
+        "csali": 111
+       },
+       {
+        "lezart": 130,
+        "hibas": 106,
+        "helyes": 24,
+        "hibas_x": 2,
+        "csali": 104
+       },
+       {
+        "lezart": 128,
+        "hibas": 103,
+        "helyes": 25,
+        "hibas_x": 2,
+        "csali": 101
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 199,
+      "tau": [
+       2.064766148921448
+      ],
+      "f5_teszt_lezarasi_hiba": 0.032504780114722756,
+      "atlag": {
+       "lezart": 21.0,
+       "hibas": 21.0,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 19.0
+      },
+      "futasok": [
+       {
+        "lezart": 21,
+        "hibas": 21,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 19
+       }
+      ]
+     }
+    },
+    "változat S3a-netto": {
+     "B1-S": {
+      "n": 100,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 100,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03163929877256846,
+      "atlag": {
+       "lezart": 67.33333333333333,
+       "hibas": 57.333333333333336,
+       "helyes": 10.0,
+       "hibas_x": 0.0,
+       "csali": 57.333333333333336
+      },
+      "futasok": [
+       {
+        "lezart": 72,
+        "hibas": 61,
+        "helyes": 11,
+        "hibas_x": 0,
+        "csali": 61
+       },
+       {
+        "lezart": 67,
+        "hibas": 58,
+        "helyes": 9,
+        "hibas_x": 0,
+        "csali": 58
+       },
+       {
+        "lezart": 63,
+        "hibas": 53,
+        "helyes": 10,
+        "hibas_x": 0,
+        "csali": 53
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 100,
+      "tau": [
+       2.064766148921448
+      ],
+      "f5_teszt_lezarasi_hiba": 0.032504780114722756,
+      "atlag": {
+       "lezart": 2.0,
+       "hibas": 2.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 2.0
+      },
+      "futasok": [
+       {
+        "lezart": 2,
+        "hibas": 2,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 2
+       }
+      ]
+     }
+    },
+    "változat S3b-deviza": {
+     "B1-S": {
+      "n": 99,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 99,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03163929877256846,
+      "atlag": {
+       "lezart": 65.0,
+       "hibas": 50.0,
+       "helyes": 15.0,
+       "hibas_x": 2.0,
+       "csali": 48.0
+      },
+      "futasok": [
+       {
+        "lezart": 67,
+        "hibas": 52,
+        "helyes": 15,
+        "hibas_x": 2,
+        "csali": 50
+       },
+       {
+        "lezart": 63,
+        "hibas": 48,
+        "helyes": 15,
+        "hibas_x": 2,
+        "csali": 46
+       },
+       {
+        "lezart": 65,
+        "hibas": 50,
+        "helyes": 15,
+        "hibas_x": 2,
+        "csali": 48
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 99,
+      "tau": [
+       2.064766148921448
+      ],
+      "f5_teszt_lezarasi_hiba": 0.032504780114722756,
+      "atlag": {
+       "lezart": 19.0,
+       "hibas": 19.0,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 17.0
+      },
+      "futasok": [
+       {
+        "lezart": 19,
+        "hibas": 19,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 17
+       }
+      ]
+     }
+    },
+    "nyelv hu": {
+     "B1-S": {
+      "n": 100,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 100,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03163929877256846,
+      "atlag": {
+       "lezart": 53.0,
+       "hibas": 28.0,
+       "helyes": 25.0,
+       "hibas_x": 2.0,
+       "csali": 26.0
+      },
+      "futasok": [
+       {
+        "lezart": 55,
+        "hibas": 29,
+        "helyes": 26,
+        "hibas_x": 2,
+        "csali": 27
+       },
+       {
+        "lezart": 52,
+        "hibas": 28,
+        "helyes": 24,
+        "hibas_x": 2,
+        "csali": 26
+       },
+       {
+        "lezart": 52,
+        "hibas": 27,
+        "helyes": 25,
+        "hibas_x": 2,
+        "csali": 25
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 100,
+      "tau": [
+       2.064766148921448
+      ],
+      "f5_teszt_lezarasi_hiba": 0.032504780114722756,
+      "atlag": {
+       "lezart": 3.0,
+       "hibas": 3.0,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 1.0
+      },
+      "futasok": [
+       {
+        "lezart": 3,
+        "hibas": 3,
+        "helyes": 0,
+        "hibas_x": 2,
+        "csali": 1
+       }
+      ]
+     }
+    },
+    "nyelv en": {
+     "B1-S": {
+      "n": 99,
+      "tau": [
+       Infinity
+      ],
+      "f5_teszt_lezarasi_hiba": NaN,
+      "atlag": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "futasok": [
+       {
+        "lezart": 0,
+        "hibas": 0,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 0
+       }
+      ]
+     },
+     "B1-R": {
+      "n": 99,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "f5_teszt_lezarasi_hiba": 0.03163929877256846,
+      "atlag": {
+       "lezart": 79.33333333333333,
+       "hibas": 79.33333333333333,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 79.33333333333333
+      },
+      "futasok": [
+       {
+        "lezart": 84,
+        "hibas": 84,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 84
+       },
+       {
+        "lezart": 78,
+        "hibas": 78,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 78
+       },
+       {
+        "lezart": 76,
+        "hibas": 76,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 76
+       }
+      ]
+     },
+     "B1-LR": {
+      "n": 99,
+      "tau": [
+       2.064766148921448
+      ],
+      "f5_teszt_lezarasi_hiba": 0.032504780114722756,
+      "atlag": {
+       "lezart": 18.0,
+       "hibas": 18.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 18.0
+      },
+      "futasok": [
+       {
+        "lezart": 18,
+        "hibas": 18,
+        "helyes": 0,
+        "hibas_x": 0,
+        "csali": 18
+       }
+      ]
+     }
+    }
+   }
+  }
+ }
+}

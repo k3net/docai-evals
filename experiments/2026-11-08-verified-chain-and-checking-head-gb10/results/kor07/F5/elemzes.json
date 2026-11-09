@@ -1,0 +1,3818 @@
+{
+ "reps": 10000,
+ "seed": 20261101,
+ "be": "cache/k07/f5",
+ "forras": "k07",
+ "cimke": "F5, friss CAL / TESZT",
+ "szabaly": {
+  "target": 0.95,
+  "min_lezart": 200,
+  "hibafeltetel": 0.05,
+  "behozza": -0.03
+ },
+ "k1": {
+  "K1: B1-4R − B1-4S": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.04914194308707546,
+     "aurc_B": 0.09515216080809279,
+     "delta": -0.04601021772101733,
+     "ci95": [
+      -0.05456089261059954,
+      -0.03798551161620605
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.04461329240904268,
+       "aurc_B": 0.08458921453676212,
+       "delta": -0.039975922127719436,
+       "ci95": [
+        -0.052494441734985665,
+        -0.028374765367217145
+       ]
+      },
+      "en": {
+       "aurc_A": 0.05399123992886146,
+       "aurc_B": 0.10332346574000256,
+       "delta": -0.0493322258111411,
+       "ci95": [
+        -0.061112612630760885,
+        -0.03880685196776501
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.022931350693250283,
+     "aurc_B": 0.04058364044063651,
+     "delta": -0.017652289747386227,
+     "ci95": [
+      -0.025881655936100135,
+      -0.009090443773110982
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.022344956096562906,
+       "aurc_B": 0.03954903123644726,
+       "delta": -0.017204075139884357,
+       "ci95": [
+        -0.02773366466959147,
+        -0.008124971006173423
+       ]
+      },
+      "en": {
+       "aurc_A": 0.023633812168259664,
+       "aurc_B": 0.04001721400065785,
+       "delta": -0.016383401832398187,
+       "ci95": [
+        -0.02821914281257051,
+        -0.0029746933340351186
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.02867632985283215,
+     "aurc_B": 0.06292811178594884,
+     "delta": -0.03425178193311669,
+     "ci95": [
+      -0.04211584232753914,
+      -0.025723371900419678
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.03522121395049272,
+       "aurc_B": 0.07370859990464745,
+       "delta": -0.03848738595415473,
+       "ci95": [
+        -0.04967350562440597,
+        -0.027351997069135967
+       ]
+      },
+      "en": {
+       "aurc_A": 0.02447583645889116,
+       "aurc_B": 0.05330848229410532,
+       "delta": -0.028832645835214162,
+       "ci95": [
+        -0.041293211468668364,
+        -0.012360396741393075
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "penzugy.bankparositas": 0.0,
+    "muszaki.hibaelharitas": 0.0,
+    "szabaly.koltsegelszamolas": 0.0
+   },
+   "atlag": {
+    "aurc_A": 0.0335832078777193,
+    "aurc_B": 0.06622130434489272,
+    "arany": 0.5071360072101839,
+    "arany_ci95": [
+     0.45913109847788464,
+     0.5620288377551795
+    ],
+    "szabaly_1_javul": 3,
+    "szabaly_2_pont": true,
+    "d4": true,
+    "teljesul": true
+   }
+  },
+  "B1-4LR − B1-4S": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.07071054948390229,
+     "aurc_B": 0.09515216080809279,
+     "delta": -0.024441611324190496,
+     "ci95": [
+      -0.030612508721116868,
+      -0.0179504351427426
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.06544416702958294,
+       "aurc_B": 0.08458921453676212,
+       "delta": -0.019145047507179172,
+       "ci95": [
+        -0.029957410344180414,
+        -0.0059488903481644114
+       ]
+      },
+      "en": {
+       "aurc_A": 0.07612308979509157,
+       "aurc_B": 0.10332346574000256,
+       "delta": -0.027200375944910996,
+       "ci95": [
+        -0.03534069753103411,
+        -0.01920830309213541
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.03735198049536817,
+     "aurc_B": 0.04058364044063651,
+     "delta": -0.0032316599452683406,
+     "ci95": [
+      -0.01824871669242573,
+      0.015001499152510273
+     ],
+     "p": 0.6374,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.029264984024826933,
+       "aurc_B": 0.03954903123644726,
+       "delta": -0.01028404721162033,
+       "ci95": [
+        -0.020765726738615244,
+        0.0009817811510808557
+       ]
+      },
+      "en": {
+       "aurc_A": 0.04274286079542315,
+       "aurc_B": 0.04001721400065785,
+       "delta": 0.0027256467947653004,
+       "ci95": [
+        -0.022054655358563522,
+        0.03287552098247057
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.03263394568881705,
+     "aurc_B": 0.06292811178594884,
+     "delta": -0.030294166097131793,
+     "ci95": [
+      -0.04065305602948321,
+      -0.015087817510861466
+     ],
+     "p": 0.0006,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.036825662620564074,
+       "aurc_B": 0.07370859990464745,
+       "delta": -0.03688293728408338,
+       "ci95": [
+        -0.0447893170438581,
+        -0.02881353718446554
+       ]
+      },
+      "en": {
+       "aurc_A": 0.031943802616349104,
+       "aurc_B": 0.05330848229410532,
+       "delta": -0.021364679677756217,
+       "ci95": [
+        -0.04101908967600292,
+        0.00751704678544005
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "penzugy.bankparositas": 0.0,
+    "szabaly.koltsegelszamolas": 0.0012,
+    "muszaki.hibaelharitas": 0.6374
+   },
+   "atlag": {
+    "aurc_A": 0.04689882522269584,
+    "aurc_B": 0.06622130434489272,
+    "arany": 0.7082135528233956,
+    "arany_ci95": [
+     0.6081217643129775,
+     0.8257144965655446
+    ],
+    "szabaly_1_javul": 3,
+    "szabaly_2_pont": true,
+    "d4": true,
+    "teljesul": true
+   }
+  },
+  "B1-4R − B1-4LR": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.04914194308707546,
+     "aurc_B": 0.07071054948390229,
+     "delta": -0.021568606396826832,
+     "ci95": [
+      -0.03254038873285163,
+      -0.012127737398928761
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.04461329240904268,
+       "aurc_B": 0.06544416702958294,
+       "delta": -0.020830874620540264,
+       "ci95": [
+        -0.04323612215343856,
+        -0.0047340098917543275
+       ]
+      },
+      "en": {
+       "aurc_A": 0.05399123992886146,
+       "aurc_B": 0.07612308979509157,
+       "delta": -0.022131849866230104,
+       "ci95": [
+        -0.034092324083089647,
+        -0.01131394849340276
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.022931350693250283,
+     "aurc_B": 0.03735198049536817,
+     "delta": -0.014420629802117887,
+     "ci95": [
+      -0.029081045260030913,
+      -0.001669068176847436
+     ],
+     "p": 0.0178,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.022344956096562906,
+       "aurc_B": 0.029264984024826933,
+       "delta": -0.006920027928264027,
+       "ci95": [
+        -0.016545990075789788,
+        0.0012268790732460572
+       ]
+      },
+      "en": {
+       "aurc_A": 0.023633812168259664,
+       "aurc_B": 0.04274286079542315,
+       "delta": -0.019109048627163488,
+       "ci95": [
+        -0.04260268001021038,
+        0.0019197674484572266
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.02867632985283215,
+     "aurc_B": 0.03263394568881705,
+     "delta": -0.0039576158359849005,
+     "ci95": [
+      -0.013801438601981991,
+      0.00321170772833846
+     ],
+     "p": 0.3902,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.03522121395049272,
+       "aurc_B": 0.036825662620564074,
+       "delta": -0.001604448670071354,
+       "ci95": [
+        -0.007832638956246538,
+        0.004299409804815687
+       ]
+      },
+      "en": {
+       "aurc_A": 0.02447583645889116,
+       "aurc_B": 0.031943802616349104,
+       "delta": -0.0074679661574579455,
+       "ci95": [
+        -0.021700544463999768,
+        0.005156102147673737
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "penzugy.bankparositas": 0.0,
+    "muszaki.hibaelharitas": 0.0356,
+    "szabaly.koltsegelszamolas": 0.3902
+   },
+   "atlag": {
+    "aurc_A": 0.0335832078777193,
+    "aurc_B": 0.04689882522269584,
+    "arany": 0.716077806176418,
+    "arany_ci95": [
+     0.6303756451255161,
+     0.8225390513849467
+    ],
+    "szabaly_1_javul": 3,
+    "szabaly_2_pont": true,
+    "d4": true,
+    "teljesul": true
+   }
+  },
+  "06: B1-R − B1-S": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.050256625215544394,
+     "aurc_B": 0.13970823337749763,
+     "delta": -0.08945160816195324,
+     "ci95": [
+      -0.10512459211473449,
+      -0.07552551437402116
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.046786478234494666,
+       "aurc_B": 0.12396034110308989,
+       "delta": -0.07717386286859522,
+       "ci95": [
+        -0.08776856454656333,
+        -0.06658422804267673
+       ]
+      },
+      "en": {
+       "aurc_A": 0.05404574230763853,
+       "aurc_B": 0.15566905437863188,
+       "delta": -0.10162331207099334,
+       "ci95": [
+        -0.13083337769657372,
+        -0.07597539035743583
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.04269595054704727,
+     "aurc_B": 0.2276854148013448,
+     "delta": -0.18498946425429752,
+     "ci95": [
+      -0.21155271258375338,
+      -0.15854675111376287
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.048036379216192436,
+       "aurc_B": 0.19898754347040346,
+       "delta": -0.150951164254211,
+       "ci95": [
+        -0.18462408083113588,
+        -0.11771957157698404
+       ]
+      },
+      "en": {
+       "aurc_A": 0.038512856033043365,
+       "aurc_B": 0.2516011074918868,
+       "delta": -0.21308825145884344,
+       "ci95": [
+        -0.25161103997701506,
+        -0.1747327859721796
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.043793213854510314,
+     "aurc_B": 0.3043746824744568,
+     "delta": -0.2605814686199465,
+     "ci95": [
+      -0.2849224298293912,
+      -0.23669864587204634
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.06229103135206417,
+       "aurc_B": 0.3347348950200368,
+       "delta": -0.27244386366797263,
+       "ci95": [
+        -0.30816794261336455,
+        -0.23587290074040718
+       ]
+      },
+      "en": {
+       "aurc_A": 0.02881391783141256,
+       "aurc_B": 0.3059851521740072,
+       "delta": -0.2771712343425946,
+       "ci95": [
+        -0.312088104789055,
+        -0.2412533639568
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "penzugy.bankparositas": 0.0,
+    "muszaki.hibaelharitas": 0.0,
+    "szabaly.koltsegelszamolas": 0.0
+   },
+   "atlag": {
+    "aurc_A": 0.04558192987236733,
+    "aurc_B": 0.2239227768844331,
+    "arany": 0.20356093518745633,
+    "arany_ci95": [
+     0.18646506383746225,
+     0.22223730684079057
+    ],
+    "szabaly_1_javul": 3,
+    "szabaly_2_pont": true,
+    "d4": true,
+    "teljesul": true
+   }
+  },
+  "kereszt (leíró): B1-4S − B1-R": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.09515216080809279,
+     "aurc_B": 0.050256625215544394,
+     "delta": 0.04489553559254839,
+     "ci95": [
+      0.03618066459575462,
+      0.05422652105250387
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.08458921453676212,
+       "aurc_B": 0.046786478234494666,
+       "delta": 0.03780273630226745,
+       "ci95": [
+        0.026026649496510953,
+        0.05099319210169696
+       ]
+      },
+      "en": {
+       "aurc_A": 0.10332346574000256,
+       "aurc_B": 0.05404574230763853,
+       "delta": 0.049277723432364036,
+       "ci95": [
+        0.03753493497658693,
+        0.06198026520047608
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.04058364044063651,
+     "aurc_B": 0.04269595054704727,
+     "delta": -0.0021123101064107613,
+     "ci95": [
+      -0.009641454417153437,
+      0.0053641468202217
+     ],
+     "p": 0.552,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.03954903123644726,
+       "aurc_B": 0.048036379216192436,
+       "delta": -0.008487347979745173,
+       "ci95": [
+        -0.019720980024759974,
+        0.0036926953178608433
+       ]
+      },
+      "en": {
+       "aurc_A": 0.04001721400065785,
+       "aurc_B": 0.038512856033043365,
+       "delta": 0.0015043579676144864,
+       "ci95": [
+        -0.007509077174470031,
+        0.010669707313849527
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.06292811178594884,
+     "aurc_B": 0.043793213854510314,
+     "delta": 0.01913489793143853,
+     "ci95": [
+      0.012319551448902554,
+      0.025880452211527998
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.07370859990464745,
+       "aurc_B": 0.06229103135206417,
+       "delta": 0.01141756855258328,
+       "ci95": [
+        0.0006482322758218172,
+        0.022032233847589885
+       ]
+      },
+      "en": {
+       "aurc_A": 0.05330848229410532,
+       "aurc_B": 0.02881391783141256,
+       "delta": 0.02449456446269276,
+       "ci95": [
+        0.016488229971983705,
+        0.03285583887414926
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "penzugy.bankparositas": 0.0,
+    "szabaly.koltsegelszamolas": 0.0,
+    "muszaki.hibaelharitas": 0.552
+   },
+   "atlag": {
+    "aurc_A": 0.06622130434489272,
+    "aurc_B": 0.04558192987236733,
+    "arany": 1.452797293364215,
+    "arany_ci95": [
+     1.340868168679527,
+     1.5652119405992169
+    ],
+    "szabaly_1_javul": 1,
+    "szabaly_2_pont": false,
+    "d4": false,
+    "teljesul": false
+   }
+  },
+  "kereszt (leíró): B1-4R − B1-R": {
+   "csaladok": {
+    "penzugy.bankparositas": {
+     "aurc_A": 0.04914194308707546,
+     "aurc_B": 0.050256625215544394,
+     "delta": -0.0011146821284689357,
+     "ci95": [
+      -0.005659542580096706,
+      0.0030495780210141638
+     ],
+     "p": 0.6366,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.04461329240904268,
+       "aurc_B": 0.046786478234494666,
+       "delta": -0.0021731858254519856,
+       "ci95": [
+        -0.008840151828071595,
+        0.003813383607414006
+       ]
+      },
+      "en": {
+       "aurc_A": 0.05399123992886146,
+       "aurc_B": 0.05404574230763853,
+       "delta": -5.450237877706321e-05,
+       "ci95": [
+        -0.005965901568056438,
+        0.005668337495977133
+       ]
+      }
+     }
+    },
+    "muszaki.hibaelharitas": {
+     "aurc_A": 0.022931350693250283,
+     "aurc_B": 0.04269595054704727,
+     "delta": -0.01976459985379699,
+     "ci95": [
+      -0.0270273540398747,
+      -0.01225217570009732
+     ],
+     "p": 0.0,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.022344956096562906,
+       "aurc_B": 0.048036379216192436,
+       "delta": -0.02569142311962953,
+       "ci95": [
+        -0.03361344305021275,
+        -0.018568395153934845
+       ]
+      },
+      "en": {
+       "aurc_A": 0.023633812168259664,
+       "aurc_B": 0.038512856033043365,
+       "delta": -0.014879043864783701,
+       "ci95": [
+        -0.026421292909325846,
+        -0.0020131659248483814
+       ]
+      }
+     }
+    },
+    "szabaly.koltsegelszamolas": {
+     "aurc_A": 0.02867632985283215,
+     "aurc_B": 0.043793213854510314,
+     "delta": -0.015116884001678165,
+     "ci95": [
+      -0.022144071766434518,
+      -0.007559524601780164
+     ],
+     "p": 0.0002,
+     "nyelv": {
+      "hu": {
+       "aurc_A": 0.03522121395049272,
+       "aurc_B": 0.06229103135206417,
+       "delta": -0.027069817401571453,
+       "ci95": [
+        -0.03563263244073024,
+        -0.018796408355177114
+       ]
+      },
+      "en": {
+       "aurc_A": 0.02447583645889116,
+       "aurc_B": 0.02881391783141256,
+       "delta": -0.004338081372521403,
+       "ci95": [
+        -0.015277547935898179,
+        0.009850133521978739
+       ]
+      }
+     }
+    }
+   },
+   "holm_p": {
+    "muszaki.hibaelharitas": 0.0,
+    "szabaly.koltsegelszamolas": 0.0004,
+    "penzugy.bankparositas": 0.6366
+   },
+   "atlag": {
+    "aurc_A": 0.0335832078777193,
+    "aurc_B": 0.04558192987236733,
+    "arany": 0.7367658186424902,
+    "arany_ci95": [
+     0.6646794091552598,
+     0.8139319272734075
+    ],
+    "szabaly_1_javul": 3,
+    "szabaly_2_pont": true,
+    "d4": true,
+    "teljesul": true
+   }
+  }
+ },
+ "k2": {
+  "karok": {
+   "B1-4S": {
+    "hasznos_lef": 0.36933333333333335,
+    "hasznos_lef_ci95": [
+     0.3161303289368285,
+     0.5242019204310078
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     0.02294662760793147,
+     0.0568526009335345
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.3051333333333333,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.998,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.44301479771487506
+      ],
+      "lezarasi_hiba_ci95": [
+       0.024444444444444446,
+       0.06321158349846874
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.9021,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.4216061960309043
+        ],
+        "lezarasi_hiba_ci95": [
+         0.005941576857629042,
+         0.04873192315993956
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.4672503778972119
+        ],
+        "lezarasi_hiba_ci95": [
+         0.027371134020618557,
+         0.09090909090909091
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.592,
+      "lezarasi_hiba": 0.04669887278582931,
+      "lezart": 0.621,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.204,
+      "hasznos_lef_ci95": [
+       0.4462474645030426,
+       0.6971916324423729
+      ],
+      "lezarasi_hiba_ci95": [
+       0.008186684509869523,
+       0.09636357931726906
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0131,
+      "tau": [
+       0.481436278284449
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6,
+        "lezarasi_hiba": 0.03536977491961415,
+        "hasznos_lef_ci95": [
+         0.4105178495837449,
+         0.7369440042568728
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.08868767055321257
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.584,
+        "lezarasi_hiba": 0.05806451612903226,
+        "hasznos_lef_ci95": [
+         0.4741098711948323,
+         0.6611398018407857
+        ],
+        "lezarasi_hiba_ci95": [
+         0.007142857142857143,
+         0.11458333333333333
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.516,
+      "lezarasi_hiba": 0.02824858757062147,
+      "lezart": 0.531,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.398,
+      "hasznos_lef_ci95": [
+       0.45997921646704903,
+       0.5502452013277529
+      ],
+      "lezarasi_hiba_ci95": [
+       0.010569151925495759,
+       0.050677447552447526
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0002,
+      "tau": [
+       0.7518652229343785
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.476,
+        "lezarasi_hiba": 0.032520325203252036,
+        "hasznos_lef_ci95": [
+         0.39464747356051705,
+         0.5299457626268117
+        ],
+        "lezarasi_hiba_ci95": [
+         0.00641025641025641,
+         0.059869718309858995
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.556,
+        "lezarasi_hiba": 0.02456140350877193,
+        "hasznos_lef_ci95": [
+         0.5169711490856408,
+         0.5831439757148269
+        ],
+        "lezarasi_hiba_ci95": [
+         0.007272727272727273,
+         0.04958914264084282
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-4R": {
+    "hasznos_lef": 0.6482222222222221,
+    "hasznos_lef_ci95": [
+     0.44360903900382503,
+     0.69800104612223
+    ],
+    "lezarasi_hiba": 0.025125274560329428,
+    "lezarasi_hiba_ci95": [
+     0.016692153319392267,
+     0.041149170878290446
+    ],
+    "hibafeltetel_pont": true,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.05945555555555556,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.594,
+      "lezarasi_hiba": 0.024624350433119627,
+      "lezart": 0.609,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.38899999999999996,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.6797062833947483
+      ],
+      "lezarasi_hiba_ci95": [
+       0.006455242419037292,
+       0.04726228704148829
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.17836666666666667,
+      "tau": [
+       2.803396987915039,
+       3.091438460350037,
+       2.7176027536392215
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6093333333333333,
+        "lezarasi_hiba": 0.019110027564133842,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.6985682178963322
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0023097541316383016,
+         0.04876042051350538
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.5786666666666668,
+        "lezarasi_hiba": 0.030271106383934775,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.6638428399561233
+        ],
+        "lezarasi_hiba_ci95": [
+         0.005077267438463409,
+         0.0544971208047388
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.629,
+      "lezarasi_hiba": 0.012558070137770855,
+      "lezart": 0.637,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.18800000000000003,
+      "hasznos_lef_ci95": [
+       0.553425067204301,
+       0.7275770595070639
+      ],
+      "lezarasi_hiba_ci95": [
+       0.00529107060930027,
+       0.04689318274905455
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0,
+      "tau": [
+       3.311546564102173,
+       2.9338439226150514,
+       3.3495062351226803
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.63,
+        "lezarasi_hiba": 0.018669958666485974,
+        "hasznos_lef_ci95": [
+         0.5367132867132867,
+         0.7527752041687945
+        ],
+        "lezarasi_hiba_ci95": [
+         0.006342208467280247,
+         0.0708411599835305
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.628,
+        "lezarasi_hiba": 0.006330940099530981,
+        "hasznos_lef_ci95": [
+         0.5576737799960954,
+         0.7165034588601796
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.025166562051205762
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.7216666666666667,
+      "lezarasi_hiba": 0.03819340311009781,
+      "lezart": 0.7503333333333333,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.17866666666666667,
+      "hasznos_lef_ci95": [
+       0.6947253795377528,
+       0.7462196916879698
+      ],
+      "lezarasi_hiba_ci95": [
+       0.021411171584767463,
+       0.05850696213754505
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0,
+      "tau": [
+       0.23920171856880187,
+       0.3530982881784439,
+       0.4966807186603546
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6773333333333333,
+        "lezarasi_hiba": 0.05575759861357108,
+        "hasznos_lef_ci95": [
+         0.6401998009337814,
+         0.7120012519561816
+        ],
+        "lezarasi_hiba_ci95": [
+         0.031977323625628384,
+         0.08207889946291165
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.766,
+        "lezarasi_hiba": 0.022112083773872332,
+        "hasznos_lef_ci95": [
+         0.7408144368858656,
+         0.7893280563800795
+        ],
+        "lezarasi_hiba_ci95": [
+         0.006778326202499392,
+         0.04248939206080059
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-4LR": {
+    "hasznos_lef": 0.435,
+    "hasznos_lef_ci95": [
+     0.238481031163958,
+     0.6336714997607219
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     0.024126393128949115,
+     0.047965531255368635
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.23176666666666665,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.998,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.5521101774835813
+      ],
+      "lezarasi_hiba_ci95": [
+       0.02352037017338581,
+       0.05886817226890753
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.6536,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5205780310357878
+        ],
+        "lezarasi_hiba_ci95": [
+         0.005076142131979695,
+         0.05113636363636364
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5858609197333781
+        ],
+        "lezarasi_hiba_ci95": [
+         0.027888446215139442,
+         0.07899157478676927
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.606,
+      "lezarasi_hiba": 0.027287319422150885,
+      "lezart": 0.623,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.202,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.7046637400673258
+      ],
+      "lezarasi_hiba_ci95": [
+       0.006423982869379015,
+       0.06060606060606061
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0417,
+      "tau": [
+       2.410464654471912
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.64,
+        "lezarasi_hiba": 0.041916167664670656,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.734091810966811
+        ],
+        "lezarasi_hiba_ci95": [
+         0.008049941702293043,
+         0.07810335327455915
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.572,
+        "lezarasi_hiba": 0.010380622837370242,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.6859144341801385
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.05102040816326531
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.699,
+      "lezarasi_hiba": 0.03185595567867036,
+      "lezart": 0.722,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.207,
+      "hasznos_lef_ci95": [
+       0.6541871921182266,
+       0.7275449101796407
+      ],
+      "lezarasi_hiba_ci95": [
+       0.01854708552807096,
+       0.05630352254895748
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0,
+      "tau": [
+       0.9847310074399964
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.656,
+        "lezarasi_hiba": 0.04927536231884058,
+        "hasznos_lef_ci95": [
+         0.6045074321017861,
+         0.6957628969052023
+        ],
+        "lezarasi_hiba_ci95": [
+         0.02870764373676367,
+         0.08211247538899917
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.742,
+        "lezarasi_hiba": 0.015915119363395226,
+        "hasznos_lef_ci95": [
+         0.688579083594222,
+         0.7709092720028975
+        ],
+        "lezarasi_hiba_ci95": [
+         0.003105110804386167,
+         0.03787968548039637
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-4R0": {
+    "hasznos_lef": 0.2723333333333333,
+    "hasznos_lef_ci95": [
+     0.1111111111111111,
+     0.36642286884039316
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     0.03124655586787366,
+     0.05422685710967073
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.4922222222222223,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.9979999999999999,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       0.040222798854688616,
+       0.08098187041471447
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.9997333333333334,
+      "tau": [
+       Infinity,
+       Infinity,
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.04783287322149076,
+         0.11661877346715879
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.011443538672717595,
+         0.06673942921820679
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.3473333333333333,
+      "lezarasi_hiba": 0.037855266300453785,
+      "lezart": 0.36100000000000004,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.46399999999999997,
+      "hasznos_lef_ci95": [
+       0.2979996200858936,
+       0.610020087725785
+      ],
+      "lezarasi_hiba_ci95": [
+       0.015209148441840067,
+       0.07264689397825339
+      ],
+      "nincs_munkapont": 0.3333333333333333,
+      "nincs_munkapont_replika": 0.2273,
+      "tau": [
+       Infinity,
+       0.8240899443626404,
+       0.29649630188941956
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.35333333333333333,
+        "lezarasi_hiba": 0.04332186424773225,
+        "hasznos_lef_ci95": [
+         0.30883277392194786,
+         0.6633076563958916
+        ],
+        "lezarasi_hiba_ci95": [
+         0.018536878275870475,
+         0.0857057795182202
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.3413333333333333,
+        "lezarasi_hiba": 0.032118503237636806,
+        "hasznos_lef_ci95": [
+         0.2813453146733754,
+         0.557639464849921
+        ],
+        "lezarasi_hiba_ci95": [
+         0.003986339012326293,
+         0.07024919511053554
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.4696666666666667,
+      "lezarasi_hiba": 0.038764137477765664,
+      "lezart": 0.48866666666666664,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.4403333333333333,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.5499516699292947
+      ],
+      "lezarasi_hiba_ci95": [
+       0.023378139341642856,
+       0.06372416516811437
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.24963333333333335,
+      "tau": [
+       1.1475509405136108,
+       2.5752344131469727,
+       2.199537754058838
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.5473333333333333,
+        "lezarasi_hiba": 0.05971780333764431,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5955141063274625
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0359505943632191,
+         0.0980707391538151
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.39199999999999996,
+        "lezarasi_hiba": 0.006169979459142226,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5114715668481548
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.02501338035637444
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-S": {
+    "hasznos_lef": 0.0,
+    "hasznos_lef_ci95": [
+     0.0,
+     0.0
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     NaN,
+     NaN
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 1.0,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       NaN,
+       NaN
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 1.0,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       NaN,
+       NaN
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 1.0,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       NaN,
+       NaN
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 1.0,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         NaN,
+         NaN
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-N": {
+    "hasznos_lef": 0.15233333333333335,
+    "hasznos_lef_ci95": [
+     0.0,
+     0.46773832408679983
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     0.02370502801706853,
+     0.05858878742916282
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.43726666666666664,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.5565593928933948
+      ],
+      "lezarasi_hiba_ci95": [
+       0.020134228187919462,
+       0.059800664451827246
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.6239,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5528624176552515
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.048295454545454544
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5590180559169631
+        ],
+        "lezarasi_hiba_ci95": [
+         0.026881720430107527,
+         0.08296943231441048
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.457,
+      "lezarasi_hiba": 0.015086206896551725,
+      "lezart": 0.464,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.536,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.5774236327053228
+      ],
+      "lezarasi_hiba_ci95": [
+       0.0,
+       0.08401111959822534
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.1453,
+      "tau": [
+       0.6284214335813105
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.42,
+        "lezarasi_hiba": 0.004739336492890996,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5625029205607476
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.06542056074766354
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.494,
+        "lezarasi_hiba": 0.023715415019762844,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.603540084830078
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.11191335740072202
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.47415762848650667
+      ],
+      "lezarasi_hiba_ci95": [
+       0.025418098675601443,
+       0.06754560810810813
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.5426,
+      "tau": [
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.43071617794829625
+        ],
+        "lezarasi_hiba_ci95": [
+         0.008241120218579236,
+         0.06746225959881438
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5160754425158961
+        ],
+        "lezarasi_hiba_ci95": [
+         0.024496298519407763,
+         0.07782649307768061
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-R": {
+    "hasznos_lef": 0.6655555555555556,
+    "hasznos_lef_ci95": [
+     0.6368326217519759,
+     0.6946249871416138
+    ],
+    "lezarasi_hiba": 0.02864144088433528,
+    "lezarasi_hiba_ci95": [
+     0.021018356306108623,
+     0.04445278753379934
+    ],
+    "hibafeltetel_pont": true,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 6.666666666666667e-05,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.642,
+      "lezarasi_hiba": 0.028251864259064258,
+      "lezart": 0.6606666666666666,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.3393333333333333,
+      "hasznos_lef_ci95": [
+       0.5893670081500169,
+       0.6854842039920288
+      ],
+      "lezarasi_hiba_ci95": [
+       0.015764457698246356,
+       0.046783966090447805
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.00013333333333333334,
+      "tau": [
+       2.486253625154495,
+       1.9481046915054323,
+       2.656012654304505
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6766666666666667,
+        "lezarasi_hiba": 0.026853812826156166,
+        "hasznos_lef_ci95": [
+         0.6276363066983123,
+         0.7119096000438985
+        ],
+        "lezarasi_hiba_ci95": [
+         0.010083975842474344,
+         0.05072683519489925
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.6073333333333334,
+        "lezarasi_hiba": 0.029804159503825797,
+        "hasznos_lef_ci95": [
+         0.5464957995701548,
+         0.669082566381043
+        ],
+        "lezarasi_hiba_ci95": [
+         0.014475972968212665,
+         0.05209752694939963
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.6613333333333333,
+      "lezarasi_hiba": 0.02603315962137312,
+      "lezart": 0.6789999999999999,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.321,
+      "hasznos_lef_ci95": [
+       0.6020516071911922,
+       0.7250178441785151
+      ],
+      "lezarasi_hiba_ci95": [
+       0.011281751806333893,
+       0.05652504191934452
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0,
+      "tau": [
+       2.210690212249756,
+       2.0531567573547362,
+       2.096416449546814
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6006666666666667,
+        "lezarasi_hiba": 0.02803587585957293,
+        "hasznos_lef_ci95": [
+         0.5323538666535412,
+         0.6996739661211019
+        ],
+        "lezarasi_hiba_ci95": [
+         0.009478609252505087,
+         0.07023061547081764
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.722,
+        "lezarasi_hiba": 0.024259483468903147,
+        "hasznos_lef_ci95": [
+         0.6682921406045145,
+         0.7620032046444707
+        ],
+        "lezarasi_hiba_ci95": [
+         0.007789940435499032,
+         0.04932461590764805
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.6933333333333334,
+      "lezarasi_hiba": 0.03163929877256846,
+      "lezart": 0.7160000000000001,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.284,
+      "hasznos_lef_ci95": [
+       0.6501849983181972,
+       0.7275770595070639
+      ],
+      "lezarasi_hiba_ci95": [
+       0.017247249320744205,
+       0.060257095018950185
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 6.666666666666667e-05,
+      "tau": [
+       1.0825701475143432,
+       1.5455802738666535,
+       1.793395447731018
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.6306666666666666,
+        "lezarasi_hiba": 0.045408721674980744,
+        "hasznos_lef_ci95": [
+         0.5768976171949886,
+         0.6779770474943905
+        ],
+        "lezarasi_hiba_ci95": [
+         0.024339583279723697,
+         0.08080301746631886
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.7559999999999999,
+        "lezarasi_hiba": 0.01985747480239697,
+        "hasznos_lef_ci95": [
+         0.717853839012489,
+         0.7829327499400623
+        ],
+        "lezarasi_hiba_ci95": [
+         0.006333239480778302,
+         0.04841282769870431
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-LR": {
+    "hasznos_lef": 0.5123333333333334,
+    "hasznos_lef_ci95": [
+     0.19117435326151797,
+     0.5797943900830881
+    ],
+    "lezarasi_hiba": 0.030130952334996398,
+    "lezarasi_hiba_ci95": [
+     0.021761863997702784,
+     0.04990747439271533
+    ],
+    "hibafeltetel_pont": true,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.11923333333333332,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.537,
+      "lezarasi_hiba": 0.0341726618705036,
+      "lezart": 0.556,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.444,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.6081369584406908
+      ],
+      "lezarasi_hiba_ci95": [
+       0.019016382156529964,
+       0.054945054945054944
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.2308,
+      "tau": [
+       2.499304650458253
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.532,
+        "lezarasi_hiba": 0.01845018450184502,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.6303798903527656
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0036533114087858613,
+         0.045454545454545456
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.542,
+        "lezarasi_hiba": 0.04912280701754386,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.5912283903188628
+        ],
+        "lezarasi_hiba_ci95": [
+         0.025157232704402517,
+         0.07720588235294118
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.494,
+      "lezarasi_hiba": 0.023715415019762844,
+      "lezart": 0.506,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.494,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.6235177865612648
+      ],
+      "lezarasi_hiba_ci95": [
+       0.004661462568439313,
+       0.05980142877524814
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.1201,
+      "tau": [
+       1.9016828563514845
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.45,
+        "lezarasi_hiba": 0.013157894736842105,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.617178386223089
+        ],
+        "lezarasi_hiba_ci95": [
+         0.0,
+         0.04797047970479705
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.538,
+        "lezarasi_hiba": 0.03237410071942446,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.635922889356181
+        ],
+        "lezarasi_hiba_ci95": [
+         0.006968641114982578,
+         0.08099767340983476
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.506,
+      "lezarasi_hiba": 0.032504780114722756,
+      "lezart": 0.523,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.477,
+      "hasznos_lef_ci95": [
+       0.4528393860997102,
+       0.6464759523216638
+      ],
+      "lezarasi_hiba_ci95": [
+       0.020011022044088177,
+       0.07352630261955306
+      ],
+      "nincs_munkapont": 0.0,
+      "nincs_munkapont_replika": 0.0068,
+      "tau": [
+       2.064766148921448
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.438,
+        "lezarasi_hiba": 0.022321428571428572,
+        "hasznos_lef_ci95": [
+         0.3760346304723915,
+         0.6092857700189317
+        ],
+        "lezarasi_hiba_ci95": [
+         0.006221855590062112,
+         0.0661764705882353
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.574,
+        "lezarasi_hiba": 0.04013377926421405,
+        "hasznos_lef_ci95": [
+         0.5142359400488281,
+         0.6906988555829702
+        ],
+        "lezarasi_hiba_ci95": [
+         0.021809968847352024,
+         0.08390963063781857
+        ]
+       }
+      }
+     }
+    }
+   },
+   "B1-R0": {
+    "hasznos_lef": 0.051666666666666666,
+    "hasznos_lef_ci95": [
+     0.04505342604773781,
+     0.1046733103332088
+    ],
+    "lezarasi_hiba": NaN,
+    "lezarasi_hiba_ci95": [
+     NaN,
+     NaN
+    ],
+    "hibafeltetel_pont": false,
+    "hibafeltetel_bizonytalan": false,
+    "nincs_munkapont_replika": 0.8780333333333333,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       0.04476163094325366,
+       0.07297069340613385
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.9998666666666667,
+      "tau": [
+       Infinity,
+       Infinity,
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.05441195751933919,
+         0.09568323778557371
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.023391608391608393,
+         0.04522005772005772
+        ]
+       }
+      }
+     },
+     "muszaki.hibaelharitas": {
+      "hasznos_lef": 0.155,
+      "lezarasi_hiba": 0.029227557411273485,
+      "lezart": 0.15966666666666665,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.8403333333333333,
+      "hasznos_lef_ci95": [
+       0.13516027814321344,
+       0.31189279731993297
+      ],
+      "lezarasi_hiba_ci95": [
+       0.012784330626502744,
+       0.07069532945202242
+      ],
+      "nincs_munkapont": 0.6666666666666666,
+      "nincs_munkapont_replika": 0.6396333333333334,
+      "tau": [
+       Infinity,
+       1.1474686861038208,
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.154,
+        "lezarasi_hiba": 0.029411764705882353,
+        "hasznos_lef_ci95": [
+         0.13385567621582847,
+         0.3420599615972543
+        ],
+        "lezarasi_hiba_ci95": [
+         0.009259259259259259,
+         0.07306922131707091
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.156,
+        "lezarasi_hiba": 0.029045643153526972,
+        "hasznos_lef_ci95": [
+         0.1278942322283381,
+         0.2839274547218369
+        ],
+        "lezarasi_hiba_ci95": [
+         0.004608294930875576,
+         0.07964601769911504
+        ]
+       }
+      }
+     },
+     "szabaly.koltsegelszamolas": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0,
+      "hasznos_lef_ci95": [
+       0.0,
+       0.0
+      ],
+      "lezarasi_hiba_ci95": [
+       0.04456663560111836,
+       0.10759904652309715
+      ],
+      "nincs_munkapont": 1.0,
+      "nincs_munkapont_replika": 0.9946,
+      "tau": [
+       Infinity,
+       Infinity,
+       Infinity
+      ],
+      "nyelv": {
+       "hu": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.06531620553359684,
+         0.14798359383660348
+        ]
+       },
+       "en": {
+        "hasznos_lef": 0.0,
+        "lezarasi_hiba": NaN,
+        "hasznos_lef_ci95": [
+         0.0,
+         0.0
+        ],
+        "lezarasi_hiba_ci95": [
+         0.005162747442540189,
+         0.04799703019303745
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  "kovetkeztetes": {
+   "behozza (B1-4S − B1-R)": {
+    "delta": -0.2962222222222222,
+    "ci95": [
+     -0.34172809240311197,
+     -0.15203824452944686
+    ],
+    "p": 0.0,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "delta": -0.642,
+      "ci95": [
+       -0.6808080808080806,
+       -0.2211076625257501
+      ]
+     },
+     "muszaki.hibaelharitas": {
+      "delta": -0.06933333333333336,
+      "ci95": [
+       -0.18470804630570883,
+       0.021021984472132615
+      ]
+     },
+     "szabaly.koltsegelszamolas": {
+      "delta": -0.17733333333333334,
+      "ci95": [
+       -0.22984014790176138,
+       -0.13393275948849315
+      ]
+     }
+    },
+    "itelet": "nem hozza be"
+   },
+   "javít mellette (B1-4R − B1-4S)": {
+    "delta": 0.2788888888888888,
+    "ci95": [
+     0.07818692608336476,
+     0.3351641061818943
+    ],
+    "p": 0.001,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "delta": 0.594,
+      "ci95": [
+       0.0,
+       0.6743201538396466
+      ]
+     },
+     "muszaki.hibaelharitas": {
+      "delta": 0.03700000000000003,
+      "ci95": [
+       -0.05544430752034928,
+       0.1625061842918986
+      ]
+     },
+     "szabaly.koltsegelszamolas": {
+      "delta": 0.20566666666666666,
+      "ci95": [
+       0.1716224248564673,
+       0.25798913045290006
+      ]
+     }
+    },
+    "itelet": "javít mellette"
+   },
+   "B1-4R − B1-R (leíró)": {
+    "delta": -0.017333333333333423,
+    "ci95": [
+     -0.2143683351282336,
+     0.019744319162621336
+    ],
+    "p": 0.3802,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "delta": -0.04800000000000004,
+      "ci95": [
+       -0.6378113456860566,
+       0.014966462109319453
+      ]
+     },
+     "muszaki.hibaelharitas": {
+      "delta": -0.032333333333333325,
+      "ci95": [
+       -0.09789978821991013,
+       0.046603888601648207
+      ]
+     },
+     "szabaly.koltsegelszamolas": {
+      "delta": 0.02833333333333332,
+      "ci95": [
+       0.006295247693731704,
+       0.059179575764329966
+      ]
+     }
+    }
+   },
+   "B1-R − B1-S (06)": {
+    "delta": 0.6655555555555556,
+    "ci95": [
+     0.6368326217519759,
+     0.6946249871416138
+    ],
+    "p": 0.0,
+    "csaladok": {
+     "penzugy.bankparositas": {
+      "delta": 0.642,
+      "ci95": [
+       0.5893670081500169,
+       0.6854842039920288
+      ]
+     },
+     "muszaki.hibaelharitas": {
+      "delta": 0.6613333333333333,
+      "ci95": [
+       0.6020516071911922,
+       0.7250178441785151
+      ]
+     },
+     "szabaly.koltsegelszamolas": {
+      "delta": 0.6933333333333334,
+      "ci95": [
+       0.6501849983181972,
+       0.7275770595070639
+      ]
+     }
+    }
+   }
+  }
+ },
+ "csaladok": {
+  "penzugy.bankparositas": {
+   "n_cal": 500,
+   "n_teszt": 1000,
+   "n_sablon_cal": 30,
+   "n_sablon_teszt": 60,
+   "felso_korlat": 0.8,
+   "lezarhato_arany": {
+    "keret4": 0.998,
+    "keret2": 1.0
+   },
+   "helyes_dontes": {
+    "keret4": 0.732,
+    "keret2": 0.726
+   },
+   "tevesztes": {
+    "keret4": {
+     "MATCH": {
+      "SELECT": 600,
+      "NONE": 0,
+      "MISSING": 0,
+      "OOS": 0
+     },
+     "NO_MATCH": {
+      "SELECT": 66,
+      "NONE": 132,
+      "MISSING": 2,
+      "OOS": 0
+     },
+     "MISSING_DATA": {
+      "SELECT": 99,
+      "NONE": 1,
+      "MISSING": 0,
+      "OOS": 0
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 0,
+      "NONE": 100,
+      "MISSING": 0,
+      "OOS": 0
+     }
+    },
+    "keret2": {
+     "MATCH": {
+      "SELECT": 600,
+      "NONE": 0
+     },
+     "NO_MATCH": {
+      "SELECT": 74,
+      "NONE": 126
+     },
+     "MISSING_DATA": {
+      "SELECT": 98,
+      "NONE": 2
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 0,
+      "NONE": 100
+     }
+    }
+   },
+   "pont": {
+    "k1": {
+     "B1-4S": 0.09515216080809279,
+     "B1-4R": 0.04914194308707546,
+     "B1-4LR": 0.07071054948390229,
+     "B1-4R0": 0.10720953979067227,
+     "B1-S": 0.13970823337749763,
+     "B1-N": 0.10018909141031025,
+     "B1-R": 0.050256625215544394,
+     "B1-LR": 0.06431773639847274,
+     "B1-R0": 0.12589512317448326
+    },
+    "k1_enyhe": {
+     "B1-4S": 0.05285613428676014,
+     "B1-4R": 0.03641710171814743,
+     "B1-4LR": 0.048494603455534746,
+     "B1-4R0": 0.08427880772691865,
+     "B1-S": 0.04219456544186782,
+     "B1-N": 0.08108028798103684,
+     "B1-R": 0.03831194979065039,
+     "B1-LR": 0.043768593033628296,
+     "B1-R0": 0.08206930689553092
+    },
+    "eaurc": {
+     "B1-4S": 0.05538374164667346,
+     "B1-4R": 0.00937352392565613,
+     "B1-4LR": 0.030942130322482962,
+     "B1-4R0": 0.06744112062925295,
+     "B1-S": 0.09804030943991714,
+     "B1-N": 0.05852116747272976,
+     "B1-R": 0.008588701277963899,
+     "B1-LR": 0.022649812460892246,
+     "B1-R0": 0.08422719923690276
+    },
+    "k1_d20": {
+     "B1-4S": {
+      "select": 0.051983250505234814,
+      "nem_select": 0.7311360007223228
+     },
+     "B1-4R": {
+      "select": 0.034672306410125496,
+      "nem_select": 0.11803579616018406
+     },
+     "B1-4LR": {
+      "select": 0.05335960418464323,
+      "nem_select": 0.2060752836756988
+     },
+     "B1-4R0": {
+      "select": 0.06994898616786573,
+      "nem_select": 0.36850500489794885
+     },
+     "B1-S": {
+      "select": 0.04740558529478577,
+      "nem_select": 0.7772390997236319
+     },
+     "B1-N": {
+      "select": 0.04740558529478577,
+      "nem_select": 0.7772390997236319
+     },
+     "B1-R": {
+      "select": 0.03579019278218376,
+      "nem_select": 0.13471446998066053
+     },
+     "B1-LR": {
+      "select": 0.04656696501420112,
+      "nem_select": 0.164397305434083
+     },
+     "B1-R0": {
+      "select": 0.07182201004604083,
+      "nem_select": 0.6068536260297389
+     }
+    },
+    "k2": {
+     "B1-4S": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.998
+     },
+     "B1-4R": {
+      "hasznos_lef": 0.594,
+      "lezarasi_hiba": 0.024624350433119627,
+      "lezart": 0.609,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.38899999999999996
+     },
+     "B1-4LR": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.998
+     },
+     "B1-4R0": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.002,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.9979999999999999
+     },
+     "B1-S": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     },
+     "B1-N": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     },
+     "B1-R": {
+      "hasznos_lef": 0.642,
+      "lezarasi_hiba": 0.028251864259064258,
+      "lezart": 0.6606666666666666,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.3393333333333333
+     },
+     "B1-LR": {
+      "hasznos_lef": 0.537,
+      "lezarasi_hiba": 0.0341726618705036,
+      "lezart": 0.556,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.444
+     },
+     "B1-R0": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     }
+    },
+    "k2_nincs_munkapont": {
+     "B1-4S": 1.0,
+     "B1-4R": 0.0,
+     "B1-4LR": 1.0,
+     "B1-4R0": 1.0,
+     "B1-S": 1.0,
+     "B1-N": 1.0,
+     "B1-R": 0.0,
+     "B1-LR": 0.0,
+     "B1-R0": 1.0
+    },
+    "tau": {
+     "B1-4S": [
+      Infinity
+     ],
+     "B1-4R": [
+      2.803396987915039,
+      3.091438460350037,
+      2.7176027536392215
+     ],
+     "B1-4LR": [
+      Infinity
+     ],
+     "B1-4R0": [
+      Infinity,
+      Infinity,
+      Infinity
+     ],
+     "B1-S": [
+      Infinity
+     ],
+     "B1-N": [
+      Infinity
+     ],
+     "B1-R": [
+      2.486253625154495,
+      1.9481046915054323,
+      2.656012654304505
+     ],
+     "B1-LR": [
+      2.499304650458253
+     ],
+     "B1-R0": [
+      Infinity,
+      Infinity,
+      Infinity
+     ]
+    },
+    "k1_nyelv": {
+     "hu": {
+      "B1-4S": 0.08458921453676212,
+      "B1-4R": 0.04461329240904268,
+      "B1-4LR": 0.06544416702958294,
+      "B1-4R0": 0.08794408437807427,
+      "B1-S": 0.12396034110308989,
+      "B1-N": 0.09433219261715667,
+      "B1-R": 0.046786478234494666,
+      "B1-LR": 0.05483268396105154,
+      "B1-R0": 0.10713987701869997
+     },
+     "en": {
+      "B1-4S": 0.10332346574000256,
+      "B1-4R": 0.05399123992886146,
+      "B1-4LR": 0.07612308979509157,
+      "B1-4R0": 0.11399710912625632,
+      "B1-S": 0.15566905437863188,
+      "B1-N": 0.10491868609625024,
+      "B1-R": 0.05404574230763853,
+      "B1-LR": 0.07227368353395841,
+      "B1-R0": 0.1140477024699633
+     }
+    },
+    "k2_nyelv": {
+     "hu": {
+      "B1-4S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.6093333333333333,
+       "lezarasi_hiba": 0.019110027564133842,
+       "lezart": 0.6213333333333333,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.3786666666666667
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-R": {
+       "hasznos_lef": 0.6766666666666667,
+       "lezarasi_hiba": 0.026853812826156166,
+       "lezart": 0.6953333333333332,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.30466666666666664
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.532,
+       "lezarasi_hiba": 0.01845018450184502,
+       "lezart": 0.542,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.458
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      }
+     },
+     "en": {
+      "B1-4S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.004,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.996
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.5786666666666668,
+       "lezarasi_hiba": 0.030271106383934775,
+       "lezart": 0.5966666666666667,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.004,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.3993333333333333
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.004,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.996
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.004,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.996
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-R": {
+       "hasznos_lef": 0.6073333333333334,
+       "lezarasi_hiba": 0.029804159503825797,
+       "lezart": 0.626,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.37399999999999994
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.542,
+       "lezarasi_hiba": 0.04912280701754386,
+       "lezart": 0.57,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.43
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      }
+     }
+    },
+    "n_nyelv": {
+     "hu": 500,
+     "en": 500
+    },
+    "k2_nincs_munkapont_replika": {
+     "B1-4S": 0.9021,
+     "B1-4R": 0.17836666666666667,
+     "B1-4LR": 0.6536,
+     "B1-4R0": 0.9997333333333334,
+     "B1-S": 1.0,
+     "B1-N": 0.6239,
+     "B1-R": 0.00013333333333333334,
+     "B1-LR": 0.2308,
+     "B1-R0": 0.9998666666666667
+    }
+   }
+  },
+  "muszaki.hibaelharitas": {
+   "n_cal": 500,
+   "n_teszt": 1000,
+   "n_sablon_cal": 30,
+   "n_sablon_teszt": 60,
+   "felso_korlat": 0.8,
+   "lezarhato_arany": {
+    "keret4": 0.825,
+    "keret2": 1.0
+   },
+   "helyes_dontes": {
+    "keret4": 0.85,
+    "keret2": 0.746
+   },
+   "tevesztes": {
+    "keret4": {
+     "MATCH": {
+      "SELECT": 598,
+      "NONE": 2,
+      "MISSING": 0,
+      "OOS": 0
+     },
+     "NO_MATCH": {
+      "SELECT": 61,
+      "NONE": 129,
+      "MISSING": 8,
+      "OOS": 2
+     },
+     "MISSING_DATA": {
+      "SELECT": 15,
+      "NONE": 18,
+      "MISSING": 67,
+      "OOS": 0
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 0,
+      "NONE": 2,
+      "MISSING": 37,
+      "OOS": 61
+     }
+    },
+    "keret2": {
+     "MATCH": {
+      "SELECT": 586,
+      "NONE": 14
+     },
+     "NO_MATCH": {
+      "SELECT": 37,
+      "NONE": 163
+     },
+     "MISSING_DATA": {
+      "SELECT": 30,
+      "NONE": 70
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 1,
+      "NONE": 99
+     }
+    }
+   },
+   "pont": {
+    "k1": {
+     "B1-4S": 0.04058364044063651,
+     "B1-4R": 0.022931350693250283,
+     "B1-4LR": 0.03735198049536817,
+     "B1-4R0": 0.10491066839576384,
+     "B1-S": 0.2276854148013448,
+     "B1-N": 0.08410575699560582,
+     "B1-R": 0.04269595054704727,
+     "B1-LR": 0.055461589165471566,
+     "B1-R0": 0.1052441615550666
+    },
+    "k1_enyhe": {
+     "B1-4S": 0.024074187089987327,
+     "B1-4R": 0.011292857633707127,
+     "B1-4LR": 0.01495699194528261,
+     "B1-4R0": 0.02710877142462891,
+     "B1-S": 0.01500173498096889,
+     "B1-N": 0.041295857254763195,
+     "B1-R": 0.02006580750352342,
+     "B1-LR": 0.02891349250195874,
+     "B1-R0": 0.04283621960384496
+    },
+    "eaurc": {
+     "B1-4S": 0.028649757719621055,
+     "B1-4R": 0.010997467972234826,
+     "B1-4LR": 0.025418097774352715,
+     "B1-4R0": 0.09297678567474837,
+     "B1-S": 0.19215860471021406,
+     "B1-N": 0.04857894690447509,
+     "B1-R": 0.007169140455916538,
+     "B1-LR": 0.019934779074340832,
+     "B1-R0": 0.06971735146393587
+    },
+    "k1_d20": {
+     "B1-4S": {
+      "select": 0.01564808959848506,
+      "nem_select": 0.16984057737596364
+     },
+     "B1-4R": {
+      "select": 0.01191496998303612,
+      "nem_select": 0.09140097720129049
+     },
+     "B1-4LR": {
+      "select": 0.013162024673691878,
+      "nem_select": 0.09796553287614639
+     },
+     "B1-4R0": {
+      "select": 0.024908573500768746,
+      "nem_select": 0.322224996595886
+     },
+     "B1-S": {
+      "select": 0.016024694969536964,
+      "nem_select": 0.7288814700382187
+     },
+     "B1-N": {
+      "select": 0.016024694969536964,
+      "nem_select": 0.7288814700382187
+     },
+     "B1-R": {
+      "select": 0.009135255179620147,
+      "nem_select": 0.2166703324071563
+     },
+     "B1-LR": {
+      "select": 0.01451386428806296,
+      "nem_select": 0.25056098183894193
+     },
+     "B1-R0": {
+      "select": 0.028730416798346186,
+      "nem_select": 0.5853196604708739
+     }
+    },
+    "k2": {
+     "B1-4S": {
+      "hasznos_lef": 0.592,
+      "lezarasi_hiba": 0.04669887278582931,
+      "lezart": 0.621,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.204
+     },
+     "B1-4R": {
+      "hasznos_lef": 0.629,
+      "lezarasi_hiba": 0.012558070137770855,
+      "lezart": 0.637,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.18800000000000003
+     },
+     "B1-4LR": {
+      "hasznos_lef": 0.606,
+      "lezarasi_hiba": 0.027287319422150885,
+      "lezart": 0.623,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.202
+     },
+     "B1-4R0": {
+      "hasznos_lef": 0.3473333333333333,
+      "lezarasi_hiba": 0.037855266300453785,
+      "lezart": 0.36100000000000004,
+      "helyes_adatbekeres": 0.67,
+      "helyes_tovabbitas": 0.61,
+      "nem_lezart_adatbekeres": 0.112,
+      "nem_lezart_tovabbitas": 0.063,
+      "nem_lezart_tau_alatt": 0.46399999999999997
+     },
+     "B1-S": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     },
+     "B1-N": {
+      "hasznos_lef": 0.457,
+      "lezarasi_hiba": 0.015086206896551725,
+      "lezart": 0.464,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.536
+     },
+     "B1-R": {
+      "hasznos_lef": 0.6613333333333333,
+      "lezarasi_hiba": 0.02603315962137312,
+      "lezart": 0.6789999999999999,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.321
+     },
+     "B1-LR": {
+      "hasznos_lef": 0.494,
+      "lezarasi_hiba": 0.023715415019762844,
+      "lezart": 0.506,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.494
+     },
+     "B1-R0": {
+      "hasznos_lef": 0.155,
+      "lezarasi_hiba": 0.029227557411273485,
+      "lezart": 0.15966666666666665,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.8403333333333333
+     }
+    },
+    "k2_nincs_munkapont": {
+     "B1-4S": 0.0,
+     "B1-4R": 0.0,
+     "B1-4LR": 0.0,
+     "B1-4R0": 0.3333333333333333,
+     "B1-S": 1.0,
+     "B1-N": 0.0,
+     "B1-R": 0.0,
+     "B1-LR": 0.0,
+     "B1-R0": 0.6666666666666666
+    },
+    "tau": {
+     "B1-4S": [
+      0.481436278284449
+     ],
+     "B1-4R": [
+      3.311546564102173,
+      2.9338439226150514,
+      3.3495062351226803
+     ],
+     "B1-4LR": [
+      2.410464654471912
+     ],
+     "B1-4R0": [
+      Infinity,
+      0.8240899443626404,
+      0.29649630188941956
+     ],
+     "B1-S": [
+      Infinity
+     ],
+     "B1-N": [
+      0.6284214335813105
+     ],
+     "B1-R": [
+      2.210690212249756,
+      2.0531567573547362,
+      2.096416449546814
+     ],
+     "B1-LR": [
+      1.9016828563514845
+     ],
+     "B1-R0": [
+      Infinity,
+      1.1474686861038208,
+      Infinity
+     ]
+    },
+    "k1_nyelv": {
+     "hu": {
+      "B1-4S": 0.03954903123644726,
+      "B1-4R": 0.022344956096562906,
+      "B1-4LR": 0.029264984024826933,
+      "B1-4R0": 0.10147603469422528,
+      "B1-S": 0.19898754347040346,
+      "B1-N": 0.08203196414626877,
+      "B1-R": 0.048036379216192436,
+      "B1-LR": 0.05587683944697243,
+      "B1-R0": 0.1038625992008917
+     },
+     "en": {
+      "B1-4S": 0.04001721400065785,
+      "B1-4R": 0.023633812168259664,
+      "B1-4LR": 0.04274286079542315,
+      "B1-4R0": 0.09831502355126642,
+      "B1-S": 0.2516011074918868,
+      "B1-N": 0.08417681114104694,
+      "B1-R": 0.038512856033043365,
+      "B1-LR": 0.053924756883691555,
+      "B1-R0": 0.08567258849687302
+     }
+    },
+    "k2_nyelv": {
+     "hu": {
+      "B1-4S": {
+       "hasznos_lef": 0.6,
+       "lezarasi_hiba": 0.03536977491961415,
+       "lezart": 0.622,
+       "helyes_adatbekeres": 0.52,
+       "helyes_tovabbitas": 0.54,
+       "nem_lezart_adatbekeres": 0.098,
+       "nem_lezart_tovabbitas": 0.054,
+       "nem_lezart_tau_alatt": 0.226
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.63,
+       "lezarasi_hiba": 0.018669958666485974,
+       "lezart": 0.642,
+       "helyes_adatbekeres": 0.52,
+       "helyes_tovabbitas": 0.54,
+       "nem_lezart_adatbekeres": 0.09800000000000002,
+       "nem_lezart_tovabbitas": 0.054,
+       "nem_lezart_tau_alatt": 0.206
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.64,
+       "lezarasi_hiba": 0.041916167664670656,
+       "lezart": 0.668,
+       "helyes_adatbekeres": 0.52,
+       "helyes_tovabbitas": 0.54,
+       "nem_lezart_adatbekeres": 0.098,
+       "nem_lezart_tovabbitas": 0.054,
+       "nem_lezart_tau_alatt": 0.18
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.35333333333333333,
+       "lezarasi_hiba": 0.04332186424773225,
+       "lezart": 0.36933333333333335,
+       "helyes_adatbekeres": 0.52,
+       "helyes_tovabbitas": 0.54,
+       "nem_lezart_adatbekeres": 0.09800000000000002,
+       "nem_lezart_tovabbitas": 0.054,
+       "nem_lezart_tau_alatt": 0.47866666666666663
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.42,
+       "lezarasi_hiba": 0.004739336492890996,
+       "lezart": 0.422,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.578
+      },
+      "B1-R": {
+       "hasznos_lef": 0.6006666666666667,
+       "lezarasi_hiba": 0.02803587585957293,
+       "lezart": 0.618,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.38199999999999995
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.45,
+       "lezarasi_hiba": 0.013157894736842105,
+       "lezart": 0.456,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.544
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.154,
+       "lezarasi_hiba": 0.029411764705882353,
+       "lezart": 0.15866666666666665,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.8413333333333334
+      }
+     },
+     "en": {
+      "B1-4S": {
+       "hasznos_lef": 0.584,
+       "lezarasi_hiba": 0.05806451612903226,
+       "lezart": 0.62,
+       "helyes_adatbekeres": 0.82,
+       "helyes_tovabbitas": 0.68,
+       "nem_lezart_adatbekeres": 0.126,
+       "nem_lezart_tovabbitas": 0.072,
+       "nem_lezart_tau_alatt": 0.182
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.628,
+       "lezarasi_hiba": 0.006330940099530981,
+       "lezart": 0.632,
+       "helyes_adatbekeres": 0.82,
+       "helyes_tovabbitas": 0.68,
+       "nem_lezart_adatbekeres": 0.126,
+       "nem_lezart_tovabbitas": 0.072,
+       "nem_lezart_tau_alatt": 0.17
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.572,
+       "lezarasi_hiba": 0.010380622837370242,
+       "lezart": 0.578,
+       "helyes_adatbekeres": 0.82,
+       "helyes_tovabbitas": 0.68,
+       "nem_lezart_adatbekeres": 0.126,
+       "nem_lezart_tovabbitas": 0.072,
+       "nem_lezart_tau_alatt": 0.224
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.3413333333333333,
+       "lezarasi_hiba": 0.032118503237636806,
+       "lezart": 0.3526666666666667,
+       "helyes_adatbekeres": 0.82,
+       "helyes_tovabbitas": 0.68,
+       "nem_lezart_adatbekeres": 0.126,
+       "nem_lezart_tovabbitas": 0.072,
+       "nem_lezart_tau_alatt": 0.44933333333333336
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.494,
+       "lezarasi_hiba": 0.023715415019762844,
+       "lezart": 0.506,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.494
+      },
+      "B1-R": {
+       "hasznos_lef": 0.722,
+       "lezarasi_hiba": 0.024259483468903147,
+       "lezart": 0.7399999999999999,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.26
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.538,
+       "lezarasi_hiba": 0.03237410071942446,
+       "lezart": 0.556,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.444
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.156,
+       "lezarasi_hiba": 0.029045643153526972,
+       "lezart": 0.16066666666666665,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.8393333333333333
+      }
+     }
+    },
+    "n_nyelv": {
+     "hu": 500,
+     "en": 500
+    },
+    "k2_nincs_munkapont_replika": {
+     "B1-4S": 0.0131,
+     "B1-4R": 0.0,
+     "B1-4LR": 0.0417,
+     "B1-4R0": 0.2273,
+     "B1-S": 1.0,
+     "B1-N": 0.1453,
+     "B1-R": 0.0,
+     "B1-LR": 0.1201,
+     "B1-R0": 0.6396333333333334
+    }
+   }
+  },
+  "szabaly.koltsegelszamolas": {
+   "n_cal": 500,
+   "n_teszt": 1000,
+   "n_sablon_cal": 30,
+   "n_sablon_teszt": 60,
+   "felso_korlat": 0.8,
+   "lezarhato_arany": {
+    "keret4": 0.929,
+    "keret2": 1.0
+   },
+   "helyes_dontes": {
+    "keret4": 0.805,
+    "keret2": 0.739
+   },
+   "tevesztes": {
+    "keret4": {
+     "MATCH": {
+      "SELECT": 600,
+      "NONE": 0,
+      "MISSING": 0,
+      "OOS": 0
+     },
+     "NO_MATCH": {
+      "SELECT": 51,
+      "NONE": 149,
+      "MISSING": 0,
+      "OOS": 0
+     },
+     "MISSING_DATA": {
+      "SELECT": 49,
+      "NONE": 0,
+      "MISSING": 51,
+      "OOS": 0
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 0,
+      "NONE": 80,
+      "MISSING": 4,
+      "OOS": 16
+     }
+    },
+    "keret2": {
+     "MATCH": {
+      "SELECT": 600,
+      "NONE": 0
+     },
+     "NO_MATCH": {
+      "SELECT": 53,
+      "NONE": 147
+     },
+     "MISSING_DATA": {
+      "SELECT": 100,
+      "NONE": 0
+     },
+     "OUT_OF_SCOPE": {
+      "SELECT": 1,
+      "NONE": 99
+     }
+    }
+   },
+   "pont": {
+    "k1": {
+     "B1-4S": 0.06292811178594884,
+     "B1-4R": 0.02867632985283215,
+     "B1-4LR": 0.03263394568881705,
+     "B1-4R0": 0.06425841800968149,
+     "B1-S": 0.3043746824744568,
+     "B1-N": 0.11258758575945532,
+     "B1-R": 0.043793213854510314,
+     "B1-LR": 0.06754065233764903,
+     "B1-R0": 0.13068097269334808
+    },
+    "k1_enyhe": {
+     "B1-4S": 0.0341625292691067,
+     "B1-4R": 0.019532668608243427,
+     "B1-4LR": 0.017487001151017458,
+     "B1-4R0": 0.051717623616476034,
+     "B1-S": 0.0538588999818017,
+     "B1-N": 0.09095463872111523,
+     "B1-R": 0.03679421658308051,
+     "B1-LR": 0.05490933125774231,
+     "B1-R0": 0.10110525021886169
+    },
+    "eaurc": {
+     "B1-4S": 0.0424456144809518,
+     "B1-4R": 0.008193832547835102,
+     "B1-4LR": 0.012151448383820002,
+     "B1-4R0": 0.043775920704684446,
+     "B1-S": 0.2667602212431849,
+     "B1-N": 0.07497312452818342,
+     "B1-R": 0.006178752623238408,
+     "B1-LR": 0.02992619110637712,
+     "B1-R0": 0.09306651146207617
+    },
+    "k1_d20": {
+     "B1-4S": {
+      "select": 0.02101951809927677,
+      "nem_select": 0.4363969660085602
+     },
+     "B1-4R": {
+      "select": 0.020106864455897263,
+      "nem_select": 0.05680694901546161
+     },
+     "B1-4LR": {
+      "select": 0.01884010633052173,
+      "nem_select": 0.06468641829342832
+     },
+     "B1-4R0": {
+      "select": 0.03932286594197675,
+      "nem_select": 0.13210006327359322
+     },
+     "B1-S": {
+      "select": 0.05999769755035826,
+      "nem_select": 0.7639795601853445
+     },
+     "B1-N": {
+      "select": 0.05999769755035826,
+      "nem_select": 0.7639795601853445
+     },
+     "B1-R": {
+      "select": 0.034357505743570514,
+      "nem_select": 0.0955719899239089
+     },
+     "B1-LR": {
+      "select": 0.05799478232569305,
+      "nem_select": 0.10239138955082162
+     },
+     "B1-R0": {
+      "select": 0.08306827047644204,
+      "nem_select": 0.5771998285888021
+     }
+    },
+    "k2": {
+     "B1-4S": {
+      "hasznos_lef": 0.516,
+      "lezarasi_hiba": 0.02824858757062147,
+      "lezart": 0.531,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.398
+     },
+     "B1-4R": {
+      "hasznos_lef": 0.7216666666666667,
+      "lezarasi_hiba": 0.03819340311009781,
+      "lezart": 0.7503333333333333,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.17866666666666667
+     },
+     "B1-4LR": {
+      "hasznos_lef": 0.699,
+      "lezarasi_hiba": 0.03185595567867036,
+      "lezart": 0.722,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.207
+     },
+     "B1-4R0": {
+      "hasznos_lef": 0.4696666666666667,
+      "lezarasi_hiba": 0.038764137477765664,
+      "lezart": 0.48866666666666664,
+      "helyes_adatbekeres": 0.51,
+      "helyes_tovabbitas": 0.16,
+      "nem_lezart_adatbekeres": 0.055,
+      "nem_lezart_tovabbitas": 0.016,
+      "nem_lezart_tau_alatt": 0.4403333333333333
+     },
+     "B1-S": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     },
+     "B1-N": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     },
+     "B1-R": {
+      "hasznos_lef": 0.6933333333333334,
+      "lezarasi_hiba": 0.03163929877256846,
+      "lezart": 0.7160000000000001,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.284
+     },
+     "B1-LR": {
+      "hasznos_lef": 0.506,
+      "lezarasi_hiba": 0.032504780114722756,
+      "lezart": 0.523,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 0.477
+     },
+     "B1-R0": {
+      "hasznos_lef": 0.0,
+      "lezarasi_hiba": NaN,
+      "lezart": 0.0,
+      "helyes_adatbekeres": 0.0,
+      "helyes_tovabbitas": 0.0,
+      "nem_lezart_adatbekeres": 0.0,
+      "nem_lezart_tovabbitas": 0.0,
+      "nem_lezart_tau_alatt": 1.0
+     }
+    },
+    "k2_nincs_munkapont": {
+     "B1-4S": 0.0,
+     "B1-4R": 0.0,
+     "B1-4LR": 0.0,
+     "B1-4R0": 0.0,
+     "B1-S": 1.0,
+     "B1-N": 1.0,
+     "B1-R": 0.0,
+     "B1-LR": 0.0,
+     "B1-R0": 1.0
+    },
+    "tau": {
+     "B1-4S": [
+      0.7518652229343785
+     ],
+     "B1-4R": [
+      0.23920171856880187,
+      0.3530982881784439,
+      0.4966807186603546
+     ],
+     "B1-4LR": [
+      0.9847310074399964
+     ],
+     "B1-4R0": [
+      1.1475509405136108,
+      2.5752344131469727,
+      2.199537754058838
+     ],
+     "B1-S": [
+      Infinity
+     ],
+     "B1-N": [
+      Infinity
+     ],
+     "B1-R": [
+      1.0825701475143432,
+      1.5455802738666535,
+      1.793395447731018
+     ],
+     "B1-LR": [
+      2.064766148921448
+     ],
+     "B1-R0": [
+      Infinity,
+      Infinity,
+      Infinity
+     ]
+    },
+    "k1_nyelv": {
+     "hu": {
+      "B1-4S": 0.07370859990464745,
+      "B1-4R": 0.03522121395049272,
+      "B1-4LR": 0.036825662620564074,
+      "B1-4R0": 0.0589493750315688,
+      "B1-S": 0.3347348950200368,
+      "B1-N": 0.12394377189543927,
+      "B1-R": 0.06229103135206417,
+      "B1-LR": 0.07616510693155099,
+      "B1-R0": 0.12848587629868716
+     },
+     "en": {
+      "B1-4S": 0.05330848229410532,
+      "B1-4R": 0.02447583645889116,
+      "B1-4LR": 0.031943802616349104,
+      "B1-4R0": 0.04761901139634105,
+      "B1-S": 0.3059851521740072,
+      "B1-N": 0.09825020995481652,
+      "B1-R": 0.02881391783141256,
+      "B1-LR": 0.06015315040913315,
+      "B1-R0": 0.0913397780609223
+     }
+    },
+    "k2_nyelv": {
+     "hu": {
+      "B1-4S": {
+       "hasznos_lef": 0.476,
+       "lezarasi_hiba": 0.032520325203252036,
+       "lezart": 0.492,
+       "helyes_adatbekeres": 0.68,
+       "helyes_tovabbitas": 0.1,
+       "nem_lezart_adatbekeres": 0.07,
+       "nem_lezart_tovabbitas": 0.01,
+       "nem_lezart_tau_alatt": 0.428
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.6773333333333333,
+       "lezarasi_hiba": 0.05575759861357108,
+       "lezart": 0.7173333333333334,
+       "helyes_adatbekeres": 0.68,
+       "helyes_tovabbitas": 0.10000000000000002,
+       "nem_lezart_adatbekeres": 0.07,
+       "nem_lezart_tovabbitas": 0.01,
+       "nem_lezart_tau_alatt": 0.20266666666666666
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.656,
+       "lezarasi_hiba": 0.04927536231884058,
+       "lezart": 0.69,
+       "helyes_adatbekeres": 0.68,
+       "helyes_tovabbitas": 0.1,
+       "nem_lezart_adatbekeres": 0.07,
+       "nem_lezart_tovabbitas": 0.01,
+       "nem_lezart_tau_alatt": 0.23
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.5473333333333333,
+       "lezarasi_hiba": 0.05971780333764431,
+       "lezart": 0.5826666666666668,
+       "helyes_adatbekeres": 0.68,
+       "helyes_tovabbitas": 0.10000000000000002,
+       "nem_lezart_adatbekeres": 0.07,
+       "nem_lezart_tovabbitas": 0.01,
+       "nem_lezart_tau_alatt": 0.3373333333333333
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-R": {
+       "hasznos_lef": 0.6306666666666666,
+       "lezarasi_hiba": 0.045408721674980744,
+       "lezart": 0.6606666666666667,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.3393333333333333
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.438,
+       "lezarasi_hiba": 0.022321428571428572,
+       "lezart": 0.448,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.552
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      }
+     },
+     "en": {
+      "B1-4S": {
+       "hasznos_lef": 0.556,
+       "lezarasi_hiba": 0.02456140350877193,
+       "lezart": 0.57,
+       "helyes_adatbekeres": 0.34,
+       "helyes_tovabbitas": 0.22,
+       "nem_lezart_adatbekeres": 0.04,
+       "nem_lezart_tovabbitas": 0.022,
+       "nem_lezart_tau_alatt": 0.368
+      },
+      "B1-4R": {
+       "hasznos_lef": 0.766,
+       "lezarasi_hiba": 0.022112083773872332,
+       "lezart": 0.7833333333333333,
+       "helyes_adatbekeres": 0.34,
+       "helyes_tovabbitas": 0.22,
+       "nem_lezart_adatbekeres": 0.04,
+       "nem_lezart_tovabbitas": 0.022000000000000002,
+       "nem_lezart_tau_alatt": 0.15466666666666665
+      },
+      "B1-4LR": {
+       "hasznos_lef": 0.742,
+       "lezarasi_hiba": 0.015915119363395226,
+       "lezart": 0.754,
+       "helyes_adatbekeres": 0.34,
+       "helyes_tovabbitas": 0.22,
+       "nem_lezart_adatbekeres": 0.04,
+       "nem_lezart_tovabbitas": 0.022,
+       "nem_lezart_tau_alatt": 0.184
+      },
+      "B1-4R0": {
+       "hasznos_lef": 0.39199999999999996,
+       "lezarasi_hiba": 0.006169979459142226,
+       "lezart": 0.39466666666666667,
+       "helyes_adatbekeres": 0.34,
+       "helyes_tovabbitas": 0.22,
+       "nem_lezart_adatbekeres": 0.04,
+       "nem_lezart_tovabbitas": 0.022000000000000002,
+       "nem_lezart_tau_alatt": 0.5433333333333333
+      },
+      "B1-S": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-N": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      },
+      "B1-R": {
+       "hasznos_lef": 0.7559999999999999,
+       "lezarasi_hiba": 0.01985747480239697,
+       "lezart": 0.7713333333333333,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.22866666666666666
+      },
+      "B1-LR": {
+       "hasznos_lef": 0.574,
+       "lezarasi_hiba": 0.04013377926421405,
+       "lezart": 0.598,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 0.402
+      },
+      "B1-R0": {
+       "hasznos_lef": 0.0,
+       "lezarasi_hiba": NaN,
+       "lezart": 0.0,
+       "helyes_adatbekeres": 0.0,
+       "helyes_tovabbitas": 0.0,
+       "nem_lezart_adatbekeres": 0.0,
+       "nem_lezart_tovabbitas": 0.0,
+       "nem_lezart_tau_alatt": 1.0
+      }
+     }
+    },
+    "n_nyelv": {
+     "hu": 500,
+     "en": 500
+    },
+    "k2_nincs_munkapont_replika": {
+     "B1-4S": 0.0002,
+     "B1-4R": 0.0,
+     "B1-4LR": 0.0,
+     "B1-4R0": 0.24963333333333335,
+     "B1-S": 1.0,
+     "B1-N": 0.5426,
+     "B1-R": 6.666666666666667e-05,
+     "B1-LR": 0.0068,
+     "B1-R0": 0.9946
+    }
+   }
+  }
+ }
+}

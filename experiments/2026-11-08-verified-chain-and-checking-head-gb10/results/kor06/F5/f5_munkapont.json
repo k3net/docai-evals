@@ -1,0 +1,594 @@
+{
+ "reps": 10000,
+ "seed": 20261029,
+ "cal_szelet": "CAL",
+ "teszt_szelet": "TESZT",
+ "szabaly": {
+  "cel": 0.95,
+  "min_elfogadott": 200
+ },
+ "csaladok": {
+  "penzugy.bankparositas": {
+   "B1-S": {
+    "pont": {
+     "sn_lef": 0.0,
+     "sn_prec": NaN,
+     "sel_lef": 0.0,
+     "sel_prec": NaN,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 1.0,
+    "nincs_munkapont_replika": 1.0,
+    "ci95": {
+     "sn_lef": null,
+     "sn_prec": null,
+     "sel_lef": null,
+     "sel_prec": null,
+     "hamis_sel_nm": null,
+     "hamis_sel_egyeb": null,
+     "hamis_none": null,
+     "defer_arany": null
+    },
+    "kalibracio": {
+     "brier": 0.1669705534862239,
+     "ece": 0.09259688713746585,
+     "brier_platt": 0.16030784685348648,
+     "ece_platt": 0.04952674254054275
+    }
+   },
+   "B1-N": {
+    "pont": {
+     "sn_lef": 0.0,
+     "sn_prec": NaN,
+     "sel_lef": 0.0,
+     "sel_prec": NaN,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 1.0,
+    "nincs_munkapont_replika": 0.8079,
+    "ci95": {
+     "sn_lef": [
+      0.3639112903225806,
+      0.6299603174603174
+     ],
+     "sn_prec": [
+      0.9347826086956522,
+      0.9944598337950139
+     ],
+     "sel_lef": [
+      0.3639112903225806,
+      0.6299603174603174
+     ],
+     "sel_prec": [
+      0.9347826086956522,
+      0.9944598337950139
+     ],
+     "hamis_sel_nm": [
+      0.01015228426395939,
+      0.18840579710144928
+     ],
+     "hamis_sel_egyeb": [
+      0.0,
+      0.02030456852791878
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.1669705534862239,
+     "ece": 0.09259688713746585,
+     "brier_platt": 0.16030784713313853,
+     "ece_platt": 0.04952674188327179
+    }
+   },
+   "B1-LR|None": {
+    "pont": {
+     "sn_lef": 0.447,
+     "sn_prec": 0.9888143176733781,
+     "sel_lef": 0.441,
+     "sel_prec": 0.9886621315192744,
+     "hamis_sel_nm": 0.025,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.1357,
+    "ci95": {
+     "sn_lef": [
+      0.3806216442168104,
+      0.7032873345310656
+     ],
+     "sn_prec": [
+      0.9467275494672754,
+      0.9973753280839895
+     ],
+     "sel_lef": [
+      0.37648221343873517,
+      0.613205195733554
+     ],
+     "sel_prec": [
+      0.9476237161531279,
+      0.9973544973544973
+     ],
+     "hamis_sel_nm": [
+      0.005291005291005291,
+      0.12305515239477456
+     ],
+     "hamis_sel_egyeb": [
+      0.0,
+      0.04590671293898245
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.06693218005405045,
+     "ece": 0.04917609374934821,
+     "brier_platt": 0.06486193024678634,
+     "ece_platt": 0.030585797683244303
+    }
+   },
+   "B1-R|None": {
+    "pont": {
+     "sn_lef": 0.665,
+     "sn_prec": 0.9834711722156001,
+     "sel_lef": 0.5446666666666667,
+     "sel_prec": 0.9810321901223049,
+     "hamis_sel_nm": 0.045000000000000005,
+     "hamis_sel_egyeb": 0.006666666666666667,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.0,
+    "ci95": {
+     "sn_lef": [
+      0.5815368225436175,
+      0.7315952920593265
+     ],
+     "sn_prec": [
+      0.9571140815420516,
+      0.9953028612010334
+     ],
+     "sel_lef": [
+      0.4772695043528377,
+      0.6058208311573218
+     ],
+     "sel_prec": [
+      0.9523221624095852,
+      0.9946169009610023
+     ],
+     "hamis_sel_nm": [
+      0.011844331641285955,
+      0.11683848797250858
+     ],
+     "hamis_sel_egyeb": [
+      0.0,
+      0.03500219298245611
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.041794305025391665,
+     "ece": 0.024586761922001446,
+     "brier_platt": 0.04011680688254429,
+     "ece_platt": 0.01847019403498069
+    }
+   }
+  },
+  "muszaki.hibaelharitas": {
+   "B1-S": {
+    "pont": {
+     "sn_lef": 0.0,
+     "sn_prec": NaN,
+     "sel_lef": 0.0,
+     "sel_prec": NaN,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 1.0,
+    "nincs_munkapont_replika": 1.0,
+    "ci95": {
+     "sn_lef": null,
+     "sn_prec": null,
+     "sel_lef": null,
+     "sel_prec": null,
+     "hamis_sel_nm": null,
+     "hamis_sel_egyeb": null,
+     "hamis_none": null,
+     "defer_arany": null
+    },
+    "kalibracio": {
+     "brier": 0.19885379425549182,
+     "ece": 0.16054386936015416,
+     "brier_platt": 0.18748125999294474,
+     "ece_platt": 0.11422981044396052
+    }
+   },
+   "B1-N": {
+    "pont": {
+     "sn_lef": 0.407,
+     "sn_prec": 0.9828009828009828,
+     "sel_lef": 0.407,
+     "sel_prec": 0.9828009828009828,
+     "hamis_sel_nm": 0.015,
+     "hamis_sel_egyeb": 0.02,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.2913,
+    "ci95": {
+     "sn_lef": [
+      0.3735272702798615,
+      0.5477864224300002
+     ],
+     "sn_prec": [
+      0.9405405405405406,
+      0.995
+     ],
+     "sel_lef": [
+      0.3735272702798615,
+      0.5477864224300002
+     ],
+     "sel_prec": [
+      0.9405405405405406,
+      0.995
+     ],
+     "hamis_sel_nm": [
+      0.0,
+      0.09345794392523364
+     ],
+     "hamis_sel_egyeb": [
+      0.0006666666666666919,
+      0.07066439038270009
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.19885379425549185,
+     "ece": 0.16054386936015416,
+     "brier_platt": 0.18748125982534875,
+     "ece_platt": 0.11422980740953873
+    }
+   },
+   "B1-LR|None": {
+    "pont": {
+     "sn_lef": 0.443,
+     "sn_prec": 0.9887133182844243,
+     "sel_lef": 0.443,
+     "sel_prec": 0.9887133182844243,
+     "hamis_sel_nm": 0.01,
+     "hamis_sel_egyeb": 0.015,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.331,
+    "ci95": {
+     "sn_lef": [
+      0.35888729489190613,
+      0.5667811135596011
+     ],
+     "sn_prec": [
+      0.9477957283680175,
+      0.9974669086936966
+     ],
+     "sel_lef": [
+      0.35888729489190613,
+      0.541829591321897
+     ],
+     "sel_prec": [
+      0.9502143291841515,
+      0.9974669086936966
+     ],
+     "hamis_sel_nm": [
+      0.0,
+      0.05818910932883063
+     ],
+     "hamis_sel_egyeb": [
+      0.0,
+      0.06219537893249373
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.11307661781429777,
+     "ece": 0.046560631849350324,
+     "brier_platt": 0.11201243018642758,
+     "ece_platt": 0.0511642129936488
+    }
+   },
+   "B1-R|None": {
+    "pont": {
+     "sn_lef": 0.6793333333333335,
+     "sn_prec": 0.9745836616758603,
+     "sel_lef": 0.572,
+     "sel_prec": 0.982547557298878,
+     "hamis_sel_nm": 0.02,
+     "hamis_sel_egyeb": 0.03,
+     "hamis_none": 0.01,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.0014333333333333333,
+    "ci95": {
+     "sn_lef": [
+      0.6184766021873817,
+      0.7633444324778043
+     ],
+     "sn_prec": [
+      0.9401004893251413,
+      0.9901815309244948
+     ],
+     "sel_lef": [
+      0.5464893566005605,
+      0.5973050663301286
+     ],
+     "sel_prec": [
+      0.9661485550104313,
+      0.9941662425541776
+     ],
+     "hamis_sel_nm": [
+      0.001658374792703151,
+      0.04975124378109452
+     ],
+     "hamis_sel_egyeb": [
+      0.007168458781362008,
+      0.0612334407447188
+     ],
+     "hamis_none": [
+      0.0016474464579901156,
+      0.028344671201814057
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.04770587161856191,
+     "ece": 0.03657872276500115,
+     "brier_platt": 0.043988741585176024,
+     "ece_platt": 0.02061437861877384
+    }
+   }
+  },
+  "szabaly.koltsegelszamolas": {
+   "B1-S": {
+    "pont": {
+     "sn_lef": 0.0,
+     "sn_prec": NaN,
+     "sel_lef": 0.0,
+     "sel_prec": NaN,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 1.0,
+    "nincs_munkapont_replika": 1.0,
+    "ci95": {
+     "sn_lef": null,
+     "sn_prec": null,
+     "sel_lef": null,
+     "sel_prec": null,
+     "hamis_sel_nm": null,
+     "hamis_sel_egyeb": null,
+     "hamis_none": null,
+     "defer_arany": null
+    },
+    "kalibracio": {
+     "brier": 0.20351161888140137,
+     "ece": 0.08946012317501814,
+     "brier_platt": 0.1973044906941126,
+     "ece_platt": 0.08998447227433934
+    }
+   },
+   "B1-N": {
+    "pont": {
+     "sn_lef": 0.0,
+     "sn_prec": NaN,
+     "sel_lef": 0.0,
+     "sel_prec": NaN,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.0,
+     "hamis_none": 0.0,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 1.0,
+    "nincs_munkapont_replika": 0.5368,
+    "ci95": {
+     "sn_lef": [
+      0.36386759061492874,
+      0.5321233418021021
+     ],
+     "sn_prec": [
+      0.9228954748895606,
+      0.979603520797632
+     ],
+     "sel_lef": [
+      0.36386759061492874,
+      0.5321233418021021
+     ],
+     "sel_prec": [
+      0.9228954748895606,
+      0.979603520797632
+     ],
+     "hamis_sel_nm": [
+      0.0,
+      0.04074475944223838
+     ],
+     "hamis_sel_egyeb": [
+      0.034482758620689655,
+      0.1715686274509804
+     ],
+     "hamis_none": [
+      0.0,
+      0.0
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.20351161888140137,
+     "ece": 0.08946012317501807,
+     "brier_platt": 0.19730449083847026,
+     "ece_platt": 0.08998446729207205
+    }
+   },
+   "B1-LR|None": {
+    "pont": {
+     "sn_lef": 0.553,
+     "sn_prec": 0.9602169981916817,
+     "sel_lef": 0.481,
+     "sel_prec": 0.9584199584199584,
+     "hamis_sel_nm": 0.0,
+     "hamis_sel_egyeb": 0.1,
+     "hamis_none": 0.0016666666666666668,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.0415,
+    "ci95": {
+     "sn_lef": [
+      0.4362792831937107,
+      0.6539294193550925
+     ],
+     "sn_prec": [
+      0.9251901037212122,
+      0.9827932317687452
+     ],
+     "sel_lef": [
+      0.3801425038851368,
+      0.565701622320761
+     ],
+     "sel_prec": [
+      0.9166666666666666,
+      0.982268376883999
+     ],
+     "hamis_sel_nm": [
+      0.0,
+      0.019801980198019802
+     ],
+     "hamis_sel_egyeb": [
+      0.03571428571428571,
+      0.20725388601036268
+     ],
+     "hamis_none": [
+      0.0,
+      0.005084745762711864
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.08881555947805177,
+     "ece": 0.04659996092125019,
+     "brier_platt": 0.08926045832651494,
+     "ece_platt": 0.034638734750743735
+    }
+   },
+   "B1-R|None": {
+    "pont": {
+     "sn_lef": 0.717,
+     "sn_prec": 0.9669967153392428,
+     "sel_lef": 0.591,
+     "sel_prec": 0.9633394331666802,
+     "hamis_sel_nm": 0.036666666666666674,
+     "hamis_sel_egyeb": 0.05833333333333333,
+     "hamis_none": 0.0016666666666666668,
+     "defer_arany": 0.0
+    },
+    "nincs_munkapont_pont": 0.0,
+    "nincs_munkapont_replika": 0.0,
+    "ci95": {
+     "sn_lef": [
+      0.6700844309354947,
+      0.7462990046067784
+     ],
+     "sn_prec": [
+      0.9502875382520615,
+      0.9817613362981801
+     ],
+     "sel_lef": [
+      0.5493135574050192,
+      0.6148168559340904
+     ],
+     "sel_prec": [
+      0.9441402585094836,
+      0.9799444580020624
+     ],
+     "hamis_sel_nm": [
+      0.013675213675213675,
+      0.06666666666666667
+     ],
+     "hamis_sel_egyeb": [
+      0.023809523809523808,
+      0.09756097560975609
+     ],
+     "hamis_none": [
+      0.0,
+      0.005067567567567568
+     ],
+     "defer_arany": [
+      0.0,
+      0.0
+     ]
+    },
+    "kalibracio": {
+     "brier": 0.036309676091478296,
+     "ece": 0.016835631403384746,
+     "brier_platt": 0.03619784647130878,
+     "ece_platt": 0.015065372430188571
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "n_tetel": 262,
+ "hatokor": 255,
+ "cimkek": {
+  "MATCH": 139,
+  "MISSING_DATA": 62,
+  "OUT_OF_SCOPE": 47,
+  "NO_MATCH": 7
+ },
+ "lanc_kimenet": {
+  "kotes": 71,
+  "modell": 166
+ },
+ "fedes": {
+  "kozvetlen_egy": 93,
+  "kinyert_egy": 94,
+  "elvetett_mezo": 1,
+  "kizart_jelolt": 0
+ },
+ "dontesek": {
+  "MATCH|SELECT": 117,
+  "MISSING_DATA|SELECT": 33,
+  "MISSING_DATA|X": 20,
+  "NO_MATCH|X": 3,
+  "OUT_OF_SCOPE|SELECT": 3,
+  "OUT_OF_SCOPE|X": 32
+ },
+ "lepcsok": {
+  "lánc": {
+   "lezart": 70,
+   "hibas": 0,
+   "arany": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {},
+   "tau": null
+  },
+  "lánc + L-S": {
+   "lezart": 126,
+   "hibas": 2,
+   "arany": 0.015873015873015872,
+   "ci95": [
+    0.0,
+    0.0423728813559322
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 0.9750523046373508
+  },
+  "lánc + L-S + iker-kapu": {
+   "lezart": 126,
+   "hibas": 2,
+   "arany": 0.015873015873015872,
+   "ci95": [
+    0.0,
+    0.04310344827586207
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 0.9750523046373508
+  },
+  "lánc + L-R07": {
+   "lezart": 109,
+   "hibas": 2,
+   "arany": 0.01834862385321101,
+   "ci95": [
+    0.0,
+    0.049019607843137254
+   ],
+   "uj": 3,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 5.362464984258016
+  },
+  "lánc + L-R07 + iker-kapu": {
+   "lezart": 112,
+   "hibas": 2,
+   "arany": 0.017857142857142856,
+   "ci95": [
+    0.0,
+    0.047619047619047616
+   ],
+   "uj": 3,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 5.1352373917897545
+  },
+  "lánc + L-R": {
+   "lezart": 106,
+   "hibas": 2,
+   "arany": 0.018867924528301886,
+   "ci95": [
+    0.0,
+    0.05050824702723432
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 6.701835505167644
+  },
+  "lánc + L-R + iker-kapu": {
+   "lezart": 112,
+   "hibas": 2,
+   "arany": 0.017857142857142856,
+   "ci95": [
+    0.0,
+    0.04716981132075472
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 6.144117895762125
+  },
+  "lánc + L-RN": {
+   "lezart": 112,
+   "hibas": 2,
+   "arany": 0.017857142857142856,
+   "ci95": [
+    0.0,
+    0.04716981132075472
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 4.383642721176147
+  },
+  "lánc + L-RN + iker-kapu": {
+   "lezart": 122,
+   "hibas": 2,
+   "arany": 0.01639344262295082,
+   "ci95": [
+    0.0,
+    0.04310344827586207
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 3.398561533292135
+  },
+  "lánc + L-LR": {
+   "lezart": 122,
+   "hibas": 2,
+   "arany": 0.01639344262295082,
+   "ci95": [
+    0.0,
+    0.04396333754740824
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 1.4867972111502579
+  },
+  "lánc + L-LR + iker-kapu": {
+   "lezart": 126,
+   "hibas": 2,
+   "arany": 0.015873015873015872,
+   "ci95": [
+    0.0,
+    0.04310499875961298
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 1.3819426111174162
+  },
+  "lánc + L-LRN": {
+   "lezart": 118,
+   "hibas": 2,
+   "arany": 0.01694915254237288,
+   "ci95": [
+    0.0,
+    0.046157407407407355
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 3.530366645201487
+  },
+  "lánc + L-LRN + iker-kapu": {
+   "lezart": 118,
+   "hibas": 2,
+   "arany": 0.01694915254237288,
+   "ci95": [
+    0.0,
+    0.04716981132075472
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 3.530366645201487
+  }
+ },
+ "auroc": {
+  "L-S": 0.9109686609686609,
+  "L-R07": 0.8649097815764483,
+  "L-R": 0.8364197530864198,
+  "L-RN": 0.9104938271604939,
+  "L-LR": 0.9176163342830009,
+  "L-LRN": 0.8751187084520418
+ }
+}

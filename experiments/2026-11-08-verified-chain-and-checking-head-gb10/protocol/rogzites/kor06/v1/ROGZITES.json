@@ -1,0 +1,10 @@
+{
+ "verzio": "v1",
+ "rogzitve": "2026-10-31T09:15:32",
+ "jovahagyas": "Dani, 2026-10-31 09:15: a v1 rögzíthető, a pecsét nyitható, az F5 mehet (válasz: „mehet”, a 41 fájlos MANIFEST.sha256-ra, 5ff6d801…25ec8).",
+ "manifest_sha256": "5ff6d8010f8f11e29ba95c3db8b5683e0b7ac257ba2d1954b3a96cbc66025ec8",
+ "pecset_manifest": {
+  "K06F3C": "ef3e961b361f959b579a918c05dbf1339c8bfb51dbce73170af1eedaad5a3fc0"
+ },
+ "megjegyzes": "A friss családok CAL- és TESZT-kiolvasásai a rögzítéskor nem voltak megtekintve; a kiolvasás pecsételve futott (cache/k06/pecset/, root, 700)."
+}

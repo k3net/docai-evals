@@ -1,0 +1,398 @@
+{
+ "fazis": "K07F3",
+ "lezarva": "2026-11-01T07:35:22",
+ "v1a_rogzitve": false,
+ "teljes": true,
+ "feladatok": {
+  "muszaki.hibaelharitas_CAL__b1": {
+   "kesz": true,
+   "n": 1500,
+   "shardok": 2
+  },
+  "muszaki.hibaelharitas_CAL__kanonikus": {
+   "kesz": true,
+   "n": 500,
+   "shardok": 1
+  },
+  "muszaki.hibaelharitas_TESZT__b1": {
+   "kesz": true,
+   "n": 3000,
+   "shardok": 3
+  },
+  "muszaki.hibaelharitas_TESZT__kanonikus": {
+   "kesz": true,
+   "n": 1000,
+   "shardok": 1
+  },
+  "penzugy.bankparositas_CAL__b1": {
+   "kesz": true,
+   "n": 1500,
+   "shardok": 2
+  },
+  "penzugy.bankparositas_CAL__kanonikus": {
+   "kesz": true,
+   "n": 500,
+   "shardok": 1
+  },
+  "penzugy.bankparositas_TESZT__b1": {
+   "kesz": true,
+   "n": 3000,
+   "shardok": 3
+  },
+  "penzugy.bankparositas_TESZT__kanonikus": {
+   "kesz": true,
+   "n": 1000,
+   "shardok": 1
+  },
+  "szabaly.koltsegelszamolas_CAL__b1": {
+   "kesz": true,
+   "n": 1500,
+   "shardok": 2
+  },
+  "szabaly.koltsegelszamolas_CAL__kanonikus": {
+   "kesz": true,
+   "n": 500,
+   "shardok": 1
+  },
+  "szabaly.koltsegelszamolas_TESZT__b1": {
+   "kesz": true,
+   "n": 3000,
+   "shardok": 3
+  },
+  "szabaly.koltsegelszamolas_TESZT__kanonikus": {
+   "kesz": true,
+   "n": 1000,
+   "shardok": 1
+  }
+ },
+ "kod_sha256": {
+  "kor07/eszkozok/kiolvas07.py": "49428dd20d2a22837d0c5d30800b090255aaa23633366bdbdc2179193d75b60f",
+  "kor07/eszkozok/keret07.py": "955de97809cf629e5ee5c805f12edb8fe98d74e2724e566ea8da8001c7805512",
+  "kor07/eszkozok/pecset07.py": "e3d205b29c990431417a94653b33fbfa3290eb9cf498b80b117aeba98442c3ab",
+  "kor07/eszkozok/szint07.py": "bf37735918d6aaa55f568e673c2b5a07be00e624f7acacb4f222494c0f44e825",
+  "kor06/eszkozok/szint06.py": "69a3621483fe33d404ddfb18ad00ed539379d1ff4b8df75446600d204806fe1c",
+  "kor06/spec/csaladok06.yaml": "951d1543d45c804df3a5fc699bfdda181ce2bb4548dd191d3dedfaabf01161e1",
+  "kor05/eszkozok/hf_jellemzo05.py": "2d614b8e484eac75d3632558fb89f8db4f1a996c80af9f6471e43ef3bbc86e39",
+  "kor05/eszkozok/allapot05.py": "5a4b81f9cb233fe8148008eb8d7a8dc548593815aecf00b71c5b8bd2f8241aa9",
+  "kor05/eszkozok/pecset05.py": "ed55e0dbb71a3c91546fb9d79311521277a3786562508378ef9c535b4e9fb7cd",
+  "kor03/eszkozok/kozos03.py": "b66c9fefbb9d6821b2780dd42d7a84430ed23c22e12d3339e864509db097fa6b",
+  "eszkozok/common.py": "5f317825a37d3f2e6e749c7bf748d9a77c7cb9672f86cc384998dd7d50728849",
+  "kor07/adat/f2/items/penzugy.bankparositas.jsonl": "1b9238887db5803fed0e47855ded99bb894d66f47f9832d1be8fa6d60ca33d83",
+  "kor07/adat/f2/items/muszaki.hibaelharitas.jsonl": "0b71ca11586616aec9c3163d84e288d0c96a043519e08f25f5a0387542726628",
+  "kor07/adat/f2/items/szabaly.koltsegelszamolas.jsonl": "820e6c09b31d536cac12bfb7dba03c2ea9faa2cce65d606234edcff22923a7b9"
+ },
+ "fajlok": {
+  "jellemzok/muszaki.hibaelharitas_CAL__b1/osszegzes.json": {
+   "meret": 187,
+   "sha256": "c0d07e9d5a43dd61a5ab0688b5ef45afcd64e794d4ae9206059dd6f54aa2ca9d"
+  },
+  "jellemzok/muszaki.hibaelharitas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 932008,
+   "sha256": "41c559caea525fb81442d3c542055d16b42199378e0f2637c502d7f85a195b1a"
+  },
+  "jellemzok/muszaki.hibaelharitas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 467657,
+   "sha256": "51244464968157298d5fa8070c6434a6e1e2dee0c550f3ab6816644d57890785"
+  },
+  "jellemzok/muszaki.hibaelharitas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 99918361,
+   "sha256": "cb36a35fd4d009cdf8d3f19df09c4a5de16d5ce1f01f2a604eaaf935f49b56b3"
+  },
+  "jellemzok/muszaki.hibaelharitas_CAL__kanonikus/osszegzes.json": {
+   "meret": 193,
+   "sha256": "bd01b75b7f5ea03685e13c3dd45091ebf42d01021d8826d4d9ecba9ea26d8217"
+  },
+  "jellemzok/muszaki.hibaelharitas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 466584,
+   "sha256": "067b55f5fcc079154f0c167ef437ac55c760f2119aa02561eeb597700b5deb06"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__b1/osszegzes.json": {
+   "meret": 189,
+   "sha256": "da7d62481259eb765e0adba16dd1b00ad99db90ac5255d4ce7cb7e40a9a71750"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 930895,
+   "sha256": "459eaf074025cbe72d4f5e558e852d8d9e18c7917ce531287562986f23ad205e"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 939741,
+   "sha256": "88c1ce12d4c8736021e88844ac9e772b37c6d4c446be2d21debd2a32436355b3"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 944241,
+   "sha256": "899edd7e54ae77af4718746f94cc27c2d68a195e47f2bcbc4688561ca67ae0d1"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 200185137,
+   "sha256": "f91e715d304c095a1c71396cdd545b438fa56c4e63fd1a6791d9502774b21835"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 194,
+   "sha256": "1cda9e888446b01c11776189f59c71f613dab18fd30fc1bbc43e9feb88b23f15"
+  },
+  "jellemzok/muszaki.hibaelharitas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 937992,
+   "sha256": "3f2028379a59d96a51d676a41bf8a5546682c1c7e714976136bee6bfbc60a3ef"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__b1/osszegzes.json": {
+   "meret": 186,
+   "sha256": "46dd19ed3452aa50b5b8e09bdc5a6a54b92c309db4f0ade4fbc794582e781724"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 934023,
+   "sha256": "c04c17a413fc59d561890a75dd4a7b4eded1ba1440d467799312c2ab21f3a9ce"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 471990,
+   "sha256": "66f052f957bbbad8bd9285ff0431c83a8c619945d03a5c8187690719241dcb6f"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 99892249,
+   "sha256": "c6b5de2a42521580b83255cc634296046326e60bbbb2aa018d69da3692240fe1"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__kanonikus/osszegzes.json": {
+   "meret": 193,
+   "sha256": "959d81dec764206cee7e8f61fee43f072a88b4e946bb9b2c8e34acdb5b929ee5"
+  },
+  "jellemzok/penzugy.bankparositas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 468902,
+   "sha256": "cf3f46022f9c7a29f866d80b5e1e5395c3f3d21aeb6a8f540df0b556cb647002"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__b1/osszegzes.json": {
+   "meret": 189,
+   "sha256": "df93622ed95e8acb15d152d204e6c1fcbaa59166d79b88432d6f15022e388368"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 936585,
+   "sha256": "11ecacf0dc3012fc8e6722ebec830376c7fd198ca8a259e4604f3f9292e470ab"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 941055,
+   "sha256": "9d847462f9217f835e2143790060ceea8bd92531f0ceda25f21911966669e8fd"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 945367,
+   "sha256": "1569b9bbe639d0e9d8b3f5a58a6100db1dd073e3d6a0b9685eead390c6524d91"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 199591153,
+   "sha256": "73c5022b473adb2125a3536ecc741bfeda9877501287308dbb1a60f404c3c0a6"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 196,
+   "sha256": "a5c8de4226570b05b31227be2c4db814a584b71a3d48652cc1c8a8dd0011b4fe"
+  },
+  "jellemzok/penzugy.bankparositas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 940868,
+   "sha256": "decd056f233a618c89927a2e41c395eb0e470baa4c86d37eafa0db0b83a1e110"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__b1/osszegzes.json": {
+   "meret": 191,
+   "sha256": "720801bc681a92a8db651e9b63f36e8496dbd43012bbc674f49348b67d7286e3"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 931506,
+   "sha256": "017f1cb8b7a1d4cbdddd9d49b7fdca1bb95e32c5b8704bf4b150dc2ff8cf3346"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 459313,
+   "sha256": "02acb6d05f74a4444eb92fdf20d4d000774dd9870a62cf006f4099589c5d8ece"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 96831897,
+   "sha256": "2b2a8e169621bc53fbd9d18c434b5c403a1a557d729240e23addb72317b699c6"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__kanonikus/osszegzes.json": {
+   "meret": 197,
+   "sha256": "7d17d703f0f1518590a59c79d0033dcc237e7fe809ef269a6ce734e68db202b0"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 463500,
+   "sha256": "48da70c67bf5ba280cf4fa112e8c568d3dae2e601032fb171dd5e85b4846c949"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__b1/osszegzes.json": {
+   "meret": 193,
+   "sha256": "b97520895efb4e2d9e0a32c6cf279052b719f900d991d4527aab86ed5c966d9b"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 936818,
+   "sha256": "caf1ac80f79f01c08e9f1ed3fcd88d4292569693e6fbe7f3ddbb75bbd50532a6"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 937990,
+   "sha256": "1a6dfe6c574cafbed6c01a733a7cc45309a818c2b1a0c69b20b4f9940c36afd9"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 936008,
+   "sha256": "4b93799ac33d8066463588cabca8d2ee710d27f9099b945d4fe17a1df8589386"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 195865009,
+   "sha256": "e66abc783d7c873c8fa8b542cddb7588aba6ac097059f827f7ba98296ee73b4b"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 200,
+   "sha256": "487e5993748907e13d20517eaae7dfbc70cea6f1eaf2a2a5e0493e1d30788b0d"
+  },
+  "jellemzok/szabaly.koltsegelszamolas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 936963,
+   "sha256": "af81b960655218c4a9594ceec09987c3c1841bf46a6ab1c5507afed2e156fbc5"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__b1/osszegzes.json": {
+   "meret": 187,
+   "sha256": "76e3493089d656a6bfe500a5ceed1de529f294cf912dc05c6755d93faa988c9b"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 763079,
+   "sha256": "f9f167cff9dc5ebbdb7834bf112f58a04225c037ebe5669cd37746b47ee7f45b"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 383732,
+   "sha256": "268b270159d90c86a3da11b717899ca78ab96252efc447deb5ec1b03d1b11dc2"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 75219481,
+   "sha256": "7527780595ec91b4c759b1f090be85ce0eee9f472a2a4d4ff52c854de681042f"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__kanonikus/osszegzes.json": {
+   "meret": 193,
+   "sha256": "56b399fbdfa1ea2205d18c88f5a6f6a581db66d20645cb2a4b5fa4338116326c"
+  },
+  "jellemzok2/muszaki.hibaelharitas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 382374,
+   "sha256": "0685b07bc8de96387cc464cf32b3538ecdcdf079e23d571f995b01303cae525a"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__b1/osszegzes.json": {
+   "meret": 189,
+   "sha256": "0262cdb3ca3c104593d70dfb86dc6df4210b9f172ec3f6c6fb24e64f1f211526"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 761145,
+   "sha256": "ea625601a443656bc22c9d77e80009e5ce1b591d53b9dd40acab8ed28e6887d0"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 771874,
+   "sha256": "230baa626ec75f0d915581e638f0d0d8cd4c34e660d35e65d2c67daf75937544"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 776155,
+   "sha256": "69742c411c6126de8a3ddc94c5cbbfc9dfadac42e4ddd14568198b368229fdd6"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 150785969,
+   "sha256": "d208627a5cff8f557585f2b014db102fdb93937fce6244fd30e323227b2fbc35"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 196,
+   "sha256": "2dfd3a9d531174964cc7fdac5c530cb82e116ea99dc6ff45478ef193b723e93d"
+  },
+  "jellemzok2/muszaki.hibaelharitas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 769962,
+   "sha256": "443a72f2b2fc78755a69f05c536d4561eb8583922c6b7d33a9fca6a06a2e7717"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__b1/osszegzes.json": {
+   "meret": 186,
+   "sha256": "d01ddb5ce7d5e4b5097ea92f9ae7ee6e7550bd1de4739c2b54ccc80dfed59cb2"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 765084,
+   "sha256": "23a64d70ca5a6ab7c4b6b12ba0e863abc7cd005de9e083af634425cefc800925"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 388023,
+   "sha256": "5677cdbd18f9d8cafa3d1cc1c53b1016e6c9bc94d671c51345de71f97e4e3cb0"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 75192601,
+   "sha256": "8c0d3eaffdb82189252d291a933e9887ab93f7f3d58e0cfdd5941d07eade0728"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__kanonikus/osszegzes.json": {
+   "meret": 193,
+   "sha256": "da7c2d9c563d58b3af8c5e4b3ab31f285f29c13e44aa92b00e9988cbc7129810"
+  },
+  "jellemzok2/penzugy.bankparositas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 384424,
+   "sha256": "f05dd367c5b4c4cc884d5b93d6e08a401b159d9b92eed3c94b498824a2d38ef1"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__b1/osszegzes.json": {
+   "meret": 189,
+   "sha256": "aea2e1d82fea14ac6f23546f1a7c80a9852f2746ac6e5664ba0cfddf18a1fd8c"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 766624,
+   "sha256": "002ba5116aba1f59815cfdbbc9f6b6ba0c5d5dabd5597825f807565a543a5813"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 772633,
+   "sha256": "c486398f4d2f17766f3b2fade6be85b905664f36f2941d4437ee8f19aae9f7b9"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 777073,
+   "sha256": "26a4e5f48354ace27a5392f7dbf75ef41c5acde277f6163d27443bf72511a79c"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 150191217,
+   "sha256": "84aedf74abf5277bc37af2a55750c6b823cddaad2ec3dfa54915d3f28999904b"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 196,
+   "sha256": "7848152b6468dddf68ea31c97e08bd3f7b17afb235714044419c6bed51de184d"
+  },
+  "jellemzok2/penzugy.bankparositas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 772070,
+   "sha256": "3f0059d5c37b47c747497b0a6304802e2effe6b2ed2d466543112cb003e43427"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__b1/osszegzes.json": {
+   "meret": 191,
+   "sha256": "869628419c5178ad47354a2813b0685fb716f15b0014b24550c6d3debf5fac56"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__b1/sorok_0000.jsonl": {
+   "meret": 763118,
+   "sha256": "260a3af3a831ae1a66108a9e88392e06e2abdb00f789a1fa3eaac3cf1848fee9"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__b1/sorok_0001.jsonl": {
+   "meret": 375525,
+   "sha256": "d886a7d38208f8fe167591e5d2e1536d7dfe4f3a618f01f32984b540a2864180"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__kanonikus/jellemzok_0000.pt": {
+   "meret": 72129689,
+   "sha256": "9fd9e83c3c5ebb051eb7a0d024901eecee632d172b864bf094c08a4742f1b741"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__kanonikus/osszegzes.json": {
+   "meret": 196,
+   "sha256": "7b27d70971ed53f99de43b4788fba8458cc9a3affcb6d13c68821f34b1c9e7f9"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_CAL__kanonikus/sorok_0000.jsonl": {
+   "meret": 379565,
+   "sha256": "6b3d5a0cb159b02b4dabc14f8e6f513f81c8905c893a19a6a2e48b886d8cd901"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__b1/osszegzes.json": {
+   "meret": 193,
+   "sha256": "42f43918293ae0222fffd330786837a1900db63337d3420d99574c7d6f3e235c"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__b1/sorok_0000.jsonl": {
+   "meret": 767514,
+   "sha256": "4db8c52a0682b854c54076ff2f2e16932469c79745ab36927793afcb28f1e595"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__b1/sorok_0001.jsonl": {
+   "meret": 770015,
+   "sha256": "8c33b021dc225c5e9765a4c6c77625386ce256f7d1cceeff5c399ef57f86ee81"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__b1/sorok_0002.jsonl": {
+   "meret": 768559,
+   "sha256": "a9acce8e691998927588f04dd69291053dcb675bdf34792477bcf5bc1f73699a"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__kanonikus/jellemzok_0000.pt": {
+   "meret": 146462961,
+   "sha256": "9dbebdbfd8453aa492d797cd66240e4e3832b92e087ffd71e24a3fd411034ff1"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__kanonikus/osszegzes.json": {
+   "meret": 200,
+   "sha256": "c0c4c49806461358dc4a6d4dab3cc813f65ffffce42a55db4016aec00c6badd7"
+  },
+  "jellemzok2/szabaly.koltsegelszamolas_TESZT__kanonikus/sorok_0000.jsonl": {
+   "meret": 768601,
+   "sha256": "4cfcf5bfb30afe585f0749354f624b1a8b73108a4830f80374f4a0a34ff4058e"
+  }
+ }
+}

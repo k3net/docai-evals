@@ -1,0 +1,823 @@
+{
+ "orig": "cache/k07/k3",
+ "aug": "cache/k07/aug",
+ "reps": 2000,
+ "csaladok": {
+  "penzugy.bankparositas": {
+   "keret4": {
+    "sorok": {
+     "összes": {
+      "n": 186,
+      "helyes_eredeti": 54,
+      "helyes_kiegeszitett": 186,
+      "rossz_opcio_eredeti": 127,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 5,
+      "nem_select_kiegeszitett": 0,
+      "javult": 132,
+      "romlott": 0,
+      "mcnemar_p": 3.6734198463196485e-40
+     },
+     "változat B3a-reszfizetes": {
+      "n": 186,
+      "helyes_eredeti": 54,
+      "helyes_kiegeszitett": 186,
+      "rossz_opcio_eredeti": 127,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 5,
+      "nem_select_kiegeszitett": 0,
+      "javult": 132,
+      "romlott": 0,
+      "mcnemar_p": 3.6734198463196485e-40
+     },
+     "nyelv hu": {
+      "n": 100,
+      "helyes_eredeti": 24,
+      "helyes_kiegeszitett": 100,
+      "rossz_opcio_eredeti": 74,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 2,
+      "nem_select_kiegeszitett": 0,
+      "javult": 76,
+      "romlott": 0,
+      "mcnemar_p": 2.6469779601696886e-23
+     },
+     "nyelv en": {
+      "n": 86,
+      "helyes_eredeti": 30,
+      "helyes_kiegeszitett": 86,
+      "rossz_opcio_eredeti": 53,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 56,
+      "romlott": 0,
+      "mcnemar_p": 2.7755575615628914e-17
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.7096774193548387,
+     "ci95": [
+      0.6463944521178637,
+      0.7712881591119334
+     ]
+    },
+    "karok": {
+     "B1-4S": {
+      "auroc_eredeti": 0.3101487314085739,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-4R": {
+      "auroc_eredeti": 0.21133469427432683,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-4LR": {
+      "auroc_eredeti": 0.3452901720618256,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-4R0": {
+      "auroc_eredeti": 0.31437736949547973,
+      "auroc_kiegeszitett": NaN
+     }
+    },
+    "munkapont": {
+     "B1-4S": {
+      "eredeti": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "kiegeszitett": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": true
+     },
+     "B1-4R": {
+      "eredeti": {
+       "lezart": 11.0,
+       "hibas": 11.0,
+       "helyes": 0.0,
+       "hibas_x": 5.0,
+       "csali": 6.0
+      },
+      "kiegeszitett": {
+       "lezart": 42.333333333333336,
+       "hibas": 0.0,
+       "helyes": 42.333333333333336,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-4LR": {
+      "eredeti": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "kiegeszitett": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": true
+     }
+    },
+    "sablon": 60
+   },
+   "keret2": {
+    "sorok": {
+     "összes": {
+      "n": 186,
+      "helyes_eredeti": 59,
+      "helyes_kiegeszitett": 186,
+      "rossz_opcio_eredeti": 124,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 127,
+      "romlott": 0,
+      "mcnemar_p": 1.1754943508222875e-38
+     },
+     "változat B3a-reszfizetes": {
+      "n": 186,
+      "helyes_eredeti": 59,
+      "helyes_kiegeszitett": 186,
+      "rossz_opcio_eredeti": 124,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 127,
+      "romlott": 0,
+      "mcnemar_p": 1.1754943508222875e-38
+     },
+     "nyelv hu": {
+      "n": 100,
+      "helyes_eredeti": 26,
+      "helyes_kiegeszitett": 100,
+      "rossz_opcio_eredeti": 73,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 1,
+      "nem_select_kiegeszitett": 0,
+      "javult": 74,
+      "romlott": 0,
+      "mcnemar_p": 1.0587911840678754e-22
+     },
+     "nyelv en": {
+      "n": 86,
+      "helyes_eredeti": 33,
+      "helyes_kiegeszitett": 86,
+      "rossz_opcio_eredeti": 51,
+      "rossz_opcio_kiegeszitett": 0,
+      "nem_select_eredeti": 2,
+      "nem_select_kiegeszitett": 0,
+      "javult": 53,
+      "romlott": 0,
+      "mcnemar_p": 2.220446049250313e-16
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.6827956989247312,
+     "ci95": [
+      0.6142017833642198,
+      0.7500323834196889
+     ]
+    },
+    "karok": {
+     "B1-S": {
+      "auroc_eredeti": 0.3231273920174959,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-R": {
+      "auroc_eredeti": 0.20320758155640606,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-LR": {
+      "auroc_eredeti": 0.33132859486057953,
+      "auroc_kiegeszitett": NaN
+     },
+     "B1-R0": {
+      "auroc_eredeti": 0.3229907053034445,
+      "auroc_kiegeszitett": NaN
+     }
+    },
+    "munkapont": {
+     "B1-S": {
+      "eredeti": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "kiegeszitett": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": true
+     },
+     "B1-R": {
+      "eredeti": {
+       "lezart": 19.0,
+       "hibas": 17.666666666666668,
+       "helyes": 1.3333333333333333,
+       "hibas_x": 3.0,
+       "csali": 14.666666666666666
+      },
+      "kiegeszitett": {
+       "lezart": 50.666666666666664,
+       "hibas": 0.0,
+       "helyes": 50.666666666666664,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-LR": {
+      "eredeti": {
+       "lezart": 14.0,
+       "hibas": 11.0,
+       "helyes": 3.0,
+       "hibas_x": 2.0,
+       "csali": 9.0
+      },
+      "kiegeszitett": {
+       "lezart": 80.0,
+       "hibas": 0.0,
+       "helyes": 80.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": false
+     }
+    },
+    "sablon": 60
+   }
+  },
+  "muszaki.hibaelharitas": {
+   "keret4": {
+    "sorok": {
+     "összes": {
+      "n": 182,
+      "helyes_eredeti": 95,
+      "helyes_kiegeszitett": 171,
+      "rossz_opcio_eredeti": 80,
+      "rossz_opcio_kiegeszitett": 9,
+      "nem_select_eredeti": 7,
+      "nem_select_kiegeszitett": 2,
+      "javult": 78,
+      "romlott": 2,
+      "mcnemar_p": 5.3617847305687254e-21
+     },
+     "változat H3-valtas": {
+      "n": 182,
+      "helyes_eredeti": 95,
+      "helyes_kiegeszitett": 171,
+      "rossz_opcio_eredeti": 80,
+      "rossz_opcio_kiegeszitett": 9,
+      "nem_select_eredeti": 7,
+      "nem_select_kiegeszitett": 2,
+      "javult": 78,
+      "romlott": 2,
+      "mcnemar_p": 5.3617847305687254e-21
+     },
+     "nyelv hu": {
+      "n": 86,
+      "helyes_eredeti": 48,
+      "helyes_kiegeszitett": 80,
+      "rossz_opcio_eredeti": 35,
+      "rossz_opcio_kiegeszitett": 5,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 1,
+      "javult": 33,
+      "romlott": 1,
+      "mcnemar_p": 4.0745362639427185e-09
+     },
+     "nyelv en": {
+      "n": 96,
+      "helyes_eredeti": 47,
+      "helyes_kiegeszitett": 91,
+      "rossz_opcio_eredeti": 45,
+      "rossz_opcio_kiegeszitett": 4,
+      "nem_select_eredeti": 4,
+      "nem_select_kiegeszitett": 1,
+      "javult": 45,
+      "romlott": 1,
+      "mcnemar_p": 1.3358203432289883e-12
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.41758241758241754,
+     "ci95": [
+      0.32777046783625724,
+      0.5053778050490884
+     ]
+    },
+    "karok": {
+     "B1-4S": {
+      "auroc_eredeti": 0.611578947368421,
+      "auroc_kiegeszitett": 0.857050032488629
+     },
+     "B1-4R": {
+      "auroc_eredeti": 0.6963596491228069,
+      "auroc_kiegeszitett": 0.9185618366904916
+     },
+     "B1-4LR": {
+      "auroc_eredeti": 0.5938157894736842,
+      "auroc_kiegeszitett": 0.8180636777128005
+     },
+     "B1-4R0": {
+      "auroc_eredeti": 0.6410526315789474,
+      "auroc_kiegeszitett": 0.7145332466969894
+     }
+    },
+    "munkapont": {
+     "B1-4S": {
+      "eredeti": {
+       "lezart": 116.0,
+       "hibas": 46.0,
+       "helyes": 70.0,
+       "hibas_x": 0.0,
+       "csali": 46.0
+      },
+      "kiegeszitett": {
+       "lezart": 164.0,
+       "hibas": 7.0,
+       "helyes": 157.0,
+       "hibas_x": 0.0,
+       "csali": 7.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-4R": {
+      "eredeti": {
+       "lezart": 60.333333333333336,
+       "hibas": 16.0,
+       "helyes": 44.333333333333336,
+       "hibas_x": 4.333333333333333,
+       "csali": 11.666666666666666
+      },
+      "kiegeszitett": {
+       "lezart": 165.66666666666666,
+       "hibas": 4.0,
+       "helyes": 161.66666666666666,
+       "hibas_x": 2.0,
+       "csali": 2.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-4LR": {
+      "eredeti": {
+       "lezart": 78.0,
+       "hibas": 35.0,
+       "helyes": 43.0,
+       "hibas_x": 3.0,
+       "csali": 32.0
+      },
+      "kiegeszitett": {
+       "lezart": 140.0,
+       "hibas": 6.0,
+       "helyes": 134.0,
+       "hibas_x": 2.0,
+       "csali": 4.0
+      },
+      "nincs_munkapont": false
+     }
+    },
+    "sablon": 38
+   },
+   "keret2": {
+    "sorok": {
+     "összes": {
+      "n": 182,
+      "helyes_eredeti": 95,
+      "helyes_kiegeszitett": 168,
+      "rossz_opcio_eredeti": 80,
+      "rossz_opcio_kiegeszitett": 10,
+      "nem_select_eredeti": 7,
+      "nem_select_kiegeszitett": 4,
+      "javult": 73,
+      "romlott": 0,
+      "mcnemar_p": 2.117582368135751e-22
+     },
+     "változat H3-valtas": {
+      "n": 182,
+      "helyes_eredeti": 95,
+      "helyes_kiegeszitett": 168,
+      "rossz_opcio_eredeti": 80,
+      "rossz_opcio_kiegeszitett": 10,
+      "nem_select_eredeti": 7,
+      "nem_select_kiegeszitett": 4,
+      "javult": 73,
+      "romlott": 0,
+      "mcnemar_p": 2.117582368135751e-22
+     },
+     "nyelv hu": {
+      "n": 86,
+      "helyes_eredeti": 44,
+      "helyes_kiegeszitett": 78,
+      "rossz_opcio_eredeti": 38,
+      "rossz_opcio_kiegeszitett": 7,
+      "nem_select_eredeti": 4,
+      "nem_select_kiegeszitett": 1,
+      "javult": 34,
+      "romlott": 0,
+      "mcnemar_p": 1.1641532182693481e-10
+     },
+     "nyelv en": {
+      "n": 96,
+      "helyes_eredeti": 51,
+      "helyes_kiegeszitett": 90,
+      "rossz_opcio_eredeti": 42,
+      "rossz_opcio_kiegeszitett": 3,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 3,
+      "javult": 39,
+      "romlott": 0,
+      "mcnemar_p": 3.637978807091713e-12
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.4010989010989011,
+     "ci95": [
+      0.3186751795690343,
+      0.4860335195530726
+     ]
+    },
+    "karok": {
+     "B1-S": {
+      "auroc_eredeti": 0.6026315789473684,
+      "auroc_kiegeszitett": 0.9232142857142858
+     },
+     "B1-R": {
+      "auroc_eredeti": 0.6992982456140351,
+      "auroc_kiegeszitett": 0.9384920634920636
+     },
+     "B1-LR": {
+      "auroc_eredeti": 0.5882894736842105,
+      "auroc_kiegeszitett": 0.8196428571428571
+     },
+     "B1-R0": {
+      "auroc_eredeti": 0.6287280701754385,
+      "auroc_kiegeszitett": 0.6464285714285714
+     }
+    },
+    "munkapont": {
+     "B1-S": {
+      "eredeti": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "kiegeszitett": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": true
+     },
+     "B1-R": {
+      "eredeti": {
+       "lezart": 50.666666666666664,
+       "hibas": 11.666666666666666,
+       "helyes": 39.0,
+       "hibas_x": 3.0,
+       "csali": 8.666666666666666
+      },
+      "kiegeszitett": {
+       "lezart": 168.33333333333334,
+       "hibas": 7.666666666666667,
+       "helyes": 160.66666666666666,
+       "hibas_x": 4.0,
+       "csali": 3.6666666666666665
+      },
+      "nincs_munkapont": false
+     },
+     "B1-LR": {
+      "eredeti": {
+       "lezart": 109.0,
+       "hibas": 43.0,
+       "helyes": 66.0,
+       "hibas_x": 0.0,
+       "csali": 43.0
+      },
+      "kiegeszitett": {
+       "lezart": 139.0,
+       "hibas": 4.0,
+       "helyes": 135.0,
+       "hibas_x": 0.0,
+       "csali": 4.0
+      },
+      "nincs_munkapont": false
+     }
+    },
+    "sablon": 38
+   }
+  },
+  "szabaly.koltsegelszamolas": {
+   "keret4": {
+    "sorok": {
+     "összes": {
+      "n": 199,
+      "helyes_eredeti": 48,
+      "helyes_kiegeszitett": 134,
+      "rossz_opcio_eredeti": 148,
+      "rossz_opcio_kiegeszitett": 65,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 86,
+      "romlott": 0,
+      "mcnemar_p": 2.5849394142282115e-26
+     },
+     "változat S3a-netto": {
+      "n": 100,
+      "helyes_eredeti": 30,
+      "helyes_kiegeszitett": 67,
+      "rossz_opcio_eredeti": 70,
+      "rossz_opcio_kiegeszitett": 33,
+      "nem_select_eredeti": 0,
+      "nem_select_kiegeszitett": 0,
+      "javult": 37,
+      "romlott": 0,
+      "mcnemar_p": 1.4551915228366852e-11
+     },
+     "változat S3b-deviza": {
+      "n": 99,
+      "helyes_eredeti": 18,
+      "helyes_kiegeszitett": 67,
+      "rossz_opcio_eredeti": 78,
+      "rossz_opcio_kiegeszitett": 32,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 49,
+      "romlott": 0,
+      "mcnemar_p": 3.552713678800501e-15
+     },
+     "nyelv hu": {
+      "n": 100,
+      "helyes_eredeti": 42,
+      "helyes_kiegeszitett": 90,
+      "rossz_opcio_eredeti": 55,
+      "rossz_opcio_kiegeszitett": 10,
+      "nem_select_eredeti": 3,
+      "nem_select_kiegeszitett": 0,
+      "javult": 48,
+      "romlott": 0,
+      "mcnemar_p": 7.105427357601002e-15
+     },
+     "nyelv en": {
+      "n": 99,
+      "helyes_eredeti": 6,
+      "helyes_kiegeszitett": 44,
+      "rossz_opcio_eredeti": 93,
+      "rossz_opcio_kiegeszitett": 55,
+      "nem_select_eredeti": 0,
+      "nem_select_kiegeszitett": 0,
+      "javult": 38,
+      "romlott": 0,
+      "mcnemar_p": 7.275957614183426e-12
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.43216080402010054,
+     "ci95": [
+      0.3645713141025641,
+      0.5
+     ]
+    },
+    "karok": {
+     "B1-4S": {
+      "auroc_eredeti": 0.3158783783783784,
+      "auroc_kiegeszitett": 0.5347876004592422
+     },
+     "B1-4R": {
+      "auroc_eredeti": 0.4473536036036036,
+      "auroc_kiegeszitett": 0.5471488710294681
+     },
+     "B1-4LR": {
+      "auroc_eredeti": 0.37528153153153154,
+      "auroc_kiegeszitett": 0.4756601607347876
+     },
+     "B1-4R0": {
+      "auroc_eredeti": 0.5140765765765766,
+      "auroc_kiegeszitett": 0.6333716035208573
+     }
+    },
+    "munkapont": {
+     "B1-4S": {
+      "eredeti": {
+       "lezart": 36.0,
+       "hibas": 36.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 36.0
+      },
+      "kiegeszitett": {
+       "lezart": 67.0,
+       "hibas": 17.0,
+       "helyes": 50.0,
+       "hibas_x": 0.0,
+       "csali": 17.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-4R": {
+      "eredeti": {
+       "lezart": 151.0,
+       "hibas": 122.33333333333333,
+       "helyes": 28.666666666666668,
+       "hibas_x": 3.0,
+       "csali": 119.33333333333333
+      },
+      "kiegeszitett": {
+       "lezart": 188.0,
+       "hibas": 63.333333333333336,
+       "helyes": 124.66666666666667,
+       "hibas_x": 0.0,
+       "csali": 63.333333333333336
+      },
+      "nincs_munkapont": false
+     },
+     "B1-4LR": {
+      "eredeti": {
+       "lezart": 138.0,
+       "hibas": 107.0,
+       "helyes": 31.0,
+       "hibas_x": 3.0,
+       "csali": 104.0
+      },
+      "kiegeszitett": {
+       "lezart": 196.0,
+       "hibas": 65.0,
+       "helyes": 131.0,
+       "hibas_x": 0.0,
+       "csali": 65.0
+      },
+      "nincs_munkapont": false
+     }
+    },
+    "sablon": 60
+   },
+   "keret2": {
+    "sorok": {
+     "összes": {
+      "n": 199,
+      "helyes_eredeti": 51,
+      "helyes_kiegeszitett": 133,
+      "rossz_opcio_eredeti": 146,
+      "rossz_opcio_kiegeszitett": 66,
+      "nem_select_eredeti": 2,
+      "nem_select_kiegeszitett": 0,
+      "javult": 83,
+      "romlott": 1,
+      "mcnemar_p": 8.788794008375919e-24
+     },
+     "változat S3a-netto": {
+      "n": 100,
+      "helyes_eredeti": 31,
+      "helyes_kiegeszitett": 66,
+      "rossz_opcio_eredeti": 69,
+      "rossz_opcio_kiegeszitett": 34,
+      "nem_select_eredeti": 0,
+      "nem_select_kiegeszitett": 0,
+      "javult": 36,
+      "romlott": 1,
+      "mcnemar_p": 5.529727786779404e-10
+     },
+     "változat S3b-deviza": {
+      "n": 99,
+      "helyes_eredeti": 20,
+      "helyes_kiegeszitett": 67,
+      "rossz_opcio_eredeti": 77,
+      "rossz_opcio_kiegeszitett": 32,
+      "nem_select_eredeti": 2,
+      "nem_select_kiegeszitett": 0,
+      "javult": 47,
+      "romlott": 0,
+      "mcnemar_p": 1.4210854715202004e-14
+     },
+     "nyelv hu": {
+      "n": 100,
+      "helyes_eredeti": 45,
+      "helyes_kiegeszitett": 90,
+      "rossz_opcio_eredeti": 53,
+      "rossz_opcio_kiegeszitett": 10,
+      "nem_select_eredeti": 2,
+      "nem_select_kiegeszitett": 0,
+      "javult": 46,
+      "romlott": 1,
+      "mcnemar_p": 6.821210263296962e-13
+     },
+     "nyelv en": {
+      "n": 99,
+      "helyes_eredeti": 6,
+      "helyes_kiegeszitett": 43,
+      "rossz_opcio_eredeti": 93,
+      "rossz_opcio_kiegeszitett": 56,
+      "nem_select_eredeti": 0,
+      "nem_select_kiegeszitett": 0,
+      "javult": 37,
+      "romlott": 0,
+      "mcnemar_p": 1.4551915228366852e-11
+     }
+    },
+    "delta_helyes": {
+     "pont": 0.4120603015075377,
+     "ci95": [
+      0.34196560748651794,
+      0.4773869346733669
+     ]
+    },
+    "karok": {
+     "B1-S": {
+      "auroc_eredeti": 0.3091592801504163,
+      "auroc_kiegeszitett": 0.5354294827979038
+     },
+     "B1-R": {
+      "auroc_eredeti": 0.3720565851911541,
+      "auroc_kiegeszitett": 0.43316624895572264
+     },
+     "B1-LR": {
+      "auroc_eredeti": 0.4199570239054526,
+      "auroc_kiegeszitett": 0.5599225336067442
+     },
+     "B1-R0": {
+      "auroc_eredeti": 0.61500581967947,
+      "auroc_kiegeszitett": 0.6561859193438141
+     }
+    },
+    "munkapont": {
+     "B1-S": {
+      "eredeti": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "kiegeszitett": {
+       "lezart": 0.0,
+       "hibas": 0.0,
+       "helyes": 0.0,
+       "hibas_x": 0.0,
+       "csali": 0.0
+      },
+      "nincs_munkapont": true
+     },
+     "B1-R": {
+      "eredeti": {
+       "lezart": 132.33333333333334,
+       "hibas": 107.33333333333333,
+       "helyes": 25.0,
+       "hibas_x": 2.0,
+       "csali": 105.33333333333333
+      },
+      "kiegeszitett": {
+       "lezart": 171.66666666666666,
+       "hibas": 62.0,
+       "helyes": 109.66666666666667,
+       "hibas_x": 0.0,
+       "csali": 62.0
+      },
+      "nincs_munkapont": false
+     },
+     "B1-LR": {
+      "eredeti": {
+       "lezart": 21.0,
+       "hibas": 21.0,
+       "helyes": 0.0,
+       "hibas_x": 2.0,
+       "csali": 19.0
+      },
+      "kiegeszitett": {
+       "lezart": 35.0,
+       "hibas": 8.0,
+       "helyes": 27.0,
+       "hibas_x": 0.0,
+       "csali": 8.0
+      },
+      "nincs_munkapont": false
+     }
+    },
+    "sablon": 60
+   }
+  }
+ }
+}

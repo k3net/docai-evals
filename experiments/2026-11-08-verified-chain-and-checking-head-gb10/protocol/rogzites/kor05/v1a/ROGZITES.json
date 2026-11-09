@@ -1,0 +1,11 @@
+{
+ "verzio": "v1a",
+ "rogzitve": "2026-10-29T12:41:47",
+ "jovahagyas": "Dani, 2026-10-29: mehet (a v1a rögzítése és a pecsét feloldása, a D1–D5 elfogadása után)",
+ "manifest_sha256": "e924794e2989e089ba97e123146d032ca1bcd308e288399f9b27e5e71a941bec",
+ "pecset_manifestek": {
+  "K05F2B": "2b11612e2b7d3b7e3197cac80311c2d53f6f356bcd3469e6410a552c00f43025",
+  "K05JEV": "49110cdb359b7e5656817d63aa6da5711b0f5acdea8a10ccf7777e5b6151aed2"
+ },
+ "megjegyzes": "A HO-rétegek és a célcsalád-minták kiolvasásai a rögzítéskor nem voltak megtekintve; a kiolvasás pecsételve futott (cache/k05/pecset/, root, 700)."
+}

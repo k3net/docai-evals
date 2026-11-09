@@ -1,0 +1,260 @@
+{
+ "forras": "J1K3",
+ "reps": 10000,
+ "seed": 20261103,
+ "cimke": "J, a rögzített lánc ugyanazon a kinyerésen",
+ "csaladok": {
+  "penzugy.bankparositas": {
+   "n": 197,
+   "sablon": 60,
+   "pont": {
+    "nelkul": 0.4263959390862944,
+    "kinyert": 1.0,
+    "orakulum": 1.0,
+    "veszteseg": 0.0,
+    "lanc_nyereseg": 0.5736040609137056,
+    "hamis_atengedes": 0.0
+   },
+   "ci95": {
+    "nelkul": [
+     0.336734693877551,
+     0.52
+    ],
+    "kinyert": [
+     1.0,
+     1.0
+    ],
+    "orakulum": [
+     1.0,
+     1.0
+    ],
+    "veszteseg": [
+     0.0,
+     0.0
+    ],
+    "lanc_nyereseg": [
+     0.48,
+     0.6632653061224489
+    ],
+    "hamis_atengedes": [
+     0.0,
+     0.0
+    ]
+   },
+   "kimenet": {
+    "nelkul": {
+     "a modellhez": 197
+    },
+    "kinyert": {
+     "a modellhez": 197
+    },
+    "orakulum": {
+     "a modellhez": 197
+    }
+   },
+   "lanc_hibak": {},
+   "dbh": 0,
+   "atment": 197,
+   "bontas": {
+    "valtozat": {
+     "B3a-reszfizetes": {
+      "nelkul": 0.4263959390862944,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 197
+     }
+    },
+    "nyelv": {
+     "en": {
+      "nelkul": 0.7471264367816092,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 87
+     },
+     "hu": {
+      "nelkul": 0.17272727272727273,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 110
+     }
+    }
+   },
+   "cel": {
+    "helyes_kinyert_pont": true,
+    "helyes_kinyert_also": true,
+    "atengedes_pont": true,
+    "atengedes_felso": true
+   }
+  },
+  "muszaki.hibaelharitas": {
+   "n": 210,
+   "sablon": 46,
+   "pont": {
+    "nelkul": 0.5,
+    "kinyert": 0.9809523809523809,
+    "orakulum": 0.9857142857142858,
+    "veszteseg": 0.004761904761904856,
+    "lanc_nyereseg": 0.4809523809523809,
+    "hamis_atengedes": 0.023809523809523808
+   },
+   "ci95": {
+    "nelkul": [
+     0.4131455399061033,
+     0.5857142857142857
+    ],
+    "kinyert": [
+     0.9560975609756097,
+     1.0
+    ],
+    "orakulum": [
+     0.961352657004831,
+     1.0
+    ],
+    "veszteseg": [
+     0.0,
+     0.01449275362318847
+    ],
+    "lanc_nyereseg": [
+     0.39234449760765555,
+     0.5693069306930694
+    ],
+    "hamis_atengedes": [
+     0.0047169811320754715,
+     0.04854368932038835
+    ]
+   },
+   "kimenet": {
+    "nelkul": {
+     "a modellhez": 210
+    },
+    "kinyert": {
+     "a modellhez": 210
+    },
+    "orakulum": {
+     "a modellhez": 210
+    }
+   },
+   "lanc_hibak": {},
+   "dbh": 5,
+   "atment": 210,
+   "bontas": {
+    "valtozat": {
+     "H3-valtas": {
+      "nelkul": 0.5,
+      "kinyert": 0.9809523809523809,
+      "orakulum": 0.9857142857142858,
+      "n": 210
+     }
+    },
+    "nyelv": {
+     "en": {
+      "nelkul": 0.5283018867924528,
+      "kinyert": 0.9811320754716981,
+      "orakulum": 0.9811320754716981,
+      "n": 106
+     },
+     "hu": {
+      "nelkul": 0.47115384615384615,
+      "kinyert": 0.9807692307692307,
+      "orakulum": 0.9903846153846154,
+      "n": 104
+     }
+    }
+   },
+   "cel": {
+    "helyes_kinyert_pont": true,
+    "helyes_kinyert_also": true,
+    "atengedes_pont": false,
+    "atengedes_felso": false
+   }
+  },
+  "szabaly.koltsegelszamolas": {
+   "n": 220,
+   "sablon": 60,
+   "pont": {
+    "nelkul": 0.2727272727272727,
+    "kinyert": 1.0,
+    "orakulum": 1.0,
+    "veszteseg": 0.0,
+    "lanc_nyereseg": 0.7272727272727273,
+    "hamis_atengedes": 0.004545454545454545
+   },
+   "ci95": {
+    "nelkul": [
+     0.20614035087719298,
+     0.3407079646017699
+    ],
+    "kinyert": [
+     1.0,
+     1.0
+    ],
+    "orakulum": [
+     1.0,
+     1.0
+    ],
+    "veszteseg": [
+     0.0,
+     0.0
+    ],
+    "lanc_nyereseg": [
+     0.6592920353982301,
+     0.793859649122807
+    ],
+    "hamis_atengedes": [
+     0.0,
+     0.014018691588785047
+    ]
+   },
+   "kimenet": {
+    "nelkul": {
+     "a modellhez": 220
+    },
+    "kinyert": {
+     "a modellhez": 220
+    },
+    "orakulum": {
+     "a modellhez": 220
+    }
+   },
+   "lanc_hibak": {},
+   "dbh": 1,
+   "atment": 220,
+   "bontas": {
+    "valtozat": {
+     "S3a-netto": {
+      "nelkul": 0.33636363636363636,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 110
+     },
+     "S3b-deviza": {
+      "nelkul": 0.20909090909090908,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 110
+     }
+    },
+    "nyelv": {
+     "en": {
+      "nelkul": 0.11818181818181818,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 110
+     },
+     "hu": {
+      "nelkul": 0.42727272727272725,
+      "kinyert": 1.0,
+      "orakulum": 1.0,
+      "n": 110
+     }
+    }
+   },
+   "cel": {
+    "helyes_kinyert_pont": true,
+    "helyes_kinyert_also": true,
+    "atengedes_pont": true,
+    "atengedes_felso": true
+   }
+  }
+ }
+}

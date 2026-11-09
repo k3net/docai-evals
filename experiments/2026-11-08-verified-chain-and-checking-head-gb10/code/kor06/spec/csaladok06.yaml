@@ -1,0 +1,89 @@
+# 06-os kör — a három friss család terve (06-runbook 3.1, 3.4–3.5; D1, D9, D12–D14; Dani, 2026-10-29). A generálás
+# előtt rögzül, és a v1-manifestbe is bekerül. Kutatási összetétel, nem a DocAI-forgalom becslése (D9).
+#
+# Recept (a 03 `szint03` mintájára): a terv determinisztikusan adja az állapotot, a gold-ot, az opciókat és a
+# szcenárió-dimenziókat; a generátor csak a szöveget (a `state` mezőt) írja. A gold és a terv mezői soha nem kerülnek a
+# generátor elé olyan formában, amelyből a szöveg a címkét kimondaná ("ez a tétel nem számla" típusú mondat tilos).
+#
+# Állapotok (a 05 allapot05 leképezésével; x_type → állapot):
+#   MATCH          gold = egy opció
+#   NO_MATCH       x_type gold-drop: a helyes opció a terv szerint létezik, de nincs a listán
+#   MISSING_DATA   x_type missing-precondition: a döntő adat hiányzik a szövegből, és a megmaradó adattal legalább két
+#                  opció összefér
+#   OUT_OF_SCOPE   x_type out-of-scope: a kérés nem ehhez a feladathoz tartozik
+# AMBIGUOUS-t nem generálunk.
+
+kozos:
+  alapeset: {T500: 500, CAL: 500, TESZT: 1000}        # családonként; a 3.2 szerint
+  tervezett_alapeset: 2600                           # a szűrési veszteség tartaléka (a 03-ban ~23%)
+  item_per_alapeset: 1                               # D12: változat nélkül; a parafrázis-stabilitást nem vizsgáljuk
+  allapot_arany:                                     # D9: mindhárom családban és szeletben azonos
+    MATCH: 0.60
+    NO_MATCH: 0.20
+    MISSING_DATA: 0.10
+    OUT_OF_SCOPE: 0.10
+  nyelv_arany: {hu: 0.5, en: 0.5}                    # D9: állapotonként is; minden alapeset egy nyelven, fordításpár nincs
+  szetvalasztas: sabloncsoport                       # D12: a sabloncsoport egészében kerül szeletbe (családonként lent)
+  retegzes: [allapot, nyelv]                         # a szeleten belül pontos kvóták
+  split_seed: "k06-split:20261029"
+  tartalek: 0.3                                      # 3.4: cellánként; a szűrés után a hash-sorrend első N túlélője marad
+  sablon_per_nyelv: {T500: 15, CAL: 15, TESZT: 30}   # sabloncsoportok családonként és nyelvenként (D12)
+  opciok: {min: 3, max: 6}                           # az X („egyik sem”) mindig a lista végén, a kozos03 keretével
+  generator: muse-glimmer-30b                        # D13; Apache-2.0, nem Qwen, nem Gemma
+  generator_revizio: meta-models/Muse-Glimmer-30B@a4e59da52a7bc87ae7251dd5545c0dd437c44b68
+  generator_tartalek: [openai/gpt-oss-120b, "zai-org/GLM-4.7-Flash (MIT: csak szabálymódosítással)"]
+  proba: {cellankent: 3}                             # D13: családonként 4 állapot × 2 nyelv × 3 = 24 item, Dani nézi át
+  generator_beallitas: {reasoning_strength: low, max_tokens: 4000}
+  szuro:                                             # 3.5; csak érvényesség, címkét és puha célt nem ad
+    modell: llama33-70b-fp8                          # nvidia/Llama-3.3-70B-Instruct-FP8@fde04ee76a27704c88f569542ef023b57d4d0362
+    mod: vakon, a kozos03 keretében, az opciók címkéire kiolvasott valószínűség
+    marad: "top-1 = a szándékolt címke és bizalom ≥ 0,6"
+  audit:                                             # D14
+    minta: 300                                       # családonként 100, állapot × nyelv szerint rétegezve (cellánként 12–13)
+    elso_itelet: Dani, vakon (atnezes.py)
+    masodik_itelet: gemma-4-26b-a4b, gold nélkül, triage   # google/gemma-4-26B-A4B-it@4d7ae4984b7db7de8f8457170b3f1a419ee76d52
+    kapu: "a maradék címkehiba egyoldali 95%-os felső korlátja ≤ 2% (300 példán legfeljebb 1 hiba)"
+  pii: "kitalált nevek; e-mail csak pelda.example, telefon csak +36 1 555 xxxx; valós adat soha (a 03 szabálya)"
+  tilos_a_szovegben: ["a címke vagy az állapot kimondása", "szögletes zárójeles helykitöltő", "CJK-karakter"]
+
+csaladok:
+  penzugy.bankparositas:
+    leiras: egy bankszámlakivonat-tétel melyik nyitott számlát egyenlíti ki
+    kerdes: {hu: "Melyik nyitott számlát egyenlíti ki ez a tétel?", en: "Which open invoice does this transaction settle?"}
+    opciok: >-
+      nyitott számlák (partner, számlaszám, bruttó összeg, kelte, esedékesség); nehéz negatívok: ugyanaz a partner más
+      összeggel; ugyanaz az összeg más partnernél; elírt vagy rövidített számlaszám egy másik számlához közelebb
+    allapotok:
+      NO_MATCH: a kiegyenlített számla nincs a listán (gold-drop)
+      MISSING_DATA: hiányzik a közlemény és a partnernév, és az összeg legalább két nyitott számlához illik
+      OUT_OF_SCOPE: a tétel nem számlakiegyenlítés (bérátutalás, adó- vagy járulékfizetés, bankköltség, belső átvezetés)
+    sabloncsoport: a szintetikus cég (a nyitott számláinak köre); nyelvenként 60 (15 T500 · 15 CAL · 30 TESZT)
+    szcenario_dimenziok: [irány (bejövő/kimenő), ágazat, a közlemény formája, részfizetés, deviza, a kivonat formátuma]
+    kockazat: közel esik az entitásegyezéshez és a HO-termék párosításához; aritmetika
+
+  muszaki.hibaelharitas:
+    leiras: egy hibabejelentés (tünet, mérések, naplósor) alapján melyik ismert ok a legvalószínűbb
+    kerdes: {hu: "Mi a hiba legvalószínűbb oka?", en: "What is the most likely cause of the fault?"}
+    opciok: >-
+      ismert okok rövid leírással; nehéz negatívok: azonos tünetet adó ok, amelyet egy megadott mérés kizár
+    allapotok:
+      NO_MATCH: a valódi ok nincs a listán (gold-drop)
+      MISSING_DATA: a két legközelebbi ok között csak egy hiányzó mérés döntene
+      OUT_OF_SCOPE: a bejelentés nem hiba (funkciókérés, használati kérdés, szerződéses vagy számlázási kérdés)
+    sabloncsoport: a berendezésmodell az okkatalógusával; nyelvenként 60
+    szcenario_dimenziok: [berendezés (HVAC, nyomtató, hálózat, gépjármű, szivattyú), bejelentő (laikus/szakember), a mérések formája, hossz]
+    kockazat: —
+
+  szabaly.koltsegelszamolas:
+    leiras: egy költségtétel vagy kérelem a szintetikus belső szabályzat melyik pontja alá esik
+    kerdes: {hu: "A szabályzat melyik pontja alá esik ez a tétel?", en: "Which policy clause does this item fall under?"}
+    opciok: >-
+      szabálypontok rövid szövege (értékhatár, költségnem, jóváhagyási szint); nehéz negatívok: a szomszédos értékhatár,
+      a rokon költségnem
+    allapotok:
+      NO_MATCH: a helyes pont nincs a listán (gold-drop)
+      MISSING_DATA: hiányzik a döntő adat (összeg, résztvevők száma vagy a cél), és két pont is szóba jön
+      OUT_OF_SCOPE: nem költségelszámolás (szabadságkérelem, IT-hibabejelentés, beszerzési igény)
+    sabloncsoport: a szintetikus szabályzat (a pontjaival); nyelvenként 60
+    szcenario_dimenziok: [költségnem, összeg-tartomány, a kérelmező szerepe, regiszter (hivatalos, köznapi, tömör)]
+    kockazat: közel esik a jogi csoporthoz (03 jogi.*)

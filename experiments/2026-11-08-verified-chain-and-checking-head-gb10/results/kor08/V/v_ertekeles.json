@@ -1,0 +1,229 @@
+{
+ "n_tetel": 262,
+ "hatokor": 255,
+ "cimkek": {
+  "MATCH": 139,
+  "MISSING_DATA": 62,
+  "OUT_OF_SCOPE": 47,
+  "NO_MATCH": 7
+ },
+ "lanc_kimenet": {
+  "modell": 214,
+  "kotes": 23
+ },
+ "fedes": {
+  "kozvetlen_egy": 93,
+  "kinyert_egy": 30,
+  "elvetett_mezo": 1,
+  "kizart_jelolt": 0
+ },
+ "dontesek": {
+  "MATCH|SELECT": 117,
+  "MISSING_DATA|SELECT": 33,
+  "MISSING_DATA|X": 20,
+  "NO_MATCH|X": 3,
+  "OUT_OF_SCOPE|SELECT": 3,
+  "OUT_OF_SCOPE|X": 32
+ },
+ "lepcsok": {
+  "lánc": {
+   "lezart": 22,
+   "hibas": 0,
+   "arany": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {},
+   "tau": null
+  },
+  "lánc + L-S": {
+   "lezart": 101,
+   "hibas": 2,
+   "arany": 0.019801980198019802,
+   "ci95": [
+    0.0,
+    0.05319148936170213
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 0.9750523046373508
+  },
+  "lánc + L-S + iker-kapu": {
+   "lezart": 101,
+   "hibas": 2,
+   "arany": 0.019801980198019802,
+   "ci95": [
+    0.0,
+    0.05263157894736842
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 0.9750523046373508
+  },
+  "lánc + L-R07": {
+   "lezart": 43,
+   "hibas": 0,
+   "arany": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "uj": 3,
+   "uj_hibas": 0,
+   "hiba_cimke": {},
+   "tau": 6.80846325556437
+  },
+  "lánc + L-R07 + iker-kapu": {
+   "lezart": 77,
+   "hibas": 1,
+   "arany": 0.012987012987012988,
+   "ci95": [
+    0.0,
+    0.043478260869565216
+   ],
+   "uj": 3,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 5.362464984258016
+  },
+  "lánc + L-R": {
+   "lezart": 76,
+   "hibas": 1,
+   "arany": 0.013157894736842105,
+   "ci95": [
+    0.0,
+    0.04477611940298507
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 6.772935533523559
+  },
+  "lánc + L-R + iker-kapu": {
+   "lezart": 72,
+   "hibas": 1,
+   "arany": 0.013888888888888888,
+   "ci95": [
+    0.0,
+    0.04763824884792599
+   ],
+   "uj": 1,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 6.772935533523559
+  },
+  "lánc + L-RN": {
+   "lezart": 91,
+   "hibas": 1,
+   "arany": 0.01098901098901099,
+   "ci95": [
+    0.0,
+    0.037037037037037035
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 4.56301965713501
+  },
+  "lánc + L-RN + iker-kapu": {
+   "lezart": 94,
+   "hibas": 1,
+   "arany": 0.010638297872340425,
+   "ci95": [
+    0.0,
+    0.036585365853658534
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 3.410024563471476
+  },
+  "lánc + L-LR": {
+   "lezart": 81,
+   "hibas": 1,
+   "arany": 0.012345679012345678,
+   "ci95": [
+    0.0,
+    0.041247852233676816
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 1.5250984531587153
+  },
+  "lánc + L-LR + iker-kapu": {
+   "lezart": 102,
+   "hibas": 2,
+   "arany": 0.0196078431372549,
+   "ci95": [
+    0.0,
+    0.051550835407038684
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 2
+   },
+   "tau": 1.3819426111174162
+  },
+  "lánc + L-LRN": {
+   "lezart": 70,
+   "hibas": 1,
+   "arany": 0.014285714285714285,
+   "ci95": [
+    0.0,
+    0.05084745762711865
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 3.576192526802058
+  },
+  "lánc + L-LRN + iker-kapu": {
+   "lezart": 70,
+   "hibas": 1,
+   "arany": 0.014285714285714285,
+   "ci95": [
+    0.0,
+    0.04838709677419355
+   ],
+   "uj": 2,
+   "uj_hibas": 0,
+   "hiba_cimke": {
+    "MISSING_DATA": 1
+   },
+   "tau": 3.576192526802058
+  }
+ },
+ "auroc": {
+  "L-S": 0.9109686609686609,
+  "L-R07": 0.8649097815764483,
+  "L-R": 0.8364197530864198,
+  "L-RN": 0.9104938271604939,
+  "L-LR": 0.9176163342830009,
+  "L-LRN": 0.8751187084520418
+ }
+}

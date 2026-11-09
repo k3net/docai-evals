@@ -1,0 +1,533 @@
+{
+ "B0": {
+  "temperature": 1.9462255977990615,
+  "tau_szigoru": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  },
+  "tau_enyhe": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  }
+ },
+ "B1": {
+  "temperature": 1.9462255977990615,
+  "tau_szigoru": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  },
+  "tau_enyhe": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  }
+ },
+ "C": {
+  "17": {
+   "platt": {
+    "a": 1.045406987375028,
+    "b": -0.09255397051387929
+   },
+   "tartalmi_temperature": {
+    "T": 1.3900154972523435,
+    "nll_elotte": 0.9455591118567995,
+    "nll_utana": 0.8884341364880411
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2139,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2139,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   }
+  },
+  "42": {
+   "platt": {
+    "a": 1.054221164202338,
+    "b": -0.10323251728560355
+   },
+   "tartalmi_temperature": {
+    "T": 1.3406930101653676,
+    "nll_elotte": 0.9326506642123491,
+    "nll_utana": 0.8856981958100592
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   }
+  },
+  "73": {
+   "platt": {
+    "a": 1.0801878425188571,
+    "b": -0.12784924341021892
+   },
+   "tartalmi_temperature": {
+    "T": 1.375379668578345,
+    "nll_elotte": 0.9428453211602598,
+    "nll_utana": 0.889115886701587
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2136,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2136,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   }
+  }
+ },
+ "H": {
+  "17": {
+   "platt": {
+    "a": 0.8458037231127556,
+    "b": -0.058609556767781255
+   },
+   "tartalmi_temperature": {
+    "T": 1.707633623198987,
+    "nll_elotte": 0.8103807140073147,
+    "nll_utana": 0.6986457105766949
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2121,
+    "tau": 0.8666779187567866,
+    "elfogadott": 906,
+    "helyes": 872,
+    "cp_also": 0.9503500689257385,
+    "pontossag": 0.9624724061810155,
+    "lefedettseg": 0.42336448598130844
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2121,
+    "tau": 0.8666779187567866,
+    "elfogadott": 906,
+    "helyes": 872,
+    "cp_also": 0.9503500689257385,
+    "pontossag": 0.9624724061810155,
+    "lefedettseg": 0.42336448598130844
+   }
+  },
+  "42": {
+   "platt": {
+    "a": 0.7594746937056803,
+    "b": 0.1322253321997983
+   },
+   "tartalmi_temperature": {
+    "T": 1.77647525378605,
+    "nll_elotte": 0.8693021534542765,
+    "nll_utana": 0.7290393846383108
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2123,
+    "tau": 0.8628588520663328,
+    "elfogadott": 912,
+    "helyes": 878,
+    "cp_also": 0.9506746634464397,
+    "pontossag": 0.9627192982456141,
+    "lefedettseg": 0.4261682242990654
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2123,
+    "tau": 0.8628588520663328,
+    "elfogadott": 912,
+    "helyes": 878,
+    "cp_also": 0.9506746634464397,
+    "pontossag": 0.9627192982456141,
+    "lefedettseg": 0.4261682242990654
+   }
+  },
+  "73": {
+   "platt": {
+    "a": 0.981025738255159,
+    "b": 0.15067704474386426
+   },
+   "tartalmi_temperature": {
+    "T": 2.0042762879317175,
+    "nll_elotte": 0.9689192534200536,
+    "nll_utana": 0.7531394591026753
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2115,
+    "tau": 0.9192817893572661,
+    "elfogadott": 740,
+    "helyes": 713,
+    "cp_also": 0.9500328987011457,
+    "pontossag": 0.9635135135135136,
+    "lefedettseg": 0.34579439252336447
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2115,
+    "tau": 0.9192817893572661,
+    "elfogadott": 740,
+    "helyes": 713,
+    "cp_also": 0.9500328987011457,
+    "pontossag": 0.9635135135135136,
+    "lefedettseg": 0.34579439252336447
+   }
+  }
+ },
+ "A": {
+  "17": {
+   "platt": {
+    "a": 0.9175662301058747,
+    "b": 0.17373384294597358
+   },
+   "tartalmi_temperature": {
+    "T": 1.750835344593355,
+    "nll_elotte": 0.8233056787649266,
+    "nll_utana": 0.7003407395136246
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2123,
+    "tau": 0.894387216281317,
+    "elfogadott": 845,
+    "helyes": 814,
+    "cp_also": 0.9508069299939036,
+    "pontossag": 0.9633136094674556,
+    "lefedettseg": 0.39485981308411217
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2123,
+    "tau": 0.894387216281317,
+    "elfogadott": 845,
+    "helyes": 814,
+    "cp_also": 0.9508069299939036,
+    "pontossag": 0.9633136094674556,
+    "lefedettseg": 0.39485981308411217
+   }
+  },
+  "42": {
+   "platt": {
+    "a": 0.917629391128406,
+    "b": 0.16744573408645877
+   },
+   "tartalmi_temperature": {
+    "T": 1.7849568037181374,
+    "nll_elotte": 0.8615847651695622,
+    "nll_utana": 0.7211064643343037
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2121,
+    "tau": 0.91066431510498,
+    "elfogadott": 799,
+    "helyes": 770,
+    "cp_also": 0.9508397368627046,
+    "pontossag": 0.9637046307884856,
+    "lefedettseg": 0.3733644859813084
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2121,
+    "tau": 0.91066431510498,
+    "elfogadott": 799,
+    "helyes": 770,
+    "cp_also": 0.9508397368627046,
+    "pontossag": 0.9637046307884856,
+    "lefedettseg": 0.3733644859813084
+   }
+  },
+  "73": {
+   "platt": {
+    "a": 0.946789679088149,
+    "b": -0.08960361761518663
+   },
+   "tartalmi_temperature": {
+    "T": 1.9764171785965374,
+    "nll_elotte": 0.9516093134993027,
+    "nll_utana": 0.7436761986288138
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2118,
+    "tau": 0.9237066812395327,
+    "elfogadott": 754,
+    "helyes": 727,
+    "cp_also": 0.9509542783435818,
+    "pontossag": 0.9641909814323607,
+    "lefedettseg": 0.35233644859813085
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2118,
+    "tau": 0.9237066812395327,
+    "elfogadott": 754,
+    "helyes": 727,
+    "cp_also": 0.9509542783435818,
+    "pontossag": 0.9641909814323607,
+    "lefedettseg": 0.35233644859813085
+   }
+  }
+ },
+ "HX": {
+  "17": {
+   "platt": {
+    "a": 0.8508147161660691,
+    "b": 0.31678522501316114
+   },
+   "tartalmi_temperature": {
+    "T": 1.8434118448470451,
+    "nll_elotte": 0.8352834886499688,
+    "nll_utana": 0.698430886705977
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8799411239502231,
+    "elfogadott": 934,
+    "helyes": 899,
+    "cp_also": 0.9506215622686509,
+    "pontossag": 0.9625267665952891,
+    "lefedettseg": 0.43644859813084114
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8799411239502231,
+    "elfogadott": 934,
+    "helyes": 899,
+    "cp_also": 0.9506215622686509,
+    "pontossag": 0.9625267665952891,
+    "lefedettseg": 0.43644859813084114
+   }
+  },
+  "42": {
+   "platt": {
+    "a": 0.9591472014962171,
+    "b": -0.07938927991565008
+   },
+   "tartalmi_temperature": {
+    "T": 1.8629260077328271,
+    "nll_elotte": 0.8639224810987247,
+    "nll_utana": 0.7167700608399251
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8763260815115086,
+    "elfogadott": 932,
+    "helyes": 897,
+    "cp_also": 0.9505162586685897,
+    "pontossag": 0.9624463519313304,
+    "lefedettseg": 0.4355140186915888
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8763260815115086,
+    "elfogadott": 932,
+    "helyes": 897,
+    "cp_also": 0.9505162586685897,
+    "pontossag": 0.9624463519313304,
+    "lefedettseg": 0.4355140186915888
+   }
+  },
+  "73": {
+   "platt": {
+    "a": 0.719769415987726,
+    "b": 0.08735148735215148
+   },
+   "tartalmi_temperature": {
+    "T": 1.8040268215408726,
+    "nll_elotte": 0.8668039333519724,
+    "nll_utana": 0.7276240021118474
+   },
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8821980370434443,
+    "elfogadott": 865,
+    "helyes": 833,
+    "cp_also": 0.9506261890702286,
+    "pontossag": 0.9630057803468208,
+    "lefedettseg": 0.40420560747663553
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.8821980370434443,
+    "elfogadott": 865,
+    "helyes": 833,
+    "cp_also": 0.9506261890702286,
+    "pontossag": 0.9630057803468208,
+    "lefedettseg": 0.40420560747663553
+   }
+  }
+ },
+ "JEV-a": {
+  "temperature": 1.4456159952198429,
+  "tau_szigoru": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": 0.9410704296292997,
+   "elfogadott": 368,
+   "helyes": 357,
+   "cp_also": 0.9510077247139009,
+   "pontossag": 0.970108695652174,
+   "lefedettseg": 0.17196261682242991
+  },
+  "tau_enyhe": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": 0.9410704296292997,
+   "elfogadott": 368,
+   "helyes": 357,
+   "cp_also": 0.9510077247139009,
+   "pontossag": 0.970108695652174,
+   "lefedettseg": 0.17196261682242991
+  }
+ },
+ "JEV-b": {
+  "temperature": 1.488673912523615,
+  "tau_szigoru": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": 0.9536585181597137,
+   "elfogadott": 427,
+   "helyes": 414,
+   "cp_also": 0.9520309485750138,
+   "pontossag": 0.9695550351288056,
+   "lefedettseg": 0.19953271028037384
+  },
+  "tau_enyhe": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": 0.9536585181597137,
+   "elfogadott": 427,
+   "helyes": 414,
+   "cp_also": 0.9520309485750138,
+   "pontossag": 0.9695550351288056,
+   "lefedettseg": 0.19953271028037384
+  }
+ },
+ "L1v": {
+  "temperature": 1.9350614844311798,
+  "tau_szigoru": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  },
+  "tau_enyhe": {
+   "alapeset": 2140,
+   "javaslat_select_none": 2140,
+   "tau": null,
+   "munkapont": "nincs igazolt munkapont",
+   "lefedettseg": 0.0
+  }
+ },
+ "G3": {
+  "1": {
+   "temperature": 1.200922423998812,
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.9212188094314254,
+    "elfogadott": 314,
+    "helyes": 305,
+    "cp_also": 0.9505170879943293,
+    "pontossag": 0.9713375796178344,
+    "lefedettseg": 0.14672897196261683
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.9212188094314254,
+    "elfogadott": 314,
+    "helyes": 305,
+    "cp_also": 0.9505170879943293,
+    "pontossag": 0.9713375796178344,
+    "lefedettseg": 0.14672897196261683
+   }
+  },
+  "2": {
+   "temperature": 1.2151787088404267,
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.9124455948760465,
+    "elfogadott": 389,
+    "helyes": 377,
+    "cp_also": 0.9504975673987702,
+    "pontossag": 0.9691516709511568,
+    "lefedettseg": 0.18177570093457943
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": 0.9124455948760465,
+    "elfogadott": 389,
+    "helyes": 377,
+    "cp_also": 0.9504975673987702,
+    "pontossag": 0.9691516709511568,
+    "lefedettseg": 0.18177570093457943
+   }
+  },
+  "3": {
+   "temperature": 1.212711558703962,
+   "tau_szigoru": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   },
+   "tau_enyhe": {
+    "alapeset": 2140,
+    "javaslat_select_none": 2140,
+    "tau": null,
+    "munkapont": "nincs igazolt munkapont",
+    "lefedettseg": 0.0
+   }
+  }
+ },
+ "_szabaly": {
+  "cel": 0.95,
+  "min_elfogadott": 200,
+  "tau_seed": "k05-tau:20261029",
+  "tau_szelet": "D_cal_policy (alapesetenként egy item, perm 0)",
+  "illesztes": "D_cal_prob"
+ }
+}
