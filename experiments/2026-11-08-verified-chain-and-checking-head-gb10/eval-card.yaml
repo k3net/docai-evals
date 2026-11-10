@@ -32,7 +32,7 @@ dataset:
     round_08_control_m_units: 551
     round_08_control_n_units: 348
     real_bank_development_sample: 262
-  access: not published (synthetic items and read-outs); generators and code published
+  access: synthetic-only          # synthetic items and read-outs not published; generators and code are; real bank items as aggregates only (notes)
   ground_truth: >-
     Labels from the construction: each text was written by Muse-Glimmer-30B (Apache-2.0 per its model card, revision
     a4e59da52a7bc87ae7251dd5545c0dd437c44b68 in round 08) from a detailed plan in which the answer is known; a
@@ -44,6 +44,7 @@ dataset:
     removed; minimal pairs N first audit failed 3/30 (gate limit 2), second fresh 30 passed 0/30; K3 and J samples had
     no blind audit.
   notes: >-
+    The synthetic item files, generated texts and read-outs are not published; the generators and the analysis code are.
     Real bank items (07B, K08V: 262 transactions of one contributing company, June to September 2026, one blind labeller,
     product candidate list) appear only as aggregates and only as development numbers (known sample, known labels; K08V
     thresholds chosen on the sample). No Hugging Face dataset or model in this round; a later study will carry a dataset.
@@ -91,13 +92,13 @@ metrics:
     primary: true
     preregistered: "full"
   - name: surface_baseline
-    definition: "Text-only TF-IDF classifiers (word and character n-grams, length) on the same K1(a) set; reading fixed before the run."
+    definition: "Text-only TF-IDF classifiers (word and character n-grams, length) on the same K1(a) set. Added after the G5 result was seen (results page appendix E); its reading (best text-only model >= 0.85: the K1(a) claim does not hold in this form) was fixed before the run."
     primary: false
-    preregistered: "post-hoc run with a pre-run fixed reading"
+    preregistered: "post-hoc"
   - name: real_data_development
-    definition: "Closures, errors and new closures on 262 known real bank items; bindings by direct search for candidate invoice numbers versus extraction; development numbers."
+    definition: "Closures, errors and new closures on 262 known real bank items; bindings by direct search for candidate invoice numbers versus extraction. Descriptive development and feasibility work, not confirmatory (README section 5.8): the sample and labels are known and the K08V thresholds were chosen on them."
     primary: false
-    preregistered: "descriptive, development"
+    preregistered: "post-hoc"
 
 decision_rule: >-
   Each round's rule and analysis were frozen before the outcome data were read (dates in README.md; manifests in
@@ -164,9 +165,9 @@ verdict: >-
   product benefit is claimed for the head.
 
 reproducibility:
-  level: R1-style
+  level: R2                       # the method can be re-run from the published code and generators; our numbers are checked by hash, not recomputed
   code: published
-  data: "generators and analysis code published; synthetic item files and generated texts not published"
+  data: synthetic-only            # generators and analysis code published; synthetic item files and generated texts not published (not_published)
   results: aggregated
   runs_per_variant: 3
   not_published: >-
@@ -193,8 +194,7 @@ limitations:
   - "Process errors found and fixed are logged in the runbooks (e.g. an edit of a frozen analysis file reverted and the analysis re-run bitwise in round 07)."
 
 related:
-  article: "https://docai.hu/blog/amit-ki-lehet-szamolni"
-  article_english: "https://docai.hu/en/blog/dont-train-what-you-can-compute"
+  article: "https://docai.hu/blog/amit-ki-lehet-szamolni"   # English version: https://docai.hu/en/blog/dont-train-what-you-can-compute
   experiments:
     - "2026-10-09-decision-lora-where-to-train-gb10"
     - "2026-10-15-general-decision-lora-negative-gb10"
