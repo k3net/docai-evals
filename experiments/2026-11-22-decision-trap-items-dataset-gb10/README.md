@@ -138,7 +138,9 @@ See [decision-record.md](decision-record.md).
 
 ## 8. Which DocAI article belongs to it?
 
-None yet. Background: [Amit ki lehet számolni](https://docai.hu/blog/amit-ki-lehet-szamolni)
+[Ha nincs miből dönteni, a modell akkor is dönt](https://docai.hu/blog/ha-nincs-mibol-donteni)
+([English](https://docai.hu/en/blog/nothing-to-decide-from)).
+Background: [Amit ki lehet számolni](https://docai.hu/blog/amit-ki-lehet-szamolni)
 ([English](https://docai.hu/en/blog/dont-train-what-you-can-compute)).
 
 ## Verify

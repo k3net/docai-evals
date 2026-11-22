@@ -131,6 +131,7 @@ limitations:
   - "The thinking run on interpretation is a sample of 147 units."
 
 related:
+  article: "https://docai.hu/blog/ha-nincs-mibol-donteni"
   background_article: "https://docai.hu/blog/amit-ki-lehet-szamolni"
   experiments:
     - "2026-11-08-verified-chain-and-checking-head-gb10"
