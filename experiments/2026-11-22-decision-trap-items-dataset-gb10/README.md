@@ -1,7 +1,7 @@
 # A dataset of decision trap items, and what thinking does and does not fix on it (Qwen3.6-35B-A3B-FP8, GB10)
 
-**Date:** 2026-11-22 · **Status:** draft, dataset not yet public · **Reproducibility:** R1 once the dataset is public ·
-**Dataset:** `k3dani/hu-decision-trap-items` (Hugging Face, CC BY 4.0) ·
+**Date:** 2026-11-22 · **Status:** published · **Reproducibility:** R1 ·
+**Dataset:** [k3dani/hu-decision-trap-items](https://huggingface.co/datasets/k3dani/hu-decision-trap-items) (Hugging Face, CC BY 4.0) ·
 **Previous experiment:** [verified-chain-and-checking-head-gb10](../2026-11-08-verified-chain-and-checking-head-gb10/README.md)
 
 ## 1. What was the measurement for?
@@ -145,7 +145,7 @@ None yet. Background: [Amit ki lehet számolni](https://docai.hu/blog/amit-ki-le
 
 ```bash
 # 1. the released files are the ones measured
-sha256sum -c results/data.sha256                 # run in the dataset root
+sha256sum -c /path/to/this/package/results/data.sha256   # run in the root of the downloaded dataset
 
 # 2. re-score the published per-item answers
 python3 code/baseline.py score --items data/calc_traps/test.jsonl --pred results/raw/calc_traps.f4.think.jsonl

@@ -1,5 +1,5 @@
 id: decision-trap-items-dataset-gb10
-version: "0.9"
+version: "1.0"
 date: "2026-11-22"
 title: "A dataset of synthetic Hungarian/English decision trap items with a reference baseline on Qwen3.6-35B-A3B-FP8, with and without thinking"
 question: >-
@@ -31,7 +31,7 @@ dataset:
     0/300, round 08 none; interpretation test split 0/30, train split none; minimal pairs 0/30 on the second audit after 3/30 on the first; calc_traps 0/60 (one-sided 95 % upper bound
     4.9 %), done for this release.
   notes: >-
-    Draft: the dataset is not public yet. Two company names leaked from the generator prompt were replaced in 2,529
+    Two company names leaked from the generator prompt were replaced in 2,529
     items before the baseline ran; ids are opaque; the interpretation config keeps the expense-claim family only.
     After an independent fact-check and a name comparison with internal customer records 89 items were removed (real
     bank and organisation names, malformed e-mail addresses or real-looking domains, and their unit or pair partners); the per-item answers were filtered to the released items.

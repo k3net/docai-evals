@@ -1,6 +1,6 @@
 # Decision record — publish the trap items as a dataset; keep computable steps in code; treat missing data as an open problem
 
-**Date:** 2026-11-22 · **Status:** proposed, awaiting the owner's approval ·
+**Date:** 2026-11-22 · **Status:** adopted ·
 **Experiment:** [decision-trap-items-dataset-gb10](README.md) · **Previous decision:**
 [verified-chain-and-checking-head-gb10](../2026-11-08-verified-chain-and-checking-head-gb10/decision-record.md)
 
