@@ -9,9 +9,9 @@ experiment declares how far a third party can get with what is published here.
 | **R2** | code + synthetic data + aggregated results from a private corpus | Re-run the scoring logic on your own data; verify the method, not our numbers |
 | **R3** | methodology + configuration + aggregated results | Reproduce the *setup* (launch flags, engine version, workloads) on your own hardware and compare shapes |
 
-## The two R1 experiments
+## The three R1 experiments
 
-Two measurements here can be re-run end to end and checked against our numbers, and in both cases
+Three measurements here can be re-run end to end and checked against our numbers, and in every case
 for the same reason: the corpus is one we are allowed to publish.
 
 ### lora-vs-reranker-hu-verse
@@ -61,6 +61,22 @@ report against the committed one byte for byte. The four analyses that need `res
 into `code/` and the corpus into `dataset/`, but their paths were not, so a clean clone died with
 `FileNotFoundError` while the eval card still advertised R1. A reproducibility claim that nothing
 exercises decays silently — hence the CI job.
+
+### decision-trap-items-dataset-gb10
+
+[decision-trap-items-dataset-gb10](../experiments/2026-11-22-decision-trap-items-dataset-gb10/) is R1
+because its corpus is synthetic and published: 21,067 decision items on Hugging Face
+([k3dani/hu-decision-trap-items](https://huggingface.co/datasets/k3dani/hu-decision-trap-items)),
+with the per-item answers of every baseline run in the package. Re-scoring needs no GPU and no
+dependencies:
+
+```bash
+python3 code/baseline.py score --items <dataset>/data/calc_traps/test.jsonl \
+        --pred results/raw/calc_traps.f4.think.jsonl
+```
+
+Re-running the baseline needs a model behind an OpenAI-compatible endpoint; with a different model,
+engine or quantisation the answers will differ, and the thinking runs are sampled.
 
 ## What R1 costs
 
