@@ -1,0 +1,15 @@
+{
+ "sig": "1a077e07a2bf",
+ "atnezve": 60,
+ "egyezik": 60,
+ "elteres": 0,
+ "felso_korlat_95": 0.04870291331009752,
+ "kapu": "kimegy az audit sz\u00e1m\u00e1val",
+ "cellak": {
+  "amount_in_words:egyezik": 12,
+  "currency:egyezik": 12,
+  "net_vs_gross:egyezik": 12,
+  "partial_payment:egyezik": 12,
+  "unit_conversion:egyezik": 12
+ }
+}

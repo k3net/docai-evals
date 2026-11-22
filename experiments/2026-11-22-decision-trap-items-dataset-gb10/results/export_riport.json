@@ -1,0 +1,307 @@
+{
+ "forrasok": [
+  {
+   "konfig": "calc_traps",
+   "kor": "07-k3diag",
+   "fajl": "kor07/adat/diag/items/penzugy.bankparositas.jsonl",
+   "n": 186,
+   "sha256": "e0e25a06eb71838c2d40d5f8ea1a64b0848fa70773a6bf897c5aa7d6e5970716",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "07-k3diag",
+   "fajl": "kor07/adat/diag/items/muszaki.hibaelharitas.jsonl",
+   "n": 182,
+   "sha256": "c6ca4803d5bb9a2342c326120b3c6f6c9bf02bda458bf2319727afaa7f167bcc",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "07-k3diag",
+   "fajl": "kor07/adat/diag/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 199,
+   "sha256": "adfb6a8f9e16874541af7e72a08c3a67b71e3ee322e2d0d4605c4662c43afb10",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "08-k3",
+   "fajl": "kor08/adat/G2/k3/items/penzugy.bankparositas.jsonl",
+   "n": 90,
+   "sha256": "b158b857b596b7675238474cc67016ecf01705ec47bb39a96cb8bffcb0a2b070",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "08-k3",
+   "fajl": "kor08/adat/G2/k3/items/muszaki.hibaelharitas.jsonl",
+   "n": 91,
+   "sha256": "8a3d13e472e000525b1169069842afad1482250bfcf65f4c5fc72759164ae744",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "08-k3",
+   "fajl": "kor08/adat/G2/k3/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 200,
+   "sha256": "1c592ce1eef5d3671346b025a47228dfbe5e470306907cae80c341d81b2c0826",
+   "manifestben": true
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "07-pilot3",
+   "fajl": "kor07/adat/nehez3/items/penzugy.bankparositas.jsonl",
+   "n": 112,
+   "sha256": "a6d26416adccd8a7834a194a23dff2a46995838dd4dc4daa45cc51e36a5881a7",
+   "manifestben": false
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "07-pilot3",
+   "fajl": "kor07/adat/nehez3/items/muszaki.hibaelharitas.jsonl",
+   "n": 96,
+   "sha256": "601cd2571f4b1d06531ed426ee4b13f088a86155ac3e160fa839b747c00b8791",
+   "manifestben": false
+  },
+  {
+   "konfig": "calc_traps",
+   "kor": "07-pilot3",
+   "fajl": "kor07/adat/nehez3/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 120,
+   "sha256": "9b84ad054ce62a9bfc97d73215de02d2cb4dab6e703115edf4b699c2e9a2bf7e",
+   "manifestben": false
+  },
+  {
+   "konfig": "minimal_pairs",
+   "kor": "08-n",
+   "fajl": "kor08/adat/N/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 696,
+   "sha256": "f0f428f751335fa8f50a9400ee59d19f109f328c5aa9d2ec5e8edec5e43e3c57",
+   "manifestben": true
+  },
+  {
+   "konfig": "interpretation",
+   "kor": "08-interp",
+   "fajl": "kor08/adat/G2/ert_teszt/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 2204,
+   "sha256": "5a6c3eab0d176b244a626781d274cfc5f2354a67fcfeb7d7125406e30a1878d6",
+   "manifestben": true
+  },
+  {
+   "konfig": "interpretation",
+   "kor": "08-interp",
+   "fajl": "kor08/adat/G2/ert_tanito/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 1980,
+   "sha256": "4c67af21d3361675db70ef82b2fa7b80c0770182cc01dbe556ab083d31f3a1a2",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "06",
+   "fajl": "kor06/adat/f2/items/penzugy.bankparositas.jsonl",
+   "n": 2000,
+   "sha256": "b489453eb6225947218cc06a37280b8b5e95118751ebbad8f471705327c1c3af",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "06",
+   "fajl": "kor06/adat/f2/items/muszaki.hibaelharitas.jsonl",
+   "n": 2000,
+   "sha256": "8381bc8378d6a676de83c85000b1f85864e8183961b6827a0e6d3017b3093d04",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "06",
+   "fajl": "kor06/adat/f2/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 2000,
+   "sha256": "df83ba9362dd0a82426bcf58aa15e062da1d698cff7d5686bebee9c4f29b7819",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "07",
+   "fajl": "kor07/adat/f2/items/penzugy.bankparositas.jsonl",
+   "n": 1500,
+   "sha256": "1b9238887db5803fed0e47855ded99bb894d66f47f9832d1be8fa6d60ca33d83",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "07",
+   "fajl": "kor07/adat/f2/items/muszaki.hibaelharitas.jsonl",
+   "n": 1500,
+   "sha256": "0b71ca11586616aec9c3163d84e288d0c96a043519e08f25f5a0387542726628",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "07",
+   "fajl": "kor07/adat/f2/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 1500,
+   "sha256": "820e6c09b31d536cac12bfb7dba03c2ea9faa2cce65d606234edcff22923a7b9",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "08",
+   "fajl": "kor08/adat/G2/friss/items/penzugy.bankparositas.jsonl",
+   "n": 1500,
+   "sha256": "0046aef65188996e0bde52db0c603387476102f5f00fe72949f1ab862d0de5a0",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "08",
+   "fajl": "kor08/adat/G2/friss/items/muszaki.hibaelharitas.jsonl",
+   "n": 1500,
+   "sha256": "6a8e51ef9e9622ae16d6516a23086e14c9a7f804570ebad5913d99c33b9763f7",
+   "manifestben": true
+  },
+  {
+   "konfig": "natural",
+   "kor": "08",
+   "fajl": "kor08/adat/G2/friss/items/szabaly.koltsegelszamolas.jsonl",
+   "n": 1500,
+   "sha256": "bcf8e6d9fe8ed4d15be1debdc74f5a6152415d46b7f9438ffe4bcbc686beaba5",
+   "manifestben": true
+  }
+ ],
+ "nevcsere": {
+  "calc_traps:cserelt": 168,
+  "calc_traps:valtozatlan": 1108,
+  "interpretation:cserelt": 6,
+  "interpretation:valtozatlan": 4178,
+  "minimal_pairs:cserelt": 3,
+  "minimal_pairs:valtozatlan": 693,
+  "natural:cserelt": 2352,
+  "natural:valtozatlan": 12648
+ },
+ "kizart": {
+  "calc_traps/test:valodi_bank": 1,
+  "calc_traps/test:valodi_szervezet": 2,
+  "interpretation/test:az_egyseg_tarsa": 12,
+  "interpretation/test:email_nem_pelda_vagy_torott": 8,
+  "interpretation/train:az_egyseg_tarsa": 9,
+  "interpretation/train:valodi_domain": 1,
+  "interpretation/train:valodi_szervezet": 2,
+  "minimal_pairs/test:az_egyseg_tarsa": 4,
+  "minimal_pairs/test:email_nem_pelda_vagy_torott": 8,
+  "natural/test:email_nem_pelda_vagy_torott": 6,
+  "natural/test:valodi_bank": 14,
+  "natural/test:valodi_szervezet": 6,
+  "natural/train:valodi_bank": 10,
+  "natural/train:valodi_szervezet": 5,
+  "natural/train:valos_szemely": 1
+ },
+ "kimenet": {
+  "calc_traps/test": {
+   "n": 1273,
+   "sha256": "e9947efd69b2cde93f77018da0bb94be4822f8c5c0b0493e57fc445b474a784b",
+   "label": {
+    "MATCH": 1273
+   },
+   "lang": {
+    "en": 634,
+    "hu": 639
+   },
+   "family": {
+    "finance.bank_matching": 387,
+    "policy.expense_claims": 518,
+    "technical.troubleshooting": 368
+   }
+  },
+  "interpretation/test": {
+   "n": 2184,
+   "sha256": "29dc32f586e554f1af8ee9d9a5ae219986f48284415ba424cf60861ce6585917",
+   "label": {
+    "MATCH": 1638,
+    "MISSING_DATA": 546
+   },
+   "lang": {
+    "en": 1072,
+    "hu": 1112
+   },
+   "family": {
+    "policy.expense_claims": 2184
+   }
+  },
+  "interpretation/train": {
+   "n": 1968,
+   "sha256": "8f281c7d591c554510f967b1c111b24f2a9a4e7d45a97609502a8051e7bfc418",
+   "label": {
+    "MATCH": 1476,
+    "MISSING_DATA": 492
+   },
+   "lang": {
+    "en": 976,
+    "hu": 992
+   },
+   "family": {
+    "policy.expense_claims": 1968
+   }
+  },
+  "minimal_pairs/test": {
+   "n": 684,
+   "sha256": "14452b572e5ac086e3ea3f25f35e249d26066a004a87f67814f95110069c0421",
+   "label": {
+    "MATCH": 342,
+    "MISSING_DATA": 342
+   },
+   "lang": {
+    "en": 362,
+    "hu": 322
+   },
+   "family": {
+    "policy.expense_claims": 684
+   }
+  },
+  "natural/test": {
+   "n": 8974,
+   "sha256": "578addaca17168284590672900b6a99781bfecf46306524e5dea0aee5780aeb5",
+   "label": {
+    "MATCH": 5386,
+    "MISSING_DATA": 896,
+    "NO_MATCH": 1795,
+    "OUT_OF_SCOPE": 897
+   },
+   "lang": {
+    "en": 4492,
+    "hu": 4482
+   },
+   "family": {
+    "finance.bank_matching": 2983,
+    "policy.expense_claims": 2995,
+    "technical.troubleshooting": 2996
+   }
+  },
+  "natural/train": {
+   "n": 5984,
+   "sha256": "38a89b6742f940c534ebcc9223b428f94f3f61b74a2069a1c0081b4ed7153773",
+   "label": {
+    "MATCH": 3591,
+    "MISSING_DATA": 598,
+    "NO_MATCH": 1197,
+    "OUT_OF_SCOPE": 598
+   },
+   "lang": {
+    "en": 3000,
+    "hu": 2984
+   },
+   "family": {
+    "finance.bank_matching": 1989,
+    "policy.expense_claims": 2000,
+    "technical.troubleshooting": 1995
+   }
+  }
+ },
+ "trap_type": {
+  "finance.bank_matching:amount_in_words": 60,
+  "finance.bank_matching:partial_payment": 327,
+  "policy.expense_claims:currency": 258,
+  "policy.expense_claims:net_vs_gross": 260,
+  "technical.troubleshooting:unit_conversion": 368
+ }
+}

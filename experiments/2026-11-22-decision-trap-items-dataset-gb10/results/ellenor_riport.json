@@ -1,0 +1,63 @@
+{
+ "n": 21074,
+ "egyedi_id": true,
+ "mintak": {
+  "kristaly_ezust_kft": 0,
+  "url": 0,
+  "email_nem_pelda": 0,
+  "telefon_nem_555": 0,
+  "eredeti_id_minta": 0
+ },
+ "id_allapotot_arul_el": 0,
+ "iban_alaku": {
+  "ervenytelen": 92,
+  "ervenyes": 3
+ },
+ "belfoldi_szamlaszam_alaku": {
+  "ervenytelen": 85
+ },
+ "minimal_pairs": {
+  "par": 342,
+  "ep": 342
+ },
+ "interpretation": {
+  "egyseg": 1038,
+  "szerkezet": {
+   "(('MATCH', 3), ('MISSING_DATA', 1))": 1038
+  }
+ },
+ "sabloncsoport_tobb_splitben": 0,
+ "azonos_szoveg_es_opciok": 0,
+ "hibaelharitas_hu": {
+  "n": 2670,
+  "kulonbozo_cegnev": 242,
+  "leggyakoribb": [
+   [
+    "Fürjes Agrár Kft.",
+    31
+   ],
+   [
+    "Somlyó Logisztikai Kft.",
+    30
+   ],
+   [
+    "Vértesvölgy Irodatechnikai Kft.",
+    26
+   ]
+  ]
+ },
+ "hibaelharitas_en": {
+  "n": 2696,
+  "kulonbozo_cegnev": 2,
+  "leggyakoribb": [
+   [
+    "Acme Manufacturing Ltd.",
+    4
+   ],
+   [
+    "GreenField Foods Ltd.",
+    2
+   ]
+  ]
+ }
+}

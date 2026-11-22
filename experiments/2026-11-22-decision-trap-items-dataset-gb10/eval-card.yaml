@@ -1,0 +1,137 @@
+id: decision-trap-items-dataset-gb10
+version: "0.9"
+date: "2026-11-22"
+title: "A dataset of synthetic Hungarian/English decision trap items with a reference baseline on Qwen3.6-35B-A3B-FP8, with and without thinking"
+question: >-
+  On constructed decision items (synthetic), how often does the model pick a surface-matching decoy where a calculation
+  is needed, how often does it pick an option where the deciding data is missing, and does thinking change either?
+
+task:
+  type: classification
+  document_types: [bank-transaction, fault-report, expense-claim]
+  language: [hu, en]
+  output_format: "single answer letter: an option, or an exit (two-state frame: X; four-state frame: X, Y, Z)"
+
+dataset:
+  name: "k3dani/hu-decision-trap-items"
+  size:
+    calc_traps_test: 1273
+    minimal_pairs_test: 684
+    minimal_pairs_pairs: 342
+    interpretation_train: 1968
+    interpretation_test: 2184
+    natural_train: 5984
+    natural_test: 8974
+    total: 21067
+  access: public
+  ground_truth: >-
+    Labels from the construction: code produces each item's plan (facts, options, answer, label), Muse-Glimmer-30B
+    (Apache-2.0 per its model card) writes the text from the plan, code checks the text against the plan. Blind human
+    audits by one annotator (the project owner): natural round 06 1/300 on the second audit (first 12/300), round 07
+    0/300, round 08 none; interpretation test split 0/30, train split none; minimal pairs 0/30 on the second audit after 3/30 on the first; calc_traps 0/60 (one-sided 95 % upper bound
+    4.9 %), done for this release.
+  notes: >-
+    Draft: the dataset is not public yet. Two company names leaked from the generator prompt were replaced in 2,529
+    items before the baseline ran; ids are opaque; the interpretation config keeps the expense-claim family only.
+    After an independent fact-check and a name comparison with internal customer records 89 items were removed (real
+    bank and organisation names, malformed e-mail addresses or real-looking domains, and their unit or pair partners); the per-item answers were filtered to the released items.
+
+systems:
+  - label: direct
+    role: baseline
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: "vLLM 0.30.0"
+    hardware: "DGX Spark GB10"
+    flags: ["--max-model-len 16384", "--gpu-memory-utilization 0.5"]
+    sampling: { temperature: 0, max_tokens: 1, enable_thinking: false }
+    notes: "First generated token is the answer; two-state and four-state frames; all four configs (test splits)."
+  - label: think
+    role: candidate
+    model: Qwen/Qwen3.6-35B-A3B-FP8
+    quantisation: FP8
+    engine: "vLLM 0.30.0"
+    hardware: "DGX Spark GB10"
+    sampling: { temperature: 0.6, top_p: 0.95, top_k: 20, max_tokens: 4096, enable_thinking: true, seed: "from item id" }
+    notes: "Four-state frame; calc_traps, minimal_pairs and a fixed sample of 147 interpretation units (588 items)."
+  - label: text-only
+    role: control
+    model: "character TF-IDF (3-5-grams) + logistic regression on the item text, question and options"
+    notes: "Predicts the label from surface text; minimal_pairs with 5-fold cross-validation grouped by matched scenario pair."
+
+metrics:
+  - name: accuracy
+    definition: "Share of items answered with the gold letter; Wilson 95 % interval."
+    primary: true
+    preregistered: "full"
+  - name: wrong_option_rate
+    definition: "Share of items answered with an option letter that is not gold; on calc_traps by trap type."
+    primary: true
+    preregistered: "full"
+  - name: option_on_undecidable_member
+    definition: "On minimal_pairs and interpretation: share of members without the deciding signal on which the model picks an option."
+    primary: true
+    preregistered: "full"
+  - name: text_only_label_auroc
+    definition: "AUROC or accuracy of the text-only control on the label."
+    primary: false
+    preregistered: "partial"
+
+decision_rule: >-
+  Descriptive baseline; no hypothesis test and no comparison rule. Configurations, modes, the thinking sample and the
+  endpoints were fixed on 2026-11-20 before the run; the grouping of the text-only cross-validation on minimal_pairs
+  was corrected after the first result (scenario pairs instead of scenarios).
+
+results:
+  calc_traps_four_state:
+    direct_accuracy: [0.423, 0.396, 0.450]
+    think_accuracy: [0.951, 0.937, 0.961]
+    direct_wrong_option: 0.528
+    by_trap_direct_to_think: { currency: [0.159, 1.000], net_vs_gross: [0.381, 1.000], unit_conversion: [0.522, 0.997], partial_payment: [0.465, 0.817], amount_in_words: [0.900, 0.967] }
+  option_on_undecidable_member_four_state:
+    minimal_pairs: { direct: [0.787, 0.740, 0.827], think: [0.918, 0.884, 0.943] }
+    interpretation: { direct: [0.824, 0.790, 0.854], think_sample_147: [0.952, 0.905, 0.977] }
+    minimal_pairs_both_members_correct: { direct: 0.020, think: 0.053 }
+  natural_direct:
+    two_state: { all: 0.837, MATCH: 0.960, NO_MATCH: 0.679, MISSING_DATA: 0.262, OUT_OF_SCOPE: 0.996 }
+    four_state: { all: 0.775, MATCH: 0.964, NO_MATCH: 0.655, MISSING_DATA: 0.384, OUT_OF_SCOPE: 0.274 }
+  text_only:
+    interpretation_auroc: 0.9995
+    natural_accuracy: 0.632
+    natural_majority: 0.600
+    minimal_pairs_auroc_grouped_by_scenario_pair: 0.672
+    minimal_pairs_auroc_grouped_by_scenario: 0.129
+  thinking_cost_median_completion_tokens: { calc_traps: 1689, minimal_pairs: 1630, interpretation: 1499 }
+
+verdict: >-
+  On constructed items (synthetic) and one model, thinking removes most calculation traps (42.3 % to 95.1 % correct)
+  and does not remove the missing-data failure: the model picks an option on undecidable members 79-82 % of the time
+  without thinking and 92-95 % with it. Descriptive, one sample per item.
+
+reproducibility:
+  level: R1
+  code: published
+  data: public
+  results: full
+  runs_per_variant: 1
+  not_published: >-
+    The original item files of rounds 06-08 and the id mapping; the audit sheet and the annotator's per-item decisions
+    (the aggregate is in results/audit_calc_traps.json).
+  verified_by: >-
+    results/data.sha256 pins the released files; code/baseline.py score recomputes every baseline number from
+    results/raw; the dataset card was fact-checked independently against the data and the raw outputs.
+
+limitations:
+  - "One model, one quantisation, one engine build, one machine; one sample per item in the thinking runs; the direct-think difference is descriptive."
+  - "Synthetic items from one generator model in three narrow families; constructed traps do not measure how frequent the mistake is in real traffic."
+  - "In four of the five calc_traps types the decoy is the option a surface comparison picks; trap type maps one-to-one to family and the right band is fixed per type."
+  - "Not comparable with the 2026-11-08 package: different frame, BF16 versus FP8, four option orders versus one, texts before the name replacement."
+  - "interpretation labels are recognisable from surface features (text-only AUROC 0.9995); minimal_pairs controls the signal but does not remove it (0.672)."
+  - "Human audits by one annotator, the project owner; template groups are shared across configs; the round 08 part of natural had no blind audit; the pilot part of calc_traps (328 items) was not hash-frozen at generation time."
+  - "The thinking run on interpretation is a sample of 147 units."
+
+related:
+  background_article: "https://docai.hu/blog/amit-ki-lehet-szamolni"
+  experiments:
+    - "2026-11-08-verified-chain-and-checking-head-gb10"
+    - "2026-10-15-general-decision-lora-negative-gb10"
